@@ -1,0 +1,26 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {0.1}Литература}{2}{section.0.1}%
+\contentsline {chapter}{\numberline {1}Теория меры}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Меры}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Обобщения}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Область задания меры (системы множеств)}{6}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Поговорим про интеграл}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Про счётную аддитивность}{9}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Продолжение меры}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Предмера}{14}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Структура измеримых множеств}{17}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Множества меры нуль}{17}{subsection.1.4.1}%
+\contentsline {section}{\numberline {1.5}Двоичные (диадические) кубы}{20}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Поведение меры Лебега при линейных отображениях}{21}{subsection.1.5.1}%
+\contentsline {chapter}{\numberline {2}Интеграл Лебега}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Измеримые отображения}{25}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Грани и предельные переходы}{27}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Интеграл}{28}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Применения интеграла}{29}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Интегралы от знакопеременных функций}{30}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Про линейность интеграла}{31}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Приближение функций из класса $L^p$}{32}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Связь интегралов Лебега и Римана}{35}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Теоремы Тонелли и Фубини}{36}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Как применять}{39}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}Свёртки. Приближение функций с помощью свёрток}{39}{section.2.8}%

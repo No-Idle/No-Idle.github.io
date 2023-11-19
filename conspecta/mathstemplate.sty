@@ -1,0 +1,324 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{PsiDirectory:/home/leonid/No-Idle.github.io/conspecta/mathstemplate}[2022/09/21 --- nowadays. Leonid Danilevich's personal maths template]
+
+\RequirePackage{pscyr}
+\RequirePackage[utf8]{inputenc}
+
+
+\RequirePackage[english, russian]{babel}
+
+\RequirePackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\RequirePackage{parskip}
+
+\RequirePackage{indentfirst}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{mathtools}
+\RequirePackage{mathrsfs}
+\RequirePackage{changepage}
+\RequirePackage{nicefrac}
+\RequirePackage{ulem}
+\RequirePackage{tensor}
+\RequirePackage{stmaryrd}
+\RequirePackage{empheq}
+\RequirePackage[scr=boondox]{mathalpha}
+
+%======================= quiver.sty ======================
+% *** quiver ***
+% A package for drawing commutative diagrams exported from https://q.uiver.app.
+%
+% This package is currently a wrapper around the `tikz-cd` package, importing necessary TikZ
+% libraries, and defining a new TikZ style for curves of a fixed height.
+%
+% Version: 1.2.3
+% Authors:
+% - varkor (https://github.com/varkor)
+% - AndréC (https://tex.stackexchange.com/users/138900/andr%C3%A9c)
+
+% `tikz-cd` is necessary to draw commutative diagrams.
+\RequirePackage{tikz-cd}
+% `amssymb` is necessary for `\lrcorner` and `\ulcorner`.
+\RequirePackage{amssymb}
+% `calc` is necessary to draw curved arrows.
+% `pathmorphing` is necessary to draw squiggly arrows.
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{calc}
+\usetikzlibrary{babel}
+
+% A TikZ style for curved arrows of a fixed height, due to AndréC.
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+.. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+.. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+    \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+
+% TikZ arrowhead/tail styles.
+\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
+\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
+\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
+% TikZ arrow styles.
+\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
+%======================= end of quiver.sty ======================
+
+\DeclareMathAlphabet{\mathmybb}{U}{bbold}{m}{n}
+\newcommand{\1}{\mathmybb{1}}
+\newcommand{\0}{\mathmybb{0}}
+
+\graphicspath{ {../pics/} }
+
+\theoremstyle{plain}
+\newtheorem{lemma_env}{Лемма}[section]
+\newtheorem{proposal_env}{Предложение}[section]
+\newtheorem{problem_env}{Задача}[section]
+\newtheorem{corollary_env}{Следствие}[section]
+\newtheorem{fact_env}{Факт}[section]
+\newtheorem{statement_env}{Утверждение}[section]
+\newtheorem{excersice_env}{Упражнение}[section]
+
+\theoremstyle{remark}
+\newtheorem*{note_env}{Замечание}
+\newtheorem*{supplement_env}{Дополнение}
+\newtheorem*{example_env}{Пример}
+\newtheorem*{examples_env}{Примеры}
+\newtheorem*{properties_env}{Свойства}
+\newtheorem*{precaution_env}{Предостережение}
+\newtheorem*{counterexample_env}{Контрпример}
+\newtheorem*{counterexamples_env}{Контрпримеры}
+\newtheorem*{ifact_env}{Интересный факт}
+\newtheorem*{question_env}{Вопрос}
+
+\theoremstyle{definition}
+\newtheorem{theorem_env}{\bfseries{Теорема}}[section]
+\newtheorem{definition_env}{\bfseries{Определение}}[section]
+
+\newcommand{\pic}[3][0.3]{\begin{figure}[h!]\centering\includegraphics[width=#1\textwidth]{#2}\caption{\label{#2}#3}\end{figure}}
+\newcommand{\theorem}[2][]{\begin{theorem_env}[#1]#2\end{theorem_env}}
+\newcommand{\lemma}[2][]{\begin{lemma_env}[#1]#2\end{lemma_env}}
+\newcommand{\corollary}[2][]{\begin{corollary_env}[#1]#2\end{corollary_env}}
+\newcommand{\note}[2][]{\begin{note_env}[#1]#2\end{note_env}}
+\newcommand{\supplement}[2][]{\begin{supplement_env}[#1]#2\end{supplement_env}}
+\newcommand{\precaution}[2][]{\begin{precaution_env}[#1]#2\end{precaution_env}}
+\newcommand{\counterexample}[2][]{\begin{counterexample_env}[#1]#2\end{counterexample_env}}
+\newcommand{\counterexamples}[2][]{\begin{counterexamples_env}[#1]\down\bullets{#2}\end{counterexamples_env}}
+\newcommand{\example}[2][]{\begin{example_env}[#1]#2\end{example_env}}
+\newcommand{\examples}[2][]{\begin{examples_env}[#1]\down\bullets{#2}\end{examples_env}}
+\newcommand{\properties}[2][]{\begin{properties_env}[#1]\down\bullets{#2}\end{properties_env}}
+\newcommand{\fact}[2][]{\begin{fact_env}[#1]#2\end{fact_env}}
+\newcommand{\statement}[2][]{\begin{statement_env}[#1]#2\end{statement_env}}
+\newcommand{\excersice}[2][]{\begin{excersice_env}[#1]#2\end{excersice_env}}
+\newcommand{\intfact}[2][]{\begin{ifact_env}[#1]#2\end{ifact_env}}
+\newcommand{\proposal}[2][]{\begin{proposal_env}[#1]#2\end{proposal_env}}
+\newcommand{\definition}[2][]{\begin{definition_env}[#1]#2\end{definition_env}}
+\newcommand{\question}[2][]{\begin{question_env}[#1]#2\end{question_env}}
+\newcommand{\problem}[2][]{\begin{problem_env}[#1]#2\end{problem_env}}
+\newcommand{\all}[1]{\begin{cases}#1\end{cases}}
+\newcommand{\switch}{\all}
+\newcommand{\any}[1]{\left[\begin{aligned}#1\end{aligned}\right.}
+\renewcommand{\indent}[1]{\begin{adjustwidth}{1.5cm}{}#1\end{adjustwidth}}
+\newcommand{\prove}[2][Доказательство]{\begin{proof}[#1]~\par#2\end{proof}}
+\newcommand{\provehere}[2][Доказательство]{\begin{proof}[#1]#2\end{proof}}
+\newcommand{\provebullets}[2][Доказательство]{\prove[#1]{\bullets{#2\qedhere}}}
+\newcommand{\provetwhen}[3][Доказательство]{\provebullets[#1]{\item[$\then$.]#2\item[$\when$.]#3\qedhere}}
+\newcommand{\provewthen}[3][Доказательство]{\provebullets[#1]{\item[$\when$.]#2\item[$\then$.]#3\qedhere}}
+\newcommand{\singlepage}[1]{\begin{samepage}#1\end{samepage}}
+\renewcommand{\gather}[1]{\begin{gather*}#1\end{gather*}}
+\renewcommand{\multline}[1]{\begin{multline*}#1\end{multline*}}
+\newcommand{\indentlemma}[3][]{\indent{\singlepage{\lemma[#1]{#2\prove[Доказательство леммы]{#3}}}}}
+
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\floorfrac}[2]{\floor{\frac{#1}{#2}}}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\ceilfrac}[2]{\ceil{\frac{#1}{#2}}}
+\newcommand{\bullets}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\numbers}[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand{\defset}[2]{\left\{#1\middle|#2\right\}}
+\newcommand{\bigdefset}[2]{\left\{#1\Big|#2\right\}}
+\newcommand{\ind}[3]{\tensor[#1]{#2}{#3}}
+
+\newcommand{\neighborhood}[2][\eps]{\overset{o}{V}_{#1}(#2)}
+\newcommand{\V}[2][\eps]{\neighborhood[#1]{#2}}
+\newcommand{\neighbourhood}[2][\eps]{\overset{o}{U}_{#1}(#2)}
+\renewcommand{\U}[2][\eps]{\neighbourhood[#1]{#2}}
+\newcommand{\w}{\overset{o}{w}}
+\newcommand{\W}{\overset{o}{W}}
+
+\newcommand{\proddots}{\cdot\ldots\cdot}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\D}{\mathbb{D}}
+\renewcommand{\H}{\mathbb{H}}
+\renewcommand{\O}{\mathbb{O}}
+\newcommand{\m}{\mathfrak{m}}
+
+\renewcommand{\o}{\varnothing}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Ff}{\mathbb{F}}
+
+\newcommand{\bydef}{\overset{def}{=}}
+\newcommand{\down}{~\par}
+\newcommand{\up}{\leavevmode \vspace{-1.8em}}
+\newcommand{\ok}{\par\hrulefill\par}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\le}{\leqslant}
+\newcommand{\exist}{\exists}
+\newcommand{\nexist}{\nexists}
+\newcommand{\mono}{\texttt}
+\newcommand{\map}{\rightarrow}
+\newcommand{\Map}{\longrightarrow}
+\newcommand{\bs}{\backslash}
+\newcommand{\sm}{\setminus}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\xor}{\oplus}
+\newcommand{\then}{\Rightarrow}
+\newcommand{\when}{\Leftarrow}
+\newcommand{\noteiff}{\overset{\text{здесь эквивалентно}}{\iff}}
+\newcommand{\inv}{{}^\complement}
+\newcommand{\comp}{\complement}
+\newcommand{\normeq}{\trianglelefteqslant}
+\newcommand{\norm}{\triangleleft}
+\newcommand{\trianglerightneq}{\mathrel{\ooalign{\:\!\raisebox{-0.4ex}{\reflectbox{\rotatebox{63}{$\nshortmid$}}}\cr$\trianglerighteqslant$\cr}\mkern-3mu}}
+\renewcommand{\lneq}{\mathrel{\ooalign{\:\raisebox{0.4ex}{\reflectbox{\rotatebox{158}{$\nshortmid$}}}\cr$\le$\cr}\mkern-3mu}}
+\newcommand{\contradots}{\rotatebox{80}{$\ddots$}}
+\newcommand{\veq}{\mathrel{\rotatebox{90}{$=$}}}
+\newcommand*{\divisibleby}{\mathrel{\rotatebox{90}{$\hskip-1pt.{}.{}.$}}}
+\newcommand{\notdivisibleby}{\!\not\;\divisibleby}
+\newcommand{\divs}{~|~}
+\newcommand{\bigdivs}{~\Big|~}
+\newcommand{\notdivs}{\;\!{\not|}~}
+\newcommand{\triangleleftneq}{\mathrel{\reflectbox{$\trianglerightneq$}}}
+\newcommand{\normneq}{\triangleleftneq}
+\newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\ivect}[3]{\underset{\begin{array}{c}#1\end{array}\vect{#3}}{#2}}
+\newcommand{\smallvect}[1]{\begin{psmallmatrix}#1\end{psmallmatrix}}
+\newcommand{\der}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\arr}[2]{\begin{array}{#1}#2\end{array}}
+\newcommand{\angles}[1]{\left\langle#1\right\rangle}
+\newcommand{\intab}{\int\limits_{\alpha}^{\beta}}
+\newcommand{\dir}[1]{\overrightarrow{#1}}
+\newcommand{\encircle}[1]{\begin{empheq}[box=\fbox]{align*}#1\end{empheq}}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\hat}{\widehat}
+\newcommand{\fmax}{\lor}
+\newcommand{\fmin}{\land}
+\newcommand{\Lmod}[1]{#1\text{-}\mathscr{mod}}
+\newcommand{\modR}[1]{\mathscr{mod}\text{-}#1}
+\newcommand{\cat}[1]{\mathscr{#1}}
+\newcommand{\catA}{\mathscr{A}}
+\newcommand{\catB}{\mathscr{B}}
+\newcommand{\catC}{\mathscr{C}}
+\newcommand{\catD}{\mathscr{D}}
+
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\clos}{Clos}
+\DeclareMathOperator{\cl}{Cl}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\rng}{rng}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\esssup}{ess\,sup}
+\DeclareMathOperator{\essssup}{ess\,sup}
+\DeclareMathOperator{\esssssup}{ess\,sup}
+\DeclareMathOperator{\induced}{ind}
+\DeclareMathOperator{\restricted}{res}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\chr}{char}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\pair}{pair}
+\DeclareMathOperator{\odd}{odd}
+\DeclareMathOperator{\Ord}{Ord}
+\DeclareMathOperator{\Card}{Card}
+\DeclareMathOperator{\Max}{Max}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Image}{Im}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Trig}{Trig}
+\DeclareMathOperator{\tdeg}{tdeg}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\differential}{d}
+\renewcommand{\d}{\differential\!}
+%\renewcommand{\d}{\text{d}}
+%\renewcommand{\Re}{\text{Re}}
+%\renewcommand{\Im}{\text{Im}}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Cent}{Cent}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\CoIm}{CoIm}
+\DeclareMathOperator{\CoKer}{CoKer}
+\DeclareMathOperator{\coIm}{coIm}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Bij}{Bij}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rrk}{rrk}
+\DeclareMathOperator{\ork}{ork}
+\DeclareMathOperator{\mrk}{mrk}
+\DeclareMathOperator{\crk}{crk}
+\DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\decr}{decr}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Oct}{Oct}
+\DeclareMathOperator{\Lin}{Lin}
+\DeclareMathOperator{\pf}{pf}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Nil}{Nil}
+\DeclareMathOperator{\lc}{lc}
+\DeclareMathOperator{\Cont}{Cont}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\Rad}{Rad}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Homeo}{Homeo}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\Ab}{Ab}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\GL}{GL}
+\newcommand{\p}{\mathfrak{p}}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\source}{source}
+\DeclareMathOperator{\target}{target}
+
+\newcounter{lection}
+\date{}
+\newcommand{\newlection}[1]{\begin{center}\huge Лекция \stepcounter{lection}\Roman{lection}\\\large #1\end{center}\nopagebreak} % nopagebreak seems to make no effect for me, but let it be

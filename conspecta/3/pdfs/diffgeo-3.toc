@@ -1,0 +1,38 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Алгебраическая топология}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Применения фундаментальной группы}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Теорема Жордана}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Ретракция. Гомотопическая эквивалентность}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Гомотопическая эквивалентность}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Пары Борсука}{6}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Клеточная пара --- пара Борсука}{7}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Гомотопическая эквивалентность и фундаментальная группа}{8}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Накрытия}{9}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Морфизмы накрытий}{10}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Иерархия накрытий с общей базой}{14}{subsection.1.8.2}%
+\contentsline {section}{\numberline {1.9}Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}{14}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}План}{14}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Фундаментальная группа конечного графа}{14}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Теорема Зейферта --- ван Кампена}{14}{subsection.1.9.3}%
+\contentsline {subsubsection}{Некоторые определения из теории групп}{14}{section*.2}%
+\contentsline {subsubsection}{Формулировка теоремы Зейферта --- ван Кампена и доказательство для клеточных пространств}{15}{section*.3}%
+\contentsline {section}{\numberline {1.10}Фундаментальные группы основных поверхностей}{16}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Построение универсального накрытия}{17}{section.1.11}%
+\contentsline {chapter}{\numberline {2}Дифференциальная геометрия}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Дифференциальная геометрия кривых}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Параметризация кривой длиной дуги}{20}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Кривизна плоской кривой, базис Френе}{20}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Формулы Френе}{21}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Поворот кривой}{22}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Замкнутые кривые}{22}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Выпуклые кривые на плоскости}{23}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Базис Френе и кривизны в $\mathbb {R}^n$}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}2-мерные поверхности в $\mathbb {R}^3$}{25}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Локальная параметризация}{25}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Гладкие функции на поверхности}{26}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Производная по направлению}{27}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Первая квадратичная форма поверхности}{28}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Площадь}{28}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}I форма при замене координат}{28}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Изометрии}{29}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Вторая квадратичная форма}{29}{section.2.6}%
