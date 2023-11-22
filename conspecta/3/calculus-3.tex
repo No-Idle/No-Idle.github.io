@@ -108,7 +108,7 @@
             }
         }
     }
-    Пускай $\phi: \mathcal{A} \map [0, +\infty]$ --- аддитивная функция множеств. $\phi$ называется \textit{счётно аддитивной}, если для $a \in \mathcal{A}, \{a_j\}_{j=1}^{\infty} \subset \mathcal{A}$ верно $a = \bigsqcup\limits_{j=1}^{\infty} \then \phi(a) = \sum\limits_{j = 1}^{\infty}\phi(a_j)$.
+    Пускай $\phi: \mathcal{A} \map [0, +\infty]$ --- аддитивная функция множеств. $\phi$ называется \textit{счётно аддитивной}, если для $a \in \mathcal{A}, \{a_j\}_{j=1}^{\infty} \subset \mathcal{A}$ верно $a = \bigsqcup\limits_{j=1}^{\infty}a_j \then \phi(a) = \sum\limits_{j = 1}^{\infty}\phi(a_j)$.
     \theorem{
         Объём в $\R^n$ --- счётно аддитивная функция на $\mathcal{P}_0(\R^n)$ (и на $\mathcal{P}(\R^n)$ тоже, но пока не надо).
         \provehere{
@@ -116,7 +116,7 @@
                 Пусть $Q_1, \dots, Q_k, Q \in \mathcal{P}_0(\R^n)$.
                 \numbers{
                     \item Если $Q_1, \dots, Q_k$ попарно не пересекаются, и $\forall j: Q_j \subset Q$, то $\sum\limits_{j = 1}^{k}V_n(Q_j) \le V_n(Q)$.
-                    \item Если $Q \subset \bigcup\limits_{j=1}^{k}$ (условий на дизъюнктность нет), то $V_n(Q) \le \sum\limits_{j = 1}^{k}V_n(Q_j)$.
+                    \item Если $Q \subset \bigcup\limits_{j=1}^{k}Q_j$ (условий на дизъюнктность нет), то $V_n(Q) \le \sum\limits_{j = 1}^{k}V_n(Q_j)$.
                 }
             }        {
                 \numbers{
@@ -1766,12 +1766,12 @@
     Пускай $f, g$ --- измеримые функции на $\R^n$.
     \definition[Свёртка $f * g$]{
     $(f * g)(x) = \int\limits_{\R^n}f(y)g(x - y)\d y$.
-    Свёртка определена в тех точках, где интеграл конечен.
+    Свёртка определена в тех точках, где интеграл определён.
     }
     Рассмотрим $L: \R^n \times \R^n \map \R^n \times \R^n, (x, y)\mapsto (y, x - y)$.
     $L$ линейно, значит, $L, L^{-1}$ измеримы по Лебегу.
     Определив $T: \R^n\times\R^n \map \R, (u, v) \mapsto f(u)g(v)$ видим, что $T$ измерима, откуда $(T \circ L)(x, y) = f(y)g(x - y)$ тоже измерима.
-    \theorem{
+    \theorem{\label{p-equals-1}
     Если $f, g \in L^1(\R^n)$, то $(f * g)$ определена почти всюду, и $\|f * g\|_{L^1} \le \|f\|_{L^1} \|g\|_{L^1}$.
     \provehere{
         Рассмотрим $\phi(x, y) = |f(x)|\cdot |g(x - y)|$. Она неотрицательна, применяем теорему Тонелли:
@@ -1783,9 +1783,192 @@
     \[\int\limits_{R^n}|(f * g)(x)| \d x \le \int\limits_{\R^n}\int\limits_{\R^n}|f(y)g(x-y)|\d y\d x \le \|f\|_{L^1}\|g\|_{L^1}\]
     }
     }
+
     \note{Неформально говоря, если сворачивать $f$ с какими-то хорошими свойствами, и $g$ с какими-то другими хорошими свойствами, то свёртка обладает всеми хорошими свойствами каждой из них.}
+
+    \statement{
+        $f * g = g * f$ всегда, когда существует:
+        \[(f * g)(x) = \int\limits_{\R^n}f(x - y)g(y)\d y =\left\|\arr{c}{z = x - y \\ y = x - z}\right\| = \int\limits_{\R^n}f(z)g(x - z)\d z\]
+    }
+    \excersice{
+        Свёртка ассоциативна: $f * (g * h) = (f * g) * h$ всегда, когда существует.
+    }
+    \newlection{22 ноября 2023 г.}
+    \subsection{Меры с плотностью}
+    Пусть $(X, \Sigma, \mu)$ --- пространство с мерой. Пусть $\phi \ge 0$ --- измеримая функция на $X$.
+
+    Можно определить меру, индуцированную функцией $\phi$: $\nu(e) = \int\limits_{e}\phi\d\mu$ для $e \in \Sigma$.
+    Тогда $\phi$ называется плотностью меры $\nu$ относительно $\mu$.
+
+    \subsubsection{Куда должна бить $\phi \ge 0$?}
+    \numbers{
+    \item Можно считать, что $\phi: X \map \R$, но, возможно, меняет знак.
+    Надо предположить, что либо $\phi_+$, либо $\phi_-$ суммируемы.
+
+    Тогда сохраняется счётная аддитивность: $e = \bigsqcup\limits_{i = 1}^{\infty}e_i \then \nu(e) = \sum\limits_{i = 1}^{\infty}\nu(e_i)$.
+        Тем не менее, всякие монотонности могут перестать выполняться, так как функция перестала быть неотрицательной.
+    \item Можно считать, что $\phi: X \map \C$.
+    Комплексный интеграл берётся отдельно по вещественной и мнимой частям:
+    \[\int\limits_{e}(\alpha + \beta i)\d\mu = \int\limits_{e}\alpha\d\mu + i \int\limits_{e}\beta\d\mu\]
+    }
+    В обоих случаях $\nu$ перестаёт быть мерой в заявленном определении, это просто какая-то счётно-аддитивная функция множества, и $\phi$ во всех случаях называется её плотностью.
+
+    \subsubsection{Интегрирование по мере $\nu$}
+    Пусть $\nu$ определена, как выше.
+    \fact{
+    Если $g \ge 0$ --- измеримая функция на $X$, то $\int\limits_{X}g\d\nu = \int\limits_{X}g\phi\d\mu$.
+    \provehere{
+    Формула верна для $g = \chi_e$: \[\int\limits_{X}\chi_e\d\nu = \nu(e) = \int\limits_{X}\chi_e\phi\d\mu\]
+    Значит, формула верна для неотрицательных простых функций.
+
+    Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви.
+    }
+    }
+    \corollary{
+    Неотрицательная функция $g$ $\nu$-суммируема $\iff g\phi$ $\mu$-суммируема.
+    }
+    \corollary{
+    Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
+    }
+    \subsection{Образ меры}
+    Пусть $(X, \mathcal{A}), (Y, \mathcal{B})$ --- два пространства, $\mathcal{A}, \mathcal{B}$ --- $\sigma$-алгебры подмножеств в $X$ и $Y$ соответственно.
+
+    Пусть $F: X \map Y$ измеримо относительно $(\mathcal{A}, \mathcal{B})$.
+
+    Пускай  $\mu \ge 0$ --- счётно-аддитивная мера на $(X, \mathcal{A})$.
+    Её \textit{образ} $F^0(\mu) = \nu$ --- счётно-аддитивная мера на $(Y, \mathcal{B})$, такая, что $\nu(b) = \mu(F^{-1}(b))$.
+    Счётная аддитивность следует из того, что прообраз уважает все теоретико-множественные операции.
+    \subsubsection{Интегрирование по мере $\nu$}
+    Пусть $\nu$ определена, как выше.
+    \[\int\limits_{Y}\chi_e\d\nu = \nu(b) = \int\limits_{X}\chi_{F^{-1}(b)}\d\mu\]
+    Заметим, что $\chi_{F^{-1}(b)} = \chi_b \circ F$.
+    \fact{
+    Если $g \ge 0$ --- измеримая функция на $X$, то $\int\limits_{X}g\d\nu = \int\limits_{X}g\circ F\d\mu$.
+    \provehere{
+        Формула верна для $g = \chi_e$.
+        Значит, формула верна для неотрицательных простых функций.
+
+        Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви (два раза, в левой и правой частях равенства).
+    }
+    }
+    Все замечания из предыдущего раздела повторяются.
+    \corollary{
+        Неотрицательная функция $g$ $\nu$-суммируема $\iff g\phi$ $\mu$-суммируема.
+    }
+    \corollary{
+        Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
+    }
+    Данная формула очень полезна при замне переменной в интеграле.
+
+    Например, ранее записанное равенство $\int\limits_{X}f(x - y)\d y = \int\limits_{X}f(\xi)\d\xi$ видно из данной формулы при $g(y) = x - y$ --- здесь образ меры будет её самой.
+    \subsection{Свойства свёртки}
     \theorem{
-    Если $f$ лежит в $L^1(\R^n)$, $g \in L^p(\R^n)$, где $1 \le p \le \infty$, то $\|f * g\|_{L^p(\R^n)} \le \|f\|_{L^1(\R^n)}\|g\|_{L^p(\R^n)}$.
+        Если $g$ лежит в $L^1(\R^n)$, $f \in L^p(\R^n)$, где $1 \le p \le \infty$, то $\|f * g\|_{L^p(\R^n)} \le \|f\|_{L^p(\R^n)}\|g\|_{L^1(\R^n)}$.
+        \provehere{
+            Пусть $p = \infty$.
+        \[|(f * g)(x)| \le \int\limits_{\R^n}|f(x - y)| \cdot |g(y)| \d y \le \underbrace{\|f\|_{L^{\infty}}}_{\esssup(f)~}\int\limits_{\R^n}|g(y)|\d y\]
+        При $p = 1$ доказано выше:~(\ref{p-equals-1}).
+
+        Теперь пусть $1 < p < \infty$, $q$ --- сопряжённый к $p$ показатель.
+        \[\int\limits_{\R^n}|(f * g)(x)|^p\d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)||g(y)|\d y\right)^p \d x = \cdots\]
+        Определим из меры Лебега новую меру с плотностью $|g(y)|$: $\nu(e) \coloneqq \int\limits_{e}|g(y)|\d y$.
+            Это конечная мера на $\R^n$, так как $g \in L^1$.
+        \[\cdots = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)| \cdot 1\d \nu(y)\right)^p \d x \le \cdots\]
+        Теперь применим неравенство Гёльдера относительно данной меры $\nu$.
+        \multline{
+            \le \int\limits_{\R^n}\left[\left(~\int\limits_{\R^n}|f(x - y)|^p\d\nu(y)\right)^{\frac{1}{p}}\left(~\int\limits_{\R^n}1^q\d\nu\right)^{\frac{1}{q}}\right]^p \d x=\\= \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)|^p|g(y)|\d y\right)\d x \cdot \|g\|_{L^1}^{\frac{p}{q}}            = \|g\|_{L^1}^{\frac{p}{q}}\|f\|^p_{L^1}\|g\|_{L^1}
+        }
+        Тем самым, $\|f * g\|_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|_{L^p}^p$ и $\|f * g\|^p_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
+
+        }
+    }
+    \excersice[Неравенство Юнга]{
+    Пусть $f \in L^s(\R^n), g \in L^t(\R^n)$, где $s, t > 1$. Предположим, что $\frac{1}{r} = \frac{1}{s} + \frac{1}{t} - 1$, и пусть $r \ge 1$.
+    Тогда $\|f * g\|_{L^r} \le \|f\|_{L^s}\|g\|_{L^t}$.
+    }
+    \excersice{
+    Если $\frac{1}{p} + \frac{1}{q} = 1$, и $1 < p, q < \infty$, то $\|f*g\| \le \|f\|_{L^p} \|g\|_{L^q}$, и при этом $\|f * g\|$ непрерывна и стремится к нулю на $\infty$.
+    }
+    \fact{
+        Пусть $g \in L^1(\R^n)$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p \le \infty$:
+    \[\|f * g - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y \d x\]
+    \provehere{
+    $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
+    Возьмём модуль, возведём в степень $p$, и проинтегриурем:
+    \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x \le \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)||g(y)|\d y\right)^p \d x\]
+    Далее вводим меру $\nu(e) = \int\limits_{e}|g(y)|\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$.
+        \note{
+            При $p = \infty$ тоже верно, доказательство другое (проще).\qedhere
+        }
+    }
+    }
+    \definition[Пространство бесконечно дифференцируемых функций на $\R^n$ с компактным носителем]{
+    $\mathcal{D}(\R^n)$.
+    }
+    \theorem{
+        Пусть $u$ --- непрерывна, с компактным носителем, $f \in L^p(\R^n)$. Тогда $f * u$ непрерывна.
+        Если $u \in \mathcal{D}(\R^n)$, то $f * u \in C^{\infty}(\R^n)$.
+        \provehere{
+        \[(f * g)(x) = \int\limits_{\R^n}f(y)u(x - y)\d y = \cdots \]
+            Проверим непрерывность в $x_0 \in \R^n$, рассмотрим $B_r(x_0)$.
+            Пусть $S = \supp u$.
+            Теперь можно считать, что интегрирование берётся по компакту $K = \overline{B_r(x_0)} - S$.
+            \[\cdots \underset{\text{при $x \in B_r(x_0)$}}= \int\limits_{K}f(y)u(x - y)\d y\]
+            Заметим, что для всякой последовательности $x_j \to x_0: u(x_j - y) \to u(x_0 - y)$, откуда $|f(y)u(x_j - x_0)| \le C|f(y)|$, и можно применить теорему Лебега о мажоранте.
+        \indentlemma{
+            Пусть $K \subset \R^n$ --- компактное множество, $I = (a, b)\subset \R$ --- интервал, $v: K \times I \map \R$.
+        Пусть $\exists \der{}{t}v(x, t)$, и она непрерывна на $(a, b)$ при всяком фиксированном $x \in K$.
+            Также предположим наличие суммируемой мажоранты $w$ на $K$: для всех $t \in (a, b): \abs{\der{}{t}v(x, t_0)} \le w(x)$.
+
+        Определим $\phi(t) = \int\limits_{K}v(x, t)\d x$ (предполагаем, что $v(x, t)$ суммируема при всяком $t$). Тогда $\phi$ дифференцируема на $(a, b)$, и
+        \[\phi'(t_0) = \int\limits_{K}\der{}{t}v(x, t_0)\d x\]
+        }{
+        Выберем последовательность $t_n \to t_0$, запишем разностное отношение
+            $\frac{\phi(t_n) - \phi(t_0)}{t_n - t_0} = \int\limits_{K}\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0}\d x \underset{n \to \infty}\Map\phi'(t_0)$
+        По формуле Лагранжа $\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0} = \der{}{t}v(x, \xi)$ для некой $\xi \in (t_n, t_0)$.
+        $\abs{\der{}{t}v(x, \xi)} \le w(x)$, значит, у подынтегральной фукнции есть мажоранта, и можно перейти к пределу.
+        }
+        Заметим, что $(f * u)(x) = \int\limits_{K}f(y)u(x - y)\d y$, и её действительно можно дифференцировать бесконечно много раз (?).
+        %$u$ ограничена, значит, есть мажоранта
+        }
+    }
+    \note{
+    Пусть $\supp f = A, \supp g = B$. Тогда $\supp(f * g) \subset A + B$.
+    }
+    \definition[Аппроксимативная единица для $\R^n$]{
+    Последовательность функций $g_j \in L^1(\R^n)$, $g_j \ge 0, \int\limits_{\R^n}g_j = 1, \forall r > 0: \int\limits_{|y| > \delta}g_j(y)\d y \underset{j \to \infty}\Map 0$
+    }
+    \theorem{
+        Пусть $g_j$ --- аппроксимативная единица, $f \in L^p(\R^n)$, $f * g_j \underset{j \to \infty}{\overset{L^p}\Map} f$, то $\|f * g_j - f\|_{L^p} \underset{j \to \infty}\Map 0$.
+
+    Если $f$ непрерывна с компактным носителем (достаточно потребовать равномерной непрерывности), то $f * g_j \rightrightarrows f$
+    \provehere{
+    При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x}
+    $2^p\int\limits_{\R^n}|f(x - y)|^p + |f(y)|^p\d x \le 2^{p + 1}\int\limits_{\R^n}|f(x)|^p\d x$, и это конечно.
+    Значит, по определению аппроксимативной единицы второе слагаемое мало при больших $j$.
+
+    Для первого слагаемого применим непрерывность сдвигов в $L^p$: $\forall \eps > 0: \exists \delta: f \in L^p(\R^n), 1 \le p < \infty$ при $|y| \le \delta \then \int\limits_{\R^n}|f(x - y) - f(x)|^p \d x < \eps$. Значит, оно тоже маленькое.
+
+    Ранвомерную сходимость проверим в следующий раз.
+    }
+    }
+    \fact{
+    Пространство $\mathcal{D}(\R^n)$ плотно в $L^p(\R^n)$ для $1 \le p < +\infty$.
+    \provehere{
+    Построим специальную аппроксимативную единицу. \numbers{
+        \item Пускай $\phi: \R \map \R$ --- бесконечно дифференцируемая неотрицательная функция с компактным носителем, $\phi = 0$ вне $(-1, 1)$.
+
+        Например, $\phi(x) = ?$
+    \item $a \coloneqq\int\limits_{\R}\phi \d x$. Положим $\psi = \frac{\phi}{a}$. Это функция с единичным интегралом.
+    \item $\Psi(x_1, \dots, x_n) \coloneqq \psi(x_1)\proddots \psi(x_n)$.
+        Это функция с единичным интегралом, сосредоточенная на единичном кубе со стороной 2 и центром в нуле.
+    \item В качестве аппроксимативной единицы выберем $\Psi_j(x) = j^n\Psi\left(jx\right)$.
+        Интеграл по-прежнему равен единице, так как якобиан скалярного умножения на $j$ в $\R^n$ равен $j^n$.
+    }
+    Теперь выберем $\eps > 0$, и функции $f \in L^p(\R^n)$ сопоставим $g$ с компактным носителем, такую, что $\|f - g\|_{L^p} < \eps$.
+    При больших $j$:
+    \[|g * \Psi_j - g\|_{L^p} < \eps\]
+    }
     }
 \end{document}
 
