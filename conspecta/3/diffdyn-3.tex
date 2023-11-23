@@ -1236,7 +1236,7 @@
 
     Зафиксируем $(\tau_0, \xi_0, \mu_0) \in G \times M$.
     Утверждается, что $\forall \eps > 0, \forall [a, b] \in I(\tau_0, \xi_0, \mu_0): \exists \delta: \forall (\tau, \xi, \mu) \in G \times M$:
-    \[\all{\abs{t - \tau_0} < \delta \\ |\xi-\xi_0| < \delta \\ \abs{\mu - \mu_0} < \delta} \then [a, b] \subset I(\tau, \xi, \mu) \text{ и }\forall t \in [a, b]: \abs{x(t,\tau,\xi,\mu) - x(t, \tau_0,\xi_0,\mu_0)} < \eps\]
+    \[\all{\abs{\tau - \tau_0} < \delta \\ |\xi-\xi_0| < \delta \\ \abs{\mu - \mu_0} < \delta} \then [a, b] \subset I(\tau, \xi, \mu) \text{ и }\forall t \in [a, b]: \abs{x(t,\tau,\xi,\mu) - x(t, \tau_0,\xi_0,\mu_0)} < \eps\]
     \provehere{
         Можно считать, что $\tau_0 \in (a, b)$ --- отрезок $[a, b]$ берётся любой, лежащий в $I(\tau_0,\xi_0,\mu_0)$, и его в случае надобности можно расширить.
 
@@ -1279,7 +1279,7 @@
     Рассматривается нормальная система без параметров $\dot{x} = f(t, x), x \in \R, f \in C, \Lip_{x,loc}(G)$.
 
     Зафиксируем $(\tau_0, \xi_0) \in G$. Тогда $\forall \eps > 0, \forall [a, b] \in I(\tau_0, \xi_0)$:
-    $\exists \delta > 0: \forall (\tau, \xi) \in G: |t - \tau_0| < \delta, |\xi - \xi_0| < \delta \then [a, b] \subset I(\tau, \xi)$ и при $t \in [a, b]$ $|x(t,\tau,\xi) - x(t,\tau_0,\xi_0)| < \eps$
+    $\exists \delta > 0: \forall (\tau, \xi) \in G: |\tau - \tau_0| < \delta, |\xi - \xi_0| < \delta \then [a, b] \subset I(\tau, \xi)$ и при $t \in [a, b]$ $|x(t,\tau,\xi) - x(t,\tau_0,\xi_0)| < \eps$
     }
     \newlection{17 ноября 2023 г.}
     \section{Дифференцируемость решений по начальным данным и параметрам.}

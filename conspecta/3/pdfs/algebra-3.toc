@@ -80,3 +80,5 @@
 \contentsline {subsection}{\numberline {4.2.5}Контравариантный функтор}{70}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Естественные преобразования}{72}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Эквивалентность категорий}{73}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}(Ко)эквалайзеры и (ко)пределы}{74}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Произведения и копроизведения}{75}{section.4.5}%

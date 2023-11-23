@@ -19,7 +19,7 @@
     Николай Александрович что-то говорил про специальный индийский танец с чашей, про привязывание греческого кратера резинками за обе ручки к стенкам с последующим закручиванием, и про спиноры.
     К сожалению, про это я так ничего и не понял --- сложно описывать повороты трёхмерного тела в пространстве, а о спинорах я слышал в первый раз.
 
-    Уже выйдя на улицу, я потом в шутку предложил на следующий день принести греческую чашу и резинки, чтобы Николай Александрович сам всё показал ---  14 сентября была запланирована очередная, четвёртая, лекция.
+    Уже выйдя на улицу, я потом в шутку предложил на следующий день принести греческую чашу и резинки, чтобы Николай Александрович сам всё показал --- 14 сентября была запланирована очередная, четвёртая, лекция.
 
     Я пришёл на неё за несколько минут до начала, и с удивлением увидел, что у аудитории стоит лишь несколько человек.
     Оказалось, лекцию отменили --- Николай Алесандрович внезапно плохо себя почувствовал, и сообщил об этом администраторам.
@@ -29,7 +29,8 @@
     Мой одногруппник, Лев, поделился чьим-то сообщением с фотографией записи, приписав <<Это правда?>>
 
     Сначала, кажется, никто не поверил.
-    Я увидел текст, и подумал: <<И ведь действительно, сегодня лекции не было. Но он заболел, а не умер, что за глупая шутка>>.
+    Я увидел текст, и подумал: <<И ведь действительно, сегодня лекции не было.
+    Но он заболел, а не умер, что за глупая шутка>>.
     Потом я проверил, что запись на стене поделившегося человека действительно существует, и в ту же секунду Лев написал, что, похоже, это не шутка.
 
     Это была не шутка.
@@ -55,7 +56,7 @@
 
         Если $(A, B) \ne (A', B')$ (где $A,B,A',B'\in\Obj\mathscr{C}$), то $\Mor_\mathscr{C}(A, B) \cap \Mor_\mathscr{C}(A', B') = \o$.
 
-        Таким образом, по морфизму $\alpha \in \Mor_\mathscr{C}(A, B)$ однозначно восстанаваливаются $A, B$, их обозначают $A \bydef \source(\alpha), B = \target(\alpha)$
+        Таким образом, по морфизму $\alpha \in \Mor_\mathscr{C}(A, B)$ однозначно восстанавливаются $A, B$, их обозначают $A \bydef \source(\alpha), B = \target(\alpha)$
         \item Закон композиции морфизмов: $\forall A, B, C \in \Obj\mathscr{C}$ определено
         \begin{align*}
             \Mor_\mathscr{C}(B, C) \times \Mor_\mathscr{C}(A, B) &\map \Mor_\mathscr{C}(A, C)\\(\alpha,\beta)&\mapsto \alpha \beta
@@ -216,7 +217,7 @@
           \arrow["\phi", from=1-1, to=1-2]
           \arrow["{\exists !\theta}", from=1-2, to=2-2]
     \end{tikzcd}\]
-    $\forall \phi: R \map A$, такого, что $\forall s \in S: \phi(s) \in A^*: \exists ! \theta: R \map A$, такой, что диграмма комммутативна.
+    $\forall \phi: R \map A$, такого, что $\forall s \in S: \phi(s) \in A^*: \exists ! \theta: R \map A$, такой, что диаграмма коммутативна.
 
     Этому соответствует ... объект в категории $\mathscr{C}$, такой, что $\Obj\mathscr{C} = \defset{\phi: R \map A}{\phi(S) \subset A^*}$ и $\Mor_\mathscr{C}(\phi, \psi) = \defset{\alpha}{\alpha \psi = \phi}$.
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJSIl0sWzEsMCwiQSJdLFsxLDEsIkIiXSxbMCwyLCJcXHBzaSIsMl0sWzAsMSwiXFxwaGkiXSxbMSwyLCJcXGFscGhhIl1d
@@ -227,7 +228,7 @@
           \arrow["\phi", from=1-1, to=1-2]
           \arrow["\alpha", from=1-2, to=2-2]
     \end{tikzcd}\]
-    Вообще, всякий объект с универсальным свойством --- инициальный или финальный в некоторой категории, но для этого именно нужна \textbf{уни}версальность --- так, у алгебраического замыкания есть изоморфизм, оно единственно с точнотью до не единственного изоморфизма.
+    Вообще, всякий объект с универсальным свойством --- инициальный или финальный в некоторой категории, но для этого именно нужна \textbf{уни}версальность --- так, у алгебраического замыкания есть изоморфизм, оно единственно с точностью до не единственного изоморфизма.
 
     Будем говорить, что объект \textit{единственен}, если он определён единственным образом с точностью до единственного изоморфизма.
     \proposal{
@@ -288,7 +289,7 @@
         Любая локализация --- эпиморфизм, и вообще бывают ещё эпиморфизмы, не являющиеся композицией сюръекции и локализации, но построить их непросто.
     \item В $\mathscr{Group}$ эпиморфизмы --- сюръекции.
         \provehere{
-            Всякий морфизм в $\mathscr{Group}$ разложим в комопзицию эпиморфизма и мономорфизма.
+            Всякий морфизм в $\mathscr{Group}$ разложим в композицию эпиморфизма и мономорфизма.
         Тогда если нашёлся несюръективный эпиморфизм, то найдётся вложение в $H \lneq G$, являющаяся мономорфизмом.
 
         Рассмотрим амальгамированное произведение $G_1 \underset{H}* G_2$, где $G_1 \cong G_2 \cong G$ и $G_1 \cap G_2 = H$, оно определено в следующем абзаце.
@@ -443,7 +444,7 @@
     \item Рассмотрим два функтора $\cat{M}$ и ${}^{*}: \cat{CRing} \map \cat{Mon}$, отображающие кольцо в моноид его элементов по умножению, и группу обратимых элементов (являющуюся моноидом) соответственно.
     $\eta: R^* \hookrightarrow \cat{M}(R)$.
     \item Вложение (?) --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \id: \cat{Group}\map\cat{Group}$:
-    \item\definition[Естественный изоморфизм]{Естественное преобразование, состоящее из изоморфизмов.}
+    \item\up\definition[Естественный изоморфизм]{Естественное преобразование, состоящее из изоморфизмов.}
         В категории множеств $\cat{Set}$: $\Mor(X, \Mor(Y, Z)) \leftrightarrow \Mor(X \times Y, Z)$: $g(x)(y) = f(x, y)$.
 
         Это стоит читать, как естественное преобразование между функторами $\Mor(\_, \Mor(\_, \_)): \cat{Set}^{\op} \times \cat{Set}^{\op} \times \cat{Set} \map \cat{Set}$ и $\Mor(\_ \times \_, \_)): \cat{Set}^{\op} \times \cat{Set}^{\op} \times \cat{Set} \map \cat{Set}$.
@@ -459,22 +460,177 @@
     Естественное преобразование $\eps: \id \map {}^{**}$ можно сузить на категорию $\cat{Vect}_F$ конечномерных векторных пространств, там оно является изоморфизмом в силу подсчёта размерностей.
     }
     \counterexample[Неестественное преобразование]{
-    Изоморфизм конечномерного векторного пространства, и двойственного к нему.
+        Изоморфизм конечномерного векторного пространства, и двойственного к нему.
     }
     Неформально, всякое преобразование, в котором не задействованы какие-то выборы, является естественным.
     \subsection{Эквивалентность категорий}
     Изоморфизм категорий помнит слишком много, мы не хотим следить за кратностью изоморфных объектов.
 
     \definition[Категории $\catB$ и $\catC$ эквивалентны]{
-    Существуют функторы $\cat{F}: \catB \map \catC$ и $\cat{G}: \catC \map \catB$, такие, что $\cat{F}\circ\cat{G} \cong \id_\catC$ и $\cat{G}\circ\cat{F} \cong \id_\catB$, здесь $\cong$ --- естественная эквивалентность.
+        Существуют функторы $\cat{F}: \catB \map \catC$ и $\cat{G}: \catC \map \catB$, такие, что $\cat{F}\circ\cat{G} \cong \id_\catC$ и $\cat{G}\circ\cat{F} \cong \id_\catB$, здесь $\cong$ --- естественный изоморфизм.
     }
     Ранее мы фактически доказали, что категории $\cat{Vect}_F$ и $\cat{Vect}_F^{\op}$ эквивалентны, (но они не изоморфны).
     \examples[Ещё естественные преобразования]{
-    \item $R \otimes_R \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
+        \item $R \otimes_R \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
 
-    Элемент $\sum r_i \otimes m_i$ равен $1 \otimes \sum r_i m_i$, и отображается в $\sum r_i m_i$.
-    \item $\Mor_{\Lmod{R}}(X, \Mor_{\Lmod{R}}(Y, Z)) \cong \text{Bi}_{\Lmod{R}}(X, Y; Z)\cong \Mor_{\Lmod{R}}(X \otimes_R Y, Z)$.
-    \item Естественный изоморфизм в категории конечномерных векторных пространств $\cat{Vect}_F$: $\Mor(X, Y \otimes Z) \cong \Mor(X \otimes Z^*, Y)$.
+        Элемент $\sum r_i \otimes m_i$ равен $1 \otimes \sum r_i m_i$, и отображается в $\sum r_i m_i$.
+        \item $\Mor_{\Lmod{R}}(X, \Mor_{\Lmod{R}}(Y, Z)) \cong \text{Bi}_{\Lmod{R}}(X, Y; Z)\cong \Mor_{\Lmod{R}}(X \otimes_R Y, Z)$.
+        \item Естественный изоморфизм в категории конечномерных векторных пространств $\cat{Vect}_F$: $\Mor(X, Y \otimes Z) \cong \Mor(X \otimes Z^*, Y)$.
     }
+    \newlection{23 ноября 2023 г.}
+    Рассмотрим естественные по $X$ и по $Y$ преобразования в категории $\Lmod{R}$, где $R$ --- коммутативное кольцо.
+    \begin{align*}X^* \otimes Y &\map \Mor(X, Y) \\ \phi \otimes y_i &\mapsto [x \mapsto \phi(x)y_i]\end{align*}
+    Иными словами, имеется естественное преобразование между функторами $\cat{F}(X, Y) = X^* \otimes Y$ и $\Mor$, которые действуют $\Lmod{R}^{\op} \times \Lmod{R} \map \Lmod{R}$.
+    Если $R$ --- поле, и пространства --- конечномерны, то это естественный изоморфизм.
+    \ok
+    Рассмотрим два функтора $\cat{F}, \cat{G}: \cat{B} \map \cat{C}$.
+    Пусть имеется также функтор $\cat{H}: \catC \map \catA$, и естественное преобразование $\eta: \cat{F} \map \cat{G}$.
 
+    Беря композицию функтора и естественного преобразования, получаем естественное преобразование $\cat{H}\eta: \cat{H}\circ\cat{F} \map \cat{H} \circ \cat{G}$.
+    \example{
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXE1vcihYIFxcb3RpbWVzIFksIFopIl0sWzIsMCwiXFxNb3IoWCwgWV4qIFxcb3RpbWVzIFopIl0sWzEsMSwiXFxNb3IoWCwgXFxNb3IoWSwgWikpIl0sWzEsMl0sWzIsMCwiXFxzaW0iLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDBdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Mor(X \otimes Y, Z)} \&\& {\Mor(X, Y^* \otimes Z)} \\
+        \& {\Mor(X, \Mor(Y, Z))}
+        \arrow[from=1-3, to=2-2]
+        \arrow["\sim"', Rightarrow, no head, from=2-2, to=1-1]
+        \arrow[from=1-3, to=1-1]
+        \end{tikzcd}\]
+    }
+    Для объекта $B \in \mathscr{B}: (\cat{H}\eta)_B = \cat{H}(\eta_B): \cat{H}(\cat{F}(B)) \map \cat{H}(\cat{G}(B))$.
+
+    Если же функтор определён так $\cat{H}: \catA \map \catB$, то можно задать естественное преобразование $\eta \cat{H}: \cat{F} \circ \cat{F} \map \cat{G} \circ \cat{H}$.
+    \excersice{
+    Задать $\eta\cat{H}$.
+    }
+    Рассмотрим категорию конечномерных векторных пространств $\cat{Vect}_F$ и категорию матриц $\cat{M}_F$.
+    Идеологически правильнее рассматривать $\Obj \cat{M}_F$ не как натуральные числа, а как пространства столбцов.
+
+    Определим \begin{align*}\cat{F}: \cat{M}_F &\map \cat{Vect}_F\\ \N = \Obj\cat{M}_F \ni A & \mapsto F^n \\ \Mor(n, m) \ni A &\mapsto \text{оператор умножения на матрицу $A$}\end{align*}
+
+    Далее чтобы доказать эквивалентность категорий, то надо либо уметь пользоваться аксиомой выбора для классов, либо каким-то образом сделать категорию $\cat{Vect}_F$ малой (которая пока не является множеством, но её объекты при фиксированном поле имеют фиксированную мощность, то есть не очень большие)
+    Отображение в обратную сторону устроим так.
+    В каждом векторном пространстве $V$ выберем базис $\angles{v_1, \dots, v_n}$, причём в каждом $F^n$ --- выберем стандартный базис, и обратное отображение устроим так:
+    \begin{align*}\cat{G}: \cat{Vect}_F &\map \cat{M}_F \\ \cat{G}(V) &= \dim V \\ \cat{G}(\alpha) &= \text{матрица $\alpha$ в выбранном базисе}\end{align*}
+    Композиция $\cat{G} \circ \cat{F}$ тождественна, а композиция $\cat{F} \circ \cat{G}$ не инъективна на объектах, но, тем не менее, естественно изоморфна тождественному.
+    \note{
+    Ещё одним способом не пользоваться аксиомой выбора будет рассматривать вместо $\cat{Vect}_F$ категорию базированных векторных пространств --- векторных пространств, в которых заранее выбран базис.
+    }
+    \proposal{
+    Рассмотрим функтор $\cat{F}: \catB \map \catC$. $\cat{F}$ является эквивалентностью категорий $\iff \cat{F}$ --- строгий, полный, неизоморфные объекты отображаются в неизоморфные, и, наконец, \textit{квазисюръективный}: последнее значит $\forall C \in \catC: \exists B \in \catB: \cat{F}(B) \cong C$.
+    }
+    \section{(Ко)эквалайзеры и (ко)пределы}
+    Пусть $\phi, \psi: A \map B$
+    \definition[Эквалайзер или уравнитель морфизмов $\phi, \psi$]{
+        Морфизм $\eps: E \map A$, уравнивающий $\phi$ и $\psi$: $\phi\eps = \psi\eps$, причём такой, что $\forall \eps': E' \map A$ (такого, что $\phi\eps' = \psi\eps'$) $\exists! \alpha: E' \map E$, такая, что диаграмма коммутативна
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJFJyJdLFsxLDIsIlxccGhpIiwwLHsib2Zmc2V0IjotMX1dLFsxLDIsIlxccHNpIiwyLHsib2Zmc2V0IjoxfV0sWzAsMSwiXFxlcHMiXSxbMywxLCJcXGVwcyciLDJdLFszLDAsIlxcYWxwaGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              E \& A \& B \\
+              {E'}
+              \arrow["\phi", shift left, from=1-2, to=1-3]
+              \arrow["\psi"', shift right, from=1-2, to=1-3]
+              \arrow["\eps", from=1-1, to=1-2]
+              \arrow["{\eps'}"', from=2-1, to=1-2]
+              \arrow["\alpha", dashed, from=2-1, to=1-1]
+        \end{tikzcd}\]
+    }
+    В $\cat{Set}$ эквалайзер $\phi, \psi: A \map B$ --- это вложение $E \hookrightarrow A$, где $E = \defset{a \in A}{\phi(a) = \psi(a)}$.
+
+    В категории $\catD$, такой, что $\Obj\catD = \defset{(E, \eps)}{\phi\eps = \psi\eps}$, и $\Mor_\catD((E', \eps'), (E, \eps)) = \defset{\alpha: E' \map E}{ \eps' = \eps\alpha}$ эквалайзер --- финальный объект в $\catD(\phi, \psi)$.
+
+    Для определения коэквалайзера надо развернуть все стрелки:
+
+    Пусть $A \leftarrow B: \phi, \psi$.
+    \definition[Коэквалайзер]{
+        Морфизм $\eps: A \map E$, уравнивающий $\phi$ и $\psi$: $\eps\phi = \eps\psi$, причём такой, что $\forall \eps': A \map E'$ (такого, что $\eps'\phi = \eps'\psi$) $\exists! \alpha: E \map E'$, такая, что диаграмма коммутативна
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJFJyJdLFsxLDIsIlxccGhpIiwwLHsib2Zmc2V0IjotMSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwyLCJcXHBzaSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwzLCJcXGFscGhhIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMCwiXFxlcHMiLDJdLFsxLDMsIlxcZXBzJyJdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              E \& A \& B \\
+              {E'}
+              \arrow["\phi", shift left, tail reversed, no head, from=1-2, to=1-3]
+              \arrow["\psi"', shift right, tail reversed, no head, from=1-2, to=1-3]
+              \arrow["\alpha"', dashed, from=1-1, to=2-1]
+              \arrow["\eps"', from=1-2, to=1-1]
+              \arrow["{\eps'}", from=1-2, to=2-1]
+        \end{tikzcd}\]
+    }
+    В $\cat{Set}$ коэквалайзер $\phi, \psi: B \map A$ --- это факторизация $\eps: A \map A/_\sim$, где $\sim$ --- отношение эквивалентности, порождённое $\phi(b) \sim \psi(b)$.
+
+    В $\cat{Group}$ коэквалайзер $\phi, \psi: G \map H$ --- это факторизация по нормальному замыканию $\{\phi(g)\psi(g^{-1})\}$.
+
+    \proposal{
+    Эквалайзеры --- мономорфизмы, коэквалайзеры --- эпиморфизмы.
+    \provehere{
+    Докажем, что эквалайзер --- мономорфизм, второе утверждение следует из двойственности.
+
+    Рассмотрим $\eps$ --- эквалайзер $\phi$ и $\psi$, и пусть $\alpha, \beta: X \map E$ --- два отображения.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJYIl0sWzEsMiwiXFxwaGkiLDAseyJvZmZzZXQiOi0xfV0sWzEsMiwiXFxwc2kiLDIseyJvZmZzZXQiOjF9XSxbMCwxLCJcXGVwcyJdLFszLDAsIlxcYWxwaGEiLDAseyJvZmZzZXQiOi0xfV0sWzMsMSwiXFx0aGV0YSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcYmV0YSIsMix7Im9mZnNldCI6MX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              E \& A \& B \\
+              X
+              \arrow["\phi", shift left, from=1-2, to=1-3]
+              \arrow["\psi"', shift right, from=1-2, to=1-3]
+              \arrow["\eps", from=1-1, to=1-2]
+              \arrow["\alpha", shift left, from=2-1, to=1-1]
+              \arrow["\theta"', dashed, from=2-1, to=1-2]
+              \arrow["\beta"', shift right, from=2-1, to=1-1]
+        \end{tikzcd}\]
+    Тогда $\phi\theta = \phi\eps\alpha$ и $\psi\theta = \psi\eps\alpha$, то есть $\theta$ --- тоже эквалайзер.
+
+    Но по определению эквалайзера существует и единственная стрелка $X \map E$, значит, $\alpha = \beta$, то есть $\eps$ --- мономорфизм.
+    }
+    }
+    \proposal{
+    Эквалайзер, являющийся эпиморфизмом --- изоморфизм.
+    \provehere{
+        Пусть $\eps$ --- эквалайзер.
+        Так как $\phi\eps = \psi\eps$, и $\eps$ --- эпиморфизм, то $\phi = \psi$. Но тогда $\id: A \map A$ --- тоже эквалайзер, и два эквалайзера отличаются на изоморфизм
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJBIl0sWzEsMiwiXFxwaGkiLDAseyJvZmZzZXQiOi0xfV0sWzEsMiwiXFxwc2kiLDIseyJvZmZzZXQiOjF9XSxbMCwxLCJcXGVwcyJdLFszLDEsIlxcaWQiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCJcXGVwcyIsMCx7Im9mZnNldCI6LTF9XSxbMCwzLCJcXGV4aXN0cyEiLDAseyJvZmZzZXQiOi0xLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              E \& A \& B \\
+              A
+              \arrow["\phi", shift left, from=1-2, to=1-3]
+              \arrow["\psi"', shift right, from=1-2, to=1-3]
+              \arrow["\eps", from=1-1, to=1-2]
+              \arrow["\id"', dashed, from=2-1, to=1-2]
+              \arrow["\eps", shift left, from=2-1, to=1-1]
+              \arrow["{\exists!}", shift left, dotted, from=1-1, to=2-1]
+        \end{tikzcd}\]
+    }
+    }
+    \section{Произведения и копроизведения}
+    Зафиксируем $B, C \in \mathscr{C}$.
+    \definition[Произведение $B$ и $C$]{
+    Финальный объект в категории $\begin{tikzcd}[ampersand replacement=\&]
+          A \& B \\
+          C
+          \arrow[from=1-1, to=2-1]
+          \arrow[from=1-1, to=1-2]
+    \end{tikzcd}$. Произведение обозначается $A \times B$.
+    Морфизмы в данной категории --- это стрелка $\phi$:
+    % https://q.uiver.app/#q=WzAsNCxbMSwxLCJBIl0sWzIsMSwiQiJdLFsxLDIsIkMiXSxbMCwwLCJBJyJdLFswLDIsIlxcZ2FtbWEiXSxbMCwxLCJcXGJldGEiLDJdLFszLDAsIlxccGhpIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzMsMSwiXFxiZXRhJyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDIsIlxcZ2FtbWEnIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {A'} \\
+    \& A \& B \\
+    \& C
+    \arrow["\gamma", from=2-2, to=3-2]
+    \arrow["\beta"', from=2-2, to=2-3]
+    \arrow["\phi"{description}, dotted, from=1-1, to=2-2]
+    \arrow["{\beta'}", dashed, from=1-1, to=2-3]
+    \arrow["{\gamma'}"', dashed, from=1-1, to=3-2]
+    \end{tikzcd}\]
+    }
+    Иными словами, произведение $B \times C$ --- это объект $A$ и морфизмы $\beta: A \map B, \gamma: A \map C$, такой, что $\forall A' \in \Obj \catC, \beta': A' \map B, \gamma': A' \map C$ $\exists! \phi: A' \map A: \beta\phi = \beta'$ и $\gamma\phi = \gamma'$.
+
+    Практически всегда в конкретных категориях произведение --- декартово произведение, отображение --- проекция.
+    Фактически, элементу $a \in A$ сопоставляется пара $(\beta(a), \gamma(a)) \in B \times C$.
+
+    Иными словами, $\cat{F}(A) \coloneqq \Mor(A, B) \times \Mor(A, C) \cong \Mor(\_, B \times C)$ --- естественный изоморфизм функторов.
+
+    Копроизведение --- двойственный объект к произведению.
+    \examples[Копроизведение]{
+    \item В $\cat{Group}$ копроизведение --- это свободное произведение групп.
+    \item В $\cat{CRing}$ копроизведение --- это тензорное произведение над $\Z$.
+    Умножение на разложимых тензорах задано в виде $(b \otimes c)(b' \otimes c') = bb' \otimes cc'$.
+    }
 \end{document}
