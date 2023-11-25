@@ -1891,10 +1891,10 @@
     }
     \fact{
         Пусть $g \in L^1(\R^n)$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p \le \infty$:
-    \[\|f * g - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y \d x\]
+    \[\|f * g - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y\cdot|g(x)| \d x\]
     \provehere{
     $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
-    Возьмём модуль, возведём в степень $p$, и проинтегриурем:
+    Возьмём модуль, возведём в степень $p$, и проинтегрируем:
     \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x \le \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)||g(y)|\d y\right)^p \d x\]
     Далее вводим меру $\nu(e) = \int\limits_{e}|g(y)|\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$.
         \note{
@@ -1949,7 +1949,7 @@
 
     Для первого слагаемого применим непрерывность сдвигов в $L^p$: $\forall \eps > 0: \exists \delta: f \in L^p(\R^n), 1 \le p < \infty$ при $|y| \le \delta \then \int\limits_{\R^n}|f(x - y) - f(x)|^p \d x < \eps$. Значит, оно тоже маленькое.
 
-    Ранвомерную сходимость проверим в следующий раз.
+    Равномерную сходимость проверим в следующий раз.
     }
     }
     \fact{
