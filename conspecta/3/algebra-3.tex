@@ -694,30 +694,31 @@
         \end{tikzcd}\]
     }
     Иными словами, это финальный объект в категории квадратов с фиксированными стрелками $\beta: B \map D, \gamma: C \map D$.
+    Неформально (при зажёванных морфизмах) пишут $A = B \times_D C$.
 
-    Объект $A$ (вместе с этими стрелками) --- \textit{pullback} диаграммы $\begin{tikzcd}[ampersand replacement=\&,column sep=small]B \& D \& C\arrow[from=1-1, to=1-2]\arrow[from=1-3, to=1-2]\end{tikzcd}$.
+    Объект $A$ (вместе со стрелками $A \map B, A \map C$) --- \textit{pullback} диаграммы $\begin{tikzcd}[ampersand replacement=\&,cramped]C \& D \& B\arrow["\gamma", from=1-1, to=1-2]\arrow["\beta"', from=1-3, to=1-2]\end{tikzcd}$.
 
     \proposal{
         Пусть в категории $\catC$ существуют все произведения и эквалайзеры (или как минимум те, о которых речь ниже).
 
-        Тогда $A$ --- pullback $\begin{tikzcd}[ampersand replacement=\&,column sep=small]B \& D \& C\arrow[from=1-1, to=1-2]\arrow[from=1-3, to=1-2]\end{tikzcd}$ $\iff A$ --- эквалайзер отображений
-    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJCXFx0aW1lcyBDIl0sWzEsMCwiQiJdLFsyLDEsIkQiXSxbMSwyLCJDIl0sWzAsMywiXFxwaV9DIiwyXSxbMCwxLCJcXHBpX0IiXSxbMSwyLCJcXGJldGEiXSxbMywyLCJcXGdhbW1hIiwyXSxbMCwyLCIiLDEseyJjdXJ2ZSI6LTJ9XSxbMCwyLCIiLDEseyJjdXJ2ZSI6Mn1dXQ==
+        Тогда $A$ --- pullback $\begin{tikzcd}[ampersand replacement=\&,cramped]C \& D \& B\arrow["\gamma", from=1-1, to=1-2]\arrow["\beta"', from=1-3, to=1-2]\end{tikzcd}$ $\iff A$ --- эквалайзер пунктирных отображений.
+    % https://q.uiver.app/#q=WzAsNixbMCwxLCJCXFx0aW1lcyBDIl0sWzEsMCwiQiJdLFsyLDEsIkQiXSxbMCwyLCJCIFxcdGltZXMgQyJdLFsyLDIsIkQiXSxbMSwzLCJDIl0sWzAsMSwiXFxwaV9CIl0sWzEsMiwiXFxiZXRhIl0sWzAsMiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNSwiXFxwaV9DIiwyXSxbNSw0LCJcXGdhbW1hIiwyXSxbMyw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&,row sep=tiny]
               \& B \\
               {B\times C} \&\& D \\
+              {B \times C} \&\& D \\
               \& C
-              \arrow["{\pi_C}"', from=2-1, to=3-2]
               \arrow["{\pi_B}", from=2-1, to=1-2]
               \arrow["\beta", from=1-2, to=2-3]
-              \arrow["\gamma"', from=3-2, to=2-3]
-              \arrow[curve={height=-12pt}, from=2-1, to=2-3]
-              \arrow[curve={height=12pt}, from=2-1, to=2-3]
+              \arrow[dashed, from=2-1, to=2-3]
+              \arrow["{\pi_C}"', from=3-1, to=4-2]
+              \arrow["\gamma"', from=4-2, to=3-3]
+              \arrow[dashed, from=3-1, to=3-3]
         \end{tikzcd}\]
         \provehere{
             Pullback --- финальный объект в некоторой категории, поэтому единственность доказывать не надо.
-
-            Рассмотрим квадрат $\begin{tikzcd}[ampersand replacement=\&]A' \& B \\C \& D\arrow[from=1-1, to=2-1]\arrow[from=1-1, to=1-2]\arrow["\beta", from=1-2, to=2-2]\arrow["\gamma", from=2-1, to=2-2]\end{tikzcd}$: $\exists! A' \map A$.
-        Тогда по универсальному свойству произведения % https://q.uiver.app/#q=WzAsNCxbMiwxLCJCIFxcdGltZXMgQyJdLFszLDAsIkIiXSxbMywyLCJDIl0sWzAsMSwiQSciXSxbMCwxLCJcXHBpX0IiLDJdLFswLDIsIlxccGlfQyJdLFszLDFdLFszLDJdLFszLDAsIlxcZXhpc3RzIVxccGhpIiwxLHsibGFiZWxfcG9zaXRpb24iOjcwfV1d
+            Рассмотрим квадрат $\begin{tikzcd}[ampersand replacement=\&]A' \& B \\C \& D\arrow[from=1-1, to=2-1]\arrow[from=1-1, to=1-2]\arrow["\beta", from=1-2, to=2-2]\arrow["\gamma", from=2-1, to=2-2]\end{tikzcd}$.
+        По универсальному свойству произведения % https://q.uiver.app/#q=WzAsNCxbMiwxLCJCIFxcdGltZXMgQyJdLFszLDAsIkIiXSxbMywyLCJDIl0sWzAsMSwiQSciXSxbMCwxLCJcXHBpX0IiLDJdLFswLDIsIlxccGlfQyJdLFszLDFdLFszLDJdLFszLDAsIlxcZXhpc3RzIVxccGhpIiwxLHsibGFiZWxfcG9zaXRpb24iOjcwLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \&\&\& B \\
                   {A'} \&\& {B \times C} \\
@@ -726,26 +727,34 @@
                   \arrow["{\pi_C}", from=2-3, to=3-4]
                   \arrow[from=2-1, to=1-4]
                   \arrow[from=2-1, to=3-4]
-                  \arrow["{\exists!\phi}"{description, pos=0.7}, from=2-1, to=2-3]
+                  \arrow["{\exists!\phi}"{description, pos=0.7}, dashed, from=2-1, to=2-3]
             \end{tikzcd}\]
         Таким образом, имеется две композиции и уравнивающая стрелка:
-        % https://q.uiver.app/#q=WzAsMyxbMCwwLCJBJyJdLFsxLDAsIkIgXFx0aW1lcyBDIl0sWzIsMCwiRCJdLFsxLDIsIlxcYmV0YVxccGlfQiIsMCx7Im9mZnNldCI6LTF9XSxbMSwyLCJcXGdhbW1hIFxccGlfQyIsMix7Im9mZnNldCI6MX1dLFswLDEsIlxccGhpIiwyXV0=
+        % https://q.uiver.app/#q=WzAsMyxbMCwwLCJBJyJdLFsxLDAsIkIgXFx0aW1lcyBDIl0sWzIsMCwiRCJdLFsxLDIsIlxcYmV0YVxccGlfQiIsMCx7Im9mZnNldCI6LTF9XSxbMSwyLCJcXGdhbW1hIFxccGlfQyIsMix7Im9mZnNldCI6MX1dLFswLDEsIlxccGhpIl1d
             \[\begin{tikzcd}[ampersand replacement=\&]
             {A'} \& {B \times C} \& D
             \arrow["{\beta\pi_B}", shift left, from=1-2, to=1-3]
             \arrow["{\gamma \pi_C}"', shift right, from=1-2, to=1-3]
-            \arrow["\phi"', from=1-1, to=1-2]
+            \arrow["\phi", from=1-1, to=1-2]
             \end{tikzcd}\]
-        Нетрудно видеть, что $\beta \pi_B \phi = \gamma \pi_C \phi$. Но тогда уравнивающий морфизм $\phi$ пропускается через эквалайзер.
+        Нетрудно видеть, что действительно $\beta \pi_B \phi = \gamma \pi_C \phi$. Но тогда уравнивающий морфизм $\phi$ пропускается через эквалайзер.
         }
     }
-    Неформально (при зажёванных морфизмах) пишут $A = B \times_D C$.
+
     \examples{
     \item Практически во всех конкретных категориях $B \times C$ --- просто декартово произведение.
 
         Например, рассмотрим $\cat{Set}$.
         Тогда pullback --- это эквалайзер двух отображений \begin{align*}B \times C &\map D \\ (b, c)& \mapsto \beta(b) \\ (b, c) & \mapsto \gamma(c)\end{align*}
-    Таким образом, это вложение $\defset{(b, c)}{\beta(b) = \gamma(c)}$.
+    Таким образом, pullback $\beta$ и $\gamma$ --- это стрелки % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXGRlZnNldHsoYiwgYyl9e1xcYmV0YShiKSA9IFxcZ2FtbWEoYyl9Il0sWzEsMSwiQiBcXHRpbWVzIEMiXSxbMiwwLCJCIl0sWzIsMiwiQyJdLFswLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMiwiXFxwaV9CIiwyXSxbMSwzLCJcXHBpX0MiXV0=
+        $\begin{tikzcd}[ampersand replacement=\&,cramped,row sep=tiny]
+              \&\& B \\
+              {\defset{(b, c)}{\beta(b) = \gamma(c)}} \& {B \times C} \\
+              \&\& C
+              \arrow[hook, from=2-1, to=2-2]
+              \arrow["{\pi_B}"', from=2-2, to=1-3]
+              \arrow["{\pi_C}", from=2-2, to=3-3]
+        \end{tikzcd}$
     \item В $\cat{Ring}$ можно взять \textit{удвоение кольца $R$ вдоль идеала $I$}.
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJSIFxcbHRpbWVzIEkiXSxbMSwwLCJSIl0sWzAsMSwiUiJdLFsxLDEsIlIvSSJdLFswLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDMsIlxccGkiXSxbMCwxLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJcXHBpIiwyXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -757,7 +766,7 @@
         \arrow["\pi"', from=1-2, to=2-2]
         \end{tikzcd}\]
     $R \ltimes I = \defset{(a, b)}{a, b \in R, a \equiv b \pmod{I}} = \defset{(a, a + i)}{a \in R, i \in I}$.
-        Таким образом, по универсальному свойству pullback'а, для сечения (?) $R \map R \ltimes I$ существуют две ретракции
+        Таким образом, по универсальному свойству pullback'а, для сечения $R \map R \ltimes I$ существуют две ретракции
         % https://q.uiver.app/#q=WzAsNSxbMSwxLCJSIFxcbHRpbWVzIEkiXSxbMiwxLCJSIl0sWzEsMiwiUiJdLFsyLDIsIlIvSSJdLFswLDAsIlIiXSxbMCwyXSxbMiwzLCJcXHBpIl0sWzAsMV0sWzEsMywiXFxwaSIsMl0sWzQsMCwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiXFxpZCJdLFs0LDIsIlxcaWQiLDJdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               R \\
@@ -771,7 +780,7 @@
               \arrow["\id", from=1-1, to=2-3]
               \arrow["\id"', from=1-1, to=3-2]
         \end{tikzcd}\]
-    Теперь, имея композицию
+    Теперь, у нас имеется композиция в категории $\cat{CRing}$.
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJSIl0sWzEsMCwiUiBcXGx0aW1lcyBJIl0sWzIsMCwiUiJdLFswLDFdLFsxLDJdLFswLDIsIlxcaWQiLDAseyJjdXJ2ZSI6LTJ9XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               R \& {R \ltimes I} \& R
@@ -779,15 +788,17 @@
               \arrow[from=1-2, to=1-3]
               \arrow["\id", curve={height=-12pt}, from=1-1, to=1-3]
         \end{tikzcd}\]
-    Применяя функтор $\Fc: \cat{Ring} \map \cat{Group}$, получим
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXEZjKFIpIl0sWzEsMCwiXFxGYyhSIFxcbHRpbWVzIEkpIl0sWzIsMCwiXFxGYyhSKSJdLFswLDFdLFsxLDJdLFswLDIsIlxcaWQiLDAseyJjdXJ2ZSI6LTJ9XV0=
+    Применяя какой-нибудь функтор $\Fc: \cat{Ring} \map \cat{Group}$ (например, $GL_n$), получим
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXEZjKFIpIl0sWzEsMCwiXFxGYyhSIFxcbHRpbWVzIEkpIl0sWzIsMCwiXFxGYyhSKSJdLFswLDEsIlxcYWxwaGEiLDJdLFsxLDIsIlxcYmV0YSIsMl0sWzAsMiwiXFxpZCIsMCx7ImN1cnZlIjotMn1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
         {\Fc(R)} \& {\Fc(R \ltimes I)} \& {\Fc(R)}
-        \arrow[from=1-1, to=1-2]
-        \arrow[from=1-2, to=1-3]
+        \arrow["\alpha"', from=1-1, to=1-2]
+        \arrow["\beta"', from=1-2, to=1-3]
         \arrow["\id", curve={height=-12pt}, from=1-1, to=1-3]
         \end{tikzcd}\]
-    Средняя группа --- полупрямое произведение ядра и образа смежных стрелок.
+    Средняя группа --- полупрямое произведение ядра $\beta$ и образа $\alpha$.
+
+        В таком стиле определяются некоторые базовые объекты K-теории.
     \item Точно так же можно удваивать группу вдоль нормальной подгруппы, результат будет изоморфен полупрямому произведению.
         \excersice{Проверить самостоятельно.} % exercise
     \item Пусть в $\catC$ имеется инициальный объект $*$.
@@ -803,7 +814,7 @@
         \end{tikzcd}\]
     Но в $\cat{CRing}$ пулбэк этой диаграммы --- что-то странное.
 
-    Поэтому можно считать $*$ не инициальным, а нулевым объектом.
+    Поэтому можно считать $*$ не инициальным, а нулевым объектом --- если нулевой объект существует, то так определённое ядро будет совпадать со стандартным представлением о нём.
     }
     \definition[Pushout (пушаут)]{
     Двойственный объект к pullback'у.
@@ -831,13 +842,13 @@
           \arrow["\forall", dashed, from=1-2, to=3-3]
           \arrow["\forall"', dashed, from=2-1, to=3-3]
     \end{tikzcd}\]
-    Если $D$ --- инициальный объект, то пушаут --- просто копроизведение (и если $D$ ---- финальный, то pullback --- произведение).
+    Если $D$ --- инициальный объект, то пушаут --- просто копроизведение (и если $D$ --- финальный, то pullback --- произведение).
 
-    Сформулируем двойственное утверждение к доказанному утверждению про пулбэки.
+    Сформулируем двойственное к доказанному утверждению про пулбэки.
     \proposal{
     Пусть в категории $\catC$ существуют все копроизведения и коэквалайзеры (или как минимум те, о которых речь ниже).
 
-    Тогда $A$ --- pushout $\begin{tikzcd}[ampersand replacement=\&,column sep=small]B \& D \& C\arrow[from=1-1, to=1-2]\arrow[from=1-3, to=1-2]\end{tikzcd}$ $\iff A$ --- коэквалайзер отображений
+    Тогда $A$ --- pushout $\begin{tikzcd}[ampersand replacement=\&,cramped]B \& D \& C\arrow[from=1-1, to=1-2]\arrow[from=1-3, to=1-2]\end{tikzcd}$ $\iff A$ --- коэквалайзер отображений
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJEIl0sWzEsMCwiQiJdLFsyLDEsIkIgXFxzcWN1cCBDIl0sWzEsMiwiQyJdLFswLDMsIlxcZ2FtbWEiLDJdLFswLDEsIlxcYmV0YSJdLFsxLDIsImlfQiJdLFszLDIsImlfQyIsMl0sWzAsMiwiIiwxLHsiY3VydmUiOi0yfV0sWzAsMiwiIiwxLHsiY3VydmUiOjJ9XV0=
         \[\begin{tikzcd}[ampersand replacement=\&,row sep=tiny]
               \& B \\
@@ -872,7 +883,7 @@
         Но если единицы нет, то пушаут построить не получится.
         Аналогично, в $\cat{CRing}$ не существует пулбэков.
 
-    \item В $\cat{Group}$ pushout --- \textit{амальгамированное свободное произведение} (такой термин употребляю, если $A \le B, C$, то есть $\beta, \gamma$ --- моно).
+    \item В $\cat{Group}$ pushout --- \textit{амальгамированное свободное произведение} (такой термин употребляют, если $A \le B, C$, то есть $\beta, \gamma$ --- моно).
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkMiXSxbMSwxLCIoQiAqIEMpL19OIl0sWzAsMSwiXFxiZXRhIl0sWzEsM10sWzAsMiwiXFxnYW1tYSIsMl0sWzIsM11d
         \[\begin{tikzcd}[ampersand replacement=\&]
               A \& B \\
@@ -921,14 +932,14 @@
               \arrow["\phi", from=1-1, to=2-1]
               \arrow["{\phi'}", from=1-1, to=2-2]
         \end{tikzcd}}$.
+
     По-английски эта категория называется comma-category, категория запятой.
 
-    Рассмотрим забывающий функтор $\cat{F}: \cat{Group} \map \cat{Set}$, и зафиксируем $X \in \cat{Set}$.
+Заинтересуемся инициальными объектами в категории $X \downarrow \cat{F}$.
+    \examples{
+        \item Пусть $\cat{F}: \cat{Group} \map \cat{Set}$ --- забывающий функтор, и зафиксируем $X \in \cat{Set}$.
 
-    \problem{
-        Тогда инициальный объект в $(X \downarrow \cat{F})$ --- это что?
-    \provehere[Решение]{
-        Это свободная группа $F_X$ вместе с вложением $X \hookrightarrow \cat{F}(F_X)$.
+        Тогда инициальный объект -- это свободная группа $F_X$ вместе с вложением $X \hookrightarrow \cat{F}(F_X)$.
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXR7Rn0oRl9YKSJdLFsxLDEsIlxcY2F0e0Z9KEcpIl0sWzAsMV0sWzAsMl0sWzEsMl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               X \\
@@ -937,10 +948,7 @@
               \arrow[from=1-1, to=2-2]
               \arrow[from=2-1, to=2-2]
         \end{tikzcd}\]
-    }
-    }
-    \example{
-    Возьмём функтор вложения $\cat{F}: \cat{Ab} \map \cat{Group}$.
+    \item    Возьмём функтор вложения $\cat{F}: \cat{Ab} \map \cat{Group}$.
     Пусть $G \in \cat{Group}$. Тогда инициальный объект в $(G \downarrow \cat{F})$ --- это такой объект $A$, что из него есть единственный морфизм в другую абелеву группу:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJHIl0sWzAsMSwiR157XFxhYn0iXSxbMSwxLCJBIl0sWzAsMl0sWzAsMV0sWzEsMiwiXFxleGlzdHMhIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -960,7 +968,7 @@
     \end{tikzcd}$.
     \definition[$\cat{G}$ и $\cat{F}$ сопряжены]{
     $\forall B \in \catB, C \in \catC$: существует и единственна биекция между множествами морфизмов $\Mor_\catC(C, \cat{F}(B))$ и $\Mor_\catB(\cat{G}(C), B)$, причём биекция --- естественна и по $B$, и по $C$.
-    То есть имеется естественная биекция между фукнторами $\cat{C}^{\text{op}} \times \cat{B} \map \cat{Set}$.
+    То есть имеется естественная биекция между функторами $\cat{C}^{\text{op}} \times \cat{B} \map \cat{Set}$.
     $\cat{F}$ называется правым сопряжённым, $\cat{G}$ --- левым сопряжённым.
     }
     Далее мы проверим, что инициальные объекты в категории $X \downarrow \cat{F}$ имеют самое непосредственное отношение к сопряжённым функторам.
