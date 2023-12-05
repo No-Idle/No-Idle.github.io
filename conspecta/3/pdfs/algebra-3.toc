@@ -84,3 +84,5 @@
 \contentsline {section}{\numberline {4.5}Произведения и копроизведения}{75}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Универсальные и коуниверсальные квадраты}{76}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Сопряжённые функторы}{79}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Левые сопряжённые к функторам типа забывающих}{80}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Левые сопряжённые к вложениям}{81}{subsection.4.7.2}%

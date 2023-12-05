@@ -960,7 +960,8 @@
         \end{tikzcd}\]
     Универсальное функтор $\cat{Group} \map \cat{Ab}$ --- это абелианизация.
     }
-    Пусть $\catB, \catC$ --- категории. Рассмотрим два функтора % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXGNhdHtCfSJdLFsxLDAsIlxcY2F0e0N9Il0sWzAsMSwiXFxjYXR7Rn0iLDAseyJvZmZzZXQiOi0xfV0sWzEsMCwiXFxjYXR7R30iLDAseyJvZmZzZXQiOi0xfV1d
+    Пусть $\catB, \catC$ --- категории.
+    Рассмотрим два функтора % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXGNhdHtCfSJdLFsxLDAsIlxcY2F0e0N9Il0sWzAsMSwiXFxjYXR7Rn0iLDAseyJvZmZzZXQiOi0xfV0sWzEsMCwiXFxjYXR7R30iLDAseyJvZmZzZXQiOi0xfV1d
     $\begin{tikzcd}[ampersand replacement=\&]
     {\cat{B}} \& {\cat{C}}
     \arrow["{\cat{F}}", shift left, from=1-1, to=1-2]
@@ -972,4 +973,74 @@
     $\cat{F}$ называется правым сопряжённым, $\cat{G}$ --- левым сопряжённым.
     }
     Далее мы проверим, что инициальные объекты в категории $X \downarrow \cat{F}$ имеют самое непосредственное отношение к сопряжённым функторам.
+    \newlection{30 ноября 2023 г.}
+    //todo
+    \newlection{5 декабря 2023 г.}
+    \subsection{Левые сопряжённые к функторам типа забывающих}
+    \bullets{
+    \item Свободные объекты
+    \bullets{
+        \item Левый сопряжённый к забывающему $\cat{Group} \map \cat{Set}$ --- это свободная группа на данном множестве.
+        \item Левый сопряжённый к забывающему $\cat{Mon} \map \cat{Set}$ --- это свободный моноид на данном множестве, слова над данным алфавитом.
+        \item Левый сопряжённый к забывающему $R\text{-}\cat{Alg} \map \cat{Set}$ --- это свободная алгебра на данном множестве ($R\text{-}\cat{Alg}$ --- необязательно коммутативные алгебры с единицей).
+
+        Здесь и ниже $R$ --- коммутативное кольцо с единицей.}
+        \item Левый сопряжённый к забывающему $R\text{-}\cat{Alg} \map \cat{Mon}$ --- это полугрупповая алгебра $M \mapsto R[M]$.
+        Моноид $M$ вкладывается в мультипликативный моноид $R[M]$
+    \item Левый сопряжённый к функтору $*: \cat{Ring} \map \cat{Group}$, сопоставляющему кольцу группу его обратимых элементов --- это $G \mapsto \Z[G]$, групповая алгебра.
+    \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{Alg} \map \Lmod{R}$ --- это $T$, групповая алгебра.
+    \item Левый сопряжённый к забывающему функтору $\cat{Commutative}~R\text{-}\cat{Alg} \map \Lmod{R}$ --- это $S$, симметрическая алгебра.
+    \item Внешняя степень $\bigwedge$ --- это левый сопряжённый к функтору из $\Z$-градуированных $R$-алгебр в $R$-модули, сопоставляющий $A_0 \oplus A_1 \oplus \dots \mapsto A_1$.
+    \item Пусть $\phi: R \map A$.
+        Тогда $\phi^\#: \Lmod{A} \map \Lmod{R}$ (что является забывающим функтором, если $\phi$ инъективно)--- левый сопряжённый к $\phi_\#: \Lmod{R} \map \Lmod{A}, \phi_\#(M) = A \otimes_R M$.
+    \item Рассмотрим функтор $\cat{Cat} \map \cat{Graph}$, забывающий про композицию морфизмов.
+        Левый сопряжённый к данному функтору --- категория путей в графе.
+    \item \up \excersice{
+        Какие левый и правый сопряжённый к забывающему $G\text{-}\cat{Set} \map \cat{Set}$?
+        }
+    }
+    \subsection{Левые сопряжённые к вложениям}
+    \bullets{
+    \item Левый сопряжённый к функтору вложения $\cat{Ab} \map \cat{Group}$ --- это абелианизация.
+        % Единица --- не мономорфизм?
+        Правого сопряжённого, наверно, нет --- внутри группы нет никакой абелевой подгруппы, сохраняющейся при морфизмах.
+    \item Левый сопряжённый к функтору вложения $\cat{CRing} \map \cat{Ring}$ --- это $R \mapsto R/[R, R]$, где $[R, R]$ --- двусторонний идеал, порождённый аддитивными коммутаторами.
+    \item Левый сопряжённый к функтору вложения $\phi^\#: R\text{-}\cat{Alg} \map \cat{Ring}$ --- это $\phi_\#$, если $\phi: \Z \map R$ --- гомоморфизм колец с единицей.
+    \item Левый сопряжённый к функтору вложения $\cat{Ring} \map \cat{Rng}$ --- это функтор $\cat{Rng} \map \cat{Ring}, I \mapsto \Z \oplus I$ (в результате $I$ стало идеалом). Умножение определено понятным образом: $(n + i)(m + j) = nm + mi + nj + ij$, здесь $nm \in \Z$ и $mi, nj$ --- умножение на целые, полученное из сложения в $I$.
+    \item Рассмотрим функтор вложения $\cat{F}: \cat{Group} \map \cat{Mon}$.
+    Какие к нему сопряжённые? Так как я ещё не разобрался в предыдущей лекции, то дальше не особо понимаю, что происходит.
+
+        Если $\cat{G}$ --- правый сопряжённый к $\cat{F}$, то коединица сопряжения $\cat{F}\cat{G} \map \id$.
+        \[\Mor(\cat{F}(X), Y) \map \Mor(X, \cat{G(Y)})\]
+
+        $\cat{G}(M) = M^*$ --- сопоставляет моноиду группу его обратимых элементов.
+
+        Если $\cat{G}$ --- левый сопряжённый к $\cat{F}$, то единица сопряжения $\id \map \cat{F}\cat{G}$.
+    Надо по моноиду построить группу $M \mapsto \cat{G}(M)$, такую, что $M \hookrightarrow \cat{G}(M)$.
+
+    Есть две конструкции построить по моноиду универсальную группу.
+    \bullets{
+    \item Пусть $N$ --- наименьшая нормальная подгруппа в $F_M$, содержащая все элементы вида $xyz^{-1}$, где $z = xy$ в $M$.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJNIl0sWzEsMCwiRl9NIl0sWzIsMCwiRl9NL04iXSxbMCwxLCJcXHRleHR70LIgfVxcY2F0e1NldH0iLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFswLDIsIlxcdGV4dHvQsiB9XFxjYXR7TW9ufSIsMix7ImN1cnZlIjo0fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              M \& {F_M} \& {F_M/N}
+              \arrow["{\text{в }\cat{Set}}", hook, from=1-1, to=1-2]
+              \arrow[two heads, from=1-2, to=1-3]
+              \arrow["{\text{в }\cat{Mon}}"', curve={height=24pt}, from=1-1, to=1-3]
+        \end{tikzcd}\]
+\item В коммутативном случае ($(M, +)$ --- абелев моноид) группу можно составить из формальных разностей $\defset{[A] - [B]}{A, B \in M}$, где $[A]$ --- класс эквивалентности элемента $A$ по отношению $\sim: A \sim C \iff A + D = C + D$.
+    }
+    \item Левый сопряжённый к $\Mor(Y, \_)$:
+    \bullets{
+    \item В $\cat{Set}$: $\Mor(X, \Mor(Y, Z)) \cong \Mor(X \times Y, Z)$, поэтому левый сопряжённый к $\Mor(Y, \_)$ --- это $\_ \times Y$.
+    \item В $\Lmod{R}$ функтор $\Mor(Y, \_)$ можно воспринимать, как функтор $\Lmod{R} \map \Lmod{R}$.
+    Левый сопряжённый к нему --- это $\_ \otimes_R Y$.
+    \item С контравариантными функторами так просто не понять, сопряжённый левый, или правый, это зависит от того, где навесить $\text{op}$.
+    \excersice{Найти какой-то сопряжённый к $\Mor(\_, Y)$.}
+    \item Пусть $\catC$ --- категория с произведением.
+        Рассмотрим функтор произведения $\times: \catC \times \catC \map \catC$.
+
+        Левый сопряжённый к этому функтору --- это $\Delta: \catC \map \catC \times \catC, C \mapsto (C, C)$.
+    }
+    }
 \end{document}
