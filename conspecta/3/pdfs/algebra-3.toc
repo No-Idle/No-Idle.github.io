@@ -71,18 +71,18 @@
 \contentsline {section}{\numberline {3.2}Таблицы характеров}{60}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Закон Фробениуса без теории категорий}{63}{subsection.3.2.1}%
 \contentsline {chapter}{\numberline {4}Теория категорий}{65}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Универсальные объекты}{67}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Функторы и не только}{68}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Противоположная категория}{68}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Декартово произведение категорий}{68}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.1}Универсальные объекты}{68}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Функторы и не только}{69}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Противоположная категория}{69}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Декартово произведение категорий}{69}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Мономорфизмы и эпиморфизмы}{69}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Функторы}{70}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Контравариантный функтор}{70}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.4}(Ковариантные) функторы}{70}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Контравариантные функторы}{71}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Естественные преобразования}{72}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Эквивалентность категорий}{73}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}(Ко)эквалайзеры и (ко)пределы}{74}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Произведения и копроизведения}{75}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Универсальные и коуниверсальные квадраты}{76}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Сопряжённые функторы}{79}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Левые сопряжённые к функторам типа забывающих}{80}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.3.1}Эквивалентность категорий}{74}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}(Ко)эквалайзеры и (ко)пределы}{75}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Произведения и копроизведения}{76}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Универсальные и коуниверсальные квадраты}{77}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Сопряжённые функторы}{80}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Левые сопряжённые к функторам типа забывающих}{81}{subsection.4.7.1}%
 \contentsline {subsection}{\numberline {4.7.2}Левые сопряжённые к вложениям}{81}{subsection.4.7.2}%

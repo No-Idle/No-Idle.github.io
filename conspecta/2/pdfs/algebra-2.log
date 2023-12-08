@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  8 NOV 2023 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 DEC 2023 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -28,10 +28,11 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 (../mathstemplate.sty
 
 LaTeX Warning: You have requested package `../mathstemplate',
-               but the package provides `mathstemplate'.
+               but the package provides `PsiDirectory:/home/leonid/No-Idle.gith
+ub.io/conspecta/mathstemplate'.
 
-Package: mathstemplate 2022/09/21 --- nowadays. Leonid Danilevich's personal ma
-ths template
+Package: PsiDirectory:/home/leonid/No-Idle.github.io/conspecta/mathstemplate 20
+22/09/21 --- nowadays. Leonid Danilevich's personal maths template
 (/usr/share/texmf/tex/latex/pscyr/pscyr.sty
 Package: pscyr 2002/07/04 v0.4d Cyrillic Type1 fonts as default
 )
@@ -644,6 +645,25 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 \EQ_tag_box=\box57
 \g_EQ_temprow_int=\count298
 )
+(/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
+Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
+
+`mathalpha' v1.143, 2021/11/18, a renaming of mathalfa (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks37
+\XKV@tempa@toks=\toks38
+)
+\XKV@depth=\count299
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
+(Font)                  U/BOONDOX-scr/m/n --> U/BOONDOX-scr/b/n on input line 9
+27.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
 
@@ -651,7 +671,7 @@ Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks37
+\pgfutil@everybye=\toks39
 \pgfutil@tempdima=\dimen186
 \pgfutil@tempdimb=\dimen187
 
@@ -670,12 +690,12 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks38
-\pgfkeys@temptoks=\toks39
+\pgfkeys@pathtoks=\toks40
+\pgfkeys@temptoks=\toks41
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks40
+\pgfkeys@tmptoks=\toks42
 ))
 \pgf@x=\dimen188
 \pgf@y=\dimen189
@@ -689,14 +709,14 @@ ex
 \pgf@yd=\dimen197
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count299
-\c@pgf@countb=\count300
-\c@pgf@countc=\count301
-\c@pgf@countd=\count302
-\t@pgf@toka=\toks41
-\t@pgf@tokb=\toks42
-\t@pgf@tokc=\toks43
-\pgf@sys@id@count=\count303
+\c@pgf@counta=\count300
+\c@pgf@countb=\count301
+\c@pgf@countc=\count302
+\c@pgf@countd=\count303
+\t@pgf@toka=\toks43
+\t@pgf@tokb=\toks44
+\t@pgf@tokc=\toks45
+\pgf@sys@id@count=\count304
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -712,8 +732,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count304
-\pgfsyssoftpath@bigbuffer@items=\count305
+\pgfsyssoftpath@smallbuffer@items=\count305
+\pgfsyssoftpath@bigbuffer@items=\count306
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -743,11 +763,11 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen198
-\pgfmath@count=\count306
+\pgfmath@count=\count307
 \pgfmath@box=\box59
-\pgfmath@toks=\toks44
-\pgfmath@stack@operand=\toks45
-\pgfmath@stack@operation=\toks46
+\pgfmath@toks=\toks46
+\pgfmath@stack@operand=\toks47
+\pgfmath@stack@operation=\toks48
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -767,7 +787,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count307
+\c@pgfmathroundto@lastzeros=\count308
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
@@ -806,7 +826,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box60
 \pgf@hbox=\box61
 \pgf@layerbox@main=\box62
-\pgf@picture@serial@count=\count308
+\pgf@picture@serial@count=\count309
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -839,8 +859,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen278
-\pgf@sys@shading@range@num=\count309
-\pgf@shadingcount=\count310
+\pgf@sys@shading@range@num=\count310
+\pgf@shadingcount=\count311
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -891,8 +911,8 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen281
 \pgffor@skip=\dimen282
-\pgffor@stack=\toks47
-\pgffor@toks=\toks48
+\pgffor@stack=\toks49
+\pgffor@toks=\toks50
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
@@ -900,7 +920,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count311
+\pgf@plot@mark@count=\count312
 \pgfplotmarksize=\dimen283
 )
 \tikz@lastx=\dimen284
@@ -915,18 +935,18 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box66
 \tikz@tempbox=\box67
 \tikz@tempbox@bg=\box68
-\tikztreelevel=\count312
-\tikznumberofchildren=\count313
-\tikznumberofcurrentchild=\count314
-\tikz@fig@count=\count315
+\tikztreelevel=\count313
+\tikznumberofchildren=\count314
+\tikznumberofcurrentchild=\count315
+\tikz@fig@count=\count316
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count316
-\pgfmatrixcurrentcolumn=\count317
-\pgf@matrix@numberofcolumns=\count318
+\pgfmatrixcurrentrow=\count317
+\pgfmatrixcurrentcolumn=\count318
+\pgf@matrix@numberofcolumns=\count319
 )
-\tikz@expandcount=\count319
+\tikz@expandcount=\count320
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -960,7 +980,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen298
 \pgfdecoratedinputsegmentremainingdistance=\dimen299
 \pgf@decorate@distancetomove=\dimen300
-\pgf@decorate@repeatstate=\count320
+\pgf@decorate@repeatstate=\count321
 \pgfdecorationsegmentamplitude=\dimen301
 \pgfdecorationsegmentlength=\dimen302
 )
@@ -976,16 +996,16 @@ File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 zlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-\c@lemma_env=\count321
-\c@proposal_env=\count322
-\c@problem_env=\count323
-\c@corollary_env=\count324
-\c@fact_env=\count325
-\c@statement_env=\count326
-\c@excersice_env=\count327
-\c@theorem_env=\count328
-\c@definition_env=\count329
-\c@lection=\count330
+\c@lemma_env=\count322
+\c@proposal_env=\count323
+\c@problem_env=\count324
+\c@corollary_env=\count325
+\c@fact_env=\count326
+\c@statement_env=\count327
+\c@exercise_env=\count328
+\c@theorem_env=\count329
+\c@definition_env=\count330
+\c@lection=\count331
 )
 LaTeX Font Info:    Trying to load font information for OT1+faq on input line 9
 .
@@ -994,7 +1014,7 @@ File: ot1faq.fd 2001/12/09 Fontinst v1.914 font definitions for OT1/faq.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count331
+\l__color_backend_stack_int=\count332
 \l__pdf_internal_box=\box70
 )
 (/home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.aux
@@ -1070,17 +1090,17 @@ LaTeX Info: Redefining \th on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
+\scratchcounter=\count333
 \scratchdimen=\dimen303
 \scratchbox=\box71
-\nofMPsegments=\count333
-\nofMParguments=\count334
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count335
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count336
 \MPscratchDim=\dimen304
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks50
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1101,7 +1121,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count338
+\c@section@level=\count339
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -1146,7 +1166,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.48 ...јРЅРѕРіРѕС‡Р»РµРЅС‹}{29}{subsection.2.9.1}
+l.48 ...јРЅРѕРіРѕС‡Р»РµРЅС‹}{31}{subsection.2.9.1}
                                                   % [1
 
 ] [2])
@@ -1312,14 +1332,7 @@ mm/m/it/10 ^^^ \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 . В стан-дарт-ном ба-зи-се:
  
  []
 
-[40]
-Overfull \hbox (5.77827pt too wide) in paragraph at lines 1824--1824
-[][]\T2A/faq/m/it/10 Определение \T2A/faq/m/n/10 3.5.3 (Экс-по-нен-ци-аль-ные м
-но-го-чле-ны)\T2A/faq/m/it/10 . []\T2A/faq/m/n/10 Ко-неч-ная ли-ней-ная ком-би-
-на-ция мо-но-мов $\OML/cmm/m/it/10 t[]e[]$\T2A/faq/m/n/10 ,
- []
-
-[41] [42] [43] [44] [45]
+[40] [41] [42] [43] [44] [45]
 Overfull \hbox (27.90578pt too wide) in paragraph at lines 2054--2054
 []\T2A/faq/m/n/10 Рассмотрим $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/i
 t/10 v[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; ^^^\OT1/cmr/m/n/10 (\OML/cmm/m
@@ -1375,11 +1388,11 @@ Overfull \hbox (6.40324pt too wide) in paragraph at lines 2169--2169
  []
 
 
-Overfull \hbox (13.31451pt too wide) in paragraph at lines 2179--2182
-[]\T2A/faq/m/n/10 Это на-зы-ва-ет-ся \T2A/faq/m/it/10 ком-плек-си-фи-ка-ция $\O
-ML/cmm/m/it/10 V$\T2A/faq/m/n/10 . Ве-ще-ствен-ный ба-зис ком-плек-си-фи-ка-ции
- --- $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]; e[]i; [] ; e[]; e[]i\OT1/cmr/m/n/1
-0 )$\T2A/faq/m/n/10 ,
+Overfull \hbox (15.97452pt too wide) in paragraph at lines 2179--2182
+[]\T2A/faq/m/n/10 Это на-зы-ва-ет-ся \T2A/faq/m/it/10 ком-плек-си-фи-ка-ция  $\
+OML/cmm/m/it/10 V$\T2A/faq/m/n/10 . Ве-ще-ствен-ный ба-зис ком-плек-си-фи-ка-ци
+и --- $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]; e[]i; [] ; e[]; e[]i\OT1/cmr/m/n/
+10 )$\T2A/faq/m/n/10 ,
  []
 
 [48]
@@ -1534,6 +1547,13 @@ Overfull \hbox (13.59729pt too wide) in paragraph at lines 3523--3523
  []
 
 [76] [77]
+Overfull \hbox (2.01057pt too wide) in paragraph at lines 3668--3668
+[][]\T2A/faq/bx/it/10 Определение \T2A/faq/bx/n/10 6.1.11 \T2A/faq/m/n/10 ($\OM
+L/cmm/m/it/10 X$ \T2A/faq/m/n/10 --- глав-ное од-но-род-ное про-стран-ство для 
+$\OML/cmm/m/it/10 G$\T2A/faq/m/n/10 )\T2A/faq/bx/it/10 . []$\OML/cmm/m/it/10 X 
+[] G$ \T2A/faq/m/n/10 как $\OML/cmm/m/it/10 G$\T2A/faq/m/n/10 -множество,
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3672.
@@ -1603,17 +1623,14 @@ Overfull \hbox (10.63454pt too wide) in paragraph at lines 4239--4239
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `algebra-2.out' has not changed.
 (rerunfilecheck)             Checksum: 9CE9AE2B986B02C339BF584F4F442DFB;42883.
  ) 
 Here is how much of TeX's memory you used:
- 28638 strings out of 479648
- 542832 string characters out of 5886115
- 809139 words of memory out of 5000000
- 45422 multiletter control sequences out of 15000+600000
+ 29023 strings out of 479648
+ 549386 string characters out of 5886115
+ 817029 words of memory out of 5000000
+ 45794 multiletter control sequences out of 15000+600000
  508221 words of font info for 101 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  113i,24n,117p,973b,1169s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1641,7 +1658,7 @@ ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/
 stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.pdf
- (91 pages, 686179 bytes).
+ (91 pages, 687026 bytes).
 PDF statistics:
  1798 PDF objects out of 2073 (max. 8388607)
  1641 compressed objects within 17 object streams

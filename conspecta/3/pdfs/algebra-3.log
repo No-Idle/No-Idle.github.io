@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 DEC 2023 12:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  8 DEC 2023 14:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1002,7 +1002,7 @@ File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@corollary_env=\count325
 \c@fact_env=\count326
 \c@statement_env=\count327
-\c@excersice_env=\count328
+\c@exercise_env=\count328
 \c@theorem_env=\count329
 \c@definition_env=\count330
 \c@lection=\count331
@@ -1481,11 +1481,11 @@ Overfull \hbox (28.58427pt too wide) in paragraph at lines 876--878
 \OML/cmm/m/it/10 G \U/msb/m/n/10 y []$\T2A/faq/m/n/10 . 
  []
 
-[42]
+[42] [43] [44]
 LaTeX Font Info:    Font shape `T2A/faq/b/it' in size <10> not available
-(Font)              Font shape `T2A/faq/bx/it' tried instead on input line 957.
-
- [43] [44] [45]
+(Font)              Font shape `T2A/faq/bx/it' tried instead on input line 1026
+.
+ [45]
 Overfull \hbox (18.16406pt too wide) in paragraph at lines 1091--1091
 []\T2A/faq/bx/n/14.4 Разложение пред-став-ле-ние на непри-во-ди-мые. Sum of squ
 ares
@@ -1582,7 +1582,7 @@ MS/cmsy/m/n/10 g$
 [63]) [64]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 
-Overfull \hbox (1.14247pt too wide) in paragraph at lines 72--72
+Overfull \hbox (1.14247pt too wide) in paragraph at lines 82--82
 []\T2A/faq/m/it/10 Замечание. []\T2A/faq/m/n/10 Ино-гда ком-по-зи-цию за-пи-сы-
 ва-ют в об-рат-ном по-ряд-ке: $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; B\OT1/c
 mr/m/n/10 ) \OMS/cmsy/m/n/10 ^^B [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; C\OT1
@@ -1592,7 +1592,7 @@ mr/m/n/10 ) \OMS/cmsy/m/n/10 ^^B [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; C\OT1
 [65
 
 ] [66]
-Overfull \hbox (29.4809pt too wide) in paragraph at lines 193--193
+Overfull \hbox (29.4809pt too wide) in paragraph at lines 205--205
 [] \U/BOONDOX-scr/m/n/10 C$\T2A/faq/m/n/10 . Пусть $\OML/cmm/m/it/10  \OT1/cmr
 /m/n/10 : \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 B; ^^L \OT1/cm
 r/m/n/10 : \OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 D$\T2A/faq/m/
@@ -1600,23 +1600,43 @@ n/10 . То-гда $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; ^^L\OT1/cmr/m/n/10 ) =
 []$ 
  []
 
-[67] [68] [69] [70] [71]
-Overfull \hbox (4.35089pt too wide) in paragraph at lines 480--480
+[67]
+Overfull \hbox (4.28975pt too wide) in paragraph at lines 216--216
+[][]\T2A/faq/bx/n/10 Определение 4.1.2 \T2A/faq/m/n/10 ($\OML/cmm/m/it/10 F$ \T
+2A/faq/m/n/10 --- фи-наль-ный (тер-ми-наль-ный) объ-ект)\T2A/faq/bx/n/10 . []\T
+2A/faq/m/n/10 Для лю-бо-го $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \U/BOONDOX-sc
+r/m/n/10 C \OT1/cmr/m/n/10 : []$\T2A/faq/m/n/10 . 
+ []
+
+
+Overfull \hbox (6.2571pt too wide) in paragraph at lines 237--239
+[]\T2A/faq/m/n/10 Этому со-от-вет-ству-ет ини-ци-аль-ный объ-ект в ка-те-го-рии
+ $\U/BOONDOX-scr/m/n/10 C$\T2A/faq/m/n/10 , та-кой, что $[] \U/BOONDOX-scr/m/n/
+10 C \OT1/cmr/m/n/10 = []$
+ []
+
+[68] [69] [70]
+Overfull \hbox (20.4889pt too wide) detected at line 398
+[]
+ []
+
+[71] [72]
+Overfull \hbox (4.35089pt too wide) in paragraph at lines 514--514
 []\T2A/faq/m/it/10 Контрпример \T2A/faq/m/n/10 (Неесте-ствен-ное пре-об-ра-зо-в
 а-ние)\T2A/faq/m/it/10 . []\T2A/faq/m/n/10 Изо-мор-физм ко-неч-но-мер-но-го век
 -тор-но-го про-стран-
  []
 
-[72]
-Overfull \hbox (25.45773pt too wide) in paragraph at lines 496--496
+[73]
+Overfull \hbox (25.45773pt too wide) in paragraph at lines 554--554
 []\T2A/faq/m/n/10 Естественный изо-мор-физм в ка-те-го-рии ко-неч-но-мер-ных ве
 к-тор-ных про-странств $[][]$: $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y \OMS/c
 msy/m/n/10 
 
  []
 
-[73]
-Overfull \hbox (1.37367pt too wide) in paragraph at lines 565--566
+[74]
+Overfull \hbox (1.37367pt too wide) in paragraph at lines 603--605
 []\T2A/faq/m/n/10 В ка-те-го-рии $\U/BOONDOX-scr/m/n/10 D$\T2A/faq/m/n/10 , та-
 кой, что $[] \U/BOONDOX-scr/m/n/10 D \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 , и $
 [][]\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 E[]; "[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/1
@@ -1624,7 +1644,7 @@ Overfull \hbox (1.37367pt too wide) in paragraph at lines 565--566
  []
 
 
-Overfull \hbox (9.6016pt too wide) in paragraph at lines 585--586
+Overfull \hbox (9.6016pt too wide) in paragraph at lines 624--625
 []\T2A/faq/m/n/10 В $[]$ ко-эк-ва-лай-зер $\OML/cmm/m/it/10 ^^^;   \OT1/cmr/m/n
 /10 : \OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 H$ \T2A/faq/m/n/10
  --- это фак-то-ри-за-ция по нор-маль-но-му за-мы-ка-нию $\OMS/cmsy/m/n/10 f\OM
@@ -1633,28 +1653,28 @@ L/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )\OML/cmm/m
 g$\T2A/faq/m/n/10 . 
  []
 
-[74] [75] [76] [77] [78] [79] [80]
-Overfull \hbox (6.87462pt too wide) in paragraph at lines 1045--1045
+[75] [76] [77] [78] [79] [80] [81]
+Overfull \hbox (6.87462pt too wide) in paragraph at lines 1132--1132
 []\T2A/faq/m/n/10 Левый со-пря-жјн-ный к функ-то-ру вло-же-ния $[] \OMS/cmsy/m/
 n/10 ! []$ \T2A/faq/m/n/10 --- это функ-тор $[] \OMS/cmsy/m/n/10 ! []\OML/cmm/m
 /it/10 ; I \OMS/cmsy/m/n/10 7!
  []
 
-[81] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
+[82] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `algebra-3.out' has not changed.
-(rerunfilecheck)             Checksum: 1C6CA53051D0724A101E0D63DFB2FB0B;26842.
+(rerunfilecheck)             Checksum: 7D6738CE496695CA091AE51FA5A6EB2A;26970.
  ) 
 Here is how much of TeX's memory you used:
- 30073 strings out of 479648
- 578842 string characters out of 5886115
- 843825 words of memory out of 5000000
- 47114 multiletter control sequences out of 15000+600000
+ 30223 strings out of 479648
+ 582778 string characters out of 5886115
+ 849287 words of memory out of 5000000
+ 47263 multiletter control sequences out of 15000+600000
  506130 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 113i,20n,117p,628b,1133s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 113i,20n,117p,643b,1133s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq4.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq5.pf
@@ -1679,10 +1699,10 @@ s/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/
 stmary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.
 pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (82 pages, 669480 bytes).
+ (83 pages, 675662 bytes).
 PDF statistics:
- 1257 PDF objects out of 1440 (max. 8388607)
- 1114 compressed objects within 12 object streams
- 406 named destinations out of 1000 (max. 500000)
+ 1262 PDF objects out of 1440 (max. 8388607)
+ 1118 compressed objects within 12 object streams
+ 407 named destinations out of 1000 (max. 500000)
  709 words of extra memory for PDF output out of 10000 (max. 10000000)
 

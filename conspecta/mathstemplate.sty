@@ -72,13 +72,13 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \graphicspath{ {../pics/} }
 
 \theoremstyle{plain}
-\newtheorem{lemma_env}{Лемма}[section]
-\newtheorem{proposal_env}{Предложение}[section]
-\newtheorem{problem_env}{Задача}[section]
-\newtheorem{corollary_env}{Следствие}[section]
-\newtheorem{fact_env}{Факт}[section]
-\newtheorem{statement_env}{Утверждение}[section]
-\newtheorem{excersice_env}{Упражнение}[section]
+\newtheorem{lemma_env}{\textup{\bfseries{Лемма}}}[section]
+\newtheorem{proposal_env}{\textup{\bfseries{Предложение}}}[section]
+\newtheorem{problem_env}{\textup{\bfseries{Задача}}}[section]
+\newtheorem{corollary_env}{\textup{\bfseries{Следствие}}}[section]
+\newtheorem{fact_env}{\textup{\bfseries{Факт}}}[section]
+\newtheorem{statement_env}{\textup{\bfseries{Утверждение}}}[section]
+\newtheorem{exercise_env}{\textup{\bfseries{Упражнение}}}[section]
 
 \theoremstyle{remark}
 \newtheorem*{note_env}{Замечание}
@@ -93,8 +93,11 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newtheorem*{question_env}{Вопрос}
 
 \theoremstyle{definition}
-\newtheorem{theorem_env}{\bfseries{Теорема}}[section]
-\newtheorem{definition_env}{\bfseries{Определение}}[section]
+\newtheorem{theorem_env}{\textup{\bfseries{Теорема}}}[section]
+\newtheorem{definition_env}{\textup{\bfseries{Определение}}}[section]
+
+\renewcommand*{\emph}[1]{\ifx\f@shape\my@test@it\textup{#1}\else\textit{#1}\fi}
+\newcommand*{\my@test@it}{it}
 
 \newcommand{\pic}[3][0.3]{\begin{figure}[h!]\centering\includegraphics[width=#1\textwidth]{#2}\caption{\label{#2}#3}\end{figure}}
 \newcommand{\theorem}[2][]{\begin{theorem_env}[#1]#2\end{theorem_env}}
@@ -110,7 +113,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\properties}[2][]{\begin{properties_env}[#1]\down\bullets{#2}\end{properties_env}}
 \newcommand{\fact}[2][]{\begin{fact_env}[#1]#2\end{fact_env}}
 \newcommand{\statement}[2][]{\begin{statement_env}[#1]#2\end{statement_env}}
-\newcommand{\excersice}[2][]{\begin{excersice_env}[#1]#2\end{excersice_env}}
+\newcommand{\exercise}[2][]{\begin{exercise_env}[#1]#2\end{exercise_env}}
 \newcommand{\intfact}[2][]{\begin{ifact_env}[#1]#2\end{ifact_env}}
 \newcommand{\proposal}[2][]{\begin{proposal_env}[#1]#2\end{proposal_env}}
 \newcommand{\definition}[2][]{\begin{definition_env}[#1]#2\end{definition_env}}
