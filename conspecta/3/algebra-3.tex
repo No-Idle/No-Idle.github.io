@@ -985,7 +985,7 @@
     Пусть имеется функтор $\cat{F}: \cat{B} \map \cat{C}$, пусть $X \in \cat{C}$.
     Построим категорию $X \downarrow \cat{F}$.
 
-    Её объекты --- это $\{(B, \phi) \in B \times \Mor(X, \cat{F}(B))\}$.
+    Её объекты --- это $\{(B, \phi) \in B \times \Mor_\catC(X, \cat{F}(B))\}$.
     Морфизмы определены так: $(B, \phi) \map (B', \phi')$ --- это $\defset{\alpha \in \Mor_\cat{B}(B, B')}{% https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXR7Rn0oQikiXSxbMSwxLCJcXGNhdHtGfShCJykiXSxbMSwyLCJcXGNhdHtGfShcXGFscGhhKSJdLFswLDEsIlxccGhpIl0sWzAsMiwiXFxwaGknIl1d
         \begin{tikzcd}[ampersand replacement=\&]
             X \\
@@ -1031,7 +1031,7 @@
          \arrow["{\cat{G}}", shift left, from=1-2, to=1-1]
     \end{tikzcd}$.
     \definition[$\cat{G}$ и $\cat{F}$ сопряжены]{
-        $\forall B \in \cat{B}, C \in \cat{C}$: существует и единственна (?) биекция между множествами морфизмов $\Mor_\cat{C}(C, \cat{F}(B))$ и $\Mor_\cat{B}(\cat{G}(C), B)$, причём биекция --- естественна и по $B$, и по $C$.
+        $\forall B \in \cat{B}, C \in \cat{C}$: существует биекция между множествами морфизмов $\Mor_\cat{C}(C, \cat{F}(B))$ и $\Mor_\cat{B}(\cat{G}(C), B)$, причём биекция --- естественна и по $B$, и по $C$.
         То есть имеется естественная биекция между функторами $\cat{C}^{\text{op}} \times \cat{B} \map \cat{Set}$.
         Здесь $\cat{F}$ называется правым сопряжённым, $\cat{G}$ --- левым сопряжённым.
     }
@@ -1045,11 +1045,13 @@
 %    \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G}"', curve={height=12pt}, tail reversed, no head, from=1-1, to=1-3]
 %    \arrow["\eta", "\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 %    \end{tikzcd}\]
+    Пусть $\cat F: \cat B \map \cat C$ --- какой-то функтор.
 
-    Зафиксируем $X, X', X'' \in \cat C$, и рассмотрим категории $(X \downarrow \cat F), (X' \downarrow \cat F), (X'' \downarrow \cat F)$~(\ref{comma-category}).
+    Рассмотрим $X \in \cat C$, и рассмотрим категорию $(X \downarrow \cat F)$~(\ref{comma-category}).
 
-    Пусть во всех таких категориях нашлось по инициальному объекту, тогда для категории, порождённой объектом $X$, обозначим этот объект $(\cat G(X), f_X)$.
-    Далее мы хотим показать, что $\cat{G}$ --- функтор. Для этого сперва определим его на морфизмах следующим образом:
+    Пусть для всех $X \in \cat C$ в такой категории нашёлся инициальный объект, тогда обозначим этот объект $(\cat G(X), f_X)$.
+    Далее мы хотим показать, что $\cat{G}: \cat C \map \cat B$ --- функтор.
+    Для этого сперва определим его на морфизмах следующим образом:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCciXSxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzEsMSwiXFxjYXQgRihcXGNhdCBHKFgnKSkiXSxbMCwyLCJmX1giXSxbMSwzLCJmX3tYJ30iXSxbMCwxLCJcXGJldGEiXSxbMiwzLCJcXGNhdCBGKFxcY2F0IEcoXFxiZXRhKSkiXV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
           X \& {X'} \\
@@ -1059,6 +1061,42 @@
           \arrow["\beta", from=1-1, to=1-2]
           \arrow["{\cat F(\cat G(\beta))}", from=2-1, to=2-2]
     \end{tikzcd}\]
+    А именно, $(\cat G(X'), f_{X'}\beta) \in (X \downarrow \cat F)$, и из инициальности $(\cat G(X), f_X)$ найдётся единственный морфизм $(\cat G(X), f_X) \map (\cat G(X'), f_{X'}\beta)$, то есть найдётся единственная стрелка $\cat G(X) \map \cat G(X')$, и мы эту стрелку назовём $\cat G(\beta)$.
+
+    Далее надо проверить, что функтор сохраняет композицию.
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJYIl0sWzEsMCwiWCciXSxbMiwwLCJYJyciXSxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzEsMSwiXFxjYXQgRihcXGNhdCBHKFgnKSkiXSxbMiwxLCJcXGNhdCBGKFxcY2F0IEcoWCcnKSkiXSxbMCwzLCJmX1giXSxbMSw0LCJmX3tYJ30iXSxbMiw1LCJmX3tYJyd9Il0sWzAsMSwiXFxiZXRhIl0sWzEsMiwiXFxnYW1tYSJdLFswLDIsIlxcZ2FtbWFcXGJldGEiLDAseyJjdXJ2ZSI6LTR9XSxbMyw0LCJcXGNhdCBGKFxcY2F0IEcoXFxiZXRhKSkiLDJdLFs0LDUsIlxcY2F0IEYoXFxjYXQgRyhcXGdhbW1hKSkiLDJdLFszLDUsIlxcY2F0IEYoXFxjYXQgRyhcXGdhbW1hXFxiZXRhKSkiLDIseyJjdXJ2ZSI6NH1dXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          X \& {X'} \& {X''} \\
+          {\cat F(\cat G(X))} \& {\cat F(\cat G(X'))} \& {\cat F(\cat G(X''))}
+          \arrow["{f_X}", from=1-1, to=2-1]
+          \arrow["{f_{X'}}", from=1-2, to=2-2]
+          \arrow["{f_{X''}}", from=1-3, to=2-3]
+          \arrow["\beta", from=1-1, to=1-2]
+          \arrow["\gamma", from=1-2, to=1-3]
+          \arrow["\gamma\beta", curve={height=-24pt}, from=1-1, to=1-3]
+          \arrow["{\cat F(\cat G(\beta))}"', from=2-1, to=2-2]
+          \arrow["{\cat F(\cat G(\gamma))}"', from=2-2, to=2-3]
+          \arrow["{\cat F(\cat G(\gamma\beta))}"', curve={height=24pt}, from=2-1, to=2-3]
+    \end{tikzcd}\]
+    По определению $\cat G(\gamma\beta)$ --- это та единственная стрелка $\cat G(\gamma\beta): (\cat G(X), f_X) \map (\cat G(X''), f_{X''}\gamma\beta)$, которая делает диаграмму коммутативной, и можно заметить, что в качестве этой стрелки подходит $\cat G(\gamma)\cat G(\beta)$ (и в проверке используется то. что $\cat F$ сохраняет композицию).
+
+    Наконец, осталось проверить, что $\cat G$ сохраняет единицу, то есть фактически надо проверить, что диаграмма ниже --- коммутативна.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiXFxjYXQgRihcXGNhdCBHKFgpKSJdLFsxLDAsIlgiXSxbMSwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzAsMiwiXFxpZF9YIl0sWzAsMSwiZl9YIiwyXSxbMiwzLCJmX1giXSxbMSwzLCJcXGNhdCBGKFxcaWRfe1xcY2F0IEcoWCl9KSkiLDJdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          X \& X \\
+          {\cat F(\cat G(X))} \& {\cat F(\cat G(X))}
+          \arrow["{\id_X}", from=1-1, to=1-2]
+          \arrow["{f_X}"', from=1-1, to=2-1]
+          \arrow["{f_X}", from=1-2, to=2-2]
+          \arrow["{\cat F(\id_{\cat G(X)}))}"', from=2-1, to=2-2]
+    \end{tikzcd}\]
+    Так как $\cat F$ --- сохраняет $\id$, то это действительно правда.
+    \proposal{
+    Так построенный функтор $\cat G: \cat C \map \cat B$ --- левый сопряжённый к $\cat F$.
+    \provehere{
+    Надо предъявить естественную биекцию $\Mor(\cat G())$
+    }
+    }
 
     \newlection{5 декабря 2023 г.}
 
