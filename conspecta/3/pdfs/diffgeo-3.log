@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 DEC 2023 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  11 DEC 2023 12:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1002,7 +1002,7 @@ File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@corollary_env=\count325
 \c@fact_env=\count326
 \c@statement_env=\count327
-\c@excersice_env=\count328
+\c@exercise_env=\count328
 \c@theorem_env=\count329
 \c@definition_env=\count330
 \c@lection=\count331
@@ -1346,7 +1346,14 @@ Overfull \hbox (23.00926pt too wide) in paragraph at lines 1867--1867
 m/n/10 r[]\OML/cmm/m/it/10 r[]$\T2A/faq/m/n/10 .
  []
 
-[37] [38] [39] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
+[37] [38]
+Overfull \hbox (1.12166pt too wide) in paragraph at lines 1976--1976
+[][]\T2A/faq/bx/n/10 Определение 2.11.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-с
+я по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но 
+изо-мет-рич-ная плос-
+ []
+
+[39] [40] [41] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1354,10 +1361,10 @@ Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
 (rerunfilecheck)             Checksum: 94BEB2DDA2D14F1583EFB5BE4FA4B690;12711.
  ) 
 Here is how much of TeX's memory you used:
- 27824 strings out of 479648
- 524364 string characters out of 5886115
- 794414 words of memory out of 5000000
- 45003 multiletter control sequences out of 15000+600000
+ 27837 strings out of 479648
+ 524520 string characters out of 5886115
+ 795812 words of memory out of 5000000
+ 45004 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  113i,16n,117p,825b,1152s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1381,10 +1388,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (40 pages, 505298 bytes).
+ (42 pages, 517822 bytes).
 PDF statistics:
- 884 PDF objects out of 1000 (max. 8388607)
- 758 compressed objects within 8 object streams
- 279 named destinations out of 1000 (max. 500000)
+ 906 PDF objects out of 1000 (max. 8388607)
+ 778 compressed objects within 8 object streams
+ 291 named destinations out of 1000 (max. 500000)
  393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
