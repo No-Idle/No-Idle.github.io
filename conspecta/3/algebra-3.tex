@@ -982,10 +982,11 @@
     \section{Сопряжённые функторы}
     \label{comma-category}
     Рассмотрим следующую конструкцию:
-    Пусть имеется функтор $\cat{F}: \cat{B} \map \cat{C}$, пусть $X \in \cat{C}$.
-    Построим категорию $X \downarrow \cat{F}$.
+    пусть имеется функтор $\cat{F}: \cat{B} \map \cat{C}$, пусть $X \in \cat{C}$.
+    Построим категорию $(X \downarrow \cat{F})$.
 
     Её объекты --- это $\{(B, \phi) \in B \times \Mor_\catC(X, \cat{F}(B))\}$.
+
     Морфизмы определены так: $(B, \phi) \map (B', \phi')$ --- это $\defset{\alpha \in \Mor_\cat{B}(B, B')}{% https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXR7Rn0oQikiXSxbMSwxLCJcXGNhdHtGfShCJykiXSxbMSwyLCJcXGNhdHtGfShcXGFscGhhKSJdLFswLDEsIlxccGhpIl0sWzAsMiwiXFxwaGknIl1d
         \begin{tikzcd}[ampersand replacement=\&]
             X \\
@@ -997,7 +998,16 @@
 
     По-английски эта категория почему-то называется comma-category, категория запятой.
 
-    Заинтересуемся инициальными объектами в категории $X \downarrow \cat{F}$.
+    Аналогично $(\cat F \downarrow X)$ --- это категория стрелок $\cat F(B) \map X$ с такими морфизмами $\alpha \in \Mor_\catB(B, B')$:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGNhdCBGKEIpIl0sWzEsMCwiXFxjYXQgRihCJykiXSxbMSwxLCJYIl0sWzAsMiwiXFxwaGkiLDJdLFsxLDIsIlxccGhpJyJdLFswLDEsIlxcY2F0IEYoXFxhbHBoYSkiXV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {\cat F(B)} \& {\cat F(B')} \\
+    \& X
+    \arrow["\phi"', from=1-1, to=2-2]
+    \arrow["{\phi'}", from=1-2, to=2-2]
+    \arrow["{\cat F(\alpha)}", from=1-1, to=1-2]
+    \end{tikzcd}\]
+    Заинтересуемся инициальными объектами в категории $(X \downarrow \cat{F})$.
     \examples{
         \item Пусть $\cat{F}: \cat{Group} \map \cat{Set}$ --- забывающий функтор, и зафиксируем $X \in \cat{Set}$.
 
@@ -1047,19 +1057,19 @@
 %    \end{tikzcd}\]
     Пусть $\cat F: \cat B \map \cat C$ --- какой-то функтор.
 
-    Рассмотрим $X \in \cat C$, и рассмотрим категорию $(X \downarrow \cat F)$~(\ref{comma-category}).
+    Рассмотрим $X \in \cat C$, и вместе с ним категорию $(X \downarrow \cat F)$~(\ref{comma-category}).
 
-    Пусть для всех $X \in \cat C$ в такой категории нашёлся инициальный объект, тогда обозначим этот объект $(\cat G(X), f_X)$.
+    Пусть для всех $X \in \cat C$ в соответствующих категориях нашлось по инициальному объекту, обозначим объект их соответственно $(\cat G(X), f_X)$.
     Далее мы хотим показать, что $\cat{G}: \cat C \map \cat B$ --- функтор.
     Для этого сперва определим его на морфизмах следующим образом:
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCciXSxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzEsMSwiXFxjYXQgRihcXGNhdCBHKFgnKSkiXSxbMCwyLCJmX1giXSxbMSwzLCJmX3tYJ30iXSxbMCwxLCJcXGJldGEiXSxbMiwzLCJcXGNhdCBGKFxcY2F0IEcoXFxiZXRhKSkiXV0=
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCciXSxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzEsMSwiXFxjYXQgRihcXGNhdCBHKFgnKSkiXSxbMCwyLCJmX1giXSxbMSwzLCJmX3tYJ30iXSxbMCwxLCJcXGJldGEiXSxbMiwzLCJcXGNhdCBGKFxcY2F0IEcoXFxiZXRhKSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
           X \& {X'} \\
           {\cat F(\cat G(X))} \& {\cat F(\cat G(X'))}
           \arrow["{f_X}", from=1-1, to=2-1]
           \arrow["{f_{X'}}", from=1-2, to=2-2]
           \arrow["\beta", from=1-1, to=1-2]
-          \arrow["{\cat F(\cat G(\beta))}", from=2-1, to=2-2]
+          \arrow["{\cat F(\cat G(\beta))}", dashed, from=2-1, to=2-2]
     \end{tikzcd}\]
     А именно, $(\cat G(X'), f_{X'}\beta) \in (X \downarrow \cat F)$, и из инициальности $(\cat G(X), f_X)$ найдётся единственный морфизм $(\cat G(X), f_X) \map (\cat G(X'), f_{X'}\beta)$, то есть найдётся единственная стрелка $\cat G(X) \map \cat G(X')$, и мы эту стрелку назовём $\cat G(\beta)$.
 
@@ -1078,7 +1088,7 @@
           \arrow["{\cat F(\cat G(\gamma))}"', from=2-2, to=2-3]
           \arrow["{\cat F(\cat G(\gamma\beta))}"', curve={height=24pt}, from=2-1, to=2-3]
     \end{tikzcd}\]
-    По определению $\cat G(\gamma\beta)$ --- это та единственная стрелка $\cat G(\gamma\beta): (\cat G(X), f_X) \map (\cat G(X''), f_{X''}\gamma\beta)$, которая делает диаграмму коммутативной, и можно заметить, что в качестве этой стрелки подходит $\cat G(\gamma)\cat G(\beta)$ (и в проверке используется то. что $\cat F$ сохраняет композицию).
+    По определению $\cat G(\gamma\beta)$ --- это та единственная стрелка $(\cat G(X), f_X) \map (\cat G(X''), f_{X''}\gamma\beta)$, которая делает диаграмму коммутативной, и можно заметить, что в качестве этой стрелки подходит $\cat G(\gamma)\cat G(\beta)$ (в проверке используется то, что $\cat F$ сохраняет композицию).
 
     Наконец, осталось проверить, что $\cat G$ сохраняет единицу, то есть фактически надо проверить, что диаграмма ниже --- коммутативна.
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiXFxjYXQgRihcXGNhdCBHKFgpKSJdLFsxLDAsIlgiXSxbMSwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzAsMiwiXFxpZF9YIl0sWzAsMSwiZl9YIiwyXSxbMiwzLCJmX1giXSxbMSwzLCJcXGNhdCBGKFxcaWRfe1xcY2F0IEcoWCl9KSkiLDJdXQ==
@@ -1091,13 +1101,79 @@
           \arrow["{\cat F(\id_{\cat G(X)}))}"', from=2-1, to=2-2]
     \end{tikzcd}\]
     Так как $\cat F$ --- сохраняет $\id$, то это действительно правда.
-    \proposal{
+    \theorem{
     Так построенный функтор $\cat G: \cat C \map \cat B$ --- левый сопряжённый к $\cat F$.
     \provehere{
-    Надо предъявить естественную биекцию $\Mor(\cat G())$
-    }
-    }
+    Определим биекцию $\eta_{X,Y}: \Mor_\catC(X, \cat F(Y)) \map \Mor_\catB(\cat G(X), Y)$ следующим образом: морфизму $f: X \map \cat F(Y)$ сопоставим такой морфизм $\eta_{X,Y}(f)$, что диаграмма коммутативна:
+    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzAsMCwiWCJdLFsxLDEsIlxcY2F0IEYoWSkiXSxbMSwwLCJmX1giLDJdLFsxLDIsImYiXSxbMCwyLCJcXGNhdCBGKFxcZXRhX3tYLFl9KSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              X \\
+              {\cat F(\cat G(X))} \& {\cat F(Y)}
+              \arrow["{f_X}"', from=1-1, to=2-1]
+              \arrow["f", from=1-1, to=2-2]
+              \arrow["{\cat F(\eta_{X,Y})}"', dashed, from=2-1, to=2-2]
+        \end{tikzcd}\]
+    Очевидно, что тогда в качестве обратного отображения $\eta^{-1}_{X,Y}$ надо выбрать $g \mapsto \cat F(g)f_X$.
 
+    Теперь докажем, что $\eta$ --- \emph{естественное} преобразование между функторами $[X, Y \mapsto \Mor_\catC(X, \cat F(Y))] \map [X, Y \mapsto \Mor_\catB(\cat G(X), Y)]$.
+        По определению это значит, что $\forall \alpha: X'\map X, \beta: Y \map Y'$ диаграмма ниже коммутативна.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcl9cXGNhdEMoWCwgXFxjYXQgRihZKSkiXSxbMSwwLCJcXE1vcl9cXGNhdEMoWCcsIFxcY2F0IEYoWScpKSJdLFswLDEsIlxcTW9yX1xcY2F0QihcXGNhdCBHKFgpLCBZKSJdLFsxLDEsIlxcTW9yX1xcY2F0QihcXGNhdCBHKFgnKSwgWScpIl0sWzAsMSwiXFxNb3JfXFxjYXRDKFxcYWxwaGEsIFxcY2F0IEYoXFxiZXRhKSkiXSxbMiwzLCJcXE1vcl9cXGNhdEIoXFxjYXQgRyhcXGFscGhhKSwgXFxiZXRhKSJdLFswLDIsIlxcZXRhX3tYLFl9XnstMX0iLDIseyJvZmZzZXQiOjIsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMywiXFxldGFfe1gnLFknfV57LTF9IiwyLHsib2Zmc2V0IjoyLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDIsIlxcZXRhX3tYLFl9IiwwLHsib2Zmc2V0IjotMn1dLFsxLDMsIlxcZXRhX3tYJyxZJ30iLDAseyJvZmZzZXQiOi0yfV1d
+        \[\begin{tikzcd}[ampersand replacement=\&,column sep=huge]
+        {\Mor_\catC(X, \cat F(Y))} \& {\Mor_\catC(X', \cat F(Y'))} \\
+        {\Mor_\catB(\cat G(X), Y)} \& {\Mor_\catB(\cat G(X'), Y')}
+        \arrow["{\Mor_\catC(\alpha, \cat F(\beta))}", from=1-1, to=1-2]
+        \arrow["{\Mor_\catB(\cat G(\alpha), \beta)}", from=2-1, to=2-2]
+        \arrow["{\eta_{X,Y}^{-1}}"', shift right=2, tail reversed, no head, from=1-1, to=2-1]
+        \arrow["{\eta_{X',Y'}^{-1}}"', shift right=2, tail reversed, no head, from=1-2, to=2-2]
+        \arrow["{\eta_{X,Y}}", shift left=2, from=1-1, to=2-1]
+        \arrow["{\eta_{X',Y'}}", shift left=2, from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Это всё морфизмы в $\cat{Set}$, проверим коммутативность на элементах.
+
+    Рассмотрим $\psi \in \Mor_\catB(\cat G(X), Y)$, она уходит вправо в $\beta \psi\cat G(\alpha)$, далее наверх в $\cat F(\beta \psi\cat G(\alpha))f_{X'}$.
+
+    Если же сначала пойти наверх в $\cat F(\psi)f_X$, то потом эта штука уйдёт вправо в $\cat F(\beta)\cat F(\psi)\alpha f_X$
+
+    Эти две штуки равны в точности по определению действия $\cat G$ на морфизмах.
+%    Рассмотрим естественное преобразование $f = \defset{f_X}{X \in \cat C}: \id_\catC \map \cat F \circ \cat G$.
+%        То, что это действительно естественное преобразование $\id_\catC \map \cat F \circ \cat G$ следует из диаграммы, уже рисовавшейся выше:
+%     https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCciXSxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzEsMSwiXFxjYXQgRihcXGNhdCBHKFgnKSkiXSxbMCwyLCJmX1giXSxbMSwzLCJmX3tYJ30iXSxbMCwxLCJcXGJldGEiXSxbMiwzLCJcXGNhdCBGKFxcY2F0IEcoXFxiZXRhKSkiXV0=
+%        \[\begin{tikzcd}[ampersand replacement=\&]
+%              X \& {X'} \\
+%              {\cat F(\cat G(X))} \& {\cat F(\cat G(X'))}
+%              \arrow["{f_X}", from=1-1, to=2-1]
+%              \arrow["{f_{X'}}", from=1-2, to=2-2]
+%              \arrow["\beta", from=1-1, to=1-2]
+%              \arrow["{\cat F(\cat G(\beta))}", from=2-1, to=2-2]
+%        \end{tikzcd}\]
+%    Для сопряжённых функторов $\cat F$ и $\cat G$ такое преобразование $\id_\catC \map \cat F \circ \cat G$ называется \emph{единицей сопряжения}.
+    }
+    }
+    Верно и обратное утверждение, для этого нам потребуется по сопряжённым функторам восстанавливать $f_X \in \Mor_\catC(X, \cat F(\cat G(X)))$.
+
+    Заметим, что $\eta_{X,Y}(f_X) = \id_{\cat G(X)}$, то есть имея $\eta: \Mor_\catC(X, \cat F(Y)) \cong \Mor(\cat G(X), Y)$, мы можем восстановить $f_X$, подставив $Y = \cat G(X)$, и рассмотрев прообраз $\id_{\cat G(X)}$ из правой части.
+    Данный морфизм $f_X$ (а точнее функтор $X \mapsto f_X$) называется \emph{единицей сопряжения}.
+    \lemma{
+        Для сопряжённых функторов $\begin{tikzcd}[ampersand replacement=\&,cramped]
+    {\cat B} \&\& {\cat C}
+    \arrow[""{name=0, anchor=center, inner sep=0}, "{\cat F}", curve={height=-12pt}, from=1-1, to=1-3]
+    \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G}"', curve={height=12pt}, tail reversed, no head, from=1-1, to=1-3]
+    \arrow["\eta", "\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+    \end{tikzcd}$, и для любого $X \in \cat C$, категория запятой $(X \downarrow \cat F)$ имеет инициальный объект, причём он равен $(\cat G(X), f_X)$, где $f_X$ ---   единица сопряжения.
+    \provehere{
+        Рассмотрим какой-нибудь другой объект $(Y, f) \in (X \downarrow \cat F)$ (иными словами $Y \in \cat B, f \in \Mor_\catC(X, \cat F(Y))$).
+    Надо проверить, что существует и единственна $\alpha: \cat G(X) \map Y$, делающая диаграмму коммутативной.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXQgRihcXGNhdCBHKFgpKSJdLFsxLDEsIlxcY2F0IEYoWSkiXSxbMCwxLCJmX1giLDJdLFswLDIsImYiXSxbMSwyLCJcXGNhdCBGKFxcYWxwaGEpIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              X \\
+              {\cat F(\cat G(X))} \& {\cat F(Y)}
+              \arrow["{f_X}"', from=1-1, to=2-1]
+              \arrow["f", from=1-1, to=2-2]
+              \arrow["{\cat F(\alpha)}"', dashed, from=2-1, to=2-2]
+        \end{tikzcd}\]
+    Так как по стрелке $f: X \map \cat F(Y)$ хочется получить стрелку $\alpha: \cat G(X) \map Y$, то логично предположить, что $\alpha = \eta_{X,Y}(f)$. А почему это так, я ещё не понял
+    }
+    }
     \newlection{5 декабря 2023 г.}
 
     \subsection{Левые сопряжённые к функторам типа забывающих}
@@ -1167,5 +1243,379 @@
 
             Левый сопряжённый к этому функтору --- это $\Delta: \cat{C} \map \cat{C} \times \cat{C}, C \mapsto (C, C)$.
         }
+    }
+    \newlection{12 декабря 2023 г.}
+    \section{Пределы}
+    Пусть есть последовательность отображений $A_1 \map A_2 \map \dots ?$
+    Что естественно считать пределом?
+
+    Если отображения --- вложения, то естественно пределом считать $\bigcup A_i$:
+    \[A_1 \hookrightarrow A_2 \hookrightarrow \dots \map \bigcup A_i\]
+
+    Мы уже встречали такие объекты: коэквалайзер, копроизведение, поэтому структуру выше естественно называть не пределом, а копределом.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsyLDEsIkUiXSxbMywyLCJDIl0sWzAsMSwiIiwwLHsib2Zmc2V0IjotMX1dLFswLDEsIiIsMix7Im9mZnNldCI6MX1dLFsxLDJdLFswLDJdLFswLDMsIiIsMix7ImN1cnZlIjoyfV0sWzIsMywiXFxleGlzdHMgISIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsIiIsMix7ImN1cnZlIjotMn1dXQ==
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzAsMiwiQiJdLFsxLDEsIkFcXHNxY3VwIEIiXSxbMiwxLCJDIl0sWzIsMywiXFxleGlzdHMhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMl0sWzEsMl0sWzEsMywiIiwyLHsiY3VydmUiOjJ9XSxbMCwzLCIiLDIseyJjdXJ2ZSI6LTJ9XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          A \& B \\
+          \&\& E \\
+          \&\&\& C
+          \arrow[shift left, from=1-1, to=1-2]
+          \arrow[shift right, from=1-1, to=1-2]
+          \arrow[from=1-2, to=2-3]
+          \arrow[from=1-1, to=2-3]
+          \arrow[curve={height=12pt}, from=1-1, to=3-4]
+          \arrow["{\exists !}"', dashed, from=2-3, to=3-4]
+          \arrow[curve={height=-12pt}, from=1-2, to=3-4]
+    \end{tikzcd}\qquad\begin{tikzcd}[ampersand replacement=\&]
+          A \\
+          \& {A\sqcup B} \& C \\
+          B
+          \arrow["{\exists!}", dashed, from=2-2, to=2-3]
+          \arrow[from=1-1, to=2-2]
+          \arrow[from=3-1, to=2-2]
+          \arrow[curve={height=12pt}, from=3-1, to=2-3]
+          \arrow[curve={height=-12pt}, from=1-1, to=2-3]
+    \end{tikzcd}\]
+    Эти диаграммы соответствуют графам ниже
+    % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMSwiIiwwLHsib2Zmc2V0IjoxfV0sWzAsMSwiIiwyLHsib2Zmc2V0IjotMX1dXQ==
+    % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il1d
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \bullet \& \bullet
+          \arrow[shift right, from=1-1, to=1-2]
+          \arrow[shift left, from=1-1, to=1-2]
+    \end{tikzcd}\begin{tikzcd}[ampersand replacement=\&]
+    {} \\
+    \\
+    {}
+    \arrow[dashed, no head, from=1-1, to=3-1]
+    \end{tikzcd}\begin{tikzcd}[ampersand replacement=\&]
+          \bullet \\
+          \bullet
+    \end{tikzcd}\]
+    \ok
+    Пусть $\cat J$ --- индексирующая категория.
+    Функтор $\cat F: \cat J \map \cat C$ --- \emph{диаграмма}.
+    \definition[Конус над диаграммой $\cat F$]{\down
+    \numbers{
+        \item Объект $C \in \cat C$.
+    \item $\forall J \in \cat J$: морфизм $\eta_J: C \map \cat F(\cat J)$.
+    \item Треугольник коммутативен.
+    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJDIl0sWzAsMSwiXFxjYXQgRihKKSJdLFsyLDEsIlxcY2F0IEYoSicpIl0sWzEsMiwiXFxjYXQgRihcXGFscGhhKSJdLFswLDEsIlxcZXRhX0oiLDJdLFswLDIsIlxcZXRhX3tKJ30iXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& C \\
+              {\cat F(J)} \&\& {\cat F(J')}
+              \arrow["{\cat F(\alpha)}", from=2-1, to=2-3]
+              \arrow["{\eta_J}"', from=1-2, to=2-1]
+              \arrow["{\eta_{J'}}", from=1-2, to=2-3]
+        \end{tikzcd}\]
+    }
+    }
+    Это может напомнить естественное преобразование функторов, вот другой взгляд:
+
+    Пусть $\Delta_\cat{J}C = \Delta C$ --- функтор из $\cat J$ в $\cat C$, определённый так: $\Delta C(J) = C, \Delta C(\alpha) = \id_C$.
+    Тогда конус --- естественное преобразование $\Delta C \map \cat F$, а \emph{коконус} --- естественное преобразование $\cat F \map \Delta F$.
+
+    Теперь из этих конусов надо создать категорию, чтобы определить предел и копредел, как финальный объект в данной категории.
+
+    Морфизм конусов $\Delta C \cat F$ и $\Delta C' \map \cat F$ --- это такой морфизм $\phi: C \map C'$, такой, что все появившиеся диаграммы коммутативны:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJDIl0sWzEsMCwiQyciXSxbMSwxLCJcXGNhdCBGKEopIl0sWzAsMSwiXFxwaGkiXSxbMCwyLCJcXGV0YV9KIiwyXSxbMSwyLCJcXGV0YSdfSiJdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          C \& {C'} \\
+          \& {\cat F(J)}
+          \arrow["\phi", from=1-1, to=1-2]
+          \arrow["{\eta_J}"', from=1-1, to=2-2]
+          \arrow["{\eta'_J}", from=1-2, to=2-2]
+    \end{tikzcd}\]
+    Другими словами, это такой морфизм $\phi: C \map C'$, что диаграмма естественных преобразований ниже коммутативна:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIEMnIl0sWzEsMSwiXFxjYXQgRiJdLFsxLDJdLFswLDJdLFswLDEsIlxcRGVsdGEgXFxwaGkiXV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {\Delta C} \& {\Delta C'} \\
+    \& {\cat F}
+    \arrow[from=1-2, to=2-2]
+    \arrow[from=1-1, to=2-2]
+    \arrow["{\Delta \phi}", from=1-1, to=1-2]
+    \end{tikzcd}\]
+    Это действительно категория, так как таких диаграмм не больше, чем $\Mor_\cat{C}(C, C')$.
+    \definition[Предел диаграммы $\cat F$]{
+    Финальный объект в категории конусов над $\cat F$.
+    Обозначают пределы $\varprojlim \cat F$.
+    }
+    Двойственно, \emph{копредел} $\cat F$ --- инициальный объект в категории коконусов над $\cat F$.
+
+    Копределы пишутся $\varinjlim \cat F$.
+    \examples[Пределы]{
+        \item % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNkb3RzIl0sWzEsMCwiRlt0XS8odF5uKSJdLFsyLDBdLFs0LDAsIkZbdF0vKHReMikiXSxbNSwwLCJGW3RdLyh0KSJdLFszLDBdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {F[t]/(t^n)} \& {} \& {} \& {F[t]/(t^2)} \& {F[t]/(t)}
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-5, to=1-6]
+              \arrow[from=1-4, to=1-5]
+              \arrow["\cdots"{description}, from=1-3, to=1-4]
+        \end{tikzcd}\]
+    Предел данной категории --- $F[[t]]$. Это можно обосновать с топологической точки зрения: например, если взять в качестве открытых множеств $(t), (t^2), \dots$, то пополнением $F[t]$ по данной топологии будет $F[[t]]$.
+    \item Аналогично
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNkb3RzIl0sWzEsMCwiXFxaLyhwXm4pIl0sWzIsMF0sWzQsMCwiXFxaLyhwXjIpIl0sWzUsMCwiXFxaLyhwKSJdLFszLDBdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {\Z/(p^n)} \& {} \& {} \& {\Z/(p^2)} \& {\Z/(p)}
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-5, to=1-6]
+              \arrow[from=1-4, to=1-5]
+              \arrow["\cdots"{description}, from=1-3, to=1-4]
+        \end{tikzcd}\]
+    $\varprojlim = \hat{\Z}_p$.
+    \item В общем случае для идеала $I \normeq R$ определяется \emph{пополнение} $R$ в $I$: $\varprojlim\limits_{n \to \infty}R/I^n = \hat{R}_I$
+    }
+    \examples[Копределы]{
+        \item Пусть $S \subset R$ --- мультипликативное подмножество коммутативного кольца.
+    Рассмотрим предпорядок на $S: a \preceq b \iff a \divs b$, и возьмём категорию $\cat J$, соответствующую данному предпорядку: $|\Mor(a, b)| = 1 \iff a \divs b$.
+
+    Заведём $\cat F: \cat J \map \cat{CRing}$, $\cat F(s) = R_s$.
+        Функтор действует на морфизмах так: если $b = ac$, то образ морфизма $a \map b$ --- это локализация по частному $c$ % https://q.uiver.app/#q=WzAsMixbMCwwLCJSX2EiXSxbMSwwLCIoUl9hKV9jPVJfYiJdLFswLDEsIlxcbGFtYmRhX2MiXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {R_a} \& {(R_a)_c=R_b}
+        \arrow["{\lambda_c}", from=1-1, to=1-2]
+        \end{tikzcd}\]
+    Здесь копредел $\varinjlim\cat F = \varinjlim\limits_{s \in S} = S^{-1}R$.
+
+    Это довольно удобно: если какое-то свойство выполнено для конечнопорождённых $R$-алгебр, и сохраняется при копределах, то оно выполнено и в локализации.
+    }
+    \examples{
+    \item Если $\cat J = \o$ --- пустая категория, то конус над $\cat J \map \cat C$ --- это объект $C \in \cat C$, и его предел --- финальный объект.
+    \item Если $\cat J = \{*\}$ --- категория с одним объектом, то конус над $\cat J \map \cat C$ --- это стрелка $* \map C$, и предел этого конуса --- сам объект $C$.
+    \item Если $J = \{a, b\}$ с двумя морфизмами --- только тождественными --- то для функтора $\cat F: \arr{c}{a \mapsto A \\ b \mapsto B}$ $\varprojlim \cat F = A \times B, \varinjlim \cat F = A \sqcup B$.
+    \item Эквалайзер и пулбэк --- тоже пределы.
+    }
+    Определим категорию функторов $\Func(\cat J, \cat C)$, объекты которой --- функторы, морфизмы --- естественные преобразования.
+    Здесь стоит сказать либо что $\cat J$ --- малая категория, либо рассматривать большие категории, либо ещё как-то обойтись с теорией множеств.
+
+    Теперь $\Delta$ --- функтор $\cat C \map \cat \Func(\cat J, \cat C)$.
+    Теперь посмотрим на категорию запятой $(\Delta \downarrow \cat F)$ (здесь $\Delta$ рассматривается, как функтор, а $\cat F$ --- как объект).
+    В ней объекты --- рассматриваемые конусы, морфизмы --- морфизмы конусов.
+
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbSBcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRiJdLFsxLDJdLFswLDJdLFswLDFdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {\Delta C} \& {\Delta \varprojlim \cat F} \\
+    \& {\cat F}
+    \arrow[from=1-2, to=2-2]
+    \arrow[from=1-1, to=2-2]
+    \arrow[from=1-1, to=1-2]
+    \end{tikzcd}\]
+    Если рассмотреть предел, как функтор $\Func(\cat J, \cat C) \map \cat C$ (то есть забыть про стрелки в конусе), то это действительно будет функтор, определённый так на морфизмах:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMCwxLCJcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRyJdLFsyLDNdLFswLDJdLFsxLDNdLFswLDEsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {\Delta \varprojlim\cat F} \& {\Delta \varprojlim\cat F} \\
+    {\cat F} \& {\cat G}
+    \arrow[from=2-1, to=2-2]
+    \arrow[from=1-1, to=2-1]
+    \arrow[from=1-2, to=2-2]
+    \arrow[dashed, from=1-1, to=1-2]
+    \end{tikzcd}\]
+    \proposal{
+    Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть $\Mor(\Delta C, \cat F) = \Mor(C, \varprojlim \cat F)$ естественно по $C$ (естественность по $\cat F$ получается автоматически).
+    \provehere{
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwxLCJcXGNhdCBGIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMl0sWzEsMl1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Delta C} \& {\Delta \varprojlim\cat F} \\
+        \& {\cat F}
+        \arrow[dashed, from=1-1, to=1-2]
+        \arrow[from=1-1, to=2-2]
+        \arrow[from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Естественное преобразование $\Delta \circ \varprojlim \map \id$ --- коединица сопряжения.
+    }
+    }
+    Аналогично, $\varinjlim$ --- левый сопряжённый к $\Delta$.
+    \ok
+    \theorem{
+    Пусть $\cat G: \cat C \map \cat B$ --- левый сопряжённый к $\cat F: \cat B \map \cat C$.
+    Пусть $\cat H: \cat J \map \cat B$. Тогда правый сопряжённый сохраняет пределы: $\cat F\left(\varprojlim \cat H\right) = \varprojlim \cat F \cat H$.
+    \provehere{
+        \indentlemma{Пусть $\cat F, \cat G, \cat H$ как в теореме, $\cat K: \cat J \map \cat C$ --- функтор. Тогда $\Mor_{\Func}(\cat K, \cat F \circ \cat H) \cong \Mor_{\Func}(\cat G\circ\cat K, \cat H)$ естественно по всем параметрам.}{
+        Возьмём естественное преобразование $\eta: \cat K \map \cat F \circ \cat H$.
+
+        $\forall X \in \cat J: \eta_X$ сопоставляется преобразование $\theta_X: [\cat K(X) \map \cat F \cat H(X)] \map [\cat G \cat K(X) \map \cat H(X)]$.
+        Проверим, что диаграмма ниже коммутативна.
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBHKFxcY2F0IEsoWCkpIl0sWzEsMCwiXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEcoXFxjYXQgSyhZKSkiXSxbMSwxLCJcXGNhdCBIKFkpIl0sWzAsMSwiXFx0aGV0YV9YIl0sWzEsMywiXFxjYXQgSChcXHBoaSkiXSxbMCwyLCJcXGNhdCBHKFxcY2F0IEsoXFxwaGkpKSIsMl0sWzIsMywiXFx0aGV0YV9ZIiwyXV0=
+            \[\begin{tikzcd}[ampersand replacement=\&]
+            {\cat G(\cat K(X))} \& {\cat H(X)} \\
+            {\cat G(\cat K(Y))} \& {\cat H(Y)}
+            \arrow["{\theta_X}", from=1-1, to=1-2]
+            \arrow["{\cat H(\phi)}", from=1-2, to=2-2]
+            \arrow["{\cat G(\cat K(\phi))}"', from=1-1, to=2-1]
+            \arrow["{\theta_Y}"', from=2-1, to=2-2]
+            \end{tikzcd}\]
+        Для $\eta$ эта диаграмма выглядит так:% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBLKFgpIl0sWzEsMCwiXFxjYXQgRlxcY2F0IEgoWCkiXSxbMCwxLCJcXGNhdCBLKFkpIl0sWzEsMSwiXFxjYXQgRlxcY2F0IEgoWSkpIl0sWzIsMywiXFxldGFfWSJdLFswLDEsIlxcZXRhX1giXV0=
+            \[\begin{tikzcd}[ampersand replacement=\&]
+            {\cat K(X)} \& {\cat F\cat H(X)} \\
+            {\cat K(Y)} \& {\cat F\cat H(Y))}
+            \arrow["{\eta_Y}", from=2-1, to=2-2]
+            \arrow["{\eta_X}", from=1-1, to=1-2]
+            \end{tikzcd}\]
+        Применяя $\cat G$ к этой диаграмме, получаем% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEdcXGNhdCBGXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEdcXGNhdCBLKFkpIl0sWzEsMSwiY2F0IEdcXGNhdCBGXFxjYXQgSChZKSkiXSxbMiwwLCJcXGNhdCBIKFgpIl0sWzIsMSwiXFxjYXQgSChZKSJdLFsyLDMsIlxcY2F0IEcoXFxldGFfWSkiXSxbMCwxLCJcXGNhdCBHKFxcZXRhX1gpIl0sWzAsMl0sWzEsM10sWzEsNCwiXFx0ZXh0e9C60L7QtdC00LjQvdC40YbQsH0iXSxbMyw1LCJcXHRleHR70LrQvtC10LTQuNC90LjRhtCwfSJdLFs0LDVdXQ==
+            \[\begin{tikzcd}[ampersand replacement=\&]
+            {\cat G\cat K(X)} \& {\cat G\cat F\cat H(X)} \& {\cat H(X)} \\
+            {\cat G\cat K(Y)} \& {cat G\cat F\cat H(Y))} \& {\cat H(Y)}
+            \arrow["{\cat G(\eta_Y)}", from=2-1, to=2-2]
+            \arrow["{\cat G(\eta_X)}", from=1-1, to=1-2]
+            \arrow[from=1-1, to=2-1]
+            \arrow[from=1-2, to=2-2]
+            \arrow["{\text{коединица}}", from=1-2, to=1-3]
+            \arrow["{\text{коединица}}", from=2-2, to=2-3]
+            \arrow[from=1-3, to=2-3]
+            \end{tikzcd}\]
+        Осталось проверить, что $\text{коединница} \circ \cat G(\eta_X) = \theta_X$, то есть $\theta$ --- действительно естественное преобразование.
+        И ещё композиция $\eta_X \rightsquigarrow \theta_X \rightsquigarrow \eta_X$, и обратно --- тождественна.
+        }
+    \multline{\Mor_{\Func}\left(\Delta C, \cat F\circ\cat H\right) \cong \Mor_{\Func}\left(\cat G \Delta C, \cat H\right) \cong \Mor_{\Func}\left(\Delta \cat G(C), \cat H\right) \cong\\\cong \Mor_{\catB}\left(\cat G(C), \varprojlim\cat H\right) \cong \Mor_{\catC}\left(C, \cat F\left(\varprojlim \cat H\right)\right)}
+    Отсюда (по определению предела) следует, что $\cat F\left(\varprojlim \cat H\right) = \varprojlim\cat F \circ \cat H$.
+    }
+    }
+    \newlection{14 декабря 2023 г.}
+    В зависимости от количества морфизмов в индексирующей категории предел называется \emph{конечным}, \emph{счётным} или \emph{малым}.
+    \proposal{
+        Пусть $\cat C$ --- категория, следующие условия эквивалентны.
+    \numbers{
+    \item В $\cat C$ существуют финальный объект, произведения и эквалайзеры.
+    \item В $\cat C$ существуют финальный объект и все пулбэки.
+    \item В $\cat C$ существуют все конечные пределы.
+    }
+    \provehere[Схема доказательства]{
+    Понятно, что достаточно доказать $1 \then 3$.
+        Это доказывается индукцией по количеству морфизмов.
+
+    \underline{База:} если морфизмов нуль, то предел функтора $\cat F: \cat J \map \cat C$ --- произведение объектов $\cat F(J)$ по всем $J \in \cat J$.
+
+    \underline{Переход:} При добавлении стрелки $J_1 \map J_2$ в $\cat J$ обозначим $A = \cat F(J_1), B = \cat F(J_2)$.
+        Чтобы получить предел новой диаграммы, надо взять эквалайзер каких-то стрелок.
+    }
+    }
+    \note{
+    В случае счётного предела надо добавить условие существования счётного обратного предела --- предела диаграммы.
+    }
+    \subsection{Схема построения алгебраического замыкания}
+    Берём $F$, пусть $P$ --- множество всех унитальных многочленов над $F$.
+    Введём частичный порядок на $F: f \preceq g \iff f \divs g$.
+    Далее рассматриваем категорию $\cat P$, построенную по данному частично упорядоченному множеству.
+
+    Рассмотрим функтор $\cat P \map \cat{Field}, f \mapsto F_f$, сопоставляющий многочлену $f$ \emph{поле разложения} $f$ --- наименьшее (по включению) поле, в котором $f$ раскладывается на линейные множители.
+    Оно существует, но его изоморфизм может быть не единственен.
+    В частности, чтобы выбрать какое-то одно поле, в которое будет бить функтор, нужна какая-то версия аксиомы выбора.
+
+    В частности (при $q = p^n$), $\Ff_q$ --- поле разложения $x^q - x \in \Ff_p[x]$.
+
+    Так вот, тогда копредел этого функтора $\varinjlim\limits_{f \in P}F_f$ --- это некоторое кольцо.
+    В этом кольце выбирается произвольный максимальный идеал $\mathfrak{m} \normeq \varinjlim\limits_{f \in P}F_f$.
+    Он есть всегда, если $\varinjlim\limits_{f \in P}F_f \ne \{0\}$, и факторполе $F_f/\mathfrak{m}$ назовём это поле \emph{алгебраическим замыканием} $F$
+    \section{Лемма Йонеды}
+    \definition[Представимый функтор]{
+    Ковариантный функтор $\catC \map \cat{Set}$, естественно изоморфный $\Mor_\catC(A, \_)$ для некоторого $ A\in \cat C$.
+
+    Любой данный объект $A$ --- \emph{представляющий} объект.
+    }
+    Оказывается, это весьма частая ситуация.
+
+    \examples{
+    \item    Возьмём аффинное $n$-мерное пространство $\mathbb{A}^n$.
+        С одной стороны, это функтор \begin{align*}\mathbb{A}^n: \cat{CRing} &\map \cat{Set} \\ R &\mapsto \mathbb{A}^n_R \bydef \defset{(r_1, \dots, r_n)}{r_i \in R}\end{align*}
+    На морфизмах функтор задан понятным образом.
+
+    С другой стороны, в классической алгебраической геометрии фиксируют какое-то алгебраически замкнутое поле, и рассматривают значения этого функтора на данном поле.
+
+    Нам это $\mathbb{A}^n$ интересно именно, как функтор, и он является представимым: $\mathbb{A}^n\cong\Mor(\Z[t_1, \dots, t_n], \_)$. Если заменить $\cat{CRing}$ на $F\text{-}\cat{Alg}$, то $\mathbb{A}^n\cong\Mor(F[t_1, \dots, t_n], \_)$.
+
+    Зафиксируем $f_1, \dots, f_m \in F[t]$.
+        Пусть $X_R \subset \mathbb{A}^n_R: X_R \coloneqq \defset{x \in \A}{f_1(x) = \cdots = f_m(x) = 0}$.
+        Это тоже функтор, причём он тоже представим: $X \cong \Mor_{F\text{-}\cat{Alg}}(F[t_1, \dots, t_m]/_{(f_1, \dots, f_m)}, \_)$. Здесь $f_i$ рассматривается, как многочлен от $t_i$.
+        \item Рассмотрим представимый функтор $SL_n \cong \Mor(A, \_)$, где $A = F\left[g_{i,j}\right]_{i,j =1}^{n}/_{(\det g - 1)}$.
+        Для точности стоит заметить, что здесь $SL_n$ бьёт в $\cat{Set}$, композиция с забывающим функтором.
+        Эквивалентно, можно задать какую-то структуру на морфизмах (в данном случае --- структуры алгебры Хопфа).
+
+    Эта матрица удовлетворяет универсальному свойству $\forall R, \forall a \in SL_n(R): \exists ! A \map R: \phi(g) = a$.
+
+    В частности, $g \in SL_n(A)$ --- общий элемент, $g \map \id_A \in \Mor(A, A)$.
+    }
+    \lemma[Йонеда]{
+    Пусть $\cat F: \catC \map \cat{Set}$, $\cat C$ --- малая категория.
+        Пусть $A \in \catC$.
+
+        Обозначим множество естественных преобразований $\Mor(A, \_) \map \cat F$ за $\Nat(\Mor(A, \_), \cat F)$.
+
+        Тогда $\Nat(\Mor(A, \_), \cat F) \cong \cat F(A)$ естественно по $A$ и по $\cat F$.
+    \provehere{
+    Пусть $\eta: \Mor(A, \_) \map \cat F$.
+    Сопоставим $\eta \rightsquigarrow \eta_A(\id_A) \in \cat F(A)$.
+
+    Обратно, элементу $a \in \cat F(A)$ хотим сопоставить $\eta^{(a)} \in \Nat(\Mor(A, \_), \cat F)$.
+    Рассмотрим $\phi \in \Mor(A, B)$, ей соответствует $\Mor(A, \phi) = \phi \circ \_$. Так как $\eta^{(a)}$ должно быть естественным преобразованием, то диаграмма ниже должна быть коммутативной.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcihBLCBBKSJdLFsxLDAsIlxcY2F0IEYoQSkiXSxbMCwxLCJcXHBoaSBcXGluIFxcTW9yKEEsIEIpIl0sWzEsMSwiXFxjYXQgRihCKSJdLFswLDFdLFsyLDNdLFswLDIsIlxccGhpIFxcY2lyYyBcXF8iXSxbMSwzLCJcXGNhdCBGKFxccGhpKSJdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Mor(A, A)} \& {\cat F(A)} \\
+        {\phi \in \Mor(A, B)} \& {\cat F(B)}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow["{\phi \circ \_}", from=1-1, to=2-1]
+        \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Проверим коммутативность на элементе $\id_A$. Вниз он уходит в $\phi$, далее вправо --- в $\eta^{(a)}_B(\phi)$, что мы и хотим определить.
+
+    Если же сначала пойти вправо, то будет $\eta_A^{(a)}(\id_A)$, и так как мы хотим, чтобы это преобразование было обратным, то надо положить $\eta_A^{(a)}(\id A) = a$. Отсюда получаем $\eta^{(a)}_B(\phi) \coloneqq \cat F(\phi)(a)$.
+
+    Это размышление показывает, что если $\eta_A^{(a)}(\id_A) = a$, то $\eta^{(a)}_A$ задано единственным образом.
+
+    Заметим, что $\eta_A^{(a)}(\id) = \cat F(\id)(a) = \id(a) = a$, поэтому построенные отображения $[\eta \mapsto \eta_A(\id_A)]$ и $[a \mapsto \eta^{(a)}]$ --- взаимно обратные.
+
+    Теперь надо показать естественность.
+        Она, конечно выполняется, так как построение не зависит ни от каких выборов, но давайте проверим это формально.
+
+    Пусть $f: A \map B$ --- морфизм, $\theta: \cat F \map \cat G$ --- естественное преобразование.
+        В данной диаграмме вертикальные стрелки --- построенные $[\eta \mapsto \eta_A(\id_A)]$.
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2lyYyBcXF8iXSxbMCwxXSxbMiwzXSxbMSwzLCJcXHRoZXRhX0EiXSxbMiw0XSxbNCw1XSxbMyw1LCJcXGNhdCBHKGYpIl1d
+        \begin{equation}\label{yoneda}\begin{tikzcd}[ampersand replacement=\&]
+        {\Nat(\Mor(A, \_), \cat F)} \& {\Nat(\Mor(A, \_), \cat G)} \& {\Nat(\Mor(B, \_), \cat G)} \\
+        {\cat F(A)} \& {\cat G(A)} \& {\cat G(B)}
+        \arrow["{\theta \circ \_}", from=1-1, to=1-2]
+        \arrow[from=1-1, to=2-1]
+        \arrow[from=1-2, to=2-2]
+        \arrow["{\theta_A}", from=2-1, to=2-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=2-3]
+        \arrow["{\cat G(f)}", from=2-2, to=2-3]
+        \end{tikzcd}\end{equation}
+    Сначала проверим коммутативность левого квадратика.
+
+    $\eta: \Mor(A, \_) \map \cat F$ отправляется вниз в $\eta_A(\id_A)$, после чего вправо уходит в $\theta_A(\eta_A(\id_A))$.
+    Надо проверить, что это равно $(\theta \circ \eta)(\id_A)$, но это просто определение композиции естественных преобразований.
+
+    Теперь надо проверить коммутативность правого квадрата, для этого сначала поймём, какая стрелка $\Nat(\Mor(A, \_), \cat G) \map \Nat(\Mor(B, \_), \cat G)$.
+    $\Mor(B, \_) \overset{\_ \circ f}\Map \Mor(A, \_)$.
+        Далее, на естественных преобразованиях действие устроено так:
+        $\begin{tikzcd}[ampersand replacement=\&,cramped]
+        {\lambda: \Mor(A, \_) \map \cat G} \\
+        {\mu: \Mor(B, \_) \map \cat G}
+        \arrow[shift right=14, maps to, from=1-1, to=2-1]
+        \end{tikzcd}$
+    Для $g \in \Mor(B, X): \mu_X(g) = \lambda_X(g \circ f)$.
+
+    Теперь проверим коммутативность: $\lambda: \Mor(A, \_) \map \cat G$ отправляется вниз в $\lambda_A(\id_A)$, дальше вправо в $\cat G(f)(\lambda_A(\id_A))$.
+    Если же пойти сначала вправо, потом вниз, то будет $\mu_B(\id_B)$, где $\mu$ определено выше; а именно, $\mu_B(\id_B) = \lambda_B(f)$.
+
+    Используя коммутативность диаграммы, которая уже была нарисована выше, получаем, что $\id_A$ вниз и вправо уходит в $\lambda_B(f)$, а вправо и вниз --- в $\cat G(f)(\lambda_A(\id_A))$.
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcihBLCBBKSJdLFsxLDAsIlxcY2F0IEcoQSkiXSxbMCwxLCJcXE1vcihBLCBCKSJdLFsxLDEsIlxcY2F0IEcoQikiXSxbMCwxLCJcXGxhbWJkYV9BIl0sWzIsMywiXFxsYW1iZGFfQiJdLFswLDIsImYgXFxjaXJjIFxcXyJdLFsxLDMsIlxcY2F0IEcoXFxwaGkpIl1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Mor(A, A)} \& {\cat G(A)} \\
+        {\Mor(A, B)} \& {\cat G(B)}
+        \arrow["{\lambda_A}", from=1-1, to=1-2]
+        \arrow["{\lambda_B}", from=2-1, to=2-2]
+        \arrow["{f \circ \_}", from=1-1, to=2-1]
+        \arrow["{\cat G(\phi)}", from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Таким образом, оба квадарата коммутативны, и вся диаграмма~\eqref{yoneda} коммутативна, то есть преобразование естественно и по $A$, и по $\cat F$.
+    }
+    }
+    \corollary{
+    Множество естественных преобразований $\Nat(\Mor(A, \_), \Mor(B, \_)) \cong \Mor(B, A)$.
+    Категория представимых функторов антиэквивалентна категории $\cat C$.
     }
 \end{document}
