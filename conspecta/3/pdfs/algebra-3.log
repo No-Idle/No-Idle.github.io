@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 DEC 2023 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 DEC 2023 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1685,15 +1685,24 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 150
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (28.90138pt too wide) in paragraph at lines 1538--1538
+Overfull \hbox (28.90138pt too wide) in paragraph at lines 1539--1539
 []\T2A/faq/m/n/10 Нам это $\U/msb/m/n/10 A[]$ \T2A/faq/m/n/10 ин-те-рес-но имен
 -но, как функ-тор, и он яв-ля-ет-ся пред-ста-ви-мым: $\U/msb/m/n/10 A[] [] []\O
 T1/cmr/m/n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\O
 T1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 .
  []
 
+
+Overfull \hbox (12.72997pt too wide) in paragraph at lines 1539--1539
+[]\T2A/faq/m/n/10 Зафиксируем $\OML/cmm/m/it/10 f[]; [] ; f[] \OMS/cmsy/m/n/10 
+2 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\OT1/cmr/m/n
+/10 ]$\T2A/faq/m/n/10 . Пусть $\OML/cmm/m/it/10 X[] \OMS/cmsy/m/n/10 ^^Z \U/msb
+/m/n/10 A[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 X[] [][]\OT1/cmr/m/n/10 = []$\T2
+A/faq/m/n/10 .
+ []
+
 [88] [89]
-Overfull \hbox (16.6259pt too wide) in paragraph at lines 1620--1620
+Overfull \hbox (16.6259pt too wide) in paragraph at lines 1621--1621
 [][]\T2A/faq/bx/n/10 Следствие 4.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен
 -ных пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/
 m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/
@@ -1710,7 +1719,7 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
 Here is how much of TeX's memory you used:
  31456 strings out of 479648
  613433 string characters out of 5886115
- 872720 words of memory out of 5000000
+ 872716 words of memory out of 5000000
  48459 multiletter control sequences out of 15000+600000
  507295 words of font info for 97 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1740,7 +1749,7 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (91 pages, 722394 bytes).
+ (91 pages, 722334 bytes).
 PDF statistics:
  1343 PDF objects out of 1440 (max. 8388607)
  1189 compressed objects within 12 object streams
