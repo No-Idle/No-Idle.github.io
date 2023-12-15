@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 DEC 2023 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 DEC 2023 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -645,6 +645,13 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 \EQ_tag_box=\box57
 \g_EQ_temprow_int=\count298
 )
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count299
+\decimalpart=\count300
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -657,7 +664,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks37
 \XKV@tempa@toks=\toks38
 )
-\XKV@depth=\count299
+\XKV@depth=\count301
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
@@ -709,14 +716,14 @@ ex
 \pgf@yd=\dimen197
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count300
-\c@pgf@countb=\count301
-\c@pgf@countc=\count302
-\c@pgf@countd=\count303
+\c@pgf@counta=\count302
+\c@pgf@countb=\count303
+\c@pgf@countc=\count304
+\c@pgf@countd=\count305
 \t@pgf@toka=\toks43
 \t@pgf@tokb=\toks44
 \t@pgf@tokc=\toks45
-\pgf@sys@id@count=\count304
+\pgf@sys@id@count=\count306
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -732,8 +739,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count305
-\pgfsyssoftpath@bigbuffer@items=\count306
+\pgfsyssoftpath@smallbuffer@items=\count307
+\pgfsyssoftpath@bigbuffer@items=\count308
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -763,7 +770,7 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen198
-\pgfmath@count=\count307
+\pgfmath@count=\count309
 \pgfmath@box=\box59
 \pgfmath@toks=\toks46
 \pgfmath@stack@operand=\toks47
@@ -787,7 +794,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count308
+\c@pgfmathroundto@lastzeros=\count310
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
@@ -826,7 +833,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box60
 \pgf@hbox=\box61
 \pgf@layerbox@main=\box62
-\pgf@picture@serial@count=\count309
+\pgf@picture@serial@count=\count311
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -859,8 +866,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen278
-\pgf@sys@shading@range@num=\count310
-\pgf@shadingcount=\count311
+\pgf@sys@shading@range@num=\count312
+\pgf@shadingcount=\count313
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -920,7 +927,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count312
+\pgf@plot@mark@count=\count314
 \pgfplotmarksize=\dimen283
 )
 \tikz@lastx=\dimen284
@@ -935,18 +942,18 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box66
 \tikz@tempbox=\box67
 \tikz@tempbox@bg=\box68
-\tikztreelevel=\count313
-\tikznumberofchildren=\count314
-\tikznumberofcurrentchild=\count315
-\tikz@fig@count=\count316
+\tikztreelevel=\count315
+\tikznumberofchildren=\count316
+\tikznumberofcurrentchild=\count317
+\tikz@fig@count=\count318
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count317
-\pgfmatrixcurrentcolumn=\count318
-\pgf@matrix@numberofcolumns=\count319
+\pgfmatrixcurrentrow=\count319
+\pgfmatrixcurrentcolumn=\count320
+\pgf@matrix@numberofcolumns=\count321
 )
-\tikz@expandcount=\count320
+\tikz@expandcount=\count322
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -980,7 +987,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen298
 \pgfdecoratedinputsegmentremainingdistance=\dimen299
 \pgf@decorate@distancetomove=\dimen300
-\pgf@decorate@repeatstate=\count321
+\pgf@decorate@repeatstate=\count323
 \pgfdecorationsegmentamplitude=\dimen301
 \pgfdecorationsegmentlength=\dimen302
 )
@@ -996,16 +1003,16 @@ File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 zlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-\c@lemma_env=\count322
-\c@proposal_env=\count323
-\c@problem_env=\count324
-\c@corollary_env=\count325
-\c@fact_env=\count326
-\c@statement_env=\count327
-\c@exercise_env=\count328
-\c@theorem_env=\count329
-\c@definition_env=\count330
-\c@lection=\count331
+\c@lemma_env=\count324
+\c@proposal_env=\count325
+\c@problem_env=\count326
+\c@corollary_env=\count327
+\c@fact_env=\count328
+\c@statement_env=\count329
+\c@exercise_env=\count330
+\c@theorem_env=\count331
+\c@definition_env=\count332
+\c@lection=\count333
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
@@ -1018,7 +1025,7 @@ File: ot1faq.fd 2001/12/09 Fontinst v1.914 font definitions for OT1/faq.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count332
+\l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
 (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux
@@ -1094,16 +1101,16 @@ LaTeX Info: Redefining \th on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
+\scratchcounter=\count335
 \scratchdimen=\dimen303
 \scratchbox=\box71
-\nofMPsegments=\count334
-\nofMParguments=\count335
+\nofMPsegments=\count336
+\nofMParguments=\count337
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count336
+\MPscratchCnt=\count338
 \MPscratchDim=\dimen304
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1125,7 +1132,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count339
+\c@section@level=\count341
 )
 LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
@@ -1620,7 +1627,265 @@ Overfull \hbox (20.4889pt too wide) detected at line 398
 []
  []
 
-[71] [72]
+[71]
+./algebra-3.tex:460: Argument of \cat has an extra }.
+<inserted text> 
+                \par 
+l.460     }
+           
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./algebra-3.tex:460: Paragraph ended before \cat was complete.
+<to be read again> 
+                   \par 
+l.460     }
+           
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./algebra-3.tex:460: Argument of \cat has an extra }.
+<inserted text> 
+                \par 
+l.460     }
+           
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./algebra-3.tex:460: Paragraph ended before \cat was complete.
+<to be read again> 
+                   \par 
+l.460     }
+           
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./algebra-3.tex:460: Missing $ inserted.
+<inserted text> 
+                $
+l.460     }
+           
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./algebra-3.tex:460: Missing } inserted.
+<inserted text> 
+                }
+l.460     }
+           
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./algebra-3.tex:460: Missing } inserted.
+<inserted text> 
+                }
+l.460     }
+           
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./algebra-3.tex:460: Extra }, or forgotten \endgroup.
+\firstchar ->{\@@par }
+                      
+l.460     }
+           
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./algebra-3.tex:460: Extra }, or forgotten \endgroup.
+\math@egroup #1->#1\egroup 
+                           
+l.460     }
+           
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./algebra-3.tex:460: Undefined control sequence.
+<argument> \remainingchars 
+                           
+l.460     }
+           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \CYRM invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyro invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrr invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrf invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyri invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrz invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrm invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyra invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrm invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyri invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrv invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrn invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyre invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrishrt invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrya invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrv invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrl invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrya invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyryu invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrt invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrya invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrf invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyru invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrn invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrk invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrt invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyro invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrr invalid in math mode on input line 460.
+
+
+LaTeX Warning: Command \cyrery invalid in math mode on input line 460.
+
+./algebra-3.tex:460: Missing $ inserted.
+<inserted text> 
+                $
+l.460     }
+           
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./algebra-3.tex:460: Missing } inserted.
+<inserted text> 
+                }
+l.460     }
+           
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no М in font cmr10!
+Missing character: There is no о in font cmr10!
+Missing character: There is no р in font cmr10!
+Missing character: There is no ф in font cmr10!
+Missing character: There is no и in font cmr10!
+Missing character: There is no з in font cmr10!
+Missing character: There is no м in font cmr10!
+Missing character: There is no а in font cmr10!
+Missing character: There is no м in font cmr10!
+Missing character: There is no и in font cmr10!
+Missing character: There is no в in font cmr10!
+Missing character: There is no н in font cmr10!
+Missing character: There is no е in font cmr10!
+Missing character: There is no й in font cmr10!
+Missing character: There is no я in font cmr10!
+Missing character: There is no в in font cmr10!
+Missing character: There is no л in font cmr10!
+Missing character: There is no я in font cmr10!
+Missing character: There is no ю in font cmr10!
+Missing character: There is no т in font cmr10!
+Missing character: There is no с in font cmr10!
+Missing character: There is no я in font cmr10!
+Missing character: There is no ф in font cmr10!
+Missing character: There is no у in font cmr10!
+Missing character: There is no н in font cmr10!
+Missing character: There is no к in font cmr10!
+Missing character: There is no т in font cmr10!
+Missing character: There is no о in font cmr10!
+Missing character: There is no р in font cmr10!
+Missing character: There is no ы in font cmr10!
+./algebra-3.tex:460: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.460     }
+           
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[72]
 Overfull \hbox (4.35089pt too wide) in paragraph at lines 514--514
 []\T2A/faq/m/it/10 Контрпример \T2A/faq/m/n/10 (Неесте-ствен-ное пре-об-ра-зо-в
 а-ние)\T2A/faq/m/it/10 . []\T2A/faq/m/n/10 Изо-мор-физм ко-неч-но-мер-но-го век
@@ -1628,10 +1893,10 @@ Overfull \hbox (4.35089pt too wide) in paragraph at lines 514--514
  []
 
 [73]
-Overfull \hbox (25.45773pt too wide) in paragraph at lines 554--554
+Overfull \hbox (19.86786pt too wide) in paragraph at lines 554--554
 []\T2A/faq/m/n/10 Естественный изо-мор-физм в ка-те-го-рии ко-неч-но-мер-ных ве
-к-тор-ных про-странств $[][]$: $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y \OMS/c
-msy/m/n/10 
+к-тор-ных про-странств $\U/BOONDOX-scr/m/n/10 V e c t[]$\T2A/faq/m/n/10 : $[]\O
+T1/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y \OMS/cmsy/m/n/10 
 
  []
 
@@ -1644,17 +1909,64 @@ Overfull \hbox (1.37367pt too wide) in paragraph at lines 603--605
  []
 
 
-Overfull \hbox (9.6016pt too wide) in paragraph at lines 624--625
-[]\T2A/faq/m/n/10 В $[]$ ко-эк-ва-лай-зер $\OML/cmm/m/it/10 ^^^;   \OT1/cmr/m/n
-/10 : \OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 H$ \T2A/faq/m/n/10
- --- это фак-то-ри-за-ция по нор-маль-но-му за-мы-ка-нию $\OMS/cmsy/m/n/10 f\OM
-L/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )\OML/cmm/m
-/it/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 
-g$\T2A/faq/m/n/10 . 
+Overfull \hbox (2.93509pt too wide) in paragraph at lines 624--625
+[]\T2A/faq/m/n/10 В $\U/BOONDOX-scr/m/n/10 G r o u p$ \T2A/faq/m/n/10 ко-эк-ва-
+лай-зер $\OML/cmm/m/it/10 ^^^;   \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 G \OMS/cmsy
+/m/n/10 ! \OML/cmm/m/it/10 H$ \T2A/faq/m/n/10 --- это фак-то-ри-за-ция по нор-м
+аль-но-му за-мы-ка-нию $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )\OML/cmm/m/it/10  \OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 g[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\T2A/faq/m/n/10 . 
  []
 
-[75] [76] [77] [78] [79] [80] [81]
-Overfull \hbox (21.86375pt too wide) in paragraph at lines 1151--1151
+[75] [76] [77] [78] [79]
+./algebra-3.tex:983: Undefined control sequence.
+<argument> \string \newlabel {comma-\category 
+                                              }{{\@currentlabel }{\thepage }...
+l.983     \label{comma-\category}
+                                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./algebra-3.tex:999: Undefined control sequence.
+l.999 ...С‚Рѕ РЅР°Р·С‹РІР°РµС‚СЃСЏ comma-\category
+                                                  , РєР°С‚РµРіРѕСЂРёСЏ Р·Р°Р...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[80]
+./algebra-3.tex:1060: Undefined control sequence.
+<argument> comma-\category 
+                           
+l.1060 ...ownarrow \cat F)$~(\ref{comma-\category}
+                                                  ).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./algebra-3.tex:1060: Undefined control sequence.
+<write> ...eX Warning: Reference `comma-\category 
+                                                  ' on page \thepage \space ...
+l.1060 ...ownarrow \cat F)$~(\ref{comma-\category}
+                                                  ).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `comma-' on page 81 undefined on input line 1060.
+
+[81]
+Overfull \hbox (21.86375pt too wide) in paragraph at lines 1175--1175
 []\T2A/faq/m/n/10 Теперь до-ка-жем, что $\OML/cmm/m/it/10 ^^Q$ \T2A/faq/m/n/10 
 --- \T2A/faq/m/it/10 есте-ствен-ное \T2A/faq/m/n/10 пре-об-ра-зо-ва-ние меж-ду 
 функ-то-ра-ми $\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X; Y \OMS/cmsy/m/n/10 7! [][]\
@@ -1662,15 +1974,124 @@ OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; \U/BOONDOX-scr/m/n/10 F\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 Y\OT1/cmr/m/n/10 ))] \OMS/cmsy/m/n/10 !
  []
 
-[82]
-Overfull \hbox (6.87462pt too wide) in paragraph at lines 1246--1246
-[]\T2A/faq/m/n/10 Левый со-пря-жјн-ный к функ-то-ру вло-же-ния $[] \OMS/cmsy/m/
-n/10 ! []$ \T2A/faq/m/n/10 --- это функ-тор $[] \OMS/cmsy/m/n/10 ! []\OML/cmm/m
-/it/10 ; I \OMS/cmsy/m/n/10 7!
- []
+[82] [83]
+./algebra-3.tex:1266: Argument of \cat has an extra }.
+<inserted text> 
+                \par 
+l.1266     }
+            
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
 
-[83] [84] [85] [86]
-Overfull \hbox (15.06308pt too wide) in paragraph at lines 1474--1474
+Runaway argument?
+./algebra-3.tex:1266: Paragraph ended before \cat was complete.
+<to be read again> 
+                   \par 
+l.1266     }
+            
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./algebra-3.tex:1266: Argument of \cat has an extra }.
+<inserted text> 
+                \par 
+l.1266     }
+            
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./algebra-3.tex:1266: Paragraph ended before \cat was complete.
+<to be read again> 
+                   \par 
+l.1266     }
+            
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./algebra-3.tex:1266: Missing $ inserted.
+<inserted text> 
+                $
+l.1266     }
+            
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./algebra-3.tex:1266: Missing } inserted.
+<inserted text> 
+                }
+l.1266     }
+            
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./algebra-3.tex:1266: Missing } inserted.
+<inserted text> 
+                }
+l.1266     }
+            
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./algebra-3.tex:1266: Extra }, or forgotten \endgroup.
+\firstchar ->{\@@par }
+                      
+l.1266     }
+            
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./algebra-3.tex:1266: Extra }, or forgotten \endgroup.
+\math@egroup #1->#1\egroup 
+                           
+l.1266     }
+            
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./algebra-3.tex:1266: Undefined control sequence.
+<argument> \remainingchars 
+                           
+l.1266     }
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./algebra-3.tex:1266: Missing $ inserted.
+<inserted text> 
+                $
+l.1266     }
+            
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[84] [85] [86] [87]
+Overfull \hbox (15.06308pt too wide) in paragraph at lines 1539--1539
 [][]\T2A/faq/bx/n/10 Лемма 4.8.1. []\T2A/faq/m/it/10 Пусть $\U/BOONDOX-scr/m/n/
 10 F\OML/cmm/m/it/10 ; \U/BOONDOX-scr/m/n/10 G\OML/cmm/m/it/10 ; \U/BOONDOX-scr
 /m/n/10 H$ \T2A/faq/m/it/10 как в тео-ре-ме, $\U/BOONDOX-scr/m/n/10 K \OT1/cmr/
@@ -1679,13 +2100,13 @@ m/n/10 : \U/BOONDOX-scr/m/n/10 J \OMS/cmsy/m/n/10 ! \U/BOONDOX-scr/m/n/10 C$ \T
  K\OML/cmm/m/it/10 ; \U/BOONDOX-scr/m/n/10 F \OMS/cmsy/m/n/10 ^^N
  []
 
-[87]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 150
-9.
+[88]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 157
+4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (28.90138pt too wide) in paragraph at lines 1539--1539
+Overfull \hbox (28.90138pt too wide) in paragraph at lines 1604--1604
 []\T2A/faq/m/n/10 Нам это $\U/msb/m/n/10 A[]$ \T2A/faq/m/n/10 ин-те-рес-но имен
 -но, как функ-тор, и он яв-ля-ет-ся пред-ста-ви-мым: $\U/msb/m/n/10 A[] [] []\O
 T1/cmr/m/n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\O
@@ -1693,7 +2114,7 @@ T1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 .
  []
 
 
-Overfull \hbox (12.72997pt too wide) in paragraph at lines 1539--1539
+Overfull \hbox (12.72997pt too wide) in paragraph at lines 1604--1604
 []\T2A/faq/m/n/10 Зафиксируем $\OML/cmm/m/it/10 f[]; [] ; f[] \OMS/cmsy/m/n/10 
 2 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\OT1/cmr/m/n
 /10 ]$\T2A/faq/m/n/10 . Пусть $\OML/cmm/m/it/10 X[] \OMS/cmsy/m/n/10 ^^Z \U/msb
@@ -1701,26 +2122,32 @@ Overfull \hbox (12.72997pt too wide) in paragraph at lines 1539--1539
 A/faq/m/n/10 .
  []
 
-[88] [89]
-Overfull \hbox (16.6259pt too wide) in paragraph at lines 1621--1621
+[89] [90]
+Overfull \hbox (16.6259pt too wide) in paragraph at lines 1686--1686
 [][]\T2A/faq/bx/n/10 Следствие 4.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен
 -ных пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/
 m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/
 n/10 )) [] [](\OML/cmm/m/it/10 B; A\OT1/cmr/m/n/10 )$\T2A/faq/m/it/10 .
  []
 
-[90] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
+[91] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `algebra-3.out' has not changed.
 (rerunfilecheck)             Checksum: B91AF4DAEDCED683BE63834A13211A94;27630.
  ) 
 Here is how much of TeX's memory you used:
- 31456 strings out of 479648
- 613433 string characters out of 5886115
- 872716 words of memory out of 5000000
- 48459 multiletter control sequences out of 15000+600000
+ 31941 strings out of 479648
+ 622734 string characters out of 5886115
+ 882708 words of memory out of 5000000
+ 48938 multiletter control sequences out of 15000+600000
  507295 words of font info for 97 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  113i,28n,117p,745b,1312s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1749,10 +2176,10 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (91 pages, 722334 bytes).
+ (92 pages, 728245 bytes).
 PDF statistics:
- 1343 PDF objects out of 1440 (max. 8388607)
- 1189 compressed objects within 12 object streams
- 436 named destinations out of 1000 (max. 500000)
+ 1346 PDF objects out of 1440 (max. 8388607)
+ 1191 compressed objects within 12 object streams
+ 437 named destinations out of 1000 (max. 500000)
  733 words of extra memory for PDF output out of 10000 (max. 10000000)
 
