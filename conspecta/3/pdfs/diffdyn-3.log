@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 DEC 2023 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 DEC 2023 00:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -671,9 +671,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
 (Font)                  U/BOONDOX-scr/m/n --> U/BOONDOX-scr/b/n on input line 9
 27.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
-
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -959,6 +956,9 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
 (/usr/share/texlive/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarymatrix.code.tex
@@ -1362,7 +1362,7 @@ Overfull \hbox (35.505pt too wide) in paragraph at lines 1368--1369
 [42
 
 ] [43]
-Overfull \hbox (49.50716pt too wide) in paragraph at lines 1555--1555
+Overfull \hbox (49.50716pt too wide) in paragraph at lines 1643--1643
 \T2A/faq/m/n/10 У си-сте-мы есть сим-мет-рии: ре-ше-нию $\OT1/cmr/m/n/10 (\OML/
 cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/
 10 ; y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))$ \T2A/faq/m/n/10 со
@@ -1373,14 +1373,24 @@ t/10 x; \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )\OML/cmm/m/it/10
 @\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 . 
  []
 
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[44]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (4.70918pt too wide) in paragraph at lines 1555--1555
+Overfull \hbox (4.70918pt too wide) in paragraph at lines 1643--1643
 []\T2A/faq/m/n/10 Выражая $\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 = [] [] []$\T2A/f
 aq/m/n/10 , по-лу-ча-ем урав-не-ние кри-вых $\OML/cmm/m/it/10 y \OT1/cmr/m/n/10
  = [] [] =
  []
 
-[44] [45] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux)
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[45] [46] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1391,13 +1401,13 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: 940A68FCEFBA4D61292ECA0C9805FAF7;14065.
  ) 
 Here is how much of TeX's memory you used:
- 27134 strings out of 479648
- 504443 string characters out of 5886115
- 799219 words of memory out of 5000000
- 44386 multiletter control sequences out of 15000+600000
+ 28317 strings out of 479648
+ 529301 string characters out of 5886115
+ 921503 words of memory out of 5000000
+ 45568 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 113i,15n,117p,737b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,15n,103p,737b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1419,10 +1429,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/boondox/zxxrw8a.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (46 pages, 409787 bytes).
+ (47 pages, 448538 bytes).
 PDF statistics:
- 680 PDF objects out of 1000 (max. 8388607)
- 584 compressed objects within 6 object streams
- 194 named destinations out of 1000 (max. 500000)
+ 684 PDF objects out of 1000 (max. 8388607)
+ 587 compressed objects within 6 object streams
+ 195 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1511,9 +1511,57 @@
     \bullets{
     \item Если $\mu$, $\lambda$ одного знака, то будут выпуклые или вогнутые возрастающие из нуля координат функции.
     Такое расположение траекторий называется \emph{обыкновенный узел}.
+        \[\begin{tikzpicture}
+              \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+              \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+              \pgfmathsetmacro\r{0.04};
+              \pgfmathsetmacro\R{4};
+              \foreach \c in {0.02,0.1,0.3,0.7,1.1,1.8,5} {
+                  \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({\x},{sqrt(2*\c*\x)});
+                  \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({\x},{-sqrt(2*\c*\x)});
+                  \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({-\x},{sqrt(2*\c*\x)});
+                  \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({-\x},{-sqrt(2*\c*\x)});
+              }
+              \foreach \x/\y in {1/0,0/1,-1/0,0/-1} {
+                  \pgfmathsetmacro{\l}{sqrt(2 * \R)}
+                  \draw[blue,line width=1pt] (0.2*\x,0.2*\y) -- (\l*\x,\l*\y);
+              }
+              \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}
+        \begin{tikzpicture}
+             \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+             \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+             \pgfmathsetmacro\r{0.04};
+             \pgfmathsetmacro\R{4};
+             \foreach \c in {0.02,0.1,0.3,0.7,1.1,1.8,5} {
+                 \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({sqrt(2*\c*\x)},{\x});
+                 \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({-sqrt(2*\c*\x)},{\x});
+                 \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({sqrt(2*\c*\x)},{-\x});
+                 \draw[scale=1,domain={-\c+sqrt(\c*\c+2*\r)}:{-\c+sqrt(\c*\c+2*\R)},smooth,variable=\x,blue,line width=1pt] plot ({-sqrt(2*\c*\x)},{-\x});
+             }
+             \foreach \x/\y in {1/0,0/1,-1/0,0/-1} {
+                 \pgfmathsetmacro{\l}{sqrt(2 * \R)}
+                 \draw[blue,line width=1pt] (0.2*\x,0.2*\y) -- (\l*\x,\l*\y);
+             }
+             \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}\]
         \item Если $\mu$, $\lambda$ разных знаков, то будут своеобразные гиперболы.
         Такое расположение траекторий называется \emph{седло}.
     Действительно, в сечении гиперболического параболоида получатся такие кривые.
+        \[\begin{tikzpicture}
+            \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+            \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+            \pgfmathsetmacro\r{4};
+            \foreach \c in {-3.5,-2.7,...,0.5,0.3,1.1,...,4.3} {
+                \draw[scale=1,domain={sqrt(\r-sqrt(\r*\r-\c*\c))}:{sqrt(\r+sqrt(\r*\r-\c*\c))},smooth,variable=\x,blue,line width=1pt] plot ({\x},{\c/\x});
+                \draw[scale=1,domain={-sqrt(\r+sqrt(\r*\r-\c*\c))}:{-sqrt(\r-sqrt(\r*\r-\c*\c))},smooth,variable=\x,blue,line width=1pt] plot ({\x},{\c/\x});
+            }
+            \foreach \x/\y in {1/0,0/1,-1/0,0/-1} {
+                \pgfmathsetmacro{\l}{sqrt(2 * \r)}
+                \draw[blue,line width=1pt] (0.2*\x,0.2*\y) -- (\l*\x,\l*\y);
+            }
+            \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}\]
     }
     \newlection{15 декабря 2023 г.}
     \item $\lambda, \mu \in \R$ --- собственные числа $A$, причём $\lambda = \mu$.
@@ -1522,6 +1570,16 @@
     \item Пусть $A = \vect{\lambda & 0 \\ 0 & \lambda}$.
         Тогда все траектории --- всевозможные лучи, исходящие из нуля координат.
     Такое расположение Пуанкаре назвал \emph{дикритический узел}.
+        \[\begin{tikzpicture}
+              \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+              \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+              \pgfmathsetmacro\r{2.8};
+              \pgfmathsetmacro\R{0.2};
+              \foreach \alpha in {0,18,...,360} {
+                  \draw[blue,line width=1pt] ({\r*cos(\alpha)},{\r*sin(\alpha)}) -- ({\R*cos(\alpha)},{\R*sin(\alpha)});
+              }
+              \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}\]
     \item Пусть $A = \vect{\lambda & 0 \\ 1 & \lambda}$. Тогда решение системы $\all{\dot{x}, \lambda x \\ \dot{y} = x + \lambda y}$.
     Здесь симметрий меньше --- есть только центральная $(x, y) \leftrightsquigarrow (-x, -y)$, но нет осевых.
     \bullets{
@@ -1532,6 +1590,20 @@
     Графики функций $y(x) \underset{x \to 0}\Map 0$, зато $y'(x) \underset{x \to 0}\Map \infty$, причём знак бесконечности противоположен знаку $\lambda$.
 
     Эта траектория называется \emph{вырожденный узел}.
+        \[\begin{tikzpicture}
+              \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+              \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+              \pgfmathsetmacro\r{2.8};
+              \pgfmathsetmacro\R{0.2};
+              \foreach \c in {-2,-1.5,-1,0} {
+                  \draw[scale=1,domain=0.2:2.8,smooth,variable=\x,blue,line width=1pt] plot ({\x},{\x*(ln(\x)+\c)});
+                  \draw[scale=1,domain=0.2:2.8,smooth,variable=\x,blue,line width=1pt] plot ({-\x},{\x*(ln(\x)+\c)});
+              }
+              \foreach \x/\y in {0/1,0/-1} {
+                  \draw[blue,line width=1pt] (0.2*\x,0.2*\y) -- (\r*\x,\r*\y);
+              }
+              \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}\]
     }
     }
     Пуанкаре задавался вопросом о траекториях: все ли траектории примыкают к началу, и есть ли предельное положение касательных.
@@ -1551,6 +1623,22 @@
     \item При $a = 0$ экспоненты чисто мнимая, и траектории --- концентрические окружности с центром в нуле.
     Здесь кроме точки покоя никакая к нулю не примыкают, Пуанкаре дал название \emph{центр} этому виду траекторий.
     \item Наконец, если $a \ne 0$, то получаются логарифмические спирали, образующие \emph{фокус} --- все траектории примыкают к нулю, но ни одна не имеет предельного положения касательной.
+        \[\begin{tikzpicture}
+              \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+              \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+              \foreach \r in {0.7,1.4,...,2.8} {
+                  \draw[blue,line width=1pt] (0,0) circle ({\r});
+              }
+              \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}
+        \begin{tikzpicture}
+             \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+             \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+             \foreach \alpha in {0,45,...,315} {
+                 \draw[scale=1,domain={ln(0.2)}:{ln(2.8)},smooth,variable=\x,blue,line width=1pt] plot ({exp(\x)*cos(\alpha+100*\x)},{exp(\x)*sin(\alpha+100*\x)});
+             }
+             \fill[blue] (0,0) circle (2pt);
+        \end{tikzpicture}\]
     }
     }
 Классификация выше весьма тривиальна, и чтобы не останавливаться на этом, приведём упрощённую формулировку теоремы, которая рассматривает нелинейные системы.
