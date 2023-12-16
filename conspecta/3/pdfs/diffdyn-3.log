@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 DEC 2023 00:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 DEC 2023 00:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1381,13 +1381,6 @@ Missing character: There is no ; in font nullfont!
 [44]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-Overfull \hbox (4.70918pt too wide) in paragraph at lines 1643--1643
-[]\T2A/faq/m/n/10 Выражая $\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 = [] [] []$\T2A/f
-aq/m/n/10 , по-лу-ча-ем урав-не-ние кри-вых $\OML/cmm/m/it/10 y \OT1/cmr/m/n/10
- = [] [] =
- []
-
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 [45] [46] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux)
@@ -1401,9 +1394,9 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: 940A68FCEFBA4D61292ECA0C9805FAF7;14065.
  ) 
 Here is how much of TeX's memory you used:
- 28317 strings out of 479648
- 529301 string characters out of 5886115
- 921503 words of memory out of 5000000
+ 28316 strings out of 479648
+ 529284 string characters out of 5886115
+ 921906 words of memory out of 5000000
  45568 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1429,10 +1422,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/boondox/zxxrw8a.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (47 pages, 448538 bytes).
+ (47 pages, 448197 bytes).
 PDF statistics:
- 684 PDF objects out of 1000 (max. 8388607)
- 587 compressed objects within 6 object streams
- 195 named destinations out of 1000 (max. 500000)
+ 683 PDF objects out of 1000 (max. 8388607)
+ 586 compressed objects within 6 object streams
+ 194 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 
