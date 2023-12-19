@@ -440,7 +440,7 @@
 
         Категорию совсем всех категорий рассмотреть не получится, так как класс всех классов не определён.
 
-        Вместо этого рассмотрим категорию всех малых категорий $\cat{\cat}$.
+        Вместо этого рассмотрим категорию всех малых категорий $\cat{Cat}$.
         Морфизмами в ней являются функторы.
 
         \item Категория диаграмм в $\cat{C}$ типа $\Gamma$, которая была рассмотрена ранее --- это функторы из путей $\mathcal{P}_\Gamma$ в графе в $\cat{C}$:
@@ -980,7 +980,7 @@
 
 
     \section{Сопряжённые функторы}
-    \label{comma-\category}
+    \label{comma-category}
     Рассмотрим следующую конструкцию:
     пусть имеется функтор $\cat{F}: \cat{B} \map \cat{C}$, пусть $X \in \cat{C}$.
     Построим категорию $(X \downarrow \cat{F})$.
@@ -996,7 +996,7 @@
             \arrow["{\phi'}", from=1-1, to=2-2]
         \end{tikzcd}}$.
 
-    По-английски эта категория почему-то называется comma-\category, категория запятой.
+    По-английски эта категория почему-то называется comma-category, категория запятой.
 
     Аналогично $(\cat F \downarrow X)$ --- это категория стрелок $\cat F(B) \map X$ с такими морфизмами $\alpha \in \Mor_{\catB}(B, B')$:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGNhdCBGKEIpIl0sWzEsMCwiXFxjYXQgRihCJykiXSxbMSwxLCJYIl0sWzAsMiwiXFxwaGkiLDJdLFsxLDIsIlxccGhpJyJdLFswLDEsIlxcY2F0IEYoXFxhbHBoYSkiXV0=
@@ -1057,7 +1057,7 @@
 %    \end{tikzcd}\]
     Пусть $\cat F: \cat B \map \cat C$ --- какой-то функтор.
 
-    Рассмотрим $X \in \cat C$, и вместе с ним категорию $(X \downarrow \cat F)$~(\ref{comma-\category}).
+    Рассмотрим $X \in \cat C$, и вместе с ним категорию $(X \downarrow \cat F)$~(\ref{comma-category}).
 
     Пусть для всех $X \in \cat C$ в соответствующих категориях нашлось по инициальному объекту, обозначим объект их соответственно $(\cat G(X), f_X)$.
     Далее мы хотим показать, что $\cat{G}: \cat C \map \cat B$ --- функтор.
@@ -1258,7 +1258,7 @@
         \item Внешняя степень $\bigwedge$ --- это левый сопряжённый к функтору из $\Z$-градуированных $R$-алгебр в $R$-модули, сопоставляющий $A_0 \oplus A_1 \oplus \dots \mapsto A_1$.
         \item Пусть $\phi: R \map A$.
         Тогда $\phi^\#: \Lmod{A} \map \Lmod{R}$ (что является забывающим функтором, если $\phi$ инъективно)--- левый сопряжённый к $\phi_\#: \Lmod{R} \map \Lmod{A}, \phi_\#(M) = A \otimes_R M$.
-        \item Рассмотрим функтор $\cat{\cat} \map \cat{Graph}$, забывающий про композицию морфизмов.
+        \item Рассмотрим функтор $\cat{Cat} \map \cat{Graph}$, забывающий про композицию морфизмов.
         Левый сопряжённый к данному функтору --- категория путей в графе.
         \item \up \exercise{
             Какие левый и правый сопряжённый к забывающему $G\text{-}\cat{Set} \map \cat{Set}$?
@@ -1518,7 +1518,7 @@
             \arrow["{\eta_Y}", from=2-1, to=2-2]
             \arrow["{\eta_X}", from=1-1, to=1-2]
             \end{tikzcd}\]
-        Применяя $\cat G$ к этой диаграмме, получаем% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEdcXGNhdCBGXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEdcXGNhdCBLKFkpIl0sWzEsMSwiY2F0IEdcXGNhdCBGXFxjYXQgSChZKSkiXSxbMiwwLCJcXGNhdCBIKFgpIl0sWzIsMSwiXFxjYXQgSChZKSJdLFsyLDMsIlxcY2F0IEcoXFxldGFfWSkiXSxbMCwxLCJcXGNhdCBHKFxcZXRhX1gpIl0sWzAsMl0sWzEsM10sWzEsNCwiXFx0ZXh0e9C60L7QtdC00LjQvdC40YbQsH0iXSxbMyw1LCJcXHRleHR70LrQvtC10LTQuNC90LjRhtCwfSJdLFs0LDVdXQ==
+        Применяя $\cat G$ к диаграмме, получаем% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEdcXGNhdCBGXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEdcXGNhdCBLKFkpIl0sWzEsMSwiY2F0IEdcXGNhdCBGXFxjYXQgSChZKSkiXSxbMiwwLCJcXGNhdCBIKFgpIl0sWzIsMSwiXFxjYXQgSChZKSJdLFsyLDMsIlxcY2F0IEcoXFxldGFfWSkiXSxbMCwxLCJcXGNhdCBHKFxcZXRhX1gpIl0sWzAsMl0sWzEsM10sWzEsNCwiXFx0ZXh0e9C60L7QtdC00LjQvdC40YbQsH0iXSxbMyw1LCJcXHRleHR70LrQvtC10LTQuNC90LjRhtCwfSJdLFs0LDVdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
             {\cat G\cat K(X)} \& {\cat G\cat F\cat H(X)} \& {\cat H(X)} \\
             {\cat G\cat K(Y)} \& {\cat G\cat F\cat H(Y))} \& {\cat H(Y)}
@@ -1683,5 +1683,232 @@
     \corollary{
     Множество естественных преобразований $\Nat(\Mor(A, \_), \Mor(B, \_)) \cong \Mor(B, A)$.
     Категория представимых функторов антиэквивалентна категории $\cat C$.
+    }
+    Иными словами лемма Йонеды, говорит, что всякий представимый функтор однозначно определяется своим общим элементом (?)
+    \newlection{19 декабря 2023 г.}
+    \section{Абелевы категории}
+    \definition[Предаддитивная категория $\catC$]{
+    $\forall A, B \in \catC: \Mor_{\catC}(A, B)$ образует абелеву группу, и выполнена дистрибутивность \[\alpha(\beta+\gamma) = \alpha\beta + \alpha\gamma \qquad (\beta + \gamma)\alpha = \beta\alpha + \gamma\alpha\]
+    }
+    Нулевой объект может и не существовать в абелевой категории, а нулевой морфизм --- нуль абелевой группы --- существует, и из дистрибутивности действительно $0\cdot\alpha = 0$ и $\alpha\cdot0 = 0$.
+\lemma{
+Пусть $\cat C$ --- предаддитивная категория, $A \in \cat C$. Тогда следующие условия эквивалентны.
+    \numbers{
+    \item $A$ инициальный.
+    \item $A$ финальный.
+    \item $\id_A = 0_A$.
+    \item $|\Mor_\catC(A, A)| = 1$.
+    }
+\provehere{
+Тривиально $1 \then 4$ и $4 \then 3$.
+    Докажем $3 \then 1$; $2\!\!\! \iff\!\!\! 3$ будет следовать из двойственности.
+
+Пусть $\alpha: A \map B$.
+    Тогда $\alpha = \alpha\cdot \id_A = \alpha\cdot 0_A = 0$, то есть $A$ --- инициальный.
+}
+}
+    Рассмотрим следующую диаграмму в предаддитивной категории $\catC$.
+    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJDIl0sWzAsMCwiQSJdLFsyLDAsIkIiXSxbMSwwLCJcXGlvdGFfMSIsMix7Im9mZnNldCI6MX1dLFswLDEsIlxccGlfMSIsMix7Im9mZnNldCI6MX1dLFswLDIsIlxccGlfMiIsMCx7Im9mZnNldCI6LTF9XSxbMiwwLCJcXGlvdGFfMiIsMCx7Im9mZnNldCI6LTF9XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          A \& C \& B
+          \arrow["{\iota_1}"', shift right, from=1-1, to=1-2]
+          \arrow["{\pi_1}"', shift right, from=1-2, to=1-1]
+          \arrow["{\pi_2}", shift left, from=1-2, to=1-3]
+          \arrow["{\iota_2}", shift left, from=1-3, to=1-2]
+    \end{tikzcd}\]
+        \singlepage{\definition[Диаграмма выше --- бипроизведение]{\down
+    \numbers{
+        \item $\iota_1 \pi_1 = \id_A$.
+        \item $\iota_2 \pi_2 = \id_B$.
+        \item $\pi_2 \iota_2 + \pi_1 \iota_1 = \id_C$.
+    }
+    }}
+    \lemma{
+    В предаддитивной категории следующие условия на данную диаграмму эквивалентны:
+    \numbers{
+        \item $\begin{tikzcd}[ampersand replacement=\&,cramped]
+                   A \& C \& B
+                   \arrow["{\iota_1}"', shift right, from=1-1, to=1-2]
+                   \arrow["{\pi_1}"', shift right, from=1-2, to=1-1]
+                   \arrow["{\pi_2}", shift left, from=1-2, to=1-3]
+                   \arrow["{\iota_2}", shift left, from=1-3, to=1-2]
+        \end{tikzcd}$ --- бипроизведение.
+    \item $\begin{tikzcd}[ampersand replacement=\&]
+                                                  A \& C \& B
+                                                  \arrow["{\pi_1}"', from=1-2, to=1-1]
+                                                  \arrow["{\pi_2}", from=1-2, to=1-3]
+        \end{tikzcd}$ --- произведение.
+        \item $\begin{tikzcd}[ampersand replacement=\&,cramped]
+                   A \& C \& B
+                   \arrow["{\iota_1}"', from=1-1, to=1-2]
+                   \arrow["{\iota_2}", from=1-3, to=1-2]
+        \end{tikzcd}$ --- копроизведение.
+    \provehere{
+    \indentlemma{
+        В бипроизведении $\pi_1 \iota_2 = 0$ и $\pi_2 \iota_1 = 0$.
+    }{
+        Домножая $\iota_1 \pi_1 + \iota_2 \pi_2 = \id_C$ слева на $\pi_2$, получаем $\pi_2 \iota_1 \pi_1 + \pi_2 = \pi_2$, то есть $\pi_2 \iota_1\pi_1 = 0$.
+    Домножая справа на $\iota_1$, получаем искомое.
+    }
+    Докажем $1 \iff 3$, $2 \iff 3$ следует из двойственности.
+    \bullets{
+    \item % https://q.uiver.app/#q=WzAsNCxbMCwwLCJEIl0sWzEsMSwiQyJdLFsxLDIsIkEiXSxbMiwxLCJCIl0sWzAsMSwiXFxwaGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJcXHBoaV8yIiwwLHsiY3VydmUiOi0yfV0sWzAsMiwiXFxwaGlfMSIsMix7ImN1cnZlIjoyfV0sWzEsMiwiXFxwaV8xIiwwLHsib2Zmc2V0IjotMX1dLFsyLDEsIlxcaW90YV8xIiwwLHsib2Zmc2V0IjotMX1dLFsxLDMsIlxccGlfMiIsMix7Im9mZnNldCI6MX1dLFszLDEsIlxcaW90YV8yIiwyLHsib2Zmc2V0IjoxfV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              D \\
+              \& C \& B \\
+              \& A
+              \arrow["\phi", dashed, from=1-1, to=2-2]
+              \arrow["{\phi_2}", curve={height=-12pt}, from=1-1, to=2-3]
+              \arrow["{\phi_1}"', curve={height=12pt}, from=1-1, to=3-2]
+              \arrow["{\pi_1}", shift left, from=2-2, to=3-2]
+              \arrow["{\iota_1}", shift left, from=3-2, to=2-2]
+              \arrow["{\pi_2}"', shift right, from=2-2, to=2-3]
+              \arrow["{\iota_2}"', shift right, from=2-3, to=2-2]
+        \end{tikzcd}\]
+        Определим $\phi\coloneqq \iota_1 \phi_1 + \iota_2 \phi_2$, тогда $\pi_2 \phi = \underbrace{\pi_2 \iota_1}_{0} \phi_1 + \underbrace{\pi_2 \iota_2}_{\id} \phi_2 = \phi_2$, то есть диаграмма коммутативна.
+
+        Если же $\pi_2 \phi_2 = \phi$ и $\pi_1 \phi_1 = \phi$, то $\underbrace{(\iota_2 \pi_2 + \iota_1 \pi_1)}_{\id} \phi = \iota_2 \phi_2 + \iota_1 \phi_1$, то есть никак по другому задать $\phi$ нельзя.
+    \item Построим $\iota_1$ согласно универсальному свойству:% https://q.uiver.app/#q=WzAsNCxbMCwxLCJBIl0sWzEsMSwiQyJdLFsyLDEsIkIiXSxbMCwwLCJBIl0sWzMsMCwiXFxpZF9BIiwyXSxbMywyLCIwIiwwLHsiY3VydmUiOi0yfV0sWzMsMSwiXFxpb3RhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJcXHBpXzEiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDEsIlxccGlfMiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              A \\
+              A \& C \& B
+              \arrow["{\id_A}"', from=1-1, to=2-1]
+              \arrow["0", curve={height=-12pt}, from=1-1, to=2-3]
+              \arrow["{\iota_1}", dashed, from=1-1, to=2-2]
+              \arrow["{\pi_1}"', tail reversed, no head, from=2-1, to=2-2]
+              \arrow["{\pi_2}"', tail reversed, no head, from=2-3, to=2-2]
+        \end{tikzcd}\]
+    Аналогично $\exists! \iota_2: B \map C: \pi_2 \iota_2 = \id_B, \pi_2 \id_1 = 0$.
+
+    Отсюда получаем $\all{\pi_1(\iota_1 \pi_1 + \iota_2 \pi_2) = \pi_1 \\ \pi_2(\iota_1 \pi_1 + \iota_2 \pi_2) = \pi_2}$, а по универсальному свойству такое отображение только одно --- $\id_C$:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJDIl0sWzEsMSwiQyJdLFsxLDIsIkEiXSxbMiwxLCJCIl0sWzAsMSwiXFxpZCIsMix7Im9mZnNldCI6MX1dLFsxLDIsIlxccGlfMSJdLFsxLDMsIlxccGlfMiIsMl0sWzAsMywiXFxwaV8yIiwwLHsiY3VydmUiOi01fV0sWzAsMiwiXFxwaV8xIiwyLHsiY3VydmUiOjN9XSxbMCwxLCJcXGlvdGFfMSBcXHBpXzEgKyBcXGlvdGFfMiBcXHBpXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6NzAsIm9mZnNldCI6LTF9XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              C \\
+              \& C \& B \\
+              \& A
+              \arrow["\id"', shift right, from=1-1, to=2-2]
+              \arrow["{\pi_1}", from=2-2, to=3-2]
+              \arrow["{\pi_2}"', from=2-2, to=2-3]
+              \arrow["{\pi_2}", curve={height=-30pt}, from=1-1, to=2-3]
+              \arrow["{\pi_1}"', curve={height=18pt}, from=1-1, to=3-2]
+              \arrow["{\iota_1 \pi_1 + \iota_2 \pi_2}"{pos=0.7}, shift left, from=1-1, to=2-2]
+        \end{tikzcd}\]
+    }    }
+    }
+    }
+    \definition[Аддитивная категория]{
+    Предаддитивная категория с финальным объектом и произведениями (любых двух объектов).
+    }
+    Из лемм ясно, что это эквивалентно, например, предаддитивной категории с нулевым объектом и бипроизведениями.
+    \lemma{
+    Если $\cat C$ --- предаддитивная категория, то (ко)эквалайзер $\begin{tikzcd}[ampersand replacement=\&,cramped]
+              A \& B
+              \arrow["\psi"', shift right, from=1-1, to=1-2]
+              \arrow["\phi", shift left, from=1-1, to=1-2]
+        \end{tikzcd}$ равен (ко)ядру $\phi - \psi$.
+    \provehere{
+    $\phi\eps = \psi\eps \iff (\phi - \psi)\eps = 0$. Эквалайзер --- универсальная стрелка с левым свойством, а ядро --- универсальная стрелка с правым свойством.
+    }
+    }
+    \intfact{
+        Если произведение совпадает с копроизведением, то операцию сложения на множестве морфизмов можно ввести вот так:
+    % https://q.uiver.app/#q=WzAsNSxbMCwwLCJBIl0sWzIsMCwiQiJdLFswLDIsIkIiXSxbMiwyLCJCIl0sWzEsMSwiQSBcXG9wbHVzIEIiXSxbMiwzLCJcXGlkIl0sWzEsMywiXFxpZCIsMl0sWzAsMiwiXFxhbHBoYSJdLFswLDEsIlxcYmV0YSIsMl0sWzAsNCwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNCwiXFxpb3RhIiwyLHsib2Zmc2V0IjoxfV0sWzQsMiwiXFxwaSIsMix7Im9mZnNldCI6MX1dLFs0LDEsIlxccGkiLDAseyJvZmZzZXQiOi0xfV0sWzEsNCwiXFxpb3RhIiwwLHsib2Zmc2V0IjotMX1dLFs0LDMsIlxcYWxwaGEgKyBcXGJldGEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
+              A \&\& B \\
+              \& {A \oplus B} \\
+              B \&\& B
+              \arrow["\id", from=3-1, to=3-3]
+              \arrow["\id"', from=1-3, to=3-3]
+              \arrow["\alpha", from=1-1, to=3-1]
+              \arrow["\beta"', from=1-1, to=1-3]
+              \arrow[dashed, from=1-1, to=2-2]
+              \arrow["\iota"', shift right, from=3-1, to=2-2]
+              \arrow["\pi"', shift right, from=2-2, to=3-1]
+              \arrow["\pi", shift left, from=2-2, to=1-3]
+              \arrow["\iota", shift left, from=1-3, to=2-2]
+              \arrow["{\alpha + \beta}"{description}, dotted, from=2-2, to=3-3]
+        \end{tikzcd}\]
+    Можно проверить, что (если существует нулевой объект) данная операция сложения обладает всеми требуемыми свойствами, и это --- единственный способ её ввести.
+    }
+    \definition[Предабелева категория]{
+    Аддитивная категория, в которой у всех морфизмов есть ядро и коядро.
+    }
+    Понятно, что можно требовать существование эквалайзера и коэквалайзера у всех пар морфизмов с одинаковыми началом и концом.
+
+    Ещё можно требовать существование всех конечных пределов и копределов.
+    \definition[(Ко)нормальный мономорфизм (эпиморфизм)]{
+        Он является (ко)экваалйзером.
+    }
+    \definition[Абелева категория]{
+    Предабелева категория, в которой все мономорфизмы нормальны.
+    }
+    \theorem{
+        В абелевой категории любой морфизм $\phi$ представляется в виде $\phi = \mu\eps$, где $\mu$ --- моно, $\eps$ --- эпи, и данное представление функториально
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkEnIl0sWzEsMSwiQiciXSxbMCwxLCJcXHBoaSJdLFsyLDMsIlxccGhpJyJdLFswLDIsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYmV0YSciXV0=
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiXFxidWxsZXQiXSxbMCwxLCJBJyJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMCwiQiJdLFsyLDEsIkIiXSxbMCwxLCJcXGVwcyJdLFsyLDMsIlxcZXBzJyIsMl0sWzAsMiwiXFxhbHBoYSJdLFszLDUsIlxcbXUnIiwyXSxbMSw0LCJcXG11Il0sWzQsNSwiXFxiZXRhIl0sWzEsMywiXFxleGlzdHMhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              A \& B \\
+              {A'} \& {B'}
+              \arrow["\phi", from=1-1, to=1-2]
+              \arrow["{\phi'}", from=2-1, to=2-2]
+              \arrow["\alpha"', from=1-1, to=2-1]
+              \arrow["{\beta'}", from=1-2, to=2-2]
+        \end{tikzcd}\quad \then \quad\begin{tikzcd}[ampersand replacement=\&]
+              A \& \bullet \& B \\
+              {A'} \& \bullet \& B
+              \arrow["\eps", from=1-1, to=1-2]
+              \arrow["{\eps'}"', from=2-1, to=2-2]
+              \arrow["\alpha", from=1-1, to=2-1]
+              \arrow["{\mu'}"', from=2-2, to=2-3]
+              \arrow["\mu", from=1-2, to=1-3]
+              \arrow["\beta", from=1-3, to=2-3]
+              \arrow["{\exists!}", dashed, from=1-2, to=2-2]
+        \end{tikzcd}\]
+    В частности, такое представление единственно с точностью до единственного изморфизма --- рассмотреть $\phi = \phi', \alpha = \id_A, \beta = \id_B$ (?).
+    \provehere{
+    Устроим эпи-моно-разложение следующим образом: пусть $\mu = \Ker(\CoKer(\phi))$, тогда $\CoKer(\phi)\cdot \phi = 0$, и согласно универсальному свойству ядра $\exists! \eps$.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzIsMCwiQiJdLFszLDAsIlxcYnVsbGV0Il0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJcXHBoaSJdLFsxLDIsIlxcQ29LZXIoXFxwaGkpIl0sWzMsMSwiXFxtdSA9IFxcS2VyKFxcQ29LZXIoXFxwaGkpKSIsMl0sWzAsMywiXFxleGlzdHMgISBcXGVwcyIsMl1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              A \&\& B \& \bullet \\
+              \& \bullet
+              \arrow["\phi", from=1-1, to=1-3]
+              \arrow["{\CoKer(\phi)}", from=1-3, to=1-4]
+              \arrow["{\mu = \Ker(\CoKer(\phi))}"', from=2-2, to=1-3]
+              \arrow["{\exists ! \eps}"', from=1-1, to=2-2]
+        \end{tikzcd}\]
+    \indentlemma{
+        $\Ker(\CoKer(\Ker(\phi))) = \Ker(\phi)$. Двойственно $\CoKer(\Ker(\CoKer(\phi))) = \\CoKer(\phi)$.
+    }{
+        Упражнение
+    % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbMCwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxLZXIoXFxwaGkpIl0sWzEsMiwiXFxwaGkiXSxbMywxLCJcXEtlcihcXENvS2VyKFxcS2VyKFxccGhpKSkpIiwyXSxbMSw0XSxbNCwyLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCIiLDAseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIiIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \bullet \& \bullet \& \bullet \\
+              \bullet \&\& \bullet
+              \arrow["{\Ker(\phi)}", from=1-1, to=1-2]
+              \arrow["\phi", from=1-2, to=1-3]
+              \arrow["{\Ker(\CoKer(\Ker(\phi)))}"', from=2-1, to=1-2]
+              \arrow[from=1-2, to=2-3]
+              \arrow[dashed, from=2-3, to=1-3]
+              \arrow[shift right, dashed, from=2-1, to=1-1]
+              \arrow[shift right, dashed, from=1-1, to=2-1]
+        \end{tikzcd}\]
+    }
+    Далее...
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiXFxidWxsZXQiXSxbMCwxLCJBJyJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMCwiQiJdLFsyLDEsIkIiXSxbMywwLCJcXGJ1bGxldCJdLFszLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxlcHMiXSxbMiwzLCJcXGVwcyciLDJdLFswLDIsIlxcYWxwaGEiXSxbMyw1LCJcXG11JyIsMl0sWzEsNCwiXFxtdSJdLFs0LDUsIlxcYmV0YSJdLFsxLDMsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDYsIlxcQ29LZXIoXFxwaGkpIl0sWzUsNywiXFxDb0tlcihcXG11JykiXSxbNiw3LCJcXGV4aXN0cyEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              A \& \bullet \& B \& \bullet \\
+              {A'} \& \bullet \& B \& \bullet
+              \arrow["\eps", from=1-1, to=1-2]
+              \arrow["{\eps'}"', from=2-1, to=2-2]
+              \arrow["\alpha", from=1-1, to=2-1]
+              \arrow["{\mu'}"', from=2-2, to=2-3]
+              \arrow["\mu", from=1-2, to=1-3]
+              \arrow["\beta", from=1-3, to=2-3]
+              \arrow["{\exists!}", dashed, from=1-2, to=2-2]
+              \arrow["{\CoKer(\phi)}", from=1-3, to=1-4]
+              \arrow["{\CoKer(\mu')}", from=2-3, to=2-4]
+              \arrow["{\exists!}"{description}, dashed, from=1-4, to=2-4]
+        \end{tikzcd}\]
+    }
     }
 \end{document}
