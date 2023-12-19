@@ -1236,7 +1236,7 @@
         \arrow["{\cat F(\exists!)}", dashed, from=1-1, to=1-2]
         \arrow["\forall"', from=1-1, to=2-2]
         \end{tikzcd}\]
-    Так как теперь отображение множеств должно быть непрерывным, а мы контролируем топологию на образе, то на $\cat G(X)$ надо определить антидискретную топологию.
+    Так как теперь отображение множеств должно получить непрерывность, а мы контролируем топологию на образе, то на $\cat G(X)$ надо определить антидискретную топологию.
     }
     \newlection{5 декабря 2023 г.}
 
@@ -1246,12 +1246,26 @@
         \bullets{
             \item Левый сопряжённый к забывающему $\cat{Group} \map \cat{Set}$ --- это свободная группа на данном множестве.
             \item Левый сопряжённый к забывающему $\cat{Mon} \map \cat{Set}$ --- это свободный моноид на данном множестве, слова над данным алфавитом.
+
             \item Здесь и ниже $R$ --- коммутативное кольцо с единицей.
 
-            Левый сопряжённый к забывающему $R\text{-}\cat{Alg} \map \cat{Set}$ --- это свободная алгебра на данном множестве ($R\text{-}\cat{Alg}$ --- необязательно коммутативные алгебры с единицей).
+             Левый сопряжённый к забывающему $R\text{-}\cat{Alg} \map \cat{Mon}$ --- это полугрупповая алгебра $M \mapsto R[M]$.
+            Моноид $M$ вкладывается в мультипликативный моноид $R[M]$.
+            \item Левый сопряжённый к забывающему $R\text{-}\cat{Alg} \map \cat{Set}$ --- это свободная алгебра на данном множестве ($R\text{-}\cat{Alg}$ --- необязательно коммутативные алгебры с единицей).
+
+        Если представить забывающий функтор $R\text{-}\cat{Alg} \map \cat{Set}$, как композицию двух забывающих, и назвать сопряжённые к ним $\cat G_1$ и $\cat G_2$ соответственно, то окажется, что $\Mor(X, \cat F_2(\cat F_1(Y))) \cong \Mor(\cat G_2(X), \cat F_1(Y)) \cong \Mor(\cat G_1(\cat G_2(X)), Y)$.
+        % https://q.uiver.app/#q=WzAsMyxbMCwwLCJSXFx0ZXh0LVxcY2F0e0FsZ30iXSxbMSwwLCJcXGNhdHtNb259Il0sWzIsMCwiXFxjYXR7U2V0fSJdLFswLDEsIlxcY2F0e0Z9XzEiLDAseyJjdXJ2ZSI6LTJ9XSxbMSwwLCJcXGNhdCBHXzEiLDAseyJjdXJ2ZSI6LTJ9XSxbMSwyLCJcXGNhdCBHXzIiLDIseyJjdXJ2ZSI6Miwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwyLCJcXGNhdCBGXzIiLDAseyJjdXJ2ZSI6LTJ9XSxbMyw0LCIiLDAseyJsZXZlbCI6MSwic3R5bGUiOnsibmFtZSI6ImFkanVuY3Rpb24ifX1dLFs2LDUsIiIsMCx7ImxldmVsIjoxLCJzdHlsZSI6eyJuYW1lIjoiYWRqdW5jdGlvbiJ9fV1d
+            \[\begin{tikzcd}[ampersand replacement=\&]
+            {R\text-\cat{Alg}} \& {\cat{Mon}} \& {\cat{Set}}
+            \arrow[""{name=0, anchor=center, inner sep=0}, "{\cat{F}_1}", curve={height=-12pt}, from=1-1, to=1-2]
+            \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G_1}", curve={height=-12pt}, from=1-2, to=1-1]
+            \arrow[""{name=2, anchor=center, inner sep=0}, "{\cat G_2}"', curve={height=12pt}, tail reversed, no head, from=1-2, to=1-3]
+            \arrow[""{name=3, anchor=center, inner sep=0}, "{\cat F_2}", curve={height=-12pt}, from=1-2, to=1-3]
+            \arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+            \arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=3, to=2]
+            \end{tikzcd}\]
+        Иными словами, чтобы построить свободную алгебру на множестве $S$, можно сначала построить свободный моноид $F_S$, а потом на нём ввести структуру полугрупповой алгебры $R[F_S]$.
         }
-        \item Левый сопряжённый к забывающему $R\text{-}\cat{Alg} \map \cat{Mon}$ --- это полугрупповая алгебра $M \mapsto R[M]$.
-        Моноид $M$ вкладывается в мультипликативный моноид $R[M]$
         \item Левый сопряжённый к функтору $*: \cat{Ring} \map \cat{Group}$, сопоставляющему кольцу группу его обратимых элементов --- это $G \mapsto \Z[G]$, групповая алгебра.
         \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{Alg} \map \Lmod{R}$ --- это $T$, групповая алгебра.
         \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{CAlg} \map \Lmod{R}$ --- это $S$, симметрическая алгебра (здесь $R\text{-}\cat{CAlg}$ --- коммутативные алгебры над $R$).
@@ -1270,6 +1284,7 @@
         \item Левый сопряжённый к функтору вложения $\cat{Ab} \map \cat{Group}$ --- это абелианизация.
         % Единица --- не мономорфизм?
         Правого сопряжённого, наверно, нет --- внутри группы нет никакой абелевой подгруппы, сохраняющейся при морфизмах.
+        Можно доказать это строго, увидев, что $\cat{Ab} \map \cat{Group}$ не сохраняет пределы~(\ref{save-limit})
         \item Левый сопряжённый к функтору вложения $\cat{CRing} \map \cat{Ring}$ --- это $R \mapsto R/[R, R]$, где $[R, R]$ --- двусторонний идеал, порождённый аддитивными коммутаторами.
         \item Левый сопряжённый к функтору вложения $\phi^\#: R\text{-}\cat{Alg} \map \cat{Ring}$ --- это $\phi_\#$, если $\phi: \Z \map R$ --- гомоморфизм колец с единицей.
         \item Левый сопряжённый к функтору вложения $\cat{Ring} \map \cat{Rng}$ --- это функтор $\cat{Rng} \map \cat{Ring}, I \mapsto \Z \oplus I$ (в результате $I$ стало идеалом). Умножение определено понятным образом: $(n + i)(m + j) = nm + mi + nj + ij$, здесь $nm \in \Z$ и $mi, nj$ --- умножение на целые, полученное из сложения в $I$.
@@ -1360,11 +1375,11 @@
     \ok
     Пусть $\cat J$ --- индексирующая категория.
     Функтор $\cat F: \cat J \map \cat C$ --- \emph{диаграмма}.
-    \definition[Конус над диаграммой $\cat F$]{\down
+    \definition[Конус $\eta$ над диаграммой $\cat F$]{\down
     \numbers{
         \item Объект $C \in \cat C$.
     \item $\forall J \in \cat J$: морфизм $\eta_J: C \map \cat F(\cat J)$.
-    \item Треугольник коммутативен.
+    \item Все такие треугольники коммутативны.
     % https://q.uiver.app/#q=WzAsMyxbMSwwLCJDIl0sWzAsMSwiXFxjYXQgRihKKSJdLFsyLDEsIlxcY2F0IEYoSicpIl0sWzEsMiwiXFxjYXQgRihcXGFscGhhKSJdLFswLDEsIlxcZXRhX0oiLDJdLFswLDIsIlxcZXRhX3tKJ30iXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& C \\
@@ -1378,11 +1393,11 @@
     Это может напомнить естественное преобразование функторов, вот другой взгляд:
 
     Пусть $\Delta_{\cat{J}}C = \Delta C$ --- функтор из $\cat J$ в $\cat C$, определённый так: $\Delta C(J) = C, \Delta C(\alpha) = \id_C$.
-    Тогда конус --- естественное преобразование $\Delta C \map \cat F$, а \emph{коконус} --- естественное преобразование $\cat F \map \Delta F$.
+    Тогда конус --- естественное преобразование $\Delta C \map \cat F$, а \emph{коконус} --- естественное преобразование $\cat F \map \Delta C$.
 
     Теперь из этих конусов надо создать категорию, чтобы определить предел и копредел, как финальный объект в данной категории.
 
-    Морфизм конусов $\Delta C \cat F$ и $\Delta C' \map \cat F$ --- это такой морфизм $\phi: C \map C'$, такой, что все появившиеся диаграммы коммутативны:
+    Морфизм конусов $\Delta C \map\cat F$ и $\Delta C' \map \cat F$ --- это такой морфизм $\phi: C \map C'$, такой, что все появившиеся диаграммы коммутативны:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJDIl0sWzEsMCwiQyciXSxbMSwxLCJcXGNhdCBGKEopIl0sWzAsMSwiXFxwaGkiXSxbMCwyLCJcXGV0YV9KIiwyXSxbMSwyLCJcXGV0YSdfSiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
           C \& {C'} \\
@@ -1400,7 +1415,7 @@
     \arrow[from=1-1, to=2-2]
     \arrow["{\Delta \phi}", from=1-1, to=1-2]
     \end{tikzcd}\]
-    Это действительно категория, так как таких диаграмм не больше, чем $\Mor_{\cat{C}}(C, C')$.
+    Полученная категория конусов --- действительно категория, так как морфизмов $(\Delta C \map \cat F) \map (\Delta C' \map \cat F)$ не больше, чем $\Mor_{\cat{C}}(C, C')$.
     \definition[Предел диаграммы $\cat F$]{
     Финальный объект в категории конусов над $\cat F$.
     Обозначают пределы $\varprojlim \cat F$.
@@ -1409,17 +1424,22 @@
 
     Копределы пишутся $\varinjlim \cat F$.
     \examples[Пределы]{
-        \item % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNkb3RzIl0sWzEsMCwiRlt0XS8odF5uKSJdLFsyLDBdLFs0LDAsIkZbdF0vKHReMikiXSxbNSwwLCJGW3RdLyh0KSJdLFszLDBdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdXQ==
+        \item % https://q.uiver.app/#q=WzAsNyxbMSwxLCJcXGNkb3RzIl0sWzIsMSwiRlt0XS8odF5uKSJdLFszLDFdLFs1LDEsIkZbdF0vKHReMikiXSxbNiwxLCJGW3RdLyh0KSJdLFs0LDFdLFswLDAsIlxcdmFycHJvamxpbSJdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdLFsxLDZdLFszLDZdLFs0LDYsIiIsMCx7ImN1cnZlIjoxfV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
-              \cdots \& {F[t]/(t^n)} \& {} \& {} \& {F[t]/(t^2)} \& {F[t]/(t)}
-              \arrow[from=1-1, to=1-2]
-              \arrow[from=1-2, to=1-3]
-              \arrow[from=1-5, to=1-6]
-              \arrow[from=1-4, to=1-5]
-              \arrow["\cdots"{description}, from=1-3, to=1-4]
+              \varprojlim \\
+              \& \cdots \& {F[t]/(t^n)} \& {} \& {} \& {F[t]/(t^2)} \& {F[t]/(t)}
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-6, to=2-7]
+              \arrow[from=2-5, to=2-6]
+              \arrow["\cdots"{description}, from=2-4, to=2-5]
+              \arrow[from=2-3, to=1-1]
+              \arrow[from=2-6, to=1-1]
+              \arrow[curve={height=6pt}, from=2-7, to=1-1]
         \end{tikzcd}\]
-    Предел данной категории --- $F[[t]]$. Это можно обосновать с топологической точки зрения: например, если взять в качестве открытых множеств $(t), (t^2), \dots$, то пополнением $F[t]$ по данной топологии будет $F[[t]]$.
-    \item Аналогично
+    Предел вложений $F[t]/(t^{n+1}) \map F[t]/(t^{n})$ --- это формальные степенные ряды $F[[t]]$.
+        Это можно обосновать с топологической точки зрения: например, если взять в качестве открытых множеств $(t), (t^2), \dots$, то пополнением $F[t]$ по данной топологии будет $F[[t]]$.
+    \item Аналогично, в
     % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNkb3RzIl0sWzEsMCwiXFxaLyhwXm4pIl0sWzIsMF0sWzQsMCwiXFxaLyhwXjIpIl0sWzUsMCwiXFxaLyhwKSJdLFszLDBdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               \cdots \& {\Z/(p^n)} \& {} \& {} \& {\Z/(p^2)} \& {\Z/(p)}
@@ -1444,7 +1464,7 @@
         \end{tikzcd}\]
     Здесь копредел $\varinjlim\cat F = \varinjlim\limits_{s \in S} = S^{-1}R$.
 
-    Это довольно удобно: если какое-то свойство выполнено для конечнопорождённых $R$-алгебр, и сохраняется при копределах, то оно выполнено и в локализации.
+    Это бывает удобно использовать: если какое-то свойство выполнено для конечнопорождённых $R$-алгебр, и сохраняется при копределах, то оно выполнено и в локализации.
     }
     \examples{
     \item Если $\cat J = \o$ --- пустая категория, то конус над $\cat J \map \cat C$ --- это объект $C \in \cat C$, и его предел --- финальный объект.
@@ -1453,32 +1473,31 @@
     \item Эквалайзер и пулбэк --- тоже пределы.
     }
     Определим категорию функторов $\Func(\cat J, \cat C)$, объекты которой --- функторы, морфизмы --- естественные преобразования.
-    Здесь стоит сказать либо что $\cat J$ --- малая категория, либо рассматривать большие категории, либо ещё как-то обойтись с теорией множеств.
+    Здесь стоит сказать либо что $\cat J$ --- малая категория, либо рассматривать \emph{большие категории} (?), либо ещё как-то обойтись с теорией множеств.
 
     Теперь $\Delta$ --- функтор $\cat C \map \Func(\cat J, \cat C)$.
-    Теперь посмотрим на категорию запятой $(\Delta \downarrow \cat F)$ (здесь $\Delta$ рассматривается, как функтор, а $\cat F$ --- как объект).
-    В ней объекты --- рассматриваемые конусы, морфизмы --- морфизмы конусов.
+    Зафиксируем функтор $\cat F: \cat J \map \cat C$, и посмотрим на категорию запятой $(\Delta \downarrow \cat F)$ (здесь $\Delta$ рассматривается, как функтор, а $\cat F$ --- как объект).
+    В ней объекты --- рассматриваемые конусы над $\cat F$, морфизмы --- морфизмы конусов.
 
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbSBcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRiJdLFsxLDJdLFswLDJdLFswLDFdXQ==
+    Если рассмотреть предел, как функтор $\Func(\cat J, \cat C) \map \cat C$ (то есть забыть про стрелки в конусе), то это действительно будет функтор, определённый так на морфизмах:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbSBcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRiJdLFsxLDJdLFswLDIsIlxcZm9yYWxsIiwyXSxbMCwxLCJcXERlbHRhKFxcZXhpc3RzISkiXV0=
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEciXSxbMCwxLCJcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRyJdLFsyLDMsIlxccGhpIl0sWzAsMl0sWzEsM10sWzAsMSwiXFxEZWx0YShcXGV4aXN0cyAhIFxccGhpKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Delta C} \& {\Delta \varprojlim \cat F} \\
     \& {\cat F}
     \arrow[from=1-2, to=2-2]
-    \arrow[from=1-1, to=2-2]
-    \arrow[from=1-1, to=1-2]
-    \end{tikzcd}\]
-    Если рассмотреть предел, как функтор $\Func(\cat J, \cat C) \map \cat C$ (то есть забыть про стрелки в конусе), то это действительно будет функтор, определённый так на морфизмах:
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMCwxLCJcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRyJdLFsyLDNdLFswLDJdLFsxLDNdLFswLDEsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-    \[\begin{tikzcd}[ampersand replacement=\&]
-    {\Delta \varprojlim\cat F} \& {\Delta \varprojlim\cat F} \\
+    \arrow["\forall"', from=1-1, to=2-2]
+    \arrow["{\Delta(\exists!)}", from=1-1, to=1-2]
+    \end{tikzcd}\qquad\begin{tikzcd}[ampersand replacement=\&]
+    {\Delta \varprojlim\cat F} \& {\Delta \varprojlim\cat G} \\
     {\cat F} \& {\cat G}
-    \arrow[from=2-1, to=2-2]
+    \arrow["\phi", from=2-1, to=2-2]
     \arrow[from=1-1, to=2-1]
     \arrow[from=1-2, to=2-2]
-    \arrow[dashed, from=1-1, to=1-2]
+    \arrow["{\Delta(\exists ! \phi)}", dashed, from=1-1, to=1-2]
     \end{tikzcd}\]
     \proposal{
-    Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть $\Mor(\Delta C, \cat F) = \Mor(C, \varprojlim \cat F)$ естественно по $C$ (естественность по $\cat F$ получается автоматически).
+    Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть $\Mor(\Delta C, \cat F) = \Mor(C, \varprojlim \cat F)$ естественно по $C$ (естественность по $\cat F$ получается автоматически (?)).
     \provehere{
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwxLCJcXGNhdCBGIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMl0sWzEsMl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1493,14 +1512,21 @@
     }
     Аналогично, $\varinjlim$ --- левый сопряжённый к $\Delta$.
     \ok
-    \theorem{
-    Пусть $\cat G: \cat C \map \cat B$ --- левый сопряжённый к $\cat F: \cat B \map \cat C$.
+    \theorem{\label{save-limit}
+    Пусть имеются сопряжённые функторы $\begin{tikzcd}[ampersand replacement=\&,cramped]
+    {\cat B} \&\& {\cat C}
+    \arrow[""{name=0, anchor=center, inner sep=0}, "{\cat F}", curve={height=-12pt}, from=1-1, to=1-3]
+    \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G}"', curve={height=12pt}, tail reversed, no head, from=1-1, to=1-3]
+    \arrow["\eta", "\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+    \end{tikzcd}$.
+
     Пусть $\cat H: \cat J \map \cat B$. Тогда правый сопряжённый сохраняет пределы: $\cat F\left(\varprojlim \cat H\right) = \varprojlim \cat F \cat H$.
     \provehere{
-        \indentlemma{Пусть $\cat F, \cat G, \cat H$ как в теореме, $\cat K: \cat J \map \cat C$ --- функтор. Тогда $\Mor_{\Func}(\cat K, \cat F \circ \cat H) \cong \Mor_{\Func}(\cat G\cdot\cat K, \cat H)$ естественно по всем параметрам.}{
-        Возьмём естественное преобразование $\eta: \cat K \map \cat F \circ \cat H$.
+        \indent{\lemma{Пусть $\cat F, \cat G, \cat H$ как в теореме, $\cat K: \cat J \map \cat C$ --- функтор. Тогда \[\Mor_{\Func}(\cat K, \cat F \circ \cat H) \cong \Mor_{\Func}(\cat G\circ\cat K, \cat H)\] естественно по $\cat K, \cat H$.
+        \provehere[Доказательство леммы]{
+        Возьмём естественное преобразование $\eta: \cat K \map \cat F \circ \cat H$. Пусть биекция сопоставляет ему преобразование $\theta: \cat G \circ \cat K \map \cat H$.
 
-        $\forall X \in \cat J: \eta_X$ сопоставляется преобразование $\theta_X: [\cat K(X) \map \cat F \cat H(X)] \map [\cat G \cat K(X) \map \cat H(X)]$.
+        Тогда $\forall X \in \cat J$ имеется преобразование $\theta_X: \Mor_\catC(K(X), \cat F(\cat H(X))) \map \Mor_\catB(\cat G(\cat K(X)), \cat H(Y))$.
         Проверим, что диаграмма ниже коммутативна.
         % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBHKFxcY2F0IEsoWCkpIl0sWzEsMCwiXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEcoXFxjYXQgSyhZKSkiXSxbMSwxLCJcXGNhdCBIKFkpIl0sWzAsMSwiXFx0aGV0YV9YIl0sWzEsMywiXFxjYXQgSChcXHBoaSkiXSxbMCwyLCJcXGNhdCBHKFxcY2F0IEsoXFxwaGkpKSIsMl0sWzIsMywiXFx0aGV0YV9ZIiwyXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1532,7 +1558,7 @@
             \end{tikzcd}\]
         Осталось проверить, что $\text{коединница} \cdot \cat G(\eta_X) = \theta_X$, то есть $\theta$ --- действительно естественное преобразование.
         И ещё композиция $\eta_X \rightsquigarrow \theta_X \rightsquigarrow \eta_X$, и обратно --- тождественна.
-        }
+        }}}
     \multline{\Mor_{\Func}\left(\Delta C, \cat F\cdot\cat H\right) \cong \Mor_{\Func}\left(\cat G \Delta C, \cat H\right) \cong \Mor_{\Func}\left(\Delta \cat G(C), \cat H\right) \cong\\\cong \Mor_{\catB}\left(\cat G(C), \varprojlim\cat H\right) \cong \Mor_{\catC}\left(C, \cat F\left(\varprojlim \cat H\right)\right)}
     Отсюда (по определению предела) следует, что $\cat F\left(\varprojlim \cat H\right) = \varprojlim\cat F \circ \cat H$.
     }
@@ -1811,8 +1837,8 @@
     }
     }
     \intfact{
-        Если произведение совпадает с копроизведением, то операцию сложения на множестве морфизмов можно ввести вот так:
-    % https://q.uiver.app/#q=WzAsNSxbMCwwLCJBIl0sWzIsMCwiQiJdLFswLDIsIkIiXSxbMiwyLCJCIl0sWzEsMSwiQSBcXG9wbHVzIEIiXSxbMiwzLCJcXGlkIl0sWzEsMywiXFxpZCIsMl0sWzAsMiwiXFxhbHBoYSJdLFswLDEsIlxcYmV0YSIsMl0sWzAsNCwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNCwiXFxpb3RhIiwyLHsib2Zmc2V0IjoxfV0sWzQsMiwiXFxwaSIsMix7Im9mZnNldCI6MX1dLFs0LDEsIlxccGkiLDAseyJvZmZzZXQiOi0xfV0sWzEsNCwiXFxpb3RhIiwwLHsib2Zmc2V0IjotMX1dLFs0LDMsIlxcYWxwaGEgKyBcXGJldGEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+        Если произведение совпадает с копроизведением, то операцию сложения на множестве морфизмов можно ввести следующим образом
+    % https://q.uiver.app/#q=WzAsNSxbMCwwLCJBIl0sWzIsMCwiQiJdLFswLDIsIkIiXSxbMiwyLCJCIl0sWzEsMSwiQSBcXG9wbHVzIEIiXSxbMiwzLCJcXGlkIl0sWzEsMywiXFxpZCIsMl0sWzAsMiwiXFxhbHBoYSJdLFswLDEsIlxcYmV0YSIsMl0sWzAsNCwiKFxcYWxwaGEsXFxiZXRhKSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDQsIlxcaW90YSIsMix7Im9mZnNldCI6MX1dLFs0LDIsIlxccGkiLDIseyJvZmZzZXQiOjF9XSxbNCwxLCJcXHBpIiwwLHsib2Zmc2V0IjotMX1dLFsxLDQsIlxcaW90YSIsMCx7Im9mZnNldCI6LTF9XSxbNCwzLCJcXGlkK1xcaWQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&,column sep=small]
               A \&\& B \\
               \& {A \oplus B} \\
@@ -1821,15 +1847,17 @@
               \arrow["\id"', from=1-3, to=3-3]
               \arrow["\alpha", from=1-1, to=3-1]
               \arrow["\beta"', from=1-1, to=1-3]
-              \arrow[dashed, from=1-1, to=2-2]
+              \arrow["{(\alpha,\beta)}"{description}, dashed, from=1-1, to=2-2]
               \arrow["\iota"', shift right, from=3-1, to=2-2]
               \arrow["\pi"', shift right, from=2-2, to=3-1]
               \arrow["\pi", shift left, from=2-2, to=1-3]
               \arrow["\iota", shift left, from=1-3, to=2-2]
-              \arrow["{\alpha + \beta}"{description}, dotted, from=2-2, to=3-3]
-        \end{tikzcd}\]
+              \arrow["{\id+\id}"{description}, dashed, from=2-2, to=3-3]
+        \end{tikzcd}\quad \then \quad \alpha + \beta \coloneqq (\id + \id)(\alpha,\beta)\]
+
     Можно проверить, что (если существует нулевой объект) данная операция сложения обладает всеми требуемыми свойствами, и это --- единственный способ её ввести.
     }
+    Это любопытно, но вроде бы не имеет практических применений --- всегда удобнее сначала естественным образом ввести сложение на стрелках, а потом проверять, что произведение совпадает с копроизведением.
     \definition[Предабелева категория]{
     Аддитивная категория, в которой у всех морфизмов есть ядро и коядро.
     }

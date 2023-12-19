@@ -88,5 +88,5 @@
 \contentsline {subsection}{\numberline {4.7.2}Левые сопряжённые к вложениям}{84}{subsection.4.7.2}%
 \contentsline {section}{\numberline {4.8}Пределы}{85}{section.4.8}%
 \contentsline {subsection}{\numberline {4.8.1}Схема построения алгебраического замыкания}{89}{subsection.4.8.1}%
-\contentsline {section}{\numberline {4.9}Лемма Йонеды}{89}{section.4.9}%
+\contentsline {section}{\numberline {4.9}Лемма Йонеды}{90}{section.4.9}%
 \contentsline {section}{\numberline {4.10}Абелевы категории}{91}{section.4.10}%
