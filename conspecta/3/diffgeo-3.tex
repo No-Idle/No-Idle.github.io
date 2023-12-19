@@ -929,7 +929,7 @@
 
                 Запишем $\gamma(t_{i+1}) - \gamma(t_i) = \int\limits_{t_i}^{t_{i+1}}\gamma'(t)\d t = \int\limits_{t_i}^{t_{i+1}}\gamma'(t_i) + (\gamma'(t) - \gamma'(t_i))\d t$.
                 Отсюда получаем \[\int\limits_{t_i}^{t_{i+1}}|\gamma'(t_i)|\d t = \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t_i)\d t} \le \abs{\int\limits_{t_i}^{t_{i+1}}\gamma(t)\d t + \eps|t_{i+1} - t_i|} \le \abs{\gamma(t_{i+1}) - \gamma(t_i)} + \eps|t_{i+1} - t_i|\]
-                Используя $|\gamma'(t)| \le |\gamma'(t_i)| + \eps$, получаем $\int\limits_{a}^{b}|\gamma'(t)|\d t + 2\eps \le L(\gamma)$. Устремим $\eps \to 0$.
+                Используя $|\gamma'(t)| \le |\gamma'(t_i)| + \eps$, получаем $\int\limits_{a}^{b}|\gamma'(t)|\d t + 2\eps|b -a| \le L(\gamma)$. Устремим $\eps \to 0$.
                 \item $L(\gamma) \le \int\limits_{a}^{b}|\gamma'(t)|\d t$.
 
                 Рассмотрим разбиение $a = t_0 \le \cdots \le t_k = b$.
