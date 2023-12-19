@@ -84,7 +84,3 @@
 \contentsline {subsection}{\numberline {6.5.2}Замена переменной под интегралом}{64}{subsection.6.5.2}%
 \contentsline {section}{\numberline {6.6}Логарифм и экспонента}{66}{section.6.6}%
 \contentsline {subsection}{\numberline {6.6.1}Свойства}{66}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}О геометрии пространства $\mathbb {R}^n$}{67}{subsection.6.6.2}%
-\contentsline {subsubsection}{Свойства:}{67}{section*.8}%
-\contentsline {subsubsection}{Ортогональный проектор на подпространство}{69}{section*.9}%
-\contentsline {subsection}{\numberline {6.6.3}О скалярных функциях $F: (U\subset \mathbb {R}^n) \rightarrow \mathbb {R}$}{73}{subsection.6.6.3}%
