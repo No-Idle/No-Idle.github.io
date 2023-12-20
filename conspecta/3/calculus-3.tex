@@ -780,7 +780,7 @@
     \ok
     Пусть $\mathcal{C}\subset2^X$ --- $\sigma$-алгебра, на которой задана счётно-аддитивная мера $\nu$.
 
-    Пусть $\mathcal{A}$ --- полукольцо, лежащее в $\mathcal{C}$, $\mu$ --- счётно-аддитивная мера на $\mathcal{A}, \overline{\mu}$ --- станадартное продолжение меры (на $\mu$-измеримые множества из $\Sigma$).
+    Пусть $\mathcal{A}$ --- полукольцо, лежащее в $\mathcal{C}$, $\mu$ --- счётно-аддитивная мера на $\mathcal{A}, \overline{\mu}$ --- стандартное продолжение меры (на $\mu$-измеримые множества из $\Sigma$).
 
     Пусть $\nu$ --- мера на $\mathcal{C}$, такая, что $\nu\Big|_\mathcal{A} = \mu$, причём $\mu$ --- $\sigma$-конечна.
     \definition[Полная мера]{\label{full-measure}
@@ -1515,9 +1515,9 @@
     \ok
     Введём ещё пространство $L^{\infty}(\mu)$ --- множество функций, таких, что $\exists A \in \R_{\ge 0}: |f| \le A$ почти всюду.
 
-    $L^{\infty}(\mu)$ --- класс всех \emph{существенно ограниченных} фукнций.
+    $L^{\infty}(\mu)$ --- класс всех \emph{существенно ограниченных} функций.
 
-    Если $f$ --- существенно ограниченная функция, то среди всех сущсественных верхних границ $\defset{K}{|f(x)| \le K\text{ почти всюду}}$ найдётся наименьшая.
+    Если $f$ --- существенно ограниченная функция, то среди всех существенных верхних границ $\defset{K}{|f(x)| \le K\text{ почти всюду}}$ найдётся наименьшая.
     Назовём её \[\esssup f = \inf\defset{K}{K\text{ есть существенная верхняя грань для $f$}}\]
     \theorem{
         Пусть $A = \esssup f$, тогда $A$ --- существенная граница $f$.
@@ -1756,7 +1756,7 @@
     Придумать функцию $f$, такую, что $\phi(x) \coloneqq \int\limits_{Y}f(x, \_)\d\nu$ суммируема, но $f \notin L^1(\lambda)$.
     }
     \subsection{Как применять}
-    Пусть $f$ --- $\lambda$-измеримая функция (про знак ничего не извеестно).
+    Пусть $f$ --- $\lambda$-измеримая функция (про знак ничего не известно).
 
     Чтобы доказать, что $f$ суммируема, надо доказать, что $|f|$ суммируема.
 
@@ -1858,7 +1858,7 @@
     \corollary{
         Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
     }
-    Данная формула очень полезна при замне переменной в интеграле.
+    Данная формула очень полезна при замене переменной в интеграле.
 
     Например, ранее записанное равенство $\int\limits_{X}f(x - y)\d y = \int\limits_{X}f(\xi)\d\xi$ видно из данной формулы при $g(y) = x - y$ --- здесь образ меры будет её самой.
     \subsection{Свойства свёртки}
@@ -1926,7 +1926,7 @@
         Выберем последовательность $t_n \to t_0$, запишем разностное отношение
             $\frac{\phi(t_n) - \phi(t_0)}{t_n - t_0} = \int\limits_{K}\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0}\d x \underset{n \to \infty}\Map\phi'(t_0)$
         По формуле Лагранжа $\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0} = \der{}{t}v(x, \xi)$ для некой $\xi \in (t_n, t_0)$.
-        $\abs{\der{}{t}v(x, \xi)} \le w(x)$, значит, у подынтегральной фукнции есть мажоранта, и можно перейти к пределу.
+        $\abs{\der{}{t}v(x, \xi)} \le w(x)$, значит, у подынтегральной функции есть мажоранта, и можно перейти к пределу.
         }
         Заметим, что $(f * u)(x) = \int\limits_{K}f(y)u(x - y)\d y$, и её действительно можно дифференцировать бесконечно много раз (?).
         %$u$ ограничена, значит, есть мажоранта
@@ -1970,6 +1970,195 @@
     \[|g * \Psi_j - g\|_{L^p} < \eps\]
     }
     }
+    \newlection{6 декабря 2023 г.}
+    //todo
+    \newlection{9 декабря 2023 г.}
+    //todo
+    \newlection{13 декабря 2023 г.}
+    //todo
+    \newlection{20 декабря 2023 г.}
+    Сужение меры можно определить так $\mu\Big|_E(a) \bydef \mu(a \cap E)$.
+
+    Иногда сужение определяют немного по-другому: $\mu\Big|_E(a)$ --- мера, заданная как $\mu$, но теоретико-множественно суженная на $\defset{b \in \Sigma}{b \subset E}$.
+    \theorem[Хан]{
+        Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$. Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\Big|_E \ge 0, \mu\Big|_F \le 0$.
+    \provehere{
+    Ранее доказано, что $\defset{\mu(b)}{b \in \Sigma}$ ограничено.
+        Пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
+    \bullets{
+    \item $M = 0$. Тогда $\mu \le 0$, и $F = X, E = \o$.
+    \item $M > 0$. По определению супремума $\exists b_k \in \Sigma: M - \frac{1}{2^k} \le \mu(b_k) \le M$.
+    \indentlemma{
+    Пусть $b \subset X$, $\mu(b) = M - \eps$. Если измеримое $e \subset b$, то $\mu(e) \ge -\eps$.
+    }{
+    От противного: пусть $\exists e \subset b_k: \mu(e) < -\eps$. Тогда мера $b_k \sm e$ больше супремума $M$.
+    }
+    Положим $\overline{b_k} = \bigcup\limits_{n \ge k}b_k$.
+    Оценим $\mu\left(\overline{b_k}\right)$ снизу:
+    \gather{\mu\left(b_k \cup b_{k+1} \cup \cdots \cup b_n\right) = \mu(b_k) + \mu(b_{k+1} \sm b_k) + \mu\left(b_{k+2}\sm(b_k \cup b_{k+1})\right) + \cdots + \mu(b_{n} \sm (\cdots))\ge\\\ge \left(M - \frac{1}{2^k}\right) - \frac{1}{2^{k+1}} - \frac{1}{2^{k+2}} - \cdots - \frac{1}{2^n} \ge M - \frac{1}{2^{k-1}}}
+    Переходя к пределу в силу счётной аддитивности, получаем $\mu\left(b_k \cup b_{k+1} \cup \cdots\right) \ge M - \frac{1}{2^{k-1}}$.
+
+    Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \subset \cdots$ Положим $E \coloneqq \bigcup\limits_{k = 1}^{\infty}b_k$ В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(b_k) = M$.
+
+    Теперь в силу леммы все подмножества $E$ имеют положительную меру. Положим $F \coloneqq X \sm E$, все подмножества $F$ имеют отрицательную меру (от противного: если $f \subset F$ имеет положительную меру, то $\mu(E \cup f) > M$).\qedhere
+    }
+    }
+    }
+    Такие $E, F \subset X$ из теоремы --- \emph{разложение Хана}.
+    Оно единственно с точностью до множества меру нуль --- если $A \subset E$ имеет меру нуль, то все его подмножества тоже имеют меру нуль, и $(E \sm A, F \cup A)$ --- тоже разложение Хана.
+
+    Теперь можно определить \emph{положительную} и \emph{отрицательную части меры} $\mu^+(a) \bydef \mu(A \cap E)$ и $\mu^-(a) \bydef -\mu(a \cap E)$.
+    Тогда $\mu(a) = \mu^{+}(a) - \mu^-(a)$, тем самым любая конечная вещественная мера есть разность двух неотрицательных.
+
+    \definition[Модуль меры]{
+        $|\mu|(a) \bydef \mu^+(a) + \mu^-(a)$.
+    }
+    Введём естественный частичный порядок на мерах: поточечно $\mu \le \nu \iff \forall e \in \Sigma: \mu(e) \le \nu(e)$.
+    \proposal{
+    $\mu^+$ есть наименьшая из неотрицательных мер $\nu: \nu \ge \mu$.
+    \provehere{
+    Пусть $E, F$ --- разложение Хана для $\mu$.
+    Пусть $\nu \ge \mu$. Тогда $\nu(a) = \nu(a \cap E) + \nu(a \cap F) \ge \mu(a \cap E) = \mu^+(a)$.
+    }
+    }
+    \note{
+    $\mu^- = (-\mu)^+$.
+    }
+    \note{
+    Пусть $g: X \map \R, g(x) = \all{1,&x \in E \\ -1,&x \in F}$. Тогда $\mu(e) = \int\limits_{e}g\d\abs{\mu}$.
+    \provehere{
+    \[\int\limits_{e}g\d|\mu| = \int\limits_{e \cap E}\d|\mu| - \int\limits_{e \cap F}\d|\mu| = \int\limits_{e \cap E}\d\mu^+ - \int\limits_{e \cap F}\d\mu^- = \mu^+(e \cap E) - \mu^-(e \cap F) = \mu(e)\qedhere\]
+    }
+    }
+    Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, и $\rho$ --- неотрицательная счётно-аддитивная мера.
+
+    Пусть $\phi: X \map \C$ $\Sigma$-измерим (прообраз любого борелевского множества измерим).
+    Пусть $\phi = \alpha + i\beta$, где $\alpha, \beta$ --- вещественные измеримые функции.
+
+    Определим $\int\limits_{a}\phi \d\rho \bydef \int\limits_{a}\alpha\d\rho + i\int\limits_{a}\beta\d\rho$.
+    Данный интеграл обладает всеми свойствами, которые от него ожидаются --- аддитивность, $\C$-линейность, счётная аддитивность по множеству, счётная аддитивность по функции.
+
+    Основную оценку интеграла удобно доказывать так:
+    \gather{\exists \theta \in \R: e^{i\theta}\int\limits_{a}\phi\d\rho \in \R_{\ge 0} \\ \abs{\int\limits_{a}\phi\d\rho} = \Re\int\limits_{a}e^{i\theta}\phi\d\rho = \abs{\int\limits_{a}\Re(e^{i\theta}\phi)\d\rho} \le \int\limits_{a}|e^{i\theta}\phi|\d\rho = \int\limits_{a}|\phi|\d\rho}
+
+    Многие комплексные меры как раз приходят из таких интегралов.
+
+    Пускай $\mu$ --- комплексная мера на $\Sigma$.
+    \definition[Полная вариация $\mu$ на $a \in \Sigma$]{$|\mu|(a) = \sup\defset{\sum\limits_{j = 1}^{N}|\mu(e_j)|}{e_1\sqcup \dots\sqcup e_N = a}$}
+    \theorem{
+        $|\mu|$ есть неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
+    \provehere{\ref{abs-mes-prop}}
+    }
+    \note{
+    Если $\mu$ вещественна, то $|\mu|(a) = \mu^+(a) + \mu^-(a)$, где $|\mu|$ понимается, как полная вариация.
+
+        Иными словами, не зря модуль меры и её полную вариацию обозначают одинаково.
+    \provehere{
+        Если $a \in \Sigma$, и $e_1 \sqcup \cdots \sqcup e_n = a$, то $\sum\limits_{j =1}^{n}|\mu(e_j)| \le \sum\limits_{j = 1}^{n}\mu^+(e_j) + \mu^-(e_j) \le \mu^+(a) + \mu^-(a)$.
+
+        Обратно, разобьём $a =  (a \cap E) \cup (a \cap F)$ (где $E,F$ --- разложение Хана). Тогда $|\mu|(a) \ge |\mu(a \cap E)| + |\mu(a \cap F)| = \mu^+(a) + \mu^-(a)$.
+    }
+    }
+    \lemma{
+    Пусть $\rho_1, \rho_2$ --- комплексные меры на $\Sigma$, $\alpha,\beta \in \C$. Тогда $\forall a \in \Sigma: |(\alpha \rho_1 + \beta \rho_2)(a)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)$.
+    \provehere{ Пусть $a = e_1 \sqcup \cdots \sqcup e_n$. Оценим
+    \[\sum\limits_{j = 1}^{n}|(\alpha \rho_1 + \beta \rho_2)(e_j)| \le |\alpha|\sum\limits_{j = 1}^{n}|\rho_1(e_j)| + |\beta|\sum\limits_{j = 1}^{n}|\rho_2(e_j)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)\]
+    и перейдём к супремуму по всем разбиениям $a = e_1 \sqcup \cdots \sqcup e_n$.
+    }
+    }
+    \corollary{
+    Если $\rho$ --- комплексная мера, то $\forall a: |\rho|(a) < +\infty$.
+    \provehere{Разложим $\rho = \rho_1 + i\rho_2$.}
+    }
+    \proposal{
+    Пусть $\nu$ --- неотрицательная (необязательно конечная) мера на $\Sigma$, пусть $g$ --- комплексная суммируемая (относительно $\nu$) функция.
+        Определим $\mu(e) \coloneqq \int\limits_{e}g\d\nu$.
+
+    Тогда $|\mu|(a) = \int\limits_{a}|g|\d\nu$.
+    \provenumbers{
+    \item[0.] Пусть $g \in L^1(\nu)$. Тогда $|\mu|(a) \le \int\limits_{a}|g|\d\nu$.
+    Действительно, пусть $e_1 \sqcup \cdots \sqcup e_n = a$. Тогда $\sum\limits_{j = 1}^{n}|\mu(e_j)| = \sum\limits_{j = 1}^{n}\abs{\int\limits_{e_j}g\d\nu} \le \sum\limits_{j = 1}^{n}\int\limits_{e_j}|g|\d\nu = \int\limits_{a}|g|\d\nu$.
+    \item Пусть $g = \sum\limits_{j = 1}^{k}c_j \chi_{e_j}$ --- простая функция, где мы считаем, что $b_j \in \Sigma$ попарно не пересекаются.
+
+    Рассмотрим разбиение $a = (a \cap e_1) \sqcup \cdots \sqcup (a \cap e_k) \sqcup \left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)$.
+    \[|\mu|(a) \ge \sum\limits_{j = 1}^{k}|\mu(a \cap e_j)| +\underbrace{ \abs{\mu\left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)}}_{= 0} = \sum\limits_{j = 1}^{k}\abs{\,\int\limits_{a \cap e_j}g\d\nu} = \sum\limits_{j = 1}^{k}|c_j|\nu(a \cap e_j) = \int\limits_{a}|g|\d\nu\]
+    \item Пусть $g \in L^1(\nu)$ ($g: X \map \C$).
+    Выберем $\eps > 0$. Тогда так как простые функции плотны в $L^1$, то $\exists h: X \map \C$ --- простая функция, такая, что $\int\limits_{X}|g - h|\d\nu < \eps$ (отдельно приблизим вещественную и мнимую части).
+
+    Пусть $\mu_1(a) = \int\limits_{a}h\d\nu$, и положим $\mu_2 \coloneqq \mu - \mu_1$.
+    \[\mu(a) = \int\limits_{a}h\d\nu + \int\limits_{a}(g - h)\d\nu = \mu_1(a) + \mu_2(a)\]
+    \[\all{|\mu|(a) \le |\mu_1(a)|(a) + |\mu_2|(a) \\ |\mu_1|(a) \le |\mu|(a) + |\mu_2|(a) \qquad \then \quad |\mu_1|(a) - |\mu_2|(a) \le |\mu|(a) \le |\mu_1|(a) + |\mu_2|(a)}\]
+    Оценим $\mu_2(a)$:
+    \[|\mu_2(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le \eps|\]
+    Отсюда получается
+    \[\int\limits_{a}|h|\d\nu - \eps \le |\mu|(a) \le \int\limits_{a}|h|\d\nu + \eps\]
+    И наконец можно заменить $h$ на $g$, при этом мы ошибёмся не больше, чем на $\eps$.
+        \[\int\limits_{a}|g|\d\nu - 2\eps \le |\mu|(a) \le \int\limits_{a}|g|\d\nu + 2\eps\]
+    Устремим $\eps \to 0$.
+    }
+    }
+    Теперь докажем теорему, сформулированную ранее.
+    \theorem{
+        $|\mu|$ есть неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
+        \provehere{\label{abs-mes-prop}
+        Пусть $\mu$ --- комплексная мера на $\Sigma$, разложим $\mu = \mu_1 + i\mu_2$, где $\mu_1, \mu_2$ --- вещественные меры.
+    Пусть $\nu = \mu_1^+ + \mu_2^+ + \mu_1^- + \mu_2^-$. Все четыре слагаемых --- абсолютно непрерывные меры относительно $\nu$, то есть по теореме Радона --- Никодима они представляются через плотность: $\exists g_{1,2}^\pm \in L^1(\nu): \mu_{1,2}^\pm(e) = \int\limits_{e}g_{1,2}^\pm\d\nu$.
+
+    Тогда $|\mu|(e) = \int\limits_{e}|g|\d\nu$, и действительно получаем, что $|\mu|$ --- неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
+    }}
+    \subsection{Интеграл по комплексной мере}
+    Пусть $g: X \map \C$ измерима относительно комплексной меры $\mu = \mu_1 + i\mu_2$.
+
+    Определим $\int\limits_{a}g\d\mu \bydef \int\limits_{a}g\d\mu_1^+-\int\limits_{a}g\d\mu_1^-+i\left(\int\limits_{a}g\d\mu_2^+-\int\limits_{a}g\d\mu_2^-\right)$
+
+    В данном определении предполагается, что $g$ суммируема относительно всех четырёх мер.
+    Оказывается, $g \in L^1(\mu_{1,2}^\pm) \iff g \in L^1(|\mu|)$, так как $\mu_{1,2}^\pm \le |\mu|$.
+    \lemma[Линейность по мере]{
+    Пусть $\rho, \sigma$ --- две комплексные меры на $\Sigma$, пусть $g$ суммируема относительно $|\rho|$ и $|\sigma|$.
+    Утверждается, что \[\int\limits_{a}g\d(\rho+\sigma) = \int\limits_{a}g \d\rho + \int\limits_{a}g \d\sigma\]
+    \provehere{
+    Утверждается, что $\exists \lambda$ --- положительная мера на $\Sigma$, относительно которой $\rho,\sigma$ абсолютно непрерывны: $\exists u, v: X \map \C$, такие, что $\rho(e) = \int\limits_{e}u\d\lambda$ и $\sigma(e) = \int\limits_{e}v\d\lambda$.
+    Например, в качестве $\lambda$ можно взять $\rho_1^+ + \rho_1^- + \rho_2^+ + \rho_2^- + \sigma_1^+ + \sigma_1^- + \sigma_2^+ + \sigma_2^-$.
+
+    Разложим на вещественную и мнимую части $u = u_1 + i u_2, v =  v_1 + i v_2$.
+    \[\int\limits_{a}g\d\rho = \int\limits_{a}g u_1^+\d\lambda - \int\limits_{a}g u_1^-\d\lambda + i\left(\int\limits_{a}g u_2^+\d\lambda - \int\limits_{a}g u_2^-\d\lambda\right) = \int\limits_{a}gu\d\lambda\]
+    Аналогично $\int\limits_{a}g\d\sigma = \int\limits_{a}gv\d\lambda$.
+    \[\int\limits_{a}g\d\rho + \int\limits_{a}g\d\sigma = \int\limits_{a}g(u + v)\d\lambda = \int\limits_{a}g\d(\rho+\sigma)\]
+    }
+    }
+    \subsection{Разложение Лебега}
+    Пусть $(X,\Sigma,\lambda)$ --- пространство с неотрицательной $\sigma$-конечной мерой $\lambda \ge 0$.
+
+    Пусть $\rho$ --- комплексная мера на $\Sigma$.
+    \definition[$\rho$ абсолютно непрерывна относительно $\lambda$]{
+        $\lambda(e) = 0 \then \rho(e) = 0$.
+    }
+    \definition[$\rho$ сингулярна относительно $\lambda$]{
+        $\exists a \in \Sigma: \lambda(a) = 0$ и $\forall e \subset X \sm a$: $|\rho|(e) = 0$.
+    }
+    \example{
+    Стандартная мера Лебега $\lambda_1$ на $\R$ взаимно сингулярна точечной $\delta$-мере $\delta_0$.
+    }
+    \theorem[Лебег]{
+    Для произвольной комплексной меры $\rho$ на $\Sigma$ существует и единственно представление $\rho = \rho_1 + \rho_2$, где $\rho_1$ абсолютно непрерывна относительно $\lambda$, а $\rho_2$ сингулярна относительно $\lambda$.
+    \provehere{
+        Пусть $A = \sup\defset{|\rho|(e)}{e \in \Sigma, \lambda(e) = 0}$. Тогда $\exists e_n \in \Sigma: |\rho|(e_n) > A - \frac{1}{n}$.
+
+    Положим $\overline{e_n} = e_n \cup e_{n + 1} \cup \cdots$. Тогда $\overline{e_1} \subset \overline{e_2} \subset \cdots$, и положим $E = \bigcup\limits_{n = 1}^{\infty}\overline{e_n}$.
+
+    В силу монотонной непрерывности $|\rho|(E) = \lim\limits_{n \to \infty}|\rho|(e_n) = A$. Так как $\forall n: \lambda(\overline{e_n}) = 0$, то $\lambda(E) = 0$.
+
+    Разложим $\rho_1(e) \coloneqq \rho(e \sm E), \rho_2(e) \coloneqq \rho(a \cap E)$. В таком представлении $\rho_2$ очевидно сингулярна относительно $\lambda$. Абсолютную непрерывность $\rho_1$ относительно $\lambda$ докажем от противного.
+
+    Пусть $\exists b \in \Sigma, b \subset X \sm E: |\rho_1(b)| > 0, \lambda(b) = 0$.
+        Тогда определим $E_1 = E \cup b$, и окажется, что $|\rho|(E_1) = |\rho|(E) + |\rho|(b) \ge A + |\rho_1|(b) > A$, противоречие.
+    }
+    }
+    \example{
+        Определим рекурсивно канторову лестницу $[0, 1] \map [0, 1]$.
+        Построив по данной функции меру, мы получим меру, сосредоточенную на канторовом множестве меры нуль.
+    }
+
 \end{document}
 
 

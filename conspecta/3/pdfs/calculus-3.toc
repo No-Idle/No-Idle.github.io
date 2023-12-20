@@ -30,3 +30,5 @@
 \contentsline {subsection}{\numberline {2.8.2}Образ меры}{41}{subsection.2.8.2}%
 \contentsline {subsubsection}{Интегрирование по мере $\nu $}{41}{section*.4}%
 \contentsline {subsection}{\numberline {2.8.3}Свойства свёртки}{41}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}Интеграл по комплексной мере}{48}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.5}Разложение Лебега}{48}{subsection.2.8.5}%

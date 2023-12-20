@@ -128,6 +128,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\prove}[2][Доказательство]{\begin{proof}[#1]~\par#2\end{proof}}
 \newcommand{\provehere}[2][Доказательство]{\begin{proof}[#1]#2\end{proof}}
 \newcommand{\provebullets}[2][Доказательство]{\prove[#1]{\bullets{#2\qedhere}}}
+\newcommand{\provenumbers}[2][Доказательство]{\prove[#1]{\numbers{#2\qedhere}}}
 \newcommand{\provetwhen}[3][Доказательство]{\provebullets[#1]{\item[$\then$.]#2\item[$\when$.]#3\qedhere}}
 \newcommand{\provewthen}[3][Доказательство]{\provebullets[#1]{\item[$\when$.]#2\item[$\then$.]#3\qedhere}}
 \newcommand{\singlepage}[1]{\begin{samepage}#1\end{samepage}}
@@ -230,14 +231,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\catD}{\mathscr{D}}
 \newcommand{\II}{I\!\!I}
 
-\newcommand{\cat}[1]{% Define a new command called \addspaces that takes one argument
-    \StrChar{#1}{1}[\firstchar]% Get the first character of the input string
-    \StrGobbleLeft{#1}{1}[\remainingchars]% Remove the first character from the input string
-    \mathscr{\firstchar}% Print the first character
-    \IfStrEq{\remainingchars}{}{}{% If there are remaining characters, call the \addspaces macro recursively
-        \!\cat{\remainingchars}%
-    }%
-}
+\newcommand{\cat}[1]{\StrChar{#1}{1}[\firstchar]\StrGobbleLeft{#1}{1}[\remainingchars]\mathscr{\firstchar}\IfStrEq{\remainingchars}{}{}{\!\cat{\remainingchars}}}
 
 \DeclareMathOperator{\const}{const}
 \DeclareMathOperator{\Fr}{Fr}
