@@ -603,7 +603,7 @@ $V^*$ --- тоже свободный модуль, его базис --- дво
 Тензорное пространство (пусть полностью контравариантное) валентности $n$ соответствует однородным многочленам степени $n$ от некоммутирующих переменных.
 
 В симметрической алгебре мы введём соотношения о коммутировании переменных.
-Для этого профакторизуем по соответствующему идеалу $I_S = \angles{x \otimes x \middle| x \otimes x \in V}\normeq T(V)$.
+Для этого профакторизуем по соответствующему идеалу $I_S = \angles{x \otimes y - y \otimes x \middle| x, y \in V} \normeq T(V)$.
 \definition[Симметрическая алгебра]{
     $S(V) \coloneqq T(V)/I_S$
 }
@@ -613,7 +613,7 @@ $V^*$ --- тоже свободный модуль, его базис --- дво
 Здесь переменные будут \emph{антикоммутировать}, $x \otimes y = -y \otimes x$.
 В характеристике 2 это то же самое, что и $x \otimes x = 0$ для любого $x \in V$, а в общем случае условие равенства квадрата нулю сильнее.
 
-Определим идеал $I_{\wedge} = \angles{x \otimes y - y \otimes x \middle| x, y \in V} \normeq T(V)$.
+Определим идеал $I_{\wedge} = \angles{x \otimes x \middle| x \otimes x \in V}\normeq T(V)$.
 
 \definition[Внешняя алгебра или алгебра Грассмана]{
     $\bigwedge(V) \coloneqq T(V)/I_{\wedge}$
@@ -713,7 +713,7 @@ $\phi$ полилинейно и симметрично.
     }
 }
 \newlection{28 сентября 2023 г.}
-$I_\wedge, I_S \normeq T(V)$, где $I_{\wedge} = \angles{x \otimes y - y \otimes x \middle| x, y \in V}, I_s = \angles{x \otimes x \middle| x \otimes x \in V}$.
+$I_\wedge, I_S \normeq T(V)$, где $I_S = \angles{x \otimes y - y \otimes x \middle| x, y \in V}, I_{\wedge} = \angles{x \otimes x \middle| x \otimes x \in V}$.
 
 \gather{S(V) = T(V)/I_S\qquad\bigwedge(V) = T(V)/I_\wedge\\
 S^n(V) = V^{\otimes n}/\angles{a (x \otimes y - y \otimes x) b \middle | x, y \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}} \\

@@ -1584,43 +1584,45 @@
             В данной постановке простые функции --- линейные комбинации характеристических функций отрезков, $\phi = \sum\limits_{j = 1}^{N}c_j \chi_{I_j}$.
             В этой лекции они назывались элементарными, так и продолжим их называть.
 
-        Простые функции интегрируемы и по Риману, и по Лебегу, и интеграл у них один и тот же.
+            Простые функции интегрируемы и по Риману, и по Лебегу, и интеграл у них один и тот же.
 
-        Пусть $\angles{a, b} = I_1 \sqcup \dots \sqcup I_k$ --- разбиение $\Delta = \{I_1, \dots, I_k\}$.
+            Пусть $\angles{a, b} = I_1 \sqcup \dots \sqcup I_k$ --- разбиение $\Delta = \{I_1, \dots, I_k\}$.
 
-        Зададим $\phi_{\Delta} = \sum\limits_{j = 1}^{k}(\sup\limits_{I_j} f)\chi_{I_j}, \psi_{\Delta} = \sum\limits_{j = 1}^{k}(\inf\limits_{I_j}f)\chi_{I_j}$.
-        Тогда $\int\limits_{\angles{a,b}}\phi_{\Delta}$ --- верхняя сумма Дарбу для $f$ по отрезку $\angles{a, b}$, $\int\limits_{\angles{a, b}}\psi_{\Delta}$ --- нижняя сумма Дарбу.
+            Зададим $\phi_{\Delta} = \sum\limits_{j = 1}^{k}(\sup\limits_{I_j} f)\chi_{I_j}, \psi_{\Delta} = \sum\limits_{j = 1}^{k}(\inf\limits_{I_j}f)\chi_{I_j}$.
+            Тогда $\int\limits_{\angles{a,b}}\phi_{\Delta}$ --- верхняя сумма Дарбу для $f$ по отрезку $\angles{a, b}$, $\int\limits_{\angles{a, b}}\psi_{\Delta}$ --- нижняя сумма Дарбу.
 
-        Понятно, что $\psi_\Delta \le f \le \phi_\Delta$ всюду на $\angles{a, b}$, причём для измельчения $\Delta'$ верно, что
-        \[\psi_\Delta \le \psi_{\Delta'} \le f \le \phi_{\Delta'} \le \phi_\Delta\]
-        Критерием интегрируемости по Риману является то, что $\osc\limits_{I_j}f $ могут быть сколь угодно малыми, то есть $\forall \eps > 0: \exists \Delta: \int\limits_{\angles{a,b}}(\phi_{\Delta} - \psi_{\Delta}) \le \eps$.
+            Понятно, что $\psi_\Delta \le f \le \phi_\Delta$ всюду на $\angles{a, b}$, причём для измельчения $\Delta'$ верно, что
+            \[\psi_\Delta \le \psi_{\Delta'} \le f \le \phi_{\Delta'} \le \phi_\Delta\]
+            Критерием интегрируемости по Риману является то, что $\osc\limits_{I_j}f $ могут быть сколь угодно малыми, то есть $\forall \eps > 0: \exists \Delta: \int\limits_{\angles{a,b}}(\phi_{\Delta} - \psi_{\Delta}) \le \eps$.
 
-        Выберем $\eps = \frac{1}{n}$, построим разбиения $\Delta_n$ так, что каждое следующее является измельчением предыдущего.
+            Выберем $\eps = \frac{1}{n}$, построим разбиения $\Delta_n$ так, что каждое следующее является измельчением предыдущего.
 
-        Тогда $\int\limits_{\R}(\phi_n - \psi_n)\d\lambda = \int\limits_{\R}|\phi_n - \psi_n|\d\lambda < \frac{1}{n}$.
+            Тогда $\int\limits_{\R}(\phi_n - \psi_n)\d\lambda = \int\limits_{\R}|\phi_n - \psi_n|\d\lambda < \frac{1}{n}$.
 
-        Отсюда следует, что существует последовательность индексов (?) $n_j$, таких, что $\phi_{n_j} - \psi_{n_j} \underset{n \to \infty}\Map 0$ почти всюду.
-        Таким образом, $\psi_n$ и $\phi_n$ стремятся к $f$ почти всюду, тем самым $f$ измерима!
+            Отсюда следует, что существует последовательность индексов (?) $n_j$, таких, что $\phi_{n_j} - \psi_{n_j} \underset{n \to \infty}\Map 0$ почти всюду.
+            Таким образом, $\psi_n$ и $\phi_n$ стремятся к $f$ почти всюду, тем самым $f$ измерима!
 
-        Теперь $\int\limits_{\R^n}\psi_n \le \text{интеграл Лебега или Римана }f \le \int\limits_{\R^n}\phi_n$.
+            Теперь $\int\limits_{\R^n}\psi_n \le \text{интеграл Лебега или Римана }f \le \int\limits_{\R^n}\phi_n$.
         }
     }
     \theorem[Теорема Лебега]{
         Функция $f$ на конечном отрезке интегрируема по Риману $\iff$ множество точек разрыва $f$ имеет меру нуль.
     }
     \note{
-    Пусть $f \ge 0$, $f$ интегрируема в смысле Римана несобственным образом на конечном или бесконечном интервале $\angles{\alpha, \beta}$.
-    Тогда $f$ суммируема на $\angles{\alpha, \beta}$.
-    \provehere{
-    Например, пусть особенность на конце $\beta$: $f$ интегрируема по Риману на любом интервале $\angles{\alpha, \beta - \delta}$, причём $\exists \lim\limits_{\delta \to 0}\int\limits_{\alpha}^{\beta - \delta}f(x)\d x$.
-    Пускай $f_n = f \cdot \chi_{\angles{\alpha, \beta - \frac{1}{n}}}$. Тогда $f_n \nearrow f$, по теореме Леви предельная функция тоже суммируема, причём её интеграл --- предел интегралов $f_n$.
-    }
+        Пусть $f \ge 0$, $f$ интегрируема в смысле Римана несобственным образом на конечном или бесконечном интервале $\angles{\alpha, \beta}$.
+        Тогда $f$ суммируема на $\angles{\alpha, \beta}$.
+        \provehere{
+            Например, пусть особенность на конце $\beta$: $f$ интегрируема по Риману на любом интервале $\angles{\alpha, \beta - \delta}$, причём $\exists \lim\limits_{\delta \to 0}\int\limits_{\alpha}^{\beta - \delta}f(x)\d x$.
+            Пускай $f_n = f \cdot \chi_{\angles{\alpha, \beta - \frac{1}{n}}}$. Тогда $f_n \nearrow f$, по теореме Леви предельная функция тоже суммируема, причём её интеграл --- предел интегралов $f_n$.
+        }
     }
     \note{
-    Если функция знакомпеременна, то интегрировать всё ещё бывает полезно в несобственном смысле: $\frac{\sin x}{x}$ не суммируема на $[0, \infty)$, но можно писать
-    \[\int\limits_{0}^{\infty}\frac{\sin x}{x}\d x = \lim\limits_{R \to \infty}\int\limits_{0}^{R}\frac{\sin x}{x}\d x = \frac{\pi}2\]
+        Если функция знакомпеременна, то интегрировать всё ещё бывает полезно в несобственном смысле: $\frac{\sin x}{x}$ не суммируема на $[0, \infty)$, но можно писать
+        \[\int\limits_{0}^{\infty}\frac{\sin x}{x}\d x = \lim\limits_{R \to \infty}\int\limits_{0}^{R}\frac{\sin x}{x}\d x = \frac{\pi}2\]
     }
     \newlection{15 ноября 2023 г.}
+
+
     \section{Теоремы Тонелли и Фубини}
     Рассмотрим два пространства с мерой $(X, \mathcal{A}, \mu), (Y, \mathcal{B}, \nu)$ ($\mathcal{A}, \mathcal{B}$ --- $\sigma$-алгебры, $\mu, \nu$ --- счётно-аддитивные меры на $\mathcal{A}$ и $\mathcal{B}$ соответственно).
 
@@ -1628,17 +1630,17 @@
 
     \proposal{
         Тогда мера $\lambda \coloneqq \mu \otimes \nu$ на $\mathcal{P}$ (определённая так: $\lambda(a \times b) = \mu(a)\nu(b)$) счётно-аддитивна.
-    \provehere{
-    Выберем $\{a_j\}_{j = 1}^{\infty}\subset\mathcal{A}, \{b_j\}_{j = 1}^{\infty}\subset\mathcal{B}, \{c_j\}_{j = 1}^{\infty}\subset\mathcal{P}$ так, что $c_j = a_j \times b_j$.
-    Пусть $c_j$ дизъюнктны; положим $c \coloneqq \bigsqcup\limits_{j = 1}^{\infty}c_j$, пусть $c \in \mathcal{P}$.
+        \provehere{
+            Выберем $\{a_j\}_{j = 1}^{\infty}\subset\mathcal{A}, \{b_j\}_{j = 1}^{\infty}\subset\mathcal{B}, \{c_j\}_{j = 1}^{\infty}\subset\mathcal{P}$ так, что $c_j = a_j \times b_j$.
+            Пусть $c_j$ дизъюнктны; положим $c \coloneqq \bigsqcup\limits_{j = 1}^{\infty}c_j$, пусть $c \in \mathcal{P}$.
 
-    Надо проверить, что $\lambda(c) = \sum\limits_{j = 1}^{\infty}\lambda(c_j)$.
+            Надо проверить, что $\lambda(c) = \sum\limits_{j = 1}^{\infty}\lambda(c_j)$.
 
-    Рассмотрим равенство $\chi_a(x)\chi_b(y) = \sum\limits_{j = 1}^{\infty}\chi_{a_j}(x)\chi_{b_j}(y)$. При каждом фиксированном $x$ обе части --- измеримые функции от $y$.
+            Рассмотрим равенство $\chi_a(x)\chi_b(y) = \sum\limits_{j = 1}^{\infty}\chi_{a_j}(x)\chi_{b_j}(y)$. При каждом фиксированном $x$ обе части --- измеримые функции от $y$.
 
-    Интегрируя, получаем по теореме Леви \[\chi_a(x)\underbrace{\int\limits_{Y}\chi_b(y)\d\nu(y)}_{\nu(b)} = \sum\limits_{j = 1}^{\infty}\chi_{a_j}(x)\underbrace{\int\limits_{Y}\chi_{b_j}\d\nu(y)}_{\nu(b_j)}\]
-    Это равенство опять интегриурется, уже по $x$. В результате действительно получаем $\mu(a)\nu(b) = \sum\limits_{j = 1}^{\infty}\mu(a_j)\nu(b_j)$.
-    }
+            Интегрируя, получаем по теореме Леви \[\chi_a(x)\underbrace{\int\limits_{Y}\chi_b(y)\d\nu(y)}_{\nu(b)} = \sum\limits_{j = 1}^{\infty}\chi_{a_j}(x)\underbrace{\int\limits_{Y}\chi_{b_j}\d\nu(y)}_{\nu(b_j)}\]
+            Это равенство опять интегриурется, уже по $x$. В результате действительно получаем $\mu(a)\nu(b) = \sum\limits_{j = 1}^{\infty}\mu(a_j)\nu(b_j)$.
+        }
     }
     Применяя теорему Лебега --- Каратеодори, можно продолжить меру $\lambda$, результат тоже обозначают $\mu \otimes \nu$, и называют \emph{произведением мер} $\mu$ и $\nu$.
 
@@ -1646,7 +1648,7 @@
     Можно определить меру произведения $\mu_1 \otimes \dots \otimes \mu_n$.
     В произведении, вообще говоря, надо указать порядок, но оказывается, что произведение мер ассоциативно.
     \example{
-    Рассмотрим $\R^{n+k}=\R^n\times\R^k$. Пусть $\lambda_n, \lambda_k$ --- стандартные меры Лебега на $\R^n$ и $\R^k$.
+        Рассмотрим $\R^{n+k}=\R^n\times\R^k$. Пусть $\lambda_n, \lambda_k$ --- стандартные меры Лебега на $\R^n$ и $\R^k$.
         Тогда оказывается, что $\lambda_n \otimes \lambda_k = \lambda_{n + k}$.
 
         Можно заметить, что на обобщённых прямоугольниках мера произведения одна и та же, и применяя теорему об единственности, получаем $\lambda_n \otimes \lambda_k = \lambda_{n + k}$.
@@ -1655,106 +1657,107 @@
     Пускай $(X, \mathcal{A}, \mu)$, $(Y, \mathcal{B}, \nu)$ --- пространства со счётно-аддитивными мерами, обе меры полны и обе $\sigma$-конечны.
     В теоремах Тонелли и Фубини теоретически можно обойтись и без этих двух условий, но требуются дополнительные слова. Пусть $\lambda = \mu \otimes \nu$.
     \theorem[Тонелли]{
-    Пусть $f$ --- $\lambda$-измеримая функция на $X \times Y$, $f \ge 0$. Тогда
-    \numbers{
-     \item Для $\mu$-почти всех $x \in X$: $f(x, \_)$ измерима на $Y$.
-    \item Функция $\phi(x) = \int\limits_{Y}f(x, \_)\d\nu$ измерима на $X$.
-    \item $\int\limits_{X}\phi(x)\d\mu(x) = \int\limits_{X \times Y}f \d\lambda$.
-    }
-    \provehere{
-    Назовём функцию $f$ допустимой, если она определена на $X \times Y$, и удовлетворяет всем трём условиям.
-    \numbers{
-    \item Если $a \in \mathcal{A}, b \in \mathcal{B}$, то $\chi_{a \times b}$ допустима: $\chi_{a \times b}(x, y) = \chi_a(x)\chi_b(y)$.
-    \item Неотрицательные простые (элементарные) функции, построенные по полукольцу $\mathcal{P}$, допустимы.
-    \bullets{
-    \item Если $f, g$ --- допустимы, $\alpha, \beta \ge 0$, то $\alpha f + \beta g$ тоже допустима.
-    \item Если $f, g$ --- допустимы и $f$ суммируема, причём $0 \le g \le f$, то $g - f$ тоже допустима.
-    \provehere{
-        Пусть $\phi(x) = \int\limits_{X}f(x, \_)\d\nu$. В силу 3. она суммируема, откуда $\phi$ конечна почти всюду. Пусть $\psi(x) = \int\limits_{X}g(x, \_)\d\nu$.
-    Так как $\psi \le \phi$, то $\psi$ тоже конечна почти всюду, тогда дальше всё хорошо.
-    }
-    }
-    \item Пусть $f_n$ --- допустимые функции на $X \times Y$, пусть $0 \le f_1 \le f_2 \le \dots$, пусть $f(x, y) = \lim\limits_{n \to \infty}f_n(x, y)$. Автоматически $f$ измерима.
-    Тогда $f$ тоже допустима.
-    \provehere{
-    Пускай $E_n = \defset{x \in X}{f_n(x, \_)\text{ не измерима}}$. $\mu E_n = 0$, так как $f_n$ допустимы. Положим $E \coloneqq \bigcup\limits_{n \in \N}\E_n$, $\mu E = 0$.
-
-    $x \notin E \then$ все функции $f_n(x, \_)$ измеримы на $Y$. Имеется монотонная сходимость $f_n \nearrow f$, значит $f(x, \_)$ тоже измерима на $Y$ при $x \notin E$.
-
-    Построим $\phi(x) = \int\limits_{Y}{f(x, \_)\d\nu}, \phi_n(x) = \int\limits_{Y}f_n(x, \_)\d\nu$.
-        По теореме Леви (относительно меры $\nu$) для $x \notin E: \phi(x) = \lim\limits_{n \to \infty}\phi_n(x)$.
-    Тем самым $\phi$ измерима, как предел измеримых функций.
-
-        Более того, $\phi_n \nearrow \phi$, опять по теореме Леви (относительно меры $\mu$): \[\int\limits_{X}\phi\d\mu = \lim\limits_{n \to \infty}\int\limits_{X}\phi_n\d\mu = \lim\limits_{n \to \infty}\int\limits_{X \times Y}f_n \d\lambda \underset{\text{теорема Леви относительно $\lambda$}}= \int\limits_{X \times Y}f\d\lambda\]
-    }
-    \item Пусть $f_n$ --- допустимые функции на $X \times Y$, пусть $f_1 \ge f_2 \ge \dots$, пусть $f(x, y) = \lim\limits_{n \to \infty}f_n(x, y)$. Автоматически $f$ измерима.
-        Если $f_1$ суммируема, то $f$ тоже допустима.
-    \provehere{Аналогично предыдущему пункту.}
-    \item Если $A \subset X \times Y$ --- $\sigma$-множество. то $\chi_A$ допустима.
-    \provehere{
-    Представим $A$ в виде $A = \bigsqcup\limits_{j = 1}^{\infty}A_j$.
-    $\sum\limits_{j = 1}^{N}\chi_{A_j} \underset{n \to \infty}\nearrow \chi_A$.
-    }
-    \item Если $A \subset X \times Y$ --- $\delta\sigma$-множество конечной меры $\lambda$, то $\chi_A$ допустима.
-    \provehere{
-    Представим $A$ в виде $\bigcap\limits_{j = 1}^{\infty}A_j$, где $A_1 \supset A_2 \supset \dots$, $A_j$ --- $\sigma$-множества конечной меры.
-        $\chi_{A_j} \underset{n \to \infty}\searrow \chi_A$.
-    }
-    \item Если $e \subset X \times Y$ измеримо, и $\lambda(e) = 0$, то $\chi_e$ допустимо.
-    \provehere{
-    Пусть $\overline{e}$ --- $\delta\sigma$-множество, такое, что $\overline{e} \supset e$, и $\lambda\left(\overline{e}\right) = 0$.
-
-    Тогда $\chi_e \le \chi_{\overline{e}}$. $\chi_{\overline{e}}$ допустима, в частности, $\chi_{\overline{e}}(x, \_)$ измерима на $Y$ для почти всех $x \in X$.
-    Обозначив $\overline{\phi}(x) = \int\limits_{Y}\chi_{\overline{e}}(x, \_)\d\nu$ видим, что $\overline{\phi}$ измерима на $X$, а так как
-    \[\int\limits_{X}\overline{\phi}\d\mu = \int\limits_{X \times Y}\chi_{\overline{e}}\d\lambda = 0\]
-    то $\overline{\phi}(x) = 0$ для почти всех $x \in X$.
-
-    Пусть $E = \defset{x \in X}{\overline{\phi}(x) \ne 0}$.
-    Для $x \notin E: \int\limits_{Y}\chi_{\overline{e}}(x, \_)\d\nu = 0$. Иными словами, ${\nu\defset{y \in Y}{(x, y) \in \overline{e}} = 0}$.
-
-    Но тогда из полноты меры (здесь мы ей пользуемся в первый раз) $\nu\defset{y \in Y}{(x, y) \in e} = 0$.
-    Тогда любая функция на $e$ измерима, в частности, $\chi_e(x, \_)$ измерима на $Y$.
-
-    Зная измеримость $\chi_e$ уже несложно доказать, что в пунктах 2 и 3 все интегралы равны нулю: в частности, $\phi(x) = \int\limits_{Y}\chi_e(x, \_)\d\nu$ равна нулю всюду кроме $E$.
-    }
-        \item Если $A \subset X \times Y$ --- измеримое множество относительно меры $\lambda$, причём $\lambda(A) < +\infty$, то $\chi_A$ допустима.
-        \provehere{
-            $\exists \delta\sigma$-множество $\overline{A} \supset A$, такое, что $\lambda(\overline{A}\sm A) = 0$.
-            Применим $\chi_A = \chi_{\overline{A}} - \chi_{A \sm \overline{A}}$.
+        Пусть $f$ --- $\lambda$-измеримая функция на $X \times Y$, $f \ge 0$. Тогда
+        \numbers{
+            \item Для $\mu$-почти всех $x \in X$: $f(x, \_)$ измерима на $Y$.
+            \item Функция $\phi(x) = \int\limits_{Y}f(x, \_)\d\nu$ измерима на $X$.
+            \item $\int\limits_{X}\phi(x)\d\mu(x) = \int\limits_{X \times Y}f \d\lambda$.
         }
-        \item Пусть $f$ --- простая функция относительно $\sigma$-алгебры $\lambda$-измеримых множеств, $f \ge 0$. Иными словами,
-        \[f = \sum\limits_{j = 1}^{N}\alpha_j\chi_{e_j}, \alpha_j \ge 0, e_i \cap e_j = \o \text{ (при $i \ne j$)}\]
-        Если $\forall j: \lambda e_j < +\infty$, то $f$ допустима.
-        \item Пусть $f$ --- неотрицательная измеримая функция на $X \times Y$, $\lambda\defset{(x, y)}{f(x, y) \ne 0} < +\infty$. Тогда $f$ допустима.
-    \provehere{
-    $\exists f_n$ --- простые функции, $0 \le f_n \le f$, $f_n \nearrow f$. Все $f_n$ допустимы, значит и $f$ допустима.
-    }
-    \item Все неотрицательные измеримые функции допустимы.
-    \provehere{
-    $\exists X_1 \subset X_2 \subset \dots$, такие, что $X = \bigcup\limits_{i}X_i$, и все $\mu(X_i) < +\infty$. Аналогично $\exists Y_1 \subset Y_2 \subset \dots$, такие, что $Y = \bigcup\limits_{i}Y_i$, и все $\mu(Y_i) < +\infty$.
-    (Здесь мы пользуемся $\sigma$-конечностью в первый раз).
+        \provehere{
+            Назовём функцию $f$ допустимой, если она определена на $X \times Y$, и удовлетворяет всем трём условиям.
+            \numbers{
+                \item Если $a \in \mathcal{A}, b \in \mathcal{B}$, то $\chi_{a \times b}$ допустима: $\chi_{a \times b}(x, y) = \chi_a(x)\chi_b(y)$.
+                \item Неотрицательные простые (элементарные) функции, построенные по полукольцу $\mathcal{P}$, допустимы.
+                \bullets{
+                    \item Если $f, g$ --- допустимы, $\alpha, \beta \ge 0$, то $\alpha f + \beta g$ тоже допустима.
+                    \item Если $f, g$ --- допустимы и $f$ суммируема, причём $0 \le g \le f$, то $g - f$ тоже допустима.
+                    \provehere{
+                        Пусть $\phi(x) = \int\limits_{X}f(x, \_)\d\nu$. В силу 3. она суммируема, откуда $\phi$ конечна почти всюду. Пусть $\psi(x) = \int\limits_{X}g(x, \_)\d\nu$.
+                        Так как $\psi \le \phi$, то $\psi$ тоже конечна почти всюду, тогда дальше всё хорошо.
+                    }
+                }
+                \item Пусть $f_n$ --- допустимые функции на $X \times Y$, пусть $0 \le f_1 \le f_2 \le \dots$, пусть $f(x, y) = \lim\limits_{n \to \infty}f_n(x, y)$. Автоматически $f$ измерима.
+                Тогда $f$ тоже допустима.
+                \provehere{
+                    Пускай $E_n = \defset{x \in X}{f_n(x, \_)\text{ не измерима}}$. $\mu E_n = 0$, так как $f_n$ допустимы. Положим $E \coloneqq \bigcup\limits_{n \in \N}\E_n$, $\mu E = 0$.
 
-    Положим $f_n(x, y) = f(x, y)\chi_{X_n}(x)\chi_{Y_n}(y)$. $f_n$ из пункта 10, значит, $f$ допустима, так как $f_n \nearrow f$.
-    }
-    }
-    }
+                    $x \notin E \then$ все функции $f_n(x, \_)$ измеримы на $Y$. Имеется монотонная сходимость $f_n \nearrow f$, значит $f(x, \_)$ тоже измерима на $Y$ при $x \notin E$.
+
+                    Построим $\phi(x) = \int\limits_{Y}{f(x, \_)\d\nu}, \phi_n(x) = \int\limits_{Y}f_n(x, \_)\d\nu$.
+                    По теореме Леви (относительно меры $\nu$) для $x \notin E: \phi(x) = \lim\limits_{n \to \infty}\phi_n(x)$.
+                    Тем самым $\phi$ измерима, как предел измеримых функций.
+
+                    Более того, $\phi_n \nearrow \phi$, опять по теореме Леви (относительно меры $\mu$): \[\int\limits_{X}\phi\d\mu = \lim\limits_{n \to \infty}\int\limits_{X}\phi_n\d\mu = \lim\limits_{n \to \infty}\int\limits_{X \times Y}f_n \d\lambda \underset{\text{теорема Леви относительно $\lambda$}}= \int\limits_{X \times Y}f\d\lambda\]
+                }
+                \item Пусть $f_n$ --- допустимые функции на $X \times Y$, пусть $f_1 \ge f_2 \ge \dots$, пусть $f(x, y) = \lim\limits_{n \to \infty}f_n(x, y)$. Автоматически $f$ измерима.
+                Если $f_1$ суммируема, то $f$ тоже допустима.
+                \provehere{Аналогично предыдущему пункту.}
+                \item Если $A \subset X \times Y$ --- $\sigma$-множество. то $\chi_A$ допустима.
+                \provehere{
+                    Представим $A$ в виде $A = \bigsqcup\limits_{j = 1}^{\infty}A_j$.
+                    $\sum\limits_{j = 1}^{N}\chi_{A_j} \underset{n \to \infty}\nearrow \chi_A$.
+                }
+                \item Если $A \subset X \times Y$ --- $\delta\sigma$-множество конечной меры $\lambda$, то $\chi_A$ допустима.
+                \provehere{
+                    Представим $A$ в виде $\bigcap\limits_{j = 1}^{\infty}A_j$, где $A_1 \supset A_2 \supset \dots$, $A_j$ --- $\sigma$-множества конечной меры.
+                    $\chi_{A_j} \underset{n \to \infty}\searrow \chi_A$.
+                }
+                \item Если $e \subset X \times Y$ измеримо, и $\lambda(e) = 0$, то $\chi_e$ допустимо.
+                \provehere{
+                    Пусть $\overline{e}$ --- $\delta\sigma$-множество, такое, что $\overline{e} \supset e$, и $\lambda\left(\overline{e}\right) = 0$.
+
+                    Тогда $\chi_e \le \chi_{\overline{e}}$. $\chi_{\overline{e}}$ допустима, в частности, $\chi_{\overline{e}}(x, \_)$ измерима на $Y$ для почти всех $x \in X$.
+                    Обозначив $\overline{\phi}(x) = \int\limits_{Y}\chi_{\overline{e}}(x, \_)\d\nu$ видим, что $\overline{\phi}$ измерима на $X$, а так как
+                    \[\int\limits_{X}\overline{\phi}\d\mu = \int\limits_{X \times Y}\chi_{\overline{e}}\d\lambda = 0\]
+                    то $\overline{\phi}(x) = 0$ для почти всех $x \in X$.
+
+                    Пусть $E = \defset{x \in X}{\overline{\phi}(x) \ne 0}$.
+                    Для $x \notin E: \int\limits_{Y}\chi_{\overline{e}}(x, \_)\d\nu = 0$. Иными словами, ${\nu\defset{y \in Y}{(x, y) \in \overline{e}} = 0}$.
+
+                    Но тогда из полноты меры (здесь мы ей пользуемся в первый раз) $\nu\defset{y \in Y}{(x, y) \in e} = 0$.
+                    Тогда любая функция на $e$ измерима, в частности, $\chi_e(x, \_)$ измерима на $Y$.
+
+                    Зная измеримость $\chi_e$ уже несложно доказать, что в пунктах 2 и 3 все интегралы равны нулю: в частности, $\phi(x) = \int\limits_{Y}\chi_e(x, \_)\d\nu$ равна нулю всюду кроме $E$.
+                }
+                \item Если $A \subset X \times Y$ --- измеримое множество относительно меры $\lambda$, причём $\lambda(A) < +\infty$, то $\chi_A$ допустима.
+                \provehere{
+                    $\exists \delta\sigma$-множество $\overline{A} \supset A$, такое, что $\lambda(\overline{A}\sm A) = 0$.
+                    Применим $\chi_A = \chi_{\overline{A}} - \chi_{A \sm \overline{A}}$.
+                }
+                \item Пусть $f$ --- простая функция относительно $\sigma$-алгебры $\lambda$-измеримых множеств, $f \ge 0$. Иными словами,
+                \[f = \sum\limits_{j = 1}^{N}\alpha_j\chi_{e_j}, \alpha_j \ge 0, e_i \cap e_j = \o \text{ (при $i \ne j$)}\]
+                Если $\forall j: \lambda e_j < +\infty$, то $f$ допустима.
+                \item Пусть $f$ --- неотрицательная измеримая функция на $X \times Y$, $\lambda\defset{(x, y)}{f(x, y) \ne 0} < +\infty$. Тогда $f$ допустима.
+                \provehere{
+                    $\exists f_n$ --- простые функции, $0 \le f_n \le f$, $f_n \nearrow f$. Все $f_n$ допустимы, значит и $f$ допустима.
+                }
+                \item Все неотрицательные измеримые функции допустимы.
+                \provehere{
+                    $\exists X_1 \subset X_2 \subset \dots$, такие, что $X = \bigcup\limits_{i}X_i$, и все $\mu(X_i) < +\infty$. Аналогично $\exists Y_1 \subset Y_2 \subset \dots$, такие, что $Y = \bigcup\limits_{i}Y_i$, и все $\mu(Y_i) < +\infty$.
+                    (Здесь мы пользуемся $\sigma$-конечностью в первый раз).
+
+                    Положим $f_n(x, y) = f(x, y)\chi_{X_n}(x)\chi_{Y_n}(y)$. $f_n$ из пункта 10, значит, $f$ допустима, так как $f_n \nearrow f$.
+                }
+            }
+        }
     }
     \theorem[Фубини]{
         Пусть $(X, \mu), (Y, \nu)$ --- два пространства с мерой, $\lambda = \mu \otimes \nu$.
 
-    Если $f \in L^1(\lambda)$, то \bullets{
+        Если $f \in L^1(\lambda)$, то \bullets{
             \item Для почти всех $x\in X: \phi(x) \coloneqq \int\limits_{Y}f(x, \_)\d\nu$ суммируема на $X$.
-        \item $\int\limits_{X}\phi\d\mu = \int\limits_{X \times Y}f\d\lambda$.
-    }
-    \provehere{
-    $f$ суммируема $\then f_+, f_-$ суммируемы по $\lambda$.
-        К каждой из них применима теорема Тонелли.
-        Вычитаем заключения теоремы Тонелли для $f_+$ и $f_-$.
-    }
+            \item $\int\limits_{X}\phi\d\mu = \int\limits_{X \times Y}f\d\lambda$.
+        }
+        \provehere{
+            $f$ суммируема $\then f_+, f_-$ суммируемы по $\lambda$.
+            К каждой из них применима теорема Тонелли.
+            Вычитаем заключения теоремы Тонелли для $f_+$ и $f_-$.
+        }
     }
     \problem{
-    Придумать функцию $f$, такую, что $\phi(x) \coloneqq \int\limits_{Y}f(x, \_)\d\nu$ суммируема, но $f \notin L^1(\lambda)$.
+        Придумать функцию $f$, такую, что $\phi(x) \coloneqq \int\limits_{Y}f(x, \_)\d\nu$ суммируема, но $f \notin L^1(\lambda)$.
     }
+
     \subsection{Как применять}
     Пусть $f$ --- $\lambda$-измеримая функция (про знак ничего не известно).
 
@@ -1762,11 +1765,13 @@
 
     По теореме Тонелли $|f|$ суммируема $\iff \int\limits_{X}\int\limits_{Y}|f|(x, y)\d \nu(y)\d \mu(x)$.
     Если интеграл сошёлся, то $f$ тоже суммируема, и для исходной функции тоже можно сводить интеграл к повторному.
+
+
     \section{Свёртки. Приближение функций с помощью свёрток}
     Пускай $f, g$ --- измеримые функции на $\R^n$.
     \definition[Свёртка $f * g$]{
-    $(f * g)(x) = \int\limits_{\R^n}f(y)g(x - y)\d y$.
-    Свёртка определена в тех точках, где интеграл определён.
+        $(f * g)(x) = \int\limits_{\R^n}f(y)g(x - y)\d y$.
+        Свёртка определена в тех точках, где интеграл определён.
     }
     Рассмотрим $L: \R^n \times \R^n \map \R^n \times \R^n, (x, y)\mapsto (y, x - y)$.
     $L$ линейно, значит, $L, L^{-1}$ измеримы по Лебегу.
@@ -1775,12 +1780,12 @@
     Если $f, g \in L^1(\R^n)$, то $(f * g)$ определена почти всюду, и $\|f * g\|_{L^1} \le \|f\|_{L^1} \|g\|_{L^1}$.
     \provehere{
         Рассмотрим $\phi(x, y) = |f(x)|\cdot |g(x - y)|$. Она неотрицательна, применяем теорему Тонелли:
-    \multline{\int\limits_{\R^n \times \R^n}\phi\d\lambda_{2n} = \int\limits_{\R^n}\left(\int\limits_{\R^n}|f(y)|\cdot|g(x-y)|\d x\right)\d y = \\
-    = \int\limits_{\R^n}|f(y)|(\int\limits_{\R^n}|g(x - y)|\d x)\d y = \int\limits_{\R^n}|f(y)|\left(\int\limits_{\R^n}|g(x)|\d x\right)\d y = \|f\|_{L^1}\|g\|_{L^1}}
+        \multline{\int\limits_{\R^n \times \R^n}\phi\d\lambda_{2n} = \int\limits_{\R^n}\left(\int\limits_{\R^n}|f(y)|\cdot|g(x-y)|\d x\right)\d y = \\
+            = \int\limits_{\R^n}|f(y)|(\int\limits_{\R^n}|g(x - y)|\d x)\d y = \int\limits_{\R^n}|f(y)|\left(\int\limits_{\R^n}|g(x)|\d x\right)\d y = \|f\|_{L^1}\|g\|_{L^1}}
 
         По теореме Тонелли $\phi$ суммируема, тем самым, $(x, y) \mapsto f(y)g(x - y)$ тоже суммируема.
-    По теореме Фубини $(f * g)(x)$ определена для почти всех $x$, причём она суммируема.
-    \[\int\limits_{R^n}|(f * g)(x)| \d x \le \int\limits_{\R^n}\int\limits_{\R^n}|f(y)g(x-y)|\d y\d x \le \|f\|_{L^1}\|g\|_{L^1}\]
+        По теореме Фубини $(f * g)(x)$ определена для почти всех $x$, причём она суммируема.
+        \[\int\limits_{R^n}|(f * g)(x)| \d x \le \int\limits_{\R^n}\int\limits_{\R^n}|f(y)g(x-y)|\d y\d x \le \|f\|_{L^1}\|g\|_{L^1}\]
     }
     }
 
@@ -1794,6 +1799,7 @@
         Свёртка ассоциативна: $f * (g * h) = (f * g) * h$ всегда, когда существует.
     }
     \newlection{22 ноября 2023 г.}
+
     \subsection{Меры с плотностью}
     Пусть $(X, \Sigma, \mu)$ --- пространство с мерой. Пусть $\phi \ge 0$ --- измеримая функция на $X$.
 
@@ -1802,34 +1808,35 @@
 
     \subsubsection{Куда должна бить $\phi \ge 0$?}
     \numbers{
-    \item Можно считать, что $\phi: X \map \R$, но, возможно, меняет знак.
-    Надо предположить, что либо $\phi_+$, либо $\phi_-$ суммируемы.
+        \item Можно считать, что $\phi: X \map \R$, но, возможно, меняет знак.
+        Надо предположить, что либо $\phi_+$, либо $\phi_-$ суммируемы.
 
-    Тогда сохраняется счётная аддитивность: $e = \bigsqcup\limits_{i = 1}^{\infty}e_i \then \nu(e) = \sum\limits_{i = 1}^{\infty}\nu(e_i)$.
+        Тогда сохраняется счётная аддитивность: $e = \bigsqcup\limits_{i = 1}^{\infty}e_i \then \nu(e) = \sum\limits_{i = 1}^{\infty}\nu(e_i)$.
         Тем не менее, всякие монотонности могут перестать выполняться, так как функция перестала быть неотрицательной.
-    \item Можно считать, что $\phi: X \map \C$.
-    Комплексный интеграл берётся отдельно по вещественной и мнимой частям:
-    \[\int\limits_{e}(\alpha + \beta i)\d\mu = \int\limits_{e}\alpha\d\mu + i \int\limits_{e}\beta\d\mu\]
+        \item Можно считать, что $\phi: X \map \C$.
+        Комплексный интеграл берётся отдельно по вещественной и мнимой частям:
+        \[\int\limits_{e}(\alpha + \beta i)\d\mu = \int\limits_{e}\alpha\d\mu + i \int\limits_{e}\beta\d\mu\]
     }
     В обоих случаях $\nu$ перестаёт быть мерой в заявленном определении, это просто какая-то счётно-аддитивная функция множества, и $\phi$ во всех случаях называется её плотностью.
 
     \subsubsection{Интегрирование по мере $\nu$}
     Пусть $\nu$ определена, как выше.
     \fact{
-    Если $g \ge 0$ --- измеримая функция на $X$, то $\int\limits_{X}g\d\nu = \int\limits_{X}g\phi\d\mu$.
-    \provehere{
-    Формула верна для $g = \chi_e$: \[\int\limits_{X}\chi_e\d\nu = \nu(e) = \int\limits_{X}\chi_e\phi\d\mu\]
-    Значит, формула верна для неотрицательных простых функций.
+        Если $g \ge 0$ --- измеримая функция на $X$, то $\int\limits_{X}g\d\nu = \int\limits_{X}g\phi\d\mu$.
+        \provehere{
+            Формула верна для $g = \chi_e$: \[\int\limits_{X}\chi_e\d\nu = \nu(e) = \int\limits_{X}\chi_e\phi\d\mu\]
+            Значит, формула верна для неотрицательных простых функций.
 
-    Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви.
-    }
-    }
-    \corollary{
-    Неотрицательная функция $g$ $\nu$-суммируема $\iff g\phi$ $\mu$-суммируема.
+            Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви.
+        }
     }
     \corollary{
-    Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
+        Неотрицательная функция $g$ $\nu$-суммируема $\iff g\phi$ $\mu$-суммируема.
     }
+    \corollary{
+        Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
+    }
+
     \subsection{Образ меры}
     Пусть $(X, \mathcal{A}), (Y, \mathcal{B})$ --- два пространства, $\mathcal{A}, \mathcal{B}$ --- $\sigma$-алгебры подмножеств в $X$ и $Y$ соответственно.
 
@@ -1838,18 +1845,19 @@
     Пускай  $\mu \ge 0$ --- счётно-аддитивная мера на $(X, \mathcal{A})$.
     Её \emph{образ} $F^0(\mu) = \nu$ --- счётно-аддитивная мера на $(Y, \mathcal{B})$, такая, что $\nu(b) = \mu(F^{-1}(b))$.
     Счётная аддитивность следует из того, что прообраз уважает все теоретико-множественные операции.
+
     \subsubsection{Интегрирование по мере $\nu$}
     Пусть $\nu$ определена, как выше.
     \[\int\limits_{Y}\chi_e\d\nu = \nu(b) = \int\limits_{X}\chi_{F^{-1}(b)}\d\mu\]
     Заметим, что $\chi_{F^{-1}(b)} = \chi_b \circ F$.
     \fact{
-    Если $g \ge 0$ --- измеримая функция на $X$, то $\int\limits_{X}g\d\nu = \int\limits_{X}g\circ F\d\mu$.
-    \provehere{
-        Формула верна для $g = \chi_e$.
-        Значит, формула верна для неотрицательных простых функций.
+        Если $g \ge 0$ --- измеримая функция на $X$, то $\int\limits_{X}g\d\nu = \int\limits_{X}g\circ F\d\mu$.
+        \provehere{
+            Формула верна для $g = \chi_e$.
+            Значит, формула верна для неотрицательных простых функций.
 
-        Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви (два раза, в левой и правой частях равенства).
-    }
+            Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви (два раза, в левой и правой частях равенства).
+        }
     }
     Все замечания из предыдущего раздела повторяются.
     \corollary{
@@ -1861,24 +1869,25 @@
     Данная формула очень полезна при замене переменной в интеграле.
 
     Например, ранее записанное равенство $\int\limits_{X}f(x - y)\d y = \int\limits_{X}f(\xi)\d\xi$ видно из данной формулы при $g(y) = x - y$ --- здесь образ меры будет её самой.
+
     \subsection{Свойства свёртки}
     \theorem{
         Если $g$ лежит в $L^1(\R^n)$, $f \in L^p(\R^n)$, где $1 \le p \le \infty$, то $\|f * g\|_{L^p(\R^n)} \le \|f\|_{L^p(\R^n)}\|g\|_{L^1(\R^n)}$.
         \provehere{
             Пусть $p = \infty$.
-        \[|(f * g)(x)| \le \int\limits_{\R^n}|f(x - y)| \cdot |g(y)| \d y \le \underbrace{\|f\|_{L^{\infty}}}_{\esssup(f)~}\int\limits_{\R^n}|g(y)|\d y\]
-        При $p = 1$ доказано выше:~(\ref{p-equals-1}).
+            \[|(f * g)(x)| \le \int\limits_{\R^n}|f(x - y)| \cdot |g(y)| \d y \le \underbrace{\|f\|_{L^{\infty}}}_{\esssup(f)~}\int\limits_{\R^n}|g(y)|\d y\]
+            При $p = 1$ доказано выше:~(\ref{p-equals-1}).
 
-        Теперь пусть $1 < p < \infty$, $q$ --- сопряжённый к $p$ показатель.
-        \[\int\limits_{\R^n}|(f * g)(x)|^p\d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)||g(y)|\d y\right)^p \d x = \cdots\]
-        Определим из меры Лебега новую меру с плотностью $|g(y)|$: $\nu(e) \coloneqq \int\limits_{e}|g(y)|\d y$.
+            Теперь пусть $1 < p < \infty$, $q$ --- сопряжённый к $p$ показатель.
+            \[\int\limits_{\R^n}|(f * g)(x)|^p\d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)||g(y)|\d y\right)^p \d x = \cdots\]
+            Определим из меры Лебега новую меру с плотностью $|g(y)|$: $\nu(e) \coloneqq \int\limits_{e}|g(y)|\d y$.
             Это конечная мера на $\R^n$, так как $g \in L^1$.
-        \[\cdots = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)| \cdot 1\d \nu(y)\right)^p \d x \le \cdots\]
-        Теперь применим неравенство Гёльдера относительно данной меры $\nu$.
-        \multline{
-            \le \int\limits_{\R^n}\left[\left(~\int\limits_{\R^n}|f(x - y)|^p\d\nu(y)\right)^{\frac{1}{p}}\left(~\int\limits_{\R^n}1^q\d\nu\right)^{\frac{1}{q}}\right]^p \d x=\\= \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)|^p|g(y)|\d y\right)\d x \cdot \|g\|_{L^1}^{\frac{p}{q}}            = \|g\|_{L^1}^{\frac{p}{q}}\|f\|^p_{L^1}\|g\|_{L^1}
-        }
-        Тем самым, $\|f * g\|_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|_{L^p}^p$ и $\|f * g\|^p_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
+            \[\cdots = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)| \cdot 1\d \nu(y)\right)^p \d x \le \cdots\]
+            Теперь применим неравенство Гёльдера относительно данной меры $\nu$.
+            \multline{
+                \le \int\limits_{\R^n}\left[\left(~\int\limits_{\R^n}|f(x - y)|^p\d\nu(y)\right)^{\frac{1}{p}}\left(~\int\limits_{\R^n}1^q\d\nu\right)^{\frac{1}{q}}\right]^p \d x=\\= \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)|^p|g(y)|\d y\right)\d x \cdot \|g\|_{L^1}^{\frac{p}{q}}            = \|g\|_{L^1}^{\frac{p}{q}}\|f\|^p_{L^1}\|g\|_{L^1}
+            }
+            Тем самым, $\|f * g\|_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|_{L^p}^p$ и $\|f * g\|^p_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
 
         }
     }
@@ -1891,84 +1900,84 @@
     }
     \fact{
         Пусть $g \in L^1(\R^n)$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p \le \infty$:
-    \[\|f * g - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y\cdot|g(x)| \d x\]
-    \provehere{
-    $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
-    Возьмём модуль, возведём в степень $p$, и проинтегрируем:
-    \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x \le \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)||g(y)|\d y\right)^p \d x\]
-    Далее вводим меру $\nu(e) = \int\limits_{e}|g(y)|\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$.
-        \note{
-            При $p = \infty$ тоже верно, доказательство другое (проще).\qedhere
+        \[\|f * g - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y\cdot|g(x)| \d x\]
+        \provehere{
+            $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
+            Возьмём модуль, возведём в степень $p$, и проинтегрируем:
+            \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x \le \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)||g(y)|\d y\right)^p \d x\]
+            Далее вводим меру $\nu(e) = \int\limits_{e}|g(y)|\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$.
+            \note{
+                При $p = \infty$ тоже верно, доказательство другое (проще).\qedhere
+            }
         }
     }
-    }
     \definition[Пространство бесконечно дифференцируемых функций на $\R^n$ с компактным носителем]{
-    $\mathcal{D}(\R^n)$.
+        $\mathcal{D}(\R^n)$.
     }
     \theorem{
         Пусть $u$ --- непрерывна, с компактным носителем, $f \in L^p(\R^n)$. Тогда $f * u$ непрерывна.
         Если $u \in \mathcal{D}(\R^n)$, то $f * u \in C^{\infty}(\R^n)$.
         \provehere{
-        \[(f * g)(x) = \int\limits_{\R^n}f(y)u(x - y)\d y = \cdots \]
+            \[(f * g)(x) = \int\limits_{\R^n}f(y)u(x - y)\d y = \cdots \]
             Проверим непрерывность в $x_0 \in \R^n$, рассмотрим $B_r(x_0)$.
             Пусть $S = \supp u$.
             Теперь можно считать, что интегрирование берётся по компакту $K = \overline{B_r(x_0)} - S$.
             \[\cdots \underset{\text{при $x \in B_r(x_0)$}}= \int\limits_{K}f(y)u(x - y)\d y\]
             Заметим, что для всякой последовательности $x_j \to x_0: u(x_j - y) \to u(x_0 - y)$, откуда $|f(y)u(x_j - x_0)| \le C|f(y)|$, и можно применить теорему Лебега о мажоранте.
-        \indentlemma{
-            Пусть $K \subset \R^n$ --- компактное множество, $I = (a, b)\subset \R$ --- интервал, $v: K \times I \map \R$.
-        Пусть $\exists \der{}{t}v(x, t)$, и она непрерывна на $(a, b)$ при всяком фиксированном $x \in K$.
-            Также предположим наличие суммируемой мажоранты $w$ на $K$: для всех $t \in (a, b): \abs{\der{}{t}v(x, t_0)} \le w(x)$.
+            \indentlemma{
+                Пусть $K \subset \R^n$ --- компактное множество, $I = (a, b)\subset \R$ --- интервал, $v: K \times I \map \R$.
+                Пусть $\exists \der{}{t}v(x, t)$, и она непрерывна на $(a, b)$ при всяком фиксированном $x \in K$.
+                Также предположим наличие суммируемой мажоранты $w$ на $K$: для всех $t \in (a, b): \abs{\der{}{t}v(x, t_0)} \le w(x)$.
 
-        Определим $\phi(t) = \int\limits_{K}v(x, t)\d x$ (предполагаем, что $v(x, t)$ суммируема при всяком $t$). Тогда $\phi$ дифференцируема на $(a, b)$, и
-        \[\phi'(t_0) = \int\limits_{K}\der{}{t}v(x, t_0)\d x\]
-        }{
-        Выберем последовательность $t_n \to t_0$, запишем разностное отношение
-            $\frac{\phi(t_n) - \phi(t_0)}{t_n - t_0} = \int\limits_{K}\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0}\d x \underset{n \to \infty}\Map\phi'(t_0)$
-        По формуле Лагранжа $\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0} = \der{}{t}v(x, \xi)$ для некой $\xi \in (t_n, t_0)$.
-        $\abs{\der{}{t}v(x, \xi)} \le w(x)$, значит, у подынтегральной функции есть мажоранта, и можно перейти к пределу.
-        }
-        Заметим, что $(f * u)(x) = \int\limits_{K}f(y)u(x - y)\d y$, и её действительно можно дифференцировать бесконечно много раз (?).
+                Определим $\phi(t) = \int\limits_{K}v(x, t)\d x$ (предполагаем, что $v(x, t)$ суммируема при всяком $t$). Тогда $\phi$ дифференцируема на $(a, b)$, и
+                \[\phi'(t_0) = \int\limits_{K}\der{}{t}v(x, t_0)\d x\]
+            }{
+                Выберем последовательность $t_n \to t_0$, запишем разностное отношение
+                $\frac{\phi(t_n) - \phi(t_0)}{t_n - t_0} = \int\limits_{K}\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0}\d x \underset{n \to \infty}\Map\phi'(t_0)$
+                По формуле Лагранжа $\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0} = \der{}{t}v(x, \xi)$ для некой $\xi \in (t_n, t_0)$.
+                $\abs{\der{}{t}v(x, \xi)} \le w(x)$, значит, у подынтегральной функции есть мажоранта, и можно перейти к пределу.
+            }
+            Заметим, что $(f * u)(x) = \int\limits_{K}f(y)u(x - y)\d y$, и её действительно можно дифференцировать бесконечно много раз (?).
         %$u$ ограничена, значит, есть мажоранта
         }
     }
     \note{
-    Пусть $\supp f = A, \supp g = B$. Тогда $\supp(f * g) \subset A + B$.
+        Пусть $\supp f = A, \supp g = B$. Тогда $\supp(f * g) \subset A + B$.
     }
     \definition[Аппроксимативная единица для $\R^n$]{
-    Последовательность функций $g_j \in L^1(\R^n)$, $g_j \ge 0, \int\limits_{\R^n}g_j = 1, \forall r > 0: \int\limits_{|y| > \delta}g_j(y)\d y \underset{j \to \infty}\Map 0$
+        Последовательность функций $g_j \in L^1(\R^n)$, $g_j \ge 0, \int\limits_{\R^n}g_j = 1, \forall r > 0: \int\limits_{|y| > \delta}g_j(y)\d y \underset{j \to \infty}\Map 0$
     }
     \theorem{
         Пусть $g_j$ --- аппроксимативная единица, $f \in L^p(\R^n)$, $f * g_j \underset{j \to \infty}{\overset{L^p}\Map} f$, то $\|f * g_j - f\|_{L^p} \underset{j \to \infty}\Map 0$.
 
-    Если $f$ непрерывна с компактным носителем (достаточно потребовать равномерной непрерывности), то $f * g_j \rightrightarrows f$
-    \provehere{
-    При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x}
-    $2^p\int\limits_{\R^n}|f(x - y)|^p + |f(y)|^p\d x \le 2^{p + 1}\int\limits_{\R^n}|f(x)|^p\d x$, и это конечно.
-    Значит, по определению аппроксимативной единицы второе слагаемое мало при больших $j$.
+        Если $f$ непрерывна с компактным носителем (достаточно потребовать равномерной непрерывности), то $f * g_j \rightrightarrows f$
+        \provehere{
+            При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x}
+            $2^p\int\limits_{\R^n}|f(x - y)|^p + |f(y)|^p\d x \le 2^{p + 1}\int\limits_{\R^n}|f(x)|^p\d x$, и это конечно.
+            Значит, по определению аппроксимативной единицы второе слагаемое мало при больших $j$.
 
-    Для первого слагаемого применим непрерывность сдвигов в $L^p$: $\forall \eps > 0: \exists \delta: f \in L^p(\R^n), 1 \le p < \infty$ при $|y| \le \delta \then \int\limits_{\R^n}|f(x - y) - f(x)|^p \d x < \eps$. Значит, оно тоже маленькое.
+            Для первого слагаемого применим непрерывность сдвигов в $L^p$: $\forall \eps > 0: \exists \delta: f \in L^p(\R^n), 1 \le p < \infty$ при $|y| \le \delta \then \int\limits_{\R^n}|f(x - y) - f(x)|^p \d x < \eps$. Значит, оно тоже маленькое.
 
-    Равномерную сходимость проверим в следующий раз.
-    }
+            Равномерную сходимость проверим в следующий раз.
+        }
     }
     \fact{
-    Пространство $\mathcal{D}(\R^n)$ плотно в $L^p(\R^n)$ для $1 \le p < +\infty$.
-    \provehere{
-    Построим специальную аппроксимативную единицу. \numbers{
-        \item Пускай $\phi: \R \map \R$ --- бесконечно дифференцируемая неотрицательная функция с компактным носителем, $\phi = 0$ вне $(-1, 1)$.
+        Пространство $\mathcal{D}(\R^n)$ плотно в $L^p(\R^n)$ для $1 \le p < +\infty$.
+        \provehere{
+            Построим специальную аппроксимативную единицу. \numbers{
+                \item Пускай $\phi: \R \map \R$ --- бесконечно дифференцируемая неотрицательная функция с компактным носителем, $\phi = 0$ вне $(-1, 1)$.
 
-        Например, $\phi(x) = ?$
-    \item $a \coloneqq\int\limits_{\R}\phi \d x$. Положим $\psi = \frac{\phi}{a}$. Это функция с единичным интегралом.
-    \item $\Psi(x_1, \dots, x_n) \coloneqq \psi(x_1)\proddots \psi(x_n)$.
-        Это функция с единичным интегралом, сосредоточенная на единичном кубе со стороной 2 и центром в нуле.
-    \item В качестве аппроксимативной единицы выберем $\Psi_j(x) = j^n\Psi\left(jx\right)$.
-        Интеграл по-прежнему равен единице, так как якобиан скалярного умножения на $j$ в $\R^n$ равен $j^n$.
-    }
-    Теперь выберем $\eps > 0$, и функции $f \in L^p(\R^n)$ сопоставим $g$ с компактным носителем, такую, что $\|f - g\|_{L^p} < \eps$.
-    При больших $j$:
-    \[|g * \Psi_j - g\|_{L^p} < \eps\]
-    }
+                Например, $\phi(x) = ?$
+                \item $a \coloneqq\int\limits_{\R}\phi \d x$. Положим $\psi = \frac{\phi}{a}$. Это функция с единичным интегралом.
+                \item $\Psi(x_1, \dots, x_n) \coloneqq \psi(x_1)\proddots \psi(x_n)$.
+                Это функция с единичным интегралом, сосредоточенная на единичном кубе со стороной 2 и центром в нуле.
+                \item В качестве аппроксимативной единицы выберем $\Psi_j(x) = j^n\Psi\left(jx\right)$.
+                Интеграл по-прежнему равен единице, так как якобиан скалярного умножения на $j$ в $\R^n$ равен $j^n$.
+            }
+            Теперь выберем $\eps > 0$, и функции $f \in L^p(\R^n)$ сопоставим $g$ с компактным носителем, такую, что $\|f - g\|_{L^p} < \eps$.
+            При больших $j$:
+            \[|g * \Psi_j - g\|_{L^p} < \eps\]
+        }
     }
     \newlection{6 декабря 2023 г.}
     //todo
@@ -1982,27 +1991,27 @@
     Иногда сужение определяют немного по-другому: $\mu\Big|_E(a)$ --- мера, заданная как $\mu$, но теоретико-множественно суженная на $\defset{b \in \Sigma}{b \subset E}$.
     \theorem[Хан]{
         Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$. Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\Big|_E \ge 0, \mu\Big|_F \le 0$.
-    \provehere{
-    Ранее доказано, что $\defset{\mu(b)}{b \in \Sigma}$ ограничено.
-        Пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
-    \bullets{
-    \item $M = 0$. Тогда $\mu \le 0$, и $F = X, E = \o$.
-    \item $M > 0$. По определению супремума $\exists b_k \in \Sigma: M - \frac{1}{2^k} \le \mu(b_k) \le M$.
-    \indentlemma{
-    Пусть $b \subset X$, $\mu(b) = M - \eps$. Если измеримое $e \subset b$, то $\mu(e) \ge -\eps$.
-    }{
-    От противного: пусть $\exists e \subset b_k: \mu(e) < -\eps$. Тогда мера $b_k \sm e$ больше супремума $M$.
-    }
-    Положим $\overline{b_k} = \bigcup\limits_{n \ge k}b_k$.
-    Оценим $\mu\left(\overline{b_k}\right)$ снизу:
-    \gather{\mu\left(b_k \cup b_{k+1} \cup \cdots \cup b_n\right) = \mu(b_k) + \mu(b_{k+1} \sm b_k) + \mu\left(b_{k+2}\sm(b_k \cup b_{k+1})\right) + \cdots + \mu(b_{n} \sm (\cdots))\ge\\\ge \left(M - \frac{1}{2^k}\right) - \frac{1}{2^{k+1}} - \frac{1}{2^{k+2}} - \cdots - \frac{1}{2^n} \ge M - \frac{1}{2^{k-1}}}
-    Переходя к пределу в силу счётной аддитивности, получаем $\mu\left(b_k \cup b_{k+1} \cup \cdots\right) \ge M - \frac{1}{2^{k-1}}$.
+        \provehere{
+            Ранее доказано, что $\defset{\mu(b)}{b \in \Sigma}$ ограничено.
+            Пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
+            \bullets{
+                \item $M = 0$. Тогда $\mu \le 0$, и $F = X, E = \o$.
+                \item $M > 0$. По определению супремума $\exists b_k \in \Sigma: M - \frac{1}{2^k} \le \mu(b_k) \le M$.
+                \indentlemma{
+                    Пусть $b \subset X$, $\mu(b) = M - \eps$. Если измеримое $e \subset b$, то $\mu(e) \ge -\eps$.
+                }{
+                    От противного: пусть $\exists e \subset b_k: \mu(e) < -\eps$. Тогда мера $b_k \sm e$ больше супремума $M$.
+                }
+                Положим $\overline{b_k} = \bigcup\limits_{n \ge k}b_k$.
+                Оценим $\mu\left(\overline{b_k}\right)$ снизу:
+                \gather{\mu\left(b_k \cup b_{k+1} \cup \cdots \cup b_n\right) = \mu(b_k) + \mu(b_{k+1} \sm b_k) + \mu\left(b_{k+2}\sm(b_k \cup b_{k+1})\right) + \cdots + \mu(b_{n} \sm (\cdots))\ge\\\ge \left(M - \frac{1}{2^k}\right) - \frac{1}{2^{k+1}} - \frac{1}{2^{k+2}} - \cdots - \frac{1}{2^n} \ge M - \frac{1}{2^{k-1}}}
+                Переходя к пределу в силу счётной аддитивности, получаем $\mu\left(b_k \cup b_{k+1} \cup \cdots\right) \ge M - \frac{1}{2^{k-1}}$.
 
-    Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \subset \cdots$ Положим $E \coloneqq \bigcup\limits_{k = 1}^{\infty}b_k$ В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(b_k) = M$.
+                Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \subset \cdots$ Положим $E \coloneqq \bigcup\limits_{k = 1}^{\infty}b_k$ В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(b_k) = M$.
 
-    Теперь в силу леммы все подмножества $E$ имеют положительную меру. Положим $F \coloneqq X \sm E$, все подмножества $F$ имеют отрицательную меру (от противного: если $f \subset F$ имеет положительную меру, то $\mu(E \cup f) > M$).\qedhere
-    }
-    }
+                Теперь в силу леммы все подмножества $E$ имеют положительную меру. Положим $F \coloneqq X \sm E$, все подмножества $F$ имеют отрицательную меру (от противного: если $f \subset F$ имеет положительную меру, то $\mu(E \cup f) > M$).\qedhere
+            }
+        }
     }
     Такие $E, F \subset X$ из теоремы --- \emph{разложение Хана}.
     Оно единственно с точностью до множества меру нуль --- если $A \subset E$ имеет меру нуль, то все его подмножества тоже имеют меру нуль, и $(E \sm A, F \cup A)$ --- тоже разложение Хана.
@@ -2015,20 +2024,20 @@
     }
     Введём естественный частичный порядок на мерах: поточечно $\mu \le \nu \iff \forall e \in \Sigma: \mu(e) \le \nu(e)$.
     \proposal{
-    $\mu^+$ есть наименьшая из неотрицательных мер $\nu: \nu \ge \mu$.
-    \provehere{
-    Пусть $E, F$ --- разложение Хана для $\mu$.
-    Пусть $\nu \ge \mu$. Тогда $\nu(a) = \nu(a \cap E) + \nu(a \cap F) \ge \mu(a \cap E) = \mu^+(a)$.
-    }
-    }
-    \note{
-    $\mu^- = (-\mu)^+$.
+        $\mu^+$ есть наименьшая из неотрицательных мер $\nu: \nu \ge \mu$.
+        \provehere{
+            Пусть $E, F$ --- разложение Хана для $\mu$.
+            Пусть $\nu \ge \mu$. Тогда $\nu(a) = \nu(a \cap E) + \nu(a \cap F) \ge \mu(a \cap E) = \mu^+(a)$.
+        }
     }
     \note{
-    Пусть $g: X \map \R, g(x) = \all{1,&x \in E \\ -1,&x \in F}$. Тогда $\mu(e) = \int\limits_{e}g\d\abs{\mu}$.
-    \provehere{
-    \[\int\limits_{e}g\d|\mu| = \int\limits_{e \cap E}\d|\mu| - \int\limits_{e \cap F}\d|\mu| = \int\limits_{e \cap E}\d\mu^+ - \int\limits_{e \cap F}\d\mu^- = \mu^+(e \cap E) - \mu^-(e \cap F) = \mu(e)\qedhere\]
+        $\mu^- = (-\mu)^+$.
     }
+    \note{
+        Пусть $g: X \map \R, g(x) = \all{1,&x \in E \\ -1,&x \in F}$. Тогда $\mu(e) = \int\limits_{e}g\d\abs{\mu}$.
+        \provehere{
+            \[\int\limits_{e}g\d|\mu| = \int\limits_{e \cap E}\d|\mu| - \int\limits_{e \cap F}\d|\mu| = \int\limits_{e \cap E}\d\mu^+ - \int\limits_{e \cap F}\d\mu^- = \mu^+(e \cap E) - \mu^-(e \cap F) = \mu(e)\qedhere\]
+        }
     }
     Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, и $\rho$ --- неотрицательная счётно-аддитивная мера.
 
@@ -2047,65 +2056,66 @@
     \definition[Полная вариация $\mu$ на $a \in \Sigma$]{$|\mu|(a) = \sup\defset{\sum\limits_{j = 1}^{N}|\mu(e_j)|}{e_1\sqcup \dots\sqcup e_N = a}$}
     \theorem{
         $|\mu|$ есть неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
-    \provehere{\ref{abs-mes-prop}}
+        \provehere{\ref{abs-mes-prop}}
     }
     \note{
-    Если $\mu$ вещественна, то $|\mu|(a) = \mu^+(a) + \mu^-(a)$, где $|\mu|$ понимается, как полная вариация.
+        Если $\mu$ вещественна, то $|\mu|(a) = \mu^+(a) + \mu^-(a)$, где $|\mu|$ понимается, как полная вариация.
 
         Иными словами, не зря модуль меры и её полную вариацию обозначают одинаково.
-    \provehere{
-        Если $a \in \Sigma$, и $e_1 \sqcup \cdots \sqcup e_n = a$, то $\sum\limits_{j =1}^{n}|\mu(e_j)| \le \sum\limits_{j = 1}^{n}\mu^+(e_j) + \mu^-(e_j) \le \mu^+(a) + \mu^-(a)$.
+        \provehere{
+            Если $a \in \Sigma$, и $e_1 \sqcup \cdots \sqcup e_n = a$, то $\sum\limits_{j =1}^{n}|\mu(e_j)| \le \sum\limits_{j = 1}^{n}\mu^+(e_j) + \mu^-(e_j) \le \mu^+(a) + \mu^-(a)$.
 
-        Обратно, разобьём $a =  (a \cap E) \cup (a \cap F)$ (где $E,F$ --- разложение Хана). Тогда $|\mu|(a) \ge |\mu(a \cap E)| + |\mu(a \cap F)| = \mu^+(a) + \mu^-(a)$.
-    }
+            Обратно, разобьём $a =  (a \cap E) \cup (a \cap F)$ (где $E,F$ --- разложение Хана). Тогда $|\mu|(a) \ge |\mu(a \cap E)| + |\mu(a \cap F)| = \mu^+(a) + \mu^-(a)$.
+        }
     }
     \lemma{
-    Пусть $\rho_1, \rho_2$ --- комплексные меры на $\Sigma$, $\alpha,\beta \in \C$. Тогда $\forall a \in \Sigma: |(\alpha \rho_1 + \beta \rho_2)(a)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)$.
-    \provehere{ Пусть $a = e_1 \sqcup \cdots \sqcup e_n$. Оценим
-    \[\sum\limits_{j = 1}^{n}|(\alpha \rho_1 + \beta \rho_2)(e_j)| \le |\alpha|\sum\limits_{j = 1}^{n}|\rho_1(e_j)| + |\beta|\sum\limits_{j = 1}^{n}|\rho_2(e_j)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)\]
-    и перейдём к супремуму по всем разбиениям $a = e_1 \sqcup \cdots \sqcup e_n$.
-    }
+        Пусть $\rho_1, \rho_2$ --- комплексные меры на $\Sigma$, $\alpha,\beta \in \C$. Тогда $\forall a \in \Sigma: |(\alpha \rho_1 + \beta \rho_2)(a)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)$.
+        \provehere{ Пусть $a = e_1 \sqcup \cdots \sqcup e_n$. Оценим
+            \[\sum\limits_{j = 1}^{n}|(\alpha \rho_1 + \beta \rho_2)(e_j)| \le |\alpha|\sum\limits_{j = 1}^{n}|\rho_1(e_j)| + |\beta|\sum\limits_{j = 1}^{n}|\rho_2(e_j)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)\]
+            и перейдём к супремуму по всем разбиениям $a = e_1 \sqcup \cdots \sqcup e_n$.
+        }
     }
     \corollary{
-    Если $\rho$ --- комплексная мера, то $\forall a: |\rho|(a) < +\infty$.
-    \provehere{Разложим $\rho = \rho_1 + i\rho_2$.}
+        Если $\rho$ --- комплексная мера, то $\forall a: |\rho|(a) < +\infty$.
+        \provehere{Разложим $\rho = \rho_1 + i\rho_2$.}
     }
     \proposal{
-    Пусть $\nu$ --- неотрицательная (необязательно конечная) мера на $\Sigma$, пусть $g$ --- комплексная суммируемая (относительно $\nu$) функция.
+        Пусть $\nu$ --- неотрицательная (необязательно конечная) мера на $\Sigma$, пусть $g$ --- комплексная суммируемая (относительно $\nu$) функция.
         Определим $\mu(e) \coloneqq \int\limits_{e}g\d\nu$.
 
-    Тогда $|\mu|(a) = \int\limits_{a}|g|\d\nu$.
-    \provenumbers{
-    \item[0.] Пусть $g \in L^1(\nu)$. Тогда $|\mu|(a) \le \int\limits_{a}|g|\d\nu$.
-    Действительно, пусть $e_1 \sqcup \cdots \sqcup e_n = a$. Тогда $\sum\limits_{j = 1}^{n}|\mu(e_j)| = \sum\limits_{j = 1}^{n}\abs{\int\limits_{e_j}g\d\nu} \le \sum\limits_{j = 1}^{n}\int\limits_{e_j}|g|\d\nu = \int\limits_{a}|g|\d\nu$.
-    \item Пусть $g = \sum\limits_{j = 1}^{k}c_j \chi_{e_j}$ --- простая функция, где мы считаем, что $b_j \in \Sigma$ попарно не пересекаются.
+        Тогда $|\mu|(a) = \int\limits_{a}|g|\d\nu$.
+        \provenumbers{
+            \item[0.] Пусть $g \in L^1(\nu)$. Тогда $|\mu|(a) \le \int\limits_{a}|g|\d\nu$.
+            Действительно, пусть $e_1 \sqcup \cdots \sqcup e_n = a$. Тогда $\sum\limits_{j = 1}^{n}|\mu(e_j)| = \sum\limits_{j = 1}^{n}\abs{\int\limits_{e_j}g\d\nu} \le \sum\limits_{j = 1}^{n}\int\limits_{e_j}|g|\d\nu = \int\limits_{a}|g|\d\nu$.
+            \item Пусть $g = \sum\limits_{j = 1}^{k}c_j \chi_{e_j}$ --- простая функция, где мы считаем, что $b_j \in \Sigma$ попарно не пересекаются.
 
-    Рассмотрим разбиение $a = (a \cap e_1) \sqcup \cdots \sqcup (a \cap e_k) \sqcup \left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)$.
-    \[|\mu|(a) \ge \sum\limits_{j = 1}^{k}|\mu(a \cap e_j)| +\underbrace{ \abs{\mu\left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)}}_{= 0} = \sum\limits_{j = 1}^{k}\abs{\,\int\limits_{a \cap e_j}g\d\nu} = \sum\limits_{j = 1}^{k}|c_j|\nu(a \cap e_j) = \int\limits_{a}|g|\d\nu\]
-    \item Пусть $g \in L^1(\nu)$ ($g: X \map \C$).
-    Выберем $\eps > 0$. Тогда так как простые функции плотны в $L^1$, то $\exists h: X \map \C$ --- простая функция, такая, что $\int\limits_{X}|g - h|\d\nu < \eps$ (отдельно приблизим вещественную и мнимую части).
+            Рассмотрим разбиение $a = (a \cap e_1) \sqcup \cdots \sqcup (a \cap e_k) \sqcup \left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)$.
+            \[|\mu|(a) \ge \sum\limits_{j = 1}^{k}|\mu(a \cap e_j)| +\underbrace{ \abs{\mu\left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)}}_{= 0} = \sum\limits_{j = 1}^{k}\abs{\,\int\limits_{a \cap e_j}g\d\nu} = \sum\limits_{j = 1}^{k}|c_j|\nu(a \cap e_j) = \int\limits_{a}|g|\d\nu\]
+            \item Пусть $g \in L^1(\nu)$ ($g: X \map \C$).
+            Выберем $\eps > 0$. Тогда так как простые функции плотны в $L^1$, то $\exists h: X \map \C$ --- простая функция, такая, что $\int\limits_{X}|g - h|\d\nu < \eps$ (отдельно приблизим вещественную и мнимую части).
 
-    Пусть $\mu_1(a) = \int\limits_{a}h\d\nu$, и положим $\mu_2 \coloneqq \mu - \mu_1$.
-    \[\mu(a) = \int\limits_{a}h\d\nu + \int\limits_{a}(g - h)\d\nu = \mu_1(a) + \mu_2(a)\]
-    \[\all{|\mu|(a) \le |\mu_1(a)|(a) + |\mu_2|(a) \\ |\mu_1|(a) \le |\mu|(a) + |\mu_2|(a) \qquad \then \quad |\mu_1|(a) - |\mu_2|(a) \le |\mu|(a) \le |\mu_1|(a) + |\mu_2|(a)}\]
-    Оценим $\mu_2(a)$:
-    \[|\mu_2(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le \eps|\]
-    Отсюда получается
-    \[\int\limits_{a}|h|\d\nu - \eps \le |\mu|(a) \le \int\limits_{a}|h|\d\nu + \eps\]
-    И наконец можно заменить $h$ на $g$, при этом мы ошибёмся не больше, чем на $\eps$.
-        \[\int\limits_{a}|g|\d\nu - 2\eps \le |\mu|(a) \le \int\limits_{a}|g|\d\nu + 2\eps\]
-    Устремим $\eps \to 0$.
-    }
+            Пусть $\mu_1(a) = \int\limits_{a}h\d\nu$, и положим $\mu_2 \coloneqq \mu - \mu_1$.
+            \[\mu(a) = \int\limits_{a}h\d\nu + \int\limits_{a}(g - h)\d\nu = \mu_1(a) + \mu_2(a)\]
+            \[\all{|\mu|(a) \le |\mu_1(a)|(a) + |\mu_2|(a) \\ |\mu_1|(a) \le |\mu|(a) + |\mu_2|(a) \qquad \then \quad |\mu_1|(a) - |\mu_2|(a) \le |\mu|(a) \le |\mu_1|(a) + |\mu_2|(a)}\]
+            Оценим $\mu_2(a)$:
+            \[|\mu_2(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le \eps|\]
+            Отсюда получается
+            \[\int\limits_{a}|h|\d\nu - \eps \le |\mu|(a) \le \int\limits_{a}|h|\d\nu + \eps\]
+            И наконец можно заменить $h$ на $g$, при этом мы ошибёмся не больше, чем на $\eps$.
+            \[\int\limits_{a}|g|\d\nu - 2\eps \le |\mu|(a) \le \int\limits_{a}|g|\d\nu + 2\eps\]
+            Устремим $\eps \to 0$.
+        }
     }
     Теперь докажем теорему, сформулированную ранее.
     \theorem{
         $|\mu|$ есть неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
         \provehere{\label{abs-mes-prop}
         Пусть $\mu$ --- комплексная мера на $\Sigma$, разложим $\mu = \mu_1 + i\mu_2$, где $\mu_1, \mu_2$ --- вещественные меры.
-    Пусть $\nu = \mu_1^+ + \mu_2^+ + \mu_1^- + \mu_2^-$. Все четыре слагаемых --- абсолютно непрерывные меры относительно $\nu$, то есть по теореме Радона --- Никодима они представляются через плотность: $\exists g_{1,2}^\pm \in L^1(\nu): \mu_{1,2}^\pm(e) = \int\limits_{e}g_{1,2}^\pm\d\nu$.
+        Пусть $\nu = \mu_1^+ + \mu_2^+ + \mu_1^- + \mu_2^-$. Все четыре слагаемых --- абсолютно непрерывные меры относительно $\nu$, то есть по теореме Радона --- Никодима они представляются через плотность: $\exists g_{1,2}^\pm \in L^1(\nu): \mu_{1,2}^\pm(e) = \int\limits_{e}g_{1,2}^\pm\d\nu$.
 
-    Тогда $|\mu|(e) = \int\limits_{e}|g|\d\nu$, и действительно получаем, что $|\mu|$ --- неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
-    }}
+        Тогда $|\mu|(e) = \int\limits_{e}|g|\d\nu$, и действительно получаем, что $|\mu|$ --- неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
+        }}
+
     \subsection{Интеграл по комплексной мере}
     Пусть $g: X \map \C$ измерима относительно комплексной меры $\mu = \mu_1 + i\mu_2$.
 
@@ -2114,18 +2124,19 @@
     В данном определении предполагается, что $g$ суммируема относительно всех четырёх мер.
     Оказывается, $g \in L^1(\mu_{1,2}^\pm) \iff g \in L^1(|\mu|)$, так как $\mu_{1,2}^\pm \le |\mu|$.
     \lemma[Линейность по мере]{
-    Пусть $\rho, \sigma$ --- две комплексные меры на $\Sigma$, пусть $g$ суммируема относительно $|\rho|$ и $|\sigma|$.
-    Утверждается, что \[\int\limits_{a}g\d(\rho+\sigma) = \int\limits_{a}g \d\rho + \int\limits_{a}g \d\sigma\]
-    \provehere{
-    Утверждается, что $\exists \lambda$ --- положительная мера на $\Sigma$, относительно которой $\rho,\sigma$ абсолютно непрерывны: $\exists u, v: X \map \C$, такие, что $\rho(e) = \int\limits_{e}u\d\lambda$ и $\sigma(e) = \int\limits_{e}v\d\lambda$.
-    Например, в качестве $\lambda$ можно взять $\rho_1^+ + \rho_1^- + \rho_2^+ + \rho_2^- + \sigma_1^+ + \sigma_1^- + \sigma_2^+ + \sigma_2^-$.
+        Пусть $\rho, \sigma$ --- две комплексные меры на $\Sigma$, пусть $g$ суммируема относительно $|\rho|$ и $|\sigma|$.
+        Утверждается, что \[\int\limits_{a}g\d(\rho+\sigma) = \int\limits_{a}g \d\rho + \int\limits_{a}g \d\sigma\]
+        \provehere{
+            Утверждается, что $\exists \lambda$ --- положительная мера на $\Sigma$, относительно которой $\rho,\sigma$ абсолютно непрерывны: $\exists u, v: X \map \C$, такие, что $\rho(e) = \int\limits_{e}u\d\lambda$ и $\sigma(e) = \int\limits_{e}v\d\lambda$.
+            Например, в качестве $\lambda$ можно взять $\rho_1^+ + \rho_1^- + \rho_2^+ + \rho_2^- + \sigma_1^+ + \sigma_1^- + \sigma_2^+ + \sigma_2^-$.
 
-    Разложим на вещественную и мнимую части $u = u_1 + i u_2, v =  v_1 + i v_2$.
-    \[\int\limits_{a}g\d\rho = \int\limits_{a}g u_1^+\d\lambda - \int\limits_{a}g u_1^-\d\lambda + i\left(\int\limits_{a}g u_2^+\d\lambda - \int\limits_{a}g u_2^-\d\lambda\right) = \int\limits_{a}gu\d\lambda\]
-    Аналогично $\int\limits_{a}g\d\sigma = \int\limits_{a}gv\d\lambda$.
-    \[\int\limits_{a}g\d\rho + \int\limits_{a}g\d\sigma = \int\limits_{a}g(u + v)\d\lambda = \int\limits_{a}g\d(\rho+\sigma)\]
+            Разложим на вещественную и мнимую части $u = u_1 + i u_2, v =  v_1 + i v_2$.
+            \[\int\limits_{a}g\d\rho = \int\limits_{a}g u_1^+\d\lambda - \int\limits_{a}g u_1^-\d\lambda + i\left(\int\limits_{a}g u_2^+\d\lambda - \int\limits_{a}g u_2^-\d\lambda\right) = \int\limits_{a}gu\d\lambda\]
+            Аналогично $\int\limits_{a}g\d\sigma = \int\limits_{a}gv\d\lambda$.
+            \[\int\limits_{a}g\d\rho + \int\limits_{a}g\d\sigma = \int\limits_{a}g(u + v)\d\lambda = \int\limits_{a}g\d(\rho+\sigma)\]
+        }
     }
-    }
+
     \subsection{Разложение Лебега}
     Пусть $(X,\Sigma,\lambda)$ --- пространство с неотрицательной $\sigma$-конечной мерой $\lambda \ge 0$.
 
@@ -2137,26 +2148,41 @@
         $\exists a \in \Sigma: \lambda(a) = 0$ и $\forall e \subset X \sm a$: $|\rho|(e) = 0$.
     }
     \example{
-    Стандартная мера Лебега $\lambda_1$ на $\R$ взаимно сингулярна точечной $\delta$-мере $\delta_0$.
+        Стандартная мера Лебега $\lambda_1$ на $\R$ взаимно сингулярна точечной $\delta$-мере $\delta_0$.
     }
     \theorem[Лебег]{
-    Для произвольной комплексной меры $\rho$ на $\Sigma$ существует и единственно представление $\rho = \rho_1 + \rho_2$, где $\rho_1$ абсолютно непрерывна относительно $\lambda$, а $\rho_2$ сингулярна относительно $\lambda$.
-    \provehere{
-        Пусть $A = \sup\defset{|\rho|(e)}{e \in \Sigma, \lambda(e) = 0}$. Тогда $\exists e_n \in \Sigma: |\rho|(e_n) > A - \frac{1}{n}$.
+        Для произвольной комплексной меры $\rho$ на $\Sigma$ существует и единственно представление $\rho = \rho_1 + \rho_2$, где $\rho_1$ абсолютно непрерывна относительно $\lambda$, а $\rho_2$ сингулярна относительно $\lambda$.
+        \provehere{
+            Пусть $A = \sup\defset{|\rho|(e)}{e \in \Sigma, \lambda(e) = 0}$. Тогда $\exists e_n \in \Sigma: |\rho|(e_n) > A - \frac{1}{n}$.
 
-    Положим $\overline{e_n} = e_n \cup e_{n + 1} \cup \cdots$. Тогда $\overline{e_1} \subset \overline{e_2} \subset \cdots$, и положим $E = \bigcup\limits_{n = 1}^{\infty}\overline{e_n}$.
+            Положим $\overline{e_n} = e_n \cup e_{n + 1} \cup \cdots$. Тогда $\overline{e_1} \subset \overline{e_2} \subset \cdots$, и положим $E = \bigcup\limits_{n = 1}^{\infty}\overline{e_n}$.
 
-    В силу монотонной непрерывности $|\rho|(E) = \lim\limits_{n \to \infty}|\rho|(e_n) = A$. Так как $\forall n: \lambda(\overline{e_n}) = 0$, то $\lambda(E) = 0$.
+            В силу монотонной непрерывности $|\rho|(E) = \lim\limits_{n \to \infty}|\rho|(e_n) = A$. Так как $\forall n: \lambda(\overline{e_n}) = 0$, то $\lambda(E) = 0$.
 
-    Разложим $\rho_1(e) \coloneqq \rho(e \sm E), \rho_2(e) \coloneqq \rho(a \cap E)$. В таком представлении $\rho_2$ очевидно сингулярна относительно $\lambda$. Абсолютную непрерывность $\rho_1$ относительно $\lambda$ докажем от противного.
+            Разложим $\rho_1(e) \coloneqq \rho(e \sm E), \rho_2(e) \coloneqq \rho(a \cap E)$. В таком представлении $\rho_2$ очевидно сингулярна относительно $\lambda$. Абсолютную непрерывность $\rho_1$ относительно $\lambda$ докажем от противного.
 
-    Пусть $\exists b \in \Sigma, b \subset X \sm E: |\rho_1(b)| > 0, \lambda(b) = 0$.
-        Тогда определим $E_1 = E \cup b$, и окажется, что $|\rho|(E_1) = |\rho|(E) + |\rho|(b) \ge A + |\rho_1|(b) > A$, противоречие.
-    }
+            Пусть $\exists b \in \Sigma, b \subset X \sm E: |\rho_1(b)| > 0, \lambda(b) = 0$.
+            Тогда определим $E_1 = E \cup b$, и окажется, что $|\rho|(E_1) = |\rho|(E) + |\rho|(b) \ge A + |\rho_1|(b) > A$, противоречие.
+        }
     }
     \example{
         Определим рекурсивно канторову лестницу $[0, 1] \map [0, 1]$.
+%        \[\begin{tikzpicture}
+%              \draw[->] (-1,0) -- (3,0) node[right] {$x$};
+%              \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+%              \newcommand{\depictCantor}[3]{
+%                  \pgfmathsetmacro{\l}{(#1 + #1 + #2) / 3};
+%                  \pgfmathsetmacro{\r}{(#1 + #2 + #2) / 3};
+%                  \draw (\l,{(\l+\r)*0.5}) -- (\r,{(\l+\r)*0.5});
+%                  \ifnum #3 < 5
+%                      \depictCantor{#1}{\l}{\numexpr#3 + 1};
+%                      \depictCantor{\r}{#2}{\numexpr#3 + 1};
+%                  \fi
+%              }
+%              \depictCantor{0}{3}{0};
+%        \end{tikzpicture}\]
         Построив по данной функции меру, мы получим меру, сосредоточенную на канторовом множестве меры нуль.
+        Она сингулярна относительно стандартной меры Лебега на $\R$.
     }
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 DEC 2023 00:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  21 DEC 2023 23:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1301,7 +1301,7 @@ LaTeX Font Info:    Trying to load font information for U+bbold on input line 9
 06.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [25] [26]
 [27] [28]
-Overfull \hbox (19.8176pt too wide) in paragraph at lines 1106--1106
+Overfull \hbox (19.8176pt too wide) in paragraph at lines 1104--1104
 [][]\T2A/faq/bx/n/10 Теорема 2.9.1 \T2A/faq/m/n/10 (Фор-му-ла Остро-град-ско-го
  --- Ли-увил-ля (фор-му-ла Яко-би))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 То-гда 
 $[]\OML/cmm/m/it/10 W\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [](
@@ -1315,7 +1315,7 @@ $[]\OML/cmm/m/it/10 W\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [](
 [32
 
 ]
-Overfull \hbox (54.3531pt too wide) in paragraph at lines 1166--1168
+Overfull \hbox (54.3531pt too wide) in paragraph at lines 1164--1166
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 t\OT1/cmr/m/n/10 )$ \T2A/faq/m/n/10 --- ре-ше-ния. Со-по-ста-вим им врон-ски-ан
@@ -1325,7 +1325,7 @@ t\OT1/cmr/m/n/10 )$ \T2A/faq/m/n/10 --- ре-ше-ния. Со-по-ста-вим им врон-ски-ан
  []
 
 
-Overfull \hbox (15.29962pt too wide) in paragraph at lines 1169--1171
+Overfull \hbox (15.29962pt too wide) in paragraph at lines 1167--1169
 \T2A/faq/m/n/10 нент вектора-решения $\OML/cmm/m/it/10 y[]; [] ; y[]$\T2A/faq/m
 /n/10 , по-лу-чен-ных из ре-ше-ний $\OML/cmm/m/it/10 x[]; [] ; x[]$\T2A/faq/m/n
 /10 : $\OML/cmm/m/it/10 W\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; y[]; [] ; y[]\OT1
@@ -1336,7 +1336,7 @@ Overfull \hbox (15.29962pt too wide) in paragraph at lines 1169--1171
 [33] [34]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 
-Overfull \hbox (13.30063pt too wide) in paragraph at lines 1232--1232
+Overfull \hbox (13.30063pt too wide) in paragraph at lines 1230--1230
 []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t
 []\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 x[]; y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 ^^\[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 y[]; t[]; ^^\[] \OMS/cmsy/m/n/10 2 \O
@@ -1350,7 +1350,7 @@ mr/m/n/10 (\OML/cmm/m/it/10 t; x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n
 [35
 
 ] [36] [37] [38]
-Overfull \hbox (35.505pt too wide) in paragraph at lines 1368--1369
+Overfull \hbox (35.505pt too wide) in paragraph at lines 1367--1368
 []\T2A/faq/m/n/10 Фиксируем $\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 t; ^^\; ^^X; ^^V[]\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 , и за-да-јм-ся во-про-со
 м о су-ще-ство-ва-нии $\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT
@@ -1362,7 +1362,7 @@ Overfull \hbox (35.505pt too wide) in paragraph at lines 1368--1369
 [42
 
 ] [43]
-Overfull \hbox (49.50716pt too wide) in paragraph at lines 1643--1643
+Overfull \hbox (49.50716pt too wide) in paragraph at lines 1661--1661
 \T2A/faq/m/n/10 У си-сте-мы есть сим-мет-рии: ре-ше-нию $\OT1/cmr/m/n/10 (\OML/
 cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/
 10 ; y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))$ \T2A/faq/m/n/10 со
@@ -1394,13 +1394,13 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: 940A68FCEFBA4D61292ECA0C9805FAF7;14065.
  ) 
 Here is how much of TeX's memory you used:
- 28316 strings out of 479648
- 529284 string characters out of 5886115
- 921906 words of memory out of 5000000
- 45568 multiletter control sequences out of 15000+600000
+ 28318 strings out of 479648
+ 529315 string characters out of 5886115
+ 921878 words of memory out of 5000000
+ 45569 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,15n,103p,737b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,15n,103p,737b,849s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1422,10 +1422,10 @@ ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/boondox/zxxrw8a.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (47 pages, 448197 bytes).
+ (47 pages, 451964 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 586 compressed objects within 6 object streams
- 194 named destinations out of 1000 (max. 500000)
+ 684 PDF objects out of 1000 (max. 8388607)
+ 587 compressed objects within 6 object streams
+ 195 named destinations out of 1000 (max. 500000)
  333 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  20 DEC 2023 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  21 DEC 2023 17:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1298,7 +1298,7 @@ T1/cmr/m/n/10 +\OMS/cmsy/m/n/10 1$\T2A/faq/m/n/10 , то $[]$.
  []
 
 [33] [34] [35]
-Overfull \hbox (11.6239pt too wide) in paragraph at lines 1625--1626
+Overfull \hbox (11.6239pt too wide) in paragraph at lines 1627--1628
 []\T2A/faq/m/n/10 Рассмотрим два про-стран-ства с ме-рой $\OT1/cmr/m/n/10 (\OML
 /cmm/m/it/10 X; \OMS/cmsy/m/n/10 A\OML/cmm/m/it/10 ; ^^V\OT1/cmr/m/n/10 )\OML/c
 mm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y; \OMS/cmsy/m/n/10 B\OML/cmm/m/
@@ -1309,7 +1309,7 @@ n/10 -алгебры, $\OML/cmm/m/it/10 ^^V; ^^W$ \T2A/faq/m/n/10 --- счјтно-аддитивны
  []
 
 [36] [37]
-Overfull \hbox (33.32086pt too wide) in paragraph at lines 1741--1741
+Overfull \hbox (33.32086pt too wide) in paragraph at lines 1743--1743
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 E \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/1
 0 . Для $\OML/cmm/m/it/10 x [] E \OT1/cmr/m/n/10 : [] \OML/cmm/m/it/10 ^^_[]\OT
 1/cmr/m/n/10 (\OML/cmm/m/it/10 x; []\OT1/cmr/m/n/10 ) []  \OML/cmm/m/it/10 ^^W 
@@ -1317,7 +1317,7 @@ Overfull \hbox (33.32086pt too wide) in paragraph at lines 1741--1741
  []
 
 [38] [39] [40] [41]
-Overfull \hbox (6.98045pt too wide) in paragraph at lines 1904--1904
+Overfull \hbox (6.98045pt too wide) in paragraph at lines 1913--1913
 \T2A/faq/m/n/10 Далее вво-дим ме-ру $\OML/cmm/m/it/10 ^^W\OT1/cmr/m/n/10 (\OML/
 cmm/m/it/10 e\OT1/cmr/m/n/10 ) = [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 g\OT1/cm
 r/m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j []  \OML/cmm/m/
@@ -1325,7 +1325,7 @@ it/10 y$\T2A/faq/m/n/10 , и опять при-ме-ня-ем нера-вен-ство Гјль-де-ра к $[]$.
  
  []
 
-[42] [43] [44] [45] [46] [47] [48]
+[42] [43] [44] [45] [46] [47] [48] [49]
 (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1337,8 +1337,8 @@ Package rerunfilecheck Info: File `calculus-3.out' has not changed.
 (rerunfilecheck)             Checksum: 36AF1A8515FB4BDB243783EE2C9720B8;6899.
  ) 
 Here is how much of TeX's memory you used:
- 27427 strings out of 479648
- 508058 string characters out of 5886115
+ 27428 strings out of 479648
+ 508065 string characters out of 5886115
  795895 words of memory out of 5000000
  44595 multiletter control sequences out of 15000+600000
  507234 words of font info for 100 fonts, out of 8000000 for 9000
@@ -1365,10 +1365,10 @@ f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (49 pages, 461046 bytes).
+f (50 pages, 461476 bytes).
 PDF statistics:
- 747 PDF objects out of 1000 (max. 8388607)
- 648 compressed objects within 7 object streams
- 276 named destinations out of 1000 (max. 500000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 652 compressed objects within 7 object streams
+ 277 named destinations out of 1000 (max. 500000)
  253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

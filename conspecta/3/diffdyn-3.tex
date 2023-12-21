@@ -18,9 +18,9 @@
 
     \section*{Литература}
     \numbers{
-        \item Юрий Николаевич Бибиков. <<Общий курс обыкновенных дифференциальных уравнений>>
-        \item Владимир Игоревич Арнольд. <<Обыкновенные дифференциальные уравнения>>
-        \item Сергей Юрьевич Пилюгин <<Пространства динамических систем>>
+        \item Юрий Николаевич Бибиков, <<Общий курс обыкновенных дифференциальных уравнений>>
+        \item Владимир Игоревич Арнольд, <<Обыкновенные дифференциальные уравнения>>
+        \item Сергей Юрьевич Пилюгин, <<Пространства динамических систем>>
     }
 
 
@@ -1045,8 +1045,6 @@
     \[G(t + \omega) = \Phi(t + \omega)e^{-R(t + \omega)} = \Phi(t)B \cdot \underbrace{e^{-R\omega}}_{e^{-\log(B)} = B^{-1}} \cdot e^{-R t} = \Phi(t)e^{-Rt} = G(t)\]
     }
     }
-    \provehere{
-    }
     Найденная в теореме Флоке матрица $B$ --- \emph{матрица монодром$\acute{\text{и}}$и}.
     Пусть $\mu_i$ --- собственные числа $B$.
     Их называют \emph{мультипликаторы}, и они не зависят от выбранной фундаментальной матрицы $\Phi(t)$.
@@ -1300,11 +1298,12 @@
             \[(y - x) < \delta \then \abs{f(t,y) - f(t,x)-\der{f}{x}(t, y) \cdot (y - x)} \le \eps|x - y|\]
             }{
             Рассмотрим $(t, x), (t, y) \in R$, введём $u(s) = x + s(y - x)$ --- параметризация второй координаты отрезка.
-            Тогда \[f(t, y) - f(t, x) = \int\limits_{0}^{1}\frac{\partial f(t, u(s))}{\partial s}\d s = \left(\int\limits_{0}^{1}\frac{\partial f(t, u(s))}{\partial x}\d s\right)(y - x)\]
-            \[-\der{f}{x}(t, y)(y - x) = \int\limits_{0}^{1}-\der{f}{x}(t, y)(y - x)\d s\]
+            Тогда \gather{f(t, y) - f(t, x) = \int\limits_{0}^{1}\frac{\partial f(t, u(s))}{\partial s}\d s = \left(\int\limits_{0}^{1}\frac{\partial f(t, u(s))}{\partial x}\d s\right)(y - x)\\\text{и}\\
+            -\der{f}{x}(t, y)(y - x) = \int\limits_{0}^{1}-\der{f}{x}(t, y)(y - x)\d s}
             Складывая эти оценки, получаем
             \[f(t,y) - f(t,x)-\der{f}{x}(t, y) \cdot (y - x) = (y - x)\int\limits_{0}^{1}\frac{\partial f(t, u(s))}{\partial x} -\der{f}{x}(t, y)\d s \]
-            Далее надо воспользоваться компактностью $R$, при достаточно малых $\delta$ подынтегральное выражение по норме не превосходит $\eps$ (конкретнее?).
+            Далее надо воспользоваться компактностью $R$: так как $\der{f}{x}$ непрерывна в $R$, то для данного $\eps > 0: \exists \delta > 0: |x - y| < \delta \then \abs{\der{f}{x}(t, y) - \der{f}{x}(t, x)} < \eps$.
+                Интегрируя по $[0, 1]$ значение меньше $\eps$, получим число меньше $\eps$.
             }
         \[v(t) = \der{x}{\xi} = \vect{\der{x_1}{\xi_1} & \cdots & \der{x_1}{\xi_n} \\ \vdots&\ddots&\vdots\\\der{x_n}{\xi_1} & \cdots & \der{x_n}{\xi_n}}\]
         Рассмотрим $i$-й столбец $v(t)$, покажем, что он существует, и является решением системы в вариациях.
@@ -1384,7 +1383,26 @@
     }
     }
     \newlection{1 декабря 2023 г.}
-    //todo
+    Рассмотрим систему $\dot{x} = f(t, x, \mu)$, где $x \in \R^n, \mu \in \R^m, f, \der{f}{x}, \der{f}{\mu} \in C(G \times M)$, где $G \subset \R^{n+1}_{t,x}$ --- область, задания самого уравнения, $M \subset \R^m$ --- область парамеров.
+
+    Ранее мы получили $v(t) = \frac{\partial x(t,\tau, \xi, \mu)}{\partial \xi}$, и доказали $\dot{v}(t) = \der{f}{x}(t, x(t, \tau, \xi, \mu), \mu)v$.
+
+    Кроме того, для $z(t) = \frac{\partial x(t, \tau, \xi, \mu)}{\partial \mu}$ было получено $\dot{z}(t) = \der{f}{x}(t, x(t, \tau,\xi,\mu),\mu)(t)z + \der{f}{\mu}(t, x(t, \tau, \xi, \mu), \mu)$.
+
+    Обобщим эти результаты: пусть $f = \vect{f_1, \cdots,  f_n}$.
+    Для $K = \vect{k_1, \cdots, k_n, k_{n+1}, \cdots, k_{n+m}}$ ($k_i \in \N_0$) введём \[\frac{\partial^K f_i}{\partial (x, \mu)^K} \bydef \frac{\partial^{|K|} f_i}{\partial x_1^{k_1} \cdots \partial x_n^{k_n}\partial \mu_1^{k_{n+1}} \cdots \partial\mu_n^{k_{n+m}}}\]
+    Здесь, (?) $|K| = \sum\limits_{i}k_i$.
+    В частности, $f_i = \frac{\partial^0 f_i}{\partial(x, \mu)^0}$.
+    \theorem[О производных высших порядков]{
+    Пусть $\frac{\partial^K f_i}{\partial(x, \mu)^K} \in C(G \times M)$ для $|K| \le p$ (где $p \le \infty$).
+        Тогда существует и непрерывна производная $\frac{\partial^K x}{\partial(\xi, \mu)^K}$ при $|K| \le p$.
+    \provehere{
+        Индукция по $l = |K|$.
+
+    \underline{База:} Случай $l = 1$ доказан
+    }
+    }
+
     \newlection{2 декабря 2023 г.}
     //todo
     \newlection{8 декабря 2023 г.}
@@ -1558,8 +1576,8 @@
             \draw[->] (0,-3) -- (0,3) node[above] {$y$};
             \pgfmathsetmacro\r{4};
             \foreach \c in {-3.5,-2.7,...,0.5,0.3,1.1,...,4.3} {
-                \draw[scale=1,domain={sqrt(\r-sqrt(\r*\r-\c*\c))}:{sqrt(\r+sqrt(\r*\r-\c*\c))},smooth,variable=\x,blue,line width=1pt] plot ({\x},{\c/\x});
-                \draw[scale=1,domain={-sqrt(\r+sqrt(\r*\r-\c*\c))}:{-sqrt(\r-sqrt(\r*\r-\c*\c))},smooth,variable=\x,blue,line width=1pt] plot ({\x},{\c/\x});
+                \draw[domain={sqrt(\r-sqrt(\r*\r-\c*\c))}:{sqrt(\r+sqrt(\r*\r-\c*\c))},smooth,variable=\x,blue,line width=1pt] plot ({\x},{\c/\x});
+                \draw[domain={-sqrt(\r+sqrt(\r*\r-\c*\c))}:{-sqrt(\r-sqrt(\r*\r-\c*\c))},smooth,variable=\x,blue,line width=1pt] plot ({\x},{\c/\x});
             }
             \foreach \x/\y in {1/0,0/1,-1/0,0/-1} {
                 \pgfmathsetmacro{\l}{sqrt(2 * \r)}
