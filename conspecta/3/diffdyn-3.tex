@@ -1210,7 +1210,7 @@
 
     Общая теория говорит, что для любых $(t, \xi, \mu) \in G \times M$ найдётся единственное непродолжимое решение, и обозначим за $I(\tau, \xi, \mu)$ максимальный промежуток, на котором данное решение определено.
 
-    \lemma[Об оценке разности решений]{
+    \lemma[Об оценке разности решений]{\label{estimate}
         Рассмотрим две системы $\dot{x} = f(t, x)$ и $\dot{y} = g(t, y)$. Пусть $f, g \in C(G)$, где $G \subset \R^{n+1}$ --- область.
 
         Известно, что $f \in \Lip_{x}(G)$ с константой Липшица $L$, $\exists N, m$: $|f| \le N$ и $|f(t,x)-g(t,x)| \le m$ в $G$.
@@ -1225,15 +1225,15 @@
     \multline{|x(t) - y(t)| \le |x_0 - y_0| + N|t_0 - \tau_0| + \abs{\int\limits_{\tau_0}^{t}\left(f(s, x(s)) - g(s, y(s))\right)\d s} \le\\\le |x_0 - y_0| + N|t_0 - \tau_0| + \abs{\int\limits_{\tau_0}^{t}\underbrace{\left(f(s, x(s)) - f(s, y(s))\right)}_{\le L|x(s) - y(s)|}\d s} + \abs{\int\limits_{\tau_0}^{t}\underbrace{\left(f(s, y(s)) - g(s, y(s))\right)}_{\le m}\d s}}
     Это условия леммы Гронуолла~(\ref{gronwall}):
     \[|x(t) - y(t)| \le |x_0 - y_0| + N|t_0 - \tau_0| + m(b - a) + L\abs{\int\limits_{\tau_0}^{t}\abs{x(s) - y(s)}\d s}\]
-    Отсюда $|x(t) - y(t)| \le \Big(|x_0 - y_0| + N|t_0 - \tau_0| + m(b - a)\Big)e^{L|t - \tau_0|}$.
+    Отсюда $|x(t) - y(t)| \le \Big(|x_0 - y_0| + N|t_0 - \tau_0| + m(b - a)\Big)e^{L|t - \tau_0|}$. Далее чтобы получить равномерную оценку, можно оценить $|t - \tau_0| \le |b - a|$.
     }
     }
-    Интересно заметить, что оценка линейно зависит от $b - a$ и от $t_0 - \tau_0$, но экспоненциально --- от константы Липшица и длины промежутка.
+    Интересно заметить, что оценка линейно зависит от $x_0 - y_0$ и от $t_0 - \tau_0$, но экспоненциально --- от константы Липшица $L$ и длины промежутка $b - a$.
     \theorem[О непрерывной зависимости решений от начальных данных и параметров]{
     Пусть $\dot{x} = f(t, x, \mu), x \in \R^n, \mu \in \R^m, f \in C, \Lip_{x,loc}(G \times M)$.
 
     Зафиксируем $(\tau_0, \xi_0, \mu_0) \in G \times M$.
-    Утверждается, что $\forall \eps > 0, \forall [a, b] \in I(\tau_0, \xi_0, \mu_0): \exists \delta: \forall (\tau, \xi, \mu) \in G \times M$:
+    Утверждается, что $\forall \eps > 0, \forall [a, b] \subset I(\tau_0, \xi_0, \mu_0): \exists \delta > 0: \forall (\tau, \xi, \mu) \in G \times M$:
     \[\all{\abs{\tau - \tau_0} < \delta \\ |\xi-\xi_0| < \delta \\ \abs{\mu - \mu_0} < \delta} \then [a, b] \subset I(\tau, \xi, \mu) \text{ и }\forall t \in [a, b]: \abs{x(t,\tau,\xi,\mu) - x(t, \tau_0,\xi_0,\mu_0)} < \eps\]
     \provehere{
         Можно считать, что $\tau_0 \in (a, b)$ --- отрезок $[a, b]$ берётся любой, лежащий в $I(\tau_0,\xi_0,\mu_0)$, и его в случае надобности можно расширить.
@@ -1241,31 +1241,31 @@
         Рассмотрим $R_0 = \bigdefset{(t, x) \in [a, b] \times \R^n}{|x - x(t, \tau_0, \xi_0,\mu_0)| \le \eps}$.
     При малых $\eps: R_0 \subset G$.
 
-        Также пусть $\bigdefset{\mu}{|\mu - \mu_0| \le \eps} \subset M$.
+        Также пусть $\eps$ настолько мал, что $\bigdefset{\mu}{|\mu - \mu_0| \le \eps} \subset M$.
 
-    $R \coloneqq R_0 \times \bigdefset{\mu}{|\mu - \mu_0| \le \eps}$.
+    Положим $R \coloneqq R_0 \times \bigdefset{\mu}{|\mu - \mu_0| \le \eps}$.
 
-    На нём $\abs{f(t, x, \mu)} \le N,  f\in \Lip_{x}(R)$, пусть $L$ --- константа Липшица.
+    Для некоторого $N$ на нём $\abs{f(t, x, \mu)} \le N,  f\in \Lip_{x}(R)$, пусть $L$ --- константа Липшица $f$.
 
     Выберем $\delta_1 > 0: \delta_1(1 + N + (b - a))e^{L(b - a)} < \eps$.
 
     Из равномерной непрерывности $f$ получаем, что $\exists \delta \in (0, \delta_1): |\mu - \mu_0| < \delta \then \forall (t, x) \in R_0: |f(t,x,\mu) - f(t,x,\mu_0)| < \delta_1$.
     Если потребуется, уменьшим $\delta$ так, что $|\tau - \tau_0| < \delta \then \tau \in (a, b)$.
-        Заметим, что $\delta(1 + N) < \eps$.
+        А ещё потребуем от $\delta$: $\delta(1 + N) < \eps$.
 
     Утверждается, что $\delta$ --- искомое.
     \bullets{
-    \item $y(t) \coloneqq |\underbrace{x(t,\tau,\xi,\mu)}_{x(t)} - \underbrace{x(t,\tau_0,\xi_0,\mu_0)}_{x_0(t)}|$.
-        Докажем, что $|y(t)| < \eps$ для $t \in [a, b] \cap I(\tau,\xi,\mu)$.
+    \item Определим $y(t) \coloneqq |\underbrace{x(t,\tau,\xi,\mu)}_{x(t)} - \underbrace{x(t,\tau_0,\xi_0,\mu_0)}_{x_0(t)}|$.
+        Докажем, что $|y(t)| < \eps$ для ${t \in [a, b] \cap I(\tau,\xi,\mu)}$.
 
-        $|y(\tau)| = \abs{x(\tau) - x_0 - \int\limits_{t_0}^{\tau}f(s,x(s),\mu_0)\d s} \le |\xi - \xi_0| + \abs{\int\limits_{t_0}^{t}f(s,x(s),\mu_0)\d s} < \delta + N \delta < \eps$.
+        $|y(\tau)| = \abs{x(\tau) - x_0 - \int\limits_{\tau_0}^{\tau}f(s,x_0(s),\mu_0)\d s} \le |\xi - \xi_0| + \abs{\int\limits_{\tau_0}^{\tau}f(s,x_0(s),\mu_0)\d s} < \delta + N \delta < \eps$.
         Таким образом $(\tau, x(\tau)) \in R_0$.
 
     От противного: пусть не всегда $|y(t)| < \eps$. Выберем первый момент $t' \in [a, b] \cap I(\tau,\xi,\mu)$, когда $|y(t)|$ стал равен $\eps$.
     Без потери общности $t' < \tau$.
     \[y(t') = \eps, y(t) < \eps\text{ при }t \in [\tau, t')\]
     Применим лемму об оценке разности решений $f(t, x, \mu)$ и $f(t, x, \mu_0)$.
-    \[|y(t)| < \Big(\delta + N\delta + \delta_1(b - a)\Big)\cdot e^{L(b - a)} < \eps,\text{, это противоречие.}\]
+    \[|y(t)| < \Big(\delta + N\delta + \delta_1(b - a)\Big)\cdot e^{L(b - a)} < \eps\text{, это противоречие.}\]
     \item Покажем, что $I(\tau,\xi,\mu) \supset [a, b]$.
     Согласно теореме о максимальном решении $I(\tau,\xi,\mu) = (\alpha, \beta)$ --- некий интервал.
 
@@ -1310,13 +1310,13 @@
 
         Рассмотрим произвольный $[a, b] \subset I(\tau, \xi_0)$. Пусть $\tau \in (a, b), \eps_0 > 0$. Определим
         \[R = \defset{(t, x)}{t \in [a, b], |x - x(t, \tau, \xi_0)| \le \eps}\]
-        Пусть $L$ --- константа Липшица (чего? видимо $f$) по $x$ в компакте $R$.
+        Пусть $L$ --- константа Липшица $f$ по $x$ в компакте $R$.
 
         Рассмотрим $\xi = \xi_0 + he_i$, здесь $e_i$ --- $i$-й орт. По теореме об интегральной непрерывности $\exists h_0 > 0: |h| < h_0 \then (t, x(t, \tau, \xi_0 + he_i)) \in R$ при $t \in [a, b]$.
-        Такие $h$ дальше будут рассматриваться.
+        Такие $h$ будут рассматриваться дальше.
 
-        Введём $g(t) = x(t, \tau, \xi_0 + he_i) - x(t, \tau, \xi_0)$.
-            В лемме об оценке разности решений возникала оценка ${|\xi - \tilde{\xi}| + N|\tau - \tilde{\tau}| + m(b - a)}e^{L(b - a)}$.
+        Введём $g(t) \coloneqq x(t, \tau, \xi_0 + he_i) - x(t, \tau, \xi_0)$.
+        В лемме об оценке разности решений~(\ref{estimate}) возникала оценка ${\left(\abs{\xi - \tilde{\xi}} + N\abs{\tau - \tilde{\tau}} + m(b - a)\right)}e^{L(b - a)}$.
         В нашем случае второе и третье слагаемое равны нулю, получается $|g(t)| \le |\xi - \xi_0|e^{L(b - a)} = |h|e^{L(b - a)}$.
 
         $\dot{g} = f(t, x(t, \tau, \xi_0 + he_i)) - f(t, x(t, \tau, \xi_0)) = \underbrace{\der{f}{x}(t, x(t, \tau, \xi_0))}_{\text{матрица системы в вариациях}}g(t) + \underbrace{\Gamma(t, h)}_{\text{мало}}$.
@@ -1333,7 +1333,7 @@
         рассмотрим решение $\psi(t)$ системы $\dot{y} = \mathcal{F}(t)y$ с начальным условием $\psi(\tau) = e_i$.
 
         Так как $\dot{g} = \mathcal{F}(t)g + \Gamma$, то $\frac{\dot{g}}{h} = \mathcal{F}(t)\frac{g}{h} + \gamma$, где $|\gamma\| \underset{[a, b]}\rightrightarrows 0$ при $h \to 0$.
-        Рассмотрим ещё систему $\dot{\phi}(\tau) = \mathcal{F}(t)\phi + \gamma$ с начальным условием $\phi(\tau) = \frac{1}{h}\underbrace{(\xi_0 + h e_i - \xi_0)}_{g(\tau)} = e_0$.
+        Рассмотрим ещё систему $\dot{\phi}(\tau) = \mathcal{F}(t)\phi + \gamma$ с начальным условием $\phi(\tau) = \frac{1}{h}\underbrace{(\xi_0 + h e_i - \xi_0)}_{g(\tau)} = e_i$.
 
         Итак, у нас есть две системы
         \gather{\psi(t) = e_i + \int\limits_{\tau}^{t}\mathcal{F}(s)\psi(s)\d s\\\phi(t) = e_i + \int\limits_{\tau}^{t}(\mathcal{F}(s)\phi(s) + \gamma)\d s}
@@ -1348,7 +1348,7 @@
         Теперь рассматривается решение $x(t, \tau_0, \xi)$ на его максимальном промежутке $I(\tau_0, \xi)$.
 
     Пусть $f, \der{f}{x} \in C(G)$.
-        Система в вариациях чуть-чуть поменялась: $\mathcal{F}(t) = f(t, x(t,\tau_0, \xi))$ и сама система $\dot{y} = \mathcal{F}(t)y$.
+        Система в вариациях чуть-чуть поменялась: $\mathcal{F}(t) \coloneqq f(t, x(t,\tau_0, \xi))$ (вот прямо без производной?) а сама система по-прежнему $\dot{y} = \mathcal{F}(t)y$.
     Утверждается, что \[\exists u(t) \coloneqq \frac{\partial x(t, \tau, \xi)}{\partial \tau}\Big|_{\tau = \tau_0}\]
     и она является решением системы в вариациях с начальными данными $u(\tau_0) = -f(\tau_0, \xi)$.
 
@@ -1356,10 +1356,11 @@
     \provehere{
     Существование $u(t)$ идёт без доказательства, так как оно практически дословно повторяет доказательство существования частной производной по $\xi$, и ничего нового там нет.
 
-    Обоснуем то, что начальное данное именно такое. При $t = \tau: x(\tau, \tau, \xi) = \xi$. Посчитаем частную производную обоих частей равенства по $\tau$ при $\tau = \tau_0$.
+    Обоснуем то, что начальное данное именно такое. При $t = \tau: x(\tau, \tau, \xi) = \xi$.
+        Посчитаем частную производную обеих частей равенства по $\tau$ при $\tau = \tau_0$. Так как
     \[\der{}{t}x(t, \tau, \xi) = f(t, x(t, \tau, \xi))\]
-    ????
-    \[f(\tau_0, \xi) = f(\tau_0, x(\tau_0, \tau_0, \xi)) + \frac{\partial x(t, \tau, \xi)}{\partial t}\Big|_{\tau = \tau_0} = 0\]
+    то дифференцируя по обеим $\tau$, мы получаем (при $t = \tau_0$)
+    \[\der{}{\tau}x(\tau,\tau,\xi) = \underbrace{f(\tau_0, x(\tau_0, \tau_0, \xi))}_{=f(\tau_0, \xi)} + \frac{\partial x(t, \tau, \xi)}{\partial \tau}\Big|_{\tau = \tau_0} = 0\]
     }
     }
     Вернёмся к параметризованной системе $\dot{x} = f(t, x, \mu)$, где $x \in \R^n, \mu \in \R^m, f, \der{f}{x}, \der{f}{\mu} \in C(G \times M), G \subset \R^{n + 1}_{t, x}, M \subset \R^m_{\mu}$.
@@ -1391,7 +1392,7 @@
 
     Обобщим эти результаты: пусть $f = \vect{f_1, \cdots,  f_n}$.
     Для $K = \vect{k_1, \cdots, k_n, k_{n+1}, \cdots, k_{n+m}}$ ($k_i \in \N_0$) введём \[\frac{\partial^K f_i}{\partial (x, \mu)^K} \bydef \frac{\partial^{|K|} f_i}{\partial x_1^{k_1} \cdots \partial x_n^{k_n}\partial \mu_1^{k_{n+1}} \cdots \partial\mu_n^{k_{n+m}}}\]
-    Здесь, (?) $|K| = \sum\limits_{i}k_i$.
+    Здесь, $|K| = \sum\limits_{i}k_i$.
     В частности, $f_i = \frac{\partial^0 f_i}{\partial(x, \mu)^0}$.
     \theorem[О производных высших порядков]{
     Пусть $\frac{\partial^K f_i}{\partial(x, \mu)^K} \in C(G \times M)$ для $|K| \le p$ (где $p \le \infty$).
@@ -1399,8 +1400,90 @@
     \provehere{
         Индукция по $l = |K|$.
 
-    \underline{База:} Случай $l = 1$ доказан
+    \underline{База:} Случай $l = 1$ доказан на предыдущей лекции --- теорема о дифференцируемости по параметру.
+
+    \underline{Переход:} Чтобы посчитать $K$-ю производную от $x$, сначала продифференцируем 1 раз по одному из аргументов, а потом останется продифференцировать $|K| - 1$ раз $\der{f}{(x, \mu)}$.
+        По условию теоремы эти производные существуют и непрерывны.
     }
+    }
+    \section{Теорема о выпрямлении для неавтономных систем}
+    Рассматриваем систему $\dot{x} = f(t, x), x \in \R^n, f \in C, \Lip_{x,loc}(G)$.
+    \theorem[О выпрямлении для неавтономных систем]{
+    $\forall (\tau_0, \xi_0) \in G: \exists$ окрестность $U \ni (\tau_0, \xi_0)$, и $\exists$ гомеоморфизм $h: \overline{U} \map \R^{n + 1}$ (гомеоморфизм на образ?), переводящий пересечение интегральных кривых с $\overline{U}$ в отрезки параллельных прямых:
+        \[\begin{tikzpicture}
+% Smooth curve lines passing over the circle on the left
+              \draw[gray,smooth] (-1.118,1) to[out=30, in=250] (1.118,1);
+              \draw[gray,smooth] (-1.5,0) to[out=25, in=200] (1.5,0);
+              \draw[gray,smooth] (-1.118,-1) to[out=70, in=210] (1.118,-1);
+% Circle on the left
+              \draw[dashed] (0,0) circle (1.5cm);
+              \fill (0,0) circle (0.05cm);
+              \node[below] at (0,0) {$(\tau_0, \xi_0)$};
+% Straight lines passing over the circle on the right
+              \draw[gray] ({7 - sqrt(1.5 * 1.5 - 1)},1) -- ({7 + sqrt(1.5 * 1.5 - 1)},1);
+              \draw[gray] (5.5,0) -- (8.5,0);
+              \draw[gray] ({7 - sqrt(1.5 * 1.5 - 1)},-1) -- ({7 + sqrt(1.5 * 1.5 - 1)},-1);
+% Circle on the right
+              \draw[dashed] (7,0) circle (1.5cm);
+              \fill (7,0) circle (0.05cm);
+              \node[below] at (7,0) {$(\tau_0, \xi_0)$};
+% Arrow connecting the two circles
+              \draw[->] (2.5,0) -- (4.5,0);
+        \end{tikzpicture}\]
+    \provehere{
+    Рассмотрим $I(\tau_0, \xi_0)$, и выберем $[a, b] \subset I(\tau_0, \xi_0)$ ($[a, b] \ni \tau_0$).
+        Пусть $\eps > 0$, обозначим $R \coloneqq \defset{(t, x) \in [a, b] \times \R^n}{|x - x(t, \tau_0, \xi_0) \le \eps} \subset G$.
+
+    По теореме об интегральной непрерывности $\exists \delta > 0: \forall \xi: |\xi - \xi_0| \le \delta \then (t, x(t, \tau_0, \xi)) \in R$ при $t \in [a, b]$.
+
+    Положим $V = \defset{(t, x) \in [a, b] \times \R^n}{|x(t, \tau_0, \xi) - x(t, \tau_0, \xi_0) < \eps}$ --- это окрестность $(\tau_0, \xi_0)$.
+        Построим $g: \overline{V} \map \R^{n + 1}$ следующим образом:
+    \[g(t, \xi) = (t, x(t, \tau_0, \xi))\]
+    $g$ непрерывна на $\overline{V}$:
+    \[\abs{g(t, \xi) - g(t', \xi')} \le \underbrace{|x(t, \tau_0, \xi) - x(t', \tau_0, \xi)|}_{\abs{\int\limits_{t}^{t'}f(s, x(s, \tau_0, \xi))\d s} \le M|t - t'|} + \underbrace{|x(t', \tau_0, \xi) - x(t', \tau_0, \xi')|}_{\text{по теореме об интегральной непрерывности }\to 0}\]
+    Инъективность $g$ прямо следует из теоремы единственности: $g(t, \xi) = g(t', \xi') \then t = t' \text { и } x(t, \tau_0, \xi) = x(t, \tau_0, \xi') \then \xi = \xi'$.
+
+    Теперь построим обратное отображение $h$. Пусть $\overline{W} = g\left(\overline{V}\right)$, $U \coloneqq \Int\left(\overline{W}\right)$.
+        Инъективное отображение компакта --- гомеоморфизм на образ, поэтому $\exists h: U \map V$ --- искомый гомеоморфизм.
+    }
+    }
+    Пусть мы всё ещё рассматриваем систему $\dot{x} = f(t, x), x \in \R^n, f \in C, \Lip_{x,loc}(G)$.
+    \theorem[О дифференциальном выпрямлении]{
+        $\forall (\tau_0, \xi_0) \in G: \exists$ окрестность $U \ni (\tau_0, \xi_0)$, и $\exists$ диффеоморфизм $h: \overline{U} \map \R^{n + 1}$ (гомеоморфизм на образ $h$, такой, что $h, h^{-1}$ дифференцируемы), переводящий пересечение интегральных кривых с $\overline{U}$ в отрезки параллельных прямых.
+    \provehere{
+        Параллельно доказательству предыдущей теоремы построим $g$.
+        То, что $g \in C^1$ следует из того, что решение дифференцируемо по $t$ и по начальным данным.
+
+    Дальше мы хотим применить теорему об обратной функции, для этого надо показать невырожденность $\det \der{g}{(t, \xi)}\Big|_{(\tau_0, \xi_0)}$.
+    Расписав покомпонентно $g = (t, \xi)$, получаем \[\der{g}{(t, \xi)} = \vect{1 & 0 \\ \der{x}{t} & \der{x}{\xi}}\]
+    Достаточно показать, что $\der{x}{\xi}$ невырождена, но это фундаментальная матрица системы в вариациях.
+
+    Значит, по теореме об обратной функции $g$ --- диффеоморфизм окрестности $(\tau_0, \xi_0)$ на окрестность $(\tau_0, \xi_0)$.
+    }
+    }
+    \section{Теорема Коши}
+    \subsection{Кратные степенные ряды}
+    \subsubsection{Многомерное суммирование}
+    В случае обычных рядов $\sum\limits_{k = 0}^{\infty}a_k$ мы работаем с частичными суммами $\sum\limits_{k = 0}^{m}a_k$, которые куда-то стремятся.
+
+    Случай многомерного индекса выглядит так: имеется набор чисел $a_{k_1, \dots, k_n}$, где $k_i \in \N_{0}$.
+
+    Назовём суммой ряда $\sum\limits_{k_1 = \cdots = k_n = 0}^{\infty}a_{k_1, \cdots, k_n}$ сумму семейства $\defset{a_{k_1, \cdots, k_n}}{k_1, \cdots, k_n \in \N_{0}}$.
+
+    Ещё это можно записать так: если $A$ --- сумма семейства, то по определению $\forall \eps > 0: \exists N: \forall m_1, \cdots, m_n \ge N: \abs{\sum\limits_{m_1, \cdots, m_n}a_{*} - A} < \eps$, где $\sum\limits^{m_1, \cdots, m_n}a_{*} \coloneqq \sum\limits_{k_1 = 0}^{m_1} \cdots \sum\limits_{k_n = 0}^{m_n}a_{k_1, \cdots, k_n}$ --- краткое обозначение для частичной суммы.
+
+    Работая с абсолютно сходящимися многомерными рядами, мы сможем выполнять все действия над ними, какие захотим (например, потому что можно всё перевести на язык суммируемых семейств).
+    \subsubsection{Многомерные степенные ряды}
+    Кратные степенные ряды определяются исходя из обычных кратных рядов: пусть $x = \vect{x_1, \cdots, x_n}$, зафиксируем $x^0 = \vect{x_1^0, \cdots, x_n^0}$, и рассмотрим ряд
+    \[\sum\limits_{k_1, \cdots, k_n}^{\infty}a_{k_1, \cdots, k_n}(x_1 - x_1^0)^{k_1} \proddots (x_n - x_n^0)^{k_n}\]
+    \statement[Радиус сходимости]{
+    Если ряд сходится для $(x_1^*, \cdots, x_n^*)$, то он сходится для любого $(x_1, \cdots, x_n): |x_i - x_i^0| < |x_i^* - x_i^0|$.
+    }
+    \statement[Мажоратные ряды]{
+        Пусть есть ряд $\sum\limits_{k_1, \cdots, k_n}^{\infty}b_{k_1, \cdots, k_n}(x_1 - x_1^0)^{k_1}\proddots (x_n - x_n^0)^{k_n}$. Если все $\abs{a_{k_1, \cdots, k_n}} \le b_{k_1, \cdots, k_n}$, и ряд степенной ряд $b$ сходится, то и степенной ряд $a$ сходится.
+    }
+    \statement[Специальный ряд]{
+    При $|x_i| < 1$ следующий ряд сходится: \[\sum\limits_{k_1, \cdots, k_n}^{\infty}x_1^{k_1}\proddots x_n^{k_n} = \frac{1}{(1 - x_1)\proddots (1 - x_n)}\]
     }
 
     \newlection{2 декабря 2023 г.}
