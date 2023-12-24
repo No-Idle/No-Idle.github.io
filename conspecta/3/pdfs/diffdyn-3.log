@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  23 DEC 2023 14:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  23 DEC 2023 15:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1403,10 +1403,10 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: F675163D86D9065F2A4198C5D66AF36F;14869.
  ) 
 Here is how much of TeX's memory you used:
- 28355 strings out of 479648
- 529953 string characters out of 5886115
- 922018 words of memory out of 5000000
- 45594 multiletter control sequences out of 15000+600000
+ 28354 strings out of 479648
+ 529939 string characters out of 5886115
+ 922008 words of memory out of 5000000
+ 45593 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,737b,849s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1432,7 +1432,7 @@ t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/boondox/zxxrw8a.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (49 pages, 472480 bytes).
+ (49 pages, 472520 bytes).
 PDF statistics:
  724 PDF objects out of 1000 (max. 8388607)
  622 compressed objects within 7 object streams

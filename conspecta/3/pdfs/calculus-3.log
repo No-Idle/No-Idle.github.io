@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  21 DEC 2023 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  24 DEC 2023 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1325,7 +1325,27 @@ it/10 y$\T2A/faq/m/n/10 , и опять при-ме-ня-ем нера-вен-ство Гјль-де-ра к $[]$.
  
  []
 
-[42] [43] [44] [45] [46] [47] [48] [49]
+[42] [43]
+Overfull \hbox (70.43639pt too wide) detected at line 1964
+[]
+ []
+
+[44] [45] [46]
+Overfull \hbox (49.81314pt too wide) detected at line 2126
+[] \OT1/cmr/m/n/10 = [] = [] = \OMS/cmsy/m/n/10 j [] \OML/cmm/m/it/10 A\OMS/cms
+y/m/n/10 j[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 = \OML/cm
+m/m/it/10 A[]F[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 J[]\OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j[]
+ []
+
+
+Overfull \hbox (0.25601pt too wide) in paragraph at lines 2126--2128
+\T2A/faq/m/n/10 Но раз $[] \OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 x[]; []\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 E$\T2A/faq/m/n/10 , то по тео-ре-
+ме об ис-ка-же-нии и прин-ци-пу двух по-ли-цей-ских $[]$: 
+ []
+
+[47] [48] [49] [50] [51] [52]
 (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1334,16 +1354,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `calculus-3.out' has not changed.
-(rerunfilecheck)             Checksum: 36AF1A8515FB4BDB243783EE2C9720B8;6899.
+(rerunfilecheck)             Checksum: DB1AF3D8557724319470EEF73C643661;7880.
  ) 
 Here is how much of TeX's memory you used:
- 27428 strings out of 479648
- 508065 string characters out of 5886115
- 795895 words of memory out of 5000000
- 44595 multiletter control sequences out of 15000+600000
+ 27441 strings out of 479648
+ 508236 string characters out of 5886115
+ 796019 words of memory out of 5000000
+ 44597 multiletter control sequences out of 15000+600000
  507234 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,14n,103p,577b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,15n,103p,577b,666s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1365,10 +1385,10 @@ f-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (50 pages, 461476 bytes).
+f (53 pages, 482497 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 652 compressed objects within 7 object streams
- 277 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 782 PDF objects out of 1000 (max. 8388607)
+ 679 compressed objects within 7 object streams
+ 288 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
