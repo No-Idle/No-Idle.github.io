@@ -1321,7 +1321,7 @@
             Определим $E = \bigcup\limits_{j = 1}^{\infty}E_j$. $f \cdot \chi_E = \lim\limits_{n \to \infty}f \cdot \chi_{E_n}$, теперь воспользуемся теоремой Леви.
         }
     }
-    Пусть $f \ge 0$ --- измеримая функция, обозначим $A = \defset{x}{f(x) \ne 0}$.
+    \fact{\label{supp-size}Пусть $f \ge 0$ --- измеримая функция, обозначим $A = \defset{x}{f(x) \ne 0}$.
     Тогда $J(f) = 0 \iff \mu(A) = 0$.
     \provewthen{
         $J(f) = \sup I(g)$, где $0 \le g \le f$. Из монотонности меры всякая такая $g$ сосредоточена на множестве меры нуль.
@@ -1336,7 +1336,7 @@
         Пусть $A_n = \defset{x}{f(x) > \frac{1}{n}}$.
         $A = \bigcup\limits_{n \ge 1}A_n$.
         Согласно неравенству Чебышёва $\mu(A_n)\le n J(f) = 0$. Таким образом, $\mu(A) = 0$.
-    }
+    }}
     \note{
         Теорема Леви сохраняет силу, если неравенство $f_n(x) \le f_{n + 1}(x)$ выполнено почти всюду (нарушаются на множестве меры нуль), и стремление $f_n(x) \underset{n \to \infty}\Map f(x)$ тоже имеется почти всюду.
     }
@@ -1425,20 +1425,110 @@
         Тогда $u$ суммируема $\iff \sum\limits_{n = 1}^{\infty}\int\limits_{X}u_n \d \mu < +\infty$.
     }
     В случае монотонной сходимости почти всегда почти всё можно делать, а если сходимость не монотонна, то есть следующая теорема.
+    \newlection{1 ноября 2023 г.}
     \theorem[Лебег, о мажорируемой сходимости]{
-        Пусть $f, g$ --- измеримые функции, ${f_n \overset{\text{почти всюду}}{\underset{n \to \infty}\Map} f}$.
-        Предположим, что у $f_n$ есть общая суммируемая мажоранта: $|f_n(x)| \le g(x)$ и $\int\limits_{X}g\d\mu < +\infty$. Тогда $\int\limits_{X}f_n \d \mu < \int\limits_{X}f\d\mu$.
+        Пусть $f, g$ --- измеримые функции, ${f_n \almost{n \to \infty} f}$.
+        Предположим, что у $f_n$ есть общая суммируемая мажоранта: $|f_n(x)| \le g(x)$ и $\int\limits_{X}g\d\mu < +\infty$. Тогда $\int\limits_{X}f_n \d \mu \underset{n \to \infty}\Map \int\limits_{X}f\d\mu$.
+    \provehere{
+    % Покажем, что почти всюду $\varlimsup\limits_{n \to \infty}|f_n(x) - f(x)| = 0$. Что там в скобочках написано?
+        Так как $g$ --- мажоранта, то везде на $X: |f_n(x) - f(x)| \le 2g(x)$.
+
+    Положим $h_k \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
+        Так как $0 \le h_0(x) \le 2g(x)$, то $h_0$ суммируема, откуда по теореме Леви: $\int\limits_{X}h_k(x)\d\mu \underset{k \to \infty}\Map 0$.
+
+    Осталось применить принцип двух полицейских для неравенства \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
+    }
     }
     \counterexample{
-        Совсем без мажоранты ничего не получится. Если $X = \R$, и $f_n = n\chi_{[0, \frac1n]}$, то $f$ сходятся к нулю почти всюду, но интегралы у всех единичные.
+        Совсем без мажоранты ничего не получится. Если $X = \R$, и $f_n = n\chi_{[0, \frac1n]}$, то $f$ сходятся к нулю почти всюду, но интегралы у всех $f_n$ единичные.
     }
-    \newlection{1 ноября 2023 г.}
-    //todo
+    \lemma[Фату]{
+    Пусть $f_n \ge 0$ --- измеримые функции, тогда $\int\limits_{X}\left(\varliminf\limits_{n \to \infty}f_n\right) \d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n\d\mu$.
+    }
+    \corollary{
+    Если измеримые $g_n \almost{n \to \infty} g$, и $\int\limits_{X}|g_n|\d\mu \le C$, то $g$ суммируема, причём $\int\limits_{X}|g|d\mu \le C$.
+    \provehere{
+    Положим $h_k(x) = \inf\limits_{n \ge k}f_n(x)$. $h_k(x) \nearrow h(x) = \varliminf\limits_{n \to \infty}f_n(x)$. \[\int\limits_{X}h\d\mu = \lim\limits_{k \to \infty}\int\limits_{X}h_k\d\mu = \varliminf\limits_{k \to \infty}\int\limits_{X}h_k\d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n \d\mu\qedhere\]
+    }
+    }
+    \section{Виды сходимости}
+    \bullets{
+    \item Сходимость почти всюду: мера множества, где сходимости нет, равна нулю.
+    \item Сходимость по мере: $f_n \underset{n \to \infty}{\overset{\mu}\Map} f \overset{def}\iff \forall \eps > 0: \mu\bigdefset{x \in X}{|f_n(x) - f(x)| > \eps} \underset{n \to \infty}\Map 0$.
+    }
+    \fact{
+    \down\numbers{
+    \item Из сходимости $f_n \almost{n \to \infty} f$ следует сходимость по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$.
+    \item Если $\mu(X) < \infty$, то из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$: $f_{n_k} \almost{k \to \infty} f$.
+    }
+    \provehere{\down\numbers{
+    \item Пусть $\eps > 0$, обозначим $A_n \coloneqq \defset{x \in X}{\exists k \ge n: |f_k(x) - f(x)| \ge \eps}$. Они вложены: ${A_1 \supset A_2 \supset \dots}$
+
+        Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: $\begin{tikzcd}[ampersand replacement=\&,column sep=small,cramped]f_n \arrow[r, "/"{marking, allow upside down}] \& f\end{tikzcd}$.
+        Но раз есть сходимость почти всюду, то $\mu(A) = 0$, то есть $\mu(A_n) \underset{n \to \infty}\Map 0$.
+    \item \up \definition[Последовательность Коши по мере]{
+        Последовательность измеримых функций $f_n$, такая, что $\forall \eps > 0: \lim\limits_{(n, m) \to \infty}\mu\bigdefset{x \in X}{|f_n(x) - f_m(x)| > \eps} = 0$.}
+        Найдутся такие $N_1 \le N_2 \le \dots$, что $\mu\defset{x \in X}{\forall n, m \ge N_k: |f_n(x) - f_m(x)| \ge \frac{1}{2^k}} \le \frac{1}{2^k}$.
+
+    Положим $E_k \coloneqq \bigdefset{x \in X}{\abs{f_{N_k}(x) - f_{N_{k+1}}(x)} \le \frac{1}{2^k}}$. $\mu(X \sm E_k) \le \frac{1}{2^k}$.
+    Пусть $\tilde{E}_k = \bigcap\limits_{n \ge k}E_n$, тогда $\mu\left(X \sm \tilde{E}_k\right) = \mu\left(\bigcup\limits_{n \ge k}X \sm E_n\right) \le \sum\limits_{n \ge k}\mu(X \sm E_n) \le \frac{1}{2^{k-1}}$.
+
+    Если $x \in \tilde{E}_k \then \forall n \ge k: \abs{f_{N_n}(x) - f_{N_{n+1}}(x)} \le \frac{1}{2^n}$, то есть $\forall x \in \tilde{E}_k: \sum\limits_{j = 1}^{\infty}\abs{f_{N_j}(x) - f_{N_{j+1}}(x)}$ сходится.
+
+        А тогда эта сумма сходится и на $\bigcup\limits_{k = 1}^{\infty}\tilde{E}_k$. Это влечёт $\forall x \in \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k: \exists \lim\limits_{k \to \infty}f_{N_k}(x)$. К этому пределу $f_{N_k}$ сходятся почти всюду: мера $X \sm \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k = \bigcap\limits_{k = 1}^{\infty}(X \sm \tilde{E}_k)$ равна нулю.
+    }
+    }
+    }
+    Видно, что на самом деле мы доказали более сильное утверждение: для последовательности Коши по мере $\exists$ измеримая $f$: $f_n \almost{n \to \infty} f$.
+
+    \section{Классы $L^p$}
+    Определим $L^p(\mu) \bydef \defset{f: X \map \R}{f \text{ --- измерима, и }\int\limits_{X}|f|^p \d\mu < \infty}$.
+    Как следует из первой буквы, класс назван в честь Лебега.
+
+    В дальнейшем мы будем считать, что $p \ge 1$.
+
+    Функции $f \in L^p(\mu)$ отвечает норма $\|f\|_{L^p} = \left(\int\limits_{X}|f|^p\d\mu\right)^{\nicefrac1p}$.
+    По этой норме, как и по всякой другой, можно построить метрику $d(\_,\_)$.
+    \theorem{
+        В случае $p \ge 1: d$ --- реально метрика на $L^p(\mu)$.
+        Чтобы выполнялась положительная определённость ($\|f\| = 0 \iff f = 0$), будем рассматривать функции определённые с точностью до меры нуль на $X$.
+        Иными словами $\|f\| = 0 \iff f = 0$ почти всюду~(\ref{supp-size}).
+    \provehere{
+        \indentlemma[Неравенство Гёльдера]{
+            Пусть $p, q > 1$ --- сопряжённые показатели (${\nicefrac1p + \nicefrac1q = 1}$), тогда для $f \in L^p, g \in L^q: fg \in L^1$, и $\|fg\|_{L^1} \le \|f\|_{L^p}\|g\|_{L^q}$.
+        }{
+            Деля $f \rightsquigarrow \frac{f}{\left(\int\limits_{X}|f|^p\right)^{\nicefrac{1}{p}}}$ и $g \rightsquigarrow \frac{g}{\left(\int\limits_{X}|g|^q\right)^{\nicefrac{1}{q}}}$, получаем $\|f\|_{L^p} = \|g\|_{L^q} = 1$.
+
+            Для $a, b > 0$ имеется неравенство Юнга (доказывали через выпуклость $\exp$): $\frac{a^p}{p} + \frac{b^q}{q} \ge ab$.
+            Применяя его, получаем $|f(x)|\cdot|g(x)| \le \frac{|f(x)|^p}{p} + \frac{|g(x)|^q}{q}$.
+            Интегрируя, получаем искомое $\int\limits_{X}|f(x)|\cdot|g(x)|\d\mu \le \frac{1}{p} + \frac{1}{q} = 1$.
+        }
+
+    Теперь проверим неравенство треугольника $\|f + g\|_{L^p} \le \|f\|_{L^p}+ \|g\|_{L^p}$.
+        Для интегралов оно носит название \emph{неравенства Минковского}.
+    \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{\le}\]
+    Применив к каждому слагаемому неравенство Гёльдера ($|f + g|^{p - 1} \in L^q$, так как $\int\limits_{X}|f + g|^{(p - 1)q}\d\mu = \int\limits_{X}|f + g|^{p}\d\mu \le 2^p\int\limits_{X}\max(f, g)^p\d\mu\le 2^p\int\limits_{X}\left(|f|^p + |g|^p\right)\d\mu$), получаем
+    \[\circlesign{\le} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
+    Далее делим обе части неравенства на $\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}$, и остаётся \[\underbrace{\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{1 - \frac{1}{q}}}_{\|f + g\|_{L^p}} \le \|f\|_{L^p} + \|g\|_{L^p}\qedhere\]
+    }
+    }
+    \theorem{
+    $L^p(\mu)$ --- полно.
+    \provehere{
+    Рассмотрим последовательность Коши $f_n$, и пусть $E_{k,l} \coloneqq \defset{x \in X}{\abs{f_k(x) - f_l(x)} > \delta}$.
+
+    По определению последовательности Коши $\forall \eps > 0: \exists N \in \N: k, l \ge N \then \int\limits_{X}|f_k - f_l|^p < \eps^p$.
+
+        Тогда $\mu E_{k,l} = \mu\defset{x \in X}{\abs{f_k(x) - f_l(x)}^p > \delta^p} \le \frac{\eps^p}{\delta^p}$. Значит, $f_n$ --- последовательность Коши по мере.
+
+    Пусть $f_{k_j} \almost{j \to \infty} f$, тогда $\forall \eps > 0: \exists N \in \N: \forall j, s > N: \int\limits_{X}|f_{k_j} - f_{k_s}|^p < \eps$. Устремляя $s \to \infty$, по лемме Фату получаем $\int\limits_{X}|f_{k_j} - f|^p \le \eps$.
+    Значит, $f$ --- предел подпоследовательности $f_{k_j}$, и из неравенства треугольника и фундаментальности можно показать, что $f$ --- предел.
+    }
+    }
     \newlection{8 ноября 2023 г.}
 
 
-    \section{Приближение функций из класса $L^p$}
-    Класс $L^p$ назван в честь Лебега.
+    \subsection{Приближение функций из класса $L^p$}
     В дальнейшем часто будем обозначать меру множества $X$ за $|X|$.
 
     \theorem{
@@ -1605,7 +1695,7 @@
             Теперь $\int\limits_{\R^n}\psi_n \le \text{интеграл Лебега или Римана }f \le \int\limits_{\R^n}\phi_n$.
         }
     }
-    \theorem[Теорема Лебега]{
+    \intfact[Теорема Лебега]{
         Функция $f$ на конечном отрезке интегрируема по Риману $\iff$ множество точек разрыва $f$ имеет меру нуль.
     }
     \note{
@@ -1617,7 +1707,7 @@
         }
     }
     \note{
-        Если функция знакомпеременна, то интегрировать всё ещё бывает полезно в несобственном смысле: $\frac{\sin x}{x}$ не суммируема на $[0, \infty)$, но можно писать
+        Если функция знакопеременна, то интегрировать всё ещё бывает полезно в несобственном смысле: $\frac{\sin x}{x}$ не суммируема на $[0, \infty)$, но можно писать
         \[\int\limits_{0}^{\infty}\frac{\sin x}{x}\d x = \lim\limits_{R \to \infty}\int\limits_{0}^{R}\frac{\sin x}{x}\d x = \frac{\pi}2\]
     }
     \newlection{15 ноября 2023 г.}
