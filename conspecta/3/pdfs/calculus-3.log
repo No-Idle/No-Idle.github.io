@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  25 DEC 2023 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 DEC 2023 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1371,7 +1371,58 @@ Overfull \hbox (0.25601pt too wide) in paragraph at lines 2216--2218
 ме об ис-ка-же-нии и прин-ци-пу двух по-ли-цей-ских $[]$: 
  []
 
-[50] [51] [52] [53] [54] [55]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2224.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2224.
+
+[50]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2248.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2248.
+
+
+Overfull \hbox (19.97247pt too wide) in paragraph at lines 2284--2284
+[]\T2A/faq/m/n/10 Осталась счјт-ная по-лу-ад-ди-тив-ность: пусть $\OML/cmm/m/it
+/10 e \OMS/cmsy/m/n/10 ^^Z [] \OML/cmm/m/it/10 e[]$\T2A/faq/m/n/10 , то-гда на-
+до про-ве-рить, что $[]$. 
+ []
+
+[51]
+Overfull \hbox (14.8335pt too wide) in paragraph at lines 2321--2321
+\T2A/faq/m/n/10 Из счјт-ной по-лу-ад-ди-тив-но-сти $\OML/cmm/m/it/10 ^^Q\OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 F\OT1/cmr/m/n/
+10 ) \U/msa/m/n/10 6 \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]\
+OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]
+ \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 , но 
+с дру-гой сто-ро-ны $[]$.
+ []
+
+
+Overfull \hbox (8.49907pt too wide) in paragraph at lines 2321--2321
+[]\T2A/faq/m/n/10 Стало быть, $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 n \OT1/cmr/m/
+n/10 : [] \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[] \OMS/cmsy/m
+/n/10 n \OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 ) \U/msa/m/n/10 6 \OML/cmm/m/it/10 
+^^Q [] \U/msa/m/n/10 6 \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\
+OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 . Ана-ло-гич-но схо-дит-ся ряд $[]$.
+ []
+
+[52] [53]
+Overfull \hbox (12.86209pt too wide) in paragraph at lines 2427--2427
+\T2A/faq/m/n/10 о диф-фе-рен-ци-ру-е-мо-сти. Ины-ми сло-ва-ми, по-ка-жем $\OMS/
+cmsy/m/n/10 8\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 U \OT1/cmr/
+m/n/10 : [] [] = \OMS/cmsy/m/n/10 j [] \OT1/cmr/m/n/10 ^^@([]  [](\OML/cmm/m/it
+/10 x; []\OT1/cmr/m/n/10 ))\OMS/cmsy/m/n/10 j[]$\T2A/faq/m/n/10 . 
+ []
+
+[54] [55] [56] [57] [58]
 (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1379,14 +1430,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `calculus-3.out' has not changed.
-(rerunfilecheck)             Checksum: 57E926D6FFE2A01D87BD76F92D1AC05A;8188.
+(rerunfilecheck)             Checksum: 7FEDF6A1054BE7572B01CF862D3DE7FA;8915.
  ) 
 Here is how much of TeX's memory you used:
- 27575 strings out of 479648
- 511373 string characters out of 5886115
- 797136 words of memory out of 5000000
- 44715 multiletter control sequences out of 15000+600000
+ 27600 strings out of 479648
+ 511754 string characters out of 5886115
+ 797160 words of memory out of 5000000
+ 44719 multiletter control sequences out of 15000+600000
  507234 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,16n,103p,577b,1181s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1412,10 +1466,10 @@ fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (56 pages, 506443 bytes).
+f (59 pages, 529625 bytes).
 PDF statistics:
- 827 PDF objects out of 1000 (max. 8388607)
- 718 compressed objects within 8 object streams
- 304 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 874 PDF objects out of 1000 (max. 8388607)
+ 762 compressed objects within 8 object streams
+ 325 named destinations out of 1000 (max. 500000)
+ 309 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -34,5 +34,8 @@
 \contentsline {subsection}{\numberline {2.9.3}Свойства свёртки}{44}{subsection.2.9.3}%
 \contentsline {subsection}{\numberline {2.9.4}Слегка другой способ построения аппроксимативной единицы}{47}{subsection.2.9.4}%
 \contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{47}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Интеграл по комплексной мере}{54}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Разложение Лебега}{54}{subsection.2.10.2}%
+\contentsline {section}{\numberline {2.11}Мера Лебега на поверхностях}{50}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Частный случай линейного $f$}{50}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}$p$-мера Хаусдорфа}{51}{subsection.2.11.2}%
+\contentsline {subsection}{\numberline {2.11.3}Интеграл по комплексной мере}{57}{subsection.2.11.3}%
+\contentsline {subsection}{\numberline {2.11.4}Разложение Лебега}{58}{subsection.2.11.4}%
