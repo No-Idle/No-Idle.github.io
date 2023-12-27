@@ -2116,7 +2116,8 @@
         \item Пусть $g \in L^1(\R^n)$. Можно определить $\nu(e) = \int\limits_{e}g(x)\d x$. Интеграл счётно-аддитивен, значит, $\nu$ --- знакопеременная мера.
         \item Есть и другие меры (например, $\delta_0$ --- мера всякого множества равна $1$, если оно содержит $0$, и $0$ иначе.)
     }
-    Пусть $(S, \Sigma, \lambda)$ --- пространство с мерой $\lambda \ge 0$; предположим, что $\lambda$ --- $\sigma$-конечна. пусть $\nu$ --- вещественная мера на $\Sigma$.
+    Пусть $(S, \Sigma, \lambda)$ --- пространство с мерой $\lambda \ge 0$; предположим, что $\lambda$ --- $\sigma$-конечна.
+    Пусть $\nu$ --- знакопеременная мера на $\Sigma$.
     \definition[$\nu$ абсолютно непрерывна относительно $\lambda$]{
         $\forall e \in \Sigma: \lambda(e) = 0 \then \nu(e) = 0$.
     }
@@ -2384,58 +2385,164 @@
     Обозначим её за $\lambda_m$, что имеет смысл, так как оно везде совпадает с $\lambda_m$, где $\lambda_m$ определено.
 
     Теперь научимся вычислять $\lambda_m(f(e))$, где $e \subset \R^m, f: \underbrace{U}_{\supset e} \map \R^n$ --- гладкая инъекция.
-
+    \newlection{13 декабря 2023 г.}
     \theorem{
         При сделанных предположениях $\lambda_m(f(e)) = \int\limits_{e}|\det \Gamma(\d_f(x, \_))|^{\nicefrac12}\d x$.
     \provebullets{
-    \item Сначала обоснуем вообще, что $\dim_H(f(e)) = m$ (?).
+    \item Сначала обоснуем вообще, что $\dim_H(f(e)) = m$.
+%
+%        Пусть ситуация такова: $U \supset \overline{U}_1 \supset e$, где $U_1$ открыто.
+%        Тогда $f$ липшицева на $\overline{U}_1$, откуда $\mu_m^*(f(e)) < \infty$.
+%        Кроме этого, $f(e)$ --- борелевское множество, откуда $\mu_m(f(e)) < \infty$.
+%
+%    Если же ситуация не такова, то можно взять исчерпывающую последовательность компактов.
+        \indent{
+            \theorem[Регулярность меры Лебега]{
+                $\forall$ измеримого по Лебегу $e \subset \R^k$, $\forall \eps > 0: \exists U \supset e: \abs{U \sm e} < \eps$.
+                Кроме того, $|e| = \sup\limits_{K \subset e}|K|$, где $K$ --- компактны (запись другая, так как мера любого компактного множества конечна).
+                \provebullets{
+                    \item Пусть $|e| < \infty$.
+                    Так как оно измеримо, то $\exists$ параллелепипеды $\{P_j\}_j$, такие, что $\bigcup\limits_{j}P_j \supset e, \abs{\bigcup\limits_{j}P_j} < |e| + \eps$.
+                    Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\abs{\tilde{P}}_j < \frac{\eps}{2^j}$.
+                    Положим $U \coloneqq \bigcup\limits_{j = 1}^{\infty}\tilde{P}_j$, тогда $U$ открыто, и $|U| < |e| + 2\eps$.
 
-        Пусть ситуация такова: $U \supset \overline{U}_1 \supset e$, где $U_1$ открыто.
-        Тогда $f$ липшицева на $\overline{U}_1$, откуда $\mu_m^*(f(e)) < \infty$.
-        Кроме этого, $f(e)$ --- борелевское множество, откуда $\mu_m(f(e)) < \infty$.
+                    Теперь если $|e| = \infty$, то воспользуемся $\sigma$-конечностью: пусть $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$, тогда подберём открытые $U_s \supset (e \cap B_s): |U_s \sm (e \cap B_s)| < \frac{\eps}{2^s}$. Объединение $U \coloneqq \bigcup\limits_{s}U_s$ подходит: $U \supset e$, и $|U \sm a| < \eps$.
+                    \item Из предыдущего пункта можно найти подходящее замкнутое множество: пусть $a \coloneqq \R^k \sm b$, найдётся открытое $U \supset a, |U \sm a| < \eps$, тогда для замкнутого $F \coloneqq \R^k \sm U: |b \sm F| = |U \sm a| < \eps$.
 
-    Если же ситуация не такова, то можно взять исчерпывающую последовательность компактов.
-    \item Пусть $\rho(e) = \lambda_m(f(e))$ --- мера на $U$.
+                    Чтобы сделать $F$ компактным, возьмём пересечения $F_s \coloneqq F \cap B_s$, где $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$.
+                    Тогда легко видеть, что $|e| = \sup\limits_{s}|F_s|$.
+                }
+            }
+        }
+        Возьмём исчерпывающую последовательность компактов $K_1 \subset K_2 \subset \cdots \subset \R^m$ ($K_i \subset \Int K_{i+1}$).
+
+        Рассмотрим измеримое $E \subset K_j$. $|E|_m = C_{(m)}\mu_m^*(E) < +\infty$.
+        Тем самым, согласно регулярности найдутся вложенные компакты $\Phi_1 \subset \Phi_2 \subset \cdots \subset E$, такие, что $|\Phi_j| \underset{j \to \infty}\Map |E|$.
+        Положим $\Phi \coloneqq \bigcup\limits_{j = 1}^{\infty}\Phi_j$.
+
+        А раз так, то $f(E) = F(E \sm \Phi) \cup \bigcup\limits_{j = 1}^{\infty}F(\Phi_j)$.
+        Значит, $f(E)$ измеримо --- это объединение множества меры нуль $f(E \sm \Phi)$, и счётного числа компактов $f(\Phi_j)$.
+
+        Получается, на измеримых подмножествах $K_j$ корректно определена мера $\rho \coloneqq \lambda_m(f)$ ($\rho(e) \coloneqq \lambda_m(f(e))$).
+
+        \item Пусть $\rho(e) = \lambda_m(f(e))$ --- мера на $U$.
     \indentlemma{
     $\rho$ абсолютно непрерывна относительно меры Лебега $\lambda_m$ на $U$.
     }{
     Пусть $\lambda_m(e) = 0$.
         Тогда $\mu_m(e) = 0$, и так как $f$ --- локально липшицево, то $\lambda_m(f(e)) = 0$.
     }
-        По теореме Радона --- Никодима: $\exists w: U \map \R$ --- неотрицательная измеримая функция, такая, что \[\forall e \subset U: \rho(e) = \lambda_m(f(e)) = \int\limits_{e}w(x)\d x\label{density}\tag{$*$}\]
-        \indent{
-%            \theorem[Регулярность меры Лебега]{Рассмотрим евклидово пространство $\R^k$.
-%                $\forall$ измеримого по Лебегу $e \subset \R^k$, $\forall \eps > 0: \exists U \supset e: \abs{U \sm e} < \eps$.
-%                Кроме того, $|e| = \sup\limits_{K \subset e}|K|$, где $K$ --- компактны (запись другая, так как мера любого компактного множества конечна).
-%                \provehere{
-%                    Возьмём исчерпывающую последовательность компактов $K_1 \subset \Int K_2 \subset \Int K_3 \subset \cdots$
-%                    Для всякого $j$ найдём суммируемую $g_j$, такую, что~\eqref{density} верна $\forall e \subset K_j$.
-%
-%                $\mu(e) = C_{(m)}\mu_m^*(F(e))$.
-%
-%                Пусть $|e| = C_{(m)}\mu_m^*(e) = 0$, где $e \in K_j$.
-%                    Тогда из локальной липшицевости $\mu_m^*(F(e)) = 0$.
-%                }
-%            }
+%            $\rho(e) = C_{(m)}\mu_m^*(F(e))$.
+%        Пусть $|e| = C_{(m)}\mu_m^*(e) = 0$, где $e \in K_j$.
+%        Тогда из локальной липшицевости $\mu_m^*(F(e)) = 0$.
 
-    }
+        По теореме Радона --- Никодима: $\exists g_j: K_j \map \R$ --- неотрицательные измеримые функции, такие, что
+        \[\forall e \subset K_j: \rho(e) = \lambda_m(f(e)) = \int\limits_{e}w(x)\d x\label{density}\tag{$*$}\]
+        Далее, как и раньше, $g_{j + 1}$ почти всюду совпадает с $g_j$, поэтому $\exists g: U \map \R$ --- искомая плотность меры.
 
-        \item Осталось показать, что $w(x) = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$, а это делается с помощью слабой теоремы о дифференцируемости.
-        Иными словами, покажем $\forall x \in U: \lim\limits_{r \to 0}\frac{\lambda_m(f(B_r(x)))}{|B_r(x)|} = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$.
+        \item Осталось показать, что $g(x) = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$, а это делается с помощью слабой теоремы о дифференцируемости.
 
+        А именно, из теоремы о дифференцируемости $\exists r_n \underset{n \to \infty}\Map 0$: $g(x) = \lim\limits_{n \to \infty}\frac{1}{|B_{r_n}(x)|}\int\limits_{B_{r_n}(x)}g(x) \d x$.
+
+        Теперь достаточно показать $\forall x \in U: \lim\limits_{r \to 0}\frac{\lambda_m(f(B_r(x)))}{|B_r(x)|} = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$.
+
+        Пусть $x_0 \in U, y_0 \coloneqq f(x_0)$, тогда $\Pi \coloneqq \d_f(x_0, \R^m)$ --- $m$-мерная касательная плоскость к $f$ в точке $x_0$.
+        Для удобства будем считать $y_0 = 0$ (заменим $f \rightsquigarrow f - y_0$).
+
+        В предыдущем семестре была доказана теорема о том, что $\exists V \ni 0$, такая, что $A \coloneqq f(U) \cap V$ задаётся в виде $A = \defset{h(u) \coloneqq (u,\phi(u))}{u \in W}$, где $W \subset \Pi$ --- окрестность нуля, $\phi: \Pi \map \Pi^\perp$ --- некоторое непрерывно дифференцируемое отображение, причём $\d_\phi(x_0, \_) = \0$.
+
+    Пусть $P: \R^n \map \Pi$ --- ортогональный проектор.
+        Тогда $P$ и $h$ взаимно обратны ($P \circ h = \id$).
+
+    Из непрерывной дифференцируемости $\phi$: $\forall \eps > 0: \exists \rho > 0: |u| \le \rho \then h$ --- липшицево с константой не выше $1 + \eps$:
+    \[h(u_1) - h(u_2) \le |u_1 - u_2| + \underbrace{|\phi(u_1) - \phi(u_2)|}_{\le |\d_{\phi}(v, u_1 - u_2)|}\text{, где некая точка $v \in [u_1, u_2]$.}\]
+    Устроим $\tilde{f}: U \map \Pi, \tilde{f}(x) = P f(x)$.
+    Заметим, что меры $f(B_r(x_0))$ и $\tilde{f}(B_r(x_0))$ близки.
+        В самом деле, из липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0))))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
+    Отсюда видно, что \[\lim\limits_{r \to 0}\mu_m(\tilde{f}(B_r(x_0))) = \lim\limits_{r \to 0}\mu_m(f(B_r(x_0)))\]
+    Но так как $\tilde{f}$ --- отображение между двумя $m$-мерными евклидовыми пространствами, то можно записать $\lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{B_r(x_0)} = \lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{B_r(x_0)} = |J_{\tilde{f}}(x)|$.
+
+    Осталось заметить, что образом $\d_f(x_0, \_)$ является $\Pi$.
+        Значит, $P$ ничего не делает, $\d_{\tilde{f}}(x_0, \_) = \d_f(x_0, \_)$.
     }
     }
-    \newlection{13 декабря 2023 г.}
-    //todo
+    Рассмотрим оператор $A: \R^m \map \R^n$, где $m < n$.
+    Пусть $e_j$ --- стандартный базис в $\R^m$, тогда $Ae_j$ --- столбцы матрицы $A$.
+
+    Можно посчитать определитель Грама матрицы $A$: $\det(\angles{A e_i, A e_j})_{i,j}$ по формуле Бине --- Коши: $\det(A^t A) = \sum\limits_{I \subset [n], |I| = m}\det((A^t)_I)\det(A^I) = \sum\limits_{I \subset [n], |I| = m}\det(A^I)^2$.
+    \examples{
+    \item Пусть $m = 1$.
+        Рассмотрим путь $\gamma: (a, b) \map \R^n$. $\gamma = \vect{\gamma_1 \\ \vdots \\ \gamma_n}$.
+        Тогда $J_{\gamma}(x_0, \_) = \vect{\gamma_1'(x_0) \\ \vdots \\ \gamma_n'(x_0)}$, и $\abs{\Gamma(\d_{\gamma}(x_0, \_))} = \sqrt{|\gamma_1^2(x_0) + \cdots + \gamma_n^2(x_0)|}$.
+        Если $\gamma$ инъективна, то получается формула длины пути $\int\limits_{a}^{b}\sqrt{|\gamma_1^2(x) + \cdots + \gamma_n^2(x)|}\d x$.
+    \item Пусть $G \subset \R^2$, и отображение представляет собой график: $F(x, y) = (x, y, \phi(x, y))$, где $\phi: \R \times \R \map \R$.
+        Здесь матрица Якоби $J_F(x, y) = \vect{1  & 0 \\ 0 & 1 \\ \partial_1\phi(x, y) & \partial_2\phi(x, y)}$, здесь $\partial_i$ --- производная по $i$-му аргументу.
+        Тем самым, $\mu_2(F(e)) = \int\limits_{e}\sqrt{1 + (\partial_1 \phi)^2 + (\partial_2 \phi)^2}\d\lambda_2$.
+    \item Заинтересуемся сходимостью $\int\limits_{\R^n \sm B_1}|x|^{\alpha}\d x$.
+        Сделаем полярную замену $r, \phi_1, \dots, \phi_{n - 1}$. Интеграл обращается в $\int\limits_{1}^{\infty}r^{n - 1}r^{\alpha}\d r \cdot \Psi(\phi_1, \dots, \phi_n)$.
+        Отсюда видно, что так как $\Psi(\phi_1, \dots, \phi_n)$ интегрируемо, то интеграл сходится $\iff n - 1 + \alpha < -1 \iff \alpha < -n$.
+    \item Вычислим $\int\limits_{0}^{\infty}e^{-x^2}\d x$.
+        Разумеется, интеграл суммируем. Пусть $I \coloneqq \int\limits_{-\infty}^{\infty}e^{-x^2}\d x$.
+    \[I^2 = \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-x^2}e^{-y^2}\d x\d y \circlesign{=}\]
+    Так как функция $e^{-x^2}e^{-y^2}$ суммируема на плоскости, то по теореме Фубини он равен двойному интегралу:
+    \[\circlesign{=}\iint\limits_{\R^2}e^{-x^2 - y^2}\d x\d y = \int\limits_{0}^{2\pi}\int\limits_{0}^{\infty}e^{-r^2}r\d r\d \phi = \left\|t = r^2\right\| = 2\pi \cdot \frac{1}{2}\int\limits_{0}^{\infty}e^{-t}\d t = \pi\]
+    Тем самым, $I = \sqrt{\pi}$, и из чётности функции $e^{-x^2}$:
+    \encircle{\int\limits_{0}^{\infty}e^{-x^2}\d x = \frac{\sqrt{\pi}}{2}}
+    }
+    \section{Элементы общей теории меры}
+    Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, на которой мы будем рассматривать разные меры.
+
+    Так как у этих мер могут быть разные множества меры нуль, то может не получиться пополнить одну, продолжив на новые подмножества --- элементы $\Sigma$-алгебры --- и другую, поэтому здесь никаких предположений о полноте мер скорее не будет.
+
+    Здесь \emph{мера} --- счётно-аддитивная и, вообще говоря, комплексная функция $\nu: \Sigma \map \C$.
+    Вспомним, что счётная аддитивность означает $\nu\left(\bigsqcup\limits_{j}e_j\right) = \sum\limits_{j}\nu(e_j)$.
+
+    В силу технических соображений мы запретим мере принимать бесконечные значения, хотя на самом деле их можно и разрешить.
+
+    Пусть $\nu = \alpha + i\beta$, где $\alpha, \beta$ --- вещественные меры ($\alpha = \Re(\nu), \beta = \Im(\nu)$).
+    Понятно, что $\nu$ счётно-аддитивна $\iff \alpha, \beta$ каждая счётно-аддитивна.
+
+    \proposal{
+    Для всяких непересекающихся $e_j$: ряд $\sum\limits_{j}\nu(e_j)$ сходится абсолютно.
+    \provehere{
+    По определению сумма не зависит от перестановок слагаемых.
+    }
+    }
+    \theorem{\label{bounded}
+    Множество значений любой комплексной меры ограничено.
+    \provehere{
+        В пределах данного доказательства назовём множество $a \in \Sigma$ <<плохим>>, если $\sup\defset{|\nu(b)|}{b \subset a, b \in \Sigma} = +\infty$.
+        Пусть наше пространство --- $(X, \Sigma)$.
+    \indentlemma{
+    Если $e$ --- плохое множество, и $e = e_1 \sqcup e_2$, то хотя бы одно из $e_1$ и $e_2$ --- плохое.
+    }{
+    От противного: если оба хорошие, то и $e$ хорошее, так как $\forall b \subset e: b = (b \cap e_1) \cup (b \cap e_2)$, и меры $(b \cap e_1)$ и $(b \cap e_2)$ ограничены.
+    }
+        \indentlemma{
+    Если $e$ --- плохое множество, то $\exists F, G: F \sqcup G = e$, такие, что $|\nu(F)|, |\nu(G)| \ge 1$.
+    }{
+        Так как $e$ --- плохое, то $\exists F: |\nu(F)| \ge |\nu(e)| + 1$. Но тогда для $G \coloneqq e \sm F: |\nu(G)| = |\nu(e) - \nu(F)| \ge |\nu(F)| - |\nu(e)| \ge 1$.
+    }
+    От противного: пусть $X$ --- плохое.
+    Тогда $\exists a, b: a \sqcup b = X$, где $|\nu(a)|, |\nu(b)| \ge 1$.
+        Одно из них плохое, обозначим его через $F_1$, а второе обозначим $G_1$.
+        Применяя ту же самую конструкцию к $F_1$, получим $F_1 = F_2 \sqcup G_2$, где $|\nu(F_2)|, |\nu(G_2)| \ge 1$, причём $F_2$ --- плохое.
+
+    И так далее, в итоге $X = \bigsqcup\limits_{j = 1}^{\infty}G_j \sqcup \bigcap\limits_{j = 1}^{\infty}F_j$.
+
+    Тогда $\nu\left(\bigsqcup\limits_{j = 1}^{\infty}G_j\right) = \sum\limits_{j = 1}^{\infty}\nu(G_j) = \infty$, ряд не сходится, противоречие.
+    }
+    }
     \newlection{20 декабря 2023 г.}
     Сужение меры можно определить так $\mu\Big|_E(a) \bydef \mu(a \cap E)$.
 
     Иногда сужение определяют немного по-другому: $\mu\Big|_E(a)$ --- мера, заданная как $\mu$, но теоретико-множественно суженная на $\defset{b \in \Sigma}{b \subset E}$.
+    В теореме Хана ниже, по-видимому, используется именно это, последнее, определение.
     \theorem[Хан]{
-        Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$. Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\Big|_E \ge 0, \mu\Big|_F \le 0$.
+        Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$.
+        Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\Big|_E \ge 0, \mu\Big|_F \le 0$. Такое $E$, что $\mu\Big|_E \ge 0$ называется \emph{множеством положительности} (аналогично, $F$ --- \emph{множество отрицательности}).
         \provehere{
-            Ранее доказано, что $\defset{\mu(b)}{b \in \Sigma}$ ограничено.
-            Пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
+            $\defset{\mu(b)}{b \in \Sigma}$ ограничено~(\ref{bounded}), пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
             \bullets{
                 \item $M = 0$. Тогда $\mu \le 0$, и $F = X, E = \o$.
                 \item $M > 0$. По определению супремума $\exists b_k \in \Sigma: M - \frac{1}{2^k} \le \mu(b_k) \le M$.
