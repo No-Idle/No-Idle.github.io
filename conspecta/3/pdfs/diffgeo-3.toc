@@ -1,0 +1,48 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Алгебраическая топология}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Применения фундаментальной группы}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Теорема Жордана}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Ретракция. Гомотопическая эквивалентность}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Гомотопическая эквивалентность}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Пары Борсука}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Клеточная пара --- пара Борсука}{9}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Гомотопическая эквивалентность и фундаментальная группа}{10}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Накрытия}{10}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Морфизмы накрытий}{12}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Иерархия накрытий с общей базой}{15}{subsection.1.8.2}%
+\contentsline {section}{\numberline {1.9}Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}{15}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}План}{15}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Фундаментальная группа конечного графа}{16}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Теорема Зейферта --- ван Кампена}{16}{subsection.1.9.3}%
+\contentsline {subsubsection}{Некоторые определения из теории групп}{16}{section*.2}%
+\contentsline {subsubsection}{Формулировка теоремы Зейферта --- ван Кампена и доказательство для клеточных пространств}{16}{section*.3}%
+\contentsline {section}{\numberline {1.10}Фундаментальные группы основных поверхностей}{18}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Построение универсального накрытия}{18}{section.1.11}%
+\contentsline {chapter}{\numberline {2}Дифференциальная геометрия}{20}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Дифференциальная геометрия кривых}{20}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Параметризация кривой длиной дуги}{22}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Кривизна плоской кривой, базис Френе}{23}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Формулы Френе}{23}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Поворот кривой}{24}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Замкнутые кривые}{25}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Выпуклые кривые на плоскости}{25}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Базис Френе и кривизны в $\mathbb {R}^n$}{26}{section.2.3}%
+\contentsline {section}{\numberline {2.4}2-мерные поверхности в $\mathbb {R}^3$}{27}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Локальная параметризация}{28}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Гладкие функции на поверхности}{29}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Производная по направлению}{29}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Первая квадратичная форма поверхности}{30}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Площадь}{30}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}I форма при замене координат}{31}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Изометрии}{31}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Вторая квадратичная форма}{31}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Специальные координаты. Соприкасающийся параболоид}{32}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Гауссово отображение}{33}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Оператор Вайнгартена}{33}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Что-то считаем}{35}{subsection.2.7.3}%
+\contentsline {section}{\numberline {2.8}Формулы типа Френе}{35}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Вычисление главных кривизн и направлений в координатах}{36}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Ковариантная производная}{37}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Вычисления в координатах. Символы Кристоффеля}{38}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Зачем нужны символы Кристоффеля}{38}{subsection.2.10.2}%
+\contentsline {section}{\numberline {2.11}Выпуклые поверхности}{40}{section.2.11}%

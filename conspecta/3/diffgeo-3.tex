@@ -681,23 +681,48 @@
         }
     }
     \example{
-        Букет двух окружностей имеет группу $\mathcal{F}_2$. Накрытие с группой $\Z$ факторизует по одной образующей, оставляя другую. Выглядит это примерно так:~\ref{partial_factorizing}.
-%        \[\begin{tikzpicture}
-%              \newcommand{\rose}[4]{ %x, y, dir, length
-%                  \pgfmathsetmacro{\length}{\numexpr#4};
-%                  \ifnum\length>1/10
-%                        \IfStrEq{#3}{u}{\draw (#1, #2) -- ({#1}, {#2-#4});}{\fill(0,0) circle(1pt);\rose{#1}{#2-#4/2}{d}{#4/2}};
-%
-%                        \IfStrEq{#3}{d}{\draw (#1, #2) -- ({#1}, {#2+#4});}{\fill(0,0) circle(1pt);\rose{#1}{#2+#4/2}{u}{#4/2}};
-%                  \fill(0,1) circle(1pt);
-%                        \IfStrEq{#3}{l}{\draw (#1, #2) -- ({#1+#4}, {#2});}{\rose{#1+#4/2}{#2}{r}{#4/2}};
-%                  \fill(0,2) circle(1pt);
-%                        \IfStrEq{#3}{r}{\draw (#1, #2) -- ({#1-#4}, {#2});}{\rose{#1-#4/2}{#2}{l}{#4/2}};
-%                  \fi
-%              }
-%              \rose{0}{0}{u}{3/2}
-%        \end{tikzpicture}\]
-        \pic[0.5]{partial_factorizing}{Накрытие букета окружностей с группой $\Z$.}
+        Букет двух окружностей имеет группу $\mathcal{F}_2$. Накрытие с группой $\Z$ факторизует по одной образующей, оставляя другую. Выглядит это примерно так:
+        \[\begin{tikzpicture}[scale=0.2]
+              \fill (0, 0) circle (7pt);
+              \newcommand{\rose}[4]{ %x, y, dir, length
+                  \pgfmathsetmacro{\length}{\numexpr{2 * #4}};
+                  \ifnum\length>1
+                        \IfStrEq{#3}{u}{\draw[<-] (#1, #2) -- ({#1}, {#2-#4})}{\rose{#1}{#2-#4/2}{d}{#4/2}};
+                        \IfStrEq{#3}{d}{\draw[<-] (#1, #2) -- ({#1}, {#2+#4})}{\rose{#1}{#2+#4/2}{u}{#4/2}};
+                        \IfStrEq{#3}{l}{\draw[<-] (#1, #2) -- ({#1+#4}, {#2})}{\rose{#1+#4/2}{#2}{r}{#4/2}};
+                        \IfStrEq{#3}{r}{\draw[<-] (#1, #2) -- ({#1-#4}, {#2})}{\rose{#1-#4/2}{#2}{l}{#4/2}};
+                  \fi
+              }
+              \rose{0}{0}{.}{16};
+              \node[above] at(4,0){$a$};
+              \node[above] at(-4,0){$a^{-1}$};
+              \node[right] at(0,4){$b$};
+              \node[right] at(0,-4){$b^{-1}$};
+        \end{tikzpicture}\begin{tikzpicture}[scale=0.3]
+            \fill (4, 0) circle (5pt);
+            \draw (0, -1.5) circle[radius=1.5];
+            \foreach \x in {-8,-4,0} {
+                \draw[<-] (\x, 0) -- ({\x+4}, 0);
+                \draw ({\x},{-1.5}) circle[radius=1.5];
+                \node[below] at (\x, -3) {$b$};
+                \node[above] at ({\x+2},0) {$a^{-1}$};
+            }
+            \foreach \x in {4,8,12} {
+                \draw[->] (\x, 0) -- ({\x+4}, 0);
+                \draw ({\x},{-1.5}) circle[radius=1.5];
+                \node[below] at (\x, -3) {$b$};
+                \node[above] at ({\x+2},0) {$a$};
+            }
+        \end{tikzpicture}
+        \begin{tikzpicture}[scale=0.3]
+            \draw[->] (-1.5, 1.5) -- (-1.6, 1.5);
+            \draw[->] (1.5, 1.5) -- (1.6, 1.5);
+            \draw (-1.5, 0) circle [radius=1.5];
+            \draw (1.5, 0) circle [radius=1.5];
+            \node[above] at (-1.5, 1.5) {$a$};
+            \node[above] at (1.5, 1.5) {$b$};
+        \end{tikzpicture}\]
+%        \pic[0.5]{partial_factorizing}{Накрытие букета окружностей с группой $\Z$.}
     }
 
     \subsection{Иерархия накрытий с общей базой}
