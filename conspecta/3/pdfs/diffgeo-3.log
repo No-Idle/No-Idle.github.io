@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  3 JAN 2024 19:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 JAN 2024 01:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,7 +1173,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 ...РёСЃС‚РѕС„С„РµР»СЏ}{38}{subsection.2.10.2}
+l.47 ...РёСЃС‚РѕС„С„РµР»СЏ}{39}{subsection.2.10.2}
                                                   % [1
 
 ])
@@ -2224,45 +2224,38 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (67.01607pt too wide) in paragraph at lines 741--741
+Overfull \hbox (67.01607pt too wide) in paragraph at lines 751--751
 []\T2A/faq/bx/n/14.4 Фундаментальные груп-пы кле-точ-ных про-странств (CW-компл
 ексов).
  []
 
 [15]
-Overfull \hbox (14.32805pt too wide) in paragraph at lines 766--767
+Overfull \hbox (14.32805pt too wide) in paragraph at lines 776--777
 []\T2A/faq/m/n/10 Напомним, что \T2A/faq/m/it/10 сво-бод-ное про-из-ве-де-ние \
 T2A/faq/m/n/10 групп $\OML/cmm/m/it/10 G \OT1/cmr/m/n/10 = []$ \T2A/faq/m/n/10 
 и $\OML/cmm/m/it/10 H \OT1/cmr/m/n/10 = []$
  []
 
 
-Overfull \hbox (7.35933pt too wide) detected at line 774
+Overfull \hbox (7.35933pt too wide) detected at line 784
 [][][][]\OML/cmm/m/it/10 I \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 F \OMS/cmsy/m/n/1
 0 ! \OML/cmm/m/it/10 G; J \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 F \OMS/cmsy/m/n/10
  ! \OML/cmm/m/it/10 H:
  []
 
-[16] [17]
-Overfull \hbox (27.44292pt too wide) in paragraph at lines 930--930
-[]\T2A/faq/m/n/10 Построим $[]$, как мно-же-ство. Вы-бе-рем $\OML/cmm/m/it/10 x
-[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 X$\T2A/faq/m/n/10 , по-стро-им $[]$. Пус
-ть $\OML/cmm/m/it/10 PX \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 .
- []
-
-[18] [19]
+[16] [17] [18] [19] [20]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
-Overfull \hbox (18.08954pt too wide) in paragraph at lines 939--939
+Overfull \hbox (18.08954pt too wide) in paragraph at lines 980--980
 [][]\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Глад-кая функ-ция $\OML
 /cmm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Бес-ко-неч
 -но диф-фе-рен-ци-ру-е-мая функ-ция $[]$. 
  []
 
-[20
+[21
 
-] [21] [22] [23] [24]
-Overfull \hbox (33.098pt too wide) in paragraph at lines 1233--1233
+] [22] [23] [24] [25]
+Overfull \hbox (33.098pt too wide) in paragraph at lines 1274--1274
 []$\OML/cmm/m/it/10 T$ \T2A/faq/m/n/10 од-но-связ-но, по-это-му су-ще-ству-ет п
 од-ня-тие --- непре-рыв-ный ар-гу-мент $\OML/cmm/m/it/10 A$\T2A/faq/m/n/10 : $\
 OMS/cmsy/m/n/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; ^^\\OT1/cmr/m/n/10 ) = []
@@ -2271,34 +2264,34 @@ ML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 t; ^^\\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 . 
  []
 
-[25]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1284.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1284.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1284.
-
 [26]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1332.
+(hyperref)                removing `math shift' on input line 1325.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1332.
+(hyperref)                removing `superscript' on input line 1325.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1332.
+(hyperref)                removing `math shift' on input line 1325.
 
-[27] [28] [29]
-Overfull \hbox (11.42009pt too wide) in paragraph at lines 1518--1521
+[27]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1373.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1373.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1373.
+
+[28] [29] [30]
+Overfull \hbox (11.42009pt too wide) in paragraph at lines 1559--1562
 []$\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u; v\OT1/cmr/m/n/10 ) = 
 [] \OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u; v\OT1/cmr/m/n/10 ) 
 = [] \OML/cmm/m/it/10 ; G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u; v\OT1/cmr/m/n/10 
@@ -2306,33 +2299,33 @@ Overfull \hbox (11.42009pt too wide) in paragraph at lines 1518--1521
 ] = []$\T2A/faq/m/n/10 .
  []
 
-[30] [31] [32] [33] [34] [35] [36] [37]
-Overfull \hbox (23.00926pt too wide) in paragraph at lines 1974--1974
+[31] [32] [33] [34] [35] [36] [37] [38]
+Overfull \hbox (23.00926pt too wide) in paragraph at lines 2015--2015
 []\T2A/faq/m/n/10 Дифференцируя по пра-ви-лу Лейб-ни-ца, по-лу-ча-ем $\OMS/cmsy
 /m/n/10 r[]\OT1/cmr/m/n/10 ([] \OML/cmm/m/it/10 ^^Q[]r[]\OT1/cmr/m/n/10 ) = [] 
 \OML/cmm/m/it/10 ^^Q[]r[] \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 ^^Q[]\OMS/cmsy/
 m/n/10 r[]\OML/cmm/m/it/10 r[]$\T2A/faq/m/n/10 .
  []
 
-[38] [39] [40]
-Overfull \hbox (1.12166pt too wide) in paragraph at lines 2085--2085
+[39] [40] [41]
+Overfull \hbox (1.12166pt too wide) in paragraph at lines 2126--2126
 [][]\T2A/faq/bx/n/10 Определение 2.11.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-с
 я по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но 
 изо-мет-рич-ная плос-
  []
 
-[41] [42] [43] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
+[42] [43] [44] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
-(rerunfilecheck)             Checksum: 94BEB2DDA2D14F1583EFB5BE4FA4B690;12711.
+(rerunfilecheck)             Checksum: 210EC748344E20A1A55607ED65225BB2;12717.
  ) 
 Here is how much of TeX's memory you used:
- 28258 strings out of 479648
- 531234 string characters out of 5886115
- 851414 words of memory out of 5000000
- 45419 multiletter control sequences out of 15000+600000
+ 28342 strings out of 479648
+ 533232 string characters out of 5886115
+ 856263 words of memory out of 5000000
+ 45501 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,16n,103p,825b,1130s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2356,10 +2349,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (44 pages, 515432 bytes).
+ (45 pages, 521149 bytes).
 PDF statistics:
- 904 PDF objects out of 1000 (max. 8388607)
- 778 compressed objects within 8 object streams
- 292 named destinations out of 1000 (max. 500000)
+ 909 PDF objects out of 1000 (max. 8388607)
+ 782 compressed objects within 8 object streams
+ 294 named destinations out of 1000 (max. 500000)
  388 words of extra memory for PDF output out of 10000 (max. 10000000)
 

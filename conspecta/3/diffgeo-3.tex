@@ -444,7 +444,7 @@
     }
 
     \fact{Для любого накрытия $p: Y \map X$: $p_*$ --- инъекция.
-    \provehere{Если $\exists \alpha: p_*([\alpha]) = 0$, то $p([\alpha])$ --- стягиваемая петля, откуда $\alpha$ --- тоже, то есть $[\alpha] = 0$.}}
+    \provehere{Если $\exists \alpha: p_*([\alpha]) = 0$, то $p([\alpha])$ --- стягиваемая петля, откуда $\alpha$ --- тоже, то есть $[\alpha] = e$.}}
 
     \definition[Группа накрытия]{
         Образ $\Image(p_*) \le \pi_1(X, x_0)$.
@@ -499,10 +499,10 @@
             }}
     }
     \ok
-    Ниже считаем, что все пространства <<хорошие>>: линейно связные, локально линейно связные, микроодносвзяные.
     \definition[Микроодносвязное или полулокально односвязное пространство $X$]{\label{good}
     $\forall x \in X: \exists U \ni x$: все петли, лежащие в $U$, стягиваемы в $X$.
     }
+    Ниже считаем, что все пространства <<хорошие>>: линейно связные, локально линейно связные, микроодносвязные.
 
     \subsection{Морфизмы накрытий}
     Рассмотрим два накрытия с общей базой, пусть у каждого из трёх пространств отмечена некоторая точка (и морфизмы отображают отмеченную точку в отмеченную точку).
@@ -642,9 +642,9 @@
         \provehere{
             Рассмотрим $x \in X$.
             Так как действие накрывающее, то $\exists U \ni x$, такая, что $\{gU\}_{g \in G}$ дизъюнктны.
-            Тогда $p(U)$ --- правильно накрываемая окрестность.
+            Тогда $p(U)$ --- правильно накрываемая окрестность $p(x) \in X/G$.
 
-            В самом деле, $p^{-1}(U) = \bigsqcup\limits_{g \in G}gU$.
+            В самом деле, $p^{-1}(p(U)) = \bigsqcup\limits_{g \in G}gU$.
 
             Осталось проверить, что $p(U)$ открыто. Это общий факт про действие групп --- образ открытого множества открыт.
             В самом деле, $p^{-1}(p(U)) = \bigcup\limits_{g \in G}gU$, что открыто, откуда $p(U)$ открыто (по определению $V$ открыто в $X/_\sim$ $\iff p^{-1}(V)$ открыто в $X$).
@@ -682,10 +682,11 @@
     }
     \example{
         Букет двух окружностей имеет группу $\mathcal{F}_2$. Накрытие с группой $\Z$ факторизует по одной образующей, оставляя другую. Выглядит это примерно так:
-        \[\begin{tikzpicture}[scale=0.2]
-              \fill (0, 0) circle (7pt);
+        \[\begin{tikzpicture}
+              \begin{scope}[xshift=-4cm]
+              \fill (0, 0) circle (1.5pt);
               \newcommand{\rose}[4]{ %x, y, dir, length
-                  \pgfmathsetmacro{\length}{\numexpr{2 * #4}};
+                  \pgfmathsetmacro{\length}{\numexpr{8 * #4}};
                   \ifnum\length>1
                         \IfStrEq{#3}{u}{\draw[<-] (#1, #2) -- ({#1}, {#2-#4})}{\rose{#1}{#2-#4/2}{d}{#4/2}};
                         \IfStrEq{#3}{d}{\draw[<-] (#1, #2) -- ({#1}, {#2+#4})}{\rose{#1}{#2+#4/2}{u}{#4/2}};
@@ -693,50 +694,59 @@
                         \IfStrEq{#3}{r}{\draw[<-] (#1, #2) -- ({#1-#4}, {#2})}{\rose{#1-#4/2}{#2}{l}{#4/2}};
                   \fi
               }
-              \rose{0}{0}{.}{16};
-              \node[above] at(4,0){$a$};
-              \node[above] at(-4,0){$a^{-1}$};
-              \node[right] at(0,4){$b$};
-              \node[right] at(0,-4){$b^{-1}$};
-        \end{tikzpicture}\begin{tikzpicture}[scale=0.3]
-            \fill (4, 0) circle (5pt);
-            \draw (0, -1.5) circle[radius=1.5];
-            \foreach \x in {-8,-4,0} {
+              \rose{0}{0}{.}{3};
+              \node[above] at(0.75,0){$a$};
+              \node[above] at(-0.75,0){$a^{-1}$};
+              \node[right] at(0,0.75){$b$};
+              \node[right] at(0,-0.75){$b^{-1}$};
+        \end{scope}
+        \begin{scope}[xshift=3cm, yshift=2cm]
+            \fill (1.2, 0) circle (1.5pt);
+            \foreach \x in {-2.4,-1.2,0} {
                 \draw[<-] (\x, 0) -- ({\x+4}, 0);
-                \draw ({\x},{-1.5}) circle[radius=1.5];
-                \node[below] at (\x, -3) {$b$};
-                \node[above] at ({\x+2},0) {$a^{-1}$};
+                \draw ({\x},{-0.5}) circle[radius=0.5];
+                \draw[->] (\x, -1) -- ({\x-0.05}, -1) node[below] {$b$};
+                \node[above] at ({\x+0.6},0) {$a^{-1}$};
             }
-            \foreach \x in {4,8,12} {
-                \draw[->] (\x, 0) -- ({\x+4}, 0);
-                \draw ({\x},{-1.5}) circle[radius=1.5];
-                \node[below] at (\x, -3) {$b$};
-                \node[above] at ({\x+2},0) {$a$};
+            \foreach \x in {1.2,2.4} {
+                \draw[->] ({\x-4}, 0) -- ({\x+1.2}, 0);
+                \node[above] at ({\x+0.6},0) {$a$};
+                \draw ({\x},{-0.5}) circle[radius=0.5];
+                \draw[->] (\x, -1) -- ({\x-0.05}, -1) node[below] {$b$};
             }
-        \end{tikzpicture}
-        \begin{tikzpicture}[scale=0.3]
-            \draw[->] (-1.5, 1.5) -- (-1.6, 1.5);
-            \draw[->] (1.5, 1.5) -- (1.6, 1.5);
-            \draw (-1.5, 0) circle [radius=1.5];
-            \draw (1.5, 0) circle [radius=1.5];
-            \node[above] at (-1.5, 1.5) {$a$};
-            \node[above] at (1.5, 1.5) {$b$};
+            \draw ({3.6},{-0.5}) circle[radius=0.5];
+            \draw[->] (3.6, -1) -- (3.55, -1) node[below] {$b$};
+        \end{scope}
+        \begin{scope}[xshift=3cm, yshift=-2cm]
+            \fill (0, 0) circle (1.5pt);
+            \draw[->] (-0.5, 0.5) -- (-0.45, 0.5);
+            \draw[->] (0.5, 0.5) -- (0.55, 0.5);
+            \draw (-0.5, 0) circle [radius=0.5];
+            \draw (0.5, 0) circle [radius=0.5];
+            \node[above] at (-0.5, 0.5) {$a$};
+            \node[above] at (0.5, 0.5) {$b$};
+        \end{scope}
+        \draw[->,dashed] (-1,0.5) -- (-0.2,1);
+        \draw[->,dashed] (1,0.5) -- (1.5,-1);
+        \draw[->,dashed] (-1,-0.5) -- (1,-1.3);
         \end{tikzpicture}\]
 %        \pic[0.5]{partial_factorizing}{Накрытие букета окружностей с группой $\Z$.}
     }
 
     \subsection{Иерархия накрытий с общей базой}
-    Пусть $\pi_1(X) \ge N_1 \ge N_2$ --- цепочка вложений групп. Тогда имеется цепочка морфизмов накрытий в обратном направлении.
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJ7WH0vTl8xID0gKFlfMiwgeV8yKSJdLFswLDEsIntYfS9OXzEgID0gKFksIHlfMSkiXSxbMCwyLCJYIl0sWzAsMSwicF8yIl0sWzEsMiwicF8xIl1d
+    Пусть $\pi_1(X) \ge N_1 \ge N_2$ --- цепочка вложений групп, пусть $Y \map X$ --- универсальное накрытие.
+    Тогда имеется цепочка морфизмов накрытий в обратном направлении.
+    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJ7WX0vTl8yID0gKFlfMiwgeV8yKSJdLFswLDIsIntZfS9OXzEgID0gKFlfMSwgeV8xKSJdLFswLDMsIlkvXFxwaV8xKFgpID0gKFgsIHhfMCkiXSxbMCwwLCJZL1xcezFcXH0gPSAoWSwgeV8wKSJdLFswLDEsInBfMiJdLFsxLDIsInBfMSJdLFszLDAsInBfMCJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {{X}/N_1 = (Y_2, y_2)}
-          \\
-          {{X}/N_1  = (Y, y_1)} \\
-          X
-          \arrow["{p_2}", from=1-1, to=2-1]
-          \arrow["{p_1}", from=2-1, to=3-1]
+    {Y/\{1\} = (Y, y_0)} \\
+    {{Y}/N_2 = (Y_2, y_2)} \\
+    {{Y}/N_1  = (Y_1, y_1)} \\
+    {Y/\pi_1(X) = (X, x_0)}
+    \arrow["{p_2}", from=2-1, to=3-1]
+    \arrow["{p_1}", from=3-1, to=4-1]
+    \arrow["{p_0}", from=1-1, to=2-1]
     \end{tikzcd}\]
-
+    Здесь, например, $p_2$ --- морфизм накрытий $p_1 \circ p_2$ и $p_1$.
 
     \section{Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}
 
@@ -806,21 +816,50 @@
     }
     \theorem[О приклеивании двумерной клетки]{
         Пусть $Y$ --- <<хорошее>>, приклеим двумерную клетку $D^2$ по отображению $\alpha: \partial D^2 \map Y$.
-        $X \coloneqq Y \sqcup_\alpha D^2$. Тогда $\pi_1(X) = \pi_1(Y)/[\alpha]^{\pi_1(Y)}$ (где $[\alpha]^{\pi_1(Y)}$ --- нормальное замыкание).
+        $X \coloneqq Y \sqcup_\alpha D^2$. Тогда $\pi_1(X) = \pi_1(Y)/[\alpha]^{\pi_1(Y)}$ (где $[\alpha]^{\pi_1(Y)}$ --- нормальное замыкание подгруппы $\angles{[\alpha]} \le \pi_1(Y)$).
         \provehere[Доказательство из теоремы Зейферта --- ван Кампена]{
             Пусть $y \in D^2$ --- центр диска.
             Рассмотрим $U = X \sm \{y\}, V = B_{\frac{1}{2}}(y)$. Тогда пересечение $U \cap V$ гомотопически эквивалентно (внутри $U \cup V$) петле $\alpha$, $\pi_1(V) = \{e\}$.
-            \[\pi_1(X) = \pi_1(Y) \underset{{[\alpha]^{\pi_1(Y)}}}\star \{e\} = \pi_1(Y)/[\alpha]^{\pi_1(Y)}\]
+            \[\pi_1(X) = \pi_1(Y) \underset{\angles{[\alpha]}}\star \{e\} = \pi_1(Y)/[\alpha]^{\pi_1(Y)}\]
         }
         \provehere[Другое доказательство]{
             Пусть $\alpha: S^1 \map Y, X = Y \sqcup_{\alpha} D^2, i: Y \map X, i_*: \pi_1(Y) \map \pi_1(X)$.
 
-            Заметим, что $i_*$ --- эпиморфизм: используя лемму о свободной точке (появлялась при доказательстве того, что на $D^n$ для $n \ge 2$ всякая петля гомотопически эквивалентна несюръективной) можно гомотопией любую петлю $\gamma: S^1 \map Y$ привести к петле $\gamma: S^1 \map X$. Для этого надо рассмотреть линейное <<отталкивание>> от данной свободной точки.
+            Заметим, что $i_*$ --- эпиморфизм: используя лемму о свободной точке (появлялась при доказательстве того, что на $D^n$ для $n \ge 2$ всякая петля гомотопически эквивалентна несюръективной) можно гомотопией любую петлю $\beta: S^1 \map X$ привести к петле $\beta: S^1 \map Y$.
+            Для этого надо рассмотреть линейное <<отталкивание>> от данной свободной точки.
 
             Теперь осталось проверить, что $\Ker(i_*) = [\alpha]^{\pi_1(Y)}$.
             Очевидно включение $[\alpha] \in \Ker(i_*)$, так как ядро нормально, то $[\alpha]^{\pi_1(Y)} \le \Ker(i_*)$.
 
-            Дальше было что-то про накрытие $Z \map Y$ с группой $[\alpha]^{\pi_1(Y)}$ и петли, которые не размыкаются при поднятии, я не понял.
+            Рассмотрим накрытие $p_1: \tilde{Y} \map Y$ с группой $\Image((p_1)_*) = [\alpha]^{\pi_1(Y)}$.
+
+            Зафиксируем $w_0 \coloneqq \alpha(0) \in W$, и положим $W \coloneqq \Image(\alpha) \subset Y$, $\tilde{W} \coloneqq p_1^{-1}(W)$.
+            Из регулярности накрытия: $\forall \tilde{w}_\gamma \in p_1^{-1}(w_0)$: группа накрытия с отмеченной точкой $\tilde{w}_\gamma$ --- это $\angles{[\alpha]}^{\pi_1(Y)}$.
+            Так как эта группа содержит $\pi_1(W) = \angles{\alpha}$, то включение $W \hookrightarrow Y$ можно поднять, для точки $\tilde{w}_\gamma \in p_1^{-1}(w_0)$ получится $\tilde{w}_\gamma \in \tilde{W}_\gamma \cong W$.
+            Иными словами, $\tilde{W}$ состоит из нескольких компонент связности $\tilde{W}_\gamma$, гомеоморфных $W$ (гомеоморфизм $p_1\Big|_{W_\gamma}$).
+
+            Приклеим к каждой такой компоненте связности $\tilde{W}_\gamma$ свой диск по отображению $\tilde{\alpha}_\gamma: \partial D^2 \map \tilde{W}_\gamma$, и назовём склейку $\tilde{X} \coloneqq \tilde{Y} \sqcup_{\{\alpha_\gamma\}} \{D^2_{\gamma}\}$.
+            Пусть $\tilde{i}: \tilde{Y} \hookrightarrow \tilde{X}$ --- включение.
+
+            Построим $p_2: \tilde{X} \map X$, такое, что $p_2\Big|_{\tilde{Y}} = p_1$, и $p_2$ отображает тождественно $D^2_\gamma \map D^2$.
+            Оно непрерывно, и, более того, это накрытие --- в этом несложно убедиться руками, оно очень похоже на накрытие $p_1$.
+
+            Теперь мы готовы доказать, что $\Ker(i_*) \le [\alpha]^{\pi_1(Y)}$.
+            Рассмотрим $[\beta] \notin [\alpha]^{\pi_1(Y)}$.
+            Эту петлю можно поднять, получив разомкнутый путь $\tilde{\beta}: [0, 1] \map \tilde{Y}$.
+        % https://q.uiver.app/#q=WzAsNSxbMCwxLCJbMCwgMV0iXSxbMSwxLCJZIl0sWzIsMSwiWCJdLFsxLDAsIlxcdGlsZGV7WX0iXSxbMiwwLCJcXHRpbGRle1h9Il0sWzMsNCwiXFx0aWxkZXtpfSJdLFsxLDIsImkiLDJdLFszLDEsInBfMSJdLFs0LDIsInBfMiJdLFswLDEsIlxcYmV0YSIsMl0sWzAsMywiXFx0aWxkZXtcXGJldGF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  \& {\tilde{Y}} \& {\tilde{X}} \\
+                  {[0, 1]} \& Y \& X
+                  \arrow["{\tilde{i}}", from=1-2, to=1-3]
+                  \arrow["i"', from=2-2, to=2-3]
+                  \arrow["{p_1}", from=1-2, to=2-2]
+                  \arrow["{p_2}", from=1-3, to=2-3]
+                  \arrow["\beta"', from=2-1, to=2-2]
+                  \arrow["{\tilde{\beta}}", dashed, from=2-1, to=1-2]
+            \end{tikzcd}\]
+            Из коммутативности диаграммы петля $i \circ \beta$ в $X$ при поднятии в $\tilde{X}$ размыкается точно так же.
+            Значит, эта петля не стягиваема в $X$, $[\beta] \notin \Ker(i_*)$.
         }
     }
     \newlection{9 октября 2023 г.}
@@ -836,7 +875,7 @@
         Представим $X = U \cup V$, где $U$ --- образ $B_{\frac12}(0)$, $V$ --- весь $X$ без образа $0$.
         $U \cap V = S^{n - 1} \times (0, 1)$.
 
-        Разобьём $[0,1]\times [0,1]$ по лемме Лебега на маленькие квадратики $K_{i,j}$, так что $H(K_{i,j}) \subset U$ или $H(K_{i,j}) \subset V$.
+        Разобьём квадрат гомотопии $[0,1]\times [0,1]$ по лемме Лебега на маленькие квадратики $K_{i,j}$, так что $H(K_{i,j}) \subset U$ или $H(K_{i,j}) \subset V$.
 
         Обозначим $L = \bigcup\limits_{K_{i,j} \subset V}K_{i,j}$.
         Рассмотрим связные компоненты квадратиков из $L$, два квадратика будем считать связанными, если у них есть общая сторона.
@@ -847,11 +886,11 @@
         Так как $S^{n-1}\times (0,1)$ односвязно, то петля $H \circ \alpha$ стягиваема в $U \cap V$.
         Тогда внутрь петли можно вклеить диск $D^2$.
 
-        Таким образом, гомотопия не задевает образ центра шара, дальше ясно.
+        Таким образом, гомотопия не задевает образ центра шара, дальше <<линейным отталкиванием>> выдуваем гомотопию в $Y$.
     }
 
 
-    \section{Фундаментальные группы основных поверхностей}
+    \subsection{Фундаментальные группы основных поверхностей}
     $S_p$ --- сфера с $p$ ручками, $S_q$ --- сфера с $q$ плёнками.
 
     Склеим сферу с $p$ ручками, как клеточное пространство.
@@ -860,7 +899,10 @@
     \[\pi_1(S_q) = \angles{a_1, \dots, a_q \middle| a_1^2 \cdots a_q^2}\]
     Если посчитать абелианизацию $\pi_1(S_q)$, то есть фактор по коммутанту, то будет $\Z/2\Z \oplus \underbrace{\Z \oplus \dots \Z}_{q - 1}$.
     \provehere{
-        В качестве базиса $\pi_1(S_q)/\sim$ можно взять $a_1 \proddots a_q$ и $a_2, \dots, a_q$.
+        В качестве системы образующих $\pi_1(S_q)^{\ab}$ можно взять $a_1 \proddots a_q$ и $a_2, \dots, a_q$.
+    }
+    \corollary{
+        Сферы с ручками и плёнками неэквивалентны друг другу.
     }
     \theorem{
         Для всякой конечнопредставленной группы $G$ $\exists$ CW-комплекс $X: \pi_1(X) = G$.
@@ -870,61 +912,60 @@
             Приклеиваем клетки к букету окружностей.
         }
     }
-    \corollary{
-        Сферы с ручками и плёнками неэквивалентны друг другу.
-    }
-
-
     \section{Построение универсального накрытия}
     \theorem{
         Для <<хороших>> пространств существует универсальное накрытие $p: \tilde{X} \map X$.
         \provehere{
             Пусть $X$ --- <<хорошее>>, то есть линейно связное, локально линейно связное, полулокально односвязное~\ref{good}.
-
-
             \bullets{
-                \item Построим $\tilde{X}$, как множество.
-                Выберем $x_0 \in X$, построим $\tilde{X}$. Пусть $PX = \defset{\alpha: [0, 1] \map X}{\alpha(0) = x_0}$.
-                $\tilde{X} = PX/\sim$ --- пути, профакторизованные по гомотопности, связанной на концах.
-                \item Определим $p: \tilde{X} \map X, p([\alpha]] = \alpha(1)$.
+                \item Построим $\tilde{X}$, как множество. Зафиксируем $x_0 \in X$. Пусть $PX = \defset{\alpha: [0, 1] \map X}{\alpha(0) = x_0}$.
+                $\tilde{X} = PX/_\sim$ --- пути, профакторизованные по гомотопности, связанной на концах.
+                \item Определим $p: \tilde{X} \map X, p([\alpha]) = \alpha(1)$.
                 \item Введём на $\tilde{X}$ топологию. Назовём $U \subset X$ хорошим, если оно открыто, линейно связно, любая петля в $U$ стягиваема в $X$.
 
-                Введём базу топологии для $\tilde{X}$. Пусть $\alpha \in PX, \alpha(1) \in U$; обозначим через $U_{\alpha}$ класс петель вида $[\alpha s]$, где $s$ --- путь в $U$ с началом в $\alpha(1)$.
+                Введём базу топологии для $\tilde{X}$. Зафиксируем хорошее $U \subset X$.
 
-                Если $\beta \in U_{\alpha}$, то $U_{\beta} = U_{\alpha}$.
-                Надо проверить включение в обе стороны. $\gamma \in U_{\alpha}, \gamma = \alpha s_1$, откуда $\gamma = \alpha s s^{-1} s_1$.
+                Пусть $\alpha \in PX, \alpha(1) \in U$; обозначим через $U_{\alpha} \subset PX$ класс петель вида $[\alpha s]$, где $s$ --- путь в $U$ с началом в $\alpha(1)$.
+                \indentlemma{
+                    Если $\beta \in U_{\alpha}$, то $U_{\beta} = U_{\alpha}$.
+                }{
+                    Надо проверить включение в обе стороны. $\gamma \in U_{\alpha}, \gamma = \alpha s_1$, откуда $\gamma = \alpha s s^{-1} s_1$.
+                }
 
-                Проверим, что $\defset{U_{\alpha}}{\alpha \in PX}$ образуют базу топологии, то есть $U_\alpha \cap V_\beta = \bigcup W_{\gamma}$.
-                $\alpha(1) \in U, \beta(1) \in V$. Пусть $[\gamma] \in U_{\alpha} \cap V_{\beta}$, в частности, $\gamma(1) \in U \cap V$.
+                Проверим, что $\defset{U_{\alpha}}{\alpha \in PX}$ образуют базу топологии, то есть $U_\alpha \cap V_\beta = \bigcup W_{\gamma}$ для неких $W_\gamma$.
+                $\alpha(1) \in U, \beta(1) \in V$.
+                Пусть некий $[\gamma] \in U_{\alpha} \cap V_{\beta}$, в частности, $\gamma(1) \in U \cap V$.
                 Надо проверить, что $\gamma$ содержится в $U \cap V$ вместе с некой окрестностью.
 
-                В качестве $W$ выберем хорошую окрестность $\gamma(1)$, содердащуюся в $U \cap V$ (достаточно выбрать линейно связную компоненту $U \cap V$).
-                Достаточно проверить, что $W_{\gamma} \subset U_{\alpha}, V_{\beta}$.
+                В качестве $W$ выберем хорошую окрестность $\gamma(1)$, содержащуюся в $U \cap V$ (достаточно выбрать линейно связную компоненту $U \cap V$).
+                Достаточно проверить, что $W_{\gamma} \subset U_{\alpha}, V_{\beta}$, это правда.
                 \item Докажем, что $p$ --- накрытие.
-                Пусть $U \subset X$ --- хорошее. $p^{-1}(U) = \bigsqcup\limits U_{\alpha}$. В самом деле, если $U_{\alpha} \cap U_{\beta}$ непусто, то $U_{\alpha} = U_{\beta}$.
+                Пусть $U \subset X$ --- хорошее. $p^{-1}(U) = \bigsqcup\limits U_{\alpha}$.
+                В самом деле, если $U_{\alpha} \cap U_{\beta}$ непусто, то $U_{\alpha} = U_{\beta}$.
 
-                $p^{-1}(U)$ --- классы путей с концами в $U$. $p$ непрерывно и открыто (проеряем на базе).
+                $p^{-1}(U)$ --- классы путей с концами в $U$. $p$ непрерывно и открыто (проверяем на базе).
 
-                Проверим, что $p\Big|_{U_\alpha}$ --- биекция. То, что это сюръекция --- очевидно, почему $p$ --- инъекция?
+                Проверим, что $p\Big|_{U_\alpha}$ --- биекция.
+                То, что это сюръекция --- очевидно, почему $p$ --- инъекция?
 
                 Рассмотрим $[\gamma_1], [\gamma_2] \in U_{\alpha}$, предположим, что $p([\gamma_1]) = p([\gamma_2])$.
-                Тогда $\gamma_1(1) = \gamma_2(1)$, и каждый из них представим в виде $alpha \cdot s$.
+                Тогда $\gamma_1(1) = \gamma_2(1)$, и каждый из них представим в виде $\alpha \cdot s$.
                 Тогда пути $s_1$ и $s_2$ гомотопны, потому что окрестность хорошая, и $s_1 s_2^{-1}$ --- петля.
-                \item Докажем, что $\tilde{X}$ односвязно (и линейно связно).
-                Посмотрим на поднятие путей из $X$ в $\tilde{X}$.
-                Выберем $\tilde{x}_0 = [\const]_{x_0} = \alpha_0$.
+                \item Докажем, что $\tilde{X}$ линейно связно.
+                Для этого посмотрим на поднятие путей из $X$ в $\tilde{X}$.
+                Зафиксируем в соответствии с $x_0 \in X$ постоянный путь $\tilde{x}_0 = [\const_{x_0}] \eqqcolon \alpha_0 \in PX$.
 
-                $\alpha \in PX$ поднимем в $\tilde{\alpha}: [0, 1]\map\tilde{X}$. $\tilde{\alpha}(0) = \alpha_0$.
-                $\tilde{\alpha}(t) \sim \alpha\Big|_{[0, t]}$.
+                Рассмотрим $\alpha \in PX$.
+                У него имеется поднятие $\tilde{\alpha}: [0, 1]\map\tilde{X}$, такое, что $\tilde{\alpha}(0) = \alpha_0$.
 
-                Таким образом, $\tilde{X}$ линейно связно.
-                Проверим односвязность.
+                Заметим, что $\tilde{\alpha}(t) \sim \alpha\Big|_{[0, t]}$.
+                Таким образом, $\tilde{X}$ линейно связно: $\tilde{\alpha}$ соединяет $\alpha_0$ и $\alpha$.
+                \item Проверим односвязность $\tilde{X}$.
 
-                $\tilde{\alpha}: [0,1] \map X$ --- петля. Рассмотрим проекцию $p \circ \tilde{\alpha} = \alpha$
+                Пусть $\tilde{\alpha}: [0,1] \map \tilde{X}$ --- петля. Спроецируем её: $\alpha \coloneqq p \circ \tilde{\alpha}$.
 
-                Докажем односвязность. $\alpha_t = \alpha(tx)$, $x \in [0, 1]$.
-
-                Если поднятие --- петля: $[\alpha(t)] = [\const_{x_0}] = \tilde{\alpha}(0) =\tilde{\alpha}(1)$. Таким образом, $\alpha$ --- стягиваемая $\then \tilde{\alpha}$ стягиваемая.
+                Так как $\tilde{\alpha}$ --- петля, то $[\alpha_0] = \tilde{\alpha}(0) = \tilde{\alpha}(1) = [\alpha]$, то есть $\alpha$ --- стягиваема.
+                Но $\tilde{\alpha}$ --- поднятие $\alpha$, а поднятие стягиваемой петли стягиваемо.\qedhere
             }
         }
     }
@@ -1330,7 +1371,7 @@
 
 
     \section{2-мерные поверхности в $\R^3$}
-    Далее всё происходит в $\R^2$
+    Далее всё происходит в $\R^3$.
     \definition[Топологическая поверхность $\Sigma$]{
         Подмножество $\Sigma \subset \R^3$, которое может быть получено, как образ топологического вложения связного двумерного многообразия $f: M \hookrightarrow \R^3$.
 
