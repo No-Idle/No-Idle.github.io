@@ -26,13 +26,13 @@
         \provehere{
             Рассмотрим произвольную точку $x \in U$.
 
-            Если её удалить, то фундаментальная группа $U \sm \{x\}$ будет нетривиальной, а $\R^n \sm \{pt\}$ --- стягиваемо.
+            Если её удалить, то фундаментальная группа $U \sm \{x\}$ будет нетривиальной, а $\R^n \sm \{pt\}$ --- односвязно.
         }
     }
     \theorem[Об инвариантности края]{
         $\R_{\ge 0} \times \R$ не гомеоморфно никакому открытому $U \subset \R^2$.
         \provehere{
-            У $\R_{\ge 0} \times \R$ можно выкинуть граничную точку, пространство останется стягиваемым.
+            У $\R_{\ge 0} \times \R$ можно выкинуть граничную точку, пространство останется односвязным.
         }
     }
     \definition[Ретракция топологического пространства $X \supset A$]{
@@ -69,7 +69,7 @@
             Запишем $f(z) = z^n + a_1 z^{n -1} + \dots + a_n$.
 
             Обозначим $g(z) = a_1 z^{n-1} + \dots + a_n$.
-            Выберем достаточно большое $R \in \R_+$, такое, что $|z| \ge R \then |z^n| > |g(z)|$.
+            Выберем достаточно большое $R \in \R$, такое, что $|z| \ge R \then |z^n| > |g(z)|$.
 
             Если $z$ пробегает все значения одного модуля $z = R \cdot e^{i t}$ по $t \in [0, 2\pi]$, то $f(z) = z^n + g(z)$ пробегает некую нетривиальную петлю в $l \subset \C \sm \{0\}$ ($n$ раз оборачивающуюся вокруг нуля --- можно линейно прогомотопировать в петлю $R e^{i t}$).
 
@@ -107,21 +107,37 @@
         Пусть $\gamma_0: [0, 1] \map D^2$ --- путь от $N$ до $S$, причём пусть $\gamma_0(0, 1) \cap S^1 = \o$.
 
         Тогда существуют $p, q \in D^2$, <<достаточно близкие к границе>>, такие, что $p$ и $q$ лежат в разных компонентах связности $D^2 \sm \Image(\alpha)$.
+        \[\begin{tikzpicture}
+              \draw (0,0) circle (2cm);
+              \node at (0,2) [above] {$N$};
+              \node at (0,-2) [below] {$S$};
+              \draw[red,thick,->] (0,-2) to[out=15, in=190] (0,2);
+              \node at (0,0) [right]{$\gamma$};
+              \fill[blue] (0,2) circle (1.5pt);
+              \fill[red] (0,-2) circle (1.5pt);
+              \fill (-1.9,0) circle (1.5pt) node[right] {$p$};
+              \fill (1.9,0) circle (1.5pt) node[left] {$q$};
+        \end{tikzpicture}\]
         \provehere{
             Выберем $p_0$ на дуге $NS$ и $q_0$ на дуге $SN$.
-            Выберем внутри диска достаточно близко к $p_0$ и $q_0$, точки $p$ и $q$ соответственно (выберем так, чтобы $p_0$)
+            Выберем внутри диска достаточно близко к $p_0$ и $q_0$, точки $p$ и $q$ соответственно (выберем так, чтобы отрезки $p p_0$ и $q q_0$ не пересекали $\Image(\gamma)$).
+            Так можно сделать, так как $p_0, q_0 \notin \Image(\gamma)$, и $\Image(\gamma)$ компактно, откуда дополнение открыто.
+
+            Теперь рассмотрим замкнутую кривую $\gamma\cdot\overset{\frown}{NS}$ (обход против часовой стрелки).
+            Индекс точки $p$ относительно неё равен индексу относительно кривой $SN \cdot \overset{\frown}{NS}$ (так как можно прогомотопировать, не задевая $p$), то есть 1.
+            Аналогично, индекс точки $q$ относительно этой кривой равен 0, значит, эти точки лежат в разных компонентах линейной связности $D^2 \sm \Image(\gamma)$.
         }
     }
-    \theorem[Теорема Жордана]{
+    \intfact[Теорема Жордана]{
         Рассмотрим инъективное $S^1 \overset{\alpha}\hookrightarrow \R^2$. Тогда число компонент связности $\#(\R^2 \sm \Image(\alpha)) = 2$.
     }
-    \note[Уточнение, теорема Шёнфлиса]{
+    \intfact[Уточнение, теорема Шёнфлиса]{
         Эти компоненты связности гомеоморфны компонентам связности $\R^2 \sm S^1$.
     }
 
 
     \section{Ретракция. Гомотопическая эквивалентность}
-    Как уже было сказано,
+    Напомним определение ретракции.
     \definition[Ретракция топологического пространства $X \supset A$]{
         $f: X \map A$, такое, что $f\Big|_A = \id$.
     }
@@ -133,20 +149,20 @@
         }
     }
     \definition[Деформационная ретракция $X \supset A$]{
-        Гомотопия $H: X \times [0, 1] \map X$, такое, что $\forall a \in A, t \in [0, 1]: H(a, t) = a$, причём $H(\_, 1) = A$.
+        \emph{Гомотопия} $H: X \times [0, 1] \map X$, такая, что $\forall x \in X: H(x, 0) = x$, и $\forall a \in A: H(a, \_) = a$, причём $H(\_, 1) = A$.
     }
     \note{
-        Некоторые определения не такие сильные --- требуют $H(a, t) \in A$ или даже только $H(a, 1) = a$.
+        Условие $\forall a \in A: H(a, \_) = a$ можно ослаблять: некоторые определения не такие сильные --- требуют $H(a, t) \in A$ или даже только $H(a, 1) = a$.
     }
     \newlection{11 сентября 2023 г.}
     \precaution[Проблемы с доказательством теоремы Жордана]{
         Длина кривой может быть бесконечной.
-        Кривая может бесконечно закручиваться, как спираль, внутрь себя. (?)
-        Заменить кривую на ломаную может не получиться, так как будут возникать самопересечения.
+        Кривая может бесконечно закручиваться, как спираль, внутрь себя (нет?)
+        Легко заменить кривую на ломаную может не получиться, так как будут возникать самопересечения.
     }
     \lemma{
         Пусть $p, q$ --- концы пути $\gamma$, причём петля $\alpha$ не пересекается с носителем пути $\gamma$.
-        Тогда $\text{ind}_p(\alpha) = \text{ind}_q(\alpha)$.
+        Тогда $\textup{ind}_p(\alpha) = \textup{ind}_q(\alpha)$.
         \provehere{
             Рассмотрим гомотопию $H(x, t) = \alpha(x) - \gamma(t)$. Это непрерывная деформация $\alpha$, которая не задевает 0, значит, индексы $p$ и $q$ равны.
         }
@@ -174,9 +190,27 @@
             Каждой точке на линии уровня $h$ присвоим чётность, равную сумме (в $\Z/2\Z$) чётностей вершин левее.
             Точки с чётностями $0$ лежат снаружи ломаной, с чётностями $1$ --- внутри.
 
+            \[\begin{tikzpicture}
+                  % Draw the polygon
+                  \draw (0,0) -- (-1,1) -- (-2,-1) -- (-2,0) -- (0,3) -- (1,1) -- (3,2) -- (2,-1) -- (1,0) -- (0, -1) -- cycle;
+
+                  % Draw the horizontal lines
+                  \draw[blue] (-2.5,-1.5) -- (3,-1.5) node[above] {$l$};
+                  \draw[gray] (-2.5,0) -- (3,0) node[above] {$h$};
+                  \draw[blue!40,->] (-1, -1.5) -- (-1, -0.5) node[right]{$N$};
+
+                  % Mark the points of intersection and write zeroes
+                  \fill (-2,0) circle (2pt) node[above left] {$1$};
+                  \fill (-1.5,0) circle (2pt) node[below right] {$1$};
+                  \fill (0,0) circle (2pt) node[above right] {$1$};
+                  \fill (1,0) circle (2pt) node[above] {$0$};
+                  \fill (2.33,0) circle (2pt) node[above left] {$1$};
+
+            \end{tikzpicture}\]
+
             По построению очевидно, что точки разных чётностей лежат в разных компонентах связности $\R^2\sm\Image(\alpha)$ (отображение $\R^2\sm\Image(\alpha) \map \{0, 1\}$, сопоставляющее точке уровень непрерывно, что проверяется ручками), а так как компонент связности не больше 2, то их ровно 2.
             \item Докажем, что множество <<нечётных точек>> гомеоморфно $B_2$.
-            Для этого триангулируем их замыкание --- на самом деле, <<нечётные точки>>, объединённые с $\Image(\alpha)$.
+            Для этого триангулируем их замыкание --- <<нечётные точки>>, объединённые с $\Image(\alpha)$.
 
             Проведя все линии уровня для $h \in \{h(A_1), \dots, h(A_n)\}$, мы получим разбиение на множество треугольников и трапеций --- трапеции несложно триангулировать.
 
@@ -208,18 +242,18 @@
         Пусть $X$ --- деформационный ретракт $Y$ (достаточно самого слабого определения).
         Тогда $X \sim Y$.
         \provehere{
-            Пусть $\tau: Y \map X$ --- ретракция, $\text{in}: X \map Y$ --- включение.
+            Пусть $H(\_, 1) = \tau: Y \map X$ --- ретракция, $\text{in}: X \map Y$ --- включение.
 
             Докажем, что $\tau$ и $\text{in}$ --- гомотопически обратные.
             \bullets{
                 \item $\tau \circ \text{in} = \id_X$, поэтому и гомотопически эквивалентно $X$.
-                \item $\text{in} \circ \tau \sim \id_Y$ по определению деформационной ретракции.
+                \item $\text{in} \circ \tau \sim \id_Y$ по определению деформационной ретракции.\qedhere
             }
         }
     }
     \examples[Гомотопически эквивалентные пространства]{
         \item $[0, 1] \sim [0, 1]\times[0, 1]$ --- отрезок является деформационным ретрактом квадрата.
-        \item $(S^1 \sim \text{лист Мёбиуса})$.
+        \item $S^1 \sim \text{лист Мёбиуса}$.
         \item Точка гомотопически эквивалентна дереву.
         \item Две разные (одномерные) восьмёрки гомомотопически эквивалентны, потому что они --- ретракты третьей (двумерной) восьмёрки~(\ref{eights}).
         \pic[0.4]{eights}{Восьмёрки}
@@ -239,7 +273,7 @@
 
     \section{Пары Борсука}
     \definition[$(X, A)$ --- пара Борсука]{
-        $A \subset X$, причём $\forall Y: \forall f: X \map Y: \forall H: A \times I \map Y: H(\_, 0) = f\Big|_A(\_)$ эту гомотопию можно продолжить: $\exists \tilde{H}:X \times I \map Y$, такая что $\tilde{H}\Big|_{A \times I} = H$, причём $\tilde{H}(\_, 0) = f(\_)$.
+        $A \subset X$, причём $\forall Y: \forall f: X \map Y: \forall H: A \times I \map Y$: если $H(\_, 0) = f\Big|_A(\_)$, то гомотопию можно продолжить: $\exists \tilde{H}:X \times I \map Y$, такая что ${\tilde{H}\Big|_{A \times I} = H}$, причём $\tilde{H}(\_, 0) = f(\_)$.
     % https://q.uiver.app/#q=WzAsNSxbMCwwLCJBIl0sWzEsMSwiWCBcXHRpbWVzIEkiXSxbMSwwLCJYIl0sWzAsMSwiQSBcXHRpbWVzIEkiXSxbMiwyLCJZIl0sWzMsNCwiSCIsMCx7ImN1cnZlIjoyfV0sWzIsNCwiZiIsMCx7ImN1cnZlIjotMn1dLFswLDIsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsNCwiXFx0aWxkZXtIfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoiYm90dG9tIn19fV0sWzAsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMywxLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               A \& X \\
@@ -256,77 +290,53 @@
     }
     \newlection{18 сентября 2023 г.}
     В некотором смысле, практически все пары пространства-подпространства, которые естественно придумать, являются парой Борсука.
+    Например, парами Борсука являются пары клеточного пространства и его клеточного подпространства~(\ref{cw-borsuk})
+    \definition[Локально компактное пространство $X$]{$\forall x \in X: \exists U \ni x: \Cl U$ компактно.}
+    \fact{\label{factor-times}
+    Пусть $X \supset A$, причём $B$ локально компактно.
+    Тогда $(X/A) \times B \cong (X \times B)/_\sim$, где $\forall a_1, a_2 \in A, b \in B: (a_1, b) \sim (a_2, b)$.
+    \provehere{
+        Равенство множеств проверить несложно, но чтобы проверить гомеоморфизм топологических пространств, надо воспользоваться локальной компактностью.
 
-    \fact{
-        Пусть $X \supset A$, причём $B$ локально компактно.
-        Тогда $(X/A) \times B \equiv (X \times B)/_{(a_1, b) \sim (a_2, b)}$.
-        \provehere{
-            Равенство множеств проверить несложно, но чтобы поверить гомеоморфизм топологических пространств, надо воспользоваться локальной компактностью.
-
-            Этот факт из общей топологии мы доказывать не будем.
-        }
+        Этот факт из общей топологии мы доказывать не будем.
+    }
     }
     \note{
-        $A$ --- стягиваемо $\iff \forall a \in A$: $a$ --- деформационный ретракт $A$ в самом слабом смысле.
+        $A$ --- стягиваемо $\iff \forall a \in A$: $\{a\}$ --- деформационный ретракт $A$ в самом слабом смысле.
     }
     \theorem{
         Пусть $(X, A)$ --- пара Борсука.
         Если $A$ стягиваемо, то $X \sim X/A$.
+        \provehere{ Пусть $\mathcal{F}^*: A \times I \map A$ --- гомотопия, стягивающая $A$ в точку $a \in A$ (таким образом $\mathcal{F}^*\Big|_{A \times \{0\}} = \id_A$ и $\mathcal{F}^*\Big|_{A \times \{1\}} = a$)
 
-        Дополнительно надо потребовать замкнутость $A$, или хаусдорфовость $X$, докажем только первый вариант.
-        \provehere{ Пусть $\mathcal{F}^*: A \times I \map A$ --- гомотопия, стягивающая $A$ в точку $a \in A$ (таким образом $\mathcal{F}^*\Big|_{A \times \{0\}} = \id$ и $\mathcal{F}^*\Big|_{A \times \{1\}} = a$)
-
-            Положим в качестве $\mathcal{F}$ гомотопию, продолжающую $\mathcal{F}^*$ так, что $\mathcal{F}\Big|_{X \times \{0\}} = \id$ (такая найдётся по определению пары Борсука).
+            Положим в качестве $\mathcal{F}: X \times I \map X$ гомотопию, продолжающую $\mathcal{F}^*$ так, что $\mathcal{F}\Big|_{X \times \{0\}} = \id_X$ (такая найдётся по определению пары Борсука).
 
             Так как $\forall t \in I: (p \circ \mathcal{F})(A, t) \subset A$, то $p \circ \mathcal{F}$ пропускается через фактор:
-            существует непрерывное $\tilde{\mathcal{F}}$, делающее диаграмму коммутативной.
-        % https://q.uiver.app/#q=WzAsNSxbMCwyLCIoWCBcXHRpbWVzIEkpL197KGFfMSwgdCkgXFxzaW0gKGFfMiwgdCl9Il0sWzIsMiwiWC9BIl0sWzAsMCwiWCBcXHRpbWVzIEkiXSxbMiwwLCJYIl0sWzEsMSwiKFgvQSkgXFx0aW1lcyBJIl0sWzAsMSwiXFx0aWxkZXtcXG1hdGhjYWx7Rn19IiwyXSxbMiwwLCJcXHRpbGRle3B9IiwyXSxbMywxLCJwIl0sWzIsMywiXFxtYXRoY2Fse0Z9Il0sWzIsNCwiKHAsIFxcaWQpIiwxXSxbNCwxLCJcXHRpbGRle1xcbWF0aGNhbHtGfX0iXSxbMCw0LCJcXGNvbmciLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XV0=
+            $\exists!$ непрерывное $\tilde{\mathcal{F}}: (X\times I)/_\sim$, делающее диаграмму коммутативной.
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYXFx0aW1lcyBJIl0sWzEsMCwiWCJdLFsxLDEsIlgvQSJdLFswLDEsIihYIFxcdGltZXMgSSkvX1xcc2ltIl0sWzAsMSwiXFxtYXRoY2Fse0Z9Il0sWzEsMiwicCJdLFswLDMsIi9fXFxzaW0iLDAseyJsYWJlbF9wb3NpdGlvbiI6MzB9XSxbMywyLCJcXHRpbGRle1xcbWF0aGNhbHtGfX0iXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {X \times I}
-                  \&\& X \\
-                  \& {(X/A) \times I} \\
-                  {(X \times I)/_{(a_1, t) \sim (a_2, t)}} \&\& {X/A}
-                  \arrow["{\tilde{\mathcal{F}}}"', from=3-1, to=3-3]
-                  \arrow["{\tilde{p}}"', from=1-1, to=3-1]
-                  \arrow["p", from=1-3, to=3-3]
-                  \arrow["{\mathcal{F}}", from=1-1, to=1-3]
-                  \arrow["{(p, \id)}"{description}, from=1-1, to=2-2]
-                  \arrow["{\tilde{\mathcal{F}}}", from=2-2, to=3-3]
-                  \arrow["\cong"{description}, tail reversed, from=3-1, to=2-2]
+            {X\times I}
+                  \& X \\
+                  {(X \times I)/_\sim} \& {X/A}
+                  \arrow["{\mathcal{F}}", from=1-1, to=1-2]
+                  \arrow["p", from=1-2, to=2-2]
+                  \arrow["{/_\sim}", from=1-1, to=2-1]
+                  \arrow["{\tilde{\mathcal{F}}}", from=2-1, to=2-2]
             \end{tikzcd}\]
-            Дальше надо сказать ещё немало (?) слов, что-то из них написано ниже.
-            \indent{
-                Так как $(X \times I)/_{(a_1, t) \sim (a_2, t)} \cong (X/A) \times I$, то можно считать, что $\tilde{F}$ бьёт из $(X/A) \times I$ в $X/A$.
-                Пусть $p: X \map X/A$, $q : X/A \map X$, причём $p \circ q: X/A \map X/A$ и $q \circ p: X \map X$ гомотопно постоянному.
+            Отождествляя $(X \times I)/_\sim \cong (X/A) \times I$, получаем $\tilde{\mathcal{F}}: (X / A) \times I \map X/A$, $\tilde{\mathcal{F}}(\_, 0) = \id_{X/A}$.
 
-                Пусть $\mathcal{F}^{**}: A \times I \map A$, $\mathcal{F}^*: \text{in}_{A \hookrightarrow X} \circ \mathcal{F}^{**}, A \times I \map X$.
+            Так как $\mathcal{F}(A, 1) = a$, то можно пропуститься через фактор: $\exists q: X/A \map X: q \circ p = \mathcal{F}(\_, 1)$.
 
-                Пусть $\mathcal{F}$ --- гомотопное продолжение $\mathcal{F}^*, \mathcal{F}\Big|_{X \times \{0\}} = \id$.
-
-                $\mathcal{F}: X \times I \map X \overset{p}\map X/A$.
-
-% https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiWCJdLFswLDEsIlgvQSJdLFswLDIsInAiLDJdLFsyLDEsInEiLDJdLFswLDEsIlxcbWF0aGNhbHtGfV8xIiwyXV0=
-                \[\begin{tikzcd}[ampersand replacement=\&]
-                      X \& X \\
-                      {X/A}
-                      \arrow["p"', from=1-1, to=2-1]
-                      \arrow["q"', from=2-1, to=1-2]
-                      \arrow["{\mathcal{F}_1}"', from=1-1, to=1-2]
-                \end{tikzcd}\]
-
-                $p \circ F: X \times I \map X/A$, это можно непрерывно пропустить через фактор $\mathcal{F}^\sim: (X \times I)/\sim \map X/A$.}
+            Таким образом, $q \circ p \sim \id_{X/A}$ (гомотопией является $\tilde{\mathcal{F}}$) и $p \circ q \sim \id_X$ (гомотопией является $\mathcal{F}$).
         }
     }
-    \ok
-    % Солнышко гомотопически эквиваелнтно перекрёстку. Восьмёрки гомотопчисеки эквивалентны друг другу.
 
 
     \section{Клеточная пара --- пара Борсука}
-    Пусть $X$ --- клеточное пространство, $A \subset X$ --- замкнутое подпространство, состоящее из целого числа клеток.
-    \fact{
-        Пусть $A$ замкнуто в $X$ (необязательное условие, без которого сложнее).
+    \fact{\label{about-retraction}
+    Пусть $A$ замкнуто в $X$ (необязательное условие, без которого сложнее, и без которого нужна хаусдорфовость $X$).
 
-        Рассмотрим пространство $X \times I$.
+    Рассмотрим пространство $X \times I$.
         $A \subset X$ --- пара Борсука, если $(X \times \{0\}) \cup (A \times I)$ --- ретракт $X \times I$.
         \provehere{
             Обозначим данную ретракцию за $\rho: X \times I \map (X \times \{0\} \cup A \times I)$.
@@ -337,6 +347,7 @@
             Непрерывность $\tilde{H}$ следует из замкнутости $A$ в $X$.
         }
     }
+    \note{В обратную сторону тоже верно.}
     \note{
         $(D^n, \partial D^n) = (D^n, S^{n - 1})$ --- пара Борсука.
         \provehere{
@@ -345,9 +356,9 @@
             Пусть $y$ --- центр шара $D^n$.
             Ретракция может быть устроена следующим образом:
             \begin{align*}
-                H: D^n \times I &\map (D^n \times \{0\}) \times (S^{n - 1} \times I)\\(x, t) &\mapsto \all{\left(y + (x - y) \cdot \frac{2 - t}{d(x, y)},\frac{2 - t}{d(x,y)}\right),&\frac{2 - t}{d(x, y)} \le 2\\\left(y + (x - y) \cdot \frac{2}{2 - t},0\right),&\frac{2 - t}{d(x, y)} \ge 2}
+                H: D^n \times I &\map (D^n \times \{0\}) \times (S^{n - 1} \times I)\\(x, t) &\mapsto \all{\left(y + (x - y) \cdot \frac{1}{d(x, y)},\frac{1}{d(x,y)}\right),&\frac{2 - t}{d(x, y)} \le 2\\\left(y + (x - y) \cdot \frac{2}{2 - t},0\right),&\frac{2 - t}{d(x, y)} \ge 2}
             \end{align*}
-            Иначе говоря, берётся произведение диска $D^n \subset \R^n$ с отрезком $[0, 2]$, в качестве стакана выбирается $(D^n \times \{0\}) \cup (\partial D^n \times [0, 1])$, после чего все точки $x \in D^n \times [0, 1]$ переходят в пересечение луча $(0, 2) \rightarrow x$ и стакана.
+            Иначе говоря, берётся произведение диска $D^n \subset \R^n$ с отрезком $[0, 2]$, в качестве стакана выбирается $(D^n \times \{0\}) \cup (\partial D^n \times [0, 1])$, после чего все точки $x \in D^n \times [0, 1]$ переходят в пересечение луча $(y, 2) \rightarrow x$ и стакана.
         }
     }
     \note{
@@ -356,27 +367,32 @@
             Прямо из определения.
             Пусть $f: X \map Y$, $H: B \times I \map Y$ --- отображение и гомотопия, которые надо продолжить $f\Big|_{B} = H\Big|_{B \times \{0\}}$.
 
-            Так как $(A, B)$ --- пара Борсука, то $\exists H_1: A \times I \map Y$, такая, что $H_1\Big|_{B \times I} = H, H_1\Big|_{B \times \{0\}} = f\Big|_{B}$.
+            Так как $(A, B)$ --- пара Борсука, то $\exists H_1: A \times I \map Y$, такая, что $H_1\Big|_{B \times I} = H, H_1\Big|_{A \times \{0\}} = f\Big|_{A}$.
 
-            Так как $(X, A)$ --- пара Борсука, то $\exists H_2: X \times I \map Y$, такая, что $H_2\Big|_{A \times I} = H_1, H_2\Big|_{A \times \{0\}} = f\Big|_{A}$.
+            Так как $(X, A)$ --- пара Борсука, то $\exists H_2: X \times I \map Y$, такая, что $H_2\Big|_{A \times I} = H_1, H_2\Big|_{X \times \{0\}} = f$.
         }
     }
     \fact{
-        Приклеим $D^n$ по её границе $f: \partial D^n \map X$. Положим $Y = X \sqcup_f D^n$.
+        Приклеим $n$-мерную клетку $D^n$ по её границе с помощью $f: \partial D^n \map X$.
+        Назовём результат склейки $Y \coloneqq X \sqcup_f D^n$.
         Утверждается, что тогда $(Y, X)$ --- пара Борсука.
         \provehere{
-            На лекции было <<небольшое доказательство с маханием руками>>, которое я не понял.
+            Докажем~(\ref{about-retraction}).
 
-            Вроде просто $Y \times I = (X \times I) \sqcup_{(f, \id)} (D^n \times I)$, и ретракция $Y \times I \map (X \times I) \cup (D^n \times \{0\})$ устроена склейкой постоянного отображения и ретракции $D^n \times I$ на соответсвующий стакан.
+            $Y \times I = (X \sqcup_f D_n) \times I \underset{\ref{factor-times}}= ((X \sqcup D_n) \times I)/_\sim$, где $\sim$ порождено $(x, t) \sim (f(x), t)$ ($x \in \partial D^n, t \in I$).
+            Совместив ретракцию $D^n \times I$ на стакан $D^n \times \{0\} \cup \partial D^n \times I$ и $\id_{X \times I}$, получим ретракцию
+            \[\phi: (X \sqcup D_n) \times I \map X \times I \sqcup \underbrace{(D^n \times \{0\} \cup \partial D^n \times I)}_{\text{стакан}}\]
+            $\phi$ пропускается через фактор: $\exists$ ретракция $\tilde{\phi}: (X \sqcup_f D^n) \times I \map (X \times I \cup \underbrace{D^n \times \{0\} \cup \partial D^n \times I}_{\text{стакан}})/_\sim$.
         }
     }
-    \corollary{
-        Клеточное пространство $X$ с клеточным подпространством $A$ --- пара Борсука.
-        \provehere{
-            Индукция по построению клеточного пространства --- приклеивая клетку к $X$, мы можем либо приклеить, либо не приклеить, эту клетку к $A$, в обоих случаях пара останется парой Борсука.
+    Пусть $X$ --- клеточное пространство, $A \subset X$ --- замкнутое подпространство, состоящее из целого числа клеток.
+    \corollary{\label{cw-borsuk}
+    Клеточное пространство $X$ с клеточным подпространством $A$ --- пара Борсука.
+    \provehere{
+        Индукция по построению клеточного пространства --- приклеивая клетку к $X$, мы можем либо приклеить, либо не приклеить, эту клетку к $A$, в обоих случаях пара останется парой Борсука.
 
-            Согласно транзитивности пар Борсука на выходе получится пара Борсука.
-        }
+        Согласно транзитивности пар Борсука на выходе получится пара Борсука.
+    }
     }
 
 
@@ -392,10 +408,10 @@
 
             Пусть $f(x_0) = y_0$. Тогда $f$ индуцирует \emph{гомоморфизм прямого образа} $f_*: \pi_1(X, x_0) \map \pi_1(Y, y_0)$.
 
-            Чтобы проверить, что это изоморфизм групп, проверим, что это биекция. $g \circ f \sim \id_X$.
+            Чтобы проверить, что $f_*$ --- изоморфизм групп, проверим, что это биекция. $g \circ f \sim \id_X$.
             Тогда соответствующие петли тоже получаются свободно гомотопными.
 
-            Чтобы убедиться в этом, рассмотрим петлю $\gamma(t) \coloneqq h_t(x_0)$, где $h_t$ --- гомотопия, соединяющая $g \circ f$ и $\id_X$.
+            Проверим, что петли свободно гомотопны: рассмотрим петлю $\gamma(t) \coloneqq h_t(x_0)$, где $h_t$ --- гомотопия, соединяющая $g \circ f$ и $\id_X$.
             $[\alpha] = (T_{\gamma} \circ g_* \circ f_*)([\alpha])$, откуда $T_{\gamma} \circ g_* \circ f_* = \id$.
 
             Воспользуемся тем, что $T_\gamma$ --- биекция ($T_{\gamma} \circ T_{\gamma^{-1}} = \id$).
@@ -439,7 +455,7 @@
     }
     \counterexamples[Локально линейно связные и линейно связные пространства]{
         \item Конус над $\left\{\frac{1}{n}\right\}_{n = 1}^{\infty} \cup \{0\}$ линейно связен, но не локально линейно связен.
-        \item Любое несвязное многообразие связно локально.
+        \item Любое несвязное многообразие связно локально, но обязательно связно.
     }
     \newlection{25 сентября 2023 г.}
     Пусть $X, Y$ --- линейно связны, $Z$ --- линейно связное и локально линейно связное пространство.
@@ -489,7 +505,7 @@
     }
 
     \subsection{Морфизмы накрытий}
-    Рассмотрим два накрытия с общей базой, пусть у каждого из трёх пространств отмечена некоторая точка.
+    Рассмотрим два накрытия с общей базой, пусть у каждого из трёх пространств отмечена некоторая точка (и морфизмы отображают отмеченную точку в отмеченную точку).
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCIoWSwgeV8wKSJdLFsyLDAsIihaLCB6XzApIl0sWzEsMSwiKFgsIHhfMCkiXSxbMCwyLCJwIl0sWzEsMiwicSIsMl0sWzAsMSwiZiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&,column sep=tiny]
     {(Y, y_0)}
@@ -502,21 +518,18 @@
     \definition[Морфизм накрытий]{
         Отображение $f$, делающее диаграмму выше коммутативной.
     }
-    При накрытии пространств с отмеченной точкой $p(y_0) = x_0 = q(z_0)$.
-    От морфизма $f$ также требуется $f(y_0) = z_0$.
-
     \note{    Требование непрерывности $f$ можно опустить, так как оно следует из доказательства~\ref{last}.}
     \theorem{
         $\exists!$ морфизм накрытий $f \iff \Image(p_*) \subset \Image(q_*)$.
         \provehere{\ref{last}}
     }
     \corollary{\label{cor}
-    Если $p$ --- универсальное накрытие, то $\forall$ накрытия $q$: $\exists$ морфизм $f$.
+    Если $p$ --- универсальное накрытие, то $\forall$ накрытия $q$: $\exists$ морфизм $f:p \map q$.
     }
     \theorem{
         Для хороших пространств универсальное накрытие существует и единственно с точностью до автоморфизма накрытий.
         \provehere{
-            Я считаю, что доказательства не было. Prove me wrong.
+            Вероятно, доказательство было не на этой лекции, а сильно позже.
         }
     }
     \definition[Автоморфизм накрытия $p: Y \map X$]{
@@ -530,23 +543,27 @@
               \arrow["p"', from=1-3, to=2-2]
               \arrow["f", from=1-1, to=1-3]
         \end{tikzcd}\]}
-    \examples{
+    В данной категории объекты --- накрытия $p: Y \map X$ без отмеченной точки.
+    \examples[Автоморфизмы]{
         \item Два накрытия $(\R, 0) \map S^1$ и $(\R, 2\pi) \map S^1$ изоморфны сдвигом \begin{align*}
                                                                                             f: (\R, 0) &\map (\R, 2\pi)\\x &\mapsto x + 2\pi
         \end{align*}
         \item В накрытие букета окружностей диаграммой свободной группы на двух образующих можно отметить любую вершину графа валентности 4.
     }
-    \definition[Группа скольжения]{
-        Автоморфизмы накрытия $p$ образуют группу $\Aut(p)$
+    \definition[Группа скольжения $p$]{
+        Группа автоморфизмов накрытия $p$. Обозначается $\Aut(p)$.
     }
     \theorem{
-        Если накрытие $p: Y \map X$ универсально, то $\forall y_1, y_2 \in p^{-1}(x_0): \exists$ автоморфизм $f: f(y_1) = y_2$.
+        Если накрытие $p: Y \map X$ универсально, то $\forall y_1, y_2 \in p^{-1}(x_0): \exists!$ автоморфизм накрытия, такой, что $f: f(y_1) = y_2$.
         \provehere{
             \ref{cor}
         }
     }
     \theorem{\label{regular}
-    Для накрытия $p: Y \map X$, для $\forall y_1, y_2 \in p^{-1}(x_0)$: существует автоморфизм $f: f(y_1) = y_2$ тогда и только тогда, когда $\Image(p_*) \normeq \pi_1(X)$.
+    Пусть дано накрытие $p: Y \map X$. Следующие условия равносильны
+    \bullets{
+        \item $\forall y_1, y_2 \in p^{-1}(x_0)$ существует автоморфизм $f: f(y_1) = y_2$
+        \item $\Image(p_*) \normeq \pi_1(X)$.}
     \provehere{
         Образы фундаментальных групп $\pi_1(Y, y_1)$ и $\pi_1(Y, y_2)$ при действии $p_*$ сопряжены.
         В самом деле, пусть $\gamma$ --- путь от $y_2$ до $y_1$. Пусть $\alpha$ --- петля с началом в $y_1$.
@@ -564,7 +581,16 @@
         \item Двулистное накрытие букета двух окружностей склейкой трёх окружностей регулярно~\ref{two_s1s}.
         \item Трёхлистное накрытие букета двух окружностей склейкой четырёх окружностей нерегулярно (разные отмеченные точки неравноправны, нет автоморфизма, переводящего точку одного цвета в точку другого цвета)~\ref{three_s1s}
         \begin{figure}[h!]
-            \centering\includegraphics[]{two_s1s}\caption{\label{two_s1s}Двулистное накрытие}\includegraphics[]{three_s1s}\caption{\label{three_s1s}Трёхлистное накрытие}
+            \begin{minipage}{0.5\textwidth}
+                \centering
+                \includegraphics[width=0.4\linewidth]{two_s1s}
+                \caption{\label{two_s1s}Двулистное накрытие}
+            \end{minipage}
+            \begin{minipage}{0.5\textwidth}
+                \centering
+                \includegraphics[width=0.4\linewidth]{three_s1s}
+                \caption{\label{three_s1s}Трёхлистное накрытие}
+            \end{minipage}
         \end{figure}
     }
     \theorem{\label{aut_is_pi1_factor_image}\down
@@ -573,7 +599,7 @@
         \item Для произвольного регулярного накрытия $\Aut(p) = \pi_1(X)/\Image(p_*)$ (факторгруппа существует, так как $\Image(p_*)$ --- нормальная подгруппа;\ это же влечёт, что $\Image(p_*)$ не зависит от выбранной точки).
     }
     \provehere{Докажем второй пункт, первый из него следует. Зафиксируем ${y_0 \in Y: p(y_0) = x_0}$.
-    Определим гомоморфизм групп $\mathcal{F}: \pi_1(X) \map \Aut(p)$.
+    Ниже определим гомоморфизм групп $\mathcal{F}: \pi_1(X) \map \Aut(p)$.
 
     Рассмотрим произвольную петлю $\gamma$ с концом в $x_0$.
     Её поднятие --- путь, соединяющий $y_0$ с некой точкой $y$. Так как $p(y) = x_0$, а накрытие регулярно, то найдётся автоморфизм накрытия $\tau$, такой что $\tau(y_0) = y$.
@@ -587,8 +613,8 @@
 
         Рассмотрим путь $\tau\circ\tilde{\gamma}'$, он соединяет точку $y'$ с некой точкой, пусть это $y''$.
         Заметим, что $\mathcal{F}([\gamma] \cdot [\gamma'])$ --- это автоморфизм, переводящий $y$ в $y''$, но он же равен $\mathcal{F}([\gamma]) \cdot \mathcal{F}([\gamma']) = \tau \circ \tau'$.
-        \item $\mathcal{F}$ сюръективно, так как каждой точке $y$ соответствует единственный морфизм $\tau: \tau(y_0) = y$.
-        \item $\Ker(\mathcal{F}) = \Image(p_*)$, так как $[\alpha] \in \Ker(\mathcal{F}) \iff$ при поднятии $\alpha$ она не размыкается, а такие петли и составляют $\Image(p_*)$.
+        \item $\mathcal{F}$ корректно определено сюръективно, так как каждой точке $y \in p^{-1}(x_0)$ соответствует единственный морфизм $\tau: \tau(y_0) = y$.
+        \item $\Ker(\mathcal{F}) = \Image(p_*)$, так как $[\alpha] \in \Ker(\mathcal{F}) \iff$ при поднятии $\alpha$ не размыкается, а такие петли и составляют $\Image(p_*)$.\qedhere
     }
     }
     }
@@ -599,12 +625,13 @@
     Так как $G$ --- группа, то эквивалентными названы элементы одной орбиты, это действительно отношение эквивалентности.
     \examples{
         \item $\R \curvearrowright S^1$ --- действие поворотами.
-        \item Действие сдвигами $C_1 = \Z^2 \curvearrowright \R^2$ порождает факторпространство $\R^2/C_1 = T^2$.
+        Все точки $S^1$ эквивалентны.
+        \item Действие целочисленными сдвигами $\Z^2 \curvearrowright \R^2$ порождает тор, как факторпространство: ${\R^2/\Z^2 = T^2}$.
     }
     \newlection{2 октября 2023 г.}
-    Пусть $G \curvearrowright X$.
+    Пусть имеется действие группы на топологическом пространстве $G \curvearrowright X$.
 
-    \definition[Действие $G$ --- накрывающее (properly discentional action)]{
+    \definition[Действие $G\curvearrowright X$ --- накрывающее]{
         $\forall x \in X: \exists U \ni x: \{gU\}_{g \in G}$ дизъюнктны.
     }
     \examples{
@@ -624,9 +651,9 @@
         }
     }
     \corollary{
-        Если $X$ односвязно, то $G \sim \pi_1(X)$.
+        Если $G$ действует накрывающе, и $X$ односвязно, то $G \sim \pi_1(X/G)$.
         \provehere{
-            Накрытие $X \map X/G$ универсально~(\ref{aut_is_pi1_factor_image}).
+            Накрытие $X \map X/G$ универсально, откуда группа автоморфизмов накрытия ($G$) совпадает с фундаментальной группой $X/G$~(\ref{aut_is_pi1_factor_image}).
         }
     }
     \theorem{
@@ -655,6 +682,21 @@
     }
     \example{
         Букет двух окружностей имеет группу $\mathcal{F}_2$. Накрытие с группой $\Z$ факторизует по одной образующей, оставляя другую. Выглядит это примерно так:~\ref{partial_factorizing}.
+%        \[\begin{tikzpicture}
+%              \newcommand{\rose}[4]{ %x, y, dir, length
+%                  \pgfmathsetmacro{\length}{\numexpr#4};
+%                  \ifnum\length>1/10
+%                        \IfStrEq{#3}{u}{\draw (#1, #2) -- ({#1}, {#2-#4});}{\fill(0,0) circle(1pt);\rose{#1}{#2-#4/2}{d}{#4/2}};
+%
+%                        \IfStrEq{#3}{d}{\draw (#1, #2) -- ({#1}, {#2+#4});}{\fill(0,0) circle(1pt);\rose{#1}{#2+#4/2}{u}{#4/2}};
+%                  \fill(0,1) circle(1pt);
+%                        \IfStrEq{#3}{l}{\draw (#1, #2) -- ({#1+#4}, {#2});}{\rose{#1+#4/2}{#2}{r}{#4/2}};
+%                  \fill(0,2) circle(1pt);
+%                        \IfStrEq{#3}{r}{\draw (#1, #2) -- ({#1-#4}, {#2});}{\rose{#1-#4/2}{#2}{l}{#4/2}};
+%                  \fi
+%              }
+%              \rose{0}{0}{u}{3/2}
+%        \end{tikzpicture}\]
         \pic[0.5]{partial_factorizing}{Накрытие букета окружностей с группой $\Z$.}
     }
 
@@ -873,7 +915,8 @@
 
     Пусть $(X, d)$ --- метрическое пространство.
     \definition[Путь (кривая)]{
-        Непрерывное $\gamma: I \map X$, где $I$ --- выпуклое подмножество прямой. Чаще всего рассматривают $I = [a, b]$.
+        Непрерывное $\gamma: I \map X$, где $I$ --- выпуклое подмножество прямой.
+        Чаще всего рассматривают $I = [a, b]$.
     }
     \definition[Гладкая кривая]{
         Гладкое отображение $I \map \R^n$ (все координатные отображения гладкие).
@@ -1332,27 +1375,29 @@
     Касательная плоскость --- линейное пространство, натянутое на векторы $\der{r}{u}$ И $\der{r}{v}$ --- стандартный базис в касательном пространстве.
     $\der{r}{u} = r_u = \d r(1, 0), \der{r}{v} = r_v = \d r(0, 1)$.
     \newlection{13 ноября 2023 г.}
+
     \subsection{Гладкие функции на поверхности}
     Определим гладкую функцию $f: \Sigma \map \R$ из поверхности в прямую.
     \definition[Функция $f$ гладкая]{
-    $\forall p \in \Sigma: \exists U \ni p$ --- карта, такая, что $f$ --- гладкая в карте $U$, то есть $\exists r: \Omega \map U: f \circ r$ --- гладкая.
+        $\forall p \in \Sigma: \exists U \ni p$ --- карта, такая, что $f$ --- гладкая в карте $U$, то есть $\exists r: \Omega \map U: f \circ r$ --- гладкая.
     }
     \statement{
-    Условие гладкости $f: \Sigma \map \R$ равносильно следующим:
-    \numbers{
-    \item $f$ гладкая в любой карте.
-        \item $\exists F: (\subset \R^3) \map \R$ --- продолжение $f$, гладкое в окрестности любой точки.
-    \provehere{
-    \numbers{
-        \item Отображение перехода между картами $s$ --- регулярно, и $s^{-1}$ --- тоже регулярно.
-    \note{
-Из теоремы об обратном отображении $s$ --- регулярная биекция.
+        Условие гладкости $f: \Sigma \map \R$ равносильно следующим:
+        \numbers{
+            \item $f$ гладкая в любой карте.
+            \item $\exists F: (\subset \R^3) \map \R$ --- продолжение $f$, гладкое в окрестности любой точки.
+            \provehere{
+                \numbers{
+                    \item Отображение перехода между картами $s$ --- регулярно, и $s^{-1}$ --- тоже регулярно.
+                    \note{
+                        Из теоремы об обратном отображении $s$ --- регулярная биекция.
+                    }
+                    \item Если поверхность локально задаётся графиком $\Sigma = (x, y, h(x, y))$, то можно определить $F(x, y, z) = f(x, y, h(x, y))$.
+                }
+            }
+        }
     }
-    \item Если поверхность локально задаётся графиком $\Sigma = (x, y, h(x, y))$, то можно определить $F(x, y, z) = f(x, y, h(x, y))$.
-    }
-    }
-    }
-    }
+
     \subsection{Производная по направлению}
     Пусть $p \in \Sigma, X \in T_p(X)$.
 
@@ -1360,19 +1405,19 @@
     Пусть $p \coloneqq \tilde{\gamma}(0), \tilde{\gamma}'(0) = X$.
     Тогда
     \numbers{
-    \item $(f \circ \tilde{\gamma})$ --- гладкая.
-    \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0)$ --- не зависит от $\tilde{\gamma}$.
-    \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0) = X_1 \der{f \circ r}{u} + X_2 \der{f \circ r}{v}$.
+        \item $(f \circ \tilde{\gamma})$ --- гладкая.
+        \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0)$ --- не зависит от $\tilde{\gamma}$.
+        \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0) = X_1 \der{f \circ r}{u} + X_2 \der{f \circ r}{v}$.
     }
     \provehere{
         1. $f \circ \tilde{\gamma} = f \circ r \circ \gamma$
-    3. Пусть $\gamma = (u(t), v(t))$. $(f \circ r \circ \gamma)' = (f \circ r)'_u \cdot u' + (f \circ r)'_v \cdot v'$. $\gamma'(0) = (X_1, X_2)$.
+        3. Пусть $\gamma = (u(t), v(t))$. $(f \circ r \circ \gamma)' = (f \circ r)'_u \cdot u' + (f \circ r)'_v \cdot v'$. $\gamma'(0) = (X_1, X_2)$.
 
     }
     $X_1 (f \circ r)'_u + X_2 (f \circ r)'_v$ называется производной функции $f$ по направлению $X$, обозначается $X(f)$.
 
     \definition[$f: \Sigma \map \R^3$ --- гладкая функция]{
-    $f$ --- гладкая покоординатно.
+        $f$ --- гладкая покоординатно.
     }
     Пусть теперь есть две поверхности $\Sigma_1$ и $\Sigma_2$.
 
@@ -1381,19 +1426,20 @@
     Можно рассмотреть соответствующую $\tilde{f}: \Sigma_1 \map \Sigma_2$
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {\Sigma_1} \& {\Sigma_2} \\
-    {\Omega_1} \& {\Omega_2}
-    \arrow["f"', from=2-1, to=2-2]
-    \arrow["{r_1}"', from=2-1, to=1-1]
-    \arrow["{\tilde{f}}"', from=1-1, to=1-2]
-    \arrow["{r_2}", from=2-2, to=1-2]
+    {\Sigma_1}
+          \& {\Sigma_2} \\
+          {\Omega_1} \& {\Omega_2}
+          \arrow["f"', from=2-1, to=2-2]
+          \arrow["{r_1}"', from=2-1, to=1-1]
+          \arrow["{\tilde{f}}"', from=1-1, to=1-2]
+          \arrow["{r_2}", from=2-2, to=1-2]
     \end{tikzcd}\]
     \statement{$\tilde{f}$ --- гладкая $\iff f$ гладкая в любой карте.
     \provehere{
-    \bullets{
-    \item[$\then$] Рассмотрим хорошую карту $\Sigma = \Gamma_h: r: (x, y) \mapsto (x, y, h(x, y))$.
-    \item[$\when$] Посмотреть на коммутативную диаграмму.
-    }
+        \bullets{
+            \item[$\then$] Рассмотрим хорошую карту $\Sigma = \Gamma_h: r: (x, y) \mapsto (x, y, h(x, y))$.
+            \item[$\when$] Посмотреть на коммутативную диаграмму.
+        }
     }
     }
     Пусть $\tilde{f}: \Sigma_1 \map \Sigma_2$ --- гладкая.
@@ -1406,26 +1452,30 @@
     }
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMiwwLCJcXFNpZ21hXzMiXSxbMCwxLCJcXHRpbGRle2Z9Il0sWzEsMiwiXFx0aWxkZXtnfSJdLFswLDIsIlxcdGlsZGV7aH0iLDIseyJjdXJ2ZSI6M31dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {\Sigma_1} \& {\Sigma_2} \& {\Sigma_3}
-    \arrow["{\tilde{f}}", from=1-1, to=1-2]
-    \arrow["{\tilde{g}}", from=1-2, to=1-3]
-    \arrow["{\tilde{h}}"', curve={height=18pt}, from=1-1, to=1-3]
+    {\Sigma_1}
+          \& {\Sigma_2} \& {\Sigma_3}
+          \arrow["{\tilde{f}}", from=1-1, to=1-2]
+          \arrow["{\tilde{g}}", from=1-2, to=1-3]
+          \arrow["{\tilde{h}}"', curve={height=18pt}, from=1-1, to=1-3]
     \end{tikzcd}\]
-$\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
+    $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
 
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {\Sigma_1} \& {\Sigma_2} \\
-    {\Omega_1} \& {\Omega_2}
-    \arrow["f"', from=2-1, to=2-2]
-    \arrow["{r_1}"', from=2-1, to=1-1]
-    \arrow["{\tilde{f}}"', from=1-1, to=1-2]
-    \arrow["{r_2}", from=2-2, to=1-2]
+    {\Sigma_1}
+          \& {\Sigma_2} \\
+          {\Omega_1} \& {\Omega_2}
+          \arrow["f"', from=2-1, to=2-2]
+          \arrow["{r_1}"', from=2-1, to=1-1]
+          \arrow["{\tilde{f}}"', from=1-1, to=1-2]
+          \arrow["{r_2}", from=2-2, to=1-2]
     \end{tikzcd}\]
     $\d \tilde{f} \circ \d r_1 = \d r_2 \circ \d f$.
     \definition[$\tilde{f}$ регулярно]{
-    $\d \tilde{f}$ невырожден (здесь эквивалентно: $f$ регулярно в любой карте).
+        $\d \tilde{f}$ невырожден (здесь эквивалентно: $f$ регулярно в любой карте).
     }
+
+
     \section{Первая квадратичная форма поверхности}
     Отображение $Q: V \map \R$ из векторного пространства в $\R$ --- квадратичная форма.
 
@@ -1447,6 +1497,7 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     Длина вектора $X$ --- это $\sqrt{I(X, X)}$, $\cos(\angle(X, Y)) = \frac{I(X, Y)}{\sqrt{I(x)}\sqrt{I(Y)}}$.
 
     Пути $\tilde{\gamma} = r \circ \gamma$ сопоставляется его длина $L(\tilde{\gamma}) = \int\sqrt{I(\gamma',\gamma')}\d t$
+
     \subsection{Площадь}
     <<Что такое площадь, мы определять не будем, обещают определить на матанализе>>
     Ортонормированному базису $(u, v)$ соответствует базис $r'_u, r'_v$.
@@ -1471,45 +1522,49 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     В координатной форме $[v]^t[I^*][w] = ([\d s][v])^t[I] \cdot ]\d s[w] = [v^t]([\d s]^t [I][\d s])[w]$.\quad
     $[I^*] = [\d s]^t [I] [\d s]$.
     \example{
-    Рассмотрим две разные параметризации плоскости --- в декартовых и полярных координатах.
-    \numbers{
-    \item В декартовых $(x, y, z)(u, v) = (u, v, 0)$. $I = \vect{1 & 0 \\ 0 & 1}$
-    \item В полярных $(x, y, z)(\rho, \phi) = (\rho \cos(\phi), \rho \sin(\phi), 0)$.
-    $\der{r}{\rho} = (\cos \phi, \sin \phi)$, $\der{r}{\phi} = (-\rho\cos\phi, \rho\cos\phi)$. $I^* = \vect{1 & 0 \\ 0 & \rho^2}$.
-    $\d s = \vect{\cos \phi & -\rho \sin \phi \\ \sin \phi & \rho \cos \phi}$. Действительно, $[\d s]^t \cdot [\d s] = \vect{1 & 0 \\ 0 & \rho^2}$.
+        Рассмотрим две разные параметризации плоскости --- в декартовых и полярных координатах.
+        \numbers{
+            \item В декартовых $(x, y, z)(u, v) = (u, v, 0)$. $I = \vect{1 & 0 \\ 0 & 1}$
+            \item В полярных $(x, y, z)(\rho, \phi) = (\rho \cos(\phi), \rho \sin(\phi), 0)$.
+            $\der{r}{\rho} = (\cos \phi, \sin \phi)$, $\der{r}{\phi} = (-\rho\cos\phi, \rho\cos\phi)$. $I^* = \vect{1 & 0 \\ 0 & \rho^2}$.
+            $\d s = \vect{\cos \phi & -\rho \sin \phi \\ \sin \phi & \rho \cos \phi}$. Действительно, $[\d s]^t \cdot [\d s] = \vect{1 & 0 \\ 0 & \rho^2}$.
+        }
     }
-    }
+
     \subsection{Изометрии}
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {\Sigma_1} \& {\Sigma_2} \\
-    {\Omega_1} \& {\Omega_2}
-    \arrow["f"', from=2-1, to=2-2]
-    \arrow["{r_1}"', from=2-1, to=1-1]
-    \arrow["{\tilde{f}}"', from=1-1, to=1-2]
-    \arrow["{r_2}", from=2-2, to=1-2]
+    {\Sigma_1}
+          \& {\Sigma_2} \\
+          {\Omega_1} \& {\Omega_2}
+          \arrow["f"', from=2-1, to=2-2]
+          \arrow["{r_1}"', from=2-1, to=1-1]
+          \arrow["{\tilde{f}}"', from=1-1, to=1-2]
+          \arrow["{r_2}", from=2-2, to=1-2]
     \end{tikzcd}\]
 
     Бывают такие поверхности, что их можно отобразить друг в друга, при этом длины соответствующих векторов не будут меняться.
     Например, квадрат скатать в цилиндр, или конус развернуть в кусок плоскости.
     \definition[Гладкое $\tilde{f}$ --- изометрия]{
-    $\d \tilde{f}$ сохраняет скалярное произведение $\angles{\_,\_}$: $\forall V, W \in T_p(\Sigma_1): \angles{V, W}_p = \angles{\d_p \tilde{f}(V), \d_p\tilde{f}(W)}_{\tilde{f}(p)}$.
+        $\d \tilde{f}$ сохраняет скалярное произведение $\angles{\_,\_}$: $\forall V, W \in T_p(\Sigma_1): \angles{V, W}_p = \angles{\d_p \tilde{f}(V), \d_p\tilde{f}(W)}_{\tilde{f}(p)}$.
     }
     Если параметризации используют одну карту --- например, вторая параметризация равна $r_2 = r_2 \circ f$ --- то матрицы первых форм равны: $[I]^{r_1} = [I]^{r_2}$.
     В общем случае $[I]^{r_1} = [\d f]^t [I]^{r_2} [\d f]$.
     \example{
-    Конус над любой кривой локально изометричен плоскости.
+        Конус над любой кривой локально изометричен плоскости.
 
-    Пусть $\gamma(t)$ --- натурально параметризованная кривая на сфере с центром в верзине конуса: $\gamma: \R \map S^2$.
+        Пусть $\gamma(t)$ --- натурально параметризованная кривая на сфере с центром в верзине конуса: $\gamma: \R \map S^2$.
         (можно подвинуть точки кривой вдоль луча так, чтобы они все лежали на одной сфере (?))
 
-    $r(\rho, t) = \rho \cdot \gamma(t)$. $\der{r}{\rho} = \gamma(t), \der{r}{t} = \rho \cdot \gamma'(t)$.
-    Если посчитать, то первая квадратичная форма окажется такой же, как и у параметризации плоскости в полярных координатах --- $\vect{1 & 0 \\ 0 & \rho^2}$.
+        $r(\rho, t) = \rho \cdot \gamma(t)$. $\der{r}{\rho} = \gamma(t), \der{r}{t} = \rho \cdot \gamma'(t)$.
+        Если посчитать, то первая квадратичная форма окажется такой же, как и у параметризации плоскости в полярных координатах --- $\vect{1 & 0 \\ 0 & \rho^2}$.
     }
     Пусть $p, q \in \Sigma$, тогда расстояние между точками $d(p, q) = \inf\limits{L(\tilde{\gamma}): [0, 1] \map \Sigma}{\tilde{\gamma}(0) = p, \tilde{\gamma}(1) = q}$.
     Это \emph{внутренняя метрика поверхности}.
 
     Внутренняя метрика, вообще говоря, не совпадает с внешней --- между диаметрально противоположными точками $S^1$ расстояние внешнее --- 2, внутреннее --- $\pi$.
+
+
     \section{Вторая квадратичная форма}
     Первая форма не менялась при изометриях, а вторая, наоборот, будет говорить, как поверхность изогнута в $\R^3$ --- на какой параболоид она больше всего похожа.
 
@@ -1517,14 +1572,16 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     \definition[Вторая квадратичная форма]{$\II_x(v, w) = \angles{\d_x^2 r(v, w), n}$.}
     Коэффииценты матрицы второй формы обозачают так: $[\II] = \vect{L & M \\ M & N}$, где $L = \angles{r_{u,u}, n}, M = \angles{r_{u,v}, n}, N = \angles{{r_v,v}, n}$.
     \theorem{
-    Можно рассмотреть нормаль, как гладкую функцию $\Omega \map (S^2 \subset \R^3)$. Утверждается, что $\II(v, w) = -\angles{\d r(v), \d n(w)}$.
-    \provehere{
-    $\d r(v)$ лежит в касательной плоскости, поэтому $\angles{\d r(v), n} = 0$.
-        Дифференцируя по $w$, получаем
-    $\angles{\d^2 r(v, w), n} + \angles{\d r(v), \d n(w)} = 0$. 
-    }
+        Можно рассмотреть нормаль, как гладкую функцию $\Omega \map (S^2 \subset \R^3)$. Утверждается, что $\II(v, w) = -\angles{\d r(v), \d n(w)}$.
+        \provehere{
+            $\d r(v)$ лежит в касательной плоскости, поэтому $\angles{\d r(v), n} = 0$.
+            Дифференцируя по $w$, получаем
+            $\angles{\d^2 r(v, w), n} + \angles{\d r(v), \d n(w)} = 0$.
+        }
     }
     \newlection{20 ноября 2023 г.}
+
+
     \section{Специальные координаты. Соприкасающийся параболоид}
     Пусть $\Sigma$ --- поверхность, $p \in \Sigma$ --- точка.
     Выберем ортонормированный базис $X = f_1, Y = f_2$ в $T_p \Sigma$.
@@ -1549,19 +1606,19 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     В специальных координатах векторы $r_x, r_y$ --- \emph{главные направления} --- образуют ортонормированный базис в $T_p\Sigma$.
 
     \definition[Эллиптическая точка]{
-    Кривизны в ней одного знака, и не равны нулю.
+        Кривизны в ней одного знака, и не равны нулю.
     }
     \definition[Гиперболическая точка]{
-    Кривизны в ней разного знака. Ещё такую точку называют \emph{седловая}.
+        Кривизны в ней разного знака. Ещё такую точку называют \emph{седловая}.
     }
     \definition[Омбилическая точка]{
-    Кривизны равны.
+        Кривизны равны.
     }
     \definition[Параболическая точка]{
-    Ровно одна из кривизн равна нулю.
+        Ровно одна из кривизн равна нулю.
     }
     \definition[Точка уплощения]{
-    Обе кривизны равны нулю.
+        Обе кривизны равны нулю.
     }
     \ok
     На пространстве $(V, \angles{\_, \_})$ билинейной форме $B(x, y)$ по лемме Рисса соответствует линейный оператор $A: V \map V$, такой, что $B(x, y) = \angles{x, Ay}$.
@@ -1572,11 +1629,12 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     $[X]^t[B][Y] = [X]^t[G][AY]$.
 
     \fact{
-    $[B]$ --- симметрическая матрица $\iff A$ --- самосопряжена.
+        $[B]$ --- симметрическая матрица $\iff A$ --- самосопряжена.
     }
     \fact{
-    В ортонормированном базисе матрица самосопряжённого оператора симметрична.
+        В ортонормированном базисе матрица самосопряжённого оператора симметрична.
     }
+
     \subsection{Гауссово отображение}
     Пусть $\Sigma \subset \R^3$ --- поверхность.
     \definition[Гауссово отображение]{ Непрерывное $\hat{n}: \Sigma \map S^2$, такое, что $\forall p \in \Sigma: \hat{n}(p) \perp T_p\Sigma$, $\abs{\hat{n}(p)} = 1$.}
@@ -1591,49 +1649,50 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
           \arrow["{\hat{n}}", from=1-1, to=1-2]
           \arrow["n"', from=2-1, to=1-2]
     \end{tikzcd}\]
+
     \subsection{Оператор Вайнгартена}
     Пусть $p \in \Sigma$. Посмотрим на $\d_p \hat{n}: T_p\Sigma \map T_{\hat{n}(p)}S^2$.
     Получается, в точке $p$ касательные пространства к $\Sigma$ и $S^2$ совпадают (как векторные пространства), так как у них общая нормаль.
 
     Если их отождествить, то можно считать, что $\d_p\hat{n}: T_p\Sigma \map T_p\Sigma$.
     \definition[Оператор Вайнгартена]{
-    $S \bydef -\d_p\hat{n}: T_p\Sigma \map T_p\Sigma$.
+        $S \bydef -\d_p\hat{n}: T_p\Sigma \map T_p\Sigma$.
     }
     Определим билинейную форму $\hat{\II}: T_p\Sigma \times T_p\Sigma \map \R, \hat{\II}(v, w) = \angles{v, S(w)} = -\angles{v, \d_p\hat{n}(w)}$.
     Определение не использует никакую конкретную параметризацию.
     \theorem{
-    Пусть $r: \Omega \map \Sigma$ --- параметризация, пусть $p = r(x)$.
+        Пусть $r: \Omega \map \Sigma$ --- параметризация, пусть $p = r(x)$.
         Тогда $\forall v, w \in \R^n: \II(v, w) = \hat{\II}(\d_x r(v), \d_x r(w))$.
-    \provehere{
-    По определению $\II(v, w) = \angles{-\d r(v), \d n(w)}$, но $n = \hat{n} \circ r$, то есть $\II(v, w) = \angles{\d r(v), -\d\hat{n}(\d r(w))}$.
-    }
+        \provehere{
+            По определению $\II(v, w) = \angles{-\d r(v), \d n(w)}$, но $n = \hat{n} \circ r$, то есть $\II(v, w) = \angles{\d r(v), -\d\hat{n}(\d r(w))}$.
+        }
     }
     \corollary{
-    \numbers{
-        \item $\hat{\II}$ симметрична, поэтому оператор Вайнгартена самосопряжён.
-        \item $[\II]_{e_1, e_2} = [\hat{\II}]_{r_u, r_v}$.
-        \item $[\II] = \underbrace{[I]}_{\text{матрица Грама}} \cdot [S]$.
-    \item Пусть есть две параметризации
-    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJTIl1d
-        \[\begin{tikzcd}[ampersand replacement=\&]
-              \& \Sigma \\
-              {\Omega_1} \&\& {\Omega_2}
-              \arrow["{r_1}", from=2-1, to=1-2]
-              \arrow["{r_2}"', from=2-3, to=1-2]
-              \arrow["S", from=2-3, to=2-1]
-        \end{tikzcd}\]
-    Тогда $r_2 = r_1 \circ S$ и $[\II^{r_2}] = [\d S]^t [\II^{r_1}][\d S]$.
-    }
+        \numbers{
+            \item $\hat{\II}$ симметрична, поэтому оператор Вайнгартена самосопряжён.
+            \item $[\II]_{e_1, e_2} = [\hat{\II}]_{r_u, r_v}$.
+            \item $[\II] = \underbrace{[I]}_{\text{матрица Грама}} \cdot [S]$.
+            \item Пусть есть две параметризации
+        % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJTIl1d
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  \& \Sigma \\
+                  {\Omega_1} \&\& {\Omega_2}
+                  \arrow["{r_1}", from=2-1, to=1-2]
+                  \arrow["{r_2}"', from=2-3, to=1-2]
+                  \arrow["S", from=2-3, to=2-1]
+            \end{tikzcd}\]
+            Тогда $r_2 = r_1 \circ S$ и $[\II^{r_2}] = [\d S]^t [\II^{r_1}][\d S]$.
+        }
     }
     \theorem{
-    Пусть $\Omega$ --- связно, и есть параметризация $r: \Omega \map \R^3$. $\II \equiv 0 \iff r(\Omega)$ --- часть плоскости.
-    \provewthen{
-        Для плоскости $n \equiv \const\then\d n \equiv 0\then \II = 0$.
-    }{
-    $S \equiv 0 \then \d \hat{n} \equiv 0 \then n = n_0 = \const$.
-        Любая кривая $\gamma: [0, 1] \map \Sigma$ на поверхности перпендикулярна этой нормали во всякой своей точке.
-        Функция высоты $H = \angles{\_, n_0}$ постоянна во всех точках кривой.
-    }
+        Пусть $\Omega$ --- связно, и есть параметризация $r: \Omega \map \R^3$. $\II \equiv 0 \iff r(\Omega)$ --- часть плоскости.
+        \provewthen{
+            Для плоскости $n \equiv \const\then\d n \equiv 0\then \II = 0$.
+        }{
+            $S \equiv 0 \then \d \hat{n} \equiv 0 \then n = n_0 = \const$.
+            Любая кривая $\gamma: [0, 1] \map \Sigma$ на поверхности перпендикулярна этой нормали во всякой своей точке.
+            Функция высоты $H = \angles{\_, n_0}$ постоянна во всех точках кривой.
+        }
     }
     Оператор Вайнгартена можно записать в специальном базисе, в котором $\II = \vect{k_1 & 0 \\ 0 & k_2}$.
 
@@ -1645,19 +1704,19 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     }
     Из предложения следует, что так как оператор Вайнгартена самосопряжён, то у него существует ортонормированный базис из собственных векторов с вещественными собственными числами.
     \theorem[Родрига]{
-    \numbers{
-    \item Бескоординатная формулировка: $v$ принадлежит главному направлению $\iff \d\hat{n}(v)\parallel v$.
-        \item Пусть  $r: \Omega \map \Sigma$ --- параметризация. $\xi \in \R^2$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, при этом $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
-    \provehere{
-    1. Это определение собственного вектора.
+        \numbers{
+            \item Бескоординатная формулировка: $v$ принадлежит главному направлению $\iff \d\hat{n}(v)\parallel v$.
+            \item Пусть  $r: \Omega \map \Sigma$ --- параметризация. $\xi \in \R^2$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, при этом $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
+            \provehere{
+                1. Это определение собственного вектора.
 
-    2. ???
-    }
-    }
+                2. ???
+            }
+        }
     }
     Пусть $p \in \Sigma$.
     \definition[Нормальное сечение с началом в точке $p$ и направлением $v \in T_p\Sigma$]{
-    Пересечение $\Sigma \cap P(p, n(p), v)$, здесь $P(p, n(p), v)$ --- точка, проходящая через $p$, и натянутая на векторы нормали $n(p)$ и $v$.
+        Пересечение $\Sigma \cap P(p, n(p), v)$, здесь $P(p, n(p), v)$ --- точка, проходящая через $p$, и натянутая на векторы нормали $n(p)$ и $v$.
     }
     В окрестности $p$ нормальное сечение --- кривая.
 
@@ -1665,23 +1724,24 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     \definition[Кривизна поверхности в направлении вектора $v$]{
         Кривизна нормального сечения --- гладкой регулярной кривой $\gamma$ --- со знаком $\pm$.
 
-    Пусть $\gamma$ --- нормальное сечение в натуральной параметризации, $\gamma' \upuparrows v$. $k(v) = k_\gamma \cdot \angles{N, \hat{n}} = k_\gamma \cdot \frac{\gamma''}{\abs{\gamma''}}$.
+        Пусть $\gamma$ --- нормальное сечение в натуральной параметризации, $\gamma' \upuparrows v$. $k(v) = k_\gamma \cdot \angles{N, \hat{n}} = k_\gamma \cdot \frac{\gamma''}{\abs{\gamma''}}$.
     }
     Пусть $\tilde{\gamma}: [a, b] \map \Sigma$ --- регулярная кривая.
     Пусть $\tilde{\gamma}$ натурально параметризована, $\tilde{\gamma}' \in T_p\Sigma$, $\tilde{\gamma}'' = k_\gamma \cdot N$.
 
     \definition[Нормальная кривизна $\tilde{\gamma}$]{
-    $k_n(\gamma) \coloneqq \angles{\tilde{\gamma}'', \hat{n}} = k_\gamma \cos(N, \hat{n})$.
+        $k_n(\gamma) \coloneqq \angles{\tilde{\gamma}'', \hat{n}} = k_\gamma \cos(N, \hat{n})$.
     }
     \definition[Геодезическая кривизна $\tilde{\gamma}$]{
-    $k_g$ --- модуль проекции $\tilde{\gamma}''$ на $T_p\Sigma$.
+        $k_g$ --- модуль проекции $\tilde{\gamma}''$ на $T_p\Sigma$.
     }
     Фактически, вектор кривизны был разложен на нормальную и касательную составляющие, только нормальная со знаком, и касательная --- без.
     $k_g = \abs{\tilde{\gamma}'' - k_n \hat{n}}$.
     По теореме Пифагора $k_\gamma = \sqrt{k^2_n(\gamma) + k^2_g(\gamma)}$.
     \definition[Геодезическая кривая]{
-    $k_g \equiv 0$.
+        $k_g \equiv 0$.
     }
+
     \subsection{Что-то считаем}
     $\tilde{\gamma} = r \circ \gamma$, $\gamma' = (u', v')$, $\gamma(t) = (u(t), v(t))$.
 
@@ -1691,30 +1751,32 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     Если обозначит $X = \gamma'$, то видим, что получилась $\II(X)$:
     \[\angles{\tilde{\gamma}'', \hat{n}} = \II(\gamma')\]
     \theorem{
-    Значение $\II$ на единичных векторах (те, для которых $I(v) = 1$ --- единичные в касательной плоскости) --- это кривизны поверхности по направлению соответствующего вектора.
-    \provehere{
-    Применить предыдущую формулу к нормальному сечению с направляющим вектором $v$.
-        \[\hat{\II}(v, v) = ???????\]
-        Если $v \ne 1$, то $k(v) = \frac{\II(\xi, \xi)}{I(\xi, \xi)}$, где $v = \d r(\xi)$.
-    }
+        Значение $\II$ на единичных векторах (те, для которых $I(v) = 1$ --- единичные в касательной плоскости) --- это кривизны поверхности по направлению соответствующего вектора.
+        \provehere{
+            Применить предыдущую формулу к нормальному сечению с направляющим вектором $v$.
+            \[\hat{\II}(v, v) = ???????\]
+            Если $v \ne 1$, то $k(v) = \frac{\II(\xi, \xi)}{I(\xi, \xi)}$, где $v = \d r(\xi)$.
+        }
     }
     \theorem[Менье]{
-    Пусть $p \in \Sigma, v \in T_p\Sigma, |v| = 1$.
-    \numbers{
-    \item Пусть $\tilde{\gamma}$ --- натурально параметризованная кривая, такая, что $\tilde{\gamma}(0) = p, \tilde{\gamma}'(0) = v$.
-    Для всех таких $\tilde{\gamma}$ нормальная кривизна одна и та же.
-        \item Кривизна кривой на поверхности с начальным вектором скорости $v$ зависит только от угла $\angle(N, \hat{n})$, где $N$ --- главная нормаль к кривой.
-    Точнее $k_\gamma \cdot \angles{N, \hat{n}} = k(v)$.
-    }
+        Пусть $p \in \Sigma, v \in T_p\Sigma, |v| = 1$.
+        \numbers{
+            \item Пусть $\tilde{\gamma}$ --- натурально параметризованная кривая, такая, что $\tilde{\gamma}(0) = p, \tilde{\gamma}'(0) = v$.
+            Для всех таких $\tilde{\gamma}$ нормальная кривизна одна и та же.
+            \item Кривизна кривой на поверхности с начальным вектором скорости $v$ зависит только от угла $\angle(N, \hat{n})$, где $N$ --- главная нормаль к кривой.
+            Точнее $k_\gamma \cdot \angles{N, \hat{n}} = k(v)$.
+        }
         \provehere{
-        $\angles{\tilde{\gamma}'', \hat{n}} = \II(\gamma', \gamma')$.
-    }
+            $\angles{\tilde{\gamma}'', \hat{n}} = \II(\gamma', \gamma')$.
+        }
     }
     \example{
-    В сфере единичного радиуса кривизны в любом направлении --- 1, тогда можно посчитать кривизну кривой, которая получается сечением сферы какой-то плоскости.
+        В сфере единичного радиуса кривизны в любом направлении --- 1, тогда можно посчитать кривизну кривой, которая получается сечением сферы какой-то плоскости.
         Например, если плоскость под углом $\frac{\pi}{4}$ к касательному пространству, то кривизна равна $\sqrt{2}$.
     }
     \newlection{27 ноября 2023 г.}
+
+
     \section{Формулы типа Френе}
     Пусть $\Sigma$ --- поверхность, $\gamma$ --- кривая на поверхности.
 
@@ -1735,28 +1797,28 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
 
     Третий вектор назовём \emph{геодезическим кручением}, можно проверить, что $\tau_g = -\II(l, v)$.
     \theorem{
-    Для натурально параметризованной кривой $\gamma$ на поверхности $\Sigma$ выполняются формулы типа Френе:
+        Для натурально параметризованной кривой $\gamma$ на поверхности $\Sigma$ выполняются формулы типа Френе:
         $\all{v' = K_n n' + K_g l \\ n' = -K_n v +\tau_g l \\ n' = -\tau_g n - k_g v}$.
-    \provehere{
-    Надо проверить только то, что коэффициент $\tau_g$ --- как раз $-\II(l, v)$.
-    $l$ лежит в касательной плоскости, поэтому $\angles{n, l} = 0$.
-        Продифференцируем это равенство вдоль кривой:
-    \[0 = \angles{n_v, l} + \angles{n, l_v} \then \angles{l', n} = -\angles{n_v, l} = \II(v, l)\]
-    }
+        \provehere{
+            Надо проверить только то, что коэффициент $\tau_g$ --- как раз $-\II(l, v)$.
+            $l$ лежит в касательной плоскости, поэтому $\angles{n, l} = 0$.
+            Продифференцируем это равенство вдоль кривой:
+            \[0 = \angles{n_v, l} + \angles{n, l_v} \then \angles{l', n} = -\angles{n_v, l} = \II(v, l)\]
+        }
     }
 
     \definition[Геодезическая кривая]{Геодезическая кривизна $K_g$ равна 0, иначе говоря $\gamma'' \parallel n$.}
     \definition[Асимптотическая кривая]{Нормальная кривизна $K_n$ равна 0, иначе говоря $k(v) = 0$.}
     \example[Асимптотиечксая линия]{
-    Через каждую точку гиперболического параболоида походит прямая.
+        Через каждую точку гиперболического параболоида походит прямая.
     }
     Как мы скоро увидим, у любой поверхности с кривизной меньше нуля есть такое семейство прямых.
     \definition[Линия кривизны]{Геодезическое кручение равно нулю.}
     \proposal{
-    У линии кривизны $\gamma'$ --- главное направление.
-    \provehere{
-    Последняя формула вида Френе принимает вид $n' = -K_n v$, то есть $n_v\parallel -K_n v$, но так как $n_v = -S(v)$, то $v$ --- собственный вектор оператора Вайнгартена.
-    }
+        У линии кривизны $\gamma'$ --- главное направление.
+        \provehere{
+            Последняя формула вида Френе принимает вид $n' = -K_n v$, то есть $n_v\parallel -K_n v$, но так как $n_v = -S(v)$, то $v$ --- собственный вектор оператора Вайнгартена.
+        }
     }
     \example[Линия кривизны]{
         Параллели и меридианы на торе.
@@ -1766,37 +1828,41 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
         Пусть им соответствуют главные кривизны $k_1, k_2$.
 
         Пусть $\angle(v_1, v) = \phi$, тогда $v = \cos(\phi)v_1 + \sin(\phi)v_2$, так как $v_1 \perp v_2$.
-    Тогда $k(v) = k_1 \cos^2(\phi) + k_2 \sin^2(\phi)$.
-    \provehere{
-    Выберем специальные координаты. Пусть $\R^2_{x, y} = T_p\Sigma$, причём оси координат $x, y$ --- главные направления. Пусть $r(x_0) = p$.
-        Тогда $[\II] = \vect{k_1 & 0 \\ 0 & k_2}$ и $r_x(x_0) = v_1, r_y(x_0) = v_2$.
+        Тогда $k(v) = k_1 \cos^2(\phi) + k_2 \sin^2(\phi)$.
+        \provehere{
+            Выберем специальные координаты. Пусть $\R^2_{x, y} = T_p\Sigma$, причём оси координат $x, y$ --- главные направления. Пусть $r(x_0) = p$.
+            Тогда $[\II] = \vect{k_1 & 0 \\ 0 & k_2}$ и $r_x(x_0) = v_1, r_y(x_0) = v_2$.
 
-    Тогда $k(v) = \frac{\hat{\II}(v)}{\hat{I}(v)}$. Так как $|v| = 1$, то $k(v) = \hat{\II}(v) = \vect{\cos \phi & \sin \phi}\vect{k_1 & 0 \\ 0 & k_2} \vect{\cos \phi \\ \sin \phi} = k_1 \cos^2\phi + k_2 \sin^2 \phi$.
-    }
+            Тогда $k(v) = \frac{\hat{\II}(v)}{\hat{I}(v)}$. Так как $|v| = 1$, то $k(v) = \hat{\II}(v) = \vect{\cos \phi & \sin \phi}\vect{k_1 & 0 \\ 0 & k_2} \vect{\cos \phi \\ \sin \phi} = k_1 \cos^2\phi + k_2 \sin^2 \phi$.
+        }
     }
     \corollary{
-    $k_1, k_2$ --- экстремальные значения (минимум и максимум) кривизн по направлению.
+        $k_1, k_2$ --- экстремальные значения (минимум и максимум) кривизн по направлению.
     }
+
+
     \section{Вычисление главных кривизн и направлений в координатах}
     Вычислим при заданной параметризации $r: \Omega \map \Sigma$ главные кривизны.
     \theorem{
         Пусть поверхность параметризована $r: \Omega \map \Sigma$, тогда главные кривизны --- это корни уравнения
-    \[\det([\II] - \lambda[I]) = 0\]
-    У данного квадратного уравнения могут быть два равных корня, тогда точка --- омбилическая, то есть все кривизны равны, и все векторы --- главного направления.
+        \[\det([\II] - \lambda[I]) = 0\]
+        У данного квадратного уравнения могут быть два равных корня, тогда точка --- омбилическая, то есть все кривизны равны, и все векторы --- главного направления.
 
         Иначе векторы главного направления $\xi_{1,2}$ --- такие, что $([\II] - k_{1,2}[I])\xi_{1,2} = 0$.
-    \provehere{
-        $[\II] = [I] \cdot [S]$. Отсюда $[S] = [I]^{-1}[\II]$.
-        Вообще говоря, $S$ --- самосопряжён, но матрица не симметрична, так как базис не ортонормирован.
-    Найдём собственные числа $[S]$, то есть решим уравнение $\det([S] - \lambda E) = 0$. Но $\det([I]) \ne 0$, поэтому уравнение эквивалентно уравнению $\det([I]\cdot[S] - \lambda[I]) = 0$.
+        \provehere{
+            $[\II] = [I] \cdot [S]$. Отсюда $[S] = [I]^{-1}[\II]$.
+            Вообще говоря, $S$ --- самосопряжён, но матрица не симметрична, так как базис не ортонормирован.
+            Найдём собственные числа $[S]$, то есть решим уравнение $\det([S] - \lambda E) = 0$. Но $\det([I]) \ne 0$, поэтому уравнение эквивалентно уравнению $\det([I]\cdot[S] - \lambda[I]) = 0$.
 
-    Про собственные векторы аналогично: если $\xi$ --- вектор главного направления, то $[S]\xi = k_{1,2}\xi$, домножая на первую форму, получаем, $[I]\cdot[S]\xi = k_{1,2}\cdot[I]\xi$.
-    }
+            Про собственные векторы аналогично: если $\xi$ --- вектор главного направления, то $[S]\xi = k_{1,2}\xi$, домножая на первую форму, получаем, $[I]\cdot[S]\xi = k_{1,2}\cdot[I]\xi$.
+        }
     }
     Для конкретных коэффициентов $[\II] = \vect{L & M \\ M & N}$, $[I] = \vect{E & F \\ F & G}$, получено уравнение \[\det([\II] - \lambda[I]) = \abs{\arr{cc}{L - \lambda E & M - \lambda F \\ M - \lambda F & N - \lambda G}} = (L - \lambda E)(N - \lambda G) - (M - \lambda F)^2 = 0\]
     \[\lambda^2(EG - F^2) - \lambda(EN + LG - 2FM) + (LN - M^2) = 0\]
     Гауссова кривизна $K = k_1 \cdot k_2 = \frac{LN - M^2}{EG - F^2} = \frac{\det[\II]}{\det[I]}$.
     Средняя кривизна --- это $\frac{k_1 + k_2}{2} = \frac{EN + LG - 2FM}{2\det[I]}$.
+
+
     \section{Ковариантная производная}
     \definition[Гладкое векторное поле вдоль поверхности $\Sigma$]{
         Гладкое отображение $X: \Sigma \map \R^3$, такое, что $X(p) \in T_p\Sigma$ ($\forall p: T_p\Sigma \ni 0$).
@@ -1804,44 +1870,45 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     Рассмотрим параметризацию $r: \Omega \map \Sigma$.
     Всякий вектор можно разложить в этом базисе: $X = X_1 r_u + X_2 r_v$.
     \statement{
-    $X$ --- гладкое $\iff X_1, X_2$ --- оба гладкие.
+        $X$ --- гладкое $\iff X_1, X_2$ --- оба гладкие.
     }
     Пусть $X$ --- гладкое векторное поле, зафиксируем $p \in \Sigma$, выберем $v = v_p \in T_p\Sigma$.
     \definition[Ковариантная производная векторного поля вдоль вектора $v$]{
-    Производная ортогональной проекции $X$ на $T_p\Sigma$ по направлению вектора $v$:
+        Производная ортогональной проекции $X$ на $T_p\Sigma$ по направлению вектора $v$:
         $\nabla_v X = \Pr_{T_p\Sigma}^\perp(X)'_v \in T_p\Sigma$.
-    Ещё $\nabla$ называется \emph{связность} (с чего бы это?).
+        Ещё $\nabla$ называется \emph{связность} (с чего бы это?).
     }
     Для двух векторных полей $X, Y$: $\nabla_Y X = \nabla_{Y_p}X$.
     Это тоже векторное поле.
     \note{
-    Ковариантная производная $\nabla_{v_p}X$ зависит только от $X$ в окрестности $p$.
+        Ковариантная производная $\nabla_{v_p}X$ зависит только от $X$ в окрестности $p$.
     }
     \note{
-    Для двух функций $f, g: \R^n \map \R^n$ и регулярной кривой $\gamma$ с вектором скорости $v_p$: Если $f\Big|_{\gamma} = g\Big|_{\gamma}$, то $f'_v(t_0) = g'_v(t_0)$.
+        Для двух функций $f, g: \R^n \map \R^n$ и регулярной кривой $\gamma$ с вектором скорости $v_p$: Если $f\Big|_{\gamma} = g\Big|_{\gamma}$, то $f'_v(t_0) = g'_v(t_0)$.
     }
     \proposal{
-    Кривая $\gamma$ геодезическая $\iff \nabla_{\gamma'}(\gamma') = 0$.
-    Производную можно брать только вдоль кривой, но можно что-то продолжить, и всё будет хорошо.
-    \provehere{
-    $\Pr(\gamma'') = \nabla_{\gamma'}\gamma'$. $\gamma'' \perp T_p\Sigma$.
-    }
+        Кривая $\gamma$ геодезическая $\iff \nabla_{\gamma'}(\gamma') = 0$.
+        Производную можно брать только вдоль кривой, но можно что-то продолжить, и всё будет хорошо.
+        \provehere{
+            $\Pr(\gamma'') = \nabla_{\gamma'}\gamma'$. $\gamma'' \perp T_p\Sigma$.
+        }
     }
     \properties{
-    \item \textbf{Билинейность}: для $\alpha, \beta \in \R: \nabla_v(\alpha X + \beta Y) = \alpha\nabla_vX + \beta\nabla_vY$ и $\nabla_{\alpha v_1 + \beta v_2}X = \alpha\nabla_{v_1}X + \beta\nabla_{v_2}X$.
+        \item \textbf{Билинейность}: для $\alpha, \beta \in \R: \nabla_v(\alpha X + \beta Y) = \alpha\nabla_vX + \beta\nabla_vY$ и $\nabla_{\alpha v_1 + \beta v_2}X = \alpha\nabla_{v_1}X + \beta\nabla_{v_2}X$.
         Следует из того, что производная линейна.
-    \item Пусть $f: \Sigma \map \R$.
+        \item Пусть $f: \Sigma \map \R$.
         Тогда $\nabla_{v_p} (f \cdot  X) = f'_v(p) \cdot X_p + f(p) \cdot \nabla_{v_p}X$.
-    Следует из определения: $\nabla_{f v}(X) = f \nabla_v X$.
-    \item \textbf{Дифференцирование} $\angles{\_, \_}$.
-    Пусть $X, Y$ --- векторные поля, $v_p \in T_p\Sigma$. Тогда $\angles{X, Y}'_{v_p} = \angles{\nabla_vX, Y} + \angles{X, \nabla_v Y}$.
-    \provehere{
-    Мы знаем, что $\angles{X, Y}'_v = \angles{X'_v, Y} + \angles{X'_v, Y}$.
+        Следует из определения: $\nabla_{f v}(X) = f \nabla_v X$.
+        \item \textbf{Дифференцирование} $\angles{\_, \_}$.
+        Пусть $X, Y$ --- векторные поля, $v_p \in T_p\Sigma$. Тогда $\angles{X, Y}'_{v_p} = \angles{\nabla_vX, Y} + \angles{X, \nabla_v Y}$.
+        \provehere{
+            Мы знаем, что $\angles{X, Y}'_v = \angles{X'_v, Y} + \angles{X'_v, Y}$.
 
-    Достаточно проверить, что $\angles{X_v', Y} = \angles{\nabla_v X, Y}$.
-    Это правда, так как $\Pr(X'_v) = \nabla_v X$, и $Y \in T_p\Sigma$. Таким образом, $X'_v = \nabla_v X + c \hat{n}$.
+            Достаточно проверить, что $\angles{X_v', Y} = \angles{\nabla_v X, Y}$.
+            Это правда, так как $\Pr(X'_v) = \nabla_v X$, и $Y \in T_p\Sigma$. Таким образом, $X'_v = \nabla_v X + c \hat{n}$.
+        }
     }
-    }
+
     \subsection{Вычисления в координатах. Символы Кристоффеля}
     Пусть $r: \Omega \map \Sigma$ --- параметризация.
 
@@ -1860,15 +1927,16 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
     }
     Удобнее использовать символы Кристоффеля второго рода, а символы первого рода нужны только, чтобы посчитать символы второго рода.
     \statement{
-    Пусть первая форма $I = \vect{E & F \\ G & H} = \vect{g_{1,1} & g_{1,2} \\ g_{2,1} & g_{2,2}}$.
+        Пусть первая форма $I = \vect{E & F \\ G & H} = \vect{g_{1,1} & g_{1,2} \\ g_{2,1} & g_{2,2}}$.
         $\Gamma_{i,j;k} = \sum\limits_{l = 1}^{n}g_{k,l}\Gamma_{i,j}^l$.
-    \provehere{
-    Умножим разложение $\Gamma_{i,j} = \sum\limits_{l = 1}^{n}\Gamma_{i,j}^{l}r_{x_l}$ скалярно на $r_{x_k}$.
-    $\Gamma_{i,j;k} = \angles{\Gamma_{i,j}, r_{x_k}} = \angles{\sum\limits_{l = 1}^{n}\Gamma_{i,j}^l r_{x_l}, r_{x_k}}$. Далее воспользуемся тем, что $\angles{r_{x_l}, r_k} = g_{l,k}$, и по линейности получим нужную формулу.
-    }
+        \provehere{
+            Умножим разложение $\Gamma_{i,j} = \sum\limits_{l = 1}^{n}\Gamma_{i,j}^{l}r_{x_l}$ скалярно на $r_{x_k}$.
+            $\Gamma_{i,j;k} = \angles{\Gamma_{i,j}, r_{x_k}} = \angles{\sum\limits_{l = 1}^{n}\Gamma_{i,j}^l r_{x_l}, r_{x_k}}$. Далее воспользуемся тем, что $\angles{r_{x_l}, r_k} = g_{l,k}$, и по линейности получим нужную формулу.
+        }
     }
     \newlection{4 декабря 2023 г.}
     Если при фиксированных $i,j$ обозначить $\Gamma_{i,j;k} = (Y) = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j,n}}$ и $\Gamma_{i,j}^{l} = (X) = \vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^n}$, то окажется, что $Y = G X$ и $G^{-1}Y = X$ (матрица Грама обратима).
+
     \subsection{Зачем нужны символы Кристоффеля}
     Символы Кристоффеля нужны для того, чтобы вычислять ковариантную производную в координатах.
 
@@ -1880,182 +1948,184 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
         Раскроем второе выражение по линейности: $\nabla_{\sum\limits_{j}{\xi_j r_{x_j}}}r_{x_i} = \sum\limits_{j}\xi_j \nabla_{r_{x_j}}r_{x_i} = \sum\limits_{i,j}\xi_j\Gamma_{i,j}$.
     }}
     \theorem{
-    Символы Кристоффеля выражаются через коэффициенты первой формы $I = \vect{g_{1,1} & g_{1,2} \\ g_{2,1} & g_{2,2}}$ и их производные:
+        Символы Кристоффеля выражаются через коэффициенты первой формы $I = \vect{g_{1,1} & g_{1,2} \\ g_{2,1} & g_{2,2}}$ и их производные:
         $\Gamma_{i,j; k} = \frac{(g_{i,k})'_{x_j} + (g_{j,k})'_{x_i} - (g_{i,j})'_{x_k}}{2}$.
         \provehere{
-    Возьмём определение метрического тензора $\angles{r_{x_i}, r_{x_j}} = g_{i,j}$ и продифференцируем:
-    \[(g_{i,j})'_{x_k} = \angles{r_{x_i, x_k}, r_{x_j}} + \angles{r_{x_i}, r_{x_j, x_k}} \qquad \Pr_{T_p\Sigma}r_{x_i, x_j} = \nabla_{r_{x_i}}r_{x_j} = \Gamma_{i,j} = \cdots\]
-    Так как если $w$ --- вектор плоскости $S$, то $\angles{v, w} = \angles{\Pr_S v, w}$, то
-    \[\cdots = \angles{\Gamma_{i,k}, r_{x_j}} + \angles{r_{x_i}, \Gamma_{j,k}} = \Gamma_{i,k; j} + \Gamma_{j,k; i}\]
-    Из симметрии ($\Gamma_{i,j;*} = \Gamma_{j,i;*}$) получаем $(g_{i,k})_{x_j} = \Gamma_{i,j;k} + \Gamma_{k,j;i}$ и $(g_{k,j})_{x_i} = \Gamma_{k,i; j} + \Gamma_{j,i;k}$.
+            Возьмём определение метрического тензора $\angles{r_{x_i}, r_{x_j}} = g_{i,j}$ и продифференцируем:
+            \[(g_{i,j})'_{x_k} = \angles{r_{x_i, x_k}, r_{x_j}} + \angles{r_{x_i}, r_{x_j, x_k}} \qquad \Pr_{T_p\Sigma}r_{x_i, x_j} = \nabla_{r_{x_i}}r_{x_j} = \Gamma_{i,j} = \cdots\]
+            Так как если $w$ --- вектор плоскости $S$, то $\angles{v, w} = \angles{\Pr_S v, w}$, то
+            \[\cdots = \angles{\Gamma_{i,k}, r_{x_j}} + \angles{r_{x_i}, \Gamma_{j,k}} = \Gamma_{i,k; j} + \Gamma_{j,k; i}\]
+            Из симметрии ($\Gamma_{i,j;*} = \Gamma_{j,i;*}$) получаем $(g_{i,k})_{x_j} = \Gamma_{i,j;k} + \Gamma_{k,j;i}$ и $(g_{k,j})_{x_i} = \Gamma_{k,i; j} + \Gamma_{j,i;k}$.
 
-        Действительно $\Gamma_{i,j; k} = \frac{(g_{i,k})'_{x_j} + (g_{j,k})'_{x_i} - (g_{i,j})'_{x_k}}{2}$.
-    }
-    }
-    \corollary{
-    Символы Кристоффеля лежат во внутренней геометрии (сохраняется при изометриях, зависит только от внутренней метрики).
+            Действительно $\Gamma_{i,j; k} = \frac{(g_{i,k})'_{x_j} + (g_{j,k})'_{x_i} - (g_{i,j})'_{x_k}}{2}$.
+        }
     }
     \corollary{
-    Ковариантная производная принадлежит внутренней геометрии.
+        Символы Кристоффеля лежат во внутренней геометрии (сохраняется при изометриях, зависит только от внутренней метрики).
+    }
+    \corollary{
+        Ковариантная производная принадлежит внутренней геометрии.
     }
     \note{
-    Посмотрим в какой-то карте. Векторное поле --- в каждой точке задан вектор, гладко зависящий от точки.
+        Посмотрим в какой-то карте. Векторное поле --- в каждой точке задан вектор, гладко зависящий от точки.
 
-    Проведём кривую, и продифференцируем векторное поле вдоль кривой.
+        Проведём кривую, и продифференцируем векторное поле вдоль кривой.
         Можно рассмотреть некоторую аналогию с евклидовым пространством, но это останется за рамками данного повествования.
     }
     \theorem[Egregium, теорема Гаусса]{
-    Гауссова кривизна принадлежит внутренней геометрии поверхности.
-    Точнее, гауссова кривизна $K = \frac{\angles{\nabla_X \nabla_Y Y - \nabla_Y \nabla_X Y, X}}{\det I}$.
+        Гауссова кривизна принадлежит внутренней геометрии поверхности.
+        Точнее, гауссова кривизна $K = \frac{\angles{\nabla_X \nabla_Y Y - \nabla_Y \nabla_X Y, X}}{\det I}$.
 
         Здесь $X = r_u, Y = r_v$.
-    \provehere{
-        \indentlemma{
-        Пусть $W, V$ --- гладкие векторные поля. Тогда $(W)_V = \underbrace{\nabla_V W}_{T_p\Sigma} + \hat{\II}(V, W) \cdot n$.
-        }{
-        По определению ковариантной производной составляющая в касательной плоскости --- это $\nabla_V W$.
-        $\angles{W_V, n} \overset{?}= \hat{\II}(V, W)$
+        \provehere{
+            \indentlemma{
+                Пусть $W, V$ --- гладкие векторные поля. Тогда $(W)_V = \underbrace{\nabla_V W}_{T_p\Sigma} + \hat{\II}(V, W) \cdot n$.
+            }{
+                По определению ковариантной производной составляющая в касательной плоскости --- это $\nabla_V W$.
+                $\angles{W_V, n} \overset{?}= \hat{\II}(V, W)$
 
-        $\angles{W,n} = 0 \then \angles{W_V, n} + \angles{W, n_V} = 0$, и $\angles{W_V, n} = \angles{W, -n_V} = \angles{W, S(V)} = \hat{\II}(V, W)$.
+                $\angles{W,n} = 0 \then \angles{W_V, n} + \angles{W, n_V} = 0$, и $\angles{W_V, n} = \angles{W, -n_V} = \angles{W, S(V)} = \hat{\II}(V, W)$.
+            }
+            Посчитаем ковариантную производную: $\nabla_Y Y = r_{v,v} - \hat{\II}(v,v)\cdot n$.
+            Затем
+            $\nabla_X(r_{v,v} - \hat{\II}(v,v)\cdot n) = \Pr_{T_p\Sigma}(r_{v,v,u} - (\hat{\II})' \cdot n - \hat{\II}(Y, Y)n_u) = \Pr_{T_p\Sigma}(r_{v,v,u} - \hat{\II}(Y, Y) \cdot S(X))$.
+
+            Аналогично $\nabla_X Y = r_{v,u} - \hat{\II}(X, Y) \cdot n$  и $\nabla_Y (r_{v,u} - \hat{\II}(X, Y)n) = \Pr(r_{v,u,v} - (\hat{\II})' \cdot n - \hat{\II}(X, Y) \cdot n_v) = \Pr(r_{v,u,v} - \hat{\II}(X, Y) \cdot S(Y))$.
+
+            Вычитая выражения друг из друга, получаем
+            \[\angles{\hat{\II}(Y,Y)S(X) + \II(Y,Y)S(X), X} = \hat{\II}(Y, Y) \cdot \hat{\II}(X, X) -(\hat{\II}(X, Y))^2\]
+            Далее используем $K = \frac{\det\II}{\det I}$.
         }
-    Посчитаем ковариантную производную: $\nabla_Y Y = r_{v,v} - \hat{\II}(v,v)\cdot n$.
-    Затем
-    $\nabla_X(r_{v,v} - \hat{\II}(v,v)\cdot n) = \Pr_{T_p\Sigma}(r_{v,v,u} - (\hat{\II})' \cdot n - \hat{\II}(Y, Y)n_u) = \Pr_{T_p\Sigma}(r_{v,v,u} - \hat{\II}(Y, Y) \cdot S(X))$.
-
-        Аналогично $\nabla_X Y = r_{v,u} - \hat{\II}(X, Y) \cdot n$  и $\nabla_Y (r_{v,u} - \hat{\II}(X, Y)n) = \Pr(r_{v,u,v} - (\hat{\II})' \cdot n - \hat{\II}(X, Y) \cdot n_v) = \Pr(r_{v,u,v} - \hat{\II}(X, Y) \cdot S(Y))$.
-
-        Вычитая выражения друг из друга, получаем
-    \[\angles{\hat{\II}(Y,Y)S(X) + \II(Y,Y)S(X), X} = \hat{\II}(Y, Y) \cdot \hat{\II}(X, X) -(\hat{\II}(X, Y))^2\]
-    Далее используем $K = \frac{\det\II}{\det I}$.
-    }
     }
     Получается, в случае, когда пространство искривлено, равенство $f''_{u,v} \ne f''_{v,u}$, и мера некоммутативности ковариантной производной определяет гауссову кривизну.
     \example{
-    Гауссова кривизна плоскости --- ноль, плоскость можно как-то изгибать, в конус или цилиндр, но по-прежнему гауссова кривизна будет нулём (и цилиндр, и конус лежат по одну сторону от касательной плоскости, поэтому их гауссовы кривизны неотрицательны, но есть направления, в которых их кривизны равны нулю, поэтому гауссовы кривизны равны нулю).
+        Гауссова кривизна плоскости --- ноль, плоскость можно как-то изгибать, в конус или цилиндр, но по-прежнему гауссова кривизна будет нулём (и цилиндр, и конус лежат по одну сторону от касательной плоскости, поэтому их гауссовы кривизны неотрицательны, но есть направления, в которых их кривизны равны нулю, поэтому гауссовы кривизны равны нулю).
     }
     Локально поверхность имеет уравнение $z = \frac{k_1 x^2 + k_2 y^2}{2}$.
     Кривизны $k_1$ и $k_2$ могут быть одного знака, или разных.
 
     Если кривизны разного знака, то из формулы $k(\phi) = k_1 \cos^2\phi + k_2 \sin^2\phi$ понятно, что найдётся направление, в котором кривизна равна нулю.
     В частности, в гиперболическом параболоиде эти направления выстраиваются в прямую.
+
+
     \section{Выпуклые поверхности}
     \definition[Выпуклая поверхность]{
-    Она лежит по одну сторону от любой своей соприкасающейся плоскости.
+        Она лежит по одну сторону от любой своей соприкасающейся плоскости.
     }
     \definition[Локальный гомеоморфизм $f: X \map Y$]{Отображение $f$, такое, что
     $\forall x \in X: \exists U \ni x: f\Big|_U$ --- гомеоморфизм на образ, причём $f(U)$ открыто.
     }
     \theorem{
-    Пусть $\Sigma$ --- гладкая компактная поверхность без края.
+        Пусть $\Sigma$ --- гладкая компактная поверхность без края.
         \numbers{
-        \item Если поверхность выпукла, то гауссова кривизна $K \ge 0$.
-        \item Если гауссова кривизна $K > 0$, то поверхность выпукла.
+            \item Если поверхность выпукла, то гауссова кривизна $K \ge 0$.
+            \item Если гауссова кривизна $K > 0$, то поверхность выпукла.
         }
-    \provebullets{
-        \item Выберем специальные координаты, в них должно быть очевидно.
-    \item Выберем нормаль $n$ во всех точках так, что главные кривизны во всех точках $> 0$.
+        \provebullets{
+            \item Выберем специальные координаты, в них должно быть очевидно.
+            \item Выберем нормаль $n$ во всех точках так, что главные кривизны во всех точках $> 0$.
 
-    Это показывает, что существует гауссово отображение $n: \Sigma \map S^2$, то есть гауссово отображение можно определить глобально.
-    $\d n \ne 0$, так как главные кривизны невырождены, и если $u, v$ --- главные направления, то по теореме Родрига $n_u = -k_1 r_u \ne 0$ и $n_v = -k_2 r_v \ne 0$.
-    Ещё можно сказать, что $S = -\d n$, собственные числа $S$ не равны 0, поэтому $\d n$ невырожден.
+            Это показывает, что существует гауссово отображение $n: \Sigma \map S^2$, то есть гауссово отображение можно определить глобально.
+            $\d n \ne 0$, так как главные кривизны невырождены, и если $u, v$ --- главные направления, то по теореме Родрига $n_u = -k_1 r_u \ne 0$ и $n_v = -k_2 r_v \ne 0$.
+            Ещё можно сказать, что $S = -\d n$, собственные числа $S$ не равны 0, поэтому $\d n$ невырожден.
 
-    Значит (по теореме об обратной функции), отображение $n: \Sigma \map S^2$ --- локальный гомеоморфизм.
+            Значит (по теореме об обратной функции), отображение $n: \Sigma \map S^2$ --- локальный гомеоморфизм.
 
-    \indentlemma{Пусть $X$ --- компактное метризуемое пространство, $f: X \map Y$ --- локальный гомеоморфизм. Тогда $f$ --- накрытие.}{
-        Из метризуемости следует хаусдорфовость, из компактности --- секвенциальная компактность.
+            \indentlemma{Пусть $X$ --- компактное метризуемое пространство, $f: X \map Y$ --- локальный гомеоморфизм. Тогда $f$ --- накрытие.}{
+                Из метризуемости следует хаусдорфовость, из компактности --- секвенциальная компактность.
 
-    Проверим, что $f$ --- конечнолистное накрытие. От противного: $\exists y \in Y: |f^{-1}(y)|$ бесконечно.
-        Выберем сходящуюся подпоследовательность $x_n \underset{n \to \infty}\Map x$. Получим противоречие (?)
+                Проверим, что $f$ --- конечнолистное накрытие. От противного: $\exists y \in Y: |f^{-1}(y)|$ бесконечно.
+                Выберем сходящуюся подпоследовательность $x_n \underset{n \to \infty}\Map x$. Получим противоречие (?)
 
-    Теперь у каждой точки конечное число прообразов, и из хаусдорфовости можно выбрать им непересекающиеся окрестности.
-    }
-    Далее сфера односвязна, поэтому всякое накрытие однолистно, значит, $\Sigma \map S^2$ --- гомеоморфизм.
-        Получается, нашлось ровно два направления, в которых данная плоскость --- касательна, и, значит, $\Sigma$ действительно выпукла:
+                Теперь у каждой точки конечное число прообразов, и из хаусдорфовости можно выбрать им непересекающиеся окрестности.
+            }
+            Далее сфера односвязна, поэтому всякое накрытие однолистно, значит, $\Sigma \map S^2$ --- гомеоморфизм.
+            Получается, нашлось ровно два направления, в которых данная плоскость --- касательна, и, значит, $\Sigma$ действительно выпукла:
 
-    От противного, пусть $\Sigma$ не выпукла, тогда существует касательная плоскость, такая, что $\Sigma$ лежит по обе стороны от данной плоскости, но тогда на $+\infty$и $-\infty$ найдутся ещё по два направления.
-    }
+            От противного, пусть $\Sigma$ не выпукла, тогда существует касательная плоскость, такая, что $\Sigma$ лежит по обе стороны от данной плоскости, но тогда на $+\infty$и $-\infty$ найдутся ещё по два направления.
+        }
     }
     \note{
-    На самом деле даже $K \ge 0$ влечёт выпуклость поверхности, но это доказывать сложнее.
+        На самом деле даже $K \ge 0$ влечёт выпуклость поверхности, но это доказывать сложнее.
     }
     \newlection{11 декабря 2023 г.}
     \lemma{
-    Пусть $\Omega \subset \R^2$ --- область (в размерности 3 неверно), и пусть в $\Omega$ заданы два гладких поля --- $V, W$, причём в $x_0 \in \Omega: V_{x_0}, W_{x_0}$ линейно независимы.
+        Пусть $\Omega \subset \R^2$ --- область (в размерности 3 неверно), и пусть в $\Omega$ заданы два гладких поля --- $V, W$, причём в $x_0 \in \Omega: V_{x_0}, W_{x_0}$ линейно независимы.
 
-    Тогда $\exists U_{x_0} \ni x_0$, и $\exists$ карта $\phi:U_{x_0} \map \Omega_0$, такая, что $V, W$ --- касательные к координатным линиям.
+        Тогда $\exists U_{x_0} \ni x_0$, и $\exists$ карта $\phi:U_{x_0} \map \Omega_0$, такая, что $V, W$ --- касательные к координатным линиям.
 
-    Обратно, если $r = \phi^{-1}$, то $\d r(1, 0) \parallel V$ и $\d r(0, 1) \parallel W$.
-    \provehere{\ref{later}}
+        Обратно, если $r = \phi^{-1}$, то $\d r(1, 0) \parallel V$ и $\d r(0, 1) \parallel W$.
+        \provehere{\ref{later}}
     }
     \definition[Развёртывающаяся поверхность]{Поверхность, локально изометричная плоскости.}
     \statement{
-    Из теоремы Гаусса следует, что гауссова кривизна развёртывающейся поверхности --- нуль.
+        Из теоремы Гаусса следует, что гауссова кривизна развёртывающейся поверхности --- нуль.
     }
     \intfact{
-    Если гауссова кривизна поверхности $K \equiv 0$, то поверхность --- развёртывающаяся.
+        Если гауссова кривизна поверхности $K \equiv 0$, то поверхность --- развёртывающаяся.
     }
     \theorem{
         Пусть $\Sigma \subset \R^3$ --- развёртывающаяся поверхность.
-    \numbers{
-        \item Тогда $\forall p \in \Sigma: \exists a, b \in \Sigma: p \in (a, b)$ и $[a, b] \subset \Sigma$.
-        \item[1+.] Если одна из главных кривизн не нуль, то отрезок можно продолжать на любой компакт $K \subset \Sigma$.
-    \item Все касательные плоскости, построенные в точках $[a, b]$, параллельны.
-    \item\up \intfact{
-            Если $\Sigma$ --- полная (в смысле топологического пространства: все фундаментальные последовательности имеют предел), то это --- цилиндр (то есть восставлены перпендикуляры к некоторой кривой на поверхности).
+        \numbers{
+            \item Тогда $\forall p \in \Sigma: \exists a, b \in \Sigma: p \in (a, b)$ и $[a, b] \subset \Sigma$.
+            \item[1+.] Если одна из главных кривизн не нуль, то отрезок можно продолжать на любой компакт $K \subset \Sigma$.
+            \item Все касательные плоскости, построенные в точках $[a, b]$, параллельны.
+            \item\up \intfact{
+                Если $\Sigma$ --- полная (в смысле топологического пространства: все фундаментальные последовательности имеют предел), то это --- цилиндр (то есть восставлены перпендикуляры к некоторой кривой на поверхности).
+            }
+            \provehere{
+
+                Разобьём точки на омбилические $\Sigma_0$ (обе кривизны равны нулю) и остальные $\Sigma_1$: $\Sigma = \Sigma_0 \sqcup \Sigma_1$.
+
+                Сначала рассмотрим точки из $\Sigma_1$.
+                Пусть в направлении $v_1$ кривизна $k_1 = 0$, а в направлении $v_2: k_2 \ne 0$.
+
+                Такой базис единственен, значит, векторы $v$ гладко зависят от точки --- чтобы их найти, надо решить соответствующее уранвение.
+
+                Тогда в окрестности каждой точки $x_0 \in \Sigma$ можно выбрать параметризацию $r: \Omega \map \Sigma_1$, такую, что координатные линии параллельны главным направлениям: $\all{n'_x = -k_1 r'_x = 0 \\ n'_y = -k_2 r'_y}$, $r'_x \perp r'_y$.
+
+                Так как $n'_x = 0$, то при перемещении нормали вдоль координатной линии --- образа вектора $(1, 0)$ --- она локально остаётся постоянной: $n(\_, \const) = \const$.
+
+                Запишем $0 = n''_{x,y} = n''_{y,x}$, значит, $n'_y \ne 0$ тоже постоянен вдоль оси $x$: $n_y(\_, y_0) = \const$.
+
+                Так как $n'_y \parallel r'_y$, то $n, n'_y$ --- линейно независимы. Так как $n, n'_y \perp r'_x$, то $r'_x$ --- координатная линия --- является куском прямой, можно выбрать внутри маленький отрезок $[a, b]$.
+                Доказали 1 для $\Sigma_1$.
+
+                Понятно, что интервал $(a, b)$ можно продолжить в точке $b$, это не получится только если $b \notin \Sigma_1$ (либо $b \in \Sigma_0$, либо пришли к краю поверхности).
+                Покажем, что ситуация $b \in \Sigma_0$ --- невозможная.
+
+                \indentlemma{Заметим, что $\angles{r'_x, r'_x}'_y = 0$.}{$\angles{r'_x, r'_y} = 0 \then \angles{r''_{x,x}, r'_y} + \angles{r'_x, r'_{x,y}} = 0$.
+                Мы доказали, что $r'_{x,x} \parallel r_x$, откуда первое слагаемое --- нуль. Но $\angles{r'_x, r'_x}_y = 2\angles{r'_x, r''_{x,y}} = 0$.}
+                Можно перепараметризовать так, что $\angles{r'_x, r'_x} = 1$ --- взять натуральную параметризацию в направлении отрезка $[a, b]$.
+
+                Теперь $r''_{x,x} = 0$, то есть $r'''_{x,x,y} = 0$, откуда $\left(r'_{y}\right)''_{x,x} = 0$.
+                Значит, $r'_y = (ax + b)w_0$, где $w_0$ --- некий постоянный вектор.
+
+                Теперь вспомним, что $\xi_0 \coloneqq n'_y = -k_1 r'_y$.
+                Получается, что $k_1 = \frac{1}{ax + b}$, при движении вдоль $x$. Значит, на данном отрезке кривизна никогда не станет нулём.
+                Доказали 1+.
+
+                Посмотрим на $\Sigma_0$. Если $p \in \Int \Sigma_0$, $\exists \underbrace{U}_{\ni p} \in \Sigma_0$. Дифференциал $\d n = 0$ в данной окрестности, и $U$ --- часть плоскости.
+                Иначе $\nexists \underbrace{U}_{\ni p} \in \Sigma_0$, то есть найдётся последовательность точек $p_1, \dots, p_n, \dots \in \Sigma_1: p_k \underset{k \to \infty}\Map p$.
+                Возьмём у каждой точке $p_k$ интервал, проходящий через неё. Их длины не стремятся к нулю, так как интервалы могут заканчиваться только на краю поверхности, выберем сходящуюуся подпоследовательность отрезков.
+                Доказали 1 для $\Sigma_0$.
+            }
         }
-    \provehere{
-
-    Разобьём точки на омбилические $\Sigma_0$ (обе кривизны равны нулю) и остальные $\Sigma_1$: $\Sigma = \Sigma_0 \sqcup \Sigma_1$.
-
-    Сначала рассмотрим точки из $\Sigma_1$.
-        Пусть в направлении $v_1$ кривизна $k_1 = 0$, а в направлении $v_2: k_2 \ne 0$.
-
-    Такой базис единственен, значит, векторы $v$ гладко зависят от точки --- чтобы их найти, надо решить соответствующее уранвение.
-
-    Тогда в окрестности каждой точки $x_0 \in \Sigma$ можно выбрать параметризацию $r: \Omega \map \Sigma_1$, такую, что координатные линии параллельны главным направлениям: $\all{n'_x = -k_1 r'_x = 0 \\ n'_y = -k_2 r'_y}$, $r'_x \perp r'_y$.
-
-    Так как $n'_x = 0$, то при перемещении нормали вдоль координатной линии --- образа вектора $(1, 0)$ --- она локально остаётся постоянной: $n(\_, \const) = \const$.
-
-    Запишем $0 = n''_{x,y} = n''_{y,x}$, значит, $n'_y \ne 0$ тоже постоянен вдоль оси $x$: $n_y(\_, y_0) = \const$.
-
-        Так как $n'_y \parallel r'_y$, то $n, n'_y$ --- линейно независимы. Так как $n, n'_y \perp r'_x$, то $r'_x$ --- координатная линия --- является куском прямой, можно выбрать внутри маленький отрезок $[a, b]$.
-        Доказали 1 для $\Sigma_1$.
-
-    Понятно, что интервал $(a, b)$ можно продолжить в точке $b$, это не получится только если $b \notin \Sigma_1$ (либо $b \in \Sigma_0$, либо пришли к краю поверхности).
-    Покажем, что ситуация $b \in \Sigma_0$ --- невозможная.
-
-    \indentlemma{Заметим, что $\angles{r'_x, r'_x}'_y = 0$.}{$\angles{r'_x, r'_y} = 0 \then \angles{r''_{x,x}, r'_y} + \angles{r'_x, r'_{x,y}} = 0$.
-    Мы доказали, что $r'_{x,x} \parallel r_x$, откуда первое слагаемое --- нуль. Но $\angles{r'_x, r'_x}_y = 2\angles{r'_x, r''_{x,y}} = 0$.}
-Можно перепараметризовать так, что $\angles{r'_x, r'_x} = 1$ --- взять натуральную параметризацию в направлении отрезка $[a, b]$.
-
-    Теперь $r''_{x,x} = 0$, то есть $r'''_{x,x,y} = 0$, откуда $\left(r'_{y}\right)''_{x,x} = 0$.
-    Значит, $r'_y = (ax + b)w_0$, где $w_0$ --- некий постоянный вектор.
-
-    Теперь вспомним, что $\xi_0 \coloneqq n'_y = -k_1 r'_y$.
-        Получается, что $k_1 = \frac{1}{ax + b}$, при движении вдоль $x$. Значит, на данном отрезке кривизна никогда не станет нулём.
-    Доказали 1+.
-
-    Посмотрим на $\Sigma_0$. Если $p \in \Int \Sigma_0$, $\exists \underbrace{U}_{\ni p} \in \Sigma_0$. Дифференциал $\d n = 0$ в данной окрестности, и $U$ --- часть плоскости.
-    Иначе $\nexists \underbrace{U}_{\ni p} \in \Sigma_0$, то есть найдётся последовательность точек $p_1, \dots, p_n, \dots \in \Sigma_1: p_k \underset{k \to \infty}\Map p$.
-        Возьмём у каждой точке $p_k$ интервал, проходящий через неё. Их длины не стремятся к нулю, так как интервалы могут заканчиваться только на краю поверхности, выберем сходящуюуся подпоследовательность отрезков.
-    Доказали 1 для $\Sigma_0$.
-    }
-    }
     }
     \theorem[О выпрямлении векторного поля]{
-    Пусть $\Omega \subset \R^2$ (хотя вообще это верно для любой размерности).
-    Зафиксируем $x \in \Omega$,
+        Пусть $\Omega \subset \R^2$ (хотя вообще это верно для любой размерности).
+        Зафиксируем $x \in \Omega$,
         Пусть $V$ --- гладкое векторное поле, $V_x \ne 0$.
 
-    Тогда $\exists$ карта $\phi: \underbrace{U_x}_{\ni x} \map \Omega_0$, такая, что $V$ --- векторное поле координатных линий: $\d \phi(v) = (1, 0)$, или если $r = \phi^{-1}$ --- параметризация, то $r'_x = v$.
-    \provehere{
-    Рассмотрим гладкую регулярную кривую $\alpha(0) = x, \alpha'(0) \text{ и }V'_x$ линейно независимы (например, можно выбрать так, чтобы было $\alpha'(0) \perp V'_x$).
+        Тогда $\exists$ карта $\phi: \underbrace{U_x}_{\ni x} \map \Omega_0$, такая, что $V$ --- векторное поле координатных линий: $\d \phi(v) = (1, 0)$, или если $r = \phi^{-1}$ --- параметризация, то $r'_x = v$.
+        \provehere{
+            Рассмотрим гладкую регулярную кривую $\alpha(0) = x, \alpha'(0) \text{ и }V'_x$ линейно независимы (например, можно выбрать так, чтобы было $\alpha'(0) \perp V'_x$).
 
-    Если такая карта существует (в качестве второй координатной линии взять $\alpha$), то понятно, как она устроена. Построим параметризацию \[r(t, \tau) = \gamma_\tau(t) = \all{\gamma_\tau(0) = \alpha(\tau) \\ \gamma'_\tau(t) = V(\gamma_\tau(t))}\]
-    Решая это дифференциальное уравнение (почему оно имеет решение?) получаем карту $\gamma_\tau(t)$, гладко зависящее от начальных данных.
+            Если такая карта существует (в качестве второй координатной линии взять $\alpha$), то понятно, как она устроена. Построим параметризацию \[r(t, \tau) = \gamma_\tau(t) = \all{\gamma_\tau(0) = \alpha(\tau) \\ \gamma'_\tau(t) = V(\gamma_\tau(t))}\]
+            Решая это дифференциальное уравнение (почему оно имеет решение?) получаем карту $\gamma_\tau(t)$, гладко зависящее от начальных данных.
 
-    Осталось проверить, что $\d r(0, 0) \ne 0$. $r'_{\tau}(0, 0) = \alpha'(0), r'_t(0, 0) = V_x$, а $V_x$ линейно независимо с $\alpha'(0)$.
-    }
+            Осталось проверить, что $\d r(0, 0) \ne 0$. $r'_{\tau}(0, 0) = \alpha'(0), r'_t(0, 0) = V_x$, а $V_x$ линейно независимо с $\alpha'(0)$.
+        }
     }
     Пусть $\phi = (\phi_1, \phi_2) = r^{-1}$ --- расписали карту, обратную к параметризации, по координатам.
 
@@ -2068,15 +2138,15 @@ $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
         Обратно, если $r = \phi^{-1}$, то $\d r(1, 0) \parallel V$ и $\d r(0, 1) \parallel W$.
         \provehere{\label{later}
 %    Пусть $h_1, h_2$ --- координаты из теоремы о выпрямлении векторного поля. Тогда $\d h_1(W) = 0$.
-    Применим к $V, W$ теорему о выпрямлении векторного поля, назовём карту для $V$ $(\phi_1, \phi_2)$, для $W$ --- $(\psi_1, \psi_2)$.
+        Применим к $V, W$ теорему о выпрямлении векторного поля, назовём карту для $V$ $(\phi_1, \phi_2)$, для $W$ --- $(\psi_1, \psi_2)$.
 
         Возьмём в качестве карты $h \coloneqq (\phi_2, \psi_2)$. Оно подходит:
         \bullets{
-        \item $V \in \Ker\d\phi_2, W \in \Ker\d\psi_2$.
-        Действительно, $\phi_2$ постоянно вдоль главных координатных линий, значит, $\d\phi_2(V) = 0$
-        \item $\d \phi$ невырожден, значит, $\d\phi_2$ невырожден, аналогично $\d\psi_2$ невырожден.
+            \item $V \in \Ker\d\phi_2, W \in \Ker\d\psi_2$.
+            Действительно, $\phi_2$ постоянно вдоль главных координатных линий, значит, $\d\phi_2(V) = 0$
+            \item $\d \phi$ невырожден, значит, $\d\phi_2$ невырожден, аналогично $\d\psi_2$ невырожден.
             При этом $V_{x_0}$ и $W_{x_0}$ линейно независимы, значит, $\d h$ невырожден.
         }
-    }
+        }
     }
 \end{document}
