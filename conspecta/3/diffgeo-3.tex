@@ -684,51 +684,51 @@
         Букет двух окружностей имеет группу $\mathcal{F}_2$. Накрытие с группой $\Z$ факторизует по одной образующей, оставляя другую. Выглядит это примерно так:
         \[\begin{tikzpicture}
               \begin{scope}[xshift=-4cm]
-              \fill (0, 0) circle (1.5pt);
-              \newcommand{\rose}[4]{ %x, y, dir, length
-                  \pgfmathsetmacro{\length}{\numexpr{8 * #4}};
-                  \ifnum\length>1
-                        \IfStrEq{#3}{u}{\draw[<-] (#1, #2) -- ({#1}, {#2-#4})}{\rose{#1}{#2-#4/2}{d}{#4/2}};
-                        \IfStrEq{#3}{d}{\draw[<-] (#1, #2) -- ({#1}, {#2+#4})}{\rose{#1}{#2+#4/2}{u}{#4/2}};
-                        \IfStrEq{#3}{l}{\draw[<-] (#1, #2) -- ({#1+#4}, {#2})}{\rose{#1+#4/2}{#2}{r}{#4/2}};
-                        \IfStrEq{#3}{r}{\draw[<-] (#1, #2) -- ({#1-#4}, {#2})}{\rose{#1-#4/2}{#2}{l}{#4/2}};
-                  \fi
-              }
-              \rose{0}{0}{.}{3};
-              \node[above] at(0.75,0){$a$};
-              \node[above] at(-0.75,0){$a^{-1}$};
-              \node[right] at(0,0.75){$b$};
-              \node[right] at(0,-0.75){$b^{-1}$};
-        \end{scope}
-        \begin{scope}[xshift=3cm, yshift=2cm]
-            \fill (1.2, 0) circle (1.5pt);
-            \foreach \x in {-2.4,-1.2,0} {
-                \draw[<-] (\x, 0) -- ({\x+4}, 0);
-                \draw ({\x},{-0.5}) circle[radius=0.5];
-                \draw[->] (\x, -1) -- ({\x-0.05}, -1) node[below] {$b$};
-                \node[above] at ({\x+0.6},0) {$a^{-1}$};
-            }
-            \foreach \x in {1.2,2.4} {
-                \draw[->] ({\x-4}, 0) -- ({\x+1.2}, 0);
-                \node[above] at ({\x+0.6},0) {$a$};
-                \draw ({\x},{-0.5}) circle[radius=0.5];
-                \draw[->] (\x, -1) -- ({\x-0.05}, -1) node[below] {$b$};
-            }
-            \draw ({3.6},{-0.5}) circle[radius=0.5];
-            \draw[->] (3.6, -1) -- (3.55, -1) node[below] {$b$};
-        \end{scope}
-        \begin{scope}[xshift=3cm, yshift=-2cm]
-            \fill (0, 0) circle (1.5pt);
-            \draw[->] (-0.5, 0.5) -- (-0.45, 0.5);
-            \draw[->] (0.5, 0.5) -- (0.55, 0.5);
-            \draw (-0.5, 0) circle [radius=0.5];
-            \draw (0.5, 0) circle [radius=0.5];
-            \node[above] at (-0.5, 0.5) {$a$};
-            \node[above] at (0.5, 0.5) {$b$};
-        \end{scope}
-        \draw[->,dashed] (-1,0.5) -- (-0.2,1);
-        \draw[->,dashed] (1,0.5) -- (1.5,-1);
-        \draw[->,dashed] (-1,-0.5) -- (1,-1.3);
+                  \fill (0, 0) circle (1.5pt);
+                  \newcommand{\rose}[4]{ %x, y, dir, length
+                      \pgfmathsetmacro{\length}{\numexpr{8 * #4}};
+                      \ifnum\length>1
+                      \IfStrEq{#3}{u}{\draw[<-] (#1, #2) -- ({#1}, {#2-#4})}{\rose{#1}{#2-#4/2}{d}{#4/2}};
+                      \IfStrEq{#3}{d}{\draw[<-] (#1, #2) -- ({#1}, {#2+#4})}{\rose{#1}{#2+#4/2}{u}{#4/2}};
+                      \IfStrEq{#3}{l}{\draw[<-] (#1, #2) -- ({#1+#4}, {#2})}{\rose{#1+#4/2}{#2}{r}{#4/2}};
+                      \IfStrEq{#3}{r}{\draw[<-] (#1, #2) -- ({#1-#4}, {#2})}{\rose{#1-#4/2}{#2}{l}{#4/2}};
+                      \fi
+                  }
+                  \rose{0}{0}{.}{3};
+                  \node[above] at(0.75,0){$a$};
+                  \node[above] at(-0.75,0){$a^{-1}$};
+                  \node[right] at(0,0.75){$b$};
+                  \node[right] at(0,-0.75){$b^{-1}$};
+              \end{scope}
+              \begin{scope}[xshift=3cm, yshift=2cm]
+                  \fill (1.2, 0) circle (1.5pt);
+                  \foreach \x in {-2.4,-1.2,0} {
+                      \draw[<-] (\x, 0) -- ({\x+4}, 0);
+                      \draw ({\x},{-0.5}) circle[radius=0.5];
+                      \draw[->] (\x, -1) -- ({\x-0.05}, -1) node[below] {$b$};
+                      \node[above] at ({\x+0.6},0) {$a^{-1}$};
+                  }
+                  \foreach \x in {1.2,2.4} {
+                      \draw[->] ({\x-4}, 0) -- ({\x+1.2}, 0);
+                      \node[above] at ({\x+0.6},0) {$a$};
+                      \draw ({\x},{-0.5}) circle[radius=0.5];
+                      \draw[->] (\x, -1) -- ({\x-0.05}, -1) node[below] {$b$};
+                  }
+                  \draw ({3.6},{-0.5}) circle[radius=0.5];
+                  \draw[->] (3.6, -1) -- (3.55, -1) node[below] {$b$};
+              \end{scope}
+              \begin{scope}[xshift=3cm, yshift=-2cm]
+                  \fill (0, 0) circle (1.5pt);
+                  \draw[->] (-0.5, 0.5) -- (-0.45, 0.5);
+                  \draw[->] (0.5, 0.5) -- (0.55, 0.5);
+                  \draw (-0.5, 0) circle [radius=0.5];
+                  \draw (0.5, 0) circle [radius=0.5];
+                  \node[above] at (-0.5, 0.5) {$a$};
+                  \node[above] at (0.5, 0.5) {$b$};
+              \end{scope}
+              \draw[->,dashed] (-1,0.5) -- (-0.2,1);
+              \draw[->,dashed] (1,0.5) -- (1.5,-1);
+              \draw[->,dashed] (-1,-0.5) -- (1,-1.3);
         \end{tikzpicture}\]
 %        \pic[0.5]{partial_factorizing}{Накрытие букета окружностей с группой $\Z$.}
     }
@@ -738,15 +738,17 @@
     Тогда имеется цепочка морфизмов накрытий в обратном направлении.
     % https://q.uiver.app/#q=WzAsNCxbMCwxLCJ7WX0vTl8yID0gKFlfMiwgeV8yKSJdLFswLDIsIntZfS9OXzEgID0gKFlfMSwgeV8xKSJdLFswLDMsIlkvXFxwaV8xKFgpID0gKFgsIHhfMCkiXSxbMCwwLCJZL1xcezFcXH0gPSAoWSwgeV8wKSJdLFswLDEsInBfMiJdLFsxLDIsInBfMSJdLFszLDAsInBfMCJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {Y/\{1\} = (Y, y_0)} \\
-    {{Y}/N_2 = (Y_2, y_2)} \\
-    {{Y}/N_1  = (Y_1, y_1)} \\
-    {Y/\pi_1(X) = (X, x_0)}
-    \arrow["{p_2}", from=2-1, to=3-1]
-    \arrow["{p_1}", from=3-1, to=4-1]
-    \arrow["{p_0}", from=1-1, to=2-1]
+    {Y/\{1\} = (Y, y_0)}
+          \\
+          {{Y}/N_2 = (Y_2, y_2)} \\
+          {{Y}/N_1  = (Y_1, y_1)} \\
+          {Y/\pi_1(X) = (X, x_0)}
+          \arrow["{p_2}", from=2-1, to=3-1]
+          \arrow["{p_1}", from=3-1, to=4-1]
+          \arrow["{p_0}", from=1-1, to=2-1]
     \end{tikzcd}\]
     Здесь, например, $p_2$ --- морфизм накрытий $p_1 \circ p_2$ и $p_1$.
+
 
     \section{Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}
 
@@ -889,7 +891,6 @@
         Таким образом, гомотопия не задевает образ центра шара, дальше <<линейным отталкиванием>> выдуваем гомотопию в $Y$.
     }
 
-
     \subsection{Фундаментальные группы основных поверхностей}
     $S_p$ --- сфера с $p$ ручками, $S_q$ --- сфера с $q$ плёнками.
 
@@ -912,6 +913,8 @@
             Приклеиваем клетки к букету окружностей.
         }
     }
+
+
     \section{Построение универсального накрытия}
     \theorem{
         Для <<хороших>> пространств существует универсальное накрытие $p: \tilde{X} \map X$.
@@ -1012,14 +1015,10 @@
         Эквивалентность кривых --- отношение эквивалентности.
         Аналогичный факт верен для эквивалентности гладких перепараметрищаций гладких кривых.
     }
-    \begin{definition_env}
-        Разбиение отрезка $[a, b]$
-    \end{definition_env}{
+    \definition[Разбиение отрезка $\lbrack a, b\rbrack$]{
         Разбиение $a = t_0 \le \cdots \le t_k = b$.
     }
-    \begin{definition_env}
-        Длина кривой $\gamma: [a, b] \map X$
-    \end{definition_env}{
+    \definition[Длина кривой $\gamma: \lbrack a, b\rbrack \map X$]{
         $L(\gamma) \bydef \sup\limits_{a = t_0 \le \cdots \le t_k = b} \sum\limits_{i = 0}^{k-1}d(\gamma(t_i), \gamma(t_{i + 1}))$
     }
     \note{
@@ -1034,8 +1033,7 @@
         $\gamma_1 \sim \gamma_2 \then L(\gamma_1) = L(\gamma_2)$.
     }
     \statement{
-        Если кривая $\gamma$ гладкая, то $L(\gamma) = \int\limits_{a}^{b}|\gamma'(t)|\d t$.
-        \provehere{
+        Если кривая $\gamma$ гладкая, то $L(\gamma) = \int\limits_{a}^{b}|\gamma'(t)|\d t$.\provehere{
             Докажем неравенство в обе стороны.
             \bullets{
                 \item $\int\limits_{a}^{b}|\gamma'(t)|\d t \le L(\gamma)$.
@@ -1043,13 +1041,16 @@
                 $\gamma'$ равномерно непрерывна. Таким образом, $\forall \eps > 0: \exists \delta > 0: |t_1 - t_2| \le \delta \then |\gamma'(t_1) - \gamma'(t_2)| < \eps$.
                 Разобьём отрезок на $\ceilfrac{b - a}{\delta}$ частей равной длины (каждая часть имеет длины не больше $\delta$) точками $a = t_0 \le \cdots \le t_k = b$.
 
-                Запишем $\gamma(t_{i+1}) - \gamma(t_i) = \int\limits_{t_i}^{t_{i+1}}\gamma'(t)\d t = \int\limits_{t_i}^{t_{i+1}}\gamma'(t_i) + (\gamma'(t) - \gamma'(t_i))\d t$.
-                Отсюда получаем \[\int\limits_{t_i}^{t_{i+1}}|\gamma'(t_i)|\d t = \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t_i)\d t} \le \abs{\int\limits_{t_i}^{t_{i+1}}\gamma(t)\d t + \eps|t_{i+1} - t_i|} \le \abs{\gamma(t_{i+1}) - \gamma(t_i)} + \eps|t_{i+1} - t_i|\]
-                Используя $|\gamma'(t)| \le |\gamma'(t_i)| + \eps$, получаем $\int\limits_{a}^{b}|\gamma'(t)|\d t + 2\eps|b -a| \le L(\gamma)$. Устремим $\eps \to 0$.
+                Обозначим $\phi_i(t) \coloneqq \gamma'(t_i) - \gamma'(t)$. Из равномерной непрерывности $|\phi_i(t)| < \eps$ на $[t_i, t_{i + 1}]$.
+                \multline{
+                    \int\limits_{t_i}^{t_{i+1}}(|\gamma'(t)| - \eps)\d t \le \int\limits_{t_i}^{t_{i+1}}|\gamma'(t_i)|\d t = \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t_i)\d t} = \abs{\int\limits_{t_i}^{t_{i+1}}(\gamma'(t) + \phi_i(t))\d t} \le \\
+                    \le \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t)\d t} + \abs{\int\limits_{t_i}^{t_{i+1}}\phi_i(t))\d t} \le \abs{\gamma(t_{i+1}-\gamma(t_i))} + \eps|t_{i+1}-t_i|
+                }
+                Получаем $\int\limits_{a}^{b}|\gamma'(t)|\d t + 2\eps|b -a| \le L(\gamma)$. Устремим $\eps \to 0$.
                 \item $L(\gamma) \le \int\limits_{a}^{b}|\gamma'(t)|\d t$.
 
-                Рассмотрим разбиение $a = t_0 \le \cdots \le t_k = b$.
-                Используем неравенство \[|\gamma(t_{i + 1}) - \gamma(t_i)| = \abs{\int\limits_{t_i}^{t_{i + 1}}\gamma'(t)\d t} \le \int\limits_{t_i}^{t_{i + 1}}\abs{\gamma'(t)}\d t\]
+                Зафиксируем $a = t_0 \le \cdots \le t_k = b$.
+                Оценим $|\gamma(t_{i + 1}) - \gamma(t_i)| = \abs{\int\limits_{t_i}^{t_{i + 1}}\gamma'(t)\d t} \le \int\limits_{t_i}^{t_{i + 1}}\abs{\gamma'(t)}\d t$.\qedhere
             }
         }
     }
@@ -1075,7 +1076,6 @@
             Выберем $\eps > 0$, из равномерной непрерывности $\gamma$ найдётся $\delta > 0: |t_1 - t_2| \le \delta \then \abs{\gamma(t_1)  - \gamma(t_2)} < \eps$.
 
             Рассмотрим разбиение $a = t_0 \le \cdots \le t_k = b$, такое, что $\abs{t_{i + 1} - t_i} \le \eps$.
-
             \[L(\gamma) \ge \sum\limits_{i = 0}^{k - 1}|\gamma(t_i) - \gamma(t_{i + 1})| \ge \sum\limits_{i = 0}^{k - 1}\angle(\gamma(t_i), \gamma(t_{i + 1}))\cdot\frac{\eps}{2\arcsin\left(\nicefrac{\eps}{2}\right)} \ge \angle(\gamma(a), \gamma(b)) \cdot \frac{\eps}{2\arcsin\left(\nicefrac{\eps}{2}\right)}\]
             Устремляем $\eps \to 0$.
         }
@@ -1084,11 +1084,11 @@
     \subsection{Параметризация кривой длиной дуги}
     Пусть $\gamma: [a, b] \map X$, где $(X, d)$ --- метрическое пространство.
     \definition[Натуральная параметризация]{
-        $L\left(\gamma\Big|_{[t_1, t_2]}\right) = t_1 - t_2$
+        Такая параметризация $\gamma$, что $\forall t_1, t_2 \in [a, b]$: $L\left(\gamma\Big|_{[t_1, t_2]}\right) = t_1 - t_2$.
     }
     \statement{
         Гладкая кривая параметризована натурально $\iff \abs{\gamma'} \equiv 1$.
-        \provewthen{
+        \provetwhen{
             Если $\exists t_0: \gamma'(t_0) = 1 + \delta$, то $\exists \eps > 0: |t - t_0| < \eps \then |\gamma'(t)| - |\gamma'(t_0)| \le \frac{\delta}{2}$.
             Тогда так как длина --- интеграл модуля производной, то в $\eps$-окрестности $t_0$ не выполняется определение натуральной параметризации.
         }{
@@ -1097,26 +1097,26 @@
     }
     \theorem{
         Для любой регулярной кривой существует натуральная параметризация.
-        Эта параметризация единственна с точностью до сдвига на константу: если $\gamma: [a, b] \map X$ --- натуральная параметризация, то \begin{align*}
-                                                                                                                                               \tilde{\gamma}: [a + c, b + c] &\map X\\t + c &\mapsto \gamma(t)
-        \end{align*} тоже.
+        Эта параметризация единственна с точностью до сдвига на константу: если $\gamma: [a, b] \map X$ --- натуральная параметризация, то натуральной параметризацией является ещё и
+        \begin{align*}
+            \tilde{\gamma}: [a + c, b + c] &\map X\\t + c &\mapsto \gamma(t)
+        \end{align*}
         \provehere{
             Пусть $\gamma: [a, b] \map \R^n$.
 
-            Эта параметризация устроена так: $s: [a, b] \map [0, L(\gamma)] \qquad s(t) = L\left(\gamma\Big|_{[a, t]}\right) = \int\limits_{a}^{t}|\gamma'(t)|\d t$.
+            Предъявим натуральную параметризацию: $s: [a, b] \map [0, L(\gamma)] \qquad s(t) = L\left(\gamma\Big|_{[a, t]}\right) = \int\limits_{a}^{t}|\gamma'(t)|\d t$.
             \[s'(t) = |\gamma'(t)| > 0,\text{ поэтому $s$ --- валидная перепараметризация.}\]
             Положим $\gamma_1 = \gamma \circ s^{-1}$.
             \[\gamma_1' = (\gamma \circ (s^{-1}))' = \gamma' \cdot \frac{1}{s'} \quad \then \quad |\gamma_1'| = \frac{|\gamma'|}{|\gamma'|} = 1\]
-            Если же есть две перепараметризации $\gamma_1$, $\gamma_2$, то $|\gamma_1'| = |\gamma_2'| \cdot |\phi'|$, откуда $|\phi'| = 1$, то есть используя $\phi' > 0$ (получаем, что $\phi$ --- сдвиг на константу)
+            Если же есть две перепараметризации $\gamma_1 = \gamma_2 \circ\phi$, то $|\gamma_1'| = |\gamma_2'| \cdot |\phi'|$, откуда $|\phi'| = 1$.
+            Используя $\phi' > 0$, получаем, что $\phi$ --- сдвиг на константу.
         }
     }
-    \statement{
+    \statement[Правило Лейбница]{
         Пусть $A: I \map \R^n, B: I \map \R^m$; пусть $*: \R^n \times \R^m \map \R^k$ --- билинейно.
         Тогда у отображения $A * B: I \map \R^k$ производная считается по правилу
         \[(A * B)' = A' * B + A * B'\]
-        \provehere{
-
-        }
+        \provehere{\multline{\lim\limits_{t \to t_0}(A(t)*B(t) - A(t_0)*B(t_0)) = \lim\limits_{t \to t_0}A(t)*(B(t) - B(t_0)) +\\+ \lim\limits_{t \to t_0}(A(t) - A(t_0))*B(t_0) = A(t_0)B'(t_0) + A'(t)B(t_0)}}
     }
     \examples{
         \item В качестве $*$ может выступать скалярное произведение, векторное произведение, умножение вектора на число (и вообще умножение матриц)\ldots
@@ -1130,9 +1130,16 @@
         Пара $(v, n)$, такая, что $v \perp n$, причём $(v, n)$ --- правый ортонормированный базис.
         Данный вектор $n$ --- \emph{нормаль к плоской кривой}.
     }
-    Так как $\angles{v, v} = 1$, то $\angles{v', v} = 0$, откуда $v' \perp v$ и $\exists! \kappa(t) \in \R: v' = \kappa n$.
+    Так как $\angles{v, v} = 1$, то $\angles{v', v} = 0$, откуда $v' \perp v$ и $\exists! \kappa \in \R: v' = \kappa n$.
     \definition[Кривизна плоской кривой]{
-        Данное число $\kappa$.
+        Данное число $\kappa$ (на самом деле это функция $\R \map \R$, причём гладкая: $\kappa = \angles{v', n}$).
+    }
+    \precaution{
+        $\kappa$ --- кривизна двумерной кривой (кривизна со знаком).
+
+        Если же работать в более, чем двумерном пространстве, то у кривизны не будет знака. Там
+        \[v \coloneqq \gamma' \quad N = \frac{\gamma''}{|\gamma''|}\]
+        Кривизна без знака обозначается $k \coloneqq |\gamma''|$.
     }
 
     \subsection{Формулы Френе}
@@ -1150,25 +1157,16 @@
         \provehere{
             Рассмотрим $\eps > 0$. Для него найдётся последовательность точек $0 = t_0 \le \cdots \le t_k = 1: \sum\limits_{i = 0}^{k - 1}|\gamma_{\infty}(t_{i+1})-\gamma_{\infty}(t_i)| \ge l(\gamma_{\infty}) - \eps$.
 
-            Выберем настолько большой номер $m: \forall i: \abs{\gamma_m(t_i) - \gamma_{\infty}(t_i)} < \frac{\eps}{m}$. Тогда $l(\gamma_m) \ge l(\gamma_{\infty}) - 3\eps$.
+            Выберем настолько большой номер $M \in \N: \forall m \ge M: \forall i \in [1, k]: \abs{\gamma_m(t_i) - \gamma_{\infty}(t_i)} < \frac{\eps}{k}$. Тогда $l(\gamma_m) \ge l(\gamma_{\infty}) - 3\eps$.
 
             Устремляя $\eps \to 0$, получаем искомое утверждение.
         }
     }
-    \note{
-        $\kappa$ --- кривизна двумерной кривой (кривизна со знаком).
-
-        Если же работать в более, чем двумерном пространстве, то у кривизны не будет знака. Там
-        \[v \coloneqq \gamma' \quad N = \frac{\gamma''}{|\gamma''|}\]
-        Так как $\angles{\gamma',\gamma'} = 1$, то $\angles{\gamma'', \gamma'} = 0$.
-
-        Кривизна без знака $k \coloneqq |\gamma''|$.
-    }
     Пусть $\gamma: I \map \R^n$ --- регулярная кривая, $M \subset \R^n$ --- множество.
-    \definition[$\gamma$ имеет порядок касания не меньше $m$ со множеством $M$ в точке $t_0$]{
+    \definition[$\gamma$ имеет порядок касания не меньше $k$ со множеством $M$ в точке $t_0$]{
         $d(\gamma(t), M) = o((t-t_0)^k)$.
     }
-    Если две регулярные кривые можно параметризовать так, что $\gamma_1^{(i)} = \gamma_2^{(i)}$ для $i \le m$, то порядок касания не меньше $m$.
+    \statement{Если две регулярные кривые можно параметризовать так, что $\gamma_1^{(i)} = \gamma_2^{(i)}$ для $i \le k$, то порядок касания одной кривой другой не меньше $k$.}
     \definition[Касательная прямая к $\gamma$ в точке $t_0$]{
         Кривая, проходящая через $\gamma(t_0)$ с направляющим вектором $\gamma'(t_0)$.
     }
@@ -1180,16 +1178,16 @@
     }
     Пусть $\gamma$ --- регулярная кривая $\gamma(t_0) = \gamma_0$.
     \definition[Соприкасающаяся окружность к $\gamma$ в точке $t_0$]{
-        Окружность радиуса $\abs{\frac1\kappa}$ с центром $\gamma_0 + \frac{n}{\kappa}$. (или минус?)
+        Окружность радиуса $\abs{\frac1\kappa}$ с центром $\gamma_0 + \frac{n}{\kappa}$.
     }
     Разложив в ряд Тейлора, можно показать, что порядок касания соприкасающейся окружности $\ge 2$.
     \theorem{
         Пусть $\gamma$ --- регулярная кривая. Тогда кривизна считается по формуле $\kappa(t_0) = \frac{[\gamma'(t_0), \gamma''(t_0)]}{|\gamma'(t_0)|^3}$.
-        Здесь $[x, y]$ --- смешанное или внешнее произведение $x$ и $y$
+        Здесь $[x, y]$ --- смешанное или внешнее произведение $x$ и $y$.
         \provehere{
             Перепараметризуем $\gamma$ натуральной параметризацией $\gamma = \overline{\gamma}(\phi(t))$.
-            Тогда $|\gamma'| = \phi'$, $\gamma' = \phi' v$ и \[\gamma'' = \phi'' \cdot \overline{\gamma}' + (\phi')^2 \cdot \overline{\gamma}'' = \phi'' \cdot \overline{\gamma}' + |\gamma'|^2 \cdot \kappa n\]
-            Отсюда получаем $[\gamma', \gamma''] = [|\gamma'|^2, |\gamma'|^2 \kappa n] = |\gamma'|^3 \cdot \kappa$
+            Тогда $|\gamma'| = \phi'$, $\gamma' = \phi' v = \phi'\overline{\gamma}'$ и \[\gamma'' = \phi'' \cdot \overline{\gamma}' + (\phi')^2 \cdot \overline{\gamma}'' = \phi'' \cdot \overline{\gamma}' + |\gamma'|^2 \cdot \kappa n\]
+            Отсюда получаем $[\gamma', \gamma''] = [|\gamma'|v, |\gamma'|^2 \kappa n] = |\gamma'|^3 \cdot \kappa$.
         }
     }
 
@@ -1205,24 +1203,25 @@
     \end{tikzcd}\]
     Если $f$ гладкое, то $\alpha$ гладкое --- выражается где-то как арксинус, где-то --- как арккосинус.
 
-    В дальнейшем мы часто будем поднимать вектор скорости $\gamma'$, если $\gamma$ --- кривая при $|\gamma'| = 1$..
+    В дальнейшем мы часто будем поднимать вектор скорости $\gamma'$, если $\gamma$ --- кривая в натуральной параметризации ($|\gamma'| = 1$).
 
     \definition[Поворот плоской кривой]{
         $\int\limits_{a}^{b}\kappa(t)\d t$, где $\kappa(t)$ --- кривизна в натуральной параметризации.
     }
     \theorem{
         Пусть $\gamma$ --- натуральная параметризация, $v$ --- вектор скорости. Пусть $\alpha(t)$ --- непрерывный аргумент (полученный из поднятия), такой, что $v(t) = (\cos(\alpha(t)), \sin(\alpha(t)))$.
-        Тогда $\alpha' = k$ и $\int\limits_{a}^{b}\kappa(t)\d t = \alpha(b) - \alpha(a)$.
+        Тогда $\alpha' = \kappa$ и, значит, $\int\limits_{a}^{b}\kappa(t)\d t = \alpha(b) - \alpha(a)$.
         \provehere{
-            $\kappa n = v' = (-\sin(\alpha), \cos(\alpha)) \cdot \alpha'$. Можно проверить, что $(-\sin(\alpha), \cos(\alpha)) \perp (\sin(\alpha), \cos(\alpha))$, причём векторы образуют правый базис.
+            $\kappa n = v' = (-\sin(\alpha), \cos(\alpha)) \cdot \alpha'$.
+            Можно проверить, что $(-\sin(\alpha), \cos(\alpha)) \perp (\sin(\alpha), \cos(\alpha))$, причём векторы образуют правый базис.
         }
     }
     \theorem{
         Для любой гладкой функции $\tilde{\kappa}: I \map \R$: $\exists! \gamma: I \map \R^2$ --- натурально параметризованная кривая, такая, что $\kappa_\gamma = \tilde{\kappa}$. Единственность предполагается с точностью до движения, сохраняющего ориентацию.
         \provehere{
-            Имеет место даже более точное утверждение: при заданном $\tilde{\kappa}$: $\forall p0, v_0$: $\exists!$ натурально параметризованная кривая $\gamma: \gamma(a) = p_0, \gamma'(a) = v_0$.
+            Имеет место даже более точное утверждение: при заданном $\tilde{\kappa}: I \map \R$: $\forall p_0, v_0 \in \R^2$: $|v_0| = 1 \then \exists!$ натурально параметризованная кривая $\gamma: \gamma(a) = p_0, \gamma'(a) = v_0$.
 
-            Для любой пары векторов одной длины существует единственное движение, сохраняющее ориентацию, переводящее точку в точку, вектор в вектор.
+            Для любой пары ортогональных векторов одной длины, отложенных из одной точки, существует единственное движение, сохраняющее ориентацию, переводящее точку в точку, вектор в вектор.
 
             Пусть $\gamma$ --- натурально параметризована, $v = (\cos\alpha, \sin\alpha)$. $\dot{\alpha} = \tilde{\kappa}$, причём $\alpha$ определяется единственным образом с точностью до константы $2\pi$.
             \[\alpha = \alpha_0 + \int\limits_{a}^{b}\tilde{\kappa}(\tau)\d \tau\]
@@ -1274,7 +1273,7 @@
     }
 
     \subsection{Выпуклые кривые на плоскости}
-    Пусть $\gamma$ --- замкнутая гладкая регулярная кривая.
+    Пусть $\gamma: [a, b] \map \R^2$ --- замкнутая гладкая регулярная кривая.
 
     Дадим два определения, и покажем их равносильность.
     \definition[Выпуклая кривая, 1]{
@@ -1287,23 +1286,24 @@
         Эти определения равносильны.
         \provetwhen {
             Касательная к $\gamma$ в точке $t$ --- опорная прямая для компакта.
-            Значит, она лежит только по то сторону от своей касательной, в которую лежит компакт.
+            Значит, она лежит только по ту сторону от своей касательной, в которую лежит компакт.
         }{
             Рассмотрим $K \coloneqq \text{conv}(\Image(\gamma))$. $\nexists t_0: \gamma(t_0)$ --- внутренняя точка $K$.
 
             Так как $K$ гомеоморфно диску $D^2$, то $\partial K \sim S^1$, $\Image(\gamma) \sim S^1$.
-            При этом $\gamma \subset \partial K$ --- простая кривая без самопересечений.
+            При этом $\gamma$ --- простая кривая без самопересечений.
 
             Несложно показать, что инъективное непрерывное отображение $S^1 \map S^1$ --- гомеоморфизм.
         }
     }
+    \newlection{30 октября 2023 г.}
     \theorem{
-        Следующие условия равносильны:
+        Следующие условия (для замкнутой гладкой регулярной кривой $\gamma: [a, b] \map \R^2$) равносильны:
         \numbers{
             \item $\gamma$ выпукла
-            \item $K_\gamma$ не меняет знак (всегда $\ge 0$ или всегда $\le 0$).
+            \item $\kappa_\gamma$ не меняет знак (всегда $\ge 0$ или всегда $\le 0$).
             \item Для любой прямой $L: \exist$ ровно две касательные к $\gamma$, параллельные $L$.
-            \provehere{\down
+            \provehere{Считаем, что $\gamma: [0, L] \map \R^2$ в натуральной параметризации.
             \bullets{
                 \item[$1 \then 2$] Выберем какую-то ориентацию, зафиксируем $t_0$.
                 Покажем, что если $\gamma$ лежит слева от касательной в $t_0$, то кривизна $\ge 0$, если $\gamma$ лежит справа от касательной в $t_0$, то кривизна $\le 0$.
@@ -1313,12 +1313,215 @@
 
                 Выберем точку $q: \angles{\overrightarrow{\gamma(t_0) q}, n} > 0$.
                 Тогда в некоторой окрестности $t_0:$  $\angles{\overrightarrow{\gamma(t) q}, n} > 0$ тоже.
+
+                Таким образом, $\gamma$ всегда лежит по одну сторону (пусть по левую) от своей касательной.
+                Расписав ряд Тейлора, получаем, что $\kappa_\gamma$ всегда одного знака (неотрицательна).
+                \item[$2 \then 3$] Пусть $\alpha$ --- непрерывный аргумент: $v = \vect{\cos(\alpha), \sin(\alpha)}$.
+                Поворотом кривой добьёмся $\alpha(0) = 0$.
+                Так как ${\alpha(L) = \int\limits_{a}^{b}\kappa\d t = 2\pi}$, и $\forall t_1, t_2 \in [0, L]: t_1 < t_2 \then \alpha(t_2) - \alpha(t_1) = \int\limits_{t_1}^{t_2}\kappa\d t \ge 0$, то $\alpha$ нестрого монотонна, причём $\forall x \in (0, 2\pi): \gamma^{-1}(x)$ --- точка или отрезок.
+                Таким образом, для каждого направления получается ровно две касательные~(\ref{alpha}).
+                \item[$3 \then 1$]
+                От противного: пусть есть точка $t_0$, такая, что кривая лежит по разные стороны от касательной в точке $t_0$.
+                $\Image(\gamma)$ компактно, зайдём с бесконечности, получим ещё два касательных направления, параллельных данному.
+                Значит, нашлось хотя бы $3$ касательных в одном направлении, противоречие~(\ref{not-one-side}).
+                \begin{figure}
+                    \begin{minipage}{0.6\textwidth}
+                        \centering
+                        \begin{tikzpicture}
+                            \begin{scope}[xshift=-3cm]
+                                \draw[->] (-0.5,0) -- (3,0) node[above]{$t$};
+                                \draw[->] (0,-0.5) -- (0,3) node[above]{$\alpha$};
+                                \fill (0, 0) circle (1.5pt) node[below left] {$0$};
+                                \fill (2.6, 0) circle (1.5pt) node[below] {$L$};
+                                \fill (0,2.6) circle (1.5pt) node[left] {$2\pi$};
+                                \draw (0,0) to[out=30, in=180] (1,0.8);
+                                \draw (1,0.8) -- (1.5,0.8);
+                                \draw (1.5,0.8) to[out=0,in=220] (2,2);
+                                \draw (2,2) to[out=40,in=210] (2.6,2.6);
+                                \draw[dashed] (0,0.8) -- (1,0.8);
+                                \draw[dashed] (0,2.1) -- (2.1,2.1);
+                                \draw[dashed] (1,0) -- (1,0.8);
+                                \draw[dashed] (1.5,0) -- (1.5,0.8);
+                                \draw[dashed] (2.1,0) -- (2.1,2.1);
+                                \fill (0, 0.8) circle (1.5pt) node[left] {$x$};
+                                \fill (0, 2.1) circle (1.5pt) node[left] {$x+\pi$};
+                                \fill (1,0) circle (1.5pt);
+                                \fill (1.5,0) circle (1.5pt);
+                                \fill (2.1,0) circle (1.5pt);
+                            \end{scope}
+                            \begin{scope}[xshift=3cm]
+                                \draw (0,0) to[out=0, in=250] (1,1);
+                                \draw (1,1) to[out=70, in=270] (1.2,2);
+                                \draw[line width=1pt] (1.2,2) -- (1.2,2.5);
+                                \draw[->] (1.2,2.5) -- (1.2,3.5) node[right] {$x$};
+                                \draw[->] (-1,1) -- (-1,0) node[left] {$x+\pi$};
+                                \draw (1.2,2.5) to[out=90,in=90] (-1,1);
+                                \draw (-1,1) to[out=270,in=180] (0,0);
+                                \fill (1.2,2) circle (0.5pt);
+                                \fill (1.2,2.5) circle (0.5pt);
+                                \fill (-1,1) circle (1pt);
+                            \end{scope}
+                        \end{tikzpicture}
+                        \caption{\label{alpha}Касательные в данном направлении}
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
+                        \centering
+                        \begin{tikzpicture}
+                            \fill (0,0) circle (1pt) node[above left] {$t_0$};
+                            \draw (0,0) to[out=90,in=90] (1,0.5);
+                            \draw (-1,-0.5) to[out=90,in=270] (0,0);
+                            \draw (-1,-0.5) to[out=270,in=270] (1,0.5);
+                            \draw[dashed] (0,1) -- (0,-1);
+                            \draw[dashed] (1,1) -- (1,-1);
+                            \draw[dashed] (-1,1) -- (-1,-1);
+                        \end{tikzpicture}
+                        \caption{\label{not-one-side}Три касательные}
+                    \end{minipage}
+                \end{figure}
             }
             }
         }
     }
-    \newlection{30 октября 2023 г.}
-    //todo
+
+
+    \section{Кривые в старших размерностях}
+    Пусть $\gamma: [0, L] \map \R^n$ --- натурально параметризованная регулярная кривая, $\gamma' = v$.
+
+    Так как $\angles{v, v} = 1$, то $\angles{v, v'} = 0$, $v'$ --- \emph{вектор кривизны}.
+    \definition[Кривизна (без знака)]{Модуль вектора кривизны $k \bydef |v'| = |\gamma''|$.}
+    \definition[(Главная) нормаль]{$N \bydef \frac{\gamma''}{|\gamma''|}$.}
+    Если размерность объемлющего пространства на самом деле равна двум, то $N = \pm n$.
+
+    \definition[Соприкасающаяся плоскость]{
+        $\Lin(\gamma',\gamma'') = \Lin(v, N)$.
+    }
+    Потом обоснуем, что от данной плоскости кривая отходит медленнее всего;\ при $k = 0$ таких плоскостей много.
+    \properties{
+        \item $v \perp N, |v| = |N| = 1$.
+        \item Кривизна $k$ сохраняется при движении.
+%    \item $\dot{N} = -k v$.
+%    \provehere{
+%    Аналогично двумерному случаю: $\angles{v, N} = 0 \then \underbrace{\angles{\dot{v}, N}}_{k} + \langle v, \dot{N}\rangle = 0$.
+%
+%        $\langle N, N\rangle = 1 \then \langle N, \dot{N}\rangle = 0$, проекции $\dot{N}$ на $v$ и $N$ совпали с проекциями $-kv$.
+%    }
+    }
+    Пусть $\tilde{\gamma}$ не натурально параметризована, $\tilde{\gamma} = \gamma \circ \phi$, где $\gamma$ уже параметризована натурально, здесь $\phi: \R \map \R$ --- гладкая перепараметризация ($s \coloneqq \phi' > 0$).
+
+    \[\all{\tilde{\gamma}'(t) = \gamma'(\phi(t)) \cdot \phi'(t) \\ \phi'(t) = |\tilde{\gamma}'(t)| = s(t)} \then \tilde{\gamma}'(t) = s(t)\gamma'(\phi(t)) \qquad \tilde{\gamma}''(t) = s^2(t) \gamma''(\phi(t)) + s'(t)\gamma'(\phi(t)) = s^2 kN + s' v\]
+    Таким образом, здесь тоже для соприкасающейся плоскости $\Lin(v, N) = \Lin(\gamma', \gamma'')$.
+
+    В физике $\tilde{\gamma}''$ --- ускорение, и оно раскладывается в составляющие: $\overrightarrow{a} = \underbrace{\frac{v^2}{R}\overrightarrow{N}}_{\text{нормальная}} + \underbrace{v'\cdot \overrightarrow{v}}_{\text{тангенциальная}}$
+
+    Из $\tilde{\gamma}'$ и $\tilde{\gamma}''$ можно найти $N, k, v: v = |\tilde{\gamma}'|$, и так как $\tilde{\gamma}'' = s^2 k N + s' v$, $k \ge 0, |N| = 1$, то $N$ тоже находится однозначно.
+
+    Имеет место прежняя двумерная формула (но с модулем) $k = \frac{|\tilde{\gamma}' \wedge \tilde{\gamma}''|}{|\tilde{\gamma}'|^3}$, здесь $\wedge$ --- внешнее произведение.
+    \ok
+    Пусть $\gamma: [0, L] \map \R^n$ --- кривая в натуральной параметризации.
+    \definition[Поворот кривой $\gamma$ в старших размерностях на отрезке $\lbrack a, b\rbrack \subset \lbrack 0, L\rbrack$]{
+        $\int\limits_{a}^{b}k(\tau)\d\tau$.
+    }
+    Следовательно, в ненатуральной параметризации надо интегрировать $k |\tilde{\gamma}'|$.
+    \precaution{
+        Определение совсем не совпадает с определением поворота плоской кривой!
+        У такой кривой $\begin{tikzpicture}[baseline=-4]
+                            \draw[->] (0,0) to[out=45, in=225] (1,0);
+        \end{tikzpicture}$ плоский поворот нулевой, а поворот в старших размерностях больше нуля (так как у кривизны нет знака).
+    }
+    \statement{
+        $\angle(v(b), v(a)) \le \int\limits_{a}^{b}k\d\tau$.
+        \provehere{
+            $|v'| = k$, и $\abs{\int\limits_{a}^{b}v'\d\tau}\le\int\limits_{a}^{b}\abs{v'}\d\tau$.
+            Вообще, поворот --- это длина кривой $v: [a, b] \map S^{n-1}$, а угол --- расстояние на сфере от $v(a)$ до $v(b)$.
+        }
+    }
+    \theorem[Фенхель]{
+        Пусть $\gamma$ --- регулярная замкнутая кривая.
+        Тогда поворот $\gamma$ составляет хотя бы $2\pi$.
+        \provehere{
+            \indentlemma{
+                Пусть даны три точки $A, B, C \in S^m$, такие, что $\underbrace{\angle(A, C)}_{\beta} + \underbrace{\angle(C, B)}_{\alpha} < \pi$.
+
+                Тогда, понятное дело, $\angle(A, B) < \pi$, и есть кратчайшая дуга $\overset{\frown}{AC}$, отметим её середину $M$.
+                Утверждается, что $\angle(C, M) < \frac{\pi}2$, то есть $C$ лежит в открытой полусфере с центром в $M$.
+                \note{
+                    Если знаки нестрогие, то не выполнено: можно взять $A, M, B, C$ на одной большой окружности:
+                    $\begin{tikzpicture}[baseline=-4]
+                         \draw(0,0) circle[radius=0.5];
+                         \fill (-0.5,0) circle (1pt) node[left] {\(M\)};
+                         \fill (0.5,0) circle (1pt) node[right] {\(C\)};
+                         \fill (0,0.5) circle (1pt) node[below] {\(A\)};
+                         \fill (0,-0.5) circle (1pt) node[above] {\(B\)};
+                    \end{tikzpicture}$.
+                }
+            }{
+                Пусть $O$ --- центр сферы, достаточно показать, что $\langle OC, \underbrace{OB + OA}_{\upuparrows OM}\rangle > 0$.
+                Действительно, $\angles{OC, OB} + \angles{OC, OA} = \cos \alpha + \cos \beta \ge \cos\alpha \sin \beta + \sin\alpha\cos \beta = \sin(\alpha + \beta) > 0$.
+            }
+        \indentlemma{\label{short}Пусть $\gamma: [a, b] \map S^m$ --- кривая, и $L(\gamma) < 2\pi$.
+        Тогда $\Image(\gamma)$ лежит в некоторой открытой полусфере.
+        }{
+        Поделим кривую пополам: выберем $t_0 \in (a, b): L\left(\gamma\Big|_{[a, t_0]}\right), L\left(\gamma\Big|_{[t_0, b]}\right) < \pi$.
+        Положим $A \coloneqq \gamma(a) = \gamma(b), B \coloneqq \gamma(t_0)$.
+            Тогда $\forall C \in \Image(\gamma): \angle(A, C) + \angle(C, B) < \pi$, и все такие точки лежат в полусфере с центром в $M$ --- середине дуги $\overset{\frown}{AB}$.
+        }
+        \indent{\lemma{\label{ubiquitous}
+            Вектор скорости регулярной замкнутой кривой не лежит ни в какой открытой полусфере.
+        \provehere[Доказательство леммы]{
+            От противного: пусть $\exists z \in S^{n-1}$, такой, что $\angles{z, v} > 0$.
+        Тогда $\angles{\gamma(b) - \gamma(a), z} = \int\limits_{a}^{b}\angles{v, z} > 0$, то есть кривая не замкнута.
+        }}}
+        От противного: пусть поворот меньше $2\pi$, или же длина кривой, которую заметает вектор скорости $v: [a, b] \map S^{n - 1}$ меньше $2\pi$. Но тогда согласно~(\ref{short}) вектор скорости лежит в одной открытой полусфере, получаем противоречие с~(\ref{ubiquitous}).
+        }
+    }
+    \section{Кривые в $\R^3$, кручение кривых}
+    Пусть $\gamma: [0, L] \map \R^3$ --- кривая в натуральной параметризации, $k \ne 0$.
+    Определения вектора скорости $v$, нормали $N$ и кривизны $k$ остались прежними.
+    \definition[Бинормаль]{
+    $b \coloneqq v \times N$. Так как $v \perp N$, то $(v, N, b)$ --- правый ортонормированный базис, $b$ --- перпендикуляр к соприкасающейся плоскости.
+    }
+    \note{
+    $0 = \angles{v, b} = \angles{k N, b} + \angles{v, b'}$, откуда $\all{\angles{b', v} = 0 \\ \angles{b', b} = 0}$, то есть $b' \parallel n$.
+    }
+    \definition[Кручение]{
+    Такое число $\tau$, что $b' = -\tau N$ ($\tau = -\angles{b', N}$).
+    }
+    Для регулярной кривой $\gamma$ с ненулевой кривизной $k$ получаем \emph{трёхмерный базис Френе}: гладкие $v, N, b$, \emph{кривизна} $k$ и \emph{кручение} $\tau$, такие, что выполняются формулы Френе:
+    \[\dot{v} = k N \qquad \dot{b} = -\tau N \qquad \dot{N} = -k v + \tau b\]
+    Последняя формула берётся из $\all{\langle\dot{N}, N\rangle = 0 \\ \langle\dot{N}, v\rangle = -\langle\dot{v}, N\rangle \\ \langle\dot{N}, b\rangle = -\langle\dot{b}, N\rangle}$.
+
+    \theorem{
+    Кручение нулевое $\tau = 0 \iff \gamma$ --- плоская кривая, $\Image(\gamma)$ лежит в некоторой плоскости.
+    \provetwhen{
+        Из формул Френе: $\dot{b} = 0$, то есть $b = b_0 = \const$.
+    Заметим, что $\angles{\gamma, b_0}' = \angles{v, b_0} = 0$, то есть $\angles{\gamma, b_0} = \const$.
+    }{
+    Пусть $\Image(\gamma) \subset P \cong \R^2$. Тогда $v, N \parallel P$, и $b = v \times N = \const$ --- нормаль к $P$ (из непрерывности она не меняет направление).
+    Значит, $\dot{b} = 0 \then \tau = 0$.
+    }
+    }
+    \subsection{Скорость ухода от соприкасающейся плоскости}
+    Помимо \emph{соприкасающейся плоскости} $\Lin(v, N)$, определяют также \emph{нормальную плоскость} $\Lin(N, b)$ (вектор скорости перпендикулярен ей) и \emph{спрямляющую плоскость} $\Lin(v, b)$ (кривизна в проекции на неё равна нулю).
+
+    Запишем $\gamma'' = k N$, и $\gamma''' = k(-k v + \tau b) + \dot{k}N$.
+
+    Теперь можно написать ряд Тейлора $\gamma(t) = \gamma(t_0) + v(t - t_0) + \frac{kN}{2}(t - t_0)^2 + \frac{\gamma'''}{6}(t - t_0)^3 + o((t - t_0)^3)$.
+    Пусть $P$ --- соприкасающаяся плоскость, то есть плоскость, проходящая через $\gamma(t_0)$, и натянутая на $(v, N)$.
+
+    Из ряда Тейлора получаем $d(\gamma(t), P) = \frac{\angles{\gamma''', b}}{6} \cdot (t-t_0)^3 + o((t - t_0)^3) = \frac{k\tau}{6}(t - t_0)^3 + o((t - t_0)^3) = \bigO((t - t_0)^3)$, то есть порядок касания соприкасающейся плоскости $\ge 2$.
+    \theorem{
+    Пусть $\gamma$ --- кривая (необязательно в натуральной параметризации).
+        Тогда $\tau = \dfrac{[\gamma', \gamma'', \gamma''']}{|\gamma' \times \gamma''|^2}$, где $[\_,\_,\_]$ --- смешанное произведение, то есть определитель матрицы, составленной из данных векторов.
+    \provehere{
+    Натурально параметризуем: пусть $\gamma = \overline{\gamma}(\phi(t))$, где $|\overline{\gamma}'| = 1$, положим $s \coloneqq \phi'$.
+
+        \indent{Ниже все аргументы у $s, \gamma$ и их производных --- $t$, а у остальных функций ($\overline{\gamma}, k, N, \tau$, и их производных) --- $\phi(t)$.}
+        
+    \gather{\gamma' = \overline{\gamma}' \cdot s = v \cdot s\\\gamma'' = v' \cdot s^2 + v \cdot s' = s^2 \cdot k N + vs'\\\gamma''' = 2 ss'\cdot kN + s^2 \cdot k'\cdot s \cdot N + s^2 k(-kv + \tau b)\cdot s + s''v + s'\cdot(kN)\cdot s}
+    Используя антисимметричность смешанного произведения, получаем \[[\gamma', \gamma'', \gamma'''] = [v \cdot s, s^2 \cdot kN, s^2 k \tau bs] = s^6 k^2 \tau\]
+    С другой стороны, $\abs{\gamma' \times \gamma''} = \abs{v \cdot s \times s^2 k N} = s^3 k$, откуда получается искомая формула для $\tau$.
+    }
+    }
     \newlection{6 ноября 2023 г.}
 
 
@@ -1490,7 +1693,7 @@
     Если $\Image(\tilde{f}) \subset \Sigma_2$, то $\tilde{f}$ --- гладкая функция $\Sigma_1 \map \Sigma_2$ из одной поверхности в другую.
 
     Можно рассмотреть соответствующую $\tilde{f}: \Sigma_1 \map \Sigma_2$
-    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
           \& {\Sigma_2} \\
@@ -1516,7 +1719,7 @@
     \definition[Дифференциал $\tilde{f}$ в точке $p$ по направлению $X$]{
         $\d_p\tilde{f}(X) \bydef X(\tilde{f})$.
     }
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMiwwLCJcXFNpZ21hXzMiXSxbMCwxLCJcXHRpbGRle2Z9Il0sWzEsMiwiXFx0aWxkZXtnfSJdLFswLDIsIlxcdGlsZGV7aH0iLDIseyJjdXJ2ZSI6M31dXQ==
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMiwwLCJcXFNpZ21hXzMiXSxbMCwxLCJcXHRpbGRle2Z9Il0sWzEsMiwiXFx0aWxkZXtnfSJdLFswLDIsIlxcdGlsZGV7aH0iLDIseyJjdXJ2ZSI6M31dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
           \& {\Sigma_2} \& {\Sigma_3}
@@ -1526,7 +1729,7 @@
     \end{tikzcd}\]
     $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
 
-    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
           \& {\Sigma_2} \\
@@ -1571,7 +1774,7 @@
 
     \subsection{I форма при замене координат}
     Пусть $r: \Omega_1 \map \Sigma, r^*: \Omega_2 \map \Sigma$ --- две параметризации $\Sigma$, отображение перехода между картами $s$.
-    % https://q.uiver.app/#q=WzAsNyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwiXFxidWxsZXQiXSxbMSwyXSxbMiwyLCJcXGJ1bGxldCJdLFszLDJdLFsxLDAsInMiXSxbMCwyLCJyIl0sWzEsMiwicl4qIiwyXSxbMywwLCJlXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbMyw0LCJlXzEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbNSwxLCJmXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbNSw2LCJmXzEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XV0=
+% https://q.uiver.app/#q=WzAsNyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwiXFxidWxsZXQiXSxbMSwyXSxbMiwyLCJcXGJ1bGxldCJdLFszLDJdLFsxLDAsInMiXSxbMCwyLCJyIl0sWzEsMiwicl4qIiwyXSxbMywwLCJlXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbMyw0LCJlXzEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbNSwxLCJmXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbNSw2LCJmXzEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
           \& \Sigma \\
           {\Omega_1} \&\& {\Omega_2} \\
@@ -1598,7 +1801,7 @@
     }
 
     \subsection{Изометрии}
-    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
           \& {\Sigma_2} \\
@@ -1707,7 +1910,7 @@
     Если поверхность ориентируема, то $\hat{n}$ можно задать на всей поверхности, но нас будет интересовать задание в карте.
 
     Пусть $r: \Omega \map \Sigma$ --- карта, тогда $n(u, v) = \frac{r_u \times r_v}{|r_u \times r_v|}$.
-    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhIl0sWzAsMCwiXFxTaWdtYSJdLFsxLDAsIlNeMiJdLFswLDEsInIiXSxbMSwyLCJcXGhhdHtufSJdLFswLDIsIm4iLDJdXQ==
+% https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhIl0sWzAsMCwiXFxTaWdtYSJdLFsxLDAsIlNeMiJdLFswLDEsInIiXSxbMSwyLCJcXGhhdHtufSJdLFswLDIsIm4iLDJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
           \Sigma \& {S^2} \\
           \Omega
@@ -1739,7 +1942,7 @@
             \item $[\II]_{e_1, e_2} = [\hat{\II}]_{r_u, r_v}$.
             \item $[\II] = \underbrace{[I]}_{\text{матрица Грама}} \cdot [S]$.
             \item Пусть есть две параметризации
-        % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJTIl1d
+% https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJTIl1d
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \& \Sigma \\
                   {\Omega_1} \&\& {\Omega_2}
