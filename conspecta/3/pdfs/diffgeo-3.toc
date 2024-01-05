@@ -10,8 +10,8 @@
 \contentsline {section}{\numberline {1.8}Накрытия}{10}{section.1.8}%
 \contentsline {subsection}{\numberline {1.8.1}Морфизмы накрытий}{12}{subsection.1.8.1}%
 \contentsline {subsection}{\numberline {1.8.2}Иерархия накрытий с общей базой}{15}{subsection.1.8.2}%
-\contentsline {section}{\numberline {1.9}Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}{15}{section.1.9}%
-\contentsline {subsection}{\numberline {1.9.1}План}{15}{subsection.1.9.1}%
+\contentsline {section}{\numberline {1.9}Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}{16}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}План}{16}{subsection.1.9.1}%
 \contentsline {subsection}{\numberline {1.9.2}Фундаментальная группа конечного графа}{16}{subsection.1.9.2}%
 \contentsline {subsection}{\numberline {1.9.3}Теорема Зейферта --- ван Кампена}{16}{subsection.1.9.3}%
 \contentsline {subsubsection}{Некоторые определения из теории групп}{16}{section*.2}%
