@@ -1639,9 +1639,9 @@
     }
     Пусть $\dim V < \infty$, $\phi \in \End_K(V), \phi(U) \subset U$.
     \theorem{
-        В подходящем базисе $\phi$ имеет матрицу $\vect{\arr{c|c}{\left[\phi\Big|_U\right] & * \\\hline 0 & \left[\phi\Big|_{V/U}\right] }}$
+        В подходящем базисе $\phi$ имеет матрицу $\vect{\arr{c|c}{\left[\phi\big|_U\right] & * \\\hline 0 & \left[\phi\big|_{V/U}\right] }}$
         \provehere{
-            $\phi\Big|_{V/U}: V/U \map V/U$ определено корректно: $\phi(v + U) = \phi(v) + U$.
+            $\phi\big|_{V/U}: V/U \map V/U$ определено корректно: $\phi(v + U) = \phi(v) + U$.
 
             Выберем в качестве базиса произвольный базис $U$ --- $(v_1, \dots, v_m)$, а потом дополним его до базиса всего пространства $(v_{m + 1}, \dots, v_n)$.
 
@@ -1652,7 +1652,7 @@
         Такое подпространство $W \le V$, что оно тоже $\phi$-инвариантно, причём $V = U \oplus W$.
     }
     \theorem[Случай полной приводимости]{
-        Если $U$ имеет инвариантное дополнение $W$, то в подходящем базисе $[\phi] = \vect{\arr{c|c}{\left[\phi\Big|_U\right] & 0 \\\hline 0 & \left[\phi\Big|_W\right]}}$.
+        Если $U$ имеет инвариантное дополнение $W$, то в подходящем базисе $[\phi] = \vect{\arr{c|c}{\left[\phi\big|_U\right] & 0 \\\hline 0 & \left[\phi\big|_W\right]}}$.
         \provehere{
             Выберем в качестве базисов объединение базисов $U$ и $W$.
         }
@@ -1882,8 +1882,8 @@
 
             Собственному числу $\lambda$ соответствует вектор $\underset{\ne 0}{v} \in V$, такой, что $\phi(v) = v \lambda$.
             Разложим $V$ в прямую сумму $V = vK \oplus U$.
-            \[[\phi] = \vect{\arr{c|c}{\lambda & * \\\hline 0 & \left[\phi\Big|_{V/vK}\right]}}\]
-            $\phi\Big|_{V/vK} \eqqcolon \psi \in \End_K(U)$.
+            \[[\phi] = \vect{\arr{c|c}{\lambda & * \\\hline 0 & \left[\phi\big|_{V/vK}\right]}}\]
+            $\phi\big|_{V/vK} \eqqcolon \psi \in \End_K(U)$.
 
             Дальше будем действовать по индукции по $n$.
             Индукционное предположение звучит так: $\forall u \in U: f(\phi)(u) \in vK$, то есть матрица $f(\phi)$ выглядит следующим образом:
@@ -1993,7 +1993,7 @@
 
 
     \section{Теорема о жордановой форме}
-    Ограничим $\psi \coloneqq \phi\Big|_{V^{\lambda_i}}$.
+    Ограничим $\psi \coloneqq \phi\big|_{V^{\lambda_i}}$.
 
     Ограниченный оператор имеет единственное собственное число;\ $\chi_\psi = (\lambda - t)^n$.
 
@@ -2231,7 +2231,7 @@
     откуда циклическое подпространство --- $\angles{\phi^0(v), \dots, \phi^{m - 1}(v)}$.
 
     \lemma{
-        $\phi\Big|_{\angles{\phi^0(v), \dots, \phi^{m - 1}(v)}}$ в этом базисе имеет матрицу \[B(f) \bydef \underset{\text{(сопровождающая матрица многочлена $f$, фробениусова клетка)}}{\vect{0 & & & 0 & \alpha_0 \\ 1 & & & & \alpha_1 \\ & & \ddots & & \vdots\\ 0 & & & 1 & \alpha_{m - 1}}}\]
+        $\phi\big|_{\angles{\phi^0(v), \dots, \phi^{m - 1}(v)}}$ в этом базисе имеет матрицу \[B(f) \bydef \underset{\text{(сопровождающая матрица многочлена $f$, фробениусова клетка)}}{\vect{0 & & & 0 & \alpha_0 \\ 1 & & & & \alpha_1 \\ & & \ddots & & \vdots\\ 0 & & & 1 & \alpha_{m - 1}}}\]
         где $f = t^m - \alpha_{m - 1}t^{m - 1} - \dots - \alpha_1 t - \alpha_0$.
     }
     \note{
@@ -2450,10 +2450,10 @@
 
         \underline{Переход:} $M \cong R^n$. Построим проекцию $\pi: R^n \map R^{n - 1}, \vect{x_1 \\ \vdots \\x_{n-1}\\ x_n} \mapsto \arr{c}{\vect{x_1 \\ \vdots \\ x_{n-1}}\\~}$.
 
-        $N \le M \then \pi(N) \le R^{n - 1}, \Ker\left(\pi\Big|_N\right) \le \Ker \pi \cong R$. Подмодули в $R$ мы знаем, $\Ker \left(\pi\Big|_N\right) = \{0\}$, либо $\Ker\left(\pi\Big|_N\right) \cong R$.
+        $N \le M \then \pi(N) \le R^{n - 1}, \Ker\left(\pi\big|_N\right) \le \Ker \pi \cong R$. Подмодули в $R$ мы знаем, $\Ker \left(\pi\big|_N\right) = \{0\}$, либо $\Ker\left(\pi\big|_N\right) \cong R$.
 
         Воспользовавшись индукционным предположением, получаем, что $\pi(N)\cong R^{l}$, где $l \le n - 1$.
-        Если $\Ker\left(\pi\Big|_N\right) = \{0\}$, то $N \cong R^l$.
+        Если $\Ker\left(\pi\big|_N\right) = \{0\}$, то $N \cong R^l$.
         Иначе $\Ker(\pi) \cong R$, тогда $N \cong R^{l + 1}$.
     }
     }
@@ -3065,7 +3065,7 @@
 
             Пусть $\phi: U \cong V$, тогда $\phi(U^+) \le V$, но так как $s < p$, то проекция $\text{pr}(\phi(U^+))$ имеет ненулевое ядро.
 
-            $\Ker(\text{pr}) = V^-$, значит, $\Ker\left(\text{pr}\Big|_{\phi(U^+)}\right) \le V^-$. Значит, нашёлся вектор из $U^+$, который при изометрии попал в $V^-$.
+            $\Ker(\text{pr}) = V^-$, значит, $\Ker\left(\text{pr}\big|_{\phi(U^+)}\right) \le V^-$. Значит, нашёлся вектор из $U^+$, который при изометрии попал в $V^-$.
             Но так не бывает при изометрии --- значит, ядро на самом деле нулевое, противоречие.
         }
     }
@@ -3089,7 +3089,7 @@
     }
     \theorem[Витт о продолжении]{
         Пусть $V$ --- пространство над $K$, ${\chr(K) \ne 2}$, пусть $U, W \le V$.
-        Если $\psi: U \cong W$ --- изометрия, то $\exists \phi \in \Isom(V): \phi\Big|_U = \psi$.
+        Если $\psi: U \cong W$ --- изометрия, то $\exists \phi \in \Isom(V): \phi\big|_U = \psi$.
         Дополнительно потребуем невырожденности либо $U$ (тогда и $W$), либо $V$.
         \provehere{Позднее: \ref{Witt_about_continuation_1}, \ref{Witt_about_continuation_2}.}
     }
@@ -3166,7 +3166,7 @@
 
     \subsection{Доказательство теоремы Витта о продолжении для невырожденных подпространств}
     \theorem{\label{Witt_about_continuation_1}
-    Если $U, W \le V, \psi: U \cong W$, причём $U, W$ невырождены ($B$ симметрическое, ${\chr(K) \ne 2}$). Тогда $\exists \phi: V \cong V: \phi\Big|_U = \psi$.
+    Если $U, W \le V, \psi: U \cong W$, причём $U, W$ невырождены ($B$ симметрическое, ${\chr(K) \ne 2}$). Тогда $\exists \phi: V \cong V: \phi\big|_U = \psi$.
     \provehere{
         Индукция по $\dim(U) = \dim(W)$.
 
@@ -3189,8 +3189,8 @@
         }
         Понятно, что $\angles{u}^\perp_U, \angles{u}^\perp_W \le \angles{u}^\perp_V$.
 
-        Ограничение $\psi\Big|_{\angles{u}^\perp_U}: \angles{u}_U^\perp \map \angles{u}_W^\perp$ --- изометрия.
-        По индукционному предположению $\exists \eta \in \Isom\left(\angles{u}^\perp_V\right)$, такая, что $\eta\Big|_{\angles{u}^\perp_U} = \psi\Big|_{\angles{u}^\perp_U}$.
+        Ограничение $\psi\big|_{\angles{u}^\perp_U}: \angles{u}_U^\perp \map \angles{u}_W^\perp$ --- изометрия.
+        По индукционному предположению $\exists \eta \in \Isom\left(\angles{u}^\perp_V\right)$, такая, что $\eta\big|_{\angles{u}^\perp_U} = \psi\big|_{\angles{u}^\perp_U}$.
 
         Тогда $\phi = \id_{\angles{u}} \oplus \, \eta$ подойдёт.
     }
@@ -3199,7 +3199,7 @@
     \subsection{Доказательство теоремы Витта о продолжении для невырожденного пространства}
 
     \theorem{\label{Witt_about_continuation_2}
-    Пусть $U, W \le V, \psi: U \cong W$, причём $V$ невырождено ($B$ симметрическое, ${\chr(K) \ne 2}$). Тогда $\exists \phi: V \cong V: \phi\Big|_U = \psi$.
+    Пусть $U, W \le V, \psi: U \cong W$, причём $V$ невырождено ($B$ симметрическое, ${\chr(K) \ne 2}$). Тогда $\exists \phi: V \cong V: \phi\big|_U = \psi$.
     \provehere{
         Сначала докажем следующее: \up
         \indent{
@@ -3227,7 +3227,7 @@
         Пространства изоморфны, значит, их дефекты равны, то есть $\dim\left(\overline{U}\right) = \dim\left(\overline{W}\right)$.
         С другой стороны,
         \[U = U_0 + \Rad(U) \qquad W = W_0 + \Rad(W)\]
-        Заметим, что ограничение $\psi$ --- тоже изометрия: $\psi\Big|_{U_0}: U_0 \cong W_0$.
+        Заметим, что ограничение $\psi$ --- тоже изометрия: $\psi\big|_{U_0}: U_0 \cong W_0$.
         Достроим эту изометрию до $\overline{\psi}: \overline{U} \cong \overline{W}$ --- все гиперболические плоскости изометричны, понятно, что можно достроить так, чтобы $\overline{\psi}(U_0) = W_0$.
         Согласно предыдущей теореме~(\ref{Witt_about_continuation_1}) эту изометрию можно продолжить на всё $V$.
     }

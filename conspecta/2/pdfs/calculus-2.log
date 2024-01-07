@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 DEC 2023 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 JAN 2024 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -28,11 +28,10 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 (../mathstemplate.sty
 
 LaTeX Warning: You have requested package `../mathstemplate',
-               but the package provides `PsiDirectory:/home/leonid/No-Idle.gith
-ub.io/conspecta/mathstemplate'.
+               but the package provides `mathstemplate'.
 
-Package: PsiDirectory:/home/leonid/No-Idle.github.io/conspecta/mathstemplate 20
-22/09/21 --- nowadays. Leonid Danilevich's personal maths template
+Package: mathstemplate 2022/09/21 --- nowadays. Leonid Danilevich's personal ma
+ths template
 (/usr/share/texmf/tex/latex/pscyr/pscyr.sty
 Package: pscyr 2002/07/04 v0.4d Cyrillic Type1 fonts as default
 )
@@ -645,6 +644,13 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 \EQ_tag_box=\box57
 \g_EQ_temprow_int=\count298
 )
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count299
+\decimalpart=\count300
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -657,16 +663,13 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks37
 \XKV@tempa@toks=\toks38
 )
-\XKV@depth=\count299
+\XKV@depth=\count301
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
 (Font)                  U/BOONDOX-scr/m/n --> U/BOONDOX-scr/b/n on input line 9
 27.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
-
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -709,14 +712,14 @@ ex
 \pgf@yd=\dimen197
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count300
-\c@pgf@countb=\count301
-\c@pgf@countc=\count302
-\c@pgf@countd=\count303
+\c@pgf@counta=\count302
+\c@pgf@countb=\count303
+\c@pgf@countc=\count304
+\c@pgf@countd=\count305
 \t@pgf@toka=\toks43
 \t@pgf@tokb=\toks44
 \t@pgf@tokc=\toks45
-\pgf@sys@id@count=\count304
+\pgf@sys@id@count=\count306
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -732,8 +735,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count305
-\pgfsyssoftpath@bigbuffer@items=\count306
+\pgfsyssoftpath@smallbuffer@items=\count307
+\pgfsyssoftpath@bigbuffer@items=\count308
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -763,7 +766,7 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen198
-\pgfmath@count=\count307
+\pgfmath@count=\count309
 \pgfmath@box=\box59
 \pgfmath@toks=\toks46
 \pgfmath@stack@operand=\toks47
@@ -787,7 +790,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count308
+\c@pgfmathroundto@lastzeros=\count310
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
@@ -826,7 +829,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box60
 \pgf@hbox=\box61
 \pgf@layerbox@main=\box62
-\pgf@picture@serial@count=\count309
+\pgf@picture@serial@count=\count311
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -859,8 +862,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen278
-\pgf@sys@shading@range@num=\count310
-\pgf@shadingcount=\count311
+\pgf@sys@shading@range@num=\count312
+\pgf@shadingcount=\count313
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -920,7 +923,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count312
+\pgf@plot@mark@count=\count314
 \pgfplotmarksize=\dimen283
 )
 \tikz@lastx=\dimen284
@@ -935,23 +938,26 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box66
 \tikz@tempbox=\box67
 \tikz@tempbox@bg=\box68
-\tikztreelevel=\count313
-\tikznumberofchildren=\count314
-\tikznumberofcurrentchild=\count315
-\tikz@fig@count=\count316
+\tikztreelevel=\count315
+\tikznumberofchildren=\count316
+\tikznumberofcurrentchild=\count317
+\tikz@fig@count=\count318
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count317
-\pgfmatrixcurrentcolumn=\count318
-\pgf@matrix@numberofcolumns=\count319
+\pgfmatrixcurrentrow=\count319
+\pgfmatrixcurrentcolumn=\count320
+\pgf@matrix@numberofcolumns=\count321
 )
-\tikz@expandcount=\count320
+\tikz@expandcount=\count322
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
 (/usr/share/texlive/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarymatrix.code.tex
@@ -980,7 +986,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen298
 \pgfdecoratedinputsegmentremainingdistance=\dimen299
 \pgf@decorate@distancetomove=\dimen300
-\pgf@decorate@repeatstate=\count321
+\pgf@decorate@repeatstate=\count323
 \pgfdecorationsegmentamplitude=\dimen301
 \pgfdecorationsegmentlength=\dimen302
 )
@@ -996,16 +1002,16 @@ File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 zlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-\c@lemma_env=\count322
-\c@proposal_env=\count323
-\c@problem_env=\count324
-\c@corollary_env=\count325
-\c@fact_env=\count326
-\c@statement_env=\count327
-\c@exercise_env=\count328
-\c@theorem_env=\count329
-\c@definition_env=\count330
-\c@lection=\count331
+\c@lemma_env=\count324
+\c@proposal_env=\count325
+\c@problem_env=\count326
+\c@corollary_env=\count327
+\c@fact_env=\count328
+\c@statement_env=\count329
+\c@exercise_env=\count330
+\c@theorem_env=\count331
+\c@definition_env=\count332
+\c@lection=\count333
 )
 LaTeX Font Info:    Trying to load font information for OT1+faq on input line 9
 .
@@ -1014,14 +1020,13 @@ File: ot1faq.fd 2001/12/09 Fontinst v1.914 font definitions for OT1/faq.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count332
+\l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/calculus-2.aux
+(pdfs/calculus-2.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `calculus-2.aux'.
@@ -1090,16 +1095,16 @@ LaTeX Info: Redefining \th on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
+\scratchcounter=\count335
 \scratchdimen=\dimen303
 \scratchbox=\box71
-\nofMPsegments=\count334
-\nofMParguments=\count335
+\nofMPsegments=\count336
+\nofMParguments=\count337
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count336
+\MPscratchCnt=\count338
 \MPscratchDim=\dimen304
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1121,14 +1126,13 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count339
+\c@section@level=\count341
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/calculus-2.out)
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/calculus-2.out)
+(pdfs/calculus-2.out) (pdfs/calculus-2.out)
 \@outlinefile=\write4
 \openout4 = `calculus-2.out'.
 
@@ -1158,8 +1162,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 12.
-
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/calculus-2.toc
+ (pdfs/calculus-2.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 6.
 )
@@ -1613,7 +1616,7 @@ Overfull \hbox (5.70139pt too wide) in paragraph at lines 2705--2705
 ие $\OT1/cmr/m/n/10 ^^A$\T2A/faq/m/n/10 , та-кое, что $[]$
  []
 
-[63] [64] (/home/leonid/No-Idle.github.io/conspecta/2/pdfs/calculus-2.aux)
+[63] [64] [65] (pdfs/calculus-2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1621,13 +1624,13 @@ Package rerunfilecheck Info: File `calculus-2.out' has not changed.
 (rerunfilecheck)             Checksum: CB8CEA440C10C1240407C9406B22C667;12807.
  ) 
 Here is how much of TeX's memory you used:
- 27220 strings out of 479648
- 508293 string characters out of 5886115
- 792197 words of memory out of 5000000
- 44366 multiletter control sequences out of 15000+600000
+ 27513 strings out of 479648
+ 512054 string characters out of 5886115
+ 798968 words of memory out of 5000000
+ 44653 multiletter control sequences out of 15000+600000
  503786 words of font info for 85 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 113i,16n,117p,731b,1100s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,16n,103p,731b,1100s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1649,11 +1652,10 @@ s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/2/pdfs/calculus-2.pd
-f (65 pages, 565875 bytes).
+Output written on pdfs/calculus-2.pdf (66 pages, 566387 bytes).
 PDF statistics:
- 916 PDF objects out of 1000 (max. 8388607)
- 791 compressed objects within 8 object streams
- 314 named destinations out of 1000 (max. 500000)
+ 920 PDF objects out of 1000 (max. 8388607)
+ 794 compressed objects within 8 object streams
+ 315 named destinations out of 1000 (max. 500000)
  362 words of extra memory for PDF output out of 10000 (max. 10000000)
 

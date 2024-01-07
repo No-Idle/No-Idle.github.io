@@ -37,9 +37,9 @@
 \contentsline {subsubsection}{Циклические подклассы}{25}{section*.11}%
 \contentsline {subsection}{\numberline {1.8.5}Возвратность}{27}{subsection.1.8.5}%
 \contentsline {section}{\numberline {1.9}Случайное блуждание в $\mathbb {Z}^1$}{29}{section.1.9}%
-\contentsline {subsection}{\numberline {1.9.1}Распределение максимума. Принцип отражения}{29}{subsection.1.9.1}%
-\contentsline {subsection}{\numberline {1.9.2}Время пребывания на полуоси (закон арксинуса)}{30}{subsection.1.9.2}%
-\contentsline {subsection}{\numberline {1.9.3}Задача о разорении игрока}{31}{subsection.1.9.3}%
+\contentsline {subsection}{\numberline {1.9.1}Распределение максимума. Принцип отражения}{30}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Время пребывания на полуоси (закон арксинуса)}{31}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Задача о разорении игрока}{32}{subsection.1.9.3}%
 \contentsline {subsection}{\numberline {1.9.4}Матожидание времени разорения}{33}{subsection.1.9.4}%
 \contentsline {section}{\numberline {1.10}Случайные графы}{33}{section.1.10}%
 \contentsline {subsection}{\numberline {1.10.1}Граф Эрдёша-Реньи}{34}{subsection.1.10.1}%

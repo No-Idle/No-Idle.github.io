@@ -4,6 +4,7 @@
     <inspection_tool class="LatexEscapeAmpersand" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="LatexGatherEquations" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="LatexMissingLabel" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="LatexPackageSubdirectory" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="LatexTooLargeSection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   </profile>
 </component>

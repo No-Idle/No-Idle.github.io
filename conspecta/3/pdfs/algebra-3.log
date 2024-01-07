@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  25 DEC 2023 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 JAN 2024 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -28,11 +28,10 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 (../mathstemplate.sty
 
 LaTeX Warning: You have requested package `../mathstemplate',
-               but the package provides `PsiDirectory:/home/leonid/No-Idle.gith
-ub.io/conspecta/mathstemplate'.
+               but the package provides `mathstemplate'.
 
-Package: PsiDirectory:/home/leonid/No-Idle.github.io/conspecta/mathstemplate 20
-22/09/21 --- nowadays. Leonid Danilevich's personal maths template
+Package: mathstemplate 2022/09/21 --- nowadays. Leonid Danilevich's personal ma
+ths template
 (/usr/share/texmf/tex/latex/pscyr/pscyr.sty
 Package: pscyr 2002/07/04 v0.4d Cyrillic Type1 fonts as default
 )
@@ -1028,11 +1027,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux
+(pdfs/algebra-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `algebra-3.aux'.
@@ -1138,8 +1136,7 @@ LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.out)
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.out)
+(pdfs/algebra-3.out) (pdfs/algebra-3.out)
 \@outlinefile=\write4
 \openout4 = `algebra-3.out'.
 
@@ -1175,8 +1172,7 @@ l.41     \tableofcontents
                           [1]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 41.
-
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.toc
+ (pdfs/algebra-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
  [2
@@ -1185,8 +1181,7 @@ LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 \tf@toc=\write5
 \openout5 = `algebra-3.toc'.
 
- [3]
-(./polylinear.tex
+ [3] (./polylinear.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <20.74> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 1.
@@ -1719,7 +1714,7 @@ Overfull \hbox (5.66084pt too wide) in paragraph at lines 1869--1869
 ‎ךגאאכיחונמל. 
  []
 
-[93] [94] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
+[93] [94] (pdfs/algebra-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1727,10 +1722,10 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
 (rerunfilecheck)             Checksum: 25029E096C887D6E30E13A958A6630F4;27822.
  ) 
 Here is how much of TeX's memory you used:
- 32724 strings out of 479648
- 642631 string characters out of 5886115
- 897417 words of memory out of 5000000
- 49695 multiletter control sequences out of 15000+600000
+ 32725 strings out of 479648
+ 642082 string characters out of 5886115
+ 897487 words of memory out of 5000000
+ 49696 multiletter control sequences out of 15000+600000
  507295 words of font info for 97 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,28n,103p,745b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1758,8 +1753,7 @@ symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
-Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (95 pages, 751358 bytes).
+Output written on pdfs/algebra-3.pdf (95 pages, 751358 bytes).
 PDF statistics:
  1393 PDF objects out of 1440 (max. 8388607)
  1234 compressed objects within 13 object streams

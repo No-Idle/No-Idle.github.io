@@ -39,13 +39,13 @@
 \contentsline {subsubsection}{Четвёртая аксиома отделимости}{24}{section*.9}%
 \contentsline {subsubsection}{Лемма и теорема Урысона}{24}{section*.10}%
 \contentsline {subsection}{\numberline {2.8.4}Связность}{24}{subsection.2.8.4}%
-\contentsline {subsubsection}{Связность и непрерывность}{26}{section*.11}%
+\contentsline {subsubsection}{Связность и непрерывность}{25}{section*.11}%
 \contentsline {subsubsection}{Свойства связности}{26}{section*.12}%
 \contentsline {subsection}{\numberline {2.8.5}Линейная связность}{27}{subsection.2.8.5}%
 \contentsline {subsubsection}{Линейная связность и непрерывность}{27}{section*.13}%
-\contentsline {subsection}{\numberline {2.8.6}Связность и линейная связность}{28}{subsection.2.8.6}%
+\contentsline {subsection}{\numberline {2.8.6}Связность и линейная связность}{27}{subsection.2.8.6}%
 \contentsline {subsubsection}{Пространства, в которых всякая точка имеет некоторую линейно связную окрестность}{28}{section*.14}%
-\contentsline {subsection}{\numberline {2.8.7}Негомеоморфность}{29}{subsection.2.8.7}%
+\contentsline {subsection}{\numberline {2.8.7}Негомеоморфность}{28}{subsection.2.8.7}%
 \contentsline {subsection}{\numberline {2.8.8}Компактные пространства и множества}{29}{subsection.2.8.8}%
 \contentsline {subsubsection}{Компактность на языке замкнутых множеств:}{31}{section*.15}%
 \contentsline {section}{\numberline {2.9}Полные метрические пространства}{34}{section.2.9}%
@@ -56,7 +56,7 @@
 \contentsline {subsection}{\numberline {2.12.1}Свойства}{38}{subsection.2.12.1}%
 \contentsline {subsection}{\numberline {2.12.2}Частные случаи факторизации}{38}{subsection.2.12.2}%
 \contentsline {section}{\numberline {2.13}Многообразия}{40}{section.2.13}%
-\contentsline {subsection}{\numberline {2.13.1}Модельные поверхности}{41}{subsection.2.13.1}%
+\contentsline {subsection}{\numberline {2.13.1}Модельные поверхности}{40}{subsection.2.13.1}%
 \contentsline {subsection}{\numberline {2.13.2}Клеточные пространства}{43}{subsection.2.13.2}%
 \contentsline {chapter}{\numberline {3}Геометрия}{46}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Евклидово пространство}{46}{section.3.1}%

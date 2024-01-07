@@ -1295,7 +1295,7 @@
     Обозначим матрицу Якоби решения за $\mathcal{F}(t) \coloneqq \der{f}{x}(t, x(t, \tau, \xi_0))$.
     Ещё рассмотрим линейную систему $\dot{y} = \mathcal{F}(t)y$ --- \emph{систему в вариациях на решении $x(t, \tau, \xi_0)$}.
     \theorem[О дифференцируемости по $\xi$]{
-        Существует частная производная \[v(t) \coloneqq \frac{\partial x(t, \tau, \xi)}{\partial \xi}\Big|_{\xi = \xi_0}\]
+        Существует частная производная \[v(t) \coloneqq \frac{\partial x(t, \tau, \xi)}{\partial \xi}\big|_{\xi = \xi_0}\]
         на $I(\tau, \xi_0)$, и $v(t)$ --- фундаментальная матрица системы в вариациях, причём $v(\tau) = E$.
         \provehere{
             \indentlemma{\label{compact-lemma}
@@ -1356,7 +1356,7 @@
 
     Пусть $f, \der{f}{x} \in C(G)$.
         Система в вариациях чуть-чуть поменялась: $\mathcal{F}(t) \coloneqq f(t, x(t,\tau_0, \xi))$ (вот прямо без производной?) а сама система по-прежнему $\dot{y} = \mathcal{F}(t)y$.
-    Утверждается, что \[\exists u(t) \coloneqq \frac{\partial x(t, \tau, \xi)}{\partial \tau}\Big|_{\tau = \tau_0}\]
+    Утверждается, что \[\exists u(t) \coloneqq \frac{\partial x(t, \tau, \xi)}{\partial \tau}\big|_{\tau = \tau_0}\]
     и она является решением системы в вариациях с начальными данными $u(\tau_0) = -f(\tau_0, \xi)$.
 
     \note{В отличие от предыдущей теоремы, $u$ --- не матрица, а всего лишь вектор $\vect{\der{x_1}{\tau} \\ \vdots \\ \der{x_n}{\tau}}$.}
@@ -1367,12 +1367,12 @@
         Посчитаем частную производную обеих частей равенства по $\tau$ при $\tau = \tau_0$. Так как
     \[\der{}{t}x(t, \tau, \xi) = f(t, x(t, \tau, \xi))\]
     то дифференцируя по обеим $\tau$, мы получаем (при $t = \tau_0$)
-    \[\der{}{\tau}x(\tau,\tau,\xi) = \underbrace{f(\tau_0, x(\tau_0, \tau_0, \xi))}_{=f(\tau_0, \xi)} + \frac{\partial x(t, \tau, \xi)}{\partial \tau}\Big|_{\tau = \tau_0} = 0\]
+    \[\der{}{\tau}x(\tau,\tau,\xi) = \underbrace{f(\tau_0, x(\tau_0, \tau_0, \xi))}_{=f(\tau_0, \xi)} + \frac{\partial x(t, \tau, \xi)}{\partial \tau}\big|_{\tau = \tau_0} = 0\]
     }
     }
     Вернёмся к параметризованной системе $\dot{x} = f(t, x, \mu)$, где $x \in \R^n, \mu \in \R^m, f, \der{f}{x}, \der{f}{\mu} \in C(G \times M), G \subset \R^{n + 1}_{t, x}, M \subset \R^m_{\mu}$.
 
-    Фиксируем $x(t, \tau, \xi, \mu_0)$, и задаёмся вопросом о существовании $z(t) \coloneqq \frac{\partial x(t, \tau, \xi, \mu)}{\partial \mu}\Big|_{\mu=\mu_0} = \vect{\der{x_1}{\mu_1} & \cdots & \der{x_1}{\mu_m} \\ \vdots & \ddots & \vdots \\ \der{x_n}{\mu_1} & \cdots & \der{x_n}{\mu_m}}$.
+    Фиксируем $x(t, \tau, \xi, \mu_0)$, и задаёмся вопросом о существовании $z(t) \coloneqq \frac{\partial x(t, \tau, \xi, \mu)}{\partial \mu}\big|_{\mu=\mu_0} = \vect{\der{x_1}{\mu_1} & \cdots & \der{x_1}{\mu_m} \\ \vdots & \ddots & \vdots \\ \der{x_n}{\mu_1} & \cdots & \der{x_n}{\mu_m}}$.
 
     Вводится $\mathcal{F}(t) = \der{f}{x}(t, x(t, \tau,\xi,\mu_0),\mu_0)$.
     \theorem{
@@ -1461,7 +1461,7 @@
         Параллельно доказательству предыдущей теоремы построим $g$.
         То, что $g \in C^1$ следует из того, что решение дифференцируемо по $t$ и по начальным данным.
 
-    Дальше мы хотим применить теорему об обратной функции, для этого надо показать невырожденность $\det \der{g}{(t, \xi)}\Big|_{(\tau_0, \xi_0)}$.
+    Дальше мы хотим применить теорему об обратной функции, для этого надо показать невырожденность $\det \der{g}{(t, \xi)}\big|_{(\tau_0, \xi_0)}$.
     Расписав покомпонентно $g = (t, \xi)$, получаем \[\der{g}{(t, \xi)} = \vect{1 & 0 \\ \der{x}{t} & \der{x}{\xi}}\]
     Достаточно показать, что $\der{x}{\xi}$ невырождена, но это фундаментальная матрица системы в вариациях.
 

@@ -56,22 +56,22 @@
 \contentsline {section}{\numberline {3.1}Инвариантные подпространства}{37}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Собственные подпространства. Собственные числа}{38}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Характеристический многочлен оператора}{39}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Геометрическая и алгебраическая кратности собственного числа}{40}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Геометрическая и алгебраическая кратности собственного числа}{39}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Корневые векторы. Корневое подпространство}{40}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Теорема Кэли --- Гамильтона}{41}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Алгебраическое доказательство}{42}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.1}Алгебраическое доказательство}{41}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Геометрическое доказательство}{42}{subsection.3.6.2}%
 \contentsline {section}{\numberline {3.7}Примарное разложение}{43}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Минимальный многочлен вектора относительно оператора}{43}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Ядро операторного многочлена}{44}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.2}Ядро операторного многочлена}{43}{subsection.3.7.2}%
 \contentsline {subsection}{\numberline {3.7.3}Примарное разложение}{44}{subsection.3.7.3}%
-\contentsline {subsubsection}{Случай алгебраически замкнутого поля}{45}{section*.6}%
-\contentsline {section}{\numberline {3.8}Теорема о жордановой форме}{45}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Жорданов базис нильпотентного оператора}{46}{subsection.3.8.1}%
-\contentsline {section}{\numberline {3.9}Сепарабельные многочлены, совершенные поля}{47}{section.3.9}%
+\contentsline {subsubsection}{Случай алгебраически замкнутого поля}{44}{section*.6}%
+\contentsline {section}{\numberline {3.8}Теорема о жордановой форме}{44}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Жорданов базис нильпотентного оператора}{45}{subsection.3.8.1}%
+\contentsline {section}{\numberline {3.9}Сепарабельные многочлены, совершенные поля}{46}{section.3.9}%
 \contentsline {section}{\numberline {3.10}Разложение Жордана-Шевалле}{47}{section.3.10}%
 \contentsline {section}{\numberline {3.11}Вещественные жордановы формы}{48}{section.3.11}%
-\contentsline {section}{\numberline {3.12}Циклические подпространства, фробениусовы клетки}{49}{section.3.12}%
+\contentsline {section}{\numberline {3.12}Циклические подпространства, фробениусовы клетки}{48}{section.3.12}%
 \contentsline {chapter}{\numberline {4}Классификация модулей над PID}{50}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Нормальная форма Смита}{50}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Над евклидовым кольцом}{50}{subsection.4.1.1}%

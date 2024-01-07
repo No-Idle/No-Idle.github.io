@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  2 JAN 2024 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 JAN 2024 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -28,11 +28,10 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 (../mathstemplate.sty
 
 LaTeX Warning: You have requested package `../mathstemplate',
-               but the package provides `PsiDirectory:/home/leonid/No-Idle.gith
-ub.io/conspecta/mathstemplate'.
+               but the package provides `mathstemplate'.
 
-Package: PsiDirectory:/home/leonid/No-Idle.github.io/conspecta/mathstemplate 20
-22/09/21 --- nowadays. Leonid Danilevich's personal maths template
+Package: mathstemplate 2022/09/21 --- nowadays. Leonid Danilevich's personal ma
+ths template
 (/usr/share/texmf/tex/latex/pscyr/pscyr.sty
 Package: pscyr 2002/07/04 v0.4d Cyrillic Type1 fonts as default
 )
@@ -1024,11 +1023,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux
+(pdfs/diffdyn-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `diffdyn-3.aux'.
@@ -1134,8 +1132,7 @@ LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
 LaTeX Info: Redefining \nameref on input line 11.
 
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.out)
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.out)
+(pdfs/diffdyn-3.out) (pdfs/diffdyn-3.out)
 \@outlinefile=\write4
 \openout4 = `diffdyn-3.out'.
 
@@ -1165,8 +1162,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 14.
-
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.toc
+ (pdfs/diffdyn-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1392,7 +1388,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[48] [49] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux)
+[48] [49] (pdfs/diffdyn-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1404,7 +1400,7 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  28435 strings out of 479648
- 531572 string characters out of 5886115
+ 531013 string characters out of 5886115
  922088 words of memory out of 5000000
  45673 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
@@ -1431,8 +1427,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/boondox/zxxrw8a.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (50 pages, 479490 bytes).
+Output written on pdfs/diffdyn-3.pdf (50 pages, 479455 bytes).
 PDF statistics:
  728 PDF objects out of 1000 (max. 8388607)
  625 compressed objects within 7 object streams

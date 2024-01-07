@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 DEC 2023 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 JAN 2024 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -28,11 +28,10 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 (../mathstemplate.sty
 
 LaTeX Warning: You have requested package `../mathstemplate',
-               but the package provides `PsiDirectory:/home/leonid/No-Idle.gith
-ub.io/conspecta/mathstemplate'.
+               but the package provides `mathstemplate'.
 
-Package: PsiDirectory:/home/leonid/No-Idle.github.io/conspecta/mathstemplate 20
-22/09/21 --- nowadays. Leonid Danilevich's personal maths template
+Package: mathstemplate 2022/09/21 --- nowadays. Leonid Danilevich's personal ma
+ths template
 (/usr/share/texmf/tex/latex/pscyr/pscyr.sty
 Package: pscyr 2002/07/04 v0.4d Cyrillic Type1 fonts as default
 )
@@ -1024,11 +1023,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/calculus-1.aux
+(pdfs/calculus-1.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `calculus-1.aux'.
@@ -1134,8 +1132,7 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/calculus-1.out)
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/calculus-1.out)
+(pdfs/calculus-1.out) (pdfs/calculus-1.out)
 \@outlinefile=\write4
 \openout4 = `calculus-1.out'.
 
@@ -1165,8 +1162,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 11.
-
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/calculus-1.toc
+ (pdfs/calculus-1.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1241,13 +1237,13 @@ Overfull \hbox (7.14093pt too wide) in paragraph at lines 840--840
 cmsy/m/n/10 ^^A []$
  []
 
-[23] [24] [25] [26] [27]
+[23] [24] [25] [26]
 Overfull \hbox (45.96025pt too wide) in paragraph at lines 1045--1045
 []$\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 ; $\OML/cmm/m/it/10 
 Y \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 . То-гда по-нят-но, что $[]$,
  []
 
-
+[27]
 Overfull \hbox (8.83879pt too wide) in paragraph at lines 1045--1045
 \T2A/faq/m/n/10 В са-мом де-ле, с од-ной сто-ро-ны $\OMS/cmsy/m/n/10 8\OT1/cmr/
 m/n/10 (\OML/cmm/m/it/10 v; w\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 [] \OT1/cmr/m
@@ -1283,17 +1279,17 @@ it/10 a [] [] f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$\T2A/faq/m/
 n/10 . 
  []
 
-[33] [34]
+[33]
 Overfull \hbox (56.06784pt too wide) detected at line 1269
 []
  []
 
-[35]
+[34] [35]
 Overfull \hbox (19.05295pt too wide) detected at line 1362
 []
  []
 
-[36]
+
 Overfull \hbox (10.61322pt too wide) in paragraph at lines 1392--1392
 []\T2A/faq/m/n/10 У этой по-сле-до-ва-тель-но-сти $\OMS/cmsy/m/n/10 f\OML/cmm/m
 /it/10 x[]\OMS/cmsy/m/n/10 g$ \T2A/faq/m/n/10 так-же су-ще-ству-ет схо-дя-ща-я-
@@ -1301,7 +1297,7 @@ Overfull \hbox (10.61322pt too wide) in paragraph at lines 1392--1392
 /m/n/10 g$ \T2A/faq/m/n/10 ([]3.1.18[]).
  []
 
-
+[36]
 Overfull \hbox (0.36063pt too wide) in paragraph at lines 1413--1413
 []\T2A/faq/m/n/10 От про-тив-но-го: пусть $\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 
 ; ^^L; z \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 z \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/1
@@ -1310,7 +1306,7 @@ Overfull \hbox (0.36063pt too wide) in paragraph at lines 1413--1413
 mm/m/it/10 z [] f []$\T2A/faq/m/n/10 . 
  []
 
-[37] [38] [39]
+[37] [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1547.
@@ -1327,15 +1323,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1547.
 
-[40] [41]
+[39] [40]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 1615.
 
-[42
+[41
 
-] [43]
+] [42]
 Overfull \hbox (34.70914pt too wide) in paragraph at lines 1704--1704
 []\T2A/faq/m/n/10 Подставим во вто-рое ра-вен-ство $[]$. 
  []
@@ -1352,20 +1348,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1706.
 
-[44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
+[43] [44] [45] [46] [47] [48] [49] [50] [51]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 5.
-[54
+[52
 
 ]
 Overfull \hbox (19.58226pt too wide) in paragraph at lines 2216--2217
 []\T2A/faq/m/n/10 Теперь, на-при-мер, мож-но по-счи-тать $[]$ 
  []
 
-[55] [56]
+[53] [54]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 6.
-[57
+[55
 
-] [58] [59] [60] [61] [62] [63] [64]
+] [56] [57] [58] [59] [60] [61] [62]
 Underfull \hbox (badness 10000) in paragraph at lines 2641--2641
 
  []
@@ -1375,7 +1371,7 @@ Overfull \hbox (26.6167pt too wide) detected at line 2641
 []
  []
 
-[65] [66] [67] (/home/leonid/No-Idle.github.io/conspecta/1/pdfs/calculus-1.aux)
+[63] [64] (pdfs/calculus-1.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1384,12 +1380,12 @@ Package rerunfilecheck Info: File `calculus-1.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  27439 strings out of 479648
- 508999 string characters out of 5886115
- 796304 words of memory out of 5000000
- 44447 multiletter control sequences out of 15000+600000
+ 508450 string characters out of 5886115
+ 797433 words of memory out of 5000000
+ 44450 multiletter control sequences out of 15000+600000
  506022 words of font info for 94 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,19n,103p,832b,692s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,19n,103p,832b,672s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1411,11 +1407,10 @@ fonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm7.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/1/pdfs/calculus-1.pd
-f (68 pages, 542382 bytes).
+Output written on pdfs/calculus-1.pdf (65 pages, 540748 bytes).
 PDF statistics:
- 1231 PDF objects out of 1440 (max. 8388607)
- 1106 compressed objects within 12 object streams
- 444 named destinations out of 1000 (max. 500000)
+ 1217 PDF objects out of 1440 (max. 8388607)
+ 1096 compressed objects within 11 object streams
+ 441 named destinations out of 1000 (max. 500000)
  661 words of extra memory for PDF output out of 10000 (max. 10000000)
 

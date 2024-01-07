@@ -36,7 +36,7 @@
         }
     }
     \definition[Ретракция топологического пространства $X \supset A$]{
-        $f: X \map A$, такое, что $f\Big|_A = \id$.
+        $f: X \map A$, такое, что $f\big|_A = \id$.
     }
     \theorem[Борсук]{
         Не существует ретракции двумерного диска $D^2$ на свою границу $S^1 = \partial D^2$.
@@ -58,7 +58,7 @@
             Тогда можно построить ретракцию из диска на окружность: $x \in D^2$ отобразим в пересечение луча $f(x) \rightarrow x$ с границей $\partial D^2$.
             Назовём построенную функцию $g$.
 
-            $g\Big|_{S^1} = \id$ по определению. Для проверки непрерывности запишем $g$ формулой:
+            $g\big|_{S^1} = \id$ по определению. Для проверки непрерывности запишем $g$ формулой:
             \[g(x) = f(x) + t_{x}(x - f(x))\]
             где $t_x$ выбирается так, что $|f(x) + t_x (x - f(x))| = 1$. Таким образом, $t_x$ --- положительный (больший) корень некоего квадратного уравнения с непрерывно меняющимися коэффициентами.
         }
@@ -83,7 +83,7 @@
 
         Предположим противное. Рассмотрим функцию $g(x) \coloneqq f(x) - f(-x)$. Это нечётная функция ($g(x) = -g(-x)$), мы предполагаем, что она не обнуляется.
 
-        Сузим $g$ на экватор сферы. $g\Big|_{S^1}$ --- нечётная петля.
+        Сузим $g$ на экватор сферы. $g\big|_{S^1}$ --- нечётная петля.
         \indentlemma{
             Нечётная петля имеет нечётный индекс (\emph{индекс} --- количество раз, которое петля обмоталась вокруг 0 с учётом ориентации).
         }{
@@ -139,7 +139,7 @@
     \section{Ретракция. Гомотопическая эквивалентность}
     Напомним определение ретракции.
     \definition[Ретракция топологического пространства $X \supset A$]{
-        $f: X \map A$, такое, что $f\Big|_A = \id$.
+        $f: X \map A$, такое, что $f\big|_A = \id$.
     }
 
     \theorem{
@@ -273,7 +273,7 @@
 
     \section{Пары Борсука}
     \definition[$(X, A)$ --- пара Борсука]{
-        $A \subset X$, причём $\forall Y: \forall f: X \map Y: \forall H: A \times I \map Y$: если $H(\_, 0) = f\Big|_A(\_)$, то гомотопию можно продолжить: $\exists \tilde{H}:X \times I \map Y$, такая что ${\tilde{H}\Big|_{A \times I} = H}$, причём $\tilde{H}(\_, 0) = f(\_)$.
+        $A \subset X$, причём $\forall Y: \forall f: X \map Y: \forall H: A \times I \map Y$: если $H(\_, 0) = f\big|_A(\_)$, то гомотопию можно продолжить: $\exists \tilde{H}:X \times I \map Y$, такая что ${\tilde{H}\big|_{A \times I} = H}$, причём $\tilde{H}(\_, 0) = f(\_)$.
     % https://q.uiver.app/#q=WzAsNSxbMCwwLCJBIl0sWzEsMSwiWCBcXHRpbWVzIEkiXSxbMSwwLCJYIl0sWzAsMSwiQSBcXHRpbWVzIEkiXSxbMiwyLCJZIl0sWzMsNCwiSCIsMCx7ImN1cnZlIjoyfV0sWzIsNCwiZiIsMCx7ImN1cnZlIjotMn1dLFswLDIsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsNCwiXFx0aWxkZXtIfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoiYm90dG9tIn19fV0sWzAsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMywxLCIiLDEseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               A \& X \\
@@ -307,9 +307,9 @@
     \theorem{
         Пусть $(X, A)$ --- пара Борсука.
         Если $A$ стягиваемо, то $X \sim X/A$.
-        \provehere{ Пусть $\mathcal{F}^*: A \times I \map A$ --- гомотопия, стягивающая $A$ в точку $a \in A$ (таким образом $\mathcal{F}^*\Big|_{A \times \{0\}} = \id_A$ и $\mathcal{F}^*\Big|_{A \times \{1\}} = a$)
+        \provehere{ Пусть $\mathcal{F}^*: A \times I \map A$ --- гомотопия, стягивающая $A$ в точку $a \in A$ (таким образом $\mathcal{F}^*\big|_{A \times \{0\}} = \id_A$ и $\mathcal{F}^*\big|_{A \times \{1\}} = a$)
 
-            Положим в качестве $\mathcal{F}: X \times I \map X$ гомотопию, продолжающую $\mathcal{F}^*$ так, что $\mathcal{F}\Big|_{X \times \{0\}} = \id_X$ (такая найдётся по определению пары Борсука).
+            Положим в качестве $\mathcal{F}: X \times I \map X$ гомотопию, продолжающую $\mathcal{F}^*$ так, что $\mathcal{F}\big|_{X \times \{0\}} = \id_X$ (такая найдётся по определению пары Борсука).
 
             Так как $\forall t \in I: (p \circ \mathcal{F})(A, t) \subset A$, то $p \circ \mathcal{F}$ пропускается через фактор:
             $\exists!$ непрерывное $\tilde{\mathcal{F}}: (X\times I)/_\sim$, делающее диаграмму коммутативной.
@@ -340,7 +340,7 @@
         $A \subset X$ --- пара Борсука, если $(X \times \{0\}) \cup (A \times I)$ --- ретракт $X \times I$.
         \provehere{
             Обозначим данную ретракцию за $\rho: X \times I \map (X \times \{0\} \cup A \times I)$.
-            Чтобы показать, что $(X, A)$ --- пара Борсука, рассмотрим произвольное $f: X \map Y$, рассмотрим гомотопию $H: A \times I \map Y$, такую, что $H\Big|_{A \times \{0\}} = f\Big|_A$.
+            Чтобы показать, что $(X, A)$ --- пара Борсука, рассмотрим произвольное $f: X \map Y$, рассмотрим гомотопию $H: A \times I \map Y$, такую, что $H\big|_{A \times \{0\}} = f\big|_A$.
 
             Необходимо показать существование продолжения гомотопии $\tilde{H}: X \times I \map Y$.
             Подойдёт \[\tilde{H}: (x, t) \mapsto \all{f(\tilde{x}),&\rho(x) = (\tilde{x}, 0) \in X \times \{0\}\\ H(a, t),&\rho(x) = (a, t) \in A \times I}\]
@@ -365,11 +365,11 @@
         Если $(X, A)$ и $(A, B)$ --- пары Борсука, то $(X, B)$ --- пара Борсука.
         \provehere{
             Прямо из определения.
-            Пусть $f: X \map Y$, $H: B \times I \map Y$ --- отображение и гомотопия, которые надо продолжить $f\Big|_{B} = H\Big|_{B \times \{0\}}$.
+            Пусть $f: X \map Y$, $H: B \times I \map Y$ --- отображение и гомотопия, которые надо продолжить $f\big|_{B} = H\big|_{B \times \{0\}}$.
 
-            Так как $(A, B)$ --- пара Борсука, то $\exists H_1: A \times I \map Y$, такая, что $H_1\Big|_{B \times I} = H, H_1\Big|_{A \times \{0\}} = f\Big|_{A}$.
+            Так как $(A, B)$ --- пара Борсука, то $\exists H_1: A \times I \map Y$, такая, что $H_1\big|_{B \times I} = H, H_1\big|_{A \times \{0\}} = f\big|_{A}$.
 
-            Так как $(X, A)$ --- пара Борсука, то $\exists H_2: X \times I \map Y$, такая, что $H_2\Big|_{A \times I} = H_1, H_2\Big|_{X \times \{0\}} = f$.
+            Так как $(X, A)$ --- пара Борсука, то $\exists H_2: X \times I \map Y$, такая, что $H_2\big|_{A \times I} = H_1, H_2\big|_{X \times \{0\}} = f$.
         }
     }
     \fact{
@@ -399,7 +399,7 @@
     \section{Гомотопическая эквивалентность и фундаментальная группа}
     Пусть $\gamma: I \map X$ путь, такой, что $p \coloneqq \gamma(0), q \coloneqq \gamma(1)$.
 
-    Тогда $T_{\gamma}: \pi_1(X, p) \map \pi_1(X, q); [\alpha] \mapsto [\gamma^{-1}\alpha \gamma]$ --- изоморфизм фундаментальных групп.
+    Тогда $T_{\gamma}: \pi_1(X, p) \map \pi_1(X, q); [\alpha] \mapsto [\gamma\alpha \gamma^{-1}]$ --- изоморфизм фундаментальных групп.
 
     \theorem{
         Фундаментальные группы гомотопически эквивалентных пространств изоморфны.
@@ -423,7 +423,7 @@
 
     \section{Накрытия}
     \definition[Накрытие]{
-        Непрерывное отображение $p: Y \map X$, такое что $\forall x \in X: \exists U \ni x$ --- правильная окрестность, такая, что $p^{-1}(U) = \bigcup\limits_{\alpha \in \Lambda}V_{\alpha}$,  причём $\forall \alpha \in \Lambda: p\Big|_{V_\alpha}$ --- гомеоморфизм на $U$.
+        Непрерывное отображение $p: Y \map X$, такое что $\forall x \in X: \exists U \ni x$ --- правильная окрестность, такая, что $p^{-1}(U) = \bigcup\limits_{\alpha \in \Lambda}V_{\alpha}$,  причём $\forall \alpha \in \Lambda: p\big|_{V_\alpha}$ --- гомеоморфизм на $U$.
     }
     \definition[Поднятие отображения $f: Z \map X$ в накрытии]{
         Такое $\tilde{f}: Z \map Y$, что $f = p \circ \tilde{f}$.
@@ -752,6 +752,7 @@
           \arrow["{p_0}", from=1-1, to=2-1]
     \end{tikzcd}\]
     Здесь, например, $p_2$ --- морфизм накрытий $p_1 \circ p_2$ и $p_1$.
+    Он же является накрытием $p_2: (Y_2, y_2) \map (Y_1, y_1)$.
 
 
     \section{Фундаментальные группы клеточных пространств (CW-комплексов). Теорема Зейферта --- ван Кампена}
@@ -842,12 +843,12 @@
             Зафиксируем $w_0 \coloneqq \alpha(0) \in W$, и положим $W \coloneqq \Image(\alpha) \subset Y$, $\tilde{W} \coloneqq p_1^{-1}(W)$.
             Из регулярности накрытия: $\forall \tilde{w}_\gamma \in p_1^{-1}(w_0)$: группа накрытия с отмеченной точкой $\tilde{w}_\gamma$ --- это $\angles{[\alpha]}^{\pi_1(Y)}$.
             Так как эта группа содержит $\pi_1(W) = \angles{\alpha}$, то включение $W \hookrightarrow Y$ можно поднять, для точки $\tilde{w}_\gamma \in p_1^{-1}(w_0)$ получится $\tilde{w}_\gamma \in \tilde{W}_\gamma \cong W$.
-            Иными словами, $\tilde{W}$ состоит из нескольких компонент связности $\tilde{W}_\gamma$, гомеоморфных $W$ (гомеоморфизм $p_1\Big|_{W_\gamma}$).
+            Иными словами, $\tilde{W}$ состоит из нескольких компонент связности $\tilde{W}_\gamma$, гомеоморфных $W$ (гомеоморфизм $p_1\big|_{W_\gamma}$).
 
             Приклеим к каждой такой компоненте связности $\tilde{W}_\gamma$ свой диск по отображению $\tilde{\alpha}_\gamma: \partial D^2 \map \tilde{W}_\gamma$, и назовём склейку $\tilde{X} \coloneqq \tilde{Y} \sqcup_{\{\alpha_\gamma\}} \{D^2_{\gamma}\}$.
             Пусть $\tilde{i}: \tilde{Y} \hookrightarrow \tilde{X}$ --- включение.
 
-            Построим $p_2: \tilde{X} \map X$, такое, что $p_2\Big|_{\tilde{Y}} = p_1$, и $p_2$ отображает тождественно $D^2_\gamma \map D^2$.
+            Построим $p_2: \tilde{X} \map X$, такое, что $p_2\big|_{\tilde{Y}} = p_1$, и $p_2$ отображает тождественно $D^2_\gamma \map D^2$.
             Оно непрерывно, и, более того, это накрытие --- в этом несложно убедиться руками, оно очень похоже на накрытие $p_1$.
 
             Теперь мы готовы доказать, что $\Ker(i_*) \le [\alpha]^{\pi_1(Y)}$.
@@ -952,7 +953,7 @@
 
                 $p^{-1}(U)$ --- классы путей с концами в $U$. $p$ непрерывно и открыто (проверяем на базе).
 
-                Проверим, что $p\Big|_{U_\alpha}$ --- биекция.
+                Проверим, что $p\big|_{U_\alpha}$ --- биекция.
                 То, что это сюръекция --- очевидно, почему $p$ --- инъекция?
 
                 Рассмотрим $[\gamma_1], [\gamma_2] \in U_{\alpha}$, предположим, что $p([\gamma_1]) = p([\gamma_2])$.
@@ -965,7 +966,7 @@
                 Рассмотрим $\alpha \in PX$.
                 У него имеется поднятие $\tilde{\alpha}: [0, 1]\map\tilde{X}$, такое, что $\tilde{\alpha}(0) = \alpha_0$.
 
-                Заметим, что $\tilde{\alpha}(t) \sim \alpha\Big|_{[0, t]}$.
+                Заметим, что $\tilde{\alpha}(t) \sim \alpha\big|_{[0, t]}$.
                 Таким образом, $\tilde{X}$ линейно связно: $\tilde{\alpha}$ соединяет $\alpha_0$ и $\alpha$.
                 \item Проверим односвязность $\tilde{X}$.
 
@@ -1088,7 +1089,7 @@
     \subsection{Параметризация кривой длиной дуги}
     Пусть $\gamma: [a, b] \map X$, где $(X, d)$ --- метрическое пространство.
     \definition[Натуральная параметризация]{
-        Такая параметризация $\gamma$, что $\forall t_1, t_2 \in [a, b]$: $L\left(\gamma\Big|_{[t_1, t_2]}\right) = t_1 - t_2$.
+        Такая параметризация $\gamma$, что $\forall t_1, t_2 \in [a, b]$: $L\left(\gamma\big|_{[t_1, t_2]}\right) = t_1 - t_2$.
     }
     \statement{
         Гладкая кривая параметризована натурально $\iff \abs{\gamma'} \equiv 1$.
@@ -1108,7 +1109,7 @@
         \provehere{
             Пусть $\gamma: [a, b] \map \R^n$.
 
-            Предъявим натуральную параметризацию: $s: [a, b] \map [0, L(\gamma)] \qquad s(t) = L\left(\gamma\Big|_{[a, t]}\right) = \int\limits_{a}^{t}|\gamma'(t)|\d t$.
+            Предъявим натуральную параметризацию: $s: [a, b] \map [0, L(\gamma)] \qquad s(t) = L\left(\gamma\big|_{[a, t]}\right) = \int\limits_{a}^{t}|\gamma'(t)|\d t$.
             \[s'(t) = |\gamma'(t)| > 0,\text{ поэтому $s$ --- валидная перепараметризация.}\]
             Положим $\gamma_1 = \gamma \circ s^{-1}$.
             \[\gamma_1' = (\gamma \circ (s^{-1}))' = \gamma' \cdot \frac{1}{s'} \quad \then \quad |\gamma_1'| = \frac{|\gamma'|}{|\gamma'|} = 1\]
@@ -1268,7 +1269,7 @@
             \end{tikzcd}\]
             Так как $A(t,t)$ --- непрерывный аргумент для $\gamma'(t) = \mathcal{F}(t,t)$, то поворот кривой $\gamma$ --- разность $A(L,L) - A(0,0)$.
             \[A(L,L) - A(0,0) = (A(L,L) - A(0,L)) + (A(0,L) - A(0,0))\]
-            Если посмотреть на $A\Big|_{\{0\}\times[0,L]}$, то окажется, что это векторы с фиксированным началом, которые всегд смотрят в верхнюю полуплоскость.
+            Если посмотреть на $A\big|_{\{0\}\times[0,L]}$, то окажется, что это векторы с фиксированным началом, которые всегд смотрят в верхнюю полуплоскость.
             Из существования непрерывного аргумента $A(0,t) \in [0, \pi]$ и $A(0,L) - A(0,0) = \pi - 0 = \pi$
 
             При подсчёте $A(L,L) - A(0,L)$ будет то же, только аргумент меняется в пределах $[-\pi, 0]$.
@@ -1465,7 +1466,7 @@
             \indentlemma{\label{short}Пусть $\gamma: [a, b] \map S^m$ --- кривая, и $L(\gamma) < 2\pi$.
             Тогда $\Image(\gamma)$ лежит в некоторой открытой полусфере.
             }{
-                Поделим кривую пополам: выберем $t_0 \in (a, b): L\left(\gamma\Big|_{[a, t_0]}\right), L\left(\gamma\Big|_{[t_0, b]}\right) < \pi$.
+                Поделим кривую пополам: выберем $t_0 \in (a, b): L\left(\gamma\big|_{[a, t_0]}\right), L\left(\gamma\big|_{[t_0, b]}\right) < \pi$.
                 Положим $A \coloneqq \gamma(a) = \gamma(b), B \coloneqq \gamma(t_0)$.
                 Тогда $\forall C \in \Image(\gamma): \angle(A, C) + \angle(C, B) < \pi$, и все такие точки лежат в полусфере с центром в $M$ --- середине дуги $\overset{\frown}{AB}$.
             }
@@ -1593,17 +1594,21 @@
         Поверхность $\Sigma$, которая локально может быть представлена, как график гладкой функции: $\forall p \in M$: можно ввести координатные оси $x,y,z$ с нулём в $p$, так, что $\exists \underset{\ni p}{U} \subset \R^3: \exists f: (\Omega \subset \R^2_{x,y})\underset{\text{гладко}}\map \R: \Sigma \cap U = \Gamma_f$ (здесь $\Gamma_f$ --- график $f$ в $\R^3_{x,y,z}$).
     }
     \definition[Регулярное отображение $r$]{
-        Дифференциал $\d r$ невырожден.
+        Дифференциал $\d r$ невырожден (то есть размерность образа линейного оператора максимально возможная).
     }
     Невырожденность гладкого $r: \R^2 \map \R^3$ при введении базиса $(u, v)$ в $\R^2$ можно переформулировать так: $\der{r}{u} \times \der{r}{v} \ne 0$.
 
     \subsection{Локальная параметризация}
+    В дальнейшем часто будут использоваться частные производные.
+    Они будут обозначаться $r'_x$, или же $\der{r}{x}$.
+    Также часто используется обозначаение $r_x$, но мне оно не нравится, и я стараюсь его избегать.
     \theorem{\label{regular-param-sigma}
     Пусть $\Omega \subset \R^2$, пусть $r: \Omega \map \R^3$ --- регулярное (всегда подразумевается, что ещё и гладкое).
     Если $r: \Omega \map \R^3$ --- вложение, то $r(\Omega) \eqqcolon \Sigma$ --- гладкая поверхность.
     \provehere{
-        Рассмотрим $z$ покоординатно: \[(u, v) \overset{r}\mapsto \vect{r_1(u, v) = x(u,v)\\r_2(u,v) =y(u,v)\\r_3(u,v)=z(u,v)}\]
-        Условие невырожденности дифференциала: $\abs{\arr{cc}{x_u & y_u \\ x_v & y_v}} \ne 0$, здесь $x_u$ --- частная производная (?).
+        Рассмотрим $r$ покоординатно: \[\vect{u\\v} \overset{r}\mapsto \vect{r_1(u, v) = x(u,v)\\r_2(u,v) =y(u,v)\\r_3(u,v)=z(u,v)}\]
+        Так как дифференциал невырожден, то найдётся минор с ненулевым определителем.
+        Без потери общности $\abs{\arr{cc}{x'_u & y'_u \\ x'_v & y'_v}} \ne 0$.
 
         Пусть $p = r(x_0)$. Из невырожденности дифференциала $\exist W \subset \Lin(x, y), V \subset \Lin(u, v)$ и обратное отображение $s: W \map V$, такое, что $(r_1, r_2) \circ s = \id$.
         Тогда $(r \circ s)(x, y) = (x, y, (r_3 \circ s)(x, y))$.
@@ -1619,25 +1624,37 @@
     Пусть $r$ --- регулярная параметризация, как в теореме.
     Тогда $\exists r^{-1} \eqqcolon \phi: \Sigma \map \Omega$, оно называется \emph{картой}.
 
-    \definition[Две регулярные параметризации $r_1: \Omega_1 \map \Sigma$ и $r_2: \Omega_2 \map \Sigma$]{
-        $\exists$ гладкое регулярное $s: \Omega_1 \map \Omega_2$, такое, что $s^{-1}$ --- тоже гладкое регулярное, такое, что $r_1 = r_2 \circ s$
+    \definition[Две эквивалентные регулярные параметризации $r_1: \Omega_1 \map \Sigma$ и $r_2: \Omega_2 \map \Sigma$]{
+        $\exists$ гладкое регулярное $s: \Omega_1 \map \Omega_2$, такое, что $s^{-1}$ --- тоже гладкое регулярное, такое, что $r_1 = r_2 \circ s$.
     }
+    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMCwxLCJzIiwyXV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \& \Sigma \\
+          {\Omega_1} \& {\Omega_2}
+          \arrow["{r_1}", from=2-1, to=1-2]
+          \arrow["{r_2}"', from=2-2, to=1-2]
+          \arrow["s"', from=2-1, to=2-2]
+    \end{tikzcd}\]
     \exercise{
         Для гладкой поверхности локально любые две параметризации эквивалентны.
     }
     Пусть $r: \Omega \map \Sigma$ --- регулярная параметризация.
 
-    \indent{Пусть $l(t) = (t, \const)$ --- путь, обозначим данную константу $v_0$.
-    Можно ввести координатные линии $r(t, v_0)$ и $r(u_0, t)$.
+    \indent{Пусть $l: [0, 1] \map \Omega, l(t) = (t, v_0)$ --- путь с постоянной координатой $v_0$.
+    Можно ввести координатные линии $r \circ l$, отвечающее линиям $r(t, v_0)$ и аналогично $r(u_0, t)$.
 
-    Векторы скорости координатных линий $r_u(t, v_0)$ и $r_v(u_0, t)$.
+    Векторы скорости координатных линий $r'_u(t, v_0)$ и $r'_v(u_0, t)$.
 
     Пусть $\tilde{\gamma} = r \circ \gamma$. $\gamma$ регулярна $\iff$ $\tilde{\gamma}$ регулярна.
     Обратно можно получить $\gamma = \phi \circ \tilde{\gamma}$.
     }
-    \statement{Пусть $F: \R^m \map \R^n$ --- гладкое отображение.
+    \statement{Пусть $f: \R^m \map \R^n$ --- гладкое отображение.
 
-    Чтобы посчитать производную по направлению $v$, можно взять произвольную гладкую кривую $\gamma$, такую, что $\gamma(0) = x, \gamma'(0) = v$, тогда $(f \circ \gamma)$ --- искомая.
+    Чтобы посчитать производную по направлению $v \in \R^m$ в $p_0 \in \Image(f)$, можно взять произвольную гладкую кривую $\gamma: (-\eps, +\eps) \map \R^m$, такую, что $\gamma(0) = p_0, \gamma'(0) = v$, тогда $(f \circ \gamma)'(0)$ --- искомая.
+    \provehere{
+        $(f \circ \gamma)'(0) = \d f(\gamma(0)) \cdot \d\gamma(0) = \d f(p_0) \cdot v$.
+        Это выражение не зависит от пути $\gamma$, и является фактически определением производной по направлению.
+    }
     }
     \definition[Касательное пространство к $\Sigma$ в точке $p = r(x)$]{
         $T_p(\Sigma) = \d_x r(\R^2)$.
@@ -1650,8 +1667,8 @@
             Можно определить эквивалентным образом: касательное пространство $T_p(\Sigma) = \{\text{векторы скорости гладких кривых, проходящих через точку $p$}\}$
         }
     }
-    Касательная плоскость --- линейное пространство, натянутое на векторы $\der{r}{u}$ И $\der{r}{v}$ --- стандартный базис в касательном пространстве.
-    $\der{r}{u} = r_u = \d r(1, 0), \der{r}{v} = r_v = \d r(0, 1)$.
+    Касательная плоскость --- линейное пространство, натянутое на векторы $\der{r}{u}$ и $\der{r}{v}$ --- стандартный базис в касательном пространстве.
+    $\der{r}{u} = r'_u = \d r(1, 0), \der{r}{v} = r'_v = \d r(0, 1)$.
     \newlection{13 ноября 2023 г.}
 
     \subsection{Гладкие функции на поверхности}
@@ -1664,35 +1681,40 @@
         \numbers{
             \item $f$ гладкая в любой карте.
             \item $\exists F: (\subset \R^3) \map \R$ --- продолжение $f$, гладкое в окрестности любой точки.
-            \provehere{
-                \numbers{
-                    \item Отображение перехода между картами $s$ --- регулярно, и $s^{-1}$ --- тоже регулярно.
-                    \note{
-                        Из теоремы об обратном отображении $s$ --- регулярная биекция.
-                    }
-                    \item Если поверхность локально задаётся графиком $\Sigma = (x, y, h(x, y))$, то можно определить $F(x, y, z) = f(x, y, h(x, y))$.
+        }
+        \provehere{\down
+            \numbers{
+                \item Отображение перехода между картами $s$ --- регулярно, и $s^{-1}$ --- тоже регулярно.
+                \note{
+                    Из теоремы об обратном отображении $s$ --- регулярная биекция.
                 }
+                \item Если поверхность локально задаётся графиком $\Sigma = (x, y, h(x, y))$, то можно определить $F(x, y, z) = f(x, y, h(x, y))$.
+                Обратно, если $F: (\subset \R^3) \map \R$ гладкое, то гладко и $F\big|_{\Sigma}$.
             }
         }
     }
 
     \subsection{Производная по направлению}
-    Пусть $p \in \Sigma, X \in T_p(X)$.
+    Пусть взяты точка в поверхности $p \in \Sigma$ и касательный вектор $X \in T_p(\Sigma)$.
 
-    Пусть $f: \Sigma \map \R$ --- гладкая функция, пусть $\tilde{\gamma}: (-e\sp, +\eps) \map \Sigma$ --- кривая на поверхности.
+    Пусть $f: \Sigma \map \R$ --- гладкая функция, пусть $\tilde{\gamma}: (-\eps, +\eps) \map \Sigma$ --- кривая на поверхности.
     Пусть $p \coloneqq \tilde{\gamma}(0), \tilde{\gamma}'(0) = X$.
     Тогда
     \numbers{
-        \item $(f \circ \tilde{\gamma})$ --- гладкая.
-        \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0)$ --- не зависит от $\tilde{\gamma}$.
-        \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0) = X_1 \der{f \circ r}{u} + X_2 \der{f \circ r}{v}$.
+        \item $f \circ \tilde{\gamma}$ --- гладкая (скалярная) функция.
+        \item $(f \circ \tilde{\gamma})'(0)$ --- не зависит от $\tilde{\gamma}$.
+        \item Для всякой параметризации $r: \Omega \map \R^3$: $(f \circ \tilde{\gamma})'(0) = X_1 \der{f \circ r}{u} + X_2 \der{f \circ r}{v}$, где $X_1, X_2$ --- координаты $X$ в базисе $r'_u, r'_v$.
     }
-    \provehere{
-        1. $f \circ \tilde{\gamma} = f \circ r \circ \gamma$
-        3. Пусть $\gamma = (u(t), v(t))$. $(f \circ r \circ \gamma)' = (f \circ r)'_u \cdot u' + (f \circ r)'_v \cdot v'$. $\gamma'(0) = (X_1, X_2)$.
+    \provebullets{
+        \item[1.] Композиция гладких функций --- гладкая (можно продолжить $f$ до $F: \R^3 \map \R$).
+        \item[2.] Следует из следующего.
+        \item[3.] Пусть $r: \Omega \map \Sigma$ --- параметризация, и $\tilde{\gamma} = r \circ \gamma$, где $\gamma: (-\eps, +\eps) \map \Omega$.
 
+        Обозначим $\gamma(t) = \vect{u(t) \\ v(t)}$, получим $(f \circ \tilde{\gamma})'(0) = \left(f \circ r \circ \vect{u \\ v}\right)'(0) = (f \circ r)'_u \cdot u'(0) + (f \circ r)'_v \cdot v'(0)$.
+
+    При этом действительно $\tilde{\gamma}'(0) = r'(\vect{u \\ v})(0) \cdot \vect{u'(0) & v'(0)}$, то есть $u'(0), v'(0)$ --- координаты $X = \tilde{\gamma}'(0)$ в базисе $r'_u, r'_v$.
     }
-    $X_1 (f \circ r)'_u + X_2 (f \circ r)'_v$ называется производной функции $f$ по направлению $X$, обозначается $X(f)$.
+    $X_1 (f \circ r)'_u + X_2 (f \circ r)'_v$ называется \emph{производной функции $f: \Sigma \map \R$ в точке $p \in \Sigma$ по направлению} $X \in T_p(\Sigma)$, обозначается $X_p(f)$.
 
     \definition[$f: \Sigma \map \R^3$ --- гладкая функция]{
         $f$ --- гладкая покоординатно.
@@ -1701,7 +1723,7 @@
 
     Если $\Image(\tilde{f}) \subset \Sigma_2$, то $\tilde{f}$ --- гладкая функция $\Sigma_1 \map \Sigma_2$ из одной поверхности в другую.
 
-    Можно рассмотреть соответствующую $\tilde{f}: \Sigma_1 \map \Sigma_2$
+    Можно рассмотреть соответствующую $f: \Omega_1 \map \Omega_2$
 % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
@@ -1712,11 +1734,12 @@
           \arrow["{\tilde{f}}"', from=1-1, to=1-2]
           \arrow["{r_2}", from=2-2, to=1-2]
     \end{tikzcd}\]
-    \statement{$\tilde{f}$ --- гладкая $\iff f$ гладкая в любой карте.
+    \statement{$\tilde{f}$ --- гладкая $\iff f$ гладкая в некоторой карте.
     \provehere{
         \bullets{
-            \item[$\then$] Рассмотрим хорошую карту $\Sigma = \Gamma_h: r: (x, y) \mapsto (x, y, h(x, y))$.
-            \item[$\when$] Посмотреть на коммутативную диаграмму.
+            \item[$\then$] Рассмотрим хорошую карту, в которой параметризации --- графики $(x, y, h(x, y))$.
+            В ней $f$ действительно гладкая.
+            \item[$\when$] Из коммутативности диаграммы $\tilde{f} = r_2 \circ f \circ r_1^{-1}$.
         }
     }
     }
@@ -2162,7 +2185,7 @@
         Ковариантная производная $\nabla_{v_p}X$ зависит только от $X$ в окрестности $p$.
     }
     \note{
-        Для двух функций $f, g: \R^n \map \R^n$ и регулярной кривой $\gamma$ с вектором скорости $v_p$: Если $f\Big|_{\gamma} = g\Big|_{\gamma}$, то $f'_v(t_0) = g'_v(t_0)$.
+        Для двух функций $f, g: \R^n \map \R^n$ и регулярной кривой $\gamma$ с вектором скорости $v_p$: Если $f\big|_{\gamma} = g\big|_{\gamma}$, то $f'_v(t_0) = g'_v(t_0)$.
     }
     \proposal{
         Кривая $\gamma$ геодезическая $\iff \nabla_{\gamma'}(\gamma') = 0$.
@@ -2291,7 +2314,7 @@
         Она лежит по одну сторону от любой своей соприкасающейся плоскости.
     }
     \definition[Локальный гомеоморфизм $f: X \map Y$]{Отображение $f$, такое, что
-    $\forall x \in X: \exists U \ni x: f\Big|_U$ --- гомеоморфизм на образ, причём $f(U)$ открыто.
+    $\forall x \in X: \exists U \ni x: f\big|_U$ --- гомеоморфизм на образ, причём $f(U)$ открыто.
     }
     \theorem{
         Пусть $\Sigma$ --- гладкая компактная поверхность без края.

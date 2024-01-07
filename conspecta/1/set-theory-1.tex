@@ -572,14 +572,14 @@
     \[0, 1, \dots, \omega, \omega + 1, (\omega + 2 = (\omega + 1) + 1), \dots, (\omega \cdot 2 = \omega + \omega), \omega \cdot 2+ 1, \dots, \omega\cdot 3, \dots, \omega \cdot \omega, \dots\]
 
     \theorem[О рекурсивных определениях по ординалам]{
-        Для любой функции-класса $G: V \map V$, где $V$ --- класс всех множеств, $\exist!$ функция-класс $F: \Ord \map V: F(\alpha) = G\left(F\Big|_\alpha\right)$, где $F\Big|_\alpha$ --- функция, ограниченная на $\alpha$, а именно, $F\Big|_\alpha \bydef \defset{(\beta, y) \in F}{\beta < \alpha}$.
+        Для любой функции-класса $G: V \map V$, где $V$ --- класс всех множеств, $\exist!$ функция-класс $F: \Ord \map V: F(\alpha) = G\left(F\big|_\alpha\right)$, где $F\big|_\alpha$ --- функция, ограниченная на $\alpha$, а именно, $F\big|_\alpha \bydef \defset{(\beta, y) \in F}{\beta < \alpha}$.
         Напоминание: $F(x) = y \overset{def}{\iff} (x, y) \in F$
     }
     \provebullets{
-        \item Единственность: пусть существуют две такие функции $F, F'$. Утверждается, что $\forall \alpha \in \Ord: F(\alpha) = F'(\alpha)$. Предположим, что это не так, возьмём наименьшее $\alpha$ такое, что это не так. Тогда $F\Big|_\alpha = F'\Big|_\alpha$, откуда $F(\alpha) = F'(\alpha) = G\left(F\Big|_\alpha\right)$, противоречие.
-        \item Существование: рассмотрим некоторый класс функций \[C = \defset{f:\alpha \map V}{\alpha \in \Ord \land (\forall \beta < \alpha : f(\beta) = G\left(f\Big|_\beta\right)}\]
+        \item Единственность: пусть существуют две такие функции $F, F'$. Утверждается, что $\forall \alpha \in \Ord: F(\alpha) = F'(\alpha)$. Предположим, что это не так, возьмём наименьшее $\alpha$ такое, что это не так. Тогда $F\big|_\alpha = F'\big|_\alpha$, откуда $F(\alpha) = F'(\alpha) = G\left(F\big|_\alpha\right)$, противоречие.
+        \item Существование: рассмотрим некоторый класс функций \[C = \defset{f:\alpha \map V}{\alpha \in \Ord \land (\forall \beta < \alpha : f(\beta) = G\left(f\big|_\beta\right)}\]
         Заметим, что если $f, f' \in C$, то $f \subseteq f' \lor f' \subseteq f$. Утверждается, что искомая функция-класс \[F = \bigcup C\]
-        В самом деле, можно заметить, что если некое $\alpha \notin \dom F$, то найдётся функция $H $, такая, что $\dom H = \alpha + 1$, определённая так: $H(\beta) = \all{F(\beta),& \beta < \alpha\\ G\left(F\Big|_\beta\right),&\beta = \alpha}$.
+        В самом деле, можно заметить, что если некое $\alpha \notin \dom F$, то найдётся функция $H $, такая, что $\dom H = \alpha + 1$, определённая так: $H(\beta) = \all{F(\beta),& \beta < \alpha\\ G\left(F\big|_\beta\right),&\beta = \alpha}$.
     }
 
 
@@ -614,7 +614,7 @@
             Заметим, что $B: \mathscr{L} \map \left(2^X\bs \{\o\}\right)$. Также, по аксиоме выбора, есть функция ${f : \left(2^X \bs \{\o\}\right) \map X}$. Рассмотрим композицию этих функций $g = f \circ B : g(L) = f(B(L))$. Тогда заметим, что $\forall L \in \mathscr{L}, \forall x \in L : x \sqsubset g(L)$.
 
             Пусть $x_0 = g(\o); x_0 \in X$. Фактически, $x_0$ --- любой элемент из $X$. Построим некоторую функцию $F$ по рекурсии. Для этого сначала скажем, что \[G : V \map V, G(z) = \all{g(\rng(z)),&z \text{ --- бинарное отношение (множество пар), и } \rng(z) \in \mathscr{L}\\x_0,&\text{иначе}}\]
-            Теперь определим $F : \Ord \map X;\quad F(\alpha) = g\left(\rng\left(F\Big|_\alpha\right)\right) = g(\{F(\beta)|\beta < \alpha\})$. Здесь я пишу первую строчку из определения $G$, так как доказуемо для всех $\alpha \in \Ord : F(\alpha) \in \mathscr{L}$. Заметим, что $F$ --- инъекция, так как разные ординалы переходят в разные элементы. Отсюда $F^{-1} : X \map \Ord$ --- сюръекция. Тогда по аксиоме замены класс $\Ord$ является множеством, противоречие.
+            Теперь определим $F : \Ord \map X;\quad F(\alpha) = g\left(\rng\left(F\big|_\alpha\right)\right) = g(\{F(\beta)|\beta < \alpha\})$. Здесь я пишу первую строчку из определения $G$, так как доказуемо для всех $\alpha \in \Ord : F(\alpha) \in \mathscr{L}$. Заметим, что $F$ --- инъекция, так как разные ординалы переходят в разные элементы. Отсюда $F^{-1} : X \map \Ord$ --- сюръекция. Тогда по аксиоме замены класс $\Ord$ является множеством, противоречие.
 
             \item $ZL \then ZT$.
 
