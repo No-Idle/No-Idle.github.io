@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  7 JAN 2024 14:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  9 JAN 2024 23:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1172,7 +1172,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 ... РєРѕРѕСЂРґРёРЅР°С‚Р°С…}{41}{section.2.11}
+l.47 ... РїСЂРѕРёР·РІРѕРґРЅР°СЏ}{42}{section.2.12}
                                                   % [1
 
 ])
@@ -1198,7 +1198,7 @@ LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 (Font)              for symbol `textbullet' on input line 228.
 
 [6]
-<../pics//eights.png, id=310, 1081.03876pt x 586.19pt>
+<../pics//eights.png, id=305, 1081.03876pt x 586.19pt>
 File: ../pics//eights.png Graphic file (type png)
 <use ../pics//eights.png>
 Package pdftex.def Info: ../pics//eights.png  used on input line 260.
@@ -1220,12 +1220,12 @@ Overfull \hbox (5.6541pt too wide) in paragraph at lines 455--455
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 511.
  [12]
-<../pics//two_s1s.pdf, id=376, 82.60829pt x 41.61885pt>
+<../pics//two_s1s.pdf, id=371, 82.60829pt x 41.61885pt>
 File: ../pics//two_s1s.pdf Graphic file (type pdf)
 <use ../pics//two_s1s.pdf>
 Package pdftex.def Info: ../pics//two_s1s.pdf  used on input line 599.
 (pdftex.def)             Requested size: 88.71432pt x 44.6981pt.
-<../pics//three_s1s.pdf, id=377, 100.16084pt x 41.61885pt>
+<../pics//three_s1s.pdf, id=372, 100.16084pt x 41.61885pt>
 File: ../pics//three_s1s.pdf Graphic file (type pdf)
 <use ../pics//three_s1s.pdf>
 Package pdftex.def Info: ../pics//three_s1s.pdf  used on input line 599.
@@ -2328,17 +2328,8 @@ Overfull \hbox (23.29608pt too wide) in paragraph at lines 1745--1745
 mm/m/it/10 x; y\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 .
  []
 
-[34]
-Overfull \hbox (11.42009pt too wide) in paragraph at lines 1794--1797
-[]$\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u; v\OT1/cmr/m/n/10 ) = 
-[] \OML/cmm/m/it/10 ; F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u; v\OT1/cmr/m/n/10 ) 
-= [] \OML/cmm/m/it/10 ; G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u; v\OT1/cmr/m/n/10 
-) = []$\T2A/faq/m/n/10 . $\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 I[]\OT1/cmr/m/n/10 
-] = []$\T2A/faq/m/n/10 .
- []
-
-[35] [36] [37] [38] [39] [40] [41] [42]
-Overfull \hbox (23.00926pt too wide) in paragraph at lines 2250--2250
+[34] [35] [36] [37] [38] [39] [40] [41] [42]
+Overfull \hbox (23.00926pt too wide) in paragraph at lines 2249--2249
 []\T2A/faq/m/n/10 Дифференцируя по пра-ви-лу Лейб-ни-ца, по-лу-ча-ем $\OMS/cmsy
 /m/n/10 r[]\OT1/cmr/m/n/10 ([] \OML/cmm/m/it/10 ^^Q[]r[]\OT1/cmr/m/n/10 ) = [] 
 \OML/cmm/m/it/10 ^^Q[]r[] \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 ^^Q[]\OMS/cmsy/
@@ -2346,7 +2337,7 @@ m/n/10 r[]\OML/cmm/m/it/10 r[]$\T2A/faq/m/n/10 .
  []
 
 [43] [44] [45]
-Overfull \hbox (1.12166pt too wide) in paragraph at lines 2361--2361
+Overfull \hbox (1.12166pt too wide) in paragraph at lines 2360--2360
 [][]\T2A/faq/bx/n/10 Определение 2.13.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-с
 я по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но 
 изо-мет-рич-ная плос-
@@ -2357,13 +2348,13 @@ Overfull \hbox (1.12166pt too wide) in paragraph at lines 2361--2361
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
-(rerunfilecheck)             Checksum: 80D62B92AEA6FE84C6DA90CC91251969;13682.
+(rerunfilecheck)             Checksum: 23B41B375A1A2692C6B9300BF7F973DA;13564.
  ) 
 Here is how much of TeX's memory you used:
- 28437 strings out of 479648
- 535132 string characters out of 5886115
- 856519 words of memory out of 5000000
- 45572 multiletter control sequences out of 15000+600000
+ 28391 strings out of 479648
+ 533907 string characters out of 5886115
+ 855519 words of memory out of 5000000
+ 45527 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,21n,103p,825b,1130s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2387,10 +2378,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (49 pages, 547912 bytes).
+ (49 pages, 547896 bytes).
 PDF statistics:
- 967 PDF objects out of 1000 (max. 8388607)
- 835 compressed objects within 9 object streams
- 318 named destinations out of 1000 (max. 500000)
- 412 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 962 PDF objects out of 1000 (max. 8388607)
+ 830 compressed objects within 9 object streams
+ 317 named destinations out of 1000 (max. 500000)
+ 404 words of extra memory for PDF output out of 10000 (max. 10000000)
 

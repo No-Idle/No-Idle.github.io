@@ -145,7 +145,7 @@
     \theorem{
         Пусть существует $r: X \map A$ --- ретракция. Тогда для отображения $\text{in}: A \map X$ индуцированный гомоморфизм фундаментальных групп $\text{in}_*$ инъективен.
         \provehere{
-            Композиция $A \overset{\text{in}}\map X \overset{r}\map A$ тождественна, значит, индуцированный гомоморфизм фундаментальных групп тождественнен, значит, никакие точки при $\text{in}_*$ не склеились.
+            Композиция $A \overset{\text{in}}\map X \overset{r}\map A$ тождественна, значит, индуцированный гомоморфизм фундаментальных групп тождественен, значит, никакие точки при $\text{in}_*$ не склеились.
         }
     }
     \definition[Деформационная ретракция $X \supset A$]{
@@ -255,7 +255,7 @@
         \item $[0, 1] \sim [0, 1]\times[0, 1]$ --- отрезок является деформационным ретрактом квадрата.
         \item $S^1 \sim \text{лист Мёбиуса}$.
         \item Точка гомотопически эквивалентна дереву.
-        \item Две разные (одномерные) восьмёрки гомомотопически эквивалентны, потому что они --- ретракты третьей (двумерной) восьмёрки~(\ref{eights}).
+        \item Две разные (одномерные) восьмёрки гомотопически эквивалентны, потому что они --- ретракты третьей (двумерной) восьмёрки~(\ref{eights}).
         \pic[0.4]{eights}{Восьмёрки}
     }
     \theorem{
@@ -264,7 +264,7 @@
             \item Рефлексивность: $X \sim X$, так как $\id_X$ и $\id_X$ --- гомотопически обратные.
             \item Симметричность заложена в определение.
             \item Транзитивность:
-            пусть $X \underset{h}{\overset{f}\rightleftarrows} Y \underset{i}{\overset{g}\rightleftarrows} Z$, где $g \circ i, i \circ g, f \circ h$ и $h \circ f$ гомотопны постоянным отображениям соответвующего пространства.
+            пусть $X \underset{h}{\overset{f}\rightleftarrows} Y \underset{i}{\overset{g}\rightleftarrows} Z$, где $g \circ i, i \circ g, f \circ h$ и $h \circ f$ гомотопны постоянным отображениям соответствующего пространства.
             Таким образом, так как $i \circ g \sim \id_Y$, то \[h \circ (i \circ g) \circ f \sim h \circ f \sim \id_X\]
             Аналогично $g \circ f \circ h \circ i \sim \id_Z$.
         }
@@ -1018,7 +1018,7 @@
     }
     \fact{
         Эквивалентность кривых --- отношение эквивалентности.
-        Аналогичный факт верен для эквивалентности гладких перепараметрищаций гладких кривых.
+        Аналогичный факт верен для эквивалентности гладких перепараметризаций гладких кривых.
     }
     \definition[Разбиение отрезка $\lbrack a, b\rbrack$]{
         Разбиение $a = t_0 \le \cdots \le t_k = b$.
@@ -1256,7 +1256,7 @@
 
             Пусть $T = \defset{(t,\tau) \subset\R^2}{0 \le t \le \tau \le L}$.
             Устроим $\mathcal{F}: \arr{ccc}{T &\map& S^1\\(t, \tau)&\mapsto&\frac{\gamma(\tau) - \gamma(t)}{|\gamma(\tau) - \gamma(t)|}}$.
-            Если же $t = \tau$, то дооопределим $\mathcal{F}$ по непрерывности: $\mathcal{F}(t,t) = \gamma'(t)$.
+            Если же $t = \tau$, то доопределим $\mathcal{F}$ по непрерывности: $\mathcal{F}(t,t) = \gamma'(t)$.
 
             $T$ односвязно, поэтому существует поднятие --- непрерывный аргумент $A$: $\mathcal{F}(t,\tau) = \sin(A(t,\tau)), \cos(A(t,\tau))$.
         % https://q.uiver.app/#q=WzAsMyxbMCwxLCJUIl0sWzEsMCwiXFxSIl0sWzEsMSwiU14xIl0sWzAsMiwiXFxtYXRoY2Fse0Z9Il0sWzAsMSwiQSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsInAiXV0=
@@ -1269,7 +1269,7 @@
             \end{tikzcd}\]
             Так как $A(t,t)$ --- непрерывный аргумент для $\gamma'(t) = \mathcal{F}(t,t)$, то поворот кривой $\gamma$ --- разность $A(L,L) - A(0,0)$.
             \[A(L,L) - A(0,0) = (A(L,L) - A(0,L)) + (A(0,L) - A(0,0))\]
-            Если посмотреть на $A\big|_{\{0\}\times[0,L]}$, то окажется, что это векторы с фиксированным началом, которые всегд смотрят в верхнюю полуплоскость.
+            Если посмотреть на $A\big|_{\{0\}\times[0,L]}$, то окажется, что это векторы с фиксированным началом, которые всегда смотрят в верхнюю полуплоскость.
             Из существования непрерывного аргумента $A(0,t) \in [0, \pi]$ и $A(0,L) - A(0,0) = \pi - 0 = \pi$
 
             При подсчёте $A(L,L) - A(0,L)$ будет то же, только аргумент меняется в пределах $[-\pi, 0]$.
@@ -1601,7 +1601,7 @@
     \subsection{Локальная параметризация}
     В дальнейшем часто будут использоваться частные производные.
     Они будут обозначаться $r'_x$, или же $\der{r}{x}$.
-    Также часто используется обозначаение $r_x$, но мне оно не нравится, и я стараюсь его избегать.
+    Также часто используется обозначение $r_x$, но мне оно не нравится, и я стараюсь его избегать.
     \theorem{\label{regular-param-sigma}
     Пусть $\Omega \subset \R^2$, пусть $r: \Omega \map \R^3$ --- регулярное (всегда подразумевается, что ещё и гладкое).
     Если $r: \Omega \map \R^3$ --- вложение, то $r(\Omega) \eqqcolon \Sigma$ --- гладкая поверхность.
@@ -1712,7 +1712,7 @@
 
         Обозначим $\gamma(t) = \vect{u(t) \\ v(t)}$, получим $(f \circ \tilde{\gamma})'(0) = \left(f \circ r \circ \vect{u \\ v}\right)'(0) = (f \circ r)'_u \cdot u'(0) + (f \circ r)'_v \cdot v'(0)$.
 
-    При этом действительно $\tilde{\gamma}'(0) = r'(\vect{u \\ v})(0) \cdot \vect{u'(0) & v'(0)}$, то есть $u'(0), v'(0)$ --- координаты $X = \tilde{\gamma}'(0)$ в базисе $r'_u, r'_v$.
+    При этом действительно $\tilde{\gamma}'(0) = r'\vect{u \\ v}(0) \cdot \vect{u'(0) & v'(0)}$, то есть $u'(0), v'(0)$ --- координаты $X = \tilde{\gamma}'(0)$ в базисе $r'_u, r'_v$.
     }
     $X_1 (f \circ r)'_u + X_2 (f \circ r)'_v$ называется \emph{производной функции $f: \Sigma \map \R$ в точке $p \in \Sigma$ по направлению} $X \in T_p(\Sigma)$, обозначается $X_p(f)$.
 
@@ -1751,6 +1751,7 @@
     \definition[Дифференциал $\tilde{f}$ в точке $p$ по направлению $X$]{
         $\d_p\tilde{f}(X) \bydef X(\tilde{f})$.
     }
+    Дифференциал в точке $p$ --- линейное отображение $T_p(\Sigma) \map T_{\tilde{f}(p)}(\Sigma)$.
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMiwwLCJcXFNpZ21hXzMiXSxbMCwxLCJcXHRpbGRle2Z9Il0sWzEsMiwiXFx0aWxkZXtnfSJdLFswLDIsIlxcdGlsZGV7aH0iLDIseyJjdXJ2ZSI6M31dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
@@ -1759,7 +1760,7 @@
           \arrow["{\tilde{g}}", from=1-2, to=1-3]
           \arrow["{\tilde{h}}"', curve={height=18pt}, from=1-1, to=1-3]
     \end{tikzcd}\]
-    $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
+    Дифференциал композиции равен произведению дифференциалов $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
 
 % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1771,64 +1772,62 @@
           \arrow["{\tilde{f}}"', from=1-1, to=1-2]
           \arrow["{r_2}", from=2-2, to=1-2]
     \end{tikzcd}\]
-    $\d \tilde{f} \circ \d r_1 = \d r_2 \circ \d f$.
+    Частным случаем этого утверждения является $\d \tilde{f} \circ \d r_1 = \d r_2 \circ \d f$.
     \definition[$\tilde{f}$ регулярно]{
         $\d \tilde{f}$ невырожден (здесь эквивалентно: $f$ регулярно в любой карте).
     }
 
-
     \section{Первая квадратичная форма поверхности}
-    Отображение $Q: V \map \R$ из векторного пространства в $\R$ --- квадратичная форма.
-
-    Имеется соответствие между квадратичными и билинейными симметричными формами $B(x, x) = Q(x)$.
+    Имеется соответствие между квадратичными и билинейными симметричными формами: сужение билинейной формы на диагональ --- квадратичная форма ($B(x, x) = Q(x)$), и билинейную форму можно восстановить по квадратичной.
+    Поэтому в будущем мы будем использовать слова квадратичной и билинейной формы взаимозаменяемо.
 
     После выбора базиса $(e_1, \dots, e_n) \in V$ для билинейной формы можно записать матрицу $[B] = (b_{i,j})_{i,j} = (B(e_i,e_j))_{i,j}$.
 
     $I$ квадратичная форма определяется для параметризации $r: \Omega \map \Sigma$.
-    Пусть $X = (X_1, X_2), Y = (Y_1, Y_2) \in\R^2$.
+    Положим $I_x: \R^2\times\R^2 \map \R$, $I_x(X, Y) \bydef \angles{\d_x r(X), \d_x r(Y)}_{\R^3}$.
+    Это билинейная симметричная форма.
     \definition[$I$ квадратичная форма в $x \in \Omega$]{
-        Билинейная симметричная форма $I_x: \R^2\times\R^2 \map \R$, определённая так: $I_x(X, Y) \bydef \angles{\d_x r(X), \d_x r(Y)}_{\R^3}$.
+        Квадратичная форма, отвечающая сужению на диагональ: $I_x(X) \bydef I_x(X, X)$.
     }
-    Ей соответствует квадратичная форма $I_x(X) = I_x(X, X)$, матрица квадратичной формы $[I_x] = (g_{i,j})_{i,j} = (\angles{\d r(e_i), \d r(e_j)})_{i,j}$ --- \emph{метрический тензор}.
+    Матрица квадратичной формы $[I_x] = (g_{i,j})_{i,j} = (\angles{\d r(e_i), \d r(e_j)})_{i,j}$ --- \emph{метрический тензор}.
 
-    $E(u, v) = \angles{r_u(u, v), r_u(u, v)}, F(u, v) = \angles{r_u(u, v), r_v(u, v)}, G(u, v) = \angles{r_v(u, v), r_v(u, v)}$.
-    $[I_x] = \vect{E & F \\ F & G}$.
-    $I(X, Y) = X_1 E Y_1 + (X_1 F Y_2 + X_2 F Y_1) + X_2 G Y_2$.
+    Имеются установленные буквенные обозначения $[I_x] = \vect{E & F \\ F & G}$.
+    А именно, \[E(u, v) \coloneqq \angles{r'_u(u, v), r'_u(u, v)}, F(u, v) \coloneqq \angles{r'_u(u, v), r'_v(u, v)}, G(u, v) \coloneqq \angles{r'_v(u, v), r'_v(u, v)}\]
 
-    Длина вектора $X$ --- это $\sqrt{I(X, X)}$, $\cos(\angle(X, Y)) = \frac{I(X, Y)}{\sqrt{I(x)}\sqrt{I(Y)}}$.
+    Разложим в этом базисе $X = (X_1, X_2)$ и $Y = (Y_1, Y_2)$, получаем $I(X, Y) = X_1 E Y_1 + (X_1 F Y_2 + X_2 F Y_1) + X_2 G Y_2$.
 
-    Пути $\tilde{\gamma} = r \circ \gamma$ сопоставляется его длина $L(\tilde{\gamma}) = \int\sqrt{I(\gamma',\gamma')}\d t$
+    \examples[Вычисления, связанные с квадратичной формой]{
+    \item Длина вектора $X$ --- это $\sqrt{I(X, X)}$, $\cos(\angle(X, Y)) = \frac{I(X, Y)}{\sqrt{I(X)}\sqrt{I(Y)}}$.
 
-    \subsection{Площадь}
-    <<Что такое площадь, мы определять не будем, обещают определить на матанализе>>
-    Ортонормированному базису $(u, v)$ соответствует базис $r'_u, r'_v$.
-    Площадь поверхности $\int\limits_{\Omega}\sqrt{EG - F^2}\d s$.
+    \item Пути на поверхности $\tilde{\gamma} = r \circ \gamma$ сопоставляется его длина $L(\tilde{\gamma}) = \int\sqrt{I(\gamma',\gamma')}\d t$
 
+    \item     Ортонормированному базису $(u, v)$ соответствует базис $r'_u, r'_v$.
+    Площадь поверхности $r(\Omega)$ равна $\int\limits_{\Omega}\sqrt{EG - F^2}\d s$ (это было обосновано на матанализе).
+    }
     \subsection{I форма при замене координат}
     Пусть $r: \Omega_1 \map \Sigma, r^*: \Omega_2 \map \Sigma$ --- две параметризации $\Sigma$, отображение перехода между картами $s$.
-% https://q.uiver.app/#q=WzAsNyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwiXFxidWxsZXQiXSxbMSwyXSxbMiwyLCJcXGJ1bGxldCJdLFszLDJdLFsxLDAsInMiXSxbMCwyLCJyIl0sWzEsMiwicl4qIiwyXSxbMywwLCJlXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbMyw0LCJlXzEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbNSwxLCJmXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XSxbNSw2LCJmXzEiLDAseyJsYWJlbF9wb3NpdGlvbiI6MzAsInNob3J0ZW4iOnsidGFyZ2V0Ijo1MH19XV0=
+% https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzEsMCwicyJdLFswLDIsInIiXSxbMSwyLCJyXioiLDJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
           \& \Sigma \\
-          {\Omega_1} \&\& {\Omega_2} \\
-          \bullet \& {} \& \bullet \& {}
+          {\Omega_1} \&\& {\Omega_2}
           \arrow["s", from=2-3, to=2-1]
           \arrow["r", from=2-1, to=1-2]
           \arrow["{r^*}"', from=2-3, to=1-2]
-          \arrow["{e_2}"{pos=0.3}, shorten >=5pt, from=3-1, to=2-1]
-          \arrow["{e_1}"{pos=0.3}, shorten >=8pt, from=3-1, to=3-2]
-          \arrow["{f_2}"{pos=0.3}, shorten >=5pt, from=3-3, to=2-3]
-          \arrow["{f_1}"{pos=0.3}, shorten >=8pt, from=3-3, to=3-4]
     \end{tikzcd}\]
-    При замене параметризации новая форма выражается через старую: $I^*(v, w) = I(\d s(v), \d s(w))$.
-    В координатной форме $[v]^t[I^*][w] = ([\d s][v])^t[I] \cdot ]\d s[w] = [v^t]([\d s]^t [I][\d s])[w]$.\quad
-    $[I^*] = [\d s]^t [I] [\d s]$.
+    Обозначим за $I$ квадратичную форму, отвечающую $r$, за $I^*$ --- отвечающую $r^*$.
+
+    При замене параметризации одна форма выражается через другую: $I^*(v, w) = I(\d s(v), \d s(w))$.
+    В координатной форме (считая, что базисы согласованы: $s$ переводит базис $I^*$ в базис $I$)
+    \[[v]^t[I^*][w] = ([\d s][v])^t[I] \cdot [\d s][w] = [v^t]([\d s]^t [I][\d s])[w] \qquad [I^*] = [\d s]^t [I] [\d s]\]
     \example{
         Рассмотрим две разные параметризации плоскости --- в декартовых и полярных координатах.
         \numbers{
-            \item В декартовых $(x, y, z)(u, v) = (u, v, 0)$. $I = \vect{1 & 0 \\ 0 & 1}$
-            \item В полярных $(x, y, z)(\rho, \phi) = (\rho \cos(\phi), \rho \sin(\phi), 0)$.
-            $\der{r}{\rho} = (\cos \phi, \sin \phi)$, $\der{r}{\phi} = (-\rho\cos\phi, \rho\cos\phi)$. $I^* = \vect{1 & 0 \\ 0 & \rho^2}$.
-            $\d s = \vect{\cos \phi & -\rho \sin \phi \\ \sin \phi & \rho \cos \phi}$. Действительно, $[\d s]^t \cdot [\d s] = \vect{1 & 0 \\ 0 & \rho^2}$.
+            \item В декартовых $r(u, v) = (u, v, 0)$. $I = \vect{1 & 0 \\ 0 & 1}$
+            \item В полярных $r(\rho, \phi) = (\rho \cos(\phi), \rho \sin(\phi), 0)$.
+            $\der{r}{\rho} = (\cos \phi, \sin \phi)$, $\der{r}{\phi} = (-\rho\cos\phi, \rho\cos\phi)$.
+
+            Получаем $\d s = \vect{\cos \phi & -\rho \sin \phi \\ \sin \phi & \rho \cos \phi}$, и $[\d s]^t \cdot [\d s] = \vect{1 & 0 \\ 0 & \rho^2}$.
+            Отсюда $[I^*] = \vect{1 & 0 \\ 0 & \rho^2}$.
         }
     }
 
@@ -1854,7 +1853,7 @@
     \example{
         Конус над любой кривой локально изометричен плоскости.
 
-        Пусть $\gamma(t)$ --- натурально параметризованная кривая на сфере с центром в верзине конуса: $\gamma: \R \map S^2$.
+        Пусть $\gamma(t)$ --- натурально параметризованная кривая на сфере с центром в вершине конуса: $\gamma: \R \map S^2$.
         (можно подвинуть точки кривой вдоль луча так, чтобы они все лежали на одной сфере (?))
 
         $r(\rho, t) = \rho \cdot \gamma(t)$. $\der{r}{\rho} = \gamma(t), \der{r}{t} = \rho \cdot \gamma'(t)$.
@@ -1871,7 +1870,7 @@
 
     Зафиксируем параметризацию $r: \Omega \map \Sigma$, определим нормаль $n \coloneqq \frac{r_u \times r_v}{|r_u \times r_v|}$.
     \definition[Вторая квадратичная форма]{$\II_x(v, w) = \angles{\d_x^2 r(v, w), n}$.}
-    Коэффииценты матрицы второй формы обозачают так: $[\II] = \vect{L & M \\ M & N}$, где $L = \angles{r_{u,u}, n}, M = \angles{r_{u,v}, n}, N = \angles{{r_v,v}, n}$.
+    Коэффициенты матрицы второй формы обозначают так: $[\II] = \vect{L & M \\ M & N}$, где $L = \angles{r_{u,u}, n}, M = \angles{r_{u,v}, n}, N = \angles{{r_v,v}, n}$.
     \theorem{
         Можно рассмотреть нормаль, как гладкую функцию $\Omega \map (S^2 \subset \R^3)$. Утверждается, что $\II(v, w) = -\angles{\d r(v), \d n(w)}$.
         \provehere{
@@ -2381,7 +2380,7 @@
                 Сначала рассмотрим точки из $\Sigma_1$.
                 Пусть в направлении $v_1$ кривизна $k_1 = 0$, а в направлении $v_2: k_2 \ne 0$.
 
-                Такой базис единственен, значит, векторы $v$ гладко зависят от точки --- чтобы их найти, надо решить соответствующее уранвение.
+                Такой базис единственен, значит, векторы $v$ гладко зависят от точки --- чтобы их найти, надо решить соответствующее уравнение.
 
                 Тогда в окрестности каждой точки $x_0 \in \Sigma$ можно выбрать параметризацию $r: \Omega \map \Sigma_1$, такую, что координатные линии параллельны главным направлениям: $\all{n'_x = -k_1 r'_x = 0 \\ n'_y = -k_2 r'_y}$, $r'_x \perp r'_y$.
 
@@ -2408,7 +2407,7 @@
 
                 Посмотрим на $\Sigma_0$. Если $p \in \Int \Sigma_0$, $\exists \underbrace{U}_{\ni p} \in \Sigma_0$. Дифференциал $\d n = 0$ в данной окрестности, и $U$ --- часть плоскости.
                 Иначе $\nexists \underbrace{U}_{\ni p} \in \Sigma_0$, то есть найдётся последовательность точек $p_1, \dots, p_n, \dots \in \Sigma_1: p_k \underset{k \to \infty}\Map p$.
-                Возьмём у каждой точке $p_k$ интервал, проходящий через неё. Их длины не стремятся к нулю, так как интервалы могут заканчиваться только на краю поверхности, выберем сходящуюуся подпоследовательность отрезков.
+                Возьмём у каждой точке $p_k$ интервал, проходящий через неё. Их длины не стремятся к нулю, так как интервалы могут заканчиваться только на краю поверхности, выберем сходящуюся подпоследовательность отрезков.
                 Доказали 1 для $\Sigma_0$.
             }
         }
