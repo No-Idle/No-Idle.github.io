@@ -939,20 +939,20 @@
 
                 Введём базу топологии для $\tilde{X}$. Зафиксируем хорошее $U \subset X$.
 
-                Пусть $\alpha \in PX, \alpha(1) \in U$; обозначим через $U_{\alpha} \subset PX$ класс петель вида $\alpha s$, где $s$ --- путь в $U$ с началом в $\alpha(1)$.
+                Пусть $\alpha \in PX, \alpha(1) \in U$; обозначим через $U_{\alpha} \subset \tilde{X}$ класс петель вида $\alpha s$, где $s$ --- путь в $U$ с началом в $\alpha(1)$.
                 \indentlemma{
-                    Если $\beta \in U_{\alpha}$, то $U_{\beta} = U_{\alpha}$.
+                    Если $[\beta] \in U_{\alpha}$, то $U_{\beta} = U_{\alpha}$.
                 }{
-                    Пусть $\beta = \alpha s$.
+                    Пусть $\beta \sim \alpha s$.
                     Проверим включение в обе стороны.
-                    $\forall \gamma \in U_{\alpha}, \gamma = \alpha s_1$, откуда $\gamma = \alpha s \cdot s^{-1} s_1$.
+                    $\forall \gamma \in U_{\alpha}, \gamma \sim \alpha s_1$, откуда $\gamma \sim \alpha s \cdot s^{-1} s_1$.
                     Аналогично $U_{\beta} \subset U_{\alpha}$.
                 }
 
-                Проверим, что $\defset{U_{\alpha}}{\alpha \in PX}$ образуют базу топологии, то есть $U_\alpha \cap V_\beta = \bigcup W_{\gamma}$ для неких $W_\gamma$.
+                Проверим, что $\defset{U_{\alpha}}{\alpha \in PX,U\text{ --- хорошее}}$ образуют базу топологии, то есть $U_\alpha \cap V_\beta = \bigcup W_{\gamma}$ для неких $W_\gamma$.
                 $\alpha(1) \in U, \beta(1) \in V$.
                 Пусть некий $[\gamma] \in U_{\alpha} \cap V_{\beta}$, в частности, $\gamma(1) \in U \cap V$.
-                Надо проверить, что $\gamma$ содержится в $U \cap V$ вместе с некой окрестностью.
+                Надо проверить, что $[\gamma]$ содержится в $U \cap V$ вместе с некой окрестностью.
 
                 В качестве $W$ выберем хорошую окрестность $\gamma(1)$, содержащуюся в $U \cap V$ (достаточно выбрать линейно связную компоненту $U \cap V$).
                 Достаточно проверить, что $W_{\gamma} \subset U_{\alpha}, V_{\beta}$, это правда.
@@ -1916,7 +1916,7 @@
 
     Если $k_1 \ne k_2$, то главные направления определены с точностью до перестановки осей, иначе матрица Гессе диагональна, и все направления главные.
     \definition[Гауссова кривизна]{ Произведение главных кривизн: $K \bydef k_1 \cdot k_2$.}
-    \definition[Средняя кривизна]{ Полусумма главных кривизн: $\frac{k_1 + k_2}2$.}
+    \definition[Средняя кривизна]{ Полусумма главных кривизн, $\frac{k_1 + k_2}2$.}
 
     В специальных координатах векторы $r'_x, r'_y$ --- \emph{главные направления} --- образуют ортонормированный базис в $T_p\Sigma$.
 
