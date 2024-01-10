@@ -465,10 +465,10 @@
     \theorem{\label{last}
     Зафиксируем $z_0 \in Z$ и $y_0 \in p^{-1}(f(z_0))$.
     Следующие условия равносильны:
-        \bullets{
-            \item У $f$ найдётся единственное поднятие $\tilde{f}: Z \map Y$, такое что $\tilde{f}(z_0) = y_0$.
-            \item $\Image(f_*) \subset \Image(p_*)$.
-        }
+    \bullets{
+        \item У $f$ найдётся единственное поднятие $\tilde{f}: Z \map Y$, такое что $\tilde{f}(z_0) = y_0$.
+        \item $\Image(f_*) \subset \Image(p_*)$.
+    }
     % https://q.uiver.app/#q=WzAsMyxbMCwxLCJaIl0sWzEsMSwiWCJdLFsxLDAsIlkiXSxbMCwyLCJcXHRpbGRle2Z9Il0sWzAsMSwiZiIsMl0sWzIsMSwicCJdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& Y \\
@@ -945,7 +945,7 @@
                 }{
                     Пусть $\beta \sim \alpha s$.
                     Проверим включение в обе стороны.
-                    $\forall \gamma \in U_{\alpha}, \gamma \sim \alpha s_1$, откуда $\gamma \sim \alpha s \cdot s^{-1} s_1$.
+                    $\forall [\gamma] \in U_{\alpha}, \gamma \sim \alpha s_1$, откуда $\gamma \sim \alpha s \cdot s^{-1} s_1$.
                     Аналогично $U_{\beta} \subset U_{\alpha}$.
                 }
 
@@ -1058,9 +1058,9 @@
                 Обозначим $\phi_i(t) \coloneqq \gamma'(t_i) - \gamma'(t)$. Из равномерной непрерывности $|\phi_i(t)| < \eps$ на $[t_i, t_{i + 1}]$.
                 \multline{
                     \int\limits_{t_i}^{t_{i+1}}(|\gamma'(t)| - \eps)\d t \le \int\limits_{t_i}^{t_{i+1}}|\gamma'(t_i)|\d t = \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t_i)\d t} = \abs{\int\limits_{t_i}^{t_{i+1}}(\gamma'(t) + \phi_i(t))\d t} \le \\
-                    \le \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t)\d t} + \abs{\int\limits_{t_i}^{t_{i+1}}\phi_i(t))\d t} \le \abs{\gamma(t_{i+1}-\gamma(t_i))} + \eps|t_{i+1}-t_i|
+                    \le \abs{\int\limits_{t_i}^{t_{i+1}}\gamma'(t)\d t} + \abs{\int\limits_{t_i}^{t_{i+1}}\phi_i(t)\d t} \le \abs{\gamma(t_{i+1})-\gamma(t_i)} + \eps|t_{i+1}-t_i|
                 }
-                Получаем $\int\limits_{a}^{b}|\gamma'(t)|\d t + 2\eps|b -a| \le L(\gamma)$. Устремим $\eps \to 0$.
+                Получаем $\int\limits_{a}^{b}|\gamma'(t)|\d t - 2\eps|b -a| \le L(\gamma)$. Устремим $\eps \to 0$.
                 \item $L(\gamma) \le \int\limits_{a}^{b}|\gamma'(t)|\d t$.
 
                 Зафиксируем $a = t_0 \le \cdots \le t_k = b$.
@@ -1896,7 +1896,6 @@
     }
     \newlection{20 ноября 2023 г.}
 
-
     \subsection{Специальные координаты. Соприкасающийся параболоид}
     Пусть $\Sigma$ --- поверхность, $p \in \Sigma$ --- точка.
     Выберем ортонормированный базис $X = f_1, Y = f_2$ в $T_p \Sigma$.
@@ -1918,7 +1917,7 @@
     \definition[Гауссова кривизна]{ Произведение главных кривизн: $K \bydef k_1 \cdot k_2$.}
     \definition[Средняя кривизна]{ Полусумма главных кривизн, $\frac{k_1 + k_2}2$.}
 
-    В специальных координатах векторы $r'_x, r'_y$ --- \emph{главные направления} --- образуют ортонормированный базис в $T_p\Sigma$.
+    В специальных координатах векторы $r'_x, r'_y$ --- \emph{главные направления} --- образуют ортонормированный базис в $T_p\Sigma$~(\ref{veingarten-eigenvalues}).
 
     \definition[Эллиптическая точка]{
         Кривизны в ней одного знака, и не равны нулю.
@@ -1946,7 +1945,7 @@
     \fact{
         $[B]$ --- симметрическая матрица $\iff A$ --- самосопряжена.
         \provehere{
-        $\angles{x, Ay} = [x]^t[G][A][y] = [x]^t[G][A][G]^{-1}[G][y] = \angles{([G][A][G]^{-1})^t[x], [y]}$, откуда $[A]$ самосопряжена $\iff ([G][A][G]^{-1})^t = [A] \iff [G][A] = ([G][A])^t$.
+            $\angles{x, Ay} = [x]^t[G][A][y] = [x]^t[G][A][G]^{-1}[G][y] = \angles{([G][A][G]^{-1})^t[x], [y]}$, откуда $[A]$ самосопряжена $\iff ([G][A][G]^{-1})^t = [A] \iff [G][A] = ([G][A])^t$.
         }
     }
     \corollary{
@@ -1984,61 +1983,62 @@
     Определение не использует никакую конкретную параметризацию ($\hat{n}$ в каждой точке определяется с точностью до знака, и если ориентация фиксирована, то однозначно).
     \theorem{
         Пусть $r: \Omega \map \Sigma$ --- параметризация, пусть $p = r(x)$.
-        Тогда $\forall v, w \in \R^n: \II(v, w) = \hat{\II}(\d_x r(v), \d_x r(w))$.
+        Тогда $\forall v, w \in \R^2: \II(v, w) = \hat{\II}(\d_x r(v), \d_x r(w))$.
         \provehere{
-            По определению $\II(v, w) = \angles{-\d r(v), \d n(w)}$, но $n = \hat{n} \circ r$, то есть $\II(v, w) = \angles{\d r(v), -\d\hat{n}(\d r(w))}$.
+            Используем $\II(v, w) = -\angles{\d r(v), \d n(w)}$, и $n = \hat{n} \circ r$. Получаем \[\II_x(v, w) = \angles{\d_x r(v), -\d_p\hat{n}\cdot\d_x r(w)}\qedhere\]
         }
     }
     \corollary{\down
-        \numbers{
-            \item $\hat{\II}$ симметрична, поэтому оператор Вайнгартена самосопряжён.
-            \item $[\II]_{e_1, e_2} = [\hat{\II}]_{r_u, r_v}$.
-            \item $[\II] = \underbrace{[I]}_{\text{матрица Грама}} \cdot [S]$.
-            \item Пусть есть две параметризации
+    \numbers{
+        \item $\hat{\II}$ симметрична, поэтому оператор Вайнгартена самосопряжён.
+        \item $[\II]_{u, v} = [\hat{\II}]_{r'_u, r'_v}$.
+        \item $[\II] = [I] \cdot [S]$ --- здесь используется, что $[I]$ --- матрица Грама для базиса $r'_u$ и $r'_v$.
+        \item Пусть есть две параметризации
 % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJTIl1d
-            \[\begin{tikzcd}[ampersand replacement=\&]
-                  \& \Sigma \\
-                  {\Omega_1} \&\& {\Omega_2}
-                  \arrow["{r_1}", from=2-1, to=1-2]
-                  \arrow["{r_2}"', from=2-3, to=1-2]
-                  \arrow["S", from=2-3, to=2-1]
-            \end{tikzcd}\]
-            Тогда $r_2 = r_1 \circ S$ и $[\II^{r_2}] = [\d S]^t [\II^{r_1}][\d S]$.
-        }
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& \Sigma \\
+              {\Omega_1} \&\& {\Omega_2}
+              \arrow["{r_1}", from=2-1, to=1-2]
+              \arrow["{r_2}"', from=2-3, to=1-2]
+              \arrow["S", from=2-3, to=2-1]
+        \end{tikzcd}\]
+        Тогда $r_2 = r_1 \circ S$ и $[\II^{r_2}] = [\d S]^t [\II^{r_1}][\d S]$.
+    }
     }
     \theorem{
-        Пусть $\Omega$ --- связно, и есть параметризация $r: \Omega \map \R^3$. $\II \equiv 0 \iff r(\Omega)$ --- часть плоскости.
+        Пусть $\Omega$ --- связно, и есть параметризация $r: \Omega \map \R^3$. \[\II \equiv 0 \iff r(\Omega) \text{--- часть плоскости}\]
         \provewthen{
             Для плоскости $n \equiv \const\then\d n \equiv 0\then \II = 0$.
         }{
-            $S \equiv 0 \then \d \hat{n} \equiv 0 \then n = n_0 = \const$.
+            Оператор Вайнгартена $S \equiv 0 \then \d \hat{n} \equiv 0 \then n = n_0 = \const$.
             Любая кривая $\gamma: [0, 1] \map \Sigma$ на поверхности перпендикулярна этой нормали во всякой своей точке.
             Функция высоты $H = \angles{\_, n_0}$ постоянна во всех точках кривой.
         }
     }
     Оператор Вайнгартена можно записать в специальном базисе, в котором $\II = \vect{k_1 & 0 \\ 0 & k_2}$.
 
-    \proposal{
-        В этом базисе собственные числа оператора Вайнгартена --- главные кривизны.
-        \provehere{
-            Собственные векторы оператора Вайнгартена --- главные направления.
-        }
+    \proposal{\label{veingarten-eigenvalues}
+    В этом базисе собственные числа оператора Вайнгартена --- главные кривизны.
+    \provehere{
+        Собственные векторы оператора Вайнгартена --- главные направления.
     }
-    Из предложения следует, что так как оператор Вайнгартена самосопряжён, то у него существует ортонормированный базис из собственных векторов с вещественными собственными числами.
-    \theorem[Родрига]{\down
-        \numbers{
-            \item Бескоординатная формулировка: $v$ принадлежит главному направлению $\iff \d\hat{n}(v)\parallel v$.
-            \item Пусть  $r: \Omega \map \Sigma$ --- параметризация. $\xi \in \R^2$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, при этом $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
-            \provehere{
-                1. Это определение собственного вектора.
-
-                2. ???
-            }
-        }
+    }
+    Из предложения следует, что так как оператор Вайнгартена самосопряжён, то у него существует ортонормированный базис из собственных векторов с вещественными собственными числами, а именно --- если $k_1 \ne k_2$, то главные направления перпендикулярны.
+    
+    Пусть $r: \Omega \map \Sigma, x \in \Omega, p = r(x)$.
+    \theorem[Родриг]{\down
+    \numbers{
+        \item Бескоординатная формулировка: $\xi \in T_p(\Sigma)$ на главном направлении $\iff \d\hat{n}(\xi)\parallel \xi$.
+        \item Для $\xi \in \R^2$: $\d r(\xi)$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, при этом $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
+    }
+    \provenumbers{
+        \item Это определение собственного вектора, а $S = -\d\hat{n}$.
+        \item $\II(v, w) = \hat{\II}(\d r(v), \d r(w)) = \angles{\d r(v), S(\d r(w))} = -\angles{\d r(v), \d \hat{n}(w)}$.
+    }
     }
     Пусть $p \in \Sigma$.
     \definition[Нормальное сечение с началом в точке $p$ и направлением $v \in T_p\Sigma$]{
-        Пересечение $\Sigma \cap P(p, n(p), v)$, здесь $P(p, n(p), v)$ --- точка, проходящая через $p$, и натянутая на векторы нормали $n(p)$ и $v$.
+        Пересечение $\Sigma \cap P(p, n(p), v)$, здесь $P(p, n(p), v)$ --- плоскость, проходящая через $p$, и натянутая на векторы нормали $n(p)$ и $v$.
     }
     В окрестности $p$ нормальное сечение --- кривая.
 
