@@ -1227,13 +1227,13 @@
         Тогда $\alpha' = \kappa$ и, значит, $\int\limits_{a}^{b}\kappa(t)\d t = \alpha(b) - \alpha(a)$.
         \provehere{
             $\kappa n = v' = (-\sin(\alpha), \cos(\alpha)) \cdot \alpha'$.
-            Можно проверить, что $(-\sin(\alpha), \cos(\alpha)) \perp (\sin(\alpha), \cos(\alpha))$, причём векторы образуют правый базис.
+            Можно убедиться, что $(\cos(\alpha), \sin(\alpha)) \perp (-\sin(\alpha), \cos(\alpha))$, причём векторы образуют правый базис.
         }
     }
     \theorem{
         Для любой гладкой функции $\tilde{\kappa}: I \map \R$: $\exists! \gamma: I \map \R^2$ --- натурально параметризованная кривая, такая, что $\kappa_\gamma = \tilde{\kappa}$. Единственность предполагается с точностью до движения, сохраняющего ориентацию.
         \provehere{
-            Имеет место даже более точное утверждение: при заданном $\tilde{\kappa}: I \map \R$: $\forall p_0, v_0 \in \R^2$: $|v_0| = 1 \then \exists!$ натурально параметризованная кривая $\gamma: \gamma(a) = p_0, \gamma'(a) = v_0$.
+            Переформулируем: при заданном $\tilde{\kappa}: I \map \R$: $\forall p_0, v_0 \in \R^2$: $|v_0| = 1 \then \exists!$ натурально параметризованная кривая $\gamma: \gamma(a) = p_0, \gamma'(a) = v_0$.
 
             Для любой пары ортогональных векторов одной длины, отложенных из одной точки, существует единственное движение, сохраняющее ориентацию, переводящее точку в точку, вектор в вектор.
 
@@ -1265,9 +1265,9 @@
 
             Пусть $T = \defset{(t,\tau) \subset\R^2}{0 \le t \le \tau \le L}$.
             Устроим $\mathcal{F}: \arr{ccc}{T &\map& S^1\\(t, \tau)&\mapsto&\frac{\gamma(\tau) - \gamma(t)}{|\gamma(\tau) - \gamma(t)|}}$.
-            Если же $t = \tau$, то доопределим $\mathcal{F}$ по непрерывности: $\mathcal{F}(t,t) = \gamma'(t)$.
+            Если же $t = \tau$ (или $0 = t, \tau = L$), то доопределим $\mathcal{F}$ по непрерывности: $\mathcal{F}(t,t) = \gamma'(t)$.
 
-            $T$ односвязно, поэтому существует поднятие --- непрерывный аргумент $A$: $\mathcal{F}(t,\tau) = \sin(A(t,\tau)), \cos(A(t,\tau))$.
+            $T$ односвязно, поэтому существует поднятие --- непрерывный аргумент $A$: $\mathcal{F}(t,\tau) = (\sin A(t,\tau), \cos A(t,\tau))$.
         % https://q.uiver.app/#q=WzAsMyxbMCwxLCJUIl0sWzEsMCwiXFxSIl0sWzEsMSwiU14xIl0sWzAsMiwiXFxtYXRoY2Fse0Z9Il0sWzAsMSwiQSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsInAiXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \& \R \\
@@ -1300,7 +1300,7 @@
         Эти определения равносильны.
         \provetwhen {
             Касательная к $\gamma$ в точке $t$ --- опорная прямая для компакта.
-            Значит, она лежит только по ту сторону от своей касательной, в которую лежит компакт.
+            Значит, она лежит только по ту сторону от своей касательной, в которой лежит компакт.
         }{
             Рассмотрим $K \coloneqq \text{conv}(\Image(\gamma))$. $\nexists t_0: \gamma(t_0)$ --- внутренняя точка $K$.
 
@@ -1323,7 +1323,7 @@
                 Покажем, что если $\gamma$ лежит слева от касательной в $t_0$, то кривизна $\ge 0$, если $\gamma$ лежит справа от касательной в $t_0$, то кривизна $\le 0$.
 
                 Пусть $\delta: [a, b] \map \{\pm 1\}$ --- определяет, лежит кривая слева или справа от прямой.
-                Покажем, что $\delta$ непрерывно, эквивалентно, локально постоянна.
+                Покажем, что $\delta$ непрерывно, или --- здесь эквивалентно --- локально постоянно.
 
                 Выберем точку $q: \angles{\overrightarrow{\gamma(t_0) q}, n} > 0$.
                 Тогда в некоторой окрестности $t_0:$  $\angles{\overrightarrow{\gamma(t) q}, n} > 0$ тоже.
@@ -1425,9 +1425,9 @@
     \[\all{\tilde{\gamma}'(t) = \gamma'(\phi(t)) \cdot \phi'(t) \\ \phi'(t) = |\tilde{\gamma}'(t)| = s(t)} \then \tilde{\gamma}'(t) = s(t)\gamma'(\phi(t)) \qquad \tilde{\gamma}''(t) = s^2(t) \gamma''(\phi(t)) + s'(t)\gamma'(\phi(t)) = s^2 kN + s' v\]
     Таким образом, здесь тоже для соприкасающейся плоскости $\Lin(v, N) = \Lin(\gamma', \gamma'')$.
 
-    В физике $\tilde{\gamma}''$ --- ускорение, и оно раскладывается в составляющие: $\overrightarrow{a} = \underbrace{\frac{v^2}{R}\overrightarrow{N}}_{\text{нормальная}} + \underbrace{v'\cdot \overrightarrow{v}}_{\text{тангенциальная}}$
+    В физике $\tilde{\gamma}''$ --- ускорение, и оно раскладывается в составляющие: $\overrightarrow{a} = \underbrace{\frac{|v|^2}{R}\overrightarrow{N}}_{\text{нормальная}} + \underbrace{|v|'\cdot \overrightarrow{v}}_{\text{тангенциальная}}$
 
-    Из $\tilde{\gamma}'$ и $\tilde{\gamma}''$ можно найти $N, k, v: v = |\tilde{\gamma}'|$, и так как $\tilde{\gamma}'' = s^2 k N + s' v$, $k \ge 0, |N| = 1$, то $N$ тоже находится однозначно.
+    Из $\tilde{\gamma}'$ и $\tilde{\gamma}''$ можно найти $N, k, v: v = \tilde{\gamma}'$, и так как $\tilde{\gamma}'' = s^2 k N + s' v$, $k \ge 0, |N| = 1$, то $N$ тоже находится однозначно.
 
     Имеет место прежняя двумерная формула (но с модулем) $k = \frac{|\tilde{\gamma}' \wedge \tilde{\gamma}''|}{|\tilde{\gamma}'|^3}$, здесь $\wedge$ --- внешнее произведение.
     \ok
@@ -1463,7 +1463,7 @@
                     \begin{tikzpicture}[baseline=-4]
                         \draw(0,0) circle[radius=0.5];
                         \fill (-0.5,0) circle (1pt) node[left] {$M$};
-                        \fill (0.5,0) circle (1pt) node[right] {$A$};
+                        \fill (0.5,0) circle (1pt) node[right] {$C$};
                         \fill (0,0.5) circle (1pt) node[below] {$A$};
                         \fill (0,-0.5) circle (1pt) node[above] {$B$};
                     \end{tikzpicture}.
@@ -1497,7 +1497,7 @@
         $b \coloneqq v \times N$. Так как $v \perp N$, то $(v, N, b)$ --- правый ортонормированный базис, $b$ --- перпендикуляр к соприкасающейся плоскости.
     }
     \note{
-        $0 = \angles{v, b} = \angles{k N, b} + \angles{v, b'}$, откуда $\all{\angles{b', v} = 0 \\ \angles{b', b} = 0}$, то есть $b' \parallel n$.
+        $0 = \angles{v, b} = \angles{k N, b} + \angles{v, b'}$ и $1 = \angles{b, b}$, откуда $\all{\angles{b', v} = 0 \\ \angles{b', b} = 0}$, то есть $b' \parallel N$.
     }
     \definition[Кручение]{
         Такое число $\tau$, что $b' = -\tau N$ ($\tau = -\angles{b', N}$).
@@ -1994,15 +1994,15 @@
         \item $[\II]_{u, v} = [\hat{\II}]_{r'_u, r'_v}$.
         \item $[\II] = [I] \cdot [S]$ --- здесь используется, что $[I]$ --- матрица Грама для базиса $r'_u$ и $r'_v$.
         \item Пусть есть две параметризации
-% https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJTIl1d
+% https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJzIl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& \Sigma \\
               {\Omega_1} \&\& {\Omega_2}
               \arrow["{r_1}", from=2-1, to=1-2]
               \arrow["{r_2}"', from=2-3, to=1-2]
-              \arrow["S", from=2-3, to=2-1]
+              \arrow["s", from=2-3, to=2-1]
         \end{tikzcd}\]
-        Тогда $r_2 = r_1 \circ S$ и $[\II^{r_2}] = [\d S]^t [\II^{r_1}][\d S]$.
+        Тогда $r_2 = r_1 \circ s$ и $[\II^{r_2}] = [\d s]^t [\II^{r_1}][\d s]$.
     }
     }
     \theorem{
@@ -2018,9 +2018,13 @@
     Оператор Вайнгартена можно записать в специальном базисе, в котором $\II = \vect{k_1 & 0 \\ 0 & k_2}$.
 
     \proposal{\label{veingarten-eigenvalues}
-    В этом базисе собственные числа оператора Вайнгартена --- главные кривизны.
+    В этом базисе собственные числа оператора Вайнгартена --- главные кривизны (и они отвечают собственным векторам --- главным направлениям).
     \provehere{
-        Собственные векторы оператора Вайнгартена --- главные направления.
+        Пусть $u, v \in \R^2$ --- специальные координаты, отвечающие главным кривизнам $k_1$ и $k_2$ соответственно.
+    Тогда $r'_u, r'_v$ --- главные направления, и $\II(u, v) = \hat{\II}(r'_u, r'_v) = \angles{r'_u, S r'_v}$.
+        С другой стороны, $\II(u, v) = 0$, так как $[\II] = \vect{k_1 & 0 \\ 0 & k_2}$ в базисе $u, v$, откуда $r'_u \perp S r'_v$, то есть действительно $S r'_v \parallel r'_v$.
+
+    Далее можно посчитать собственное число, отвечающее $r'_v$: $\angles{r'_v, S r'_v} = \hat{\II}(r'_v, r'_v) = \II(v, v) = k_2$.
     }
     }
     Из предложения следует, что так как оператор Вайнгартена самосопряжён, то у него существует ортонормированный базис из собственных векторов с вещественными собственными числами, а именно --- если $k_1 \ne k_2$, то главные направления перпендикулярны.
@@ -2028,7 +2032,7 @@
     Пусть $r: \Omega \map \Sigma, x \in \Omega, p = r(x)$.
     \theorem[Родриг]{\down
     \numbers{
-        \item Бескоординатная формулировка: $\xi \in T_p(\Sigma)$ на главном направлении $\iff \d\hat{n}(\xi)\parallel \xi$.
+        \item Бескоординатная формулировка: $v \in T_p(\Sigma)$ на главном направлении $\iff \d\hat{n}(v)\parallel v$.
         \item Для $\xi \in \R^2$: $\d r(\xi)$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, при этом $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
     }
     \provenumbers{
@@ -2036,7 +2040,6 @@
         \item $\II(v, w) = \hat{\II}(\d r(v), \d r(w)) = \angles{\d r(v), S(\d r(w))} = -\angles{\d r(v), \d \hat{n}(w)}$.
     }
     }
-    Пусть $p \in \Sigma$.
     \definition[Нормальное сечение с началом в точке $p$ и направлением $v \in T_p\Sigma$]{
         Пересечение $\Sigma \cap P(p, n(p), v)$, здесь $P(p, n(p), v)$ --- плоскость, проходящая через $p$, и натянутая на векторы нормали $n(p)$ и $v$.
     }
@@ -2107,7 +2110,7 @@
     Пусть $n$ --- нормаль к $T_p\Sigma$, зафиксируем $t_0: \gamma(t_0) = p$, дополним $(v, n)$ до ортонормированного базиса: $l \coloneqq v \times n$.
 
     Запишем формулы, как в случае формул Френе:
-    \[\all{v' = \alpha_1(t)v(t) + \beta_1(t) n(t) + \delta_1(t)l(t) \\ n' = \alpha_2(t)v(t) + \beta_2(t) n(t) + \delta_2(t)l(t) \\ l' = \alpha_3(t)v(t) + \beta_3(t) n(t) + \delta_3(t)l(t)} \qquad \frac{\d}{\d t}\vect{v \\ n \\ l} = \vect{\alpha_1 & \beta_1 & \gamma_1 \\ \alpha_2 & \beta_2 & \gamma_2 \\ \alpha_3 & \beta_3 & \gamma_3}\vect{v \\ n \\ l}\]
+    \[\all{v' = \alpha_1(t)v(t) + \beta_1(t) n(t) + \delta_1(t)l(t) \\ n' = \alpha_2(t)v(t) + \beta_2(t) n(t) + \delta_2(t)l(t) \\ l' = \alpha_3(t)v(t) + \beta_3(t) n(t) + \delta_3(t)l(t)} \qquad \frac{\d}{\d t}\vect{v \\ n \\ l} = \vect{\alpha_1 & \beta_1 & \delta_1 \\ \alpha_2 & \beta_2 & \delta_2 \\ \alpha_3 & \beta_3 & \delta_3}\vect{v \\ n \\ l}\]
     Из того, что вектора единичные, получаем $\angles{v, v} = 1 \then \angles{v', v} = 0 \then \alpha_1 = 0$.
     Аналогично $\beta_2 = \gamma_3 = 0$.
     Далее, из того, что вектора ортогональны: $\angles{v', n} = -\angles{v, n'}$ получается, что матрица, как и ранее, кососимметрична.
