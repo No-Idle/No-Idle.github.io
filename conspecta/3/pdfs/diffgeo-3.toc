@@ -41,7 +41,7 @@
 \contentsline {subsection}{\numberline {2.8.1}Специальные координаты. Соприкасающийся параболоид}{37}{subsection.2.8.1}%
 \contentsline {subsection}{\numberline {2.8.2}Гауссово отображение}{38}{subsection.2.8.2}%
 \contentsline {subsection}{\numberline {2.8.3}Оператор Вайнгартена}{38}{subsection.2.8.3}%
-\contentsline {subsection}{\numberline {2.8.4}Что-то считаем}{40}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.4}Выражение нормальной кривизны через квадратичные формы}{40}{subsection.2.8.4}%
 \contentsline {section}{\numberline {2.9}Формулы типа Френе}{41}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Вычисление главных кривизн и направлений в координатах}{42}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Ковариантная производная}{43}{section.2.11}%

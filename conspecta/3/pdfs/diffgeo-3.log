@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  11 JAN 2024 12:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  11 JAN 2024 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2316,33 +2316,40 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1545.
 
 
-Overfull \hbox (4.42596pt too wide) in paragraph at lines 1580--1580
+Overfull \hbox (4.42596pt too wide) in paragraph at lines 1579--1579
 \T2A/faq/m/n/10 по-мо-щи ор-то-го-на-ли-за-ции √ра-ма --- Ўмид-та. јл-го-ритм в
 оз-вра-ща-ет ор-то-нор-ми-ро-ван-ный ба-зис какого-
+ []
+
+
+Overfull \hbox (0.33798pt too wide) in paragraph at lines 1579--1579
+\T2A/faq/m/n/10 рен-ци-ру-ем и ска-л€р-но до-мно-жим на $\OML/cmm/m/it/10 v[]$\
+T2A/faq/m/n/10 . —ле-ва по-лу-чит-с€ $\OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = []
+$\T2A/faq/m/n/10 , а спра-ва $\OML/cmm/m/it/10 k [] >
  []
 
 [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1595.
+(hyperref)                removing `math shift' on input line 1594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1595.
+(hyperref)                removing `superscript' on input line 1594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1595.
+(hyperref)                removing `math shift' on input line 1594.
 
 [32] [33]
-Overfull \hbox (23.29608pt too wide) in paragraph at lines 1754--1754
+Overfull \hbox (23.29608pt too wide) in paragraph at lines 1753--1753
 []\T2A/faq/m/n/10 –ассмотрим хо-ро-шую кар-ту, в ко-то-рой па-ра-мет-ри-за-ции 
 --- гра-фи-ки $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y; h\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 x; y\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 .
  []
 
 [34] [35]
-Overfull \hbox (2.80138pt too wide) in paragraph at lines 1877--1879
+Overfull \hbox (2.80138pt too wide) in paragraph at lines 1876--1878
 []\T2A/faq/m/n/10 ѕусть $\OML/cmm/m/it/10 p; q \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/
 10 ^^F$\T2A/faq/m/n/10 , то-гда рас-сто-€-ние меж-ду точ-ка-ми $\OML/cmm/m/it/1
 0 d\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p; q\OT1/cmr/m/n/10 ) = [] []$\T2A/faq/m/n
@@ -2369,7 +2376,7 @@ Overfull \hbox (1.12166pt too wide) in paragraph at lines 2385--2385
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
-(rerunfilecheck)             Checksum: CB4D968ED034EE77F3233EE3B19E62CD;13570.
+(rerunfilecheck)             Checksum: A52A3B2F2CFB81668F02AB1B954A972C;13893.
  ) 
 Here is how much of TeX's memory you used:
  28398 strings out of 479648
@@ -2399,7 +2406,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (49 pages, 552606 bytes).
+ (49 pages, 552829 bytes).
 PDF statistics:
  970 PDF objects out of 1000 (max. 8388607)
  838 compressed objects within 9 object streams

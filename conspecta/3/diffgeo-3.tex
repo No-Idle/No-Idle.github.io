@@ -1470,7 +1470,7 @@
                 }
             }{
                 Пусть $O$ --- центр сферы, достаточно показать, что $\langle OC, \underbrace{OB + OA}_{\upuparrows OM}\rangle > 0$.
-                Действительно, $\angles{OC, OB} + \angles{OC, OA} = \cos \alpha + \cos \beta \ge \cos\alpha \sin \beta + \sin\alpha\cos \beta = \sin(\alpha + \beta) > 0$.
+                Действительно, $\angles{OC, OB} + \angles{OC, OA} = \cos \alpha + \cos \beta > \cos(\pi - \beta) + \cos \beta = 0$.
             }
             \indentlemma{\label{short}Пусть $\gamma: [a, b] \map S^m$ --- кривая, и $L(\gamma) < 2\pi$.
             Тогда $\Image(\gamma)$ лежит в некоторой открытой полусфере.
@@ -1525,7 +1525,7 @@
     Теперь можно написать ряд Тейлора $\gamma(t) = \gamma(t_0) + v(t - t_0) + \frac{kN}{2}(t - t_0)^2 + \frac{\gamma'''}{6}(t - t_0)^3 + o((t - t_0)^3)$.
     Пусть $P$ --- соприкасающаяся плоскость, то есть плоскость, проходящая через $\gamma(t_0)$, и натянутая на $(v, N)$.
 
-    Из ряда Тейлора получаем $d(\gamma(t), P) = \frac{\angles{\gamma''', b}}{6} \cdot (t-t_0)^3 + o((t - t_0)^3) = \frac{k\tau}{6}(t - t_0)^3 + o((t - t_0)^3) = \bigO((t - t_0)^3)$, то есть порядок касания соприкасающейся плоскости $\ge 2$.
+    Из ряда Тейлора получаем $\pm d(\gamma(t), P) = \frac{\angles{\gamma''', b}}{6} \cdot (t-t_0)^3 + o((t - t_0)^3) = \frac{k\tau}{6}(t - t_0)^3 + o((t - t_0)^3) = \bigO((t - t_0)^3)$, то есть порядок касания соприкасающейся плоскости $\ge 2$.
     \theorem{
         Пусть $\gamma$ --- кривая (необязательно в натуральной параметризации).
         Тогда $\tau = \dfrac{[\gamma', \gamma'', \gamma''']}{|\gamma' \times \gamma''|^2}$, где $[\_,\_,\_]$ --- смешанное произведение, то есть определитель матрицы, составленной из данных векторов (записанных в некотором ортонормированном базисе).
@@ -1567,11 +1567,10 @@
             $v_i \in \Lin(\gamma^{(1)}, \dots, \gamma^{(i)})$, откуда $v_i' \in \Lin(\gamma^{(1)},\dots,\gamma^{(i+1)}) = \Lin(v_1, \dots, v_{i +1})$.
             Отсюда получаем $c_{i,j} = 0$ для $j > i + 1$, и из кососимметричности это значит, что $c_{i,j} = 0$ для $|i - j| > 1$.
 
-            Из ортогонализации Грама --- Шмидта $v_i = k \gamma^{(i)} + r_i$, где $k > 0, r_i \in \Lin(\gamma^{(1), \dots, \gamma^{(i-1)}})$.
+            Из ортогонализации Грама --- Шмидта $v_i = k \gamma^{(i)} + r_i$, где $k > 0, r_i \in \Lin(\gamma^{(1)}, \dots, \gamma^{(i-1)})$.
             Продифференцируем и скалярно домножим на $v_{i + 1}$.
             Слева получится $k_i = \angles{\dot{v}_i, v_{i + 1}}$, а справа $k\angles{\gamma^{(i + 1)}, v_{i + 1}} > 0$, так как $v_{i+1} \perp \dot{r}_i + \dot{k}\gamma^{(i)}$.
             Отсюда кривизны действительно положительны.
-%            Что дальше --- загадка.
 
             Проверим однозначность определения базиса Френе. Пойдём индукцией: пусть $v_1, \dots, v_{i}$ однозначно определены. Почему $v_{i+1}$ однозначно определён?
             Из формул $v_{i+1} \perp \Lin(v_1, \dots, v_{i})$, $v_i' \in \Lin(v_1, \dots, v_{i+1})$. Производная $v_i'$ определена однозначно, значит, $\Lin(v_1, \dots, v_{i+1})$. определена, как $\Lin(v_1, \dots, v_i, v_i')$.
@@ -1683,7 +1682,7 @@
     \subsection{Гладкие функции на поверхности}
     Определим гладкую функцию $f: \Sigma \map \R$ из поверхности в прямую.
     \definition[Функция $f$ гладкая]{
-        $\forall p \in \Sigma: \exists U \ni p$ --- карта, такая, что $f$ --- гладкая в карте $U$, то есть $\exists r: \Omega \map U: f \circ r$ --- гладкая.
+        $\forall p \in \Sigma: \exists U \ni p$, и карта, такая, что $f$ --- гладкая в карте $U$, то есть $\exists r: \Omega \map U: f \circ r$ --- гладкая.
     }
     \statement{
         Условие гладкости $f: \Sigma \map \R$ равносильно следующим:
@@ -1760,7 +1759,7 @@
     \definition[Дифференциал $\tilde{f}$ в точке $p$ по направлению $X$]{
         $\d_p\tilde{f}(X) \bydef X(\tilde{f})$.
     }
-    Дифференциал в точке $p$ --- линейное отображение $T_p(\Sigma) \map T_{\tilde{f}(p)}(\Sigma)$.
+    Дифференциал в точке $p$ --- линейное отображение $T_p(\Sigma_1) \map T_{\tilde{f}(p)}(\Sigma_2)$.
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMiwwLCJcXFNpZ21hXzMiXSxbMCwxLCJcXHRpbGRle2Z9Il0sWzEsMiwiXFx0aWxkZXtnfSJdLFswLDIsIlxcdGlsZGV7aH0iLDIseyJjdXJ2ZSI6M31dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\Sigma_1}
@@ -1769,7 +1768,7 @@
           \arrow["{\tilde{g}}", from=1-2, to=1-3]
           \arrow["{\tilde{h}}"', curve={height=18pt}, from=1-1, to=1-3]
     \end{tikzcd}\]
-    Дифференциал композиции равен произведению дифференциалов $\d(\tilde{g}) \circ \d\tilde{f} = \d \tilde{h}$.
+    Дифференциал композиции равен произведению дифференциалов $\d\tilde{g} \circ \d\tilde{f} = \d \tilde{h}$.
 
 % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXE9tZWdhXzEiXSxbMCwwLCJcXFNpZ21hXzEiXSxbMSwwLCJcXFNpZ21hXzIiXSxbMSwxLCJcXE9tZWdhXzIiXSxbMCwzLCJmIiwyXSxbMCwxLCJyXzEiLDJdLFsxLDIsIlxcdGlsZGV7Zn0iLDJdLFszLDIsInJfMiJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1806,13 +1805,13 @@
 
     Разложим в этом базисе $X = (X_1, X_2)$ и $Y = (Y_1, Y_2)$, получаем $I(X, Y) = X_1 E Y_1 + (X_1 F Y_2 + X_2 F Y_1) + X_2 G Y_2$.
 
-    \examples[Вычисления, связанные с квадратичной формой]{
+    \examples[Вычисления, связанные первой с квадратичной формой]{
         \item Длина вектора $X$ --- это $\sqrt{I(X, X)}$, $\cos(\angle(X, Y)) = \frac{I(X, Y)}{\sqrt{I(X)}\sqrt{I(Y)}}$.
 
         \item Пути на поверхности $\tilde{\gamma} = r \circ \gamma$ сопоставляется его длина $L(\tilde{\gamma}) = \int\sqrt{I(\gamma',\gamma')}\d t$
 
         \item     Ортонормированному базису $(u, v)$ соответствует базис $r'_u, r'_v$.
-        Площадь поверхности $r(\Omega)$ равна $\int\limits_{\Omega}\sqrt{EG - F^2}\d s$ (это было обосновано на матанализе).
+        Площадь поверхности $r(\Omega)$ равна $\int\limits_{\Omega}\sqrt{EG - F^2}\d s$ (это было обосновано на матанализе, $EG - F^2 = \det I$).
     }
 
     \subsection{I форма при замене координат}
@@ -1835,7 +1834,7 @@
         \numbers{
             \item В декартовых $r(u, v) = (u, v, 0)$. $I = \vect{1 & 0 \\ 0 & 1}$
             \item В полярных $r(\rho, \phi) = (\rho \cos(\phi), \rho \sin(\phi), 0)$.
-            $\der{r}{\rho} = (\cos \phi, \sin \phi)$, $\der{r}{\phi} = (-\rho\cos\phi, \rho\cos\phi)$.
+            $\der{r}{\rho} = (\cos \phi, \sin \phi)$, $\der{r}{\phi} = (-\rho\sin\phi, \rho\cos\phi)$.
 
             Получаем $\d s = \vect{\cos \phi & -\rho \sin \phi \\ \sin \phi & \rho \cos \phi}$, и $[\d s]^t \cdot [\d s] = \vect{1 & 0 \\ 0 & \rho^2}$.
             Отсюда $[I^*] = \vect{1 & 0 \\ 0 & \rho^2}$.
@@ -1857,7 +1856,7 @@
     Бывают такие поверхности, что их можно отобразить друг в друга, при этом длины соответствующих векторов не будут меняться.
     Например, квадрат скатать в цилиндр, или конус развернуть в кусок плоскости.
     \definition[Гладкое $\tilde{f}: \Sigma_1 \map \Sigma_2$ --- изометрия]{
-        $\d \tilde{f}$ сохраняет скалярное произведение $\angles{\_,\_}$: $\forall V, W \in T_p(\Sigma_1): \angles{V, W}_p = \angles{\d_p \tilde{f}(V), \d_p\tilde{f}(W)}_{\tilde{f}(p)}$.
+        $\d \tilde{f}$ сохраняет скалярное произведение $\angles{\_,\_}$: $\forall V, W \in T_p(\Sigma_1): \angles{V, W} = \angles{\d_p \tilde{f}(V), \d_p\tilde{f}(W)}$.
     }
     Если параметризации используют одну карту --- например, вторая параметризация равна $r_2 = \tilde{f} \circ r_1$ --- то матрицы первых форм равны: $[I]^{r_1} = [I]^{r_2}$.
     В общем случае $[I]^{r_1} = [\d f]^t [I]^{r_2} [\d f]$.
@@ -1872,7 +1871,7 @@
             Конусы над $\gamma$ и над $\gamma_0$ совпадают; можно считать, что $\gamma$ натурально параметризована.
 
             Теперь конус задаётся параметризацией $r(\rho, t) = O + \rho \cdot (\gamma(t) - O)$. $\der{r}{\rho} = \gamma(t) - O, \der{r}{t} = \rho \cdot \gamma'(t)$.
-            В такой параметризации первая квадратичная форма оказывается такой же, как и у параметризации плоскости в полярных координатах --- $\vect{1 & 0 \\ 0 & \rho^2}$.}
+            В такой параметризации первая квадратичная форма оказывается такой же, как и у параметризации плоскости в полярных координатах --- $\vect{1 & 0 \\ 0 & \rho^2}$. $\angles{\der{r}{\rho}, \der{r}{t}} = 0$, так как $\langle \gamma(t) - O, \gamma(t) - O \rangle = \const$.}
     }
     Пусть $p, q \in \Sigma$, тогда расстояние между точками $d(p, q) = \inf\defset{L(\tilde{\gamma})}{\tilde{\gamma}: [0, 1] \map \Sigma, \tilde{\gamma}(0) = p, \tilde{\gamma}(1) = q}$.
     Это \emph{внутренняя метрика поверхности}.
@@ -1904,8 +1903,9 @@
     Тогда $r'_x(0) = (1, 0, f'_x) \in T_p\Sigma$ и $r'_y(0) = (0, 1, f'_y) \in T_p\Sigma$.
 
     Заменой базиса можно добиться того, что $f'_x(0) = f'_y(0) = 0$.
-    Тогда $\d f = 0$, и $n(0) = (0, 0, 1)$. Далее, \[r''_{x,x}(0) = (0, 0, f''_{x,x})\qquad r''_{x,y}(0) = (0, 0, f''_{x,y})\qquad r''_{y,y}(0) = (0, 0, f''_{y,y})\]
-    Записав коэффициенты $\II$ формы $L = \angles{r''_{x,x}, n} = f''_{x,x};~M = f''_{x,y};~N = f''_{y,y}$, получаем матрицу Гесса $H = \vect{f''_{x,x} & f''_{x,y} \\ f''_{x,y} & f''_{y,y}}$
+    Тогда $\d f = 0$, и $n(0) = (0, 0, 1)$.
+    Далее, \[r''_{x,x}(0) = (0, 0, f''_{x,x})\qquad r''_{x,y}(0) = (0, 0, f''_{x,y})\qquad r''_{y,y}(0) = (0, 0, f''_{y,y})\]
+    Записав коэффициенты $\II$ формы $L = \angles{r''_{x,x}, n} = f''_{x,x};~M = f''_{x,y};~N = f''_{y,y}$, получаем матрицу Гессе $H = \vect{f''_{x,x} & f''_{x,y} \\ f''_{x,y} & f''_{y,y}}$
 
     $f(x, y) = \frac{1}{2}(Lx^2 + 2Mxy + Ny^2) + o(x^2 + y^2)$.
     Определим соприкасающийся параболоид $z = \frac{1}{2}(Lx^2 + 2Mxy + Ny^2)$, он касается поверхности (касание второго порядка).
@@ -1943,7 +1943,7 @@
     $[X]^t[B][Y] = [X]^t[G][AY]$.
 
     \fact{
-        $[B]$ --- симметрическая матрица $\iff A$ --- самосопряжена.
+        $[B]$ --- симметрическая матрица ($B$ --- симметричная форма) $\iff A$ --- самосопряжена.
         \provehere{
             $\angles{x, Ay} = [x]^t[G][A][y] = [x]^t[G][A][G]^{-1}[G][y] = \angles{([G][A][G]^{-1})^t[x], [y]}$, откуда $[A]$ самосопряжена $\iff ([G][A][G]^{-1})^t = [A] \iff [G][A] = ([G][A])^t$.
         }
@@ -1982,17 +1982,18 @@
     Определим билинейную форму $\hat{\II}: T_p\Sigma \times T_p\Sigma \map \R, \hat{\II}(v, w) = \angles{v, S(w)} = -\angles{v, \d_p\hat{n}(w)}$.
     Определение не использует никакую конкретную параметризацию ($\hat{n}$ в каждой точке определяется с точностью до знака, и если ориентация фиксирована, то однозначно).
     \theorem{
-        Пусть $r: \Omega \map \Sigma$ --- параметризация, пусть $p = r(x)$.
+        Пусть $r: \Omega \map \Sigma$ --- произвольная параметризация, пусть $p = r(x)$.
         Тогда $\forall v, w \in \R^2: \II(v, w) = \hat{\II}(\d_x r(v), \d_x r(w))$.
         \provehere{
-            Используем $\II(v, w) = -\angles{\d r(v), \d n(w)}$, и $n = \hat{n} \circ r$. Получаем \[\II_x(v, w) = \angles{\d_x r(v), -\d_p\hat{n}\cdot\d_x r(w)}\qedhere\]
+            Используем $\II(v, w) = -\angles{\d r(v), \d n(w)}$, и $n = \hat{n} \circ r$.
+            Получаем \[\II_x(v, w) = \angles{\d_x r(v), -\d_p\hat{n}\cdot\d_x r(w)}\qedhere\]
         }
     }
     \corollary{\down
     \numbers{
         \item $\hat{\II}$ симметрична, поэтому оператор Вайнгартена самосопряжён.
         \item $[\II]_{u, v} = [\hat{\II}]_{r'_u, r'_v}$.
-        \item $[\II] = [I] \cdot [S]$ --- здесь используется, что $[I]$ --- матрица Грама для базиса $r'_u$ и $r'_v$.
+        \item По-прежнему в любой параметризации $[\hat{\II}]_{r'_u,r'_v} = [I]_{u,v} \cdot [S]_{r'_u,r'_v}$ --- здесь используется, что $[I]_{u,v}$ --- матрица Грама для базиса $r'_u$ и $r'_v$.
         \item Пусть есть две параметризации
 % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXE9tZWdhXzEiXSxbMiwxLCJcXE9tZWdhXzIiXSxbMSwwLCJcXFNpZ21hIl0sWzAsMiwicl8xIl0sWzEsMiwicl8yIiwyXSxbMSwwLCJzIl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -2006,38 +2007,34 @@
     }
     }
     \theorem{
-        Пусть $\Omega$ --- связно, и есть параметризация $r: \Omega \map \R^3$. \[\II \equiv 0 \iff r(\Omega) \text{--- часть плоскости}\]
+        Пусть $\Omega$ --- линейно связно, и есть параметризация $r: \Omega \map \R^3$. \[\II \equiv 0 \iff r(\Omega) \text{--- часть плоскости}\]
         \provewthen{
-            Для плоскости $n \equiv \const\then\d n \equiv 0\then \II = 0$.
+            Для плоскости $n \equiv \const\then\d n \equiv 0\then \II \equiv 0$.
         }{
             Оператор Вайнгартена $S \equiv 0 \then \d \hat{n} \equiv 0 \then n = n_0 = \const$.
             Любая кривая $\gamma: [0, 1] \map \Sigma$ на поверхности перпендикулярна этой нормали во всякой своей точке.
             Функция высоты $H = \angles{\_, n_0}$ постоянна во всех точках кривой.
         }
     }
-    Оператор Вайнгартена можно записать в специальном базисе, в котором $\II = \vect{k_1 & 0 \\ 0 & k_2}$.
-
     \proposal{\label{veingarten-eigenvalues}
-    В этом базисе собственные числа оператора Вайнгартена --- главные кривизны (и они отвечают собственным векторам --- главным направлениям).
+    Собственные числа оператора Вайнгартена --- главные кривизны (и они отвечают собственным векторам --- векторам, лежащим на главных направлениях).
     \provehere{
-        Пусть $u, v \in \R^2$ --- специальные координаты, отвечающие главным кривизнам $k_1$ и $k_2$ соответственно.
-    Тогда $r'_u, r'_v$ --- главные направления, и $\II(u, v) = \hat{\II}(r'_u, r'_v) = \angles{r'_u, S r'_v}$.
-        С другой стороны, $\II(u, v) = 0$, так как $[\II] = \vect{k_1 & 0 \\ 0 & k_2}$ в базисе $u, v$, откуда $r'_u \perp S r'_v$, то есть действительно $S r'_v \parallel r'_v$.
-
-    Далее можно посчитать собственное число, отвечающее $r'_v$: $\angles{r'_v, S r'_v} = \hat{\II}(r'_v, r'_v) = \II(v, v) = k_2$.
+        Рассмотрим специальные координаты.
+        В них $\vect{k_1 & 0 \\ 0 & k_2} = [\II]_{u,v} = [\hat{\II}]_{r'_u, r'_v}$, и так как $r'_u, r'_v$ --- ортонормированный базис, то $[S]_{r'_u, r'_v} = [\II]_{u,v} = \vect{k_1 & 0 \\ 0 & k_2}$.
     }
     }
-    Из предложения следует, что так как оператор Вайнгартена самосопряжён, то у него существует ортонормированный базис из собственных векторов с вещественными собственными числами, а именно --- если $k_1 \ne k_2$, то главные направления перпендикулярны.
+    Из предложения следует, что так как оператор Вайнгартена самосопряжён, то у него существует ортонормированный базис из собственных векторов с вещественными собственными числами, а именно --- если $k_1 \ne k_2$, то главные направления перпендикулярны (если $k_1 = k_2$, то все направления --- главные).
     
     Пусть $r: \Omega \map \Sigma, x \in \Omega, p = r(x)$.
     \theorem[Родриг]{\down
     \numbers{
-        \item Бескоординатная формулировка: $v \in T_p(\Sigma)$ на главном направлении $\iff \d\hat{n}(v)\parallel v$.
-        \item Для $\xi \in \R^2$: $\d r(\xi)$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, при этом $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
+        \item Бескоординатная формулировка: $v \in T_p(\Sigma)$ на главном направлении $\iff \d\hat{n}(v)\parallel v$, причём если это так, то $\d\hat{n}(v) = -k_1 v$ или же $\d\hat{n}(v) = -k_2 v$.
+        \item Для $\xi \in \R^2$: $\d r(\xi)$ на главном направлении $\iff \d r(\xi) \parallel \d n(\xi)$, причём если это так, то $\d n(\xi) = -k_{1}\cdot\d r(\xi)$ или $\d n(\xi) = -k_2 \cdot \d r(\xi)$.
     }
     \provenumbers{
         \item Это определение собственного вектора, а $S = -\d\hat{n}$.
-        \item $\II(v, w) = \hat{\II}(\d r(v), \d r(w)) = \angles{\d r(v), S(\d r(w))} = -\angles{\d r(v), \d \hat{n}(w)}$.
+        \item Из предыдущего $\d r(\xi)$ на главном направлении $\iff \d\hat{n}(\d r(\xi)) \parallel \d r(\xi)$.
+        Теперь заметим, что $\d n(\xi) = \d\,(\hat{n} \circ r)(\xi) = \d\hat{n}\d r(\xi)$.
     }
     }
     \definition[Нормальное сечение с началом в точке $p$ и направлением $v \in T_p\Sigma$]{
@@ -2046,53 +2043,56 @@
     В окрестности $p$ нормальное сечение --- кривая.
 
     Далее в определениях считаем, что во всех точках непрерывно выбрана нормаль $\hat{n}: \Sigma \map S^2$ (крышка иногда будет опускаться, если понятно из контекста).
-    \definition[Кривизна поверхности в направлении вектора $v$]{
-        Кривизна нормального сечения --- гладкой регулярной кривой $\gamma$ --- со знаком $\pm$.
+    \definition[Кривизна поверхности в направлении вектора $v \in T_p\Sigma$]{
+        Кривизна нормального сечения --- гладкой регулярной кривой $\gamma_v$ --- со знаком $+$, если нормаль к кривой $\gamma_v$ сонаправлена с $\hat{n}$, и $-$ иначе.
+        Обозначается $k_n(v)$
 
-        Пусть $\gamma$ --- нормальное сечение в натуральной параметризации, $\gamma' \upuparrows v$. $k(v) = k_\gamma \cdot \angles{N, \hat{n}} = k_\gamma \cdot \frac{\gamma''}{\abs{\gamma''}}$.
+        Иными словами, пусть $\gamma_v$ --- натурально параметризованная кривая, проходящая нормальное сечение: $\gamma_v' \upuparrows v$, $\gamma_v(0) = p$.
+        Тогда $k_n(v) \bydef k_{\gamma_v}(0) \cdot \angles{N_{\gamma_v}(0), \hat{n}(p)} = \angles{\gamma''(0), \hat{n}(p)}$.
     }
-    Пусть $\tilde{\gamma}: [a, b] \map \Sigma$ --- регулярная кривая.
-    Пусть $\tilde{\gamma}$ натурально параметризована, $\tilde{\gamma}' \in T_p\Sigma$, $\tilde{\gamma}'' = k_\gamma \cdot N$.
+    Теперь пусть $\tilde{\gamma}: [a, b] \map \Sigma$ --- натурально параметризованная кривая.
+    Запишем $\tilde{\gamma}'' = k_{\tilde{\gamma}} \cdot N_{\tilde{\gamma}}$.
 
     \definition[Нормальная кривизна $\tilde{\gamma}$]{
-        $k_n(\gamma) \coloneqq \angles{\tilde{\gamma}'', \hat{n}} = k_\gamma \cos(N, \hat{n})$.
+        $k_n(\tilde{\gamma}) \coloneqq \angles{\tilde{\gamma}'', \hat{n}} = k_{\tilde{\gamma}} \cos(N, \hat{n})$.
     }
     \definition[Геодезическая кривизна $\tilde{\gamma}$]{
         $k_g$ --- модуль проекции $\tilde{\gamma}''$ на $T_p\Sigma$.
     }
     Фактически, вектор кривизны был разложен на нормальную и касательную составляющие, только нормальная со знаком, и касательная --- без.
     $k_g = \abs{\tilde{\gamma}'' - k_n \hat{n}}$.
-    По теореме Пифагора $k_\gamma = \sqrt{k^2_n(\gamma) + k^2_g(\gamma)}$.
-    \definition[Геодезическая кривая]{
-        $k_g \equiv 0$.
-    }
+    По теореме Пифагора $k_{\tilde{\gamma}} = \sqrt{k^2_n(\tilde{\gamma}) + k^2_g(\tilde{\gamma})}$.
+    \definition[Геодезическая кривая $\gamma$]{ Такая кривая, что $k_g(\gamma) \equiv 0$.}
 
-    \subsection{Что-то считаем}
-    $\tilde{\gamma} = r \circ \gamma$, $\gamma' = (u', v')$, $\gamma(t) = (u(t), v(t))$.
+    \subsection{Выражение нормальной кривизны через квадратичные формы}
+    Пусть $\tilde{\gamma}: [0, 1] \map \Sigma$ --- кривая на поверхности.
+    Введём $\gamma: [0, 1] \map \Omega$ так, что $\tilde{\gamma} = r \circ \gamma$.
+    Разложим покоординатно $\gamma(t) = (u(t), v(t))$.
 
-    $\tilde{\gamma} = r(u(t), v(t)) \then \tilde{\gamma}' = r_u \cdot u_t' + r_v \cdot v_t'$ и $\tilde{\gamma}'' = r_{u,u}(u'_t)^2 + r_{u,v}u'_t \cdot v'_t + r_{v,u}v'_t u'_t + r_{v,v}(v'_t)^2 + r_u u''_t + r_v \cdot v''_t$.
-    Домножим это скалярно на нормаль. $r_u \perp \hat{n}, r_v \perp \hat{n}$, поэтому
-    \[\angles{\tilde{\gamma}'', \hat{n}} = \angles{r_{u,u},\hat{n}}(u')^2 + 2\angles{r_{u,v}, \hat{n}}u'v' + \angles{r_{v,v}\hat{n}}(v')^2\]
-    Если обозначит $X = \gamma'$, то видим, что получилась $\II(X)$:
+    Теперь посчитаем производные по $t$. $\tilde{\gamma} = r(u, v) \then \tilde{\gamma}' = r'_u \cdot u' + r'_v \cdot v'$ и \[\tilde{\gamma}'' = r''_{u,u}(u')^2 + r''_{u,v}\cdot u'  v' + r''_{v,u}\cdot v' u' + r''_{v,v}(v')^2 + r'_u u'' + r'_v \cdot v''\]
+    Домножим это скалярно на нормаль. $r'_u \perp \hat{n}, r'_v \perp \hat{n}$, поэтому
+    \[\angles{\tilde{\gamma}'', \hat{n}} = \angles{r''_{u,u},\hat{n}}(u')^2 + 2\angles{r''_{u,v}, \hat{n}}\cdot u'v' + \angles{r''_{v,v},\hat{n}}(v')^2\]
+    Видно, что правая часть получилась $\angles{\d^2 r(\gamma', \gamma'), \hat{n}} = \II(\gamma')$:
     \[\angles{\tilde{\gamma}'', \hat{n}} = \II(\gamma')\]
     \theorem{
-        Значение $\II$ на единичных векторах (те, для которых $I(v) = 1$ --- единичные в касательной плоскости) --- это кривизны поверхности по направлению соответствующего вектора.
+        Значение $\II$ на единичных векторах $\xi \in \R^2$ (те, для которых $I(\xi) = 1$ --- единичные в касательной плоскости) --- это кривизны поверхности по направлению вектора $\d_x r(\xi)$.
         \provehere{
-            Применить предыдущую формулу к нормальному сечению с направляющим вектором $v$.
-            \[\hat{\II}(v, v) = ???????\]
-            Если $v \ne 1$, то $k(v) = \frac{\II(\xi, \xi)}{I(\xi, \xi)}$, где $v = \d r(\xi)$.
+            Применить предыдущую формулу к нормальному сечению с направляющим вектором $v = \d_x r(\xi)$.
+        А именно, пусть $\tilde{\gamma}$ --- кривая, проходящая нормальное сечение, $\tilde{\gamma}'(0) = v$. Тогда
+            \[\hat{\II}(v, v) = \II(\xi, \xi) = \II(\gamma'(0), \gamma'(0)) = \angles{\tilde{\gamma}''(0), \hat{n}(p)}\]
+            Если же $|v| \ne 1$, то $k_n(v) = \frac{\II(\xi, \xi)}{I(\xi, \xi)}$, где $v = \d r(\xi)$.
         }
     }
     \theorem[Менье]{
         Пусть $p \in \Sigma, v \in T_p\Sigma, |v| = 1$.
         \numbers{
             \item Пусть $\tilde{\gamma}$ --- натурально параметризованная кривая, такая, что $\tilde{\gamma}(0) = p, \tilde{\gamma}'(0) = v$.
-            Для всех таких $\tilde{\gamma}$ нормальная кривизна одна и та же.
-            \item Кривизна кривой на поверхности с начальным вектором скорости $v$ зависит только от угла $\angle(N, \hat{n})$, где $N$ --- главная нормаль к кривой.
-            Точнее $k_\gamma \cdot \angles{N, \hat{n}} = k(v)$.
+            У всех таких $\tilde{\gamma}$ нормальная кривизна одна и та же.
+            \item Кривизна кривой на поверхности с начальным вектором скорости $v$ зависит только от угла $\angle(N_{\tilde{\gamma}}, \hat{n})$, где $N_{\tilde{\gamma}}$ --- главная нормаль к кривой.
+            А именно, $k_{\tilde{\gamma}} \cdot \angles{N_{\tilde{\gamma}}, \hat{n}} = k(v)$.
         }
         \provehere{
-            $\angles{\tilde{\gamma}'', \hat{n}} = \II(\gamma', \gamma')$.
+            Нормальная кривизна переписывается так: $k_n(\tilde{\gamma}) = \angles{\tilde{\gamma}'', \hat{n}} = \II(\gamma', \gamma')$.
         }
     }
     \example{
