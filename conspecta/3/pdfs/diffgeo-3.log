@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 00:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2245,7 +2245,7 @@ Overfull \hbox (7.35933pt too wide) detected at line 797
 [16] [17] [18] [19] [20]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
-Overfull \hbox (18.08954pt too wide) in paragraph at lines 997--997
+Overfull \hbox (18.08954pt too wide) in paragraph at lines 999--999
 [][]\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Глад-кая функ-ция $\OML
 /cmm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Бес-ко-неч
 -но диф-фе-рен-ци-ру-е-мая функ-ция $[]$. 
@@ -2254,7 +2254,7 @@ Overfull \hbox (18.08954pt too wide) in paragraph at lines 997--997
 [21
 
 ] [22] [23] [24]
-Overfull \hbox (41.38626pt too wide) in paragraph at lines 1232--1232
+Overfull \hbox (41.38626pt too wide) in paragraph at lines 1234--1234
 []$\OML/cmm/m/it/10 ^^Tn \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10
  = (\OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )
 \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )) \OMS
@@ -2267,7 +2267,7 @@ n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )
  []
 
 [25]
-Overfull \hbox (28.65346pt too wide) in paragraph at lines 1287--1287
+Overfull \hbox (28.65346pt too wide) in paragraph at lines 1289--1289
 []$\OML/cmm/m/it/10 T$ \T2A/faq/m/n/10 од-но-связ-но, по-это-му су-ще-ству-ет п
 од-ня-тие --- непре-рыв-ный ар-гу-мент $\OML/cmm/m/it/10 A$\T2A/faq/m/n/10 : $\
 OMS/cmsy/m/n/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; ^^\\OT1/cmr/m/n/10 ) = ([
@@ -2277,25 +2277,25 @@ $\T2A/faq/m/n/10 .
  []
 
 [26]
-Overfull \hbox (2.65999pt too wide) in paragraph at lines 1398--1398
+Overfull \hbox (2.65999pt too wide) in paragraph at lines 1400--1400
 []$[]$ $[]$ 
  []
 
 [27] [28] [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1493.
+(hyperref)                removing `math shift' on input line 1495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1493.
+(hyperref)                removing `superscript' on input line 1495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1493.
+(hyperref)                removing `math shift' on input line 1495.
 
 
-Overfull \hbox (9.685pt too wide) in paragraph at lines 1521--1522
+Overfull \hbox (9.685pt too wide) in paragraph at lines 1523--1524
 []\T2A/faq/m/n/10 Помимо \T2A/faq/m/it/10 со-при-ка-са-ю-щей-ся плос-ко-сти $[]
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; N\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 , опре-
 де-ля-ют так-же \T2A/faq/m/it/10 нор-маль-ную плос-кость $[]\OT1/cmr/m/n/10 (\O
@@ -2305,24 +2305,24 @@ ML/cmm/m/it/10 N; b\OT1/cmr/m/n/10 )$
 [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1545.
+(hyperref)                removing `math shift' on input line 1547.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1545.
+(hyperref)                removing `superscript' on input line 1547.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1545.
+(hyperref)                removing `math shift' on input line 1547.
 
 
-Overfull \hbox (4.42596pt too wide) in paragraph at lines 1579--1579
+Overfull \hbox (4.42596pt too wide) in paragraph at lines 1581--1581
 \T2A/faq/m/n/10 по-мо-щи ор-то-го-на-ли-за-ции Гра-ма --- Шмид-та. Ал-го-ритм в
 оз-вра-ща-ет ор-то-нор-ми-ро-ван-ный ба-зис какого-
  []
 
 
-Overfull \hbox (0.33798pt too wide) in paragraph at lines 1579--1579
+Overfull \hbox (0.33798pt too wide) in paragraph at lines 1581--1581
 \T2A/faq/m/n/10 рен-ци-ру-ем и ска-ляр-но до-мно-жим на $\OML/cmm/m/it/10 v[]$\
 T2A/faq/m/n/10 . Сле-ва по-лу-чит-ся $\OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = []
 $\T2A/faq/m/n/10 , а спра-ва $\OML/cmm/m/it/10 k [] >
@@ -2331,25 +2331,25 @@ $\T2A/faq/m/n/10 , а спра-ва $\OML/cmm/m/it/10 k [] >
 [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1594.
+(hyperref)                removing `math shift' on input line 1596.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1594.
+(hyperref)                removing `superscript' on input line 1596.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1594.
+(hyperref)                removing `math shift' on input line 1596.
 
 [32] [33]
-Overfull \hbox (23.29608pt too wide) in paragraph at lines 1753--1753
+Overfull \hbox (23.29608pt too wide) in paragraph at lines 1755--1755
 []\T2A/faq/m/n/10 Рассмотрим хо-ро-шую кар-ту, в ко-то-рой па-ра-мет-ри-за-ции 
 --- гра-фи-ки $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y; h\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 x; y\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 .
  []
 
 [34] [35]
-Overfull \hbox (2.80138pt too wide) in paragraph at lines 1877--1879
+Overfull \hbox (2.80138pt too wide) in paragraph at lines 1879--1881
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 p; q \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/
 10 ^^F$\T2A/faq/m/n/10 , то-гда рас-сто-я-ние меж-ду точ-ка-ми $\OML/cmm/m/it/1
 0 d\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p; q\OT1/cmr/m/n/10 ) = [] []$\T2A/faq/m/n
@@ -2357,14 +2357,14 @@ Overfull \hbox (2.80138pt too wide) in paragraph at lines 1877--1879
  []
 
 [36] [37] [38] [39] [40]
-Overfull \hbox (9.9308pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (9.9308pt too wide) in paragraph at lines 2135--2135
 [][]\T2A/faq/bx/n/10 Определение 2.9.2 \T2A/faq/m/n/10 (Асимп-то-ти-че-ская кри
 -вая)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Нор-маль-ная кри-виз-на $\OML/cmm/m/i
 t/10 k[] \OT1/cmr/m/n/10 = 0$\T2A/faq/m/n/10 , ина-че го-во-ря $[]$. 
  []
 
 [41] [42] [43] [44] [45] [46]
-Overfull \hbox (1.12166pt too wide) in paragraph at lines 2390--2390
+Overfull \hbox (1.12166pt too wide) in paragraph at lines 2392--2392
 [][]\T2A/faq/bx/n/10 Определение 2.12.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-с
 я по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но 
 изо-мет-рич-ная плос-
@@ -2380,7 +2380,7 @@ Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
 Here is how much of TeX's memory you used:
  28414 strings out of 479648
  534251 string characters out of 5886115
- 856554 words of memory out of 5000000
+ 856556 words of memory out of 5000000
  45541 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -2405,7 +2405,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (50 pages, 559417 bytes).
+ (50 pages, 559411 bytes).
 PDF statistics:
  978 PDF objects out of 1000 (max. 8388607)
  845 compressed objects within 9 object streams
