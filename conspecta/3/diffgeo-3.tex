@@ -1499,7 +1499,7 @@
         $b \coloneqq v \times N$. Так как $v \perp N$, то $(v, N, b)$ --- правый ортонормированный базис, $b$ --- перпендикуляр к соприкасающейся плоскости.
     }
     \note{
-        $0 = \angles{v, b} = \angles{k N, b} + \angles{v, b'}$ и $1 = \angles{b, b}$, откуда $\all{\angles{b', v} = 0 \\ \angles{b', b} = 0}$, то есть $b' \parallel N$.
+        $0 = \angles{v, b} \then 0 = \angles{k N, b} + \angles{v, b'}$ и $1 = \angles{b, b}$, откуда $\all{\angles{b', v} = 0 \\ \angles{b', b} = 0}$, то есть $b' \parallel N$.
     }
     \definition[Кручение]{
         Такое число $\tau$, что $b' = -\tau N$ ($\tau = -\angles{b', N}$).
@@ -2230,7 +2230,7 @@
     }
     \properties{
         \item \textbf{Билинейность}: для $\alpha, \beta \in \R: \nabla_v(\alpha X + \beta Y) = \alpha\nabla_vX + \beta\nabla_vY$ и $\nabla_{\alpha v_1 + \beta v_2}X = \alpha\nabla_{v_1}X + \beta\nabla_{v_2}X$.
-        Следует из того, что производная линейна, и $X$ гладко (с непрерывной производной).
+        Следует из того, что производная (и дифференциал) линейны.
         \item Пусть $f: \Sigma \map \R$.
         Тогда $\nabla_{v} (f \cdot  X) = f'_v \cdot X + f \cdot \nabla_{v}X$ и $\nabla_{f v}(X) = f \nabla_v X$.
         \item \textbf{Дифференцирование} $\angles{\_, \_}$.
