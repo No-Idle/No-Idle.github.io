@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 JAN 2024 17:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 23:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1031,10 +1031,11 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(pdfs/calculus-3.aux
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
- (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+
+(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `calculus-3.aux'.
@@ -1140,7 +1141,8 @@ LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 
-(pdfs/calculus-3.out) (pdfs/calculus-3.out)
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.out)
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.out)
 \@outlinefile=\write4
 \openout4 = `calculus-3.out'.
 
@@ -1176,7 +1178,8 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 13.
- (pdfs/calculus-3.toc
+
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 3.
 )
@@ -1414,7 +1417,8 @@ OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 . Ана-ло-гич-но схо-дит-ся ряд $[]$.
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 2
 468.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
-[55] [56] [57] [58] [59] [60] [61] (pdfs/calculus-3.aux)
+[55] [56] [57] [58] [59] [60] [61]
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1426,8 +1430,8 @@ Package rerunfilecheck Info: File `calculus-3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  27701 strings out of 479648
- 513393 string characters out of 5886115
- 797201 words of memory out of 5000000
+ 513952 string characters out of 5886115
+ 797205 words of memory out of 5000000
  44803 multiletter control sequences out of 15000+600000
  507795 words of font info for 103 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1455,7 +1459,8 @@ ts/type1/public/amsfonts/symbols/msam5.pfb></usr/share/texlive/texmf-dist/fonts
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
-Output written on pdfs/calculus-3.pdf (62 pages, 555826 bytes).
+Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
+f (62 pages, 555910 bytes).
 PDF statistics:
  909 PDF objects out of 1000 (max. 8388607)
  790 compressed objects within 8 object streams

@@ -1212,7 +1212,7 @@
             \item[1] Выберем $n \in \N$, рассмотрим двоичные интервалы $I_{j,n} = \left[\frac{j}{2^n}, \frac{j + 1}{2^n}\right)$.
             При фиксированном $n: \bigcup\limits_{j \in \Z}I_{j,n} = \R$.
 
-            Пусть $E_j = g^{-1}(I_{j,n}) \in \mathcal{A}$.
+            Пусть $E_j \coloneqq g^{-1}(I_{j,n}) \in \mathcal{A}$.
             Определим $f_n(x) = \frac{j}{2^n}$ при $x \in E_j$.
             Иными словами, бьётся ось ординат, и если функция $g$ принимает значение в неком двоичном отрезке, то $f_n(x)$ равно нижней границе этого отрезка.
 
@@ -1506,9 +1506,9 @@
 
     Теперь проверим неравенство треугольника $\|f + g\|_{L^p} \le \|f\|_{L^p}+ \|g\|_{L^p}$.
         Для интегралов оно носит название \emph{неравенства Минковского}.
-    \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{\le}\]
+    \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{$\le$}\]
     Применив к каждому слагаемому неравенство Гёльдера ($|f + g|^{p - 1} \in L^q$, так как $\int\limits_{X}|f + g|^{(p - 1)q}\d\mu = \int\limits_{X}|f + g|^{p}\d\mu \le 2^p\int\limits_{X}\max(f, g)^p\d\mu\le 2^p\int\limits_{X}\left(|f|^p + |g|^p\right)\d\mu$), получаем
-    \[\circlesign{\le} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
+    \[\circlesign{$\le$} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
     Далее делим обе части неравенства на $\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}$, и остаётся \[\underbrace{\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{1 - \frac{1}{q}}}_{\|f + g\|_{L^p}} \le \|f\|_{L^p} + \|g\|_{L^p}\qedhere\]
     }
     }
