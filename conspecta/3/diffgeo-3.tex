@@ -2313,9 +2313,9 @@
             }
             Посчитаем ковариантную производную: $\nabla_Y Y = r''_{v,v} - \hat{\II}(Y,Y)\cdot \hat{n}$.
             Затем
-            \[\nabla_X(r''_{v,v} - \hat{\II}(Y,Y)\cdot n) = \Pr{}_{T_p\Sigma}(r'''_{v,v,u} - \hat{\II}(Y,Y)'_u \cdot \hat{n} - \hat{\II}(Y, Y)\hat{n}'_u) = \Pr{}_{T_p\Sigma}(r'''_{v,v,u} - \hat{\II}(Y, Y) \cdot S(X))\]
+            \[\nabla_X(r''_{v,v} - \hat{\II}(Y,Y)\cdot n) = \Pr{}_{T_p\Sigma}(r'''_{v,v,u} - \hat{\II}(Y,Y)'_u \cdot \hat{n} - \hat{\II}(Y, Y)\hat{n}'_u) = \Pr{}_{T_p\Sigma}(r'''_{v,v,u} + \hat{\II}(Y, Y) \cdot S(X))\]
 
-            Аналогично $\nabla_X Y = r''_{v,u} - \hat{\II}(X, Y) \cdot \hat{n}$  и \[\nabla_Y (r''_{v,u} - \hat{\II}(X, Y)\hat{n}) = \Pr{}_{T_p\Sigma}(r'''_{v,u,v} - \hat{\II}(X,Y)'_v \cdot n - \hat{\II}(X, Y) \cdot \hat{n}'_v) = \Pr{}_{T_p\Sigma}(r'''_{v,u,v} - \hat{\II}(X, Y) \cdot S(Y))\]
+            Аналогично $\nabla_X Y = r''_{v,u} - \hat{\II}(X, Y) \cdot \hat{n}$  и \[\nabla_Y (r''_{v,u} - \hat{\II}(X, Y)\hat{n}) = \Pr{}_{T_p\Sigma}(r'''_{v,u,v} - \hat{\II}(X,Y)'_v \cdot n - \hat{\II}(X, Y) \cdot \hat{n}'_v) = \Pr{}_{T_p\Sigma}(r'''_{v,u,v} + \hat{\II}(X, Y) \cdot S(Y))\]
 
             Вычтем выражения друг из друга, и домножим скалярно на $X$. Получится
             \[\angles{\hat{\II}(Y,Y)S(X) - \hat{\II}(X,Y)S(Y), X} = \hat{\II}(Y, Y) \cdot \hat{\II}(X, X) -(\hat{\II}(X, Y))^2 = \det(\II)\]
