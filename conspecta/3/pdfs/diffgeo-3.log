@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2370,7 +2370,8 @@ Overfull \hbox (1.12166pt too wide) in paragraph at lines 2390--2390
 изо-мет-рич-ная плос-
  []
 
-[47] [48] [49] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
+[47] [48] [49] [50]
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2378,10 +2379,10 @@ Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
 (rerunfilecheck)             Checksum: A52A3B2F2CFB81668F02AB1B954A972C;13893.
  ) 
 Here is how much of TeX's memory you used:
- 28415 strings out of 479648
- 534262 string characters out of 5886115
- 856598 words of memory out of 5000000
- 45542 multiletter control sequences out of 15000+600000
+ 28423 strings out of 479648
+ 534338 string characters out of 5886115
+ 856749 words of memory out of 5000000
+ 45546 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,21n,103p,825b,1137s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2405,10 +2406,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (50 pages, 560202 bytes).
+ (51 pages, 566436 bytes).
 PDF statistics:
- 979 PDF objects out of 1000 (max. 8388607)
- 846 compressed objects within 9 object streams
- 326 named destinations out of 1000 (max. 500000)
+ 991 PDF objects out of 1000 (max. 8388607)
+ 857 compressed objects within 9 object streams
+ 330 named destinations out of 1000 (max. 500000)
  404 words of extra memory for PDF output out of 10000 (max. 10000000)
 
