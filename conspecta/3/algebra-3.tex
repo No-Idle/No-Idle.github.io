@@ -109,7 +109,7 @@
     \definition[Полилинейное отображение $\phi: M \times \dots \times M \map N$ антисимметрично] {
         \[\phi(\dots, u, \dots, u, \dots) = 0\]
     }
-    Для таких полилинейных отображений возникнут особые конструкции --- симметрической степени $S^m(M)$ и внешней степени $\bigwedge^m(M)$.
+    Для таких полилинейных отображений возникнут особые конструкции --- симметрической степени $S^m(M)$ и внешней степени $\ext^m(M)$.
 
     \subsection{Тензорное произведение двух модулей}
     Пусть $R$ --- коммутативное кольцо.
@@ -695,12 +695,12 @@
     Определим идеал $I_{\wedge} = \angles{x \otimes x \middle| x \in V}\normeq T(V)$.
 
     \definition[Внешняя алгебра или алгебра Грассмана]{
-        $\bigwedge(V) \coloneqq T(V)/I_{\wedge}$
+        $\ext(V) \coloneqq T(V)/I_{\wedge}$
     }
     Если $V$ --- свободный $R$-модуль с базисом мощности $n$, то эта алгебра конечномерна над $R$~(\cref{s_is_poly}).
     Умножение во внешней степени обозначают значком $\wedge$.
 
-    $V$ вкладывается как в $S(V)$, так и в $\bigwedge(V)$ --- ядро композиции $V \hookrightarrow T(V) \map S(V)$ нулевое, так же как и у $V \hookrightarrow T(V) \map \bigwedge(W)$ (подмодуль, по которому происходит факторизация, содержит только элементы степени хотя бы 2).
+    $V$ вкладывается как в $S(V)$, так и в $\ext(V)$ --- ядро композиции $V \hookrightarrow T(V) \map S(V)$ нулевое, так же как и у $V \hookrightarrow T(V) \map \ext(W)$ (подмодуль, по которому происходит факторизация, содержит только элементы степени хотя бы 2).
 
     Аналогично симметрической, внешняя алгебра --- $\N_0$-градуированная алгебра.
     \theorem[Универсальное свойство симметрической алгебры]{
@@ -724,10 +724,10 @@
         }
     }
     \theorem[Универсальное свойство внешней алгебры]{
-        Для любой градуировано коммутативной $\N_0$-градуированной $R$-алгебры $A$, и для любого гомоморфизма $R$-модулей $\phi: V \map A_1$ ($A_1$ --- однородная компонента $A$ с индексом 1) найдётся единственный гомоморфизм $\eta: \bigwedge(V) \map A$, такой, что диаграмма коммутирует.
+        Для любой градуировано коммутативной $\N_0$-градуированной $R$-алгебры $A$, и для любого гомоморфизма $R$-модулей $\phi: V \map A_1$ ($A_1$ --- однородная компонента $A$ с индексом 1) найдётся единственный гомоморфизм $\eta: \ext(V) \map A$, такой, что диаграмма коммутирует.
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJWIl0sWzEsMCwiVChWKSJdLFsxLDEsIkEiXSxbMiwwLCJcXGJpZ3dlZGdlKFYpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyLCJcXHBoaSIsMl0sWzEsMiwiXFxwc2kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJcXHJobyJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
-              V \& {T(V)} \& {\bigwedge(V)} \\
+              V \& {T(V)} \& {\ext(V)} \\
               \& A
               \arrow[hook, from=1-1, to=1-2]
               \arrow["\phi"', from=1-1, to=2-2]
@@ -774,12 +774,12 @@
         }
     }
     Аналогично определяется $n$-я внешняя степень
-    \[\bigwedge\!\!{}^n(V) \bydef V^{\otimes n}/I_n = V^{\otimes n}/\angles{a \otimes x \otimes x \otimes b \middle| x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - 2 - k}}\]
+    \[\ext^n(V) \bydef V^{\otimes n}/I_n = V^{\otimes n}/\angles{a \otimes x \otimes x \otimes b \middle| x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - 2 - k}}\]
     \theorem[Универсальное свойство внешней $n$-й степени]{
-        $\forall R$-модуля $M$ и антисимметричного полилинейного отображения $\phi: V \times \dots \times V \map M: \exist! \psi: \bigwedge^n(V) \map V$, такое что диаграмма коммутативна.
+        $\forall R$-модуля $M$ и антисимметричного полилинейного отображения $\phi: V \times \dots \times V \map M: \exist! \psi: \ext^n(V) \map V$, такое что диаграмма коммутативна.
         % https://q.uiver.app/#q=WzAsMyxbMCwwLCJWIl0sWzIsMCwiXFxiaWd3ZWRnZV5uKFYpIl0sWzEsMSwiTSJdLFswLDFdLFswLDIsIlxccGhpIiwyXSxbMSwyLCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
-              V \&\& {\bigwedge^n(V)} \\
+              V \&\& {\ext^n(V)} \\
               \& M
               \arrow[from=1-1, to=1-3]
               \arrow["\phi"', from=1-1, to=2-2]
@@ -793,15 +793,15 @@
     }
     \newlection{28 сентября 2023 г.}
 %    $I_\wedge, I_S \normeq T(V)$, где $I_S = \angles{x \otimes y - y \otimes x \middle| x, y \in V}, I_{\wedge} = \angles{x \otimes x \middle| x \otimes x \in V}$.
-%    \gather{S(V) = T(V)/I_S\qquad\bigwedge(V) = T(V)/I_\wedge\\
+%    \gather{S(V) = T(V)/I_S\qquad\ext(V) = T(V)/I_\wedge\\
 %    S^n(V) = V^{\otimes n}/\angles{a (x \otimes y - y \otimes x) b \middle | x, y \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}} \\
-%    \bigwedge\!\!{}^n(V) = V^{\otimes n}/\angles{a (x \otimes x) b \middle | x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}}}
+%    \ext^n(V) = V^{\otimes n}/\angles{a (x \otimes x) b \middle | x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}}}
 %
-%    Операция в $S(V)$ пишется $\cdot$, как обычное умножение, операция в $\bigwedge(V)$ пишется $\wedge$.
+%    Операция в $S(V)$ пишется $\cdot$, как обычное умножение, операция в $\ext(V)$ пишется $\wedge$.
 
     \subsection{Базисы симметрической и внешней степеней}
     Пусть $V$ --- свободный модуль.
-    Какие базисы у $S^n(V)$ и $\bigwedge^n(V)$?
+    Какие базисы у $S^n(V)$ и $\ext^n(V)$?
 
     Пусть $(x_1, \dots, x_m)$ --- базис $V$.
 
@@ -822,9 +822,9 @@
     Можно явно выписать базис.
     Кстати, отсюда видно, почему в $S(V)$ умножение обозначают точкой --- как и в случае обычных переменных.
     \ok
-    Элементарная комбинаторика (так как $x_i \wedge x_j = -x_j \wedge x_i$, то соседние переменные в разложимом тензоре можно менять местами, меняя знак; если в одном разложимом тензоре две переменные $x_i$ для какого-то $i$, то он равен нулю) показывает, что $\bigwedge^n(V) = \angles{x_{i_1} \wedge \dots \wedge x_{i_n}\middle|1 \le i_1 < \dots < i_n \le m}$.
+    Элементарная комбинаторика (так как $x_i \wedge x_j = -x_j \wedge x_i$, то соседние переменные в разложимом тензоре можно менять местами, меняя знак; если в одном разложимом тензоре две переменные $x_i$ для какого-то $i$, то он равен нулю) показывает, что $\ext^n(V) = \angles{x_{i_1} \wedge \dots \wedge x_{i_n}\middle|1 \le i_1 < \dots < i_n \le m}$.
     \proposal{
-        Это не просто система образующих, а базис $\bigwedge^n(V)$.
+        Это не просто система образующих, а базис $\ext^n(V)$.
         \provehere{
             Надо проверить линейную независимость.
             Пусть $I = \{i_1, \dots, i_n\}$, где $i_1 < i_2 < \dots < i_n$.
@@ -877,15 +877,15 @@
     \ok
     Для внешней алгебры можно действовать также, определив действие $S_n \curvearrowright V^{\otimes n}$: \begin{align*}
                                                                                                               S_n \times V^{\otimes n}&\map V^{\otimes n}\\\pi, (x_1 \otimes \dots \otimes x_n) &\mapsto \sgn(\pi) \cdot x_{\pi(1)} \otimes \dots \otimes x_{\pi(n)}
-    \end{align*}и положив $\tilde{\bigwedge}^n(V) \le V^{\otimes n}$, подмодулем, инвариантным относительно данного действия.
+    \end{align*}и положив $\tilde{\ext}\!{}^n(V) \le V^{\otimes n}$, подмодулем, инвариантным относительно данного действия.
     Для умножения введём \begin{align*}
-                             \text{Alt}: V^{\otimes n} &\map \tilde{\bigwedge}\!{}^n(V)\\x &\mapsto \frac{1}{n!}\sum\limits_{\pi \in S_n}\sgn(\pi)\cdot\pi(x)
+                             \text{Alt}: V^{\otimes n} &\map \tilde{\ext}\!{}^n(V)\\x &\mapsto \frac{1}{n!}\sum\limits_{\pi \in S_n}\sgn(\pi)\cdot\pi(x)
     \end{align*}
-    \intfact{$\text{Alt}$ является проектором на $\tilde{\bigwedge}^n(V)$.
+    \intfact{$\text{Alt}$ является проектором на $\tilde{\ext}{}\!^n(V)$.
     Умножение \begin{align*}
-                  \tilde{\bigwedge}\!{}^n(V),\tilde{\bigwedge}\!{}^k(V)&\map\tilde{\bigwedge}\!{}^{n+k}(V)\\x, y &\mapsto \text{Alt}(x \otimes y)
+                  \tilde{\ext}\!{}^n(V),\tilde{\ext}\!{}^k(V)&\map\tilde{\ext}\!{}^{n+k}(V)\\x, y &\mapsto \text{Alt}(x \otimes y)
     \end{align*} антикоммутативно и ассоциативно.
-    С данной операцией $\bigoplus\limits_{n \ge 0}\tilde{\bigwedge}^n(V)$ становится антикоммутативной $\N_0$-градуированной алгеброй с единицей.
+    С данной операцией $\bigoplus\limits_{n \ge 0}\tilde{\ext}\!{}^n(V)$ становится антикоммутативной $\N_0$-градуированной алгеброй с единицей.
     }
 
     \newlection{3 октября 2023 г.}
@@ -897,31 +897,29 @@
                      A^I& \text{ подматрицу, состоящую из строк с номерами из }I\\ A_J& \text{ подматрицу, состоящую из столбцов с номерами из }J\\A^I_J& = (A^I)_J = (A_J)^I
     \end{align*}
     \note{
-        Базисом внешней алгебры являются $e_I = e_{i_1} \wedge \dots \wedge e_{i_k}$, где $I = \{i_1, \dots, i_k\}$, причём $i_1 < \dots < i_k$.
-
-        \[e_{j_1}\wedge \dots\wedge e_{j_n} = \pm e_J,\text{ где знак --- количество беспорядков (инверсий) в $j_1, \dots, j_n$}\]
+        \[e_{j_1}\wedge \dots\wedge e_{j_n} = (-1)^{\text{inv}(j_1, \dots, j_n)} e_J,\text{ где $\text{inv}(j_1, \dots, j_m)$ --- число беспорядков (инверсий) в $j_1, \dots, j_n$}\]
     }
 
-    Рассмотрим алгебру Грассмана $\bigwedge(V)$.
+    Рассмотрим алгебру Грассмана $\ext(V)$.
     \lemma{\label{calculations_in_grassman}
     Пусть $(u_1, \dots, u_n)C = (v_1, \dots, v_m)$, где $C \in M(n, m, R)$, $u_i, v_j \in V$.
     Интересным случаем является $m \le n$, иначе в обеих частях равенства стоят нули. Утверждается, что
         \[v_{[m]} \coloneqq v_1 \wedge \dots \wedge v_m = \sum\limits_{|I| = m, I \subset [n]}u_{I}\det (C^I)\]
         где $C^I$ --- подматрица $C$, берутся строки с номерами из $I$.
         \provebullets{
-            \item Сначала предполагаем, что $(u_i)$ являются базисом $\bigwedge^k(U)$, причём $m = n$.
+            \item Сначала предполагаем, что $(u_i)_{i=1}^{n}$ являются базисом $V$, причём $m = n$.
 
-            Тогда $v_{[m]} \in \bigwedge^m (V) = \angles{ u_{[m]} }$, то есть $v_{[m]} = u_{[m]} \cdot \alpha(C)$, где коэффициент $\alpha$ зависит от матрицы $C$.
+            Тогда $v_{[m]} \in \ext^m (V) = \angles{ u_{[m]} }$, то есть $v_{[m]} = u_{[m]} \cdot \alpha(C)$, где коэффициент $\alpha$ зависит от матрицы $C$.
             Таким образом, этот коэффициент можно рассматривать, как отображение $\alpha: M(n, R) \map R$.
 
             Несложно видеть полилинейность, антисимметричность и нормированность $\alpha$, то есть это определитель.
 
-            \item Теперь пусть $m < n$, но $(u_i)$ --- всё ещё базис $V$.
-            Тогда $\defset{u_{I}}{I \subset [n], |I| = m}$ --- базис $\bigwedge^m(V)$ и $v_{[m]} = \sum\limits_{I}u_I \alpha_I$.
+            \item Теперь пусть $m < n$, но $(u_i)_{i=1}^{n}$ --- всё ещё базис $V$.
+            Тогда $\defset{u_{I}}{I \subset [n], |I| = m}$ --- базис $\ext^m(V)$ и $v_{[m]} = \sum\limits_{I}u_I \alpha_I$.
 
             Зафиксируем $J \subset [n], |J| = m$. Определим $U \le V$, как подмодуль, натянутый на $\defset{u_j}{j \in J}$.
             Определим проекцию на $U$: $\overline{\cdot}: V \map U, u_i \mapsto \all{u_i, &i \in J \\ 0,& i \notin J}$.
-            Чтобы найти коэффициент перед $u_J$, домножим выражение $v_j$ через $u_i$ на матрицу проекции на $U$ (применим надчёркивание):
+            Чтобы найти коэффициент перед $u_J$, домножим слева выражение $v_j$ через $u_i$ на матрицу проекции на $U$ (применим надчёркивание):
             \[(\overline{u}_1, \dots, \overline{u}_n)C = (\overline{v}_1, \dots, \overline{v}_m) \qquad\iff\qquad (u_{j_1}, \dots, u_{j_m})C^J = (\overline{v}_1, \dots, \overline{v}_m)\]
             Из предыдущего пункта находим $u_J \det(C^J) = v_{[m]}$.
 
@@ -930,8 +928,9 @@
             \[f_{[m]} = f_1 \wedge \dots \wedge f_m = \sum\limits_{I\subset[n],|I| = m}e_I \det C^I\]
             Согласно универсальному свойству базиса $\exists! L: M \map V: L(e_i) = u_i$.
 
-            $(v_1, \dots, v_m) = (u_1, \dots, u_n)C = (L(e_1), \dots, L(e_n))C = (L(f_1), \dots, L(f_m))$. Применяем $\bigwedge^k(L)$ к $f_1 \wedge \dots \wedge f_m$:
-            \[v_{[m]} = L(f_1) \wedge \dots \wedge L(f_m) = \sum\limits_{I}L(e)_{I}\det (C^I) = \sum\limits_{I}u_I \det (C^I)\]
+            Теперь $(v_1, \dots, v_m) = (u_1, \dots, u_n)C = (L(e_1), \dots, L(e_n))C = (L(f_1), \dots, L(f_m))$.
+            Применим $\ext^k(L)$ к $f_1 \wedge \dots \wedge f_m$ (применим $L$ к каждой компоненте):
+            \[v_{[m]} = L(f_1) \wedge \dots \wedge L(f_m) = \sum\limits_{I}L(e)_{I}\det (C^I) = \sum\limits_{I}u_I \det (C^I)\qedhere\]
         }
     }
     \corollary[Теорема Бине-Коши]{
@@ -939,24 +938,24 @@
         Полезным случаем является $m \le n$, иначе обе части будут точно нулями. Утверждается, что
         \[\det(A \cdot C) = \sum\limits_{I \subset [n],|I| = m}\det(A_I)\det(C^I)\]
         \provehere{
-            Пусть $V$ --- свободный правый модуль ранга $m$ с базисом $\vect{e_1 & \dots & e_m}$.
+            Пусть $V$ --- свободный правый модуль ранга $m$ с базисом $(e_1, \dots, e_m)$.
 
-            Положим $\vect{u_1 & \cdots & u_n} = \vect{e_1 & \cdots & e_m}A$; далее положим $\vect{v_1 & \cdots & v_m} = \vect{u_1 & \cdots & u_n}C$.
+            Положим $(u_1, \dots, u_n) \coloneqq (e_1, \dots, e_m)A$; далее положим $(v_1, \dots, v_m) \coloneqq (u_1, \dots, u_n)C$.
 
             Согласно~(\cref{calculations_in_grassman}): $v_1 \wedge \dots \wedge v_m = \sum\limits_{I \subset [n], |I| = m}u_I \det(C^I)$.
 
-            Дальше раскрывая $\vect{u_{i_1} & \cdots & u_{i_m}} = \vect{e_{1} & \cdots & e_{m}}A_I$, получаем \[v_{[m]} = \sum\limits_{I \subset [n], |I| = m}u_I \det(C^I) = \sum\limits_{I \subset [n], |I| = m}e_{[m]}\det(A_I) \det(C^I)\]
-            Сравнивая с тем, что $\vect{v_1 & \cdots & v_m} = \vect{e_1 & \cdots & e_m}\cdot (AC)$, получаем равенство определителей.
+            Дальше раскрывая $(u_{i_1}, \dots, u_{i_m}) = (e_{1}, \cdots, e_{m})A_I$, получаем \[v_{[m]} = \sum\limits_{I \subset [n], |I| = m}u_I \det(C^I) = \sum\limits_{I \subset [n], |I| = m}e_{[m]}\det(A_I) \det(C^I)\]
+            Сравнивая с тем, что $(v_1, \dots, v_m) = (e_1, \dots, e_m)\cdot (AC)$, получаем равенство определителей.
         }
     }
     \theorem[Разложение по нескольким столбцам]{\label{eps_def}
     Рассмотрим блочную матрицу $(B | C)$, где $B \in M(n, k, R), C \in M(n, n - k, R)$.
     Утверждается, что
-        \[\det\left(B|C\right) = \sum\limits_{|I| = k}{\eps_I}\cdot \det\left(B^I\right)\det\left(C^{[n]\sm I}\right)\]
+        \[\det\left(B|C\right) = \sum\limits_{I \subset [n],|I| = k}{\eps_I}\cdot \det\left(B^I\right)\det\left(C^{[n]\sm I}\right)\]
         где $\eps_I$ --- знак перестановки ниже (пусть $I = \{i_1 < \cdots < i_k\}; J \coloneqq [n] \sm I = \{j_1 < \cdots < j_{n - k}\}$).
         \[\eps_I = \sgn\vect{1&&\cdots&\cdots&&n\\i_1& \dots& i_k& j_1& \dots& j_{n - k}} = (-1)^{\sum\limits_{i = 1}^{k}(i_s - s)}\]
         \provehere{
-            Пусть $B = (e_1, \dots, e_n)B = (b_1, \dots, b_k)$, $C = (e_1, \dots, e_{n})C = (c_1, \dots, c_{n-k})$.
+            Пусть $(b_1, \dots, b_k)$ --- столбцы матрицы $B$, $(c_1, \dots, c_{n-k})$ --- столбцы матрицы $C$.
             Посчитаем $b_1 \wedge \dots \wedge  b_k \wedge c_1 \wedge \dots \wedge c_{n - k}$.
 
             С одной стороны, это равно $e_{[n]} \cdot \det(B | C)$.
@@ -967,50 +966,50 @@
             Теперь осталось вычислить $e_I \wedge e_{[n]\sm I}$. Это равняется $\eps_I \cdot e_{[n]}$, где $\eps_I$ --- знак перестановки \[\vect{1&&\cdots&\cdots&&n\\i_1& \dots& i_k& j_1& \dots& j_{n - k}}\]
             Нетрудно видеть, что индексы $i$ упорядочены по возрастанию, $j$ --- тоже, инверсии в данной перестановки образуют только пары $(i_l, j_m)$.
             Индекс $i_l$ образует инверсию с меньшими $j$, таких имеется $i_l - l$.
-            В $\Z/2\Z$: $\sum\limits_{l = 1}^{k}(i_l - l) = \sum\limits_{l = 1}^{k}(i_l) + \sum\limits_{l = 1}^{k}i_l + \frac{l(l + 1)}{2}$
+            В $\Z/2\Z$: $\sum\limits_{l = 1}^{k}(i_l - l) = \sum\limits_{l = 1}^{k}i_l + \frac{l(l + 1)}{2}$
         }
     }
 
-    \subsection{Внешняя степень матричного представления}
-    \note{
+    \section{Элементы матрицы внешней степени}
+    \lemma[Функториальность $\wedge^k$]{\label{functoriality-of-extk}
         Всякому отображению $L: U \map V$ соответствует единственное линейное
         \begin{align*}
-            \bigwedge\!\!{}^k (L): \bigwedge\!\!{}^k(U) &\map \bigwedge\!\!{}^k(V)\\u_1 \wedge \dots \wedge u_k &\mapsto L(u_1) \wedge \dots \wedge L(u_k)
+            \ext^k (L): \ext^k(U) &\map \ext^k(V)\\u_1 \wedge \dots \wedge u_k &\mapsto L(u_1) \wedge \dots \wedge L(u_k)
         \end{align*}
         Это является иллюстрацией того, что всякая хорошая конструкция, задающееся универсальным свойством, является функтором (действует и на морфизмах).
         \provehere{
-        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJVIFxcdGltZXMgXFxkb3RzIFxcdGltZXMgVSJdLFsxLDAsIlxcYmlnd2VkZ2VeayhVKSJdLFswLDEsIlZcXHRpbWVzIFxcZG90cyBcXHRpbWVzIFYiXSxbMSwxLCJcXGJpZ3dlZGdlXmsoVikiXSxbMCwyLCJMIiwyXSxbMiwzXSxbMCwxXSxbMCwzXSxbMSwzLCJcXGJpZ3dlZGdlXmsoTCkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJVIFxcdGltZXMgXFxkb3RzIFxcdGltZXMgVSJdLFsxLDAsIlxcZXh0XmsoVSkiXSxbMCwxLCJWXFx0aW1lcyBcXGRvdHMgXFx0aW1lcyBWIl0sWzEsMSwiXFxleHReayhWKSJdLFswLDIsIihMLFxcZG90cyxMKSIsMl0sWzIsM10sWzAsMV0sWzAsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMywiXFxleHReayhMKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {U \times \dots \times U}
-                  \& {\bigwedge^k(U)} \\
-                  {V\times \dots \times V} \& {\bigwedge^k(V)}
-                  \arrow["L"', from=1-1, to=2-1]
-                  \arrow[from=2-1, to=2-2]
-                  \arrow[from=1-1, to=1-2]
-                  \arrow[from=1-1, to=2-2]
-                  \arrow["{\bigwedge^k(L)}", dashed, from=1-2, to=2-2]
+            {U \times \dots \times U} \& {\ext^k(U)} \\
+            {V\times \dots \times V} \& {\ext^k(V)}
+            \arrow["{(L,\dots,L)}"', from=1-1, to=2-1]
+            \arrow[from=2-1, to=2-2]
+            \arrow[from=1-1, to=1-2]
+            \arrow[dashed, from=1-1, to=2-2]
+            \arrow["{\ext^k(L)}", dotted, from=1-2, to=2-2]
             \end{tikzcd}\]
-            Композиция, бьющая $U \times \dots \times U \map \bigwedge^k(V)$ антисимметрична и полилинейна, значит, согласно универсальному свойству внешней алгебры найдётся единственная стрелка $\bigwedge^k(L):\bigwedge^k(U)\map\bigwedge^k(V)$.
+            Композиция $(L,\dots,L)$ и вложения $V \times \dots \times V \map \ext^k(V)$, бьющая $U \times \dots \times U \map \ext^k(V)$ антисимметрична и полилинейна, значит, согласно универсальному свойству внешней алгебры, найдётся единственная стрелка $\ext^k(L):\ext^k(U)\map\ext^k(V)$.
             Часто её обозначают просто $L$, в программировании это называется \emph{полиморфизмом} --- зависимость стрелки от передающихся ей аргументов.
         }
     }
 
     Пусть $L: V \map V$ линейно, $V = \angles{e_1, \dots, e_n}$ --- свободный модуль.
     Обозначим матрицу $L$ в базисе $e$ за $[L]_e$.
-    Базису $e$ модуля $V$ соответствует базис $\bigwedge^k e = \defset{e_I}{I \subset [n]}$.
+    Базису $e$ модуля $V$ соответствует базис $\ext^k e = \defset{e_I}{I \subset [n]}$.
 
-    Изучим связь матрицы $[L]_e$ и матрицы $[\bigwedge^k(L)]_{\bigwedge^k(e)}$.
-    \note{ Если $L$ обратим, то $\bigwedge^k\left(L^{-1}\right) = (\bigwedge L)^{-1}$.    }
+    Изучим связь матрицы $[L]_e$ и матрицы $[\ext^k(L)]_{\ext^k(e)}$.
+    \note{ Если $L$ обратим, то $\ext^k\left(L^{-1}\right) = (\ext^k L)^{-1}$. }
 
     Пусть $J \subset [n], |J| = k$.
     $L(e_{j_1}) = (e_1, \dots, e_n)([L]_e)_{*,j_1}$, таким образом $L(e_{j_1}, \cdots, e_{j_k}) = (e_1, \dots, e_n)([L]_e)_J$.
     \[L(e_{j_1}) \wedge \dots \wedge L(e_{j_k}) = \sum\limits_{I \subset [n],|I| = k}e_{I}\det([L]_e)^I_J\]
     Таким образом, мы получили следующий результат:
-    \lemma{\label{elements-of-wedge-matrix}
-    Элемент матрицы $(\bigwedge^k L)_{\bigwedge^k e}$ в строке $I$ и столбце $J$ равен минору $\det\left(\left([L]_e\right)^I_J\right)$.
+    \lemma{\label{elements-of-ext-matrix}
+    Элемент матрицы $[\ext^k L]_{\ext^k e}$ в строке $I$ и столбце $J$ равен минору $\det\left([L]_e\right)^I_J$.
     }
     \newlection{5 октября 2023 г.}
-    Конечно, подобным образом можно записать некоторую формулу, выражающую элементы матрицы $\bigwedge^k(L)$.
+    \subsection{Элементы обратной матрицы}
+    Конечно, подобным образом можно записать некоторую формулу, выражающую элементы матрицы $\ext^k(L)$.
 
     Например, элементы обратной к любой матрице над коммутативным кольцом равны соответствующим алгебраическим дополнениям, поделённым на определитель.
     Сейчас будет найдено более короткое выражение для этих элементов.
@@ -1020,38 +1019,69 @@
     }
     Поэтому можно думать, что $L: V \map V$ --- автоморфизм векторного пространства.
     Выберем базис $V = \angles{e_1, \dots, e_n}$, в нём $A \coloneqq [L]_e$ --- матрица $L$.
-    Обозначим за $\bigwedge^k A$ матрицу оператора $\bigwedge^k L$ в базисе $\bigwedge^k e$.
+    Обозначим за $\ext^k A$ матрицу оператора $\ext^k L$ в базисе $\ext^k e$.
     \theorem{
         Пусть $I, J \subset [n]$.
-        Тогда имеет место следующая формула для элементов матрицы $\bigwedge^k A^{-1}$:
-        \[\left(\bigwedge\!\!{}^k A^{-1}\right)^I_J = \det\left((A^{-1})^I_J\right) = (-1)^{\eps_I + \eps_J}\frac{1}{\det A}A^{[n] \sm J}_{[n]\sm I}\]
+        Имеет место следующая формула для элементов матрицы $\ext^k A$:
+        \[(\ext^k A)_{I,J} = \det(A^{-1})^I_J = (-1)^{\eps_I + \eps_J}\frac{1}{\det A}A^{[n] \sm J}_{[n]\sm I}\]
         $\eps_I$ и $\eps_J$ определены здесь~(\cref{eps_def})
         \provehere{
-            Пусть $B$ --- матрица $\bigwedge A^{-1}$ в базисе $\bigwedge^k e$.
-            Cогласно~(\cref{elements-of-wedge-matrix}), для $I, J \subset [n]; |I| = |J| = k$:
-            \[(B^{-1})_I^J = \det\left(\left(A^{-1}\right)_I^J\right)\]
-            \ldots
+            Пусть $B$ --- матрица $\ext^k A$ в базисе $\ext^k e$.
+            Cогласно~(\cref{elements-of-ext-matrix}), для $I, J \subset [n]; |I| = |J| = k$:
+            \[(B^{-1})_{I,J} = \det\left(A^{-1}\right)_I^J\qquad\text{и}\qquad B_{I,J} = \det\left(A\right)_I^J\]
 
+            Помимо базиса $\ext^k e = (e_I)_{I \subset [n], |I| = k}$, имеется также двойственный к нему базис $(f^I)_{I \subset [n], |I| = k}$ --- здесь $f^I \coloneqq (-1)^{\eps_I}e_I$.
+            Двойственность означает $f^I \cdot e_J = \delta_{I,J} \cdot e_{[n]}$, что можно так записать в матричном виде: пусть $f$ --- столбец из $f^I$, $\ext^k e$ --- строка из $e_I$, тогда \[f \cdot \ext^k e = e_{[n]} \cdot E\tag{$*$}\label{matrix-form}\]
+            Это произведение матриц с элементами из алгебры $\ext(V)$, и $E$ --- единичная матрица, проиндексированная $I \subset [n], |I| = k$.
+
+            \indentlemma[Функториальность $\ext$]{
+                Для коммутативного кольца $R$ всякий гомоморфизм $R$-модулей $L: U \map V$ индуцирует гомоморфизм $R$-алгебр $\ext(L): \ext(U) \map \ext(V)$.
+            }{
+                Аналогично~(\cref{functoriality-of-extk}).
+                % https://q.uiver.app/#q=WzAsNCxbMCwwLCJVIl0sWzEsMCwiXFxleHQoVSkiXSxbMSwxLCJcXGV4dChWKSJdLFswLDEsIlYiXSxbMCwzLCJMIl0sWzMsMl0sWzEsMiwiXFxleHQoTCkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwxXSxbMCwyLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+                \[\begin{tikzcd}[ampersand replacement=\&]
+                      U \& {\ext(U)} \\
+                      V \& {\ext(V)}
+                      \arrow["L", from=1-1, to=2-1]
+                      \arrow[from=2-1, to=2-2]
+                      \arrow["{\ext(L)}", dotted, from=1-2, to=2-2]
+                      \arrow[from=1-1, to=1-2]
+                      \arrow[dashed, from=1-1, to=2-2]
+                \end{tikzcd}\]
+            Композиция $L$ и вложения $V \map \ext(V)$ бьёт в первую однородную компоненту $\ext(V)$, поэтому согласно универсальному свойству $\ext$: $\exists!$ гомоморфизм $\N_0$-градуированных антикоммутативных $R$-алгебр $\ext(L): \ext(U) \map \ext(V)$.
+            }
+            Таким образом $\ext(L)$ --- эндоморфизм алгебры $\ext(V)$, и также имеются эндоморфизмы модулей матриц над $\ext(V)$, сохраняющие произведение матриц.
+            Применяя их к равенству~(\ref{matrix-form}) (иначе говоря, применяя $\ext(L)$ ко всем элементам матриц), получаем
+            \[L(f) \cdot L(\ext^k e) = \underbrace{L(e_{[n]})}_{\det A \cdot e_{[n]}} \cdot E\]
+
+            Обозначим $D \coloneqq [\ext^{n-k}(L)]_f$.
+            Равенство выше говорит, что $D^t \cdot B = \det A$.
+            В самом деле, $L(f) = D^t \cdot f$, и $L(\ext^k e) = \ext^k e \cdot B$.
+
+            Получаем $B^{-1} = \frac{1}{\det A}D^t$, и осталось подставить
+            \[D_{I,J} = ([\ext^{n-k}(L)]_f)_{I,J} = (-1)^{\eps_I+\eps_J}\left([\ext^{n-k}(L)]_{\ext^{n-k}(e)}\right)_{[n]\sm I,[n]\sm J} = (-1)^{\eps_I+\eps_J}\det A_{[n]\sm J}^{[n]\sm I}\]
 %            $L$ индуцирует эндоморфизм внешней алгебры
-%            \[\bigwedge\!\!{}^k(L): \bigwedge\!\!{}^k(V) \map \bigwedge\!\!{}^k(V)\]
-%            В $\bigwedge^k(V)$ имеется базис $\bigwedge^k(e) \coloneqq \defset{e_J}{J \subset [n]}$.
-%            Обозначим $\bigwedge^k A \coloneqq (\bigwedge^k L)_{\bigwedge^k e} \in M(\binom{n}{k}, K)$.
+%            \[\ext^k(L): \ext^k(V) \map \ext^k(V)\]
+%            В $\ext^k(V)$ имеется базис $\ext^k(e) \coloneqq \defset{e_J}{J \subset [n]}$.
+%            Обозначим $\ext^k A \coloneqq (\ext^k L)_{\ext^k e} \in M(\binom{n}{k}, K)$.
 %
-%            В позиции $(I, J)$ матрицы $\bigwedge^k A$ стоит минор $\det(A^I_J)$:
-%            \[\bigwedge\!\!{}^k(L)(e_{j_1} \wedge \dots \wedge e_{j_k}) = L(e_{j_1})\wedge \dots \wedge L(e_{j_k}) = \sum\limits_{I \subset [n], |I| = k}e_I A^I_J\]
+%            В позиции $(I, J)$ матрицы $\ext^k A$ стоит минор $\det(A^I_J)$:
+%            \[\ext^k(L)(e_{j_1} \wedge \dots \wedge e_{j_k}) = L(e_{j_1})\wedge \dots \wedge L(e_{j_k}) = \sum\limits_{I \subset [n], |I| = k}e_I A^I_J\]
 %
-%            Рассмотрим два подпространства $\bigwedge^{n - k}(V) \cong (\bigwedge^k V)^*$.
+%            Рассмотрим два подпространства $\ext^{n - k}(V) \cong (\ext^k V)^*$.
 %
-%            Построить изоморфизм $\phi: \bigwedge^{n - k}(V) \cong (\bigwedge^k V)^*$ можно так: пусть $x \in \bigwedge^{n - k}(V), y \in \bigwedge^k(V)$.
+%            Построить изоморфизм $\phi: \ext^{n - k}(V) \cong (\ext^k V)^*$ можно так: пусть $x \in \ext^{n - k}(V), y \in \ext^k(V)$.
 %            Посчитаем $x \wedge y = e_{[n]} \cdot \lambda$, и положим $\phi(x)(y) = \lambda$.
 %            ($\phi(x)$ отображает $y$ в координату перед $e_{[n]}$ у $x \wedge y$).
-%            Изоморфизм, увы, всё равно получился не канонический --- зависит от выбора базиса в $\bigwedge^n(V)$.
+%            Изоморфизм, увы, всё равно получился не канонический --- зависит от выбора базиса в $\ext^n(V)$.
 %
 %            Пусть $I \subset [n], |I| = n-k, J = [n] \sm I$.
-%            Заметим, что изоморфизм $\phi$ переводит базисный элемент $e_I \in \bigwedge^{n - k}(V)$ в базисный элемент $f^I \coloneqq e^J$ (определённый на базисе стандартно: $e^{I_1}(e_{I_2}) = \delta_{I_1,I_2}$)
+%            Заметим, что изоморфизм $\phi$ переводит базисный элемент $e_I \in \ext^{n - k}(V)$ в базисный элемент $f^I \coloneqq e^J$
+%            (определённый на базисе стандартно: $e^{I_1}(e_{I_2}) = \delta_{I_1,I_2}$)
 %
 %            Их размерности равны, можно ввести базисы, пронумерованные $I \subset [n], |I| = k$:
-%            \gather{\bigwedge\!\!{}^k(V) = \angles{e_I = e_{i_1} \wedge \dots \wedge e_{i_k}}\text{\quad и \quad}\angles{f^I = e_J = e_{j_1} \wedge \dots \wedge e_{j_{n-k}}},\\\quad\text{где }I = \{i_1, \dots, i_k\} = [n] \sm J = [n] \sm \{j_1, \dots, j_{n-k}\}}
+%            \gather{\ext^k(V) = \angles{e_I = e_{i_1} \wedge \dots \wedge e_{i_k}}\text{\quad и \quad}\angles{f^I = e_J = e_{j_1} \wedge \dots \wedge e_{j_{n-k}}},\\
+%            \quad\text{где }I = \{i_1, \dots, i_k\} = [n] \sm J = [n] \sm \{j_1, \dots, j_{n-k}\}}
 %            Иными словами, $f^I = (-1)^{\eps_I} \cdot e_{[n]\sm I}$, где $\eps_I$ определено здесь~(\cref{eps_def}).
 %
 %            Расположим базисные векторы $f^I$ в столбец, обозначим его $f \coloneqq (f^I)_{I \subset [n]}$.
@@ -1059,38 +1089,42 @@
 %
 %            Тогда $f \cdot e = E \cdot e_{[n]}$.
 %
-%            Теперь рассмотрим $\bigwedge(L): \bigwedge(V) \map \bigwedge(V)$.
+%            Теперь рассмотрим $\ext(L): \ext(V) \map \ext(V)$.
 %
 %            На доске было написано
-%            \[\bigwedge L (\bigwedge\!\!{}^k e) = \bigwedge^k L (\bigwedge\!\!{}^k e) = (\bigwedge^k e)(\bigwedge^k A)\]
-%            \[\bigwedge L(f) = \bigwedge\!\!{}^{n - k}L(f) = f \cdot B\]
-%            \[\bigwedge\!\!{}^{n - k}L(f_I) = (-1)^{\eps_I}L(j_1)\wedge \dots \wedge L(e_{j_{n-k}}) = (-1)^{\eps_I}\sum\limits_{|J| = k}e_{[n]\sm J}A^{[n]\sm J}{[n]\sm I} = \sum\limits_{|J| = k}(-1)^{\eps_I + \eps_J}A^{[n]\sm J}_{[n]\sm I}\]
+%            \[\ext L (\ext^k e) = \ext^k L (\ext^k e) = (\ext^k e)(\ext^k A)\]
+%            \[\ext L(f) = \ext^{n - k}L(f) = f \cdot B\]
+%            \[\ext^{n - k}L(f_I) = (-1)^{\eps_I}L(j_1)\wedge \dots \wedge L(e_{j_{n-k}}) = (-1)^{\eps_I}\sum\limits_{|J| = k}e_{[n]\sm J}A^{[n]\sm J}{[n]\sm I} =
+%            \sum\limits_{|J| = k}(-1)^{\eps_I + \eps_J}A^{[n]\sm J}_{[n]\sm I}\]
 %            $B_{(J,I)} = (-1)^{\eps_I + \eps_J}A^{[n]\sm J}_{[n]\sm I}$.
 
-        % B^t \cdot f^t \cdot e \cdot \bigwedge^k A = E \cdot e_{[n]}\cdot \det A
-        % (B^t \bigwedge^k A) = E \cdot \det A
+        % B^t \cdot f^t \cdot e \cdot \ext^k A = E \cdot e_{[n]}\cdot \det A
+        % (B^t \ext^k A) = E \cdot \det A
         }
     }
+    \note{Можно заметить, что в $\Z/2\Z: \eps_{[I]} + \eps_{[J]} = \sum\limits_{i \in I}i + \sum\limits_{j \in J}j = \sum\limits_{k \in I \triangle J}k$, где $I \triangle J$ --- симметрическая разность $I$ и $J$.}
 
 
     \section{Грассманиан}
+    Зафиксируем некоторое поле $F$, и рассмотрим пространство $F^n$.
 
-    $\P^n \bydef \defset{(x_0, \dots, x_n) \sm (0, \dots, 0)}{x_i \in F}/\sim$, где $(x_0, \dots, x_n) \sim (\lambda x_0, \dots, \lambda x_n)$ для $\lambda \in F$.
-    Множество прямых.
+    У него имеется, например, проективизация $\P^n \bydef \defset{(x_0, \dots, x_n) \sm (0, \dots, 0)}{x_i \in F}/\sim$, где $(x_0, \dots, x_n) \sim (\lambda x_0, \dots, \lambda x_n)$ для $\lambda \in F$.
+    Это множество прямых.
 
     \definition[Грассманиан]{
-        $\Gr_k(V)$ --- множество $k$-мерных подпространств в пространстве $V$. $\Gr_k^n \coloneqq \Gr_k(F^n)$.
+        $\Gr_k(V)$ --- множество $k$-мерных подпространств в пространстве $V$.
+        $\Gr_k^n \coloneqq \Gr_k(F^n)$.
     }
-    $\Gr_1^n = \P^{n - 1}$.
+    По определению получается $\Gr_1^n = \P^{n - 1}$.
 
     Соотношения Плюккера, многообразие Грассмана --- чтобы задать алгебраическую топологию, введём систему полиномиальных уравнений.
 
-    $\dim V = n, U \le V, \dim U = k$.
+    Пусть $\dim V = n, U \le V, \dim U = k$.
     Выберем базис $(u_1, \dots, u_k)$ и другой базис $(w_1, \dots, w_k)$. $w = u(u \rightsquigarrow w)$.
 
-    $u_1 \wedge \dots \wedge u_k \cdot \det C = w_1 \wedge \dots \wedge w_k \in \bigwedge(V)$.
+    $u_1 \wedge \dots \wedge u_k \cdot \det C = w_1 \wedge \dots \wedge w_k \in \ext(V)$.
     \begin{align*}
-        \gamma: \Gr_k(V)&\map \P(\bigwedge^k(V))\\\angles{u_1, \dots, u_k} &\mapsto [u_1 \wedge \dots \wedge u_k]
+        \gamma: \Gr_k(V)&\map \P(\ext^k(V))\\\angles{u_1, \dots, u_k} &\mapsto [u_1 \wedge \dots \wedge u_k]
     \end{align*}
     \lemma{
         $\gamma$ инъективно.
@@ -1845,9 +1879,9 @@
         Таким образом, если построено над $\C$ представление, у которого не все характеры вещественные, сразу строится сопряжённое --- другое неприводимое (двойственное и обычное представления неприводимы одновременно) --- представление.
         \item Пусть $K \le \C$. Тогда $\forall g \in G: \abs{\chi_\pi(g)} \le n = \chi_\pi\left(1_G\right)$, так как характер --- сумма корней из единицы.
         \item $\chi_{\Hom(\pi,\rho)} = ?$
-        \item $\chi_{\bigwedge^m(\pi)} = \dots$. В частности, $\chi_{\bigwedge^2}(\pi) = \frac12(\chi_\pi(g)^2 - \chi_{\pi}(g^2))$. Дискретная теория вероятностей --- применение теории представлений конечных групп, поэтому эта штука похожа на дисперсию.
+        \item $\chi_{\ext^m(\pi)} = \dots$. В частности, $\chi_{\ext^2}(\pi) = \frac12(\chi_\pi(g)^2 - \chi_{\pi}(g^2))$. Дискретная теория вероятностей --- применение теории представлений конечных групп, поэтому эта штука похожа на дисперсию.
         \item $\chi_{S^m(\pi)} = ?$. В частности, $\chi_{S^2}(\pi) = \frac12(\chi_\pi(g)^2 + \chi_{\pi}(g^2))$.
-        Можно удостовериться, что так как $S^2(\pi) \oplus \bigwedge^2(V) = V \otimes V$, то $\chi_{\bigwedge^m(\pi)} + \chi_{S^m(\pi)} = \chi(\pi\otimes\pi)$.
+        Можно удостовериться, что так как $S^2(\pi) \oplus \ext^2(V) = V \otimes V$, то $\chi_{\ext^m(\pi)} + \chi_{S^m(\pi)} = \chi(\pi\otimes\pi)$.
     }
     \intfact[Теорема Фробениуса]{
         Пусть $\chr K = 0$. Тогда $\pi \sim \rho \iff \chi_\pi = \chi_\rho$.
@@ -2172,7 +2206,7 @@
     Разложение представления на неприводимые определено однозначно с точностью до изоморфизма.
     }
     \note{
-        Теорема доказывается в гораздо меньшей общности, чем она верна, и используются сильно более сильными средствами, чем те, которые нужны, но что поделать.
+        Теорема доказывается в гораздо меньшей общности, чем она верна, и используются гораздо более сильные средства, чем те, которые нужны, но что поделать.
     }
     \corollary[Теорема Фробениуса]{
         $\pi \sim \rho$, если $\chi_\pi = \chi_\rho$. Ещё раз отметим, что это верно \textbf{только в характеристике нуль}.
@@ -2186,7 +2220,7 @@
         }
     }
     \corollary[Ортогональность первой строке таблицы характеров]{
-        Если $\chi \ne 1$ --- характер неприводимого представления, то $\sum\limits_{g \in G}\chi_g = 0$.
+        Если $\chi \ne 1$ --- характер неприводимого представления, то $\sum\limits_{g \in G}\chi(g) = 0$.
     }
 
     \precaution{Основной ошибкой начинающих является то, что при подсчёте $B(\chi, \theta) = \sum\limits_{g \in G}\chi(g)\theta(g^{-1})$ взятие обратного забывается.
@@ -2365,19 +2399,19 @@
         }
         \item $n$-я внешняя степень.
 
-        Пусть $\pi: G \map GL(V)$. Сопоставим ему $\bigwedge^m(\pi): \arr{ccc}{G&\map&GL(\bigwedge^m(V))\\g&\mapsto&\bigwedge^m(\pi_g)}$.
-        По линейности определяется \[\bigwedge\!\!{}^m(\pi)(u_1 \wedge \dots \wedge u_m) = \pi_g(u_1) \wedge \cdots \wedge \pi_g(u_m)\]
-        то есть $\bigwedge^m(\pi)_g = \bigwedge\!\!{}^m(\pi_g)$.
-        Можно посчитать $\chi_{\bigwedge^2(\pi)}(g) = \frac{1}{2}(\chi_\pi(g)^2 - \chi_\pi(g^2))$.
+        Пусть $\pi: G \map GL(V)$. Сопоставим ему $\ext^m(\pi): \arr{ccc}{G&\map&GL(\ext^m(V))\\g&\mapsto&\ext^m(\pi_g)}$.
+        По линейности определяется \[\ext^m(\pi)(u_1 \wedge \dots \wedge u_m) = \pi_g(u_1) \wedge \cdots \wedge \pi_g(u_m)\]
+        то есть $\ext^m(\pi)_g = \ext^m(\pi_g)$.
+        Можно посчитать $\chi_{\ext^2(\pi)}(g) = \frac{1}{2}(\chi_\pi(g)^2 - \chi_\pi(g^2))$.
         \item Точно так же определяется $n$-я симметрическая степень.
 
         Пусть $\pi: G \map GL(V)$. Сопоставим ему $S^m(\pi): \arr{ccc}{G&\map&GL(S^m(V))\\g&\mapsto&S^m(\pi_g)}$.
         По линейности определяется \[S^m(\pi)(u_1 \wedge \dots \wedge u_m) = \pi_g(u_1) \proddots \pi_g(u_m)\]
         то есть $S^m(\pi)_g = S^m(\pi_g)$.
 
-        Полезно помнить формулу для симметрического квадрата $\chi_{\bigwedge^2(\pi)}(g) = \frac{1}{2}(\chi_\pi(g)^2 + \chi_\pi(g^2))$.
+        Полезно помнить формулу для симметрического квадрата $\chi_{\ext^2(\pi)}(g) = \frac{1}{2}(\chi_\pi(g)^2 + \chi_\pi(g^2))$.
 
-        Видно, что $\bigwedge^2(\pi)\oplus S^2(\pi) = \pi \otimes \pi$, и действительно $\chi_{\bigwedge^2(\pi)} + \chi_{S^2(\pi)} = \chi_{\pi \otimes \pi}$.
+        Видно, что $\ext^2(\pi)\oplus S^2(\pi) = \pi \otimes \pi$, и действительно $\chi_{\ext^2(\pi)} + \chi_{S^2(\pi)} = \chi_{\pi \otimes \pi}$.
 
     }
 
@@ -4222,7 +4256,7 @@
         \item Левый сопряжённый к функтору $*: \cat{Ring} \map \cat{Group}$, сопоставляющему кольцу группу его обратимых элементов --- это $G \mapsto \Z[G]$, групповая алгебра.
         \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{Alg} \map \Lmod{R}$ --- это $T$, групповая алгебра.
         \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{CAlg} \map \Lmod{R}$ --- это $S$, симметрическая алгебра (здесь $R\text{-}\cat{CAlg}$ --- коммутативные алгебры над $R$).
-        \item Внешняя степень $\bigwedge$ --- это левый сопряжённый к функтору из $\Z$-градуированных $R$-алгебр в $R$-модули, сопоставляющий $A_0 \oplus A_1 \oplus \dots \mapsto A_1$.
+        \item Внешняя степень $\ext$ --- это левый сопряжённый к функтору из $\Z$-градуированных $R$-алгебр в $R$-модули, сопоставляющий $A_0 \oplus A_1 \oplus \dots \mapsto A_1$.
         \item Пусть $\phi: R \map A$.
         Тогда $\phi^\#: \Lmod{A} \map \Lmod{R}$ (что является забывающим функтором, если $\phi$ инъективно)--- левый сопряжённый к $\phi_\#: \Lmod{R} \map \Lmod{A}, \phi_\#(M) = A \otimes_R M$.
         \item Рассмотрим функтор $\cat{Cat} \map \cat{Graph}$, забывающий про композицию морфизмов.

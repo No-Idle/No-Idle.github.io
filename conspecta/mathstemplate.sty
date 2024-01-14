@@ -27,6 +27,7 @@
 \RequirePackage{empheq}
 \RequirePackage{xstring}
 \RequirePackage{cleveref}
+\RequirePackage{trimclip}
 \RequirePackage[scr=boondox]{mathalpha}
 
 %======================= quiver.sty ======================
@@ -100,8 +101,8 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newtheorem{theorem_env}{\textup{\bfseries{Теорема}}}[section]
 \newtheorem{definition_env}{\textup{\bfseries{Определение}}}[section]
 
-\crefname{lemma_env}{lemma}{lemmata}
-\crefname{proposal_env}{proposal}{предложения}
+\crefname{lemma_env}{лемма}{леммы}
+\crefname{proposal_env}{предложение}{предложения}
 \crefname{problem_env}{задача}{задачи}
 \crefname{corollary_env}{следствие}{следствия}
 \crefname{fact_env}{факт}{факты}
@@ -111,6 +112,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \crefname{definition_env}{определение}{определения}
 \crefname{section}{раздел}{разделы}
 \crefname{subsection}{подраздел}{подразделы}
+\crefname{figure}{рисунок}{рисунки}
 
 %\renewcommand*{\emph}[1]{\ifx\f@shape\my@test@it\textup{#1}\else\textit{#1}\fi}
 %\newcommand*{\my@test@it}{it}
@@ -220,6 +222,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\divs}{~|~}
 \newcommand{\bigdivs}{~\Big|~}
 \newcommand{\notdivs}{\;\!{\not|}~}
+\newcommand{\ext}{\clipbox{0 {0.30\height} 0 0}{$\bigwedge$}}
 \newcommand{\triangleleftneq}{\mathrel{\reflectbox{$\trianglerightneq$}}}
 \newcommand{\leftsquigarrow}{\mathrel{\reflectbox{$\rightsquigarrow$}}}
 \newcommand{\normneq}{\triangleleftneq}

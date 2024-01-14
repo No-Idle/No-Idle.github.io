@@ -25,70 +25,71 @@
 \contentsline {subsection}{\numberline {1.9.1}Базисы симметрической и внешней степеней}{19}{subsection.1.9.1}%
 \contentsline {section}{\numberline {1.10}Другое определение симметрической и внешней алгебр}{20}{section.1.10}%
 \contentsline {section}{\numberline {1.11}Вычисления в алгебре Грассмана}{21}{section.1.11}%
-\contentsline {subsection}{\numberline {1.11.1}Внешняя степень матричного представления}{23}{subsection.1.11.1}%
-\contentsline {section}{\numberline {1.12}Грассманиан}{24}{section.1.12}%
-\contentsline {chapter}{\numberline {2}Теория представлений конечных групп}{26}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Теорема Жордана --- Гёльдера}{26}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Немножко фактов про кольца}{28}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Три с половиной языка}{30}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Линейные представления группы $G$}{30}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Линейные действия}{31}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Структура $R[G]$ модуля над каким-то $R$-модулем}{31}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Глоссарий терминов}{32}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Сплетающие операторы}{32}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Изоморфизм представлений}{33}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Подпредставление}{33}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Лемма Шура}{34}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Факторпредставление}{35}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Прямая сумма представлений. Неразложимые представления}{36}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Усреднение по конечной группе}{36}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Усреднение векторов}{36}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Усреднение линейных отображений}{37}{subsection.2.10.2}%
-\contentsline {section}{\numberline {2.11}Теорема Машке}{37}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Унитаризуемость}{38}{section.2.12}%
-\contentsline {section}{\numberline {2.13}Характеры Фробениуса}{39}{section.2.13}%
-\contentsline {section}{\numberline {2.14}Представления абелевых групп. Лемма Шура}{41}{section.2.14}%
-\contentsline {subsection}{\numberline {2.14.1}Классификация циклических групп}{41}{subsection.2.14.1}%
-\contentsline {subsection}{\numberline {2.14.2}Классификация представлений произвольных конечных абелевых групп}{42}{subsection.2.14.2}%
-\contentsline {subsection}{\numberline {2.14.3}Одномерные представления любых конченых групп}{42}{subsection.2.14.3}%
-\contentsline {section}{\numberline {2.15}Формулировка теоремы Бернсайда --- Фробениуса, первые примеры}{43}{section.2.15}%
-\contentsline {subsection}{\numberline {2.15.1}Представления неабелевых групп}{43}{subsection.2.15.1}%
-\contentsline {section}{\numberline {2.16}Соотношения ортогональности Шура (лемма Шура в матричной форме)}{45}{section.2.16}%
-\contentsline {section}{\numberline {2.17}Первое соотношение ортогональности}{46}{section.2.17}%
-\contentsline {section}{\numberline {2.18}Разложение представление на неприводимые. Sum of squares formula}{48}{section.2.18}%
-\contentsline {section}{\numberline {2.19}Второе соотношение ортогональности (для столбцов)}{48}{section.2.19}%
-\contentsline {section}{\numberline {2.20}Усреднение с весом (averaging with weight)}{49}{section.2.20}%
-\contentsline {section}{\numberline {2.21}Количество неприводимых представлений конечной группы}{50}{section.2.21}%
-\contentsline {section}{\numberline {2.22}Дальнейшие конструкции над представлениями}{50}{section.2.22}%
-\contentsline {section}{\numberline {2.23}Представления прямого произведения групп}{51}{section.2.23}%
-\contentsline {section}{\numberline {2.24}Свойства целочисленности представлений}{52}{section.2.24}%
-\contentsline {section}{\numberline {2.25}Индуцированные представления}{53}{section.2.25}%
-\contentsline {subsection}{\numberline {2.25.1}Компактная индукция (compact induction)}{53}{subsection.2.25.1}%
-\contentsline {subsection}{\numberline {2.25.2}Полная индукция (complete induction)}{54}{subsection.2.25.2}%
-\contentsline {section}{\numberline {2.26}Индуцированные характеры}{55}{section.2.26}%
-\contentsline {section}{\numberline {2.27}Формула слияния (fusion formula)}{56}{section.2.27}%
-\contentsline {section}{\numberline {2.28}Закон взаимности Фробениуса}{57}{section.2.28}%
-\contentsline {chapter}{\numberline {3}Необработанные куски из теории представлений}{58}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Операции над представлениями}{58}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Таблицы характеров}{61}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Закон Фробениуса без теории категорий}{64}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}Теория категорий}{66}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Универсальные объекты}{69}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Функторы и не только}{70}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Противоположная категория}{70}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Декартово произведение категорий}{70}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Мономорфизмы и эпиморфизмы}{70}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}(Ковариантные) функторы}{71}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Контравариантные функторы}{72}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Естественные преобразования}{73}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Эквивалентность категорий}{75}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}(Ко)эквалайзеры и (ко)пределы}{76}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Произведения и копроизведения}{77}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Универсальные и коуниверсальные квадраты}{78}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Сопряжённые функторы}{81}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Левые сопряжённые к функторам типа забывающих}{85}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Левые сопряжённые к вложениям}{85}{subsection.4.7.2}%
-\contentsline {section}{\numberline {4.8}Пределы}{86}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Схема построения алгебраического замыкания}{90}{subsection.4.8.1}%
-\contentsline {section}{\numberline {4.9}Лемма Йонеды}{91}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Абелевы категории}{92}{section.4.10}%
+\contentsline {section}{\numberline {1.12}Элементы матрицы внешней степени}{23}{section.1.12}%
+\contentsline {subsection}{\numberline {1.12.1}Элементы обратной матрицы}{24}{subsection.1.12.1}%
+\contentsline {section}{\numberline {1.13}Грассманиан}{25}{section.1.13}%
+\contentsline {chapter}{\numberline {2}Теория представлений конечных групп}{27}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Теорема Жордана --- Гёльдера}{27}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Немножко фактов про кольца}{29}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Три с половиной языка}{31}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Линейные представления группы $G$}{31}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Линейные действия}{32}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Структура $R[G]$ модуля над каким-то $R$-модулем}{32}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Глоссарий терминов}{33}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Сплетающие операторы}{33}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Изоморфизм представлений}{34}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Подпредставление}{34}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Лемма Шура}{35}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Факторпредставление}{36}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Прямая сумма представлений. Неразложимые представления}{37}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Усреднение по конечной группе}{37}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Усреднение векторов}{37}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Усреднение линейных отображений}{38}{subsection.2.10.2}%
+\contentsline {section}{\numberline {2.11}Теорема Машке}{38}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Унитаризуемость}{39}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Характеры Фробениуса}{40}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Представления абелевых групп. Лемма Шура}{42}{section.2.14}%
+\contentsline {subsection}{\numberline {2.14.1}Классификация циклических групп}{42}{subsection.2.14.1}%
+\contentsline {subsection}{\numberline {2.14.2}Классификация представлений произвольных конечных абелевых групп}{43}{subsection.2.14.2}%
+\contentsline {subsection}{\numberline {2.14.3}Одномерные представления любых конченых групп}{43}{subsection.2.14.3}%
+\contentsline {section}{\numberline {2.15}Формулировка теоремы Бернсайда --- Фробениуса, первые примеры}{44}{section.2.15}%
+\contentsline {subsection}{\numberline {2.15.1}Представления неабелевых групп}{44}{subsection.2.15.1}%
+\contentsline {section}{\numberline {2.16}Соотношения ортогональности Шура (лемма Шура в матричной форме)}{46}{section.2.16}%
+\contentsline {section}{\numberline {2.17}Первое соотношение ортогональности}{47}{section.2.17}%
+\contentsline {section}{\numberline {2.18}Разложение представление на неприводимые. Sum of squares formula}{49}{section.2.18}%
+\contentsline {section}{\numberline {2.19}Второе соотношение ортогональности (для столбцов)}{49}{section.2.19}%
+\contentsline {section}{\numberline {2.20}Усреднение с весом (averaging with weight)}{50}{section.2.20}%
+\contentsline {section}{\numberline {2.21}Количество неприводимых представлений конечной группы}{51}{section.2.21}%
+\contentsline {section}{\numberline {2.22}Дальнейшие конструкции над представлениями}{51}{section.2.22}%
+\contentsline {section}{\numberline {2.23}Представления прямого произведения групп}{52}{section.2.23}%
+\contentsline {section}{\numberline {2.24}Свойства целочисленности представлений}{53}{section.2.24}%
+\contentsline {section}{\numberline {2.25}Индуцированные представления}{54}{section.2.25}%
+\contentsline {subsection}{\numberline {2.25.1}Компактная индукция (compact induction)}{54}{subsection.2.25.1}%
+\contentsline {subsection}{\numberline {2.25.2}Полная индукция (complete induction)}{55}{subsection.2.25.2}%
+\contentsline {section}{\numberline {2.26}Индуцированные характеры}{56}{section.2.26}%
+\contentsline {section}{\numberline {2.27}Формула слияния (fusion formula)}{57}{section.2.27}%
+\contentsline {section}{\numberline {2.28}Закон взаимности Фробениуса}{58}{section.2.28}%
+\contentsline {chapter}{\numberline {3}Необработанные куски из теории представлений}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Операции над представлениями}{59}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Таблицы характеров}{62}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Закон Фробениуса без теории категорий}{65}{subsection.3.2.1}%
+\contentsline {chapter}{\numberline {4}Теория категорий}{67}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Универсальные объекты}{70}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Функторы и не только}{71}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Противоположная категория}{71}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Декартово произведение категорий}{71}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Мономорфизмы и эпиморфизмы}{71}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}(Ковариантные) функторы}{72}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Контравариантные функторы}{73}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Естественные преобразования}{74}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Эквивалентность категорий}{76}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}(Ко)эквалайзеры и (ко)пределы}{77}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Произведения и копроизведения}{78}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Универсальные и коуниверсальные квадраты}{79}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Сопряжённые функторы}{82}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Левые сопряжённые к функторам типа забывающих}{86}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Левые сопряжённые к вложениям}{86}{subsection.4.7.2}%
+\contentsline {section}{\numberline {4.8}Пределы}{87}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Схема построения алгебраического замыкания}{91}{subsection.4.8.1}%
+\contentsline {section}{\numberline {4.9}Лемма Йонеды}{92}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Абелевы категории}{93}{section.4.10}%
