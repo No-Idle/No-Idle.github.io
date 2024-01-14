@@ -436,9 +436,9 @@
             \item Нормированность: $\Det(e_1, \dots, e_n) = \Det(e) = 1$.
         }
     }
-    Существует ли такой определитель? (Да, например, определитель Лейбница~{\cref{leibnitz_determinant}})
+    Существует ли такой определитель? (Да, например, определитель Лейбница~(\cref{leibnitz_determinant}))
 
-    Единственен ли он? (Да:~\cref{uniqueness_of_determinant})
+    Единственен ли он? (Да:~(\cref{uniqueness_of_determinant}))
 
     \lemma{
         Определитель не меняется при элементарных преобразованиях над столбцами.
@@ -1361,7 +1361,7 @@
 
 
     \section{Факториальность кольца многочленов}
-    \textbf{Теорема \cref{Gauss}} (Теорема Гаусса)\textbf .
+    \textbf{Теорема \ref{Gauss}} (Теорема Гаусса)\textbf .
     $R$ --- UFD $\then R[t]$ --- UFD.
 
     \subsection{Примитивные многочлены}
@@ -1800,9 +1800,7 @@
 
     \theorem{
         Над алгебраически замкнутым полем всё пространство раскладывается в прямую сумму корневых подпространств, отвечающих собственному числу $\lambda$.
-    \provehere{
-\cref{about_root_decomposition}
-    }
+    \provehere{См. (\cref{about_root_decomposition}).    }
     }
     \example[Основной пример корневых векторов]{
         \definition[Экспоненциальные многочлены]{
@@ -2406,7 +2404,7 @@
     \theorem[О существовании согласованных базисов для подмодулей свободного модуля]{
         Пусть $N \le M \cong R^n$. Тогда $\exists (e_1, \dots, e_n)$ --- базис в $M$, $\exists \lambda_1, \dots, \lambda_m \in R: \lambda_1 \divs \cdots \divs \lambda_m$, причём $N = \angles{\lambda_1 e_{1}, \dots, \lambda_m e_{m}} \cong R^m$.
         \provehere{
-            \cref{good_basises}.
+            См. (\cref{good_basises}).
         }
     }
 
@@ -2735,7 +2733,7 @@
     \theorem[О классификации симплектических пространств]{
         $U \cong V \iff \all{\dim U = \dim V \\ \rk U = \rk V}$.
         \provehere{
-            \cref{simplectic_classification}
+            См. (\cref{simplectic_classification})
         }
     }
     \corollary{
@@ -2748,9 +2746,7 @@
     }
     \theorem{
         Если $K$ квадратически замкнуто и ${\chr(K) \ne 2}$, то квадратические пространства $U \cong V \iff \all{\dim(U) = \dim(V) \\ \rk(U) = \rk(V)}$.
-        \provehere{
-            \cref{quadratic_classification}
-        }
+        \provehere{См. (\cref{quadratic_classification}).        }
     }
     \corollary{
         В частности, над квадратически замкнутым полем в любой размерности существует единственное невырожденное квадратическое пространство.
@@ -2766,7 +2762,7 @@
         Здесь $r^+$ и $r^-$ --- количества положительных и отрицательных квадратов.
 
         В матрице Грама на главной диагонали стоит $r^+$ единиц, $r^-$ минус единиц, остальные --- нули.
-        \provehere{\cref{silvester_inertion_law}}
+        \provehere{См. (\cref{silvester_inertion_law})}
     }
     \newlection{25 апреля 2023 г.}
 
@@ -2945,7 +2941,7 @@
 
         Тогда $u$ можно включить в гиперплоскость $H \le V$, такую, что $H \boxplus H^\perp = V$.
         \provehere{
-            По лемме $H$ существует;\ $H$ невырождена, значит достаточно сослаться на~\cref{extraction_of_hyperbolic_surface}.
+            По лемме $H$ существует;\ $H$ невырождена, значит достаточно сослаться на~(\cref{extraction_of_hyperbolic_surface}).
         }
     }
 
@@ -3085,13 +3081,13 @@
         Пусть $V$ --- пространство над $K$, ${\chr(K) \ne 2}$. Тогда
         \[V = \underbrace{H \boxplus \dots \boxplus H}_{s} \boxplus V_0 \boxplus \Rad(V)\]
         причём $s$ определено однозначно, $V_0$ --- анизотропно и определено однозначно с точностью до изометрии.
-        \provehere{Позднее: \cref{Witt_about_decomposition}}
+        \provehere{См.(\cref{Witt_about_decomposition})}
     }
     \theorem[Витт о продолжении]{
         Пусть $V$ --- пространство над $K$, ${\chr(K) \ne 2}$, пусть $U, W \le V$.
         Если $\psi: U \cong W$ --- изометрия, то $\exists \phi \in \Isom(V): \phi\big|_U = \psi$.
         Дополнительно потребуем невырожденности либо $U$ (тогда и $W$), либо $V$.
-        \provehere{Позднее: \cref{Witt_about_continuation_1}, \cref{Witt_about_continuation_2}.}
+        \provehere{См. (\cref{Witt_about_continuation_1, Witt_about_continuation_2}).}
     }
     Если всё невырождено, то эта теорема эквивалентна следующей:
     \theorem[Витт о сокращении]{
@@ -3170,12 +3166,12 @@
     \provehere{
         Индукция по $\dim(U) = \dim(W)$.
 
-        \underline{База:} \cref{one-dimensional-case}
+        \underline{База:} (\cref{one-dimensional-case}).
 
         \underline{Переход:} Согласно~(\cref{anisotropic_vector}), в $U$ найдётся неизотропный вектор $u \in U$.
         Положим $v = \psi(u) \in W$.
 
-        Выберем $\theta \in \Isom(V), \theta(u) = v$ --- такая есть согласно~\cref{one-dimensional-case}.
+        Выберем $\theta \in \Isom(V), \theta(u) = v$ --- такая есть согласно~(\cref{one-dimensional-case}).
 
         Заменим $W$ на $\theta^{-1}(W)$, а $\psi$ --- на $\theta^{-1}\psi$.
         Достаточно доказать теорему после замены, изначально искомое $\phi$ получится домножением полученного на $\theta$ слева.
@@ -3213,7 +3209,7 @@
 
                     Назовём $W = U_0 \boxplus \angles{e_1, \dots, e_{s - 1}} \le U$. $\dim(W) = \dim(U) - 1, \qquad \dim(W^\perp) = \dim(U^\perp) + 1$.
 
-                    Значит, $\exists v \in W^\perp \sm U^\perp$. Тогда $B(e_s, v) \ne 0$. Согласно ~\cref{extraction_of_hyperbolic_surface} (подпространство $\angles{e_{s}, v}$ невырождено, так как $B(e_s, v) \ne 0$, но $e_s$ изотропен) найдётся $e_{-s} \in \angles{e_s, v}: B(e_{-s}, e_{-s}) = 0, B(e_s, e_{-s}) = 1$.
+                    Значит, $\exists v \in W^\perp \sm U^\perp$. Тогда $B(e_s, v) \ne 0$. Согласно ~(\cref{extraction_of_hyperbolic_surface}) (подпространство $\angles{e_{s}, v}$ невырождено, так как $B(e_s, v) \ne 0$, но $e_s$ изотропен) найдётся $e_{-s} \in \angles{e_s, v}: B(e_{-s}, e_{-s}) = 0, B(e_s, e_{-s}) = 1$.
 
                     Получили равенство $U \oplus \angles{e_{-s}} = W \boxplus H$, дальше действуем по индукции.
                 }
@@ -3253,7 +3249,7 @@
     Определим $U = \angles{e_1, \dots, e_s}, U' = \angles{e_{-1}, \dots, e_{-s}}$.
     Получим разложение $V = U \oplus U'$, причём $B_U \equiv 0$ и $B_{U'} \equiv 0$.
     \definition[Вполне изотропное пространство $U$]{Все векторы $U$ изотропны.}
-    Если характеристика не 2, то во вполне изотропных пространствах $B_U \equiv 0$ (иначе~\cref{anisotropic_vector}).
+    Если характеристика не 2, то во вполне изотропных пространствах $B_U \equiv 0$ (иначе~(\cref{anisotropic_vector})).
 
     \corollary{
         Если $V$ невырождено, то $V \cong V_0 \boxplus (U \oplus U')$, где $V_0$ анизотропно, $U, U'$ --- вполне изотропны.

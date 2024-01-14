@@ -342,7 +342,7 @@
         \item \up \corollary[Неравенство Маркова]{\label{Markoff_inequality}
             $\forall r > 0: \P(|X| \ge r) \le \frac{\E(|X|)}{r}$.
             \provehere{
-                Применим неравенство \cref{expected_value_inequality} для $f(x) = \all{x,&x > 0 \\ 0,&x \le 0}$ и случайной величины $|X|$.
+                Применим неравенство (\cref{expected_value_inequality}) для $f(x) = \all{x,&x > 0 \\ 0,&x \le 0}$ и случайной величины $|X|$.
                 Получим \[\P(|X| \ge r) \le \frac{\E f(|X|)}{r} = \frac{\E |X|}{r}\]
                 что и требовалось доказать.
             }
@@ -380,7 +380,7 @@
         \item На самом деле, медиана --- плохая метрика, которой никто не пользуется.
         Так, только матожидание линейно: медиана суммы вообще не выражается через медианы слагаемых.
         \item \up \intfact{
-            Если в задаче \cref{best_approximation} заменить $\E((X - r)^2)$ на $\E(|X - r|)$, то минимизирующим $r$ окажется не матожидание, но медиана.
+            Если в задаче (\cref{best_approximation}) заменить $\E((X - r)^2)$ на $\E(|X - r|)$, то минимизирующим $r$ окажется не матожидание, но медиана.
         }
     }
 
@@ -433,7 +433,7 @@
 
         Тогда $\P(|X - \E X| \ge r) \le \frac{\D X}{r^2}$.
         \provehere{
-            \[\P(|X - \E X| \ge r) \underset{\text{согласно \cref{Markov-inequality-corollary}}}{\le} \frac{\E(X - \E X)^2}{r^2} = \frac{\D X}{r^2}\qedhere\]
+            \[\P(|X - \E X| \ge r) \underset{\text{(\cref{Markov-inequality-corollary})}}{\le} \frac{\E(X - \E X)^2}{r^2} = \frac{\D X}{r^2}\qedhere\]
         }
         }
     }

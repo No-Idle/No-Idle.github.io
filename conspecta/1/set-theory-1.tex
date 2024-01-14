@@ -517,7 +517,7 @@
     \subsubsection{Свойства ординалов}
     \numbers{
         \item $x \in \alpha \then x \in \Ord$
-        \provehere{$\forall u \in v \in x:$ так как $\alpha$ --- ординал, то $u, v \in \alpha$, и для $u, v$ выполняется конъюнкция~\cref{eq:ord}. Кроме того, она выполняется для $u$ и $x$, откуда $u \in x$ (остальные альтернативы --- $x \in u \lor x = u$ --- вызывают противоречие с фундированностью).}
+        \provehere{$\forall u \in v \in x:$ так как $\alpha$ --- ординал, то $u, v \in \alpha$, и для $u, v$ выполняется конъюнкция~(\ref{eq:ord}). Кроме того, она выполняется для $u$ и $x$, откуда $u \in x$ (остальные альтернативы --- $x \in u \lor x = u$ --- вызывают противоречие с фундированностью).}
         \item $\alpha = \{\beta | \beta < \alpha\}$.
         \provehere{Оставлю, как упражнение. }
         \item Вполне упорядоченные множества изоморфны $(\alpha, <) \cong (\beta, <)$, если и только если они равны $\alpha = \beta$.
@@ -529,7 +529,7 @@
         \item $\alpha \le \beta \iff \alpha \subseteq \beta$
         \provehere{Докажем, что $\alpha \in \beta \iff \alpha \subsetneq \beta$. В правую сторону очевидно, $\forall x \in \alpha : x \in \beta$ из транзитивности. Но $\alpha \ne \beta$, откуда $\alpha \subsetneq \beta$. В левую сторону --- $\alpha \in (\beta \bs \alpha)$, минимальный элемент разности.}
         \definition[Наименьший ординал, больший $\alpha$]{$\alpha + 1 \bydef \alpha \cup \{\alpha\}$.
-        Несложно показать, что $\alpha \cup \{\alpha\}$ --- ординал, проверить транзитивность и конъюнкцию~\cref{eq:ord}.}
+        Несложно показать, что $\alpha \cup \{\alpha\}$ --- ординал, проверить транзитивность и конъюнкцию~(\ref{eq:ord}).}
         \item $\nexists \beta \in \Ord : \alpha < \beta < \alpha + 1$. \provehere{От противного: $\beta \in \alpha \cup \{\alpha\}$. Либо $\alpha = \beta$, либо противоречие с аксиомой фундированности, так как $\alpha \in \beta$.}
         \item Любое множество ординалов $A$ вполне упорядоченно отношением $<$ (из п. 4), причём $\bigcup A = \sup A$.
         \provebullets{

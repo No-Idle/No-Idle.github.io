@@ -1106,7 +1106,7 @@
         }
         Используя факторкольцо~(\cref{factorring_definition}) и теорему о гомоморфизме~(\cref{homomorphism_theorem}) можно получить следующее:
 
-        \textbf{Теорема \cref{b}.}\down
+        \textbf{Теорема \ref{b}.}\down
         \bullets{
             \item В коммутативном кольце $\mathfrak{m} \norm R$ --- максимальный $\iff$ $R/\mathfrak{m}$ --- поле.
             \item В коммутативном кольце $\mathfrak{m} \norm R$ --- простой $\iff$ $R/\mathfrak{m}$ --- область целостности.
@@ -1199,10 +1199,10 @@
     \theorem{\label{b}~\par\bullets{\item В коммутативном кольце $\mathfrak{m} \in  \Max(R)$ $\iff$ $R/\mathfrak{m}$ --- поле.
     \item В коммутативном кольце $\mathfrak{m} \in \Spec(R)$ $\iff$ $R/\mathfrak{m}$ --- область целостности.}}
     \provehere{
-        $\m \in \Max(R)$, значит $\defset{J}{\m\le J \normeq R}$ содержит всего 2 элемента $\overset{\cref{c}}{\iff} R/\m$ имеет два идеала $\overset{\cref{a}}\iff R/\m$ --- поле.
+        $\m \in \Max(R)$, значит $\defset{J}{\m\le J \normeq R}$ содержит всего 2 элемента $\overset{\ref{c}}{\iff} R/\m$ имеет два идеала $\overset{\ref{a}}\iff R/\m$ --- поле.
 
         $\m \in \Spec(R)$, значит, $\forall J_1, J_2 \normeq R: (\m \subsetneq J_1, J_2 \normeq R\then J_1 J_2 \nsubseteq \m) \iff \forall J_1, J_2 \normeq R/I: \allowbreak {(J_1 \ne\{0\} \land J_2 \ne \{0\} \then J_1 J_2 \ne \{0\})} \iff \forall x, y \in R/I : (x \ne 0 \land y \ne 0 \then xy \ne 0)$, а это определение области целостности.}
-    \note{Формулировка уже приводилась здесь:~\cref{a}}
+    \note{Формулировка уже приводилась здесь:~(\cref{a})}
 
     \subsection{Китайская теорема об остатках. Chinese remainder theorem}
 
@@ -2082,7 +2082,7 @@
 
     \examples {
         \item PID
-        \item Поле $K[x_1, \dots, x_n]$ (согласно~\cref{Hilberts_basis_theorem}).
+        \item Поле $K[x_1, \dots, x_n]$ (согласно~(\cref{Hilberts_basis_theorem})).
         \item $\Z[x_1, \dots, x_n]$ (по той же причине).
         \item $K[x_1, \dots, x_n, \dots]$ --- кольцо многочленов от бесконечного числа переменных --- \textbf{не нётерово}!
     }
@@ -2907,10 +2907,10 @@
         \definition[Простая группа $G$]{
             $G \ne \{1\}$ и в ней нет никаких нормальных подгрупп, кроме тривиальных --- $\{1\}$ и $G$.
 
-            \textbf{Теорема \cref{Galois_theorem} (Галуа).}{
+            \textbf{Теорема \ref{Galois_theorem} (Галуа).}{
                 Для $n \ge 5$ групп $A_n$ проста. Группа $A_n$ --- группа чётных перестановок, $\Ker(\sgn)$, если угодно, где $\sgn: S_n \map \{\pm 1\}$ --- знак перестановки.
             }
-            \provehere{\cref{Galois_theorem}}
+            \provehere{См. (\cref{Galois_theorem}).}
             Именно по этой причине уравнения степени $5$ и выше не разрешимы в радикалах.
         }
         \item В абелевой группе $G$ любая подгруппа нормальна.

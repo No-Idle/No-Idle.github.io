@@ -380,7 +380,7 @@
         \provehere{
             Докажем~(\cref{about-retraction}).
 
-            $Y \times I = (X \sqcup_f D^n) \times I \underset{\cref{factor-times}}= ((X \sqcup D^n) \times I)/_\sim$, где $\sim$ порождено $(x, t) \sim (f(x), t)$ ($x \in \partial D^n, t \in I$).
+            $Y \times I = (X \sqcup_f D^n) \times I \underset{\text{\cref{factor-times}}}= ((X \sqcup D^n) \times I)/_\sim$, где $\sim$ порождено $(x, t) \sim (f(x), t)$ ($x \in \partial D^n, t \in I$).
             Совместив ретракцию $D^n \times I$ на стакан $D^n \times \{0\} \cup \partial D^n \times I$ и $\id_{X \times I}$, получим ретракцию
             \[\phi: (X \sqcup D^n) \times I \map X \times I \sqcup \underbrace{(D^n \times \{0\} \cup \partial D^n \times I)}_{\text{стакан}}\]
             $\phi$ пропускается через фактор: $\exists$ ретракция $\tilde{\phi}: (X \sqcup_f D^n) \times I \map (X \times I \sqcup \underbrace{D^n \times \{0\} \cup \partial D^n \times I}_{\text{стакан}})/_\sim$.
@@ -527,17 +527,17 @@
     \definition[Морфизм накрытий]{
         Отображение $f$, делающее диаграмму выше коммутативной.
     }
-    \note{    Требование непрерывности $f$ можно опустить, так как оно следует из доказательства~\cref{last}.}
+    \note{    Требование непрерывности $f$ можно опустить, так как оно следует из доказательства~(\cref{last}).}
     \theorem{
         $\exists!$ морфизм накрытий $f \iff \Image(p_*) \subset \Image(q_*)$.
-        \provehere{\cref{last}}
+        \provehere{См.~(\cref{last})).}
     }
     \corollary{\label{cor}
     Если $p$ --- универсальное накрытие, то $\forall$ накрытия $q$: $\exists$ морфизм $f:p \map q$.
     }
     \theorem{
         Для хороших пространств универсальное накрытие существует и единственно с точностью до автоморфизма накрытий.
-        \provehere{~\cref{universal}}
+        \provehere{См.~(\cref{universal}).}
     }
     \definition[Автоморфизм накрытия $p: Y \map X$]{
         Такой гомеоморфизм $f$, что диаграмма коммутативна.
@@ -563,9 +563,7 @@
     }
     \theorem{
         Если накрытие $p: Y \map X$ универсально, то $\forall y_1, y_2 \in p^{-1}(x_0): \exists!$ автоморфизм накрытия, такой, что $f: f(y_1) = y_2$.
-        \provehere{
-            \cref{cor}.
-        }
+        \provehere{ См.~(\cref{cor}).        }
     }
     \theorem{\label{regular}
     Пусть дано накрытие $p: Y \map X$. Следующие условия равносильны
@@ -583,11 +581,11 @@
     }
     }
     \definition[Регулярное накрытие]{
-        Накрытие, $p: Y \map X$ о котором идёт речь в теореме~\cref{regular}, то есть $\Image(p_*) \normeq \pi_1(X)$.
+        Накрытие, $p: Y \map X$ о котором идёт речь в ~(\cref{regular}), то есть $\Image(p_*) \normeq \pi_1(X)$.
     }
     \examples{
-        \item Двулистное накрытие букета двух окружностей склейкой трёх окружностей регулярно~\cref{two_s1s}.
-        \item Трёхлистное накрытие букета двух окружностей склейкой четырёх окружностей нерегулярно (разные отмеченные точки неравноправны, нет автоморфизма, переводящего точку одного цвета в точку другого цвета)~\cref{three_s1s}
+        \item Двулистное накрытие букета двух окружностей склейкой трёх окружностей регулярно~(\cref{two_s1s}).
+        \item Трёхлистное накрытие букета двух окружностей склейкой четырёх окружностей нерегулярно (разные отмеченные точки неравноправны, нет автоморфизма, переводящего точку одного цвета в точку другого цвета)~(\cref{three_s1s})
         \begin{figure}[h!]
             \begin{minipage}{0.5\textwidth}
                 \centering
@@ -928,7 +926,7 @@
     \theorem{\label{universal}
         Для <<хороших>> пространств существует универсальное накрытие $p: \tilde{X} \map X$.
         \provehere{
-            Пусть $X$ --- <<хорошее>>, то есть линейно связное, локально линейно связное, полулокально односвязное~\cref{good}.
+            Пусть $X$ --- <<хорошее>>, то есть линейно связное, локально линейно связное, полулокально односвязное~(\cref{good}).
             \bullets{
                 \item Построим $\tilde{X}$, как множество.
                 Зафиксируем $x_0 \in X$.
