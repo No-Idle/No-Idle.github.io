@@ -25,6 +25,7 @@
 \RequirePackage{stmaryrd}
 \RequirePackage{empheq}
 \RequirePackage{xstring}
+\RequirePackage{cleveref}
 \RequirePackage[scr=boondox]{mathalpha}
 
 %======================= quiver.sty ======================
@@ -98,6 +99,18 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newtheorem{theorem_env}{\textup{\bfseries{Теорема}}}[section]
 \newtheorem{definition_env}{\textup{\bfseries{Определение}}}[section]
 
+\crefname{lemma_env}{лемма}{леммы}
+\crefname{proposal_env}{предложение}{предложения}
+\crefname{problem_env}{задача}{задачи}
+\crefname{corollary_env}{следствие}{следствия}
+\crefname{fact_env}{факт}{факты}
+\crefname{statement_env}{утверждение}{утверждения}
+\crefname{exercise_env}{упражнение}{упражнения}
+\crefname{theorem_env}{теорема}{теоремы}
+\crefname{definition_env}{определение}{определения}
+\crefname{section}{раздел}{разделы}
+\crefname{subsection}{подраздел}{подразделы}
+
 %\renewcommand*{\emph}[1]{\ifx\f@shape\my@test@it\textup{#1}\else\textit{#1}\fi}
 %\newcommand*{\my@test@it}{it}
 
@@ -134,6 +147,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\singlepage}[1]{\begin{samepage}#1\end{samepage}}
 \renewcommand{\gather}[1]{\begin{gather*}#1\end{gather*}}
 \renewcommand{\multline}[1]{\begin{multline*}#1\end{multline*}}
+\renewcommand{\ref}[1]{\cref{#1}}
 \newcommand{\indentlemma}[3][]{\indent{\lemma[#1]{#2\prove[Доказательство леммы]{#3}}}}
 
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}

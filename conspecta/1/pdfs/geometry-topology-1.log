@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,6 +651,21 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1011,9 +1026,23 @@ File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@exercise_env=\count330
 \c@theorem_env=\count331
 \c@definition_env=\count332
+
+
+../mathstemplate.sty:223: LaTeX Error: Command \outer already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 ...lipbox{0 {0.30\height} 0 0}{$\bigwedge$}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 \c@lection=\count333
-)
-(/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 \symwasy=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
@@ -1210,9 +1239,9 @@ LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 
 ] [4] [5] [6]
 Overfull \hbox (46.31708pt too wide) in paragraph at lines 208--208
-[][]\T2A/faq/bx/n/10 ќпределение 1.3.1 \T2A/faq/m/n/10 (ћет-ри-зу-е-мое то-по-л
-о-ги-че-ское про-стран-ство $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; \OT1/cmr/m/n/
-10 
+[]\T2A/faq/bx/n/10 ќпределение 1.3.1 \T2A/faq/m/n/10 (ћет-ри-зу-е-мое то-по-ло-
+ги-че-ское про-стран-ство $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; \OT1/cmr/m/n/10
+ 
 $\T2A/faq/m/n/10 ))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 —у-ще-ству-ет мет-ри-ка
  $[]$,
  []
@@ -1384,11 +1413,11 @@ Missing character: There is no в in font cmr7!
 Missing character: There is no о in font cmr7!
 [39] [40] [41] [42] [43]
 Overfull \hbox (10.63365pt too wide) in paragraph at lines 2256--2256
-[][]\T2A/faq/bx/n/10 ќпределение 2.13.17 \T2A/faq/m/n/10 (Ёй-ле-ро-ва ха-рак-те
--ри-сти-ка кле-точ-но-го про-стран-ства $\OML/cmm/m/it/10 X$\T2A/faq/m/n/10 )\T
-2A/faq/bx/n/10 . []$\OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1
-/cmr/m/n/10 ) [] [](\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OMS/cmsy/m/n/10 j\
-OML/cmm/m/it/10 I[]\OMS/cmsy/m/n/10 j$\T2A/faq/m/n/10 ,
+[]\T2A/faq/bx/n/10 ќпределение 2.13.17 \T2A/faq/m/n/10 (Ёй-ле-ро-ва ха-рак-те-р
+и-сти-ка кле-точ-но-го про-стран-ства $\OML/cmm/m/it/10 X$\T2A/faq/m/n/10 )\T2A
+/faq/bx/n/10 . []$\OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/c
+mr/m/n/10 ) [] [](\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OMS/cmsy/m/n/10 j\OM
+L/cmm/m/it/10 I[]\OMS/cmsy/m/n/10 j$\T2A/faq/m/n/10 ,
  []
 
 [44] [45]
@@ -1406,10 +1435,10 @@ it/10 z[]\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 =
 
 [47]
 Overfull \hbox (24.33694pt too wide) in paragraph at lines 2402--2402
-[][]\T2A/faq/bx/n/10 ќпределение 3.2.2 \T2A/faq/m/n/10 (ќр-то-нор-ми-ро-ван-ный
- на-бор век-то-ров)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 ћно-же-ство еди-нич-ных
- век-то-ров $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 v[]; [] ; v[]\OMS/cmsy/m/n/10 g
-$\T2A/faq/m/n/10 ,
+[]\T2A/faq/bx/n/10 ќпределение 3.2.2 \T2A/faq/m/n/10 (ќр-то-нор-ми-ро-ван-ный н
+а-бор век-то-ров)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 ћно-же-ство еди-нич-ных в
+ек-то-ров $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 v[]; [] ; v[]\OMS/cmsy/m/n/10 g$\
+T2A/faq/m/n/10 ,
  []
 
 [48] [49]
@@ -1444,16 +1473,16 @@ Missing character: There is no ’ in font cmr5!
 
 ] [54]
 Overfull \hbox (8.35031pt too wide) in paragraph at lines 2744--2744
-[][]\T2A/faq/bx/n/10 ѕредложение 4.0.1. []$\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 
-^^Z \OML/cmm/m/it/10 Y$ \T2A/faq/m/it/10 дл€ неко-е-го аф-фин-но-го под-про-стр
-ан-ства $[]$. 
+[]\T2A/faq/bx/n/10 ѕредложение 4.0.1. []$\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ^^
+Z \OML/cmm/m/it/10 Y$ \T2A/faq/m/it/10 дл€ неко-е-го аф-фин-но-го под-про-стран
+-ства $[]$. 
  []
 
 
 Overfull \hbox (9.39447pt too wide) in paragraph at lines 2776--2776
-[][]\T2A/faq/bx/n/10 ќпределение 4.0.11 \T2A/faq/m/n/10 (јф-фин-ный то-чеч-ный 
-ба-зис)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Ћи-ней-но неза-ви-си-мое мно-же-ств
-о $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; [] ; p[]\OMS/cmsy/m/n/10 g 2
+[]\T2A/faq/bx/n/10 ќпределение 4.0.11 \T2A/faq/m/n/10 (јф-фин-ный то-чеч-ный ба
+-зис)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Ћи-ней-но неза-ви-си-мое мно-же-ство 
+$\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; [] ; p[]\OMS/cmsy/m/n/10 g 2
  []
 
 [55] [56] (pdfs/geometry-topology-1.aux)
@@ -1464,13 +1493,13 @@ Package rerunfilecheck Info: File `geometry-topology-1.out' has not changed.
 (rerunfilecheck)             Checksum: 5B35988D3B6535F0E3E476487071008E;14213.
  ) 
 Here is how much of TeX's memory you used:
- 27612 strings out of 479648
- 510956 string characters out of 5886115
- 801946 words of memory out of 5000000
- 44610 multiletter control sequences out of 15000+600000
+ 29448 strings out of 479648
+ 555510 string characters out of 5886115
+ 838551 words of memory out of 5000000
+ 46440 multiletter control sequences out of 15000+600000
  505101 words of font info for 91 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,27n,103p,707b,620s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,27n,103p,707b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1489,10 +1518,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/geometry-topology-1.pdf (57 pages, 453578 bytes).
+Output written on pdfs/geometry-topology-1.pdf (57 pages, 453510 bytes).
 PDF statistics:
- 1065 PDF objects out of 1200 (max. 8388607)
- 959 compressed objects within 10 object streams
- 446 named destinations out of 1000 (max. 500000)
+ 1067 PDF objects out of 1200 (max. 8388607)
+ 961 compressed objects within 10 object streams
+ 448 named destinations out of 1000 (max. 500000)
  445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

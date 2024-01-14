@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,6 +651,21 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1208,9 +1223,9 @@ Overfull \hbox (1.94254pt too wide) in paragraph at lines 400--400
 
 [10]
 Overfull \hbox (5.6541pt too wide) in paragraph at lines 456--456
-[][]\T2A/faq/bx/n/10 Определение 1.8.5 \T2A/faq/m/n/10 (Ло-каль-но ли-ней-но св
-яз-ное про-стран-ство $\OML/cmm/m/it/10 X$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . [
-]$\OMS/cmsy/m/n/10 8$ \T2A/faq/m/n/10 точ-ки и окрест-но-сти $[]$:
+[]\T2A/faq/bx/n/10 Определение 1.8.5 \T2A/faq/m/n/10 (Ло-каль-но ли-ней-но связ
+-ное про-стран-ство $\OML/cmm/m/it/10 X$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []$
+\OMS/cmsy/m/n/10 8$ \T2A/faq/m/n/10 точ-ки и окрест-но-сти $[]$:
  []
 
 [11]
@@ -2243,9 +2258,9 @@ Overfull \hbox (7.35933pt too wide) detected at line 795
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
 Overfull \hbox (18.08954pt too wide) in paragraph at lines 997--997
-[][]\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Глад-кая функ-ция $\OML
-/cmm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Бес-ко-неч
--но диф-фе-рен-ци-ру-е-мая функ-ция $[]$. 
+[]\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Глад-кая функ-ция $\OML/c
+mm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Бес-ко-неч-н
+о диф-фе-рен-ци-ру-е-мая функ-ция $[]$. 
  []
 
 [21
@@ -2355,16 +2370,16 @@ Overfull \hbox (2.80138pt too wide) in paragraph at lines 1877--1879
 
 [36] [37] [38] [39] [40]
 Overfull \hbox (9.9308pt too wide) in paragraph at lines 2133--2133
-[][]\T2A/faq/bx/n/10 Определение 2.9.2 \T2A/faq/m/n/10 (Асимп-то-ти-че-ская кри
--вая)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Нор-маль-ная кри-виз-на $\OML/cmm/m/i
-t/10 k[] \OT1/cmr/m/n/10 = 0$\T2A/faq/m/n/10 , ина-че го-во-ря $[]$. 
+[]\T2A/faq/bx/n/10 Определение 2.9.2 \T2A/faq/m/n/10 (Асимп-то-ти-че-ская кри-в
+ая)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Нор-маль-ная кри-виз-на $\OML/cmm/m/it/
+10 k[] \OT1/cmr/m/n/10 = 0$\T2A/faq/m/n/10 , ина-че го-во-ря $[]$. 
  []
 
 [41] [42] [43] [44] [45] [46]
 Overfull \hbox (1.12166pt too wide) in paragraph at lines 2390--2390
-[][]\T2A/faq/bx/n/10 Определение 2.12.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-с
-я по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но 
-изо-мет-рич-ная плос-
+[]\T2A/faq/bx/n/10 Определение 2.12.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-ся 
+по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но из
+о-мет-рич-ная плос-
  []
 
 [47] [48] [49] [50] (pdfs/diffgeo-3.aux)
@@ -2375,13 +2390,13 @@ Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
 (rerunfilecheck)             Checksum: A52A3B2F2CFB81668F02AB1B954A972C;13893.
  ) 
 Here is how much of TeX's memory you used:
- 28423 strings out of 479648
- 533779 string characters out of 5886115
- 856749 words of memory out of 5000000
- 45546 multiletter control sequences out of 15000+600000
+ 30268 strings out of 479648
+ 578381 string characters out of 5886115
+ 887941 words of memory out of 5000000
+ 47387 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,21n,103p,825b,1137s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,21n,103p,825b,1154s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -2401,7 +2416,7 @@ ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on pdfs/diffgeo-3.pdf (51 pages, 566763 bytes).
+Output written on pdfs/diffgeo-3.pdf (51 pages, 566708 bytes).
 PDF statistics:
  991 PDF objects out of 1000 (max. 8388607)
  857 compressed objects within 9 object streams

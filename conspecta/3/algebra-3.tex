@@ -646,7 +646,8 @@
             Тогда для гомоморфизма редукции $\rho: \rho(a) = \sum\limits_{n \in N}\rho(a_n)$, где $\rho(a_n) \in A_n/I_n$, но так как это 0, то $a_n \in I_n$.
         }
     }
-    \ok
+    \subsection{Смена градуировки}
+    \label{change-grad}
     Пусть $\phi: N \map N'$ --- гомоморфизм моноидов, $A$ --- $N$-градуированная алгебра.
 
     Тогда $A = \bigoplus\limits_{n \in N}A_n = \bigoplus\limits_{n' \in N'}\left(\bigoplus\limits_{n \in \phi^{-1}(n')}A_n\right)$, то есть $A$ можно превратить в $N'$-градуированную алгебру.
@@ -661,12 +662,13 @@
 
         Так как $\Z[x_{1,1}, \dots, x_{n,n}]$ --- $\N_0$-градуированная алгебра, а $\det(x) - 1$ --- многочлен с однородными компонентами степени $n$ и $0$, то $A$ --- $\Z/n\Z$-градуированная алгебра.
     }
-    \definition[Антикоммутативная $\Z/2\Z$-градуированная $R$-алгебра]{
+    \definition[Антикоммутативная $\Z/2\Z$-градуированная $R$-алгебра $A$]{
         Такая алгебра, что $\forall a \in A_n, b \in A_m: ab = (-1)^{mn}\cdot ba$.
         Дополнительно потребуем, чтобы $2 \in \Reg R$, тогда $\forall a \in A_1: a^2 = 0$.
 
         Также такие алгебры называют \emph{градуировано-коммутативными}.
     }
+    Если $A$ --- $N$-градуированная $R$-алгебра, и имеется гомоморфизм моноидов $\phi: N \map \Z/2\Z$ (например, $\phi: \N_0 \map \Z/2\Z$), то $A$ тоже можно считать градуировано-коммутативной, если она градуировано-коммутативна, как $\Z/2\Z$ алгебра $A$, полученная при помощи гомоморфизма $\phi$, как в~(\ref{change-grad}).
     \definition[Антисимметричное отображение $B: V \times V \map U$]{
         Такое отображение, что $B(x, y) = -B(y, x)$ и $B(x, x) = 0$.
         Если $B$ --- билинейно, то достаточно второго условия, а если $2 \in \Reg R$, то можно обойтись и первым.
@@ -684,6 +686,8 @@
     Если $V$ --- свободный $R$-модуль с базисом мощности $n$, то $S(V) \cong R[x_1, \dots, x_n]$~(\ref{s_is_poly}).
     В соответствии с этим, умножение в симметрической алгебре обозначают точкой.
 
+    Заметим, что тензорное пространство --- $\N_0$-градуированная алгебра, и при факторизации по $I_S$ градуировка сохраняется, таким образом, $S(V)$ --- тоже $\N_0$-градуированная алгебра.
+
     В пару к симметрической алгебре построим <<антисимметрическую>>.
     Здесь переменные будут \emph{антикоммутировать}, $x \otimes y = -y \otimes x$.
     В характеристике не 2 это то же самое, что и $x \otimes x = 0$ для любого $x \in V$, а в общем случае условие равенства квадрата нулю сильнее.
@@ -698,6 +702,7 @@
 
     $V$ вкладывается как в $S(V)$, так и в $\bigwedge(V)$ --- ядро композиции $V \hookrightarrow T(V) \map S(V)$ нулевое, так же как и у $V \hookrightarrow T(V) \map \bigwedge(W)$ (подмодуль, по которому происходит факторизация, содержит только элементы степени хотя бы 2).
 
+    Аналогично симметрической, внешняя алгебра --- $\N_0$-градуированная алгебра.
     \theorem[Универсальное свойство симметрической алгебры]{
         Для любой \textbf{коммутативной} алгебры $A$, для любого гомоморфизма $R$-модулей $\phi: V \map A$ найдётся единственный гомоморфизм $R$-алгебр $\eta: S(V) \map A$, такой, что диаграмма коммутирует.
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJWIl0sWzEsMCwiVChWKSJdLFsxLDEsIkEiXSxbMiwwLCJTKFYpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyLCJcXHBoaSIsMl0sWzEsMywiXFxyaG8iXSxbMywyLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsIlxccHNpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
@@ -719,7 +724,7 @@
         }
     }
     \theorem[Универсальное свойство внешней алгебры]{
-        Для любой градуировано коммутативной $\Z/2\Z$-градуированной $R$-алгебры $A$, и для любого гомоморфизма $R$-модулей $\phi: V \map A_1$ ($A_1$ --- однородная компонента $A$ с индексом 1) найдётся единственный гомоморфизм $\eta: \bigwedge(V) \map A$, такой, что диаграмма коммутирует.
+        Для любой градуировано коммутативной $\N_0$-градуированной $R$-алгебры $A$, и для любого гомоморфизма $R$-модулей $\phi: V \map A_1$ ($A_1$ --- однородная компонента $A$ с индексом 1) найдётся единственный гомоморфизм $\eta: \bigwedge(V) \map A$, такой, что диаграмма коммутирует.
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJWIl0sWzEsMCwiVChWKSJdLFsxLDEsIkEiXSxbMiwwLCJcXGJpZ3dlZGdlKFYpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyLCJcXHBoaSIsMl0sWzEsMiwiXFxwc2kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJcXHJobyJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               V \& {T(V)} \& {\bigwedge(V)} \\
@@ -733,7 +738,7 @@
         \provehere{
             По гомоморфизму $\phi: V \map A$ найдётся единственный гомоморфизм $R$-алгебр $\psi: T(V) \map A$ (универсальное свойство тензорного произведения).
 
-            Так как $\psi: T(V) \map A$ бьёт в антикоммутативную $\Z/2\Z$-градуированную $R$-алгебру, то $\forall x \in V$: \[\psi(x \otimes x) = \psi(x) \cdot \psi(x) = -\psi(x) \cdot \psi(x) = -\psi(x \otimes x)\]
+            Так как $\psi: T(V) \map A$ бьёт в антикоммутативную $\N_0$-градуированную $R$-алгебру, то $\forall x \in V$: \[\psi(x \otimes x) = \psi(x) \cdot \psi(x) = -\psi(x) \cdot \psi(x) = -\psi(x \otimes x)\]
             Так как $2 \in \Reg R$, то $\psi(x \otimes x) = 0$;
             поэтому образующие $I_{\wedge}$ лежат в $\Ker(\psi)$.
             Таким образом, $\psi$ пропускается через фактор, а так как $\rho$ --- редукция по $I_\wedge$ --- эпиморфизм, то $\eta$ единственно.
@@ -837,8 +842,8 @@
             Найдём антисимметричное полилинейное отображение $\underbrace{V \times \dots \times V}_{m} \map R$.
             По счастливому стечению обстоятельств $\dim V = m$, поэтому такое отображение мы знаем, это --- определитель.
 
-            Так как базис $V$ состоит из линейно независимых векторов, то $\det(e_1, \dots, e_m) \ne 0$.
-            Но согласно универсальному свойству внешнего произведения $\det$ пропускается через фактор, а тогда из условия $\det(e_1 \wedge \dots \wedge e_m) \ne 0$ следует и само условие $e_{[m]} = e_1 \wedge \dots e_m \ne 0$.
+            Так как базис $V$ состоит из линейно независимых векторов, то $\det(x_1, \dots, x_m) \ne 0$.
+            Но согласно универсальному свойству внешнего произведения $\det$ пропускается через фактор, а тогда из условия $\det(x_1 \wedge \dots \wedge x_m) \ne 0$ следует и само условие $x_{[m]} = x_1 \wedge \dots \wedge x_m \ne 0$.
         }
     }
     \note{Обозначения из доказательства $x_{i_1} \wedge \dots \wedge x_{i_n} \eqqcolon x_I$, $\{1, \dots, n\} \eqqcolon [n]$ будут повсеместно встречаться и далее.}
@@ -846,14 +851,15 @@
 
     \section{Другое определение симметрической и внешней алгебр}
     Если кольцо $R$ является $\Q$-алгеброй (то есть разрешается делить на все ненулевые целые), то можно дать другое определение симметрической и внешней алгебрам.
+
     Введём действие $S_n \curvearrowright V^{\otimes n}$: \begin{align*}
-                                                              S^n \times V^{\otimes n}&\map V^{\otimes n}\\\pi, (x_1 \otimes \dots \otimes x_n) &\mapsto x_{\pi(1)} \otimes \dots \otimes x_{\pi(n)}
+                                                              S_n \times V^{\otimes n}&\map V^{\otimes n}\\\pi, (x_1 \otimes \dots \otimes x_n) &\mapsto x_{\pi(1)} \otimes \dots \otimes x_{\pi(n)}
     \end{align*}
     продолженное так по линейности на все элементы $V^{\otimes n}$.
 
     Тензор $x \in V^{\otimes n}$ назовём \emph{симметрическим}, если $\forall \pi \in S_n: \pi(x) = x$.
     Все симметрические тензоры образуют подмодуль $\tilde{S}^n(V) \le V^{\otimes n}$, который изоморфен $S^n(V)$.
-    Более того, если $R$ --- $Q$-алгебра, то можно ввести умножение данных симметрических тензоров.
+    Более того, если $R$ --- $\Q$-алгебра, то можно ввести умножение данных симметрических тензоров, об этом ниже.
 
     Проблема в том, что по умолчанию произведение симметрических тензоров --- необязательно симметрический тензор, переменные можно переставлять только <<внутри множителей>>.
 
@@ -870,16 +876,16 @@
     }
     \ok
     Для внешней алгебры можно действовать также, определив действие $S_n \curvearrowright V^{\otimes n}$: \begin{align*}
-                                                                                                              S^n \times V^{\otimes n}&\map V^{\otimes n}\\\pi, (x_1 \otimes \dots \otimes x_n) &\mapsto \sgn(\pi) \cdot x_{\pi(1)} \otimes \dots \otimes x_{\pi(n)}
+                                                                                                              S_n \times V^{\otimes n}&\map V^{\otimes n}\\\pi, (x_1 \otimes \dots \otimes x_n) &\mapsto \sgn(\pi) \cdot x_{\pi(1)} \otimes \dots \otimes x_{\pi(n)}
     \end{align*}и положив $\tilde{\bigwedge}^n(V) \le V^{\otimes n}$, подмодулем, инвариантным относительно данного действия.
     Для умножения введём \begin{align*}
-                             \text{Alt}: V^{\otimes n} &\map \tilde{\bigwedge}\!\!{}^n(V)\\x &\mapsto \frac{1}{n!}\sum\limits_{\pi \in S_n}\sgn(\pi)\cdot\pi(x)
+                             \text{Alt}: V^{\otimes n} &\map \tilde{\bigwedge}\!{}^n(V)\\x &\mapsto \frac{1}{n!}\sum\limits_{\pi \in S_n}\sgn(\pi)\cdot\pi(x)
     \end{align*}
     \intfact{$\text{Alt}$ является проектором на $\tilde{\bigwedge}^n(V)$.
     Умножение \begin{align*}
-                  \tilde{\bigwedge}\!\!{}^n(V),\tilde{\bigwedge}\!\!{}^k(V)&\map\tilde{\bigwedge}\!\!{}^{n+k}(V)\\x, y &\mapsto \text{Alt}(x \otimes y)
+                  \tilde{\bigwedge}\!{}^n(V),\tilde{\bigwedge}\!{}^k(V)&\map\tilde{\bigwedge}\!{}^{n+k}(V)\\x, y &\mapsto \text{Alt}(x \otimes y)
     \end{align*} антикоммутативно и ассоциативно.
-    С данной операцией $\bigoplus\limits_{n \ge 0}\tilde{\bigwedge}^n(V)$ становится антикоммутативной $\Z/2\Z$-градуированной алгеброй с единицей.
+    С данной операцией $\bigoplus\limits_{n \ge 0}\tilde{\bigwedge}^n(V)$ становится антикоммутативной $\N_0$-градуированной алгеброй с единицей.
     }
 
     \newlection{3 октября 2023 г.}
@@ -971,7 +977,7 @@
         \begin{align*}
             \bigwedge\!\!{}^k (L): \bigwedge\!\!{}^k(U) &\map \bigwedge\!\!{}^k(V)\\u_1 \wedge \dots \wedge u_k &\mapsto L(u_1) \wedge \dots \wedge L(u_k)
         \end{align*}
-        Это является иллюстрацией того, что всякое хорошая конструкция, задающееся универсальным свойством, является функтором (действует и на морфизмах).
+        Это является иллюстрацией того, что всякая хорошая конструкция, задающееся универсальным свойством, является функтором (действует и на морфизмах).
         \provehere{
         % https://q.uiver.app/#q=WzAsNCxbMCwwLCJVIFxcdGltZXMgXFxkb3RzIFxcdGltZXMgVSJdLFsxLDAsIlxcYmlnd2VkZ2VeayhVKSJdLFswLDEsIlZcXHRpbWVzIFxcZG90cyBcXHRpbWVzIFYiXSxbMSwxLCJcXGJpZ3dlZGdlXmsoVikiXSxbMCwyLCJMIiwyXSxbMiwzXSxbMCwxXSxbMCwzXSxbMSwzLCJcXGJpZ3dlZGdlXmsoTCkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
@@ -2020,7 +2026,7 @@
         \end{array}\]
         У этой таблицы есть множество замечательных свойств, но они будут выведены позднее.
         \item Группа $Q_8$ задаётся копредставлением $\angles{i,j,k\middle| i^2 = j^2 = k^2 = ijk = -1} = \{\pm 1, \pm i, \pm j, \pm k\}$ (при условии $(-1)^2 = 1$).
-        $|Q| = 8 = 2^3$, то есть $Q$ --- 2-группа. $C(Q) = \{\pm 1\}$.
+        $|Q_8| = 8 = 2^3$, то есть $Q_8$ --- 2-группа. $C(Q) = \{\pm 1\}$.
         Таким образом, у неё четыре одномерных представления.
         Классов сопряжённых элементов в данной группе пять: $Q_8 = \{1\} \sqcup \{-1\} \sqcup \{\pm i\} \sqcup \{\pm j\} \sqcup \{\pm k\}$.
         \[\begin{array}{c|ccccc}

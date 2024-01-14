@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,6 +651,21 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1027,11 +1042,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux
+(pdfs/algebra-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `algebra-3.aux'.
@@ -1137,8 +1151,7 @@ LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.out)
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.out)
+(pdfs/algebra-3.out) (pdfs/algebra-3.out)
 \@outlinefile=\write4
 \openout4 = `algebra-3.out'.
 
@@ -1174,22 +1187,20 @@ l.41     \tableofcontents
                           [1]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 41.
-
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.toc
-LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
-(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
- [2
-
-])
+ (pdfs/algebra-3.toc)
 \tf@toc=\write5
 \openout5 = `algebra-3.toc'.
 
- [3]
+ [2
+
+]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <20.74> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <14.4> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 53.
+LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
+(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 61.
 LaTeX Font Info:    Trying to load font information for TS1+faq on input line 6
 6.
 LaTeX Font Info:    No file TS1faq.fd. on input line 66.
@@ -1200,15 +1211,15 @@ LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 83.
-[4
+[3
 
-] [5] [6]
+] [4] [5]
 Overfull \hbox (5.1609pt too wide) in paragraph at lines 230--230
 []\T2A/faq/m/n/10 Универсальное свой-ство ба-зи-са и тео-ре-ма о го-мо-мор-физ-
 ме опять. 
  []
 
-[7]
+[6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 263.
@@ -1302,7 +1313,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 281.
 
-[8]
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 300.
@@ -1384,38 +1395,64 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 300.
 
-[9] [10] [11]
+
+LaTeX Warning: Reference `functor' on page 8 undefined on input line 307.
+
+[8] [9] [10]
+
+LaTeX Warning: Reference `coordinate-transformation' on page 11 undefined on in
+put line 459.
+
+
 Overfull \hbox (17.84502pt too wide) in paragraph at lines 485--485
 []\T2A/faq/m/n/10 Равенство $\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 e[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^N[]$ \T2A/faq/m/n/10 в мат-рич-но
 м ви-де вы-гля-дит в ви-де $[]$. 
  []
 
-[12] [13]
+[11] [12]
 Overfull \hbox (10.50034pt too wide) in paragraph at lines 543--543
 []\T2A/faq/m/n/10 В ко-ор-ди-нат-ном ви-де сво-ра-чи-ва-ние за-пи-сы-ва-ет-ся в
  ви-де $\OT1/cmr/m/n/10 ([\OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  x\OT1/cmr/m/n/10 )][])[] = []([\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ][])[]$
  []
 
-[14]
+[13]
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 10.0pt on input line 564.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 7.0pt on input line 564.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 5.0pt on input line 564.
- [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (1.53629pt too wide) in paragraph at lines 946--946
-[][]\T2A/faq/bx/n/10 Следствие 1.11.1 \T2A/faq/m/n/10 (Тео-ре-ма Бине--Коши)\T2
-A/faq/bx/n/10 . []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 R$ \T2A/faq/m/it/10 
---- ком-му-та-тив-ное коль-цо, $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \OML/cmm/
-m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; n; R\OT1/cmr/m/n/10 )\OML/cmm/m/i
-t/10 ; C \OMS/cmsy/m/n/10 2
+ [14] [15]
+
+LaTeX Warning: Reference `change-grad' on page 16 undefined on input line 671.
+
+
+LaTeX Warning: Reference `s_is_poly' on page 16 undefined on input line 686.
+
+
+LaTeX Warning: Reference `s_is_poly' on page 16 undefined on input line 700.
+
+[16]
+
+LaTeX Warning: Reference `s_is_poly' on page 17 undefined on input line 754.
+
+[17] [18] [19] [20]
+Overfull \hbox (1.53629pt too wide) in paragraph at lines 951--951
+[]\T2A/faq/bx/n/10 Следствие 1.11.1 \T2A/faq/m/n/10 (Тео-ре-ма Бине--Коши)\T2A/
+faq/bx/n/10 . []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 R$ \T2A/faq/m/it/10 --
+- ком-му-та-тив-ное коль-цо, $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \OML/cmm/m/
+it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; n; R\OT1/cmr/m/n/10 )\OML/cmm/m/it/
+10 ; C \OMS/cmsy/m/n/10 2
  []
 
-[22]
-Overfull \hbox (17.61012pt too wide) in paragraph at lines 1000--1002
+
+LaTeX Warning: Reference `calculations_in_grassman' on page 21 undefined on inp
+ut line 951.
+
+[21] [22]
+Overfull \hbox (17.61012pt too wide) in paragraph at lines 1005--1007
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 J \OMS/cmsy/m/n/10 ^^Z \OT1/cmr/m/n/1
 0 [\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 j\OML
 /cmm/m/it/10 J\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 k$\T2A/faq/
@@ -1427,74 +1464,110 @@ e[]; [] ; e[]\OT1/cmr/m/n/10 )([\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 ][])[]$\T2A/f
 aq/m/n/10 . 
  []
 
-[23] [24] [25]
+
+LaTeX Warning: Reference `eps_def' on page 23 undefined on input line 1073.
+
+
+LaTeX Warning: Reference `elements-of-wedge-matrix' on page 23 undefined on inp
+ut line 1073.
+
+[23] [24]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-[26
+[25
 
-] [27] [28] [29]
+]
+
+LaTeX Warning: Reference `length' on page 26 undefined on input line 1147.
+
+
+LaTeX Warning: Reference `plus_is_not_distributive_by_cap' on page 26 undefined
+ on input line 1179.
+
+
+LaTeX Warning: Reference `KrullвЂ“Schmidt-Remak-theorem' on page 26 undefined o
+n input line 1198.
+
+[26] [27] [28]
+
+LaTeX Warning: Reference `sum-of-squares-theorem' on page 29 undefined on input
+ line 1310.
+
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1342.
+(Font)              scaled to size 12.0pt on input line 1347.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1342.
+(Font)              scaled to size 8.0pt on input line 1347.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1342.
+(Font)              scaled to size 6.0pt on input line 1347.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1347.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1342.
+(hyperref)                removing `math shift' on input line 1347.
+
+[29]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1387.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1342.
+(hyperref)                removing `math shift' on input line 1387.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1387.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1387.
 
 [30]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1382.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1382.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1382.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1382.
-
-[31]
-Overfull \hbox (34.40082pt too wide) in paragraph at lines 1402--1413
+Overfull \hbox (34.40082pt too wide) in paragraph at lines 1407--1418
 [][] 
  []
 
-[32] [33] [34] [35] [36] [37] [38] [39] [40]
-Overfull \hbox (18.42105pt too wide) in paragraph at lines 1909--1909
+[31] [32] [33] [34] [35] [36] [37] [38]
+
+LaTeX Warning: Reference `further-constructions' on page 39 undefined on input 
+line 1851.
+
+[39]
+Overfull \hbox (18.42105pt too wide) in paragraph at lines 1914--1914
 []\T2A/faq/bx/n/12 Классификация пред-став-ле-ний про-из-воль-ных ко-неч-ных аб
 е-ле-вых групп 
  []
 
-[41] [42]
-Overfull \hbox (28.58427pt too wide) in paragraph at lines 1977--1979
+[40]
+
+LaTeX Warning: Reference `khtimesg' on page 41 undefined on input line 1922.
+
+[41]
+Overfull \hbox (28.58427pt too wide) in paragraph at lines 1982--1984
 \T2A/faq/m/n/10 функ-ци-ях $\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 ! \OML/cmm/m/it
 /10 K$\T2A/faq/m/n/10 : $\OML/cmm/m/it/10 G \U/msb/m/n/10 y \OML/cmm/m/it/10 K[
 ] \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 , или на фор-маль-ных ком-би-на-ци-ях: $
 \OML/cmm/m/it/10 G \U/msb/m/n/10 y []$\T2A/faq/m/n/10 . 
  []
 
-[43] [44] [45]
+[42] [43] [44]
 LaTeX Font Info:    Font shape `T2A/faq/b/it' in size <10> not available
-(Font)              Font shape `T2A/faq/bx/it' tried instead on input line 2127
+(Font)              Font shape `T2A/faq/bx/it' tried instead on input line 2132
 .
- [46]
-Overfull \hbox (18.16406pt too wide) in paragraph at lines 2192--2192
+
+
+LaTeX Warning: Reference `schur-orthogonality' on page 45 undefined on input li
+ne 2143.
+
+[45]
+Overfull \hbox (18.16406pt too wide) in paragraph at lines 2197--2197
 []\T2A/faq/bx/n/14.4 Разложение пред-став-ле-ние на непри-во-ди-мые. Sum of squ
 ares
  []
 
-[47] [48]
-Overfull \hbox (6.26353pt too wide) in paragraph at lines 2264--2264
+[46] [47]
+Overfull \hbox (6.26353pt too wide) in paragraph at lines 2269--2269
 []\T2A/faq/m/n/10 Обозначим $\OML/cmm/m/it/10 m[] [][]\OT1/cmr/m/n/10 = \OMS/cm
 sy/m/n/10 j\OML/cmm/m/it/10 g[]\OMS/cmsy/m/n/10 j$\T2A/faq/m/n/10 . Пер-вое со-
 от-но-ше-ние ор-то-го-наль-но-сти вы-гля-дит так: $[] [] \OML/cmm/m/it/10 m[]^^
@@ -1502,21 +1575,21 @@ _[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )[] =
  []
 
 
-Overfull \hbox (9.69798pt too wide) in paragraph at lines 2277--2278
+Overfull \hbox (9.69798pt too wide) in paragraph at lines 2282--2283
 []\T2A/faq/m/n/10 Рассмотрим про-стран-ство цен-траль-ных функ-ций на $\OML/cmm
 /m/it/10 G$\T2A/faq/m/n/10 : $\OML/cmm/m/it/10 cf[]\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 G\OT1/cmr/m/n/10 ) [] []$\T2A/faq/m/n/10 . 
  []
 
-[49]
-Overfull \hbox (1.8964pt too wide) in paragraph at lines 2330--2330
+[48]
+Overfull \hbox (1.8964pt too wide) in paragraph at lines 2335--2335
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 c[]; [] ; c[]$ \T2A/faq/m/n/10 --- кл
 ас-сы со-пря-жјн-ных эле-мен-тов, $\OML/cmm/m/it/10 ^^Y[]; [] ; ^^Y[]; ^^_[]; [
 ] ; ^^_[]$ \T2A/faq/m/n/10 --- непри-
  []
 
-[50] [51] [52] [53] [54] [55] [56]
-Overfull \hbox (8.41473pt too wide) in paragraph at lines 2620--2620
+[49] [50] [51] [52] [53] [54] [55]
+Overfull \hbox (8.41473pt too wide) in paragraph at lines 2625--2625
 []\T2A/faq/m/it/10 Интересный факт. []\T2A/faq/m/n/10 Ин-ду-ци-ро-ва-ние тран-з
 и-тив-но: пусть $\OML/cmm/m/it/10 F \U/msa/m/n/10 6 \OML/cmm/m/it/10 H \U/msa/m
 /n/10 6 \OML/cmm/m/it/10 G$\T2A/faq/m/n/10 . То-гда $[][]\OT1/cmr/m/n/10 (\OML/
@@ -1524,37 +1597,41 @@ cmm/m/it/10 ^^_\OT1/cmr/m/n/10 ) = [][]([][](\OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/1
 0 ))$\T2A/faq/m/n/10 . 
  []
 
-[57]
+[56]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-[58
+[57
 
-] [59]
-Overfull \hbox (43.31473pt too wide) in paragraph at lines 2764--2764
+]
+
+LaTeX Warning: Reference `uni' on page 58 undefined on input line 2745.
+
+[58]
+Overfull \hbox (43.31473pt too wide) in paragraph at lines 2769--2769
 []\T2A/faq/m/n/10 Подставим в ка-че-стве $\OML/cmm/m/it/10 ^^^$ \T2A/faq/m/n/10
  мат-рич-ную еди-ни-цу $\OML/cmm/m/it/10 e[]$\T2A/faq/m/n/10 . Еј сим-мет-ри-за
 -ция $\OML/cmm/m/it/10 ^^^[] \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 ^^Z[]e[]^
 ^Y[]$\T2A/faq/m/n/10 .
  []
 
-[60]
-Overfull \hbox (79.02475pt too wide) in paragraph at lines 2830--2830
-[][]\T2A/faq/bx/n/10 Определение 3.2.1 \T2A/faq/m/n/10 (Це-лые ал-геб-ра-и-че-с
-кие чис-ла над $\OML/cmm/m/it/10 F$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []$\U/ms
-b/m/n/10 A[] [] [][]\OT1/cmr/m/n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 ) [] []$\T2
-A/faq/m/n/10 . 
+[59]
+Overfull \hbox (79.02475pt too wide) in paragraph at lines 2835--2835
+[]\T2A/faq/bx/n/10 Определение 3.2.1 \T2A/faq/m/n/10 (Це-лые ал-геб-ра-и-че-ски
+е чис-ла над $\OML/cmm/m/it/10 F$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []$\U/msb/
+m/n/10 A[] [] [][]\OT1/cmr/m/n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 ) [] []$\T2A/
+faq/m/n/10 . 
  []
 
-[61] [62]
-Overfull \hbox (7.13847pt too wide) in paragraph at lines 2938--2938
-[][]\T2A/faq/bx/n/10 Следствие 3.2.2. []\T2A/faq/m/it/10 Име-ет ме-сто есте-ств
-ен-ный изо-мор-физм $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; ^^^[]\OT1/cmr/m/n
-/10 (\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 )) [] [][](\OML/cmm/m/it/10 ^^^[]\OT1/cm
-r/m/n/10 (\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; N\OT1/cmr/m/n/1
-0 )$\T2A/faq/m/it/10 . 
+[60] [61]
+Overfull \hbox (7.13847pt too wide) in paragraph at lines 2943--2943
+[]\T2A/faq/bx/n/10 Следствие 3.2.2. []\T2A/faq/m/it/10 Име-ет ме-сто есте-ствен
+-ный изо-мор-физм $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; ^^^[]\OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 )) [] [][](\OML/cmm/m/it/10 ^^^[]\OT1/cmr/
+m/n/10 (\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; N\OT1/cmr/m/n/10 
+)$\T2A/faq/m/it/10 . 
  []
 
 
-Overfull \hbox (8.69896pt too wide) in paragraph at lines 2972--2972
+Overfull \hbox (8.69896pt too wide) in paragraph at lines 2977--2977
 []\T2A/faq/m/n/10 Отсюда сле-ду-ет $\OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 ^^_[]; ^^_[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 
 (\OML/cmm/m/it/10 ^^_[]; ^^_[]\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 . Обыч-но пи-шу
@@ -1563,8 +1640,8 @@ mm/m/it/10 ^^_[]; ^^_[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10
 OT1/cmr/m/n/10 )$ 
  []
 
-[63]
-Overfull \hbox (11.51602pt too wide) in paragraph at lines 2977--2980
+[62]
+Overfull \hbox (11.51602pt too wide) in paragraph at lines 2982--2985
 []\T2A/faq/m/n/10 Рассмотрим $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 [\OML/cmm/m/it/
 10 G\OT1/cmr/m/n/10 ] \OMS/cmsy/m/n/10 
 [] \OML/cmm/m/it/10 V$\T2A/faq/m/n/10 . Пусть $\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
@@ -1574,20 +1651,25 @@ V$\T2A/faq/m/n/10 . За-фик-си-ру-ем транс-вер-саль $\OML/cmm/m/it/10 T \OT1/cmr
 MS/cmsy/m/n/10 g$
  []
 
-[64] [65]
+[63] [64]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 
-Overfull \hbox (1.14247pt too wide) in paragraph at lines 3030--3030
+Overfull \hbox (1.14247pt too wide) in paragraph at lines 3035--3035
 []\T2A/faq/m/it/10 Замечание. []\T2A/faq/m/n/10 Ино-гда ком-по-зи-цию за-пи-сы-
 ва-ют в об-рат-ном по-ряд-ке: $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A; B\OT1/c
 mr/m/n/10 ) \OMS/cmsy/m/n/10 ^^B [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; C\OT1
 /cmr/m/n/10 ) \OMS/cmsy/m/n/10 !
  []
 
-[66
+[65
 
-] [67]
-Overfull \hbox (29.4809pt too wide) in paragraph at lines 3153--3153
+] [66]
+
+LaTeX Warning: Reference `matrices-and-vector-spaces' on page 67 undefined on i
+nput line 3158.
+
+
+Overfull \hbox (29.4809pt too wide) in paragraph at lines 3158--3158
 [] \U/BOONDOX-scr/m/n/10 C$\T2A/faq/m/n/10 . Пусть $\OML/cmm/m/it/10  \OT1/cmr
 /m/n/10 : \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 B; ^^L \OT1/cm
 r/m/n/10 : \OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 D$\T2A/faq/m/
@@ -1595,43 +1677,43 @@ n/10 . То-гда $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; ^^L\OT1/cmr/m/n/10 ) =
 []$ 
  []
 
-[68]
-Overfull \hbox (4.28975pt too wide) in paragraph at lines 3164--3164
-[][]\T2A/faq/bx/n/10 Определение 4.1.2 \T2A/faq/m/n/10 ($\OML/cmm/m/it/10 F$ \T
-2A/faq/m/n/10 --- фи-наль-ный (тер-ми-наль-ный) объ-ект)\T2A/faq/bx/n/10 . []\T
-2A/faq/m/n/10 Для лю-бо-го $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \U/BOONDOX-sc
-r/m/n/10 C \OT1/cmr/m/n/10 : []$\T2A/faq/m/n/10 . 
+[67]
+Overfull \hbox (4.28975pt too wide) in paragraph at lines 3169--3169
+[]\T2A/faq/bx/n/10 Определение 4.1.2 \T2A/faq/m/n/10 ($\OML/cmm/m/it/10 F$ \T2A
+/faq/m/n/10 --- фи-наль-ный (тер-ми-наль-ный) объ-ект)\T2A/faq/bx/n/10 . []\T2A
+/faq/m/n/10 Для лю-бо-го $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \U/BOONDOX-scr/
+m/n/10 C \OT1/cmr/m/n/10 : []$\T2A/faq/m/n/10 . 
  []
 
 
-Overfull \hbox (6.2571pt too wide) in paragraph at lines 3185--3187
+Overfull \hbox (6.2571pt too wide) in paragraph at lines 3190--3192
 []\T2A/faq/m/n/10 Этому со-от-вет-ству-ет ини-ци-аль-ный объ-ект в ка-те-го-рии
  $\U/BOONDOX-scr/m/n/10 C$\T2A/faq/m/n/10 , та-кой, что $[] \U/BOONDOX-scr/m/n/
 10 C \OT1/cmr/m/n/10 = []$
  []
 
-[69] [70] [71]
-Overfull \hbox (20.4889pt too wide) detected at line 3346
+[68] [69] [70]
+Overfull \hbox (20.4889pt too wide) detected at line 3351
 []
  []
 
-[72] [73]
-Overfull \hbox (4.35089pt too wide) in paragraph at lines 3462--3462
+[71] [72]
+Overfull \hbox (4.35089pt too wide) in paragraph at lines 3467--3467
 []\T2A/faq/m/it/10 Контрпример \T2A/faq/m/n/10 (Неесте-ствен-ное пре-об-ра-зо-в
 а-ние)\T2A/faq/m/it/10 . []\T2A/faq/m/n/10 Изо-мор-физм ко-неч-но-мер-но-го век
 -тор-но-го про-стран-
  []
 
-[74]
-Overfull \hbox (19.86786pt too wide) in paragraph at lines 3502--3502
+[73]
+Overfull \hbox (19.86786pt too wide) in paragraph at lines 3507--3507
 []\T2A/faq/m/n/10 Естественный изо-мор-физм в ка-те-го-рии ко-неч-но-мер-ных ве
 к-тор-ных про-странств $\U/BOONDOX-scr/m/n/10 V e c t[]$\T2A/faq/m/n/10 : $[]\O
 T1/cmr/m/n/10 (\OML/cmm/m/it/10 X; Y \OMS/cmsy/m/n/10 
 
  []
 
-[75]
-Overfull \hbox (1.37367pt too wide) in paragraph at lines 3551--3553
+[74]
+Overfull \hbox (1.37367pt too wide) in paragraph at lines 3556--3558
 []\T2A/faq/m/n/10 В ка-те-го-рии $\U/BOONDOX-scr/m/n/10 D$\T2A/faq/m/n/10 , та-
 кой, что $[] \U/BOONDOX-scr/m/n/10 D \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 , и $
 [][]\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 E[]; "[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/1
@@ -1639,7 +1721,7 @@ Overfull \hbox (1.37367pt too wide) in paragraph at lines 3551--3553
  []
 
 
-Overfull \hbox (2.93509pt too wide) in paragraph at lines 3572--3573
+Overfull \hbox (2.93509pt too wide) in paragraph at lines 3577--3578
 []\T2A/faq/m/n/10 В $\U/BOONDOX-scr/m/n/10 G r o u p$ \T2A/faq/m/n/10 ко-эк-ва-
 лай-зер $\OML/cmm/m/it/10 ^^^;   \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 G \OMS/cmsy
 /m/n/10 ! \OML/cmm/m/it/10 H$ \T2A/faq/m/n/10 --- это фак-то-ри-за-ция по нор-м
@@ -1648,8 +1730,13 @@ Overfull \hbox (2.93509pt too wide) in paragraph at lines 3572--3573
 m/it/10 g[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\T2A/faq/m/n/10 . 
  []
 
-[76] [77] [78] [79] [80] [81] [82]
-Overfull \hbox (21.86375pt too wide) in paragraph at lines 4123--4123
+[75] [76] [77] [78] [79] [80]
+
+LaTeX Warning: Reference `comma-category' on page 81 undefined on input line 40
+13.
+
+[81]
+Overfull \hbox (21.86375pt too wide) in paragraph at lines 4128--4128
 []\T2A/faq/m/n/10 Теперь до-ка-жем, что $\OML/cmm/m/it/10 ^^Q$ \T2A/faq/m/n/10 
 --- \T2A/faq/m/it/10 есте-ствен-ное \T2A/faq/m/n/10 пре-об-ра-зо-ва-ние меж-ду 
 функ-то-ра-ми $\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X; Y \OMS/cmsy/m/n/10 7! [][]\
@@ -1657,8 +1744,12 @@ OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; \U/BOONDOX-scr/m/n/10 F\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 Y\OT1/cmr/m/n/10 ))] \OMS/cmsy/m/n/10 !
  []
 
-[83] [84] [85] [86] [87] [88]
-Overfull \hbox (26.90097pt too wide) in paragraph at lines 4513--4513
+[82] [83]
+
+LaTeX Warning: Reference `save-limit' on page 84 undefined on input line 4279.
+
+[84] [85] [86] [87]
+Overfull \hbox (26.90097pt too wide) in paragraph at lines 4518--4518
 []\T2A/faq/m/n/10 Тогда $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 
 2 \U/BOONDOX-scr/m/n/10 J$ \T2A/faq/m/n/10 име-ет-ся пре-об-ра-зо-ва-ние $\OML/
 cmm/m/it/10 ^^R[] \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (\OM
@@ -1670,13 +1761,13 @@ m/n/10 ))\OML/cmm/m/it/10 ; \U/BOONDOX-scr/m/n/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 Y\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 .
  []
 
-[89]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 454
-8.
+[88]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 455
+3.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [90]
-Overfull \hbox (28.90138pt too wide) in paragraph at lines 4578--4578
+) [89]
+Overfull \hbox (28.90138pt too wide) in paragraph at lines 4583--4583
 []\T2A/faq/m/n/10 Нам это $\U/msb/m/n/10 A[]$ \T2A/faq/m/n/10 ин-те-рес-но имен
 -но, как функ-тор, и он яв-ля-ет-ся пред-ста-ви-мым: $\U/msb/m/n/10 A[] [] []\O
 T1/cmr/m/n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\O
@@ -1684,7 +1775,7 @@ T1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 .
  []
 
 
-Overfull \hbox (12.72997pt too wide) in paragraph at lines 4578--4578
+Overfull \hbox (12.72997pt too wide) in paragraph at lines 4583--4583
 []\T2A/faq/m/n/10 Зафиксируем $\OML/cmm/m/it/10 f[]; [] ; f[] \OMS/cmsy/m/n/10 
 2 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\OT1/cmr/m/n
 /10 ]$\T2A/faq/m/n/10 . Пусть $\OML/cmm/m/it/10 X[] \OMS/cmsy/m/n/10 ^^Z \U/msb
@@ -1692,36 +1783,52 @@ Overfull \hbox (12.72997pt too wide) in paragraph at lines 4578--4578
 A/faq/m/n/10 .
  []
 
-[91]
-Overfull \hbox (16.6259pt too wide) in paragraph at lines 4660--4660
-[][]\T2A/faq/bx/n/10 Следствие 4.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен
--ных пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/
-m/n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/
-n/10 )) [] [](\OML/cmm/m/it/10 B; A\OT1/cmr/m/n/10 )$\T2A/faq/m/it/10 .
+[90]
+
+LaTeX Warning: Reference `yoneda' on page 91 undefined on input line 4661.
+
+
+Overfull \hbox (16.6259pt too wide) in paragraph at lines 4665--4665
+[]\T2A/faq/bx/n/10 Следствие 4.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен-н
+ых пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/m/
+n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/n/
+10 )) [] [](\OML/cmm/m/it/10 B; A\OT1/cmr/m/n/10 )$\T2A/faq/m/it/10 .
  []
 
-[92] [93]
-Overfull \hbox (2.76083pt too wide) in paragraph at lines 4817--4817
-[][]\T2A/faq/bx/n/10 Определение 4.10.5 \T2A/faq/m/n/10 ((Ко)нормальный мо-но-м
-ор-физм (эпи-мор-физм))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Он яв-ля-ет-ся (ко)
-эквалайзером
+[91] [92]
+Overfull \hbox (2.76083pt too wide) in paragraph at lines 4822--4822
+[]\T2A/faq/bx/n/10 Определение 4.10.5 \T2A/faq/m/n/10 ((Ко)нормальный мо-но-мор
+-физм (эпи-мор-физм))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Он яв-ля-ет-ся (ко)эк
+валайзером
  []
 
-[94] [95] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
+[93] [94] (pdfs/algebra-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `algebra-3.out' has not changed.
-(rerunfilecheck)             Checksum: 2CF4C3E9FA0919DAB33EE405918885FC;28204.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `algebra-3.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `algebra-3.out':
+(rerunfilecheck)             Before: E18C5A053E4D502563CED6ABEC214C94;1534
+(rerunfilecheck)             After:  F16468A32ABB5430DE8146CABCDFDBB3;28402.
  ) 
 Here is how much of TeX's memory you used:
- 32773 strings out of 479648
- 643884 string characters out of 5886115
- 898370 words of memory out of 5000000
- 49748 multiletter control sequences out of 15000+600000
+ 34528 strings out of 479648
+ 686679 string characters out of 5886115
+ 927283 words of memory out of 5000000
+ 51499 multiletter control sequences out of 15000+600000
  508156 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,28n,103p,745b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,28n,103p,745b,1302s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq4.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq5.pf
@@ -1746,11 +1853,10 @@ symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
-Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (96 pages, 755485 bytes).
+Output written on pdfs/algebra-3.pdf (95 pages, 740063 bytes).
 PDF statistics:
- 1404 PDF objects out of 1440 (max. 8388607)
- 1244 compressed objects within 13 object streams
+ 1027 PDF objects out of 1200 (max. 8388607)
+ 872 compressed objects within 9 object streams
  465 named destinations out of 1000 (max. 500000)
- 749 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

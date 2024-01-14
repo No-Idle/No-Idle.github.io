@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,6 +651,21 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1229,10 +1244,10 @@ mm/m/it/10 x; \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 ) =
 
 [8] [9] [10] [11]
 Overfull \hbox (30.7629pt too wide) in paragraph at lines 474--474
-[][]\T2A/faq/bx/n/10 Определение 1.0.7 \T2A/faq/m/n/10 (Ко-ор-ди-нат-ные про-ек
--ции $\OML/cmm/m/it/10 F$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 
-Раз-ло-жим $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/1
-0 )$ \T2A/faq/m/n/10 по стан-дарт-но-му ба-зи-су: $[]$.
+[]\T2A/faq/bx/n/10 Определение 1.0.7 \T2A/faq/m/n/10 (Ко-ор-ди-нат-ные про-ек-ц
+ии $\OML/cmm/m/it/10 F$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Ра
+з-ло-жим $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 
+)$ \T2A/faq/m/n/10 по стан-дарт-но-му ба-зи-су: $[]$.
  []
 
 
@@ -1265,17 +1280,17 @@ m/m/it/10 g$ \T2A/faq/m/n/10 диф-фе-рен-ци-ру-е-ма в $[]  \OMS/cmsy/m/n/10 ([])
 
 
 Overfull \hbox (62.33386pt too wide) in paragraph at lines 517--517
-[][]\T2A/faq/bx/n/10 Определение 1.0.8 \T2A/faq/m/n/10 (Про-из-вод-ная век-тор-
-нознач-ной функ-ции $\OML/cmm/m/it/10 g$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\
-T2A/faq/m/n/10 Со-от-вет-ству-ю-щий век-тор $[]$. 
+[]\T2A/faq/bx/n/10 Определение 1.0.8 \T2A/faq/m/n/10 (Про-из-вод-ная век-тор-но
+знач-ной функ-ции $\OML/cmm/m/it/10 g$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2
+A/faq/m/n/10 Со-от-вет-ству-ю-щий век-тор $[]$. 
  []
 
 [13] [14]
 Overfull \hbox (1.32204pt too wide) in paragraph at lines 653--653
-[][]\T2A/faq/bx/n/10 Лемма 1.0.2 \T2A/faq/m/n/10 (|   []   |   [])\T2A/faq/bx/n
-/10 . []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \U/msb/m/
-n/10 R[]$\T2A/faq/m/it/10 , то-гда $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cm
-sy/m/n/10 j \OT1/cmr/m/n/10 = [] []$\T2A/faq/m/it/10 . 
+[]\T2A/faq/bx/n/10 Лемма 1.0.2 \T2A/faq/m/n/10 (|   []   |   [])\T2A/faq/bx/n/1
+0 . []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \U/msb/m/n/
+10 R[]$\T2A/faq/m/it/10 , то-гда $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x\OMS/cmsy
+/m/n/10 j \OT1/cmr/m/n/10 = [] []$\T2A/faq/m/it/10 . 
  []
 
 [15]
@@ -1496,11 +1511,11 @@ m/n/10 )\OMS/cmsy/m/n/10 j \U/msa/m/n/10 6 \OML/cmm/m/it/10 h[] < ^^N$ \T2A/faq
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
 Overfull \hbox (41.58302pt too wide) in paragraph at lines 1729--1729
-[][]\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Несоб-ствен-ный ин-те-г
-рал)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Вы-ше пред-ло-жен-ный пре-дел $[] \OML
-/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []  \OML/cmm
-/m/it/10 x [] [] [] f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []  \
-OML/cmm/m/it/10 x$\T2A/faq/m/n/10 . 
+[]\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Несоб-ствен-ный ин-те-гра
+л)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Вы-ше пред-ло-жен-ный пре-дел $[] \OML/c
+mm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []  \OML/cmm/m
+/it/10 x [] [] [] f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []  \OM
+L/cmm/m/it/10 x$\T2A/faq/m/n/10 . 
  []
 
 [39
@@ -1518,17 +1533,17 @@ Overfull \hbox (52.23071pt too wide) detected at line 1833
 
 
 Overfull \hbox (6.75798pt too wide) in paragraph at lines 1841--1841
-[][]\T2A/faq/bx/n/10 Определение 2.3.1 \T2A/faq/m/n/10 (Сум-ми-ру-е-мое се-мей-
-ство)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Се-мей-ства, у ко-то-ро-го есть сум-м
-а. Пи-шут $[]$. 
+[]\T2A/faq/bx/n/10 Определение 2.3.1 \T2A/faq/m/n/10 (Сум-ми-ру-е-мое се-мей-ст
+во)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Се-мей-ства, у ко-то-ро-го есть сум-ма.
+ Пи-шут $[]$. 
  []
 
 [42] [43]
 Overfull \hbox (2.75331pt too wide) in paragraph at lines 1950--1950
-[][]\T2A/faq/bx/n/10 Теорема 2.3.5 \T2A/faq/m/n/10 (Лейб-ниц)\T2A/faq/bx/n/10 .
- []\T2A/faq/m/n/10 Пусть $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 a[]\OMS/cmsy/m/n/1
-0 g[] ^^Z \U/msb/m/n/10 R$\T2A/faq/m/n/10 , при-чјм $[] \OML/cmm/m/it/10 a[]$ \
-T2A/faq/m/n/10 схо-дит-ся лишь услов-но: $[]$. 
+[]\T2A/faq/bx/n/10 Теорема 2.3.5 \T2A/faq/m/n/10 (Лейб-ниц)\T2A/faq/bx/n/10 . [
+]\T2A/faq/m/n/10 Пусть $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 a[]\OMS/cmsy/m/n/10 
+g[] ^^Z \U/msb/m/n/10 R$\T2A/faq/m/n/10 , при-чјм $[] \OML/cmm/m/it/10 a[]$ \T2
+A/faq/m/n/10 схо-дит-ся лишь услов-но: $[]$. 
  []
 
 [44] [45] [46]
@@ -1624,13 +1639,13 @@ Package rerunfilecheck Info: File `calculus-2.out' has not changed.
 (rerunfilecheck)             Checksum: AD82B51757DF17CAA04600CCF1A0F2E2;13340.
  ) 
 Here is how much of TeX's memory you used:
- 27517 strings out of 479648
- 512111 string characters out of 5886115
- 798972 words of memory out of 5000000
- 44655 multiletter control sequences out of 15000+600000
+ 29346 strings out of 479648
+ 556456 string characters out of 5886115
+ 836369 words of memory out of 5000000
+ 46480 multiletter control sequences out of 15000+600000
  503786 words of font info for 85 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,16n,103p,731b,1100s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,16n,103p,731b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1652,7 +1667,7 @@ s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/calculus-2.pdf (66 pages, 567729 bytes).
+Output written on pdfs/calculus-2.pdf (66 pages, 567718 bytes).
 PDF statistics:
  931 PDF objects out of 1000 (max. 8388607)
  804 compressed objects within 9 object streams

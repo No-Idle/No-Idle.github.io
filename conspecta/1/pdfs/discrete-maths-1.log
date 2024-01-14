@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -651,6 +651,21 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1011,6 +1026,21 @@ File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@exercise_env=\count330
 \c@theorem_env=\count331
 \c@definition_env=\count332
+
+
+../mathstemplate.sty:223: LaTeX Error: Command \outer already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 ...lipbox{0 {0.30\height} 0 0}{$\bigwedge$}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 \c@lection=\count333
 )
 LaTeX Font Info:    Trying to load font information for OT1+faq on input line 8
@@ -1209,10 +1239,10 @@ File: t2afer.fd 2004/09/21 Fontinst v1.914 font definitions for T2A/fer.
 
 ]
 Overfull \hbox (2.98718pt too wide) in paragraph at lines 540--540
-[][]\T2A/faq/bx/n/10 Определение 3.1.7 \T2A/faq/m/n/10 (Путь)\T2A/faq/bx/n/10 .
- []\T2A/faq/m/n/10 Ко-неч-ная по-сле-до-ва-тель-ность $\OML/cmm/m/it/10 a[]$ \T
-2A/faq/m/n/10 нечјт-ной дли-ны $\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 k \OT1/cmr/m/
-n/10 + 1$\T2A/faq/m/n/10 . $\OML/cmm/m/it/10 a[] \OMS/cmsy/m/n/10 2 []$
+[]\T2A/faq/bx/n/10 Определение 3.1.7 \T2A/faq/m/n/10 (Путь)\T2A/faq/bx/n/10 . [
+]\T2A/faq/m/n/10 Ко-неч-ная по-сле-до-ва-тель-ность $\OML/cmm/m/it/10 a[]$ \T2A
+/faq/m/n/10 нечјт-ной дли-ны $\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 k \OT1/cmr/m/n/
+10 + 1$\T2A/faq/m/n/10 . $\OML/cmm/m/it/10 a[] \OMS/cmsy/m/n/10 2 []$
  []
 
 [14]
@@ -1225,10 +1255,10 @@ Overfull \hbox (28.55354pt too wide) in paragraph at lines 571--571
 
 [15] [16] [17]
 Overfull \hbox (34.75717pt too wide) in paragraph at lines 679--679
-[][]\T2A/faq/bx/n/10 Определение 3.5.3 \T2A/faq/m/n/10 (Граф, двой-ствен-ный $\
-OML/cmm/m/it/10 G$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Но-вый 
-плос-кий граф $\OML/cmm/m/it/10 H$\T2A/faq/m/n/10 . Гра-ни гра-фа $\OML/cmm/m/i
-t/10 G \OMS/cmsy/m/n/10 ! []$\T2A/faq/m/n/10 .
+[]\T2A/faq/bx/n/10 Определение 3.5.3 \T2A/faq/m/n/10 (Граф, двой-ствен-ный $\OM
+L/cmm/m/it/10 G$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Но-вый пл
+ос-кий граф $\OML/cmm/m/it/10 H$\T2A/faq/m/n/10 . Гра-ни гра-фа $\OML/cmm/m/it/
+10 G \OMS/cmsy/m/n/10 ! []$\T2A/faq/m/n/10 .
  []
 
 [18]
@@ -1255,13 +1285,13 @@ Package rerunfilecheck Info: File `discrete-maths-1.out' has not changed.
 (rerunfilecheck)             Checksum: F37E5A4DC1EBEDED127A92DE54145EA8;9614.
  ) 
 Here is how much of TeX's memory you used:
- 27179 strings out of 479648
- 504967 string characters out of 5886115
- 815642 words of memory out of 5000000
- 44400 multiletter control sequences out of 15000+600000
+ 29006 strings out of 479648
+ 549275 string characters out of 5886115
+ 846319 words of memory out of 5000000
+ 46223 multiletter control sequences out of 15000+600000
  502531 words of font info for 87 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,12n,103p,1370b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,12n,103p,1370b,754s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1281,7 +1311,7 @@ yr/ercouri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on pdfs/discrete-maths-1.pdf (36 pages, 372425 bytes).
+Output written on pdfs/discrete-maths-1.pdf (36 pages, 372405 bytes).
 PDF statistics:
  695 PDF objects out of 1000 (max. 8388607)
  611 compressed objects within 7 object streams
