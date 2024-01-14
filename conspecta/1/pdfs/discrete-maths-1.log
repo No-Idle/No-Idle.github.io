@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 JAN 2024 17:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 14:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1257,7 +1257,7 @@ Package rerunfilecheck Info: File `discrete-maths-1.out' has not changed.
 Here is how much of TeX's memory you used:
  27179 strings out of 479648
  504967 string characters out of 5886115
- 815638 words of memory out of 5000000
+ 815642 words of memory out of 5000000
  44400 multiletter control sequences out of 15000+600000
  502531 words of font info for 87 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191

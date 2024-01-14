@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 JAN 2024 23:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 14:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1023,11 +1023,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box70
 )
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux
+(pdfs/diffgeo-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `diffgeo-3.aux'.
@@ -1133,8 +1132,7 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.out)
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.out)
+(pdfs/diffgeo-3.out) (pdfs/diffgeo-3.out)
 \@outlinefile=\write4
 \openout4 = `diffgeo-3.out'.
 
@@ -1164,8 +1162,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 12.
-
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.toc
+ (pdfs/diffgeo-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -2370,8 +2367,7 @@ Overfull \hbox (1.12166pt too wide) in paragraph at lines 2390--2390
 изо-мет-рич-ная плос-
  []
 
-[47] [48] [49] [50]
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.aux)
+[47] [48] [49] [50] (pdfs/diffgeo-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2380,7 +2376,7 @@ Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  28423 strings out of 479648
- 534338 string characters out of 5886115
+ 533779 string characters out of 5886115
  856749 words of memory out of 5000000
  45546 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
@@ -2405,8 +2401,7 @@ ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffgeo-3.pdf
- (51 pages, 566649 bytes).
+Output written on pdfs/diffgeo-3.pdf (51 pages, 566763 bytes).
 PDF statistics:
  991 PDF objects out of 1000 (max. 8388607)
  857 compressed objects within 9 object streams
