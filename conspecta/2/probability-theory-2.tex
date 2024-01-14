@@ -233,7 +233,7 @@
     \definition[Математическое ожидание случайной величины $X$]{
         Обозначается \[\E X \bydef \sum\limits_{\omega \in \Omega}X(\omega)p(\omega)\]
     }
-    Математическое ожидание довольно неплохо описывает случайную величину одним числом:~(\ref{best_approximation}).
+    Математическое ожидание довольно неплохо описывает случайную величину одним числом:~(\cref{best_approximation}).
 
     После приведения подобных членов, можно записать $\E(X) = \sum\limits_{r}\P(X = r) r$
     Если $\Omega$ конечно, то сумма считается;
@@ -342,7 +342,7 @@
         \item \up \corollary[Неравенство Маркова]{\label{Markoff_inequality}
             $\forall r > 0: \P(|X| \ge r) \le \frac{\E(|X|)}{r}$.
             \provehere{
-                Применим неравенство \ref{expected_value_inequality} для $f(x) = \all{x,&x > 0 \\ 0,&x \le 0}$ и случайной величины $|X|$.
+                Применим неравенство \cref{expected_value_inequality} для $f(x) = \all{x,&x > 0 \\ 0,&x \le 0}$ и случайной величины $|X|$.
                 Получим \[\P(|X| \ge r) \le \frac{\E f(|X|)}{r} = \frac{\E |X|}{r}\]
                 что и требовалось доказать.
             }
@@ -380,7 +380,7 @@
         \item На самом деле, медиана --- плохая метрика, которой никто не пользуется.
         Так, только матожидание линейно: медиана суммы вообще не выражается через медианы слагаемых.
         \item \up \intfact{
-            Если в задаче \ref{best_approximation} заменить $\E((X - r)^2)$ на $\E(|X - r|)$, то минимизирующим $r$ окажется не матожидание, но медиана.
+            Если в задаче \cref{best_approximation} заменить $\E((X - r)^2)$ на $\E(|X - r|)$, то минимизирующим $r$ окажется не матожидание, но медиана.
         }
     }
 
@@ -433,7 +433,7 @@
 
         Тогда $\P(|X - \E X| \ge r) \le \frac{\D X}{r^2}$.
         \provehere{
-            \[\P(|X - \E X| \ge r) \underset{\text{согласно \ref{Markov-inequality-corollary}}}{\le} \frac{\E(X - \E X)^2}{r^2} = \frac{\D X}{r^2}\qedhere\]
+            \[\P(|X - \E X| \ge r) \underset{\text{согласно \cref{Markov-inequality-corollary}}}{\le} \frac{\E(X - \E X)^2}{r^2} = \frac{\D X}{r^2}\qedhere\]
         }
         }
     }
@@ -493,7 +493,7 @@
         \[\forall \eps > 0: \qquad \P\left(\left|\frac{\sum\limits_{i = 1}^{n}X_i}{n} - \frac{\sum\limits_{i = 1}^{n}\E X_i}{n}\right| > \eps\right)\underset{n \to \infty}\Map 0\]
         \provehere{
             \[\P\left(\left|\frac{\sum\limits_{i = 1}^{n}X_i}{n} - \frac{\sum\limits_{i = 1}^{n}\E X_i}{n}\right| > \eps\right) = \P\left(\left|\sum\limits_{i = 1}^{n}(X_i - \E X_i)\right| > n\eps\right)\]
-            Согласно неравенству Чебышёва~(\ref{Tchebycheff_inequlity}), это оценивается следующим образом:
+            Согласно неравенству Чебышёва~(\cref{Tchebycheff_inequlity}), это оценивается следующим образом:
             \[\P\left(\left|\sum\limits_{i = 1}^{n}(X_i - \E X_i)\right| > n\eps\right) \le \frac{\D\left( \sum\limits_{i = 1}^{n}X_i\right)}{(n\eps)^2}\le {\frac{n \sigma^2}{(n \eps)^2} \underset{n \to \infty}\Map 0}\]
 
         }
@@ -1079,7 +1079,7 @@
     \fact{
         Если два состояния сообщаются: $x \dots \rightarrow y$ и $y \dots \rightarrow x$, то $d(x) = d(y)$.
         \provehere{
-            Пусть $p^a(x \to y) > 0$. Воспользуемся~(\ref{trivial}) применительно к $y$: есть два цикла, содержащих $y$, длин $k \cdot d(y)$ и $(k + 1)\cdot d(y)$.
+            Пусть $p^a(x \to y) > 0$. Воспользуемся~(\cref{trivial}) применительно к $y$: есть два цикла, содержащих $y$, длин $k \cdot d(y)$ и $(k + 1)\cdot d(y)$.
 
             Тогда $a + k \cdot d(y) \in I_x$ и $a + (k + 1) \cdot d(y) \in I_x$ тоже. Отсюда сразу получаем $d(x) \divs d(y) = (a + (k + 1)\cdot d(y) - a - k \cdot d(y))$. Аналогично $d(y) \divs d(x)$, значит они равны.
         }

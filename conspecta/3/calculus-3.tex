@@ -151,7 +151,7 @@
 
     \definition[Кольцо]{Система множеств $\mathcal{A}$, такая что $\forall a, b \in \mathcal{A}: (a \cap b), (a \cup b), (a \sm b) \in \mathcal{A}$.}
     \example[Кольцо]{
-        Объединения конечного числа отрезков (или даже параллелепипедов~\ref{multiplication_of_semirings}) ($\mathcal{P}(\R^n)$ или $\mathcal{P}_0(\R^n)$).
+        Объединения конечного числа отрезков (или даже параллелепипедов~\cref{multiplication_of_semirings}) ($\mathcal{P}(\R^n)$ или $\mathcal{P}_0(\R^n)$).
     }
 
     \definition[Алгебра]{Кольцо $\mathcal{A}$, такое что $X \in \mathcal{A}$.}
@@ -162,7 +162,7 @@
         Система множеств $\mathcal{A} \subset 2^X$, такое что $\forall a, b \in \mathcal{A}: (a \cap b) \in \mathcal{A}$, а разность $(a \sm b)$ есть объединение конечного числа попарно непересекающихся подмножеств из $\mathcal{A}$.
     }
     \example[Полукольцо]{
-        Отрезки и конечные отрезки (или даже параллелепипеды~\ref{multiplication_of_semirings}) $\mathcal{P}(\R^n)$ и $\mathcal{P}_0(\R^n)$.
+        Отрезки и конечные отрезки (или даже параллелепипеды~\cref{multiplication_of_semirings}) $\mathcal{P}(\R^n)$ и $\mathcal{P}_0(\R^n)$.
     }
 
     Пусть $X, Y$ --- множества, $\mathcal{A} \subset 2^X, \mathcal{B} \subset 2^Y$ --- полукольца.
@@ -199,7 +199,7 @@
     \theorem{
         Пускай $\mathcal{A} \subset 2^X, \mathcal{B} \subset 2^Y$ --- полукольца, $\mu$ и $\nu$ на них --- (конечные) меры, определим меру на произведении
         \[\gamma(u \times v) \coloneqq \mu(u) \cdot \nu(v)\]
-        Утверждается, что $\gamma$ аддитивна~(\ref{why}).
+        Утверждается, что $\gamma$ аддитивна~(\cref{why}).
     }
     \newlection{8 сентября 2023 г.}
     Пусть $\mathcal{A}$ --- полукольцо.
@@ -341,7 +341,7 @@
             Рассмотрим $a \in \mathcal{A}, \{a_j\}_{j = 1}^{\infty}\subset\mathcal{A}$. Пусть $a = \bigsqcup\limits_{j = 1}^{\infty}a_j$.
             Для доказательства $\mu(a) = \sum\limits_{j = 1}^{\infty}$ покажем неравенства в обе стороны.
             \bullets{
-                \item $\forall k \in \N: \sum\limits_{j =1}^{k} \le \mu(a)$~(\ref{subunion_is_less_than_the_whole}), производим предельный переход.
+                \item $\forall k \in \N: \sum\limits_{j =1}^{k} \le \mu(a)$~(\cref{subunion_is_less_than_the_whole}), производим предельный переход.
                 \item Если $\mu(a_j) = \infty$, или $\mu(a) = 0$, то доказывать нечего.
 
                 Выберем $\eps > 0$.
@@ -649,7 +649,7 @@
                 Переходя к инфимуму по всем покрытиям получаем, что
                 \[\mu^*(a \cap e) + \mu^*(a \sm e) \le \inf\sum\limits_{i = 1}^{\infty}\mu(c_i) = \mu^*(a)\]
             }
-            \item Наконец, для доказательства второго дополнения сошлёмся на пятый пункт свойств меры~(\ref{outer-measure}).
+            \item Наконец, для доказательства второго дополнения сошлёмся на пятый пункт свойств меры~(\cref{outer-measure}).
         }
     }
     \definition[Стандартное продолжение меры $\mu$ на полукольце $\mathcal{P} \subset 2^X$]{
@@ -659,7 +659,7 @@
         \item Пусть $v_n$ --- объём на системе конечных $n$-мерных прямоугольных параллелепипедов (со сторонами, параллельными координатным осям).
 
         Стандартное продолжение данной меры --- \emph{мера Лебега} $\lambda_n$, полученное множество $\Sigma \subset 2^X$ --- множество \emph{измеримых по Лебегу} множеств.
-        Все Борелевские множества, разумеется, измеримы по Лебегу~(\ref{borel-sets}), но обратное неверно.
+        Все Борелевские множества, разумеется, измеримы по Лебегу~(\cref{borel-sets}), но обратное неверно.
         \item
         Пусть $\lambda_f$ --- Стилтьесова длина, порождённая нестрого возрастающей функцией $f$.
         Она счётно аддитивна на полукольце промежутков.
@@ -771,7 +771,7 @@
 
             Пусть $e_i \in \Sigma$ --- измеримы, причём $\mu(e_i) < \infty$ и $\bigsqcup\limits_{i = 1}^{\infty}e_i = X$.
             Обозначим за $d_i \coloneqq d \cap e_i$. Тогда $\forall i: \mu(d_i) < \infty$.
-            Согласно~(\ref{two-is-enough}): $\exists \sigma$-множество $D_i: \mu(D_i \sm d_i) < \frac{\eps}{2^i}$.
+            Согласно~(\cref{two-is-enough}): $\exists \sigma$-множество $D_i: \mu(D_i \sm d_i) < \frac{\eps}{2^i}$.
             Тогда подойдёт $D \coloneqq \bigcup\limits_{i = 1}^{\infty}D_i$: $\mu(D \sm d) < \eps$.
 
             Но отсюда пересечение $D$ по всем $\eps = \frac{1}{N}$ даёт подходящее $\delta\sigma$-множество.
@@ -856,7 +856,7 @@
 
     Также понятно, что все открытые множества являются счётными объединениями кубов из $\mathcal{D}(\R^n)$, откуда $\Sigma \subset \Sigma_1$, то есть на самом деле $\Sigma = \Sigma_1$.
 
-    Наконец, так как обе меры совпадают на $\mathcal{D}(\R^n)$, то они равны~(\ref{uniqueness_of_measure}).
+    Наконец, так как обе меры совпадают на $\mathcal{D}(\R^n)$, то они равны~(\cref{uniqueness_of_measure}).
     \newlection{4 октября 2023 г.}
     \theorem{\label{measure_is_invariant}
     Пусть $\lambda_n$ --- мера Лебега в $\R^n$, $\Sigma$ --- $\sigma$-алгебра измеримых по Лебегу множеств.
@@ -956,7 +956,7 @@
 
             Тем самым, $\diam(\Phi(a_i)) \le C \cdot \diam(a_i)$, и $\sum\limits_{i = 1}^{\infty}\diam(\Phi(a_i))^n \le C^n \cdot  \eps$
 
-            Если же $\dist(e, G_1^\comp) = 0$, то воспользуемся теоремой об исчерпывающей последовательности компактов~\ref{ob-ischerpivauschey}. Найдутся компактные $K_i \subset G$, в объединении дающие $G$.
+            Если же $\dist(e, G_1^\comp) = 0$, то воспользуемся теоремой об исчерпывающей последовательности компактов~\cref{ob-ischerpivauschey}. Найдутся компактные $K_i \subset G$, в объединении дающие $G$.
             Для множества меры нуль $a \subset G$ заметим, что оно является объединением счётного числа множеств $a_i = a \cap K_i$, отделённых от границы.
         }
     }
@@ -985,7 +985,7 @@
 
             Таким образом, если положить $\nu = \lambda_n\circ T$, то окажется, что $\nu$ --- корректно определённая счётно-аддитивная мера на $\sigma$-алгебра измеримых по Лебегу множеств.
             Заметим, что $\nu$ инвариантна относительно сдвига: $\forall t \in \R^n$. $\lambda_n(Te + Tt) = \lambda_n(Te)$.
-            Таким образом~(\ref{measure_is_invariant}): $\exists c: \nu = c \lambda_n$. Осталось проверить, что $c = |\det T|$.
+            Таким образом~(\cref{measure_is_invariant}): $\exists c: \nu = c \lambda_n$. Осталось проверить, что $c = |\det T|$.
 
             \bullets{
                 \item Если $T$ --- ортогональное преобразование, то оно сохраняет расстояния, и $\det T = \pm 1$.
@@ -1057,7 +1057,7 @@
     Пускай $(X, \mathcal{A})$, $(Y, \mathcal{C})$ --- множества и $\sigma$-алгебры соответствующих подмножеств.
     $F: X \map Y$.
 
-    Вспомним определение измеримости:~(\ref{measured_map}).
+    Вспомним определение измеримости:~(\cref{measured_map}).
     \definition[Измеримое отображение $F: X \map Y$ (относительно данных $\sigma$-алгебр)]{
         Такое отображение $F$, что $\forall c \in \mathcal{C}: F^{-1}(c) \in \mathcal{A}$.
     }
@@ -1244,7 +1244,7 @@
 
     Пусть $(X, \Sigma, \mu)$ --- пространство с мерой, то есть $\mu$ --- счётно---аддитивная мера, заданная на $\Sigma$.
 
-    Предположим, что $\mu$ --- полная мера~(\ref{full-measure}).
+    Предположим, что $\mu$ --- полная мера~(\cref{full-measure}).
     Если это не так, то можно продолжить $\mu$ по Лебегу --- Каратеодори.
     Тогда в целом ничего особо не поменяется, в предположении $\sigma$-конечности для продолжения меры $\tilde{\mu}$ на $\tilde{\Sigma}$: $\forall a \in \tilde{\Sigma}: \mu(a) < +\infty \then \exists b \in \Sigma: b \supset a, \tilde{\mu}(b \sm a) = 0$.
 
@@ -1492,7 +1492,7 @@
     \theorem{
         В случае $p \ge 1: d$ --- реально метрика на $L^p(\mu)$.
         Чтобы выполнялась положительная определённость ($\|f\| = 0 \iff f = 0$), будем рассматривать функции определённые с точностью до меры нуль на $X$.
-        Иными словами $\|f\| = 0 \iff f = 0$ почти всюду~(\ref{supp-size}).
+        Иными словами $\|f\| = 0 \iff f = 0$ почти всюду~(\cref{supp-size}).
     \provehere{
         \indentlemma[Неравенство Гёльдера]{
             Пусть $p, q > 1$ --- сопряжённые показатели (${\nicefrac1p + \nicefrac1q = 1}$), тогда для $f \in L^p, g \in L^q: fg \in L^1$, и $\|fg\|_{L^1} \le \|f\|_{L^p}\|g\|_{L^q}$.
@@ -1966,7 +1966,7 @@
         \provehere{
             Пусть $p = \infty$.
             \[|(f * g)(x)| \le \int\limits_{\R^n}|f(x - y)| \cdot |g(y)| \d y \le \underbrace{\|f\|_{L^{\infty}}}_{\esssup(f)~}\int\limits_{\R^n}|g(y)|\d y\]
-            При $p = 1$ доказано выше:~(\ref{p-equals-1}).
+            При $p = 1$ доказано выше:~(\cref{p-equals-1}).
 
             Теперь пусть $1 < p < \infty$, $q$ --- сопряжённый к $p$ показатель.
             \[\int\limits_{\R^n}|(f * g)(x)|^p\d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)||g(y)|\d y\right)^p \d x = \cdots\]
@@ -2542,7 +2542,7 @@
         Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$.
         Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\big|_E \ge 0, \mu\big|_F \le 0$. Такое $E$, что $\mu\big|_E \ge 0$ называется \emph{множеством положительности} (аналогично, $F$ --- \emph{множество отрицательности}).
         \provehere{
-            $\defset{\mu(b)}{b \in \Sigma}$ ограничено~(\ref{bounded}), пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
+            $\defset{\mu(b)}{b \in \Sigma}$ ограничено~(\cref{bounded}), пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
             \bullets{
                 \item $M = 0$. Тогда $\mu \le 0$, и $F = X, E = \o$.
                 \item $M > 0$. По определению супремума $\exists b_k \in \Sigma: M - \frac{1}{2^k} \le \mu(b_k) \le M$.
@@ -2605,7 +2605,7 @@
     \definition[Полная вариация $\mu$ на $a \in \Sigma$]{$|\mu|(a) = \sup\defset{\sum\limits_{j = 1}^{N}|\mu(e_j)|}{e_1\sqcup \dots\sqcup e_N = a}$}
     \theorem{
         $|\mu|$ есть неотрицательная конечная счётно-аддитивная мера на $\Sigma$.
-        \provehere{\ref{abs-mes-prop}}
+        \provehere{\cref{abs-mes-prop}}
     }
     \note{
         Если $\mu$ вещественна, то $|\mu|(a) = \mu^+(a) + \mu^-(a)$, где $|\mu|$ понимается, как полная вариация.

@@ -115,7 +115,7 @@
 \contentsline {section}{\numberline {4.2}Линейные отображения}{71}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Основной пример линейных отображений}{72}{subsection.4.2.1}%
 \contentsline {section}{\numberline {4.3}Линейная комбинация, линейная оболочка}{73}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Фактормодули, теорема о гомоморфизме}{73}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Фактормодули, теорема о гомоморфизме}{74}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Теорема о гомоморфизме}{74}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Сумма и пересечение подмодулей, теорема Нётер об изоморфизме}{74}{subsection.4.4.2}%
 \contentsline {section}{\numberline {4.5}Линейная зависимость и независимость}{75}{section.4.5}%

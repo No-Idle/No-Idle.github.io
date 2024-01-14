@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -426,6 +426,10 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \Gin@req@height=\dimen157
 \Gin@req@width=\dimen158
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/varioref.sty
+Package: varioref 2021/07/07 v1.6f package for extended references (FMi)
+\c@vrcnt=\count278
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
 
@@ -456,8 +460,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen159
-\Hy@linkcounter=\count278
-\Hy@pagecounter=\count279
+\Hy@linkcounter=\count279
+\Hy@pagecounter=\count280
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
@@ -474,7 +478,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count280
+\Hy@SavedSpaceFactor=\count281
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
@@ -489,7 +493,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count281
+\c@Hy@tempcnt=\count282
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -505,7 +509,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count282
+\Fld@menulength=\count283
 \Field@Width=\dimen161
 \Fld@charsize=\dimen162
 Package hyperref Info: Hyper figures OFF on input line 6076.
@@ -522,9 +526,9 @@ LaTeX Info: Redefining \pageref on input line 6150.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count283
-\c@Item=\count284
-\c@Hfootnote=\count285
+\Hy@abspage=\count284
+\c@Item=\count285
+\c@Hfootnote=\count286
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -536,8 +540,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count286
-\c@bookmark@seq@number=\count287
+\Fld@listcount=\count287
+\c@bookmark@seq@number=\count288
 
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -555,21 +559,21 @@ Package: mathtools 2021/02/02 v1.28 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count288
-\calc@Bcount=\count289
+\calc@Acount=\count289
+\calc@Bcount=\count290
 \calc@Adimen=\dimen163
 \calc@Bdimen=\dimen164
 \calc@Askip=\skip56
 \calc@Bskip=\skip57
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count290
+\calc@Ccount=\count291
 \calc@Cskip=\skip58
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count291
+\g_MT_multlinerow_int=\count292
 \l_MT_multwidth_dim=\dimen165
 \origjot=\skip59
 \l_MT_shortvdotswithinadjustabove_dim=\dimen166
@@ -587,8 +591,8 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count292
-\cp@tempcnt=\count293
+\c@cp@cntr=\count293
+\cp@tempcnt=\count294
 )
 (/usr/share/texlive/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
@@ -605,7 +609,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \UL@skip=\skip63
 \UL@hook=\toks31
 \UL@height=\dimen173
-\UL@pe=\count294
+\UL@pe=\count295
 \UL@pixel=\dimen174
 \ULC@box=\box55
 Package: ulem 2019/11/18
@@ -627,14 +631,14 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/empheq.sty
 Package: empheq 2017/03/31 v2.15 Emphasizing equations
-\l_EQ_equationtype_int=\count295
-\l_EQ_alignmentmode_int=\count296
+\l_EQ_equationtype_int=\count296
+\l_EQ_alignmentmode_int=\count297
 \l_EQ_totalwidth_dim=\dimen176
 \l_EQ_displaywidth_dim=\dimen177
 \l_EQ_temp_linewidth_dim=\dimen178
 \l_EQ_linewidth_dim=\dimen179
 \EmphEqdelimitershortfall=\dimen180
-\EmphEqdelimiterfactor=\count297
+\EmphEqdelimiterfactor=\count298
 \g_EQ_toptag_height_dim=\dimen181
 \g_EQ_bottomtag_depth_dim=\dimen182
 \g_EQ_toprow_height_dim=\dimen183
@@ -642,12 +646,12 @@ Package: empheq 2017/03/31 v2.15 Emphasizing equations
 \g_EQ_widesttag_dim=\dimen185
 \EQ_mathdisplay_box=\box56
 \EQ_tag_box=\box57
-\g_EQ_temprow_int=\count298
+\g_EQ_temprow_int=\count299
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count299
-\decimalpart=\count300
+\integerpart=\count300
+\decimalpart=\count301
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
@@ -664,6 +668,13 @@ LaTeX Info: Redefining \cpagerefrange on input line 2370.
 LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `varioref' support loaded on input line 2605.
+Package cleveref Info: `cleveref' supersedes `varioref's \labelformatcommand on
+ input line 2605.
+LaTeX Info: Redefining \vref on input line 2605.
+LaTeX Info: Redefining \Vref on input line 2605.
+LaTeX Info: Redefining \vrefrange on input line 2605.
+LaTeX Info: Redefining \fullref on input line 2605.
 Package cleveref Info: `amsthm' support loaded on input line 3026.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
@@ -678,7 +689,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks37
 \XKV@tempa@toks=\toks38
 )
-\XKV@depth=\count301
+\XKV@depth=\count302
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Overwriting math alphabet `\mathscr' in version `bold'
@@ -727,14 +738,14 @@ ex
 \pgf@yd=\dimen197
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count302
-\c@pgf@countb=\count303
-\c@pgf@countc=\count304
-\c@pgf@countd=\count305
+\c@pgf@counta=\count303
+\c@pgf@countb=\count304
+\c@pgf@countc=\count305
+\c@pgf@countd=\count306
 \t@pgf@toka=\toks43
 \t@pgf@tokb=\toks44
 \t@pgf@tokc=\toks45
-\pgf@sys@id@count=\count306
+\pgf@sys@id@count=\count307
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -750,8 +761,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count307
-\pgfsyssoftpath@bigbuffer@items=\count308
+\pgfsyssoftpath@smallbuffer@items=\count308
+\pgfsyssoftpath@bigbuffer@items=\count309
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -781,7 +792,7 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen198
-\pgfmath@count=\count309
+\pgfmath@count=\count310
 \pgfmath@box=\box59
 \pgfmath@toks=\toks46
 \pgfmath@stack@operand=\toks47
@@ -805,7 +816,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count310
+\c@pgfmathroundto@lastzeros=\count311
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
@@ -844,7 +855,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box60
 \pgf@hbox=\box61
 \pgf@layerbox@main=\box62
-\pgf@picture@serial@count=\count311
+\pgf@picture@serial@count=\count312
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -877,8 +888,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen278
-\pgf@sys@shading@range@num=\count312
-\pgf@shadingcount=\count313
+\pgf@sys@shading@range@num=\count313
+\pgf@shadingcount=\count314
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -938,7 +949,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count314
+\pgf@plot@mark@count=\count315
 \pgfplotmarksize=\dimen283
 )
 \tikz@lastx=\dimen284
@@ -953,18 +964,18 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box66
 \tikz@tempbox=\box67
 \tikz@tempbox@bg=\box68
-\tikztreelevel=\count315
-\tikznumberofchildren=\count316
-\tikznumberofcurrentchild=\count317
-\tikz@fig@count=\count318
+\tikztreelevel=\count316
+\tikznumberofchildren=\count317
+\tikznumberofcurrentchild=\count318
+\tikz@fig@count=\count319
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count319
-\pgfmatrixcurrentcolumn=\count320
-\pgf@matrix@numberofcolumns=\count321
+\pgfmatrixcurrentrow=\count320
+\pgfmatrixcurrentcolumn=\count321
+\pgf@matrix@numberofcolumns=\count322
 )
-\tikz@expandcount=\count322
+\tikz@expandcount=\count323
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -1001,7 +1012,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen298
 \pgfdecoratedinputsegmentremainingdistance=\dimen299
 \pgf@decorate@distancetomove=\dimen300
-\pgf@decorate@repeatstate=\count323
+\pgf@decorate@repeatstate=\count324
 \pgfdecorationsegmentamplitude=\dimen301
 \pgfdecorationsegmentlength=\dimen302
 )
@@ -1017,16 +1028,16 @@ File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 zlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-\c@lemma_env=\count324
-\c@proposal_env=\count325
-\c@problem_env=\count326
-\c@corollary_env=\count327
-\c@fact_env=\count328
-\c@statement_env=\count329
-\c@exercise_env=\count330
-\c@theorem_env=\count331
-\c@definition_env=\count332
-\c@lection=\count333
+\c@lemma_env=\count325
+\c@proposal_env=\count326
+\c@problem_env=\count327
+\c@corollary_env=\count328
+\c@fact_env=\count329
+\c@statement_env=\count330
+\c@exercise_env=\count331
+\c@theorem_env=\count332
+\c@definition_env=\count333
+\c@lection=\count334
 )
 LaTeX Font Info:    Trying to load font information for OT1+faq on input line 9
 .
@@ -1035,7 +1046,7 @@ File: ot1faq.fd 2001/12/09 Fontinst v1.914 font definitions for OT1/faq.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count334
+\l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box70
 )
 (pdfs/algebra-2.aux
@@ -1110,16 +1121,16 @@ LaTeX Info: Redefining \th on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count335
+\scratchcounter=\count336
 \scratchdimen=\dimen303
 \scratchbox=\box71
-\nofMPsegments=\count336
-\nofMParguments=\count337
+\nofMPsegments=\count337
+\nofMParguments=\count338
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count338
+\MPscratchCnt=\count339
 \MPscratchDim=\dimen304
-\MPnumerator=\count339
-\makeMPintoPDFobject=\count340
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1141,7 +1152,8 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count341
+\c@section@level=\count342
+LaTeX Info: Redefining \Ref on input line 520.
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -1151,6 +1163,7 @@ LaTeX Info: Redefining \nameref on input line 9.
 \@outlinefile=\write4
 \openout4 = `algebra-2.out'.
 
+LaTeX Info: Redefining \Ref on input line 9.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
 
 
@@ -1506,14 +1519,14 @@ Overfull \hbox (4.55948pt too wide) in paragraph at lines 2962--2962
 \T2A/faq/m/n/10 и $[]$. 
  []
 
-[64]
-Overfull \hbox (15.08287pt too wide) in paragraph at lines 3035--3035
-[]\T2A/faq/m/n/10 —огласно тео-ре-ме Ћагран-жа ([]5.5.4[]) най-дЉт-с€ ор-то-го-
-наль-ный ба-зис $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]; [] ; e[]\OT1/cmr/m/n/10
- )$\T2A/faq/m/n/10 .
+[64] [65]
+Overfull \hbox (27.5628pt too wide) in paragraph at lines 3052--3052
+[]\T2A/faq/m/n/10 —огласно тео-ре-ме Ћагран-жа (тео-ре-ма []5.5.4[]) най-дЉт-с€
+ ор-то-го-наль-ный ба-зис $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]; [] ; e[]\OT1/
+cmr/m/n/10 )$\T2A/faq/m/n/10 .
  []
 
-[65] [66]
+[66]
 Overfull \hbox (8.51903pt too wide) in paragraph at lines 3112--3112
 []\T2A/faq/bx/n/10 ќпределение 5.9.1 \T2A/faq/m/n/10 (ќр-то-го-наль-ное от-ра-ж
 е-ние от-но-си-тель-но $\OML/cmm/m/it/10 v$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . 
@@ -1645,10 +1658,10 @@ Package rerunfilecheck Info: File `algebra-2.out' has not changed.
 (rerunfilecheck)             Checksum: 9CE9AE2B986B02C339BF584F4F442DFB;42883.
  ) 
 Here is how much of TeX's memory you used:
- 31170 strings out of 479648
- 598173 string characters out of 5886115
- 855518 words of memory out of 5000000
- 47932 multiletter control sequences out of 15000+600000
+ 31295 strings out of 479648
+ 600041 string characters out of 5886115
+ 858097 words of memory out of 5000000
+ 48054 multiletter control sequences out of 15000+600000
  508221 words of font info for 101 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,24n,103p,973b,1181s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1675,7 +1688,7 @@ onts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/
 stmary10.pfb>
-Output written on pdfs/algebra-2.pdf (91 pages, 686279 bytes).
+Output written on pdfs/algebra-2.pdf (91 pages, 686561 bytes).
 PDF statistics:
  1798 PDF objects out of 2073 (max. 8388607)
  1641 compressed objects within 17 object streams

@@ -15,6 +15,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{graphicx}
+\RequirePackage{varioref}
 \RequirePackage{hyperref}
 \RequirePackage{mathtools}
 \RequirePackage{mathrsfs}
@@ -147,7 +148,6 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\singlepage}[1]{\begin{samepage}#1\end{samepage}}
 \renewcommand{\gather}[1]{\begin{gather*}#1\end{gather*}}
 \renewcommand{\multline}[1]{\begin{multline*}#1\end{multline*}}
-\renewcommand{\ref}[1]{\cref{#1}}
 \newcommand{\indentlemma}[3][]{\indent{\lemma[#1]{#2\prove[Доказательство леммы]{#3}}}}
 
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}

@@ -89,7 +89,7 @@
     }
     \note{
         Псевдоотражения --- подгруппа обратимых элементов в диагональных матрицах \[\text{diag}(a_1, \dots, a_n) \bydef \vect{a_1 && 0 \\ &\ddots&\\0&&a_n}\]
-        Так как умножаются диагональные матрицы покомпонентно, то справедливость~(\ref{multiplicity}) очевидна ещё и с другой стороны.
+        Так как умножаются диагональные матрицы покомпонентно, то справедливость~(\cref{multiplicity}) очевидна ещё и с другой стороны.
     }
     \lemma{
         $[d_i(\eps), d_j(\theta)] = \all{d_i([\eps, \theta]), & i = j \\ e,&i \ne j}$ --- в частности, псевдоотражения с разными индексами коммутируют, а с одинаковыми --- коммутируют, если коммутируют параметры.
@@ -128,7 +128,7 @@
         $GE(n, R) = E(n, R) \cdot D(n, R)$.
         \provehere{
             Всякий элемент $g \in GE(n, R)$ по определению представим в виде $e_1 d_1 \dots e_m d_m$, где $e_i \in E(n, R), d_i \in D(n, R)$.
-            Согласно~(\ref{some_useful_staff}) $d_i e_{i + 1}d_{i}^{-1} \in E(n, R)$, то есть можно постепенно перекидывать элементы из $E(n, R)$ в начало произведения.
+            Согласно~(\cref{some_useful_staff}) $d_i e_{i + 1}d_{i}^{-1} \in E(n, R)$, то есть можно постепенно перекидывать элементы из $E(n, R)$ в начало произведения.
         }
     }
 
@@ -334,7 +334,7 @@
         Внешний ранг всегда не меньше тензорного ранга.
     }
     \theorem{
-        Если $K$ --- поле, то тензорный ранг матрицы совпадает с её строчными и столбцовыми рангами, а ещё равен $r$ из теоремы о комбинаторной эквивалентности матриц~(\ref{combinatorial_equivalence}).
+        Если $K$ --- поле, то тензорный ранг матрицы совпадает с её строчными и столбцовыми рангами, а ещё равен $r$ из теоремы о комбинаторной эквивалентности матриц~(\cref{combinatorial_equivalence}).
         \provehere{
             Переходя $x \rightsquigarrow gx$, где $g \in GE(m, K)$ --- элементарная матрица, мы переходим к пространству строк, содержащемуся в пространстве строк $x$.
 
@@ -344,7 +344,7 @@
             Применив далее преобразования над столбцами, приведём матрицу к каноническому виду --- окаймлённой единичной, причём ранг её будет тот же $r$.
 
             Если же аналогичные действия проделать сначала над столбцами, то получится столбцово-эшелонированная матрица с единичным блоком $\tilde{r} \times \tilde{r}$.
-            Так как канонический вид матрицы единственен~(\ref{canonical}), то $r = \tilde{r}$.
+            Так как канонический вид матрицы единственен~(\cref{canonical}), то $r = \tilde{r}$.
 
             Отсюда получается, что $r = \crk(x) = \rrk(x) = \rk(x)$, где последнее --- ранг линейного отображения.
             Кроме того, отсюда вытекают факты, что строчный ранг не меняется при столбцовых преобразованиях, а столбцовый --- при строчных.
@@ -414,7 +414,7 @@
     Для любого $g \in GL(m, K) = GE(m, K)$ умножение на матрицу слева приводит к эквивалентной системе $gax = gu$.
     Также можно перенумеровать неизвестные:
     \[(gaw)(w^{-1}x) = gu, \qquad w \in W_n\]
-    Раньше было доказано~(\ref{combinatorial_equivalence}), что можно подобрать такие $g \in GE(m, K), w \in W_n$, что $gaw$ имеет ступенчатый вид: $\vect{gaw|gu} = \left(\arr{c c | c}{e & * & *\\ 0 & 0  & \delta}\right), \delta \in \{0, 1\}^{m-r}$.
+    Раньше было доказано~(\cref{combinatorial_equivalence}), что можно подобрать такие $g \in GE(m, K), w \in W_n$, что $gaw$ имеет ступенчатый вид: $\vect{gaw|gu} = \left(\arr{c c | c}{e & * & *\\ 0 & 0  & \delta}\right), \delta \in \{0, 1\}^{m-r}$.
     Система совместна $\iff \delta = 0$.
     Таким образом, неизвестные разбились на 2 группы: \emph{главные} $x_1, \dots, x_r$ и \emph{свободные} $x_{r + 1}, \dots, x_n$.
 
@@ -436,9 +436,9 @@
             \item Нормированность: $\Det(e_1, \dots, e_n) = \Det(e) = 1$.
         }
     }
-    Существует ли такой определитель? (Да, например, определитель Лейбница~{\ref{leibnitz_determinant}})
+    Существует ли такой определитель? (Да, например, определитель Лейбница~{\cref{leibnitz_determinant}})
 
-    Единственен ли он? (Да:~\ref{uniqueness_of_determinant})
+    Единственен ли он? (Да:~\cref{uniqueness_of_determinant})
 
     \lemma{
         Определитель не меняется при элементарных преобразованиях над столбцами.
@@ -857,7 +857,7 @@
 
     \chapter{Многочлены}
     \newlection{14 марта 2023 г.}
-    В доказательстве вычисления определителя Вандермонда были два пробела, надо бы их восполнить~(\ref{Bezout_theorem}).
+    В доказательстве вычисления определителя Вандермонда были два пробела, надо бы их восполнить~(\cref{Bezout_theorem}).
 
 
     \section{Гомоморфизм эвалюации}
@@ -1178,7 +1178,7 @@
         }
     }
     \theorem{
-        Построенное кольцо $S^{-1}R$~(\ref{quotient_ring_construction}) обладает этими свойствами.
+        Построенное кольцо $S^{-1}R$~(\cref{quotient_ring_construction}) обладает этими свойствами.
         Любое кольцо $A$ с гомоморфизмом $\psi: R \map A$, обладающее этими свойствами, изоморфно $S^{-1}R$:
         \numbers{
             \item $\psi(S) \le A^*$
@@ -1361,7 +1361,7 @@
 
 
     \section{Факториальность кольца многочленов}
-    \textbf{Теорема \ref{Gauss}} (Теорема Гаусса)\textbf .
+    \textbf{Теорема \cref{Gauss}} (Теорема Гаусса)\textbf .
     $R$ --- UFD $\then R[t]$ --- UFD.
 
     \subsection{Примитивные многочлены}
@@ -1433,7 +1433,7 @@
             $f = \Cont(f) \cdot \tilde{f}$.
             Разложим $\Cont(f)$ внутри UFD $R$.
 
-            Если $\tilde{f}$ разложим над $K[t]$, то он разложим и над $R[t]$~(\ref{gauss_irreducibility}).
+            Если $\tilde{f}$ разложим над $K[t]$, то он разложим и над $R[t]$~(\cref{gauss_irreducibility}).
 
             Так как кольцо $K[t]$ нётерово, то процесс оборвётся, значит получили разложение $f = u p_1 \proddots p_r q_1 \proddots q_s$, где $u \in R^*, p_i \in \Irr(R), q_j \in \Irr(R[t])$.
 
@@ -1801,7 +1801,7 @@
     \theorem{
         Над алгебраически замкнутым полем всё пространство раскладывается в прямую сумму корневых подпространств, отвечающих собственному числу $\lambda$.
     \provehere{
-\ref{about_root_decomposition}
+\cref{about_root_decomposition}
     }
     }
     \example[Основной пример корневых векторов]{
@@ -1976,7 +1976,7 @@
     \theorem[О примарном разложении]{
         $V = V^{p_1} \oplus \dots \oplus V^{p_s}$.
         \provehere{
-            Теорема Гамильтона-Кэли~(\ref{Hamilton-Caley}) + (\ref{yet_another}) + индукция по $s$.
+            Теорема Гамильтона-Кэли~(\cref{Hamilton-Caley}) + (\cref{yet_another}) + индукция по $s$.
         }
     }
 
@@ -2378,7 +2378,7 @@
     }
     }
     \provehere{
-        (\ref{lemma1}) и ниже.
+        (\cref{lemma1}) и ниже.
     }
     \definition[Циклический модуль $M$]{
         $M$ порождён одним элементом: $M = Rx$.
@@ -2406,7 +2406,7 @@
     \theorem[О существовании согласованных базисов для подмодулей свободного модуля]{
         Пусть $N \le M \cong R^n$. Тогда $\exists (e_1, \dots, e_n)$ --- базис в $M$, $\exists \lambda_1, \dots, \lambda_m \in R: \lambda_1 \divs \cdots \divs \lambda_m$, причём $N = \angles{\lambda_1 e_{1}, \dots, \lambda_m e_{m}} \cong R^m$.
         \provehere{
-            \ref{good_basises}.
+            \cref{good_basises}.
         }
     }
 
@@ -2440,7 +2440,7 @@
         Оно инъективно, так как модуль $M$ --- без кручения. $\phi(M) \cap Ry_i \ne \{0\}$, так как там есть $\lambda y_i$.
     }
     }
-    \corollary{1. в (\ref{free_submodule}).
+    \corollary{1. в (\cref{free_submodule}).
     Если $R$ --- PID, $M$ --- свободный модуль конечного ранга, то $\forall N \le M$: $N$ свободен, причём $\rk N \le \rk M$.
     \provehere{
         Индукция по рангу $M$.
@@ -2467,7 +2467,7 @@
             Значит, $M / T(M) \cong R^n$ для некоего $n \in \N$, то есть $M \cong T(M) \oplus R^n$.
         }
     }
-    Таким образом, (\ref{free_submodule}) полностью доказана.
+    Таким образом, (\cref{free_submodule}) полностью доказана.
 
 
     \section{Согласованный выбор базисов в свободном модуле и его подмодуле}
@@ -2735,7 +2735,7 @@
     \theorem[О классификации симплектических пространств]{
         $U \cong V \iff \all{\dim U = \dim V \\ \rk U = \rk V}$.
         \provehere{
-            \ref{simplectic_classification}
+            \cref{simplectic_classification}
         }
     }
     \corollary{
@@ -2749,7 +2749,7 @@
     \theorem{
         Если $K$ квадратически замкнуто и ${\chr(K) \ne 2}$, то квадратические пространства $U \cong V \iff \all{\dim(U) = \dim(V) \\ \rk(U) = \rk(V)}$.
         \provehere{
-            \ref{quadratic_classification}
+            \cref{quadratic_classification}
         }
     }
     \corollary{
@@ -2766,7 +2766,7 @@
         Здесь $r^+$ и $r^-$ --- количества положительных и отрицательных квадратов.
 
         В матрице Грама на главной диагонали стоит $r^+$ единиц, $r^-$ минус единиц, остальные --- нули.
-        \provehere{\ref{silvester_inertion_law}}
+        \provehere{\cref{silvester_inertion_law}}
     }
     \newlection{25 апреля 2023 г.}
 
@@ -2786,10 +2786,10 @@
         \item $\forall U \le V: U \cap U^\perp = \Rad(U) \bydef \defset{u \in U}{\forall u' \in U: B(u, u') = 0}$.
         \item $\Rad(V) = V^\perp$; $\{0\}^\perp = V$.
         \item $U^\perp \le V$.
-        \item $U \le U^{\perp\perp}$ (равенство в случае невырожденного $V$: следствие~(\ref{orthogonal_dimension})).
+        \item $U \le U^{\perp\perp}$ (равенство в случае невырожденного $V$: следствие~(\cref{orthogonal_dimension})).
         \item $U \rightsquigarrow U^\perp$ обращает включения: $U \le W \then W^\perp \le U^\perp$.
         \item $(U + W)^\perp = U^\perp \cap W^\perp$.
-        \item $(U \cap W)^\perp \ge U^\perp + W^\perp$ (равенство в случае невырожденного $V$: следствие~(\ref{orthogonal_dimension})).
+        \item $(U \cap W)^\perp \ge U^\perp + W^\perp$ (равенство в случае невырожденного $V$: следствие~(\cref{orthogonal_dimension})).
     }
 
     \subsection{Ортогональная прямая сумма}
@@ -2846,7 +2846,7 @@
     \provebullets{
         \item $U \cap U^\perp = \Rad(U) = \{0\}$.
         \item По определению $U \perp U^\perp$.
-        \item $\dim(U) + \dim\left(U^\perp\right) = \dim(V)$ согласно~(\ref{orthogonal_dimension}).
+        \item $\dim(U) + \dim\left(U^\perp\right) = \dim(V)$ согласно~(\cref{orthogonal_dimension}).
     }
     }
     \note{
@@ -2856,13 +2856,13 @@
     \theorem{
         Если $V$ невырождено, то $\forall U \le V: U = U^{\perp\perp}$.
         \provehere{
-            Согласно~(\ref{orthogonal_dimension}) получаем $\dim(U) = \dim(U^{\perp\perp})$.
+            Согласно~(\cref{orthogonal_dimension}) получаем $\dim(U) = \dim(U^{\perp\perp})$.
         }
     }
     \theorem{\label{was_it_proved_or_not}
     Если из пространств $V, U, U^\perp$ два невырождены, то и третье тоже, в этом случае разложения $V = U \boxplus U^\perp = U^\perp \boxplus U^{\perp\perp}$ симметричны по $U$ и $U^\perp$.
     \provebullets{
-        \item Если $V$ невырождено, то (тривиально) $U^{\perp\perp} \ge U$, но согласно~(\ref{orthogonal_dimension}) наблюдается равенство.
+        \item Если $V$ невырождено, то (тривиально) $U^{\perp\perp} \ge U$, но согласно~(\cref{orthogonal_dimension}) наблюдается равенство.
 
         Если $U^\perp$ невырождено, то заменим $\all{U^\perp \rightsquigarrow U^{\perp\perp} \\ U \rightsquigarrow U^\perp}$, в дальнейшем доказательстве невырождено $U$.
 
@@ -2899,7 +2899,7 @@
             \underline{База:} В одномерном пространстве любой базис ортогонален.
 
             \underline{Переход:}
-            Найдётся неизотропный $e_1 \in V$, тогда согласно~(\ref{was_it_proved_or_not}) $V = e_1 K \boxplus (e_1 K)^\perp$, по индукционному предположению $V = \angles{e_1} \boxplus \dots \boxplus\angles{e_{n-1}}$.
+            Найдётся неизотропный $e_1 \in V$, тогда согласно~(\cref{was_it_proved_or_not}) $V = e_1 K \boxplus (e_1 K)^\perp$, по индукционному предположению $V = \angles{e_1} \boxplus \dots \boxplus\angles{e_{n-1}}$.
         }
     }
 
@@ -2945,7 +2945,7 @@
 
         Тогда $u$ можно включить в гиперплоскость $H \le V$, такую, что $H \boxplus H^\perp = V$.
         \provehere{
-            По лемме $H$ существует;\ $H$ невырождена, значит достаточно сослаться на~\ref{extraction_of_hyperbolic_surface}.
+            По лемме $H$ существует;\ $H$ невырождена, значит достаточно сослаться на~\cref{extraction_of_hyperbolic_surface}.
         }
     }
 
@@ -2997,7 +2997,7 @@
     \theorem[Лагранж]{
         Пусть ${\chr(K) \ne 2}$. Любая квадратичная форма $Q: V \map K$ линейно невырожденной заменой переменных приводится к сумме квадратов:
         \[Q(x) = a_1 x_1^2 + \dots + a_n x_n^2,\quad a_i \in K\]
-        \provehere{Есть ортогональный базис:~(\ref{orthogonal_basis_by_lagrange})}
+        \provehere{Есть ортогональный базис:~(\cref{orthogonal_basis_by_lagrange})}
     }
 
 
@@ -3019,7 +3019,7 @@
             V = H \boxplus \dots \boxplus H \boxplus \Rad(V) \boxplus \underbrace{\angles{1}}_{\text{если $\rk V$ нечётен}}
         \]
         \provehere{
-            Согласно теореме Лагранжа~(\ref{orthogonal_basis_by_lagrange}) найдётся ортогональный базис $(e_1, \dots, e_n)$.
+            Согласно теореме Лагранжа~(\cref{orthogonal_basis_by_lagrange}) найдётся ортогональный базис $(e_1, \dots, e_n)$.
             Переупорядочим базисные векторы так, что первые $r$ имеют ненулевой скалярный квадрат, остальные --- нулевой.
 
             После этого заменим $e_i \rightsquigarrow \frac{e_i}{\sqrt{B(e_i, e_i)}}, \quad i \le r$.
@@ -3044,7 +3044,7 @@
     \theorem{
         В $V$ существует ортонормированный базис.
         \provehere{
-            Согласно теореме Лагранжа~(\ref{orthogonal_basis_by_lagrange}) найдётся ортогональный базис $(e_1, \dots, e_n)$.
+            Согласно теореме Лагранжа~(\cref{orthogonal_basis_by_lagrange}) найдётся ортогональный базис $(e_1, \dots, e_n)$.
             Переупорядочим базисные векторы так, что первые $r$ имеют ненулевой скалярный квадрат, остальные --- нулевой.
 
             После этого заменим $e_i \rightsquigarrow \frac{e_i}{\sqrt{|B(e_i, e_i)|}}, \quad i \le r$.
@@ -3085,13 +3085,13 @@
         Пусть $V$ --- пространство над $K$, ${\chr(K) \ne 2}$. Тогда
         \[V = \underbrace{H \boxplus \dots \boxplus H}_{s} \boxplus V_0 \boxplus \Rad(V)\]
         причём $s$ определено однозначно, $V_0$ --- анизотропно и определено однозначно с точностью до изометрии.
-        \provehere{Позднее: \ref{Witt_about_decomposition}}
+        \provehere{Позднее: \cref{Witt_about_decomposition}}
     }
     \theorem[Витт о продолжении]{
         Пусть $V$ --- пространство над $K$, ${\chr(K) \ne 2}$, пусть $U, W \le V$.
         Если $\psi: U \cong W$ --- изометрия, то $\exists \phi \in \Isom(V): \phi\big|_U = \psi$.
         Дополнительно потребуем невырожденности либо $U$ (тогда и $W$), либо $V$.
-        \provehere{Позднее: \ref{Witt_about_continuation_1}, \ref{Witt_about_continuation_2}.}
+        \provehere{Позднее: \cref{Witt_about_continuation_1}, \cref{Witt_about_continuation_2}.}
     }
     Если всё невырождено, то эта теорема эквивалентна следующей:
     \theorem[Витт о сокращении]{
@@ -3170,18 +3170,18 @@
     \provehere{
         Индукция по $\dim(U) = \dim(W)$.
 
-        \underline{База:} \ref{one-dimensional-case}
+        \underline{База:} \cref{one-dimensional-case}
 
-        \underline{Переход:} Согласно~(\ref{anisotropic_vector}), в $U$ найдётся неизотропный вектор $u \in U$.
+        \underline{Переход:} Согласно~(\cref{anisotropic_vector}), в $U$ найдётся неизотропный вектор $u \in U$.
         Положим $v = \psi(u) \in W$.
 
-        Выберем $\theta \in \Isom(V), \theta(u) = v$ --- такая есть согласно~\ref{one-dimensional-case}.
+        Выберем $\theta \in \Isom(V), \theta(u) = v$ --- такая есть согласно~\cref{one-dimensional-case}.
 
         Заменим $W$ на $\theta^{-1}(W)$, а $\psi$ --- на $\theta^{-1}\psi$.
         Достаточно доказать теорему после замены, изначально искомое $\phi$ получится домножением полученного на $\theta$ слева.
         После замены $u = \psi(u)$.
 
-        Применим трижды теорему об ортогональном разложении~(\ref{orthogonal_decomposition}):
+        Применим трижды теорему об ортогональном разложении~(\cref{orthogonal_decomposition}):
         \gather{
             U = \angles{u} \boxplus \angles{u}^\perp_U\\
             W = \angles{u} \boxplus \angles{u}^\perp_W\\
@@ -3213,7 +3213,7 @@
 
                     Назовём $W = U_0 \boxplus \angles{e_1, \dots, e_{s - 1}} \le U$. $\dim(W) = \dim(U) - 1, \qquad \dim(W^\perp) = \dim(U^\perp) + 1$.
 
-                    Значит, $\exists v \in W^\perp \sm U^\perp$. Тогда $B(e_s, v) \ne 0$. Согласно ~\ref{extraction_of_hyperbolic_surface} (подпространство $\angles{e_{s}, v}$ невырождено, так как $B(e_s, v) \ne 0$, но $e_s$ изотропен) найдётся $e_{-s} \in \angles{e_s, v}: B(e_{-s}, e_{-s}) = 0, B(e_s, e_{-s}) = 1$.
+                    Значит, $\exists v \in W^\perp \sm U^\perp$. Тогда $B(e_s, v) \ne 0$. Согласно ~\cref{extraction_of_hyperbolic_surface} (подпространство $\angles{e_{s}, v}$ невырождено, так как $B(e_s, v) \ne 0$, но $e_s$ изотропен) найдётся $e_{-s} \in \angles{e_s, v}: B(e_{-s}, e_{-s}) = 0, B(e_s, e_{-s}) = 1$.
 
                     Получили равенство $U \oplus \angles{e_{-s}} = W \boxplus H$, дальше действуем по индукции.
                 }
@@ -3229,7 +3229,7 @@
         \[U = U_0 + \Rad(U) \qquad W = W_0 + \Rad(W)\]
         Заметим, что ограничение $\psi$ --- тоже изометрия: $\psi\big|_{U_0}: U_0 \cong W_0$.
         Достроим эту изометрию до $\overline{\psi}: \overline{U} \cong \overline{W}$ --- все гиперболические плоскости изометричны, понятно, что можно достроить так, чтобы $\overline{\psi}(U_0) = W_0$.
-        Согласно предыдущей теореме~(\ref{Witt_about_continuation_1}) эту изометрию можно продолжить на всё $V$.
+        Согласно предыдущей теореме~(\cref{Witt_about_continuation_1}) эту изометрию можно продолжить на всё $V$.
     }
     }
     \theorem[Витт о разложении]{\label{Witt_about_decomposition}
@@ -3253,7 +3253,7 @@
     Определим $U = \angles{e_1, \dots, e_s}, U' = \angles{e_{-1}, \dots, e_{-s}}$.
     Получим разложение $V = U \oplus U'$, причём $B_U \equiv 0$ и $B_{U'} \equiv 0$.
     \definition[Вполне изотропное пространство $U$]{Все векторы $U$ изотропны.}
-    Если характеристика не 2, то во вполне изотропных пространствах $B_U \equiv 0$ (иначе~\ref{anisotropic_vector}).
+    Если характеристика не 2, то во вполне изотропных пространствах $B_U \equiv 0$ (иначе~\cref{anisotropic_vector}).
 
     \corollary{
         Если $V$ невырождено, то $V \cong V_0 \boxplus (U \oplus U')$, где $V_0$ анизотропно, $U, U'$ --- вполне изотропны.
@@ -3564,7 +3564,7 @@
     \corollary{
         Если $p$ --- наименьшее простое, делящее порядок $G$ и $|G : H| = p$, то $H \normeq G$.
         \provehere{
-            Согласно~(\ref{corollary1}): $|G:H_G| \bigdivs p!$; помимо этого, $|G:H_G| \bigdivs |G|$, откуда
+            Согласно~(\cref{corollary1}): $|G:H_G| \bigdivs p!$; помимо этого, $|G:H_G| \bigdivs |G|$, откуда
             \[|G:H_G| \bigdivs \gcd(p!, |G|) = p \then H_G = H\qedhere\]
         }
     }
