@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1228,24 +1228,7 @@ File: ../pics//eights.png Graphic file (type png)
 <use ../pics//eights.png>
 Package pdftex.def Info: ../pics//eights.png  used on input line 261.
 (pdftex.def)             Requested size: 177.42868pt x 96.20734pt.
- [7 <../pics//eights.png>] [8]
-
-LaTeX Warning: Command \cyrf invalid in math mode on input line 388.
-
-
-LaTeX Warning: Command \cyra invalid in math mode on input line 388.
-
-
-LaTeX Warning: Command \cyrk invalid in math mode on input line 388.
-
-
-LaTeX Warning: Command \cyrt invalid in math mode on input line 388.
-
-Missing character: There is no ф in font cmr7!
-Missing character: There is no а in font cmr7!
-Missing character: There is no к in font cmr7!
-Missing character: There is no т in font cmr7!
-[9]
+ [7 <../pics//eights.png>] [8] [9]
 Overfull \hbox (1.94254pt too wide) in paragraph at lines 400--400
 []\T2A/faq/bx/n/14.4 Гомотопическая эк-ви-ва-лент-ность и фун-да-мен-таль-ная г
 руп-
@@ -1262,28 +1245,28 @@ Overfull \hbox (5.6541pt too wide) in paragraph at lines 456--456
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 516.
  [12]
-Overfull \hbox (1.31107pt too wide) in paragraph at lines 603--603
+Overfull \hbox (8.79105pt too wide) in paragraph at lines 601--601
 []\T2A/faq/m/n/10 Двулистное на-кры-тие бу-ке-та двух окруж-но-стей склей-кой т
-рјх окруж-но-стей ре-гу-ляр-но fig. []1.2[]. 
+рјх окруж-но-стей ре-гу-ляр-но (fig. []1.2[]). 
  []
 
-<../pics//two_s1s.pdf, id=373, 82.60829pt x 41.61885pt>
+<../pics//two_s1s.pdf, id=376, 82.60829pt x 41.61885pt>
 File: ../pics//two_s1s.pdf Graphic file (type pdf)
 <use ../pics//two_s1s.pdf>
-Package pdftex.def Info: ../pics//two_s1s.pdf  used on input line 603.
+Package pdftex.def Info: ../pics//two_s1s.pdf  used on input line 601.
 (pdftex.def)             Requested size: 88.71432pt x 44.6981pt.
-<../pics//three_s1s.pdf, id=374, 100.16084pt x 41.61885pt>
+<../pics//three_s1s.pdf, id=377, 100.16084pt x 41.61885pt>
 File: ../pics//three_s1s.pdf Graphic file (type pdf)
 <use ../pics//three_s1s.pdf>
-Package pdftex.def Info: ../pics//three_s1s.pdf  used on input line 603.
+Package pdftex.def Info: ../pics//three_s1s.pdf  used on input line 601.
 (pdftex.def)             Requested size: 88.71432pt x 36.8641pt.
 
-Overfull \hbox (2.65999pt too wide) in paragraph at lines 603--603
+Overfull \hbox (2.65999pt too wide) in paragraph at lines 601--601
 []$[]$ $[]$ 
  []
 
 
-Overfull \hbox (3.43155pt too wide) in paragraph at lines 628--628
+Overfull \hbox (3.43155pt too wide) in paragraph at lines 626--626
 []\T2A/faq/m/n/10 Докажем вто-рой пункт, пер-вый из него сле-ду-ет. За-фик-си-р
 у-ем $[]$.
  []
@@ -1293,7 +1276,7 @@ Overfull \hbox (3.43155pt too wide) in paragraph at lines 628--628
 pdfTeX warning: pdflatex (file ../pics//three_s1s.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
 >]
-Overfull \hbox (26.42429pt too wide) in paragraph at lines 638--638
+Overfull \hbox (26.42429pt too wide) in paragraph at lines 636--636
 []\T2A/faq/m/n/10 Действие це-ло-чис-лен-ны-ми сдви-га-ми $\U/msb/m/n/10 Z[] y 
 R[]$ \T2A/faq/m/n/10 по-рож-да-ет тор, как фак-тор-про-стран-ство: $[]$. 
  []
@@ -2270,20 +2253,20 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (67.01607pt too wide) in paragraph at lines 762--762
+Overfull \hbox (67.01607pt too wide) in paragraph at lines 760--760
 []\T2A/faq/bx/n/14.4 Фундаментальные груп-пы кле-точ-ных про-странств (CW-компл
 ексов).
  []
 
 [15]
-Overfull \hbox (14.32805pt too wide) in paragraph at lines 787--788
+Overfull \hbox (14.32805pt too wide) in paragraph at lines 785--786
 []\T2A/faq/m/n/10 Напомним, что \T2A/faq/m/it/10 сво-бод-ное про-из-ве-де-ние \
 T2A/faq/m/n/10 групп $\OML/cmm/m/it/10 G \OT1/cmr/m/n/10 = []$ \T2A/faq/m/n/10 
 и $\OML/cmm/m/it/10 H \OT1/cmr/m/n/10 = []$
  []
 
 
-Overfull \hbox (7.35933pt too wide) detected at line 795
+Overfull \hbox (7.35933pt too wide) detected at line 793
 [][][][]\OML/cmm/m/it/10 I \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 F \OMS/cmsy/m/n/1
 0 ! \OML/cmm/m/it/10 G; J \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 F \OMS/cmsy/m/n/10
  ! \OML/cmm/m/it/10 H:
@@ -2292,7 +2275,7 @@ Overfull \hbox (7.35933pt too wide) detected at line 795
 [16] [17] [18] [19] [20]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
-Overfull \hbox (18.08954pt too wide) in paragraph at lines 997--997
+Overfull \hbox (18.08954pt too wide) in paragraph at lines 995--995
 []\T2A/faq/bx/n/10 Определение 2.1.1 \T2A/faq/m/n/10 (Глад-кая функ-ция $\OML/c
 mm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Бес-ко-неч-н
 о диф-фе-рен-ци-ру-е-мая функ-ция $[]$. 
@@ -2301,7 +2284,7 @@ mm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Бес-ко-неч-н
 [21
 
 ] [22] [23] [24]
-Overfull \hbox (41.38626pt too wide) in paragraph at lines 1232--1232
+Overfull \hbox (41.38626pt too wide) in paragraph at lines 1230--1230
 []$\OML/cmm/m/it/10 ^^Tn \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10
  = (\OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )
 \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )) \OMS
@@ -2314,7 +2297,7 @@ n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )
  []
 
 [25]
-Overfull \hbox (28.65346pt too wide) in paragraph at lines 1287--1287
+Overfull \hbox (28.65346pt too wide) in paragraph at lines 1285--1285
 []$\OML/cmm/m/it/10 T$ \T2A/faq/m/n/10 од-но-связ-но, по-это-му су-ще-ству-ет п
 од-ня-тие --- непре-рыв-ный ар-гу-мент $\OML/cmm/m/it/10 A$\T2A/faq/m/n/10 : $\
 OMS/cmsy/m/n/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; ^^\\OT1/cmr/m/n/10 ) = ([
@@ -2324,25 +2307,25 @@ $\T2A/faq/m/n/10 .
  []
 
 [26]
-Overfull \hbox (2.65999pt too wide) in paragraph at lines 1398--1398
+Overfull \hbox (2.65999pt too wide) in paragraph at lines 1396--1396
 []$[]$ $[]$ 
  []
 
 [27] [28] [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1493.
+(hyperref)                removing `math shift' on input line 1491.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1493.
+(hyperref)                removing `superscript' on input line 1491.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1493.
+(hyperref)                removing `math shift' on input line 1491.
 
 
-Overfull \hbox (9.685pt too wide) in paragraph at lines 1521--1522
+Overfull \hbox (9.685pt too wide) in paragraph at lines 1519--1520
 []\T2A/faq/m/n/10 Помимо \T2A/faq/m/it/10 со-при-ка-са-ю-щей-ся плос-ко-сти $[]
 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; N\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 , опре-
 де-ля-ют так-же \T2A/faq/m/it/10 нор-маль-ную плос-кость $[]\OT1/cmr/m/n/10 (\O
@@ -2352,24 +2335,24 @@ ML/cmm/m/it/10 N; b\OT1/cmr/m/n/10 )$
 [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1545.
+(hyperref)                removing `math shift' on input line 1543.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1545.
+(hyperref)                removing `superscript' on input line 1543.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1545.
+(hyperref)                removing `math shift' on input line 1543.
 
 
-Overfull \hbox (4.42596pt too wide) in paragraph at lines 1579--1579
+Overfull \hbox (4.42596pt too wide) in paragraph at lines 1577--1577
 \T2A/faq/m/n/10 по-мо-щи ор-то-го-на-ли-за-ции Гра-ма --- Шмид-та. Ал-го-ритм в
 оз-вра-ща-ет ор-то-нор-ми-ро-ван-ный ба-зис какого-
  []
 
 
-Overfull \hbox (0.33798pt too wide) in paragraph at lines 1579--1579
+Overfull \hbox (0.33798pt too wide) in paragraph at lines 1577--1577
 \T2A/faq/m/n/10 рен-ци-ру-ем и ска-ляр-но до-мно-жим на $\OML/cmm/m/it/10 v[]$\
 T2A/faq/m/n/10 . Сле-ва по-лу-чит-ся $\OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = []
 $\T2A/faq/m/n/10 , а спра-ва $\OML/cmm/m/it/10 k [] >
@@ -2378,25 +2361,25 @@ $\T2A/faq/m/n/10 , а спра-ва $\OML/cmm/m/it/10 k [] >
 [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1594.
+(hyperref)                removing `math shift' on input line 1592.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1594.
+(hyperref)                removing `superscript' on input line 1592.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1594.
+(hyperref)                removing `math shift' on input line 1592.
 
 [32] [33]
-Overfull \hbox (23.29608pt too wide) in paragraph at lines 1753--1753
+Overfull \hbox (23.29608pt too wide) in paragraph at lines 1751--1751
 []\T2A/faq/m/n/10 Рассмотрим хо-ро-шую кар-ту, в ко-то-рой па-ра-мет-ри-за-ции 
 --- гра-фи-ки $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y; h\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 x; y\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 .
  []
 
 [34] [35] [36]
-Overfull \hbox (2.80138pt too wide) in paragraph at lines 1877--1879
+Overfull \hbox (2.80138pt too wide) in paragraph at lines 1875--1877
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 p; q \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/
 10 ^^F$\T2A/faq/m/n/10 , то-гда рас-сто-я-ние меж-ду точ-ка-ми $\OML/cmm/m/it/1
 0 d\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p; q\OT1/cmr/m/n/10 ) = [] []$\T2A/faq/m/n
@@ -2404,14 +2387,14 @@ Overfull \hbox (2.80138pt too wide) in paragraph at lines 1877--1879
  []
 
 [37] [38] [39] [40] [41]
-Overfull \hbox (9.9308pt too wide) in paragraph at lines 2133--2133
+Overfull \hbox (9.9308pt too wide) in paragraph at lines 2131--2131
 []\T2A/faq/bx/n/10 Определение 2.9.2 \T2A/faq/m/n/10 (Асимп-то-ти-че-ская кри-в
 ая)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Нор-маль-ная кри-виз-на $\OML/cmm/m/it/
 10 k[] \OT1/cmr/m/n/10 = 0$\T2A/faq/m/n/10 , ина-че го-во-ря $[]$. 
  []
 
 [42] [43] [44] [45] [46]
-Overfull \hbox (1.12166pt too wide) in paragraph at lines 2390--2390
+Overfull \hbox (1.12166pt too wide) in paragraph at lines 2388--2388
 []\T2A/faq/bx/n/10 Определение 2.12.3 \T2A/faq/m/n/10 (Раз-вјр-ты-ва-ю-ща-я-ся 
 по-верх-ность)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 По-верх-ность, ло-каль-но из
 о-мет-рич-ная плос-
@@ -2427,7 +2410,7 @@ Package rerunfilecheck Info: File `diffgeo-3.out' has not changed.
 Here is how much of TeX's memory you used:
  30393 strings out of 479648
  580249 string characters out of 5886115
- 890516 words of memory out of 5000000
+ 890428 words of memory out of 5000000
  47509 multiletter control sequences out of 15000+600000
  505700 words of font info for 93 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -2451,9 +2434,9 @@ ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on pdfs/diffgeo-3.pdf (51 pages, 568290 bytes).
+Output written on pdfs/diffgeo-3.pdf (51 pages, 568468 bytes).
 PDF statistics:
- 991 PDF objects out of 1000 (max. 8388607)
+ 994 PDF objects out of 1000 (max. 8388607)
  857 compressed objects within 9 object streams
  330 named destinations out of 1000 (max. 500000)
  404 words of extra memory for PDF output out of 10000 (max. 10000000)

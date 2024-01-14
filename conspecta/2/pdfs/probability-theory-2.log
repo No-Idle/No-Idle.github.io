@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1360,7 +1360,7 @@ Package rerunfilecheck Info: File `probability-theory-2.out' has not changed.
 Here is how much of TeX's memory you used:
  29960 strings out of 479648
  569445 string characters out of 5886115
- 846072 words of memory out of 5000000
+ 845888 words of memory out of 5000000
  47215 multiletter control sequences out of 15000+600000
  505373 words of font info for 102 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1384,7 +1384,7 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/probability-theory-2.pdf (37 pages, 407808 bytes).
+Output written on pdfs/probability-theory-2.pdf (37 pages, 407759 bytes).
 PDF statistics:
  660 PDF objects out of 1000 (max. 8388607)
  557 compressed objects within 6 object streams

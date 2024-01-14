@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1455,7 +1455,7 @@ Package rerunfilecheck Info: File `calculus-3.out' has not changed.
 Here is how much of TeX's memory you used:
  29664 strings out of 479648
  559830 string characters out of 5886115
- 838424 words of memory out of 5000000
+ 838240 words of memory out of 5000000
  46759 multiletter control sequences out of 15000+600000
  507795 words of font info for 103 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1483,7 +1483,7 @@ ts/type1/public/amsfonts/symbols/msam5.pfb></usr/share/texlive/texmf-dist/fonts
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
-Output written on pdfs/calculus-3.pdf (62 pages, 555918 bytes).
+Output written on pdfs/calculus-3.pdf (62 pages, 556550 bytes).
 PDF statistics:
  909 PDF objects out of 1000 (max. 8388607)
  790 compressed objects within 8 object streams
