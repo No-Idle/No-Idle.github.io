@@ -21,6 +21,7 @@
 \contentsline {section}{\numberline {1.7}Тензорная алгебра}{14}{section.1.7}%
 \contentsline {section}{\numberline {1.8}Градуированные алгебры}{15}{section.1.8}%
 \contentsline {section}{\numberline {1.9}Построение симметрической и внешней алгебр}{17}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Базисы симметрической и внешней степеней}{19}{subsection.1.9.1}%
 \contentsline {section}{\numberline {1.10}Другое определение симметрической и внешней алгебр}{20}{section.1.10}%
 \contentsline {section}{\numberline {1.11}Вычисления в алгебре Грассмана}{21}{section.1.11}%
 \contentsline {subsection}{\numberline {1.11.1}Внешняя степень матричного представления}{23}{subsection.1.11.1}%

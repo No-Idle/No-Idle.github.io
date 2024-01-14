@@ -471,7 +471,8 @@
 
     В первом семестре мы показали, что матрица замены базиса для двойственного пространства --- обратная к данной.
     \proposal{
-        Матрица перехода от $e^*$ к $f^*$ равна $(f^* \rightsquigarrow e^*) = (e \rightsquigarrow f)^{-1}$.
+        Матрица перехода от $e^*$ к $f^*$ равна $(f^* \leftsquigarrow e^*) = (e \rightsquigarrow f)^{-1}$:
+        \[\vect{f^1 \\ \vdots \\ f^n} = (f^* \leftsquigarrow e^*)\vect{e^1 \\ \vdots \\ e^n}\]
         \provehere{
             Равенство $e^i(e_j) = \delta_{i,j}$ в матричном виде выглядит в виде ${\vect{e^1 \\ \vdots \\ e^n} \cdot \vect{e_1 & \cdots & e_n} = E}$.
 
@@ -487,12 +488,11 @@
     Пусть $x \in T^p_q(V)$.
     \[x = \sum\limits_{\substack{i_1, \dots, i_q \\ j_1, \dots, j_p}} \left(e_{j_1} \otimes \dots \otimes e_{j_p} \otimes e^{i_1} \otimes \dots \otimes e^{i_q}\right) \cdot ([x]_e)^{j_1, \dots, j_p}_{i_1, \dots, i_q}\]
     где $[x]_e$ --- координаты разложения $x$ по базису $e$, которые индексируются $p$ верхними и $q$ нижними индексами.
-    \theorem{\label{coordinate-transformation}
+    \theorem[Преобразование координат тензора]{\label{coordinate-transformation}
         При замене координат базиса координаты разложения меняются следующим образом
         \[([x]_f)^{j_1, \dots, j_p}_{i_1, \dots, i_q} = \sum\limits_{\substack{k_1, \dots, k_p \\ m_1, \dots, m_q}} (\tilde{c})_{i_1, \dots, i_q}^{m_1, \dots, m_q} \cdot ([x]_e)^{k_1, \dots, k_p}_{m_1, \dots, m_q} \cdot (c)_{k_1 \dots k_p}^{j_1 \dots j_p}\]
         где $(\tilde{c})_{i_1, \dots, i_q}^{m_1, \dots, m_q} = \prod\limits_{l = 1}^{q}((f \rightsquigarrow e)^{-1})^{m_l}_{i_l}$ и $(c)_{k_1 \dots k_p}^{j_1 \dots j_p} = \prod\limits_{l=1}^{p}(f \rightsquigarrow e)_{k_l}^{j_l}$.
         \provehere{
-
             Запишем преобразования базисов $\vect{e_1 & \cdots & e_n} = \vect{f_1 & \cdots & f_n}(f \rightsquigarrow e)$ и $\vect{e^1 \\ \vdots \\ e^n} = (f \rightsquigarrow e)^{-1}\vect{f^1 \\ \vdots \\ f^n}$.
 
             Отсюда извлекаем $e_r = \sum\limits_{s} f_s (f \rightsquigarrow e)_r^s = \sum\limits_{s} f_s \cdot (c)_r^s$ и $e^s = \sum\limits_{r} (e \rightsquigarrow f)_r^s \cdot f^r = \sum\limits_{r}(\tilde{c})_r^s\cdot f^r$.
@@ -509,7 +509,7 @@
         В координатах сложение происходит покомпонентно.
         \item Аналогично с умножением на скаляр.
         \item Можно определить умножение на тензорах \begin{align*}
-                                                         \otimes: T^p_q \times T^{p'}_{q'} &\map T^{p + p'}_{q + q'}\\(v_{1 \dots p} \otimes f^{1\dots q}), (v'_{1 \dots p'} \otimes f'^{1 \dots q'})&\mapsto v_{q\dots p} \otimes v'_{1\dots p'}\otimes f^{1 \dots q} \otimes f'^{q \dots q'}
+                                                         \otimes: T^p_q \times T^{p'}_{q'} &\map T^{p + p'}_{q + q'}\\(v_{1 \dots p} \otimes f^{1\dots q}), (v'_{1 \dots p'} \otimes f'^{1 \dots q'})&\mapsto v_{1\dots p} \otimes v'_{1\dots p'}\otimes f^{1 \dots q} \otimes f'^{1 \dots q'}
         \end{align*}
         Несложно проверить, что умножение билинейно (то есть дистрибутивно).
         \item Сворачивание (не путать со свёрткой) --- от англ. contraction (а отнюдь не convolution).
@@ -518,6 +518,8 @@
             C_r^s: T^p_q(V) &\map T^{p - 1}_{q - 1}(V)\\
             (v_1 \otimes \dots \otimes v_p \otimes f^1 \otimes \dots \otimes f^q) &\mapsto (v_1 \otimes \dots \otimes \hat{v_s} \otimes \dots \otimes v_p \otimes f^1 \otimes \dots \otimes \hat{f^r} \otimes \dots \otimes f^q)f^r(v_s)
         \end{align*}
+    Как обычно, крышка над элементом последовательности означает, что он пропущен.
+
         В координатном виде сворачивание записывается в виде $([C_r^s(x)]_e)^{i_1, \dots, \hat{i}_r, \dots, i_p}_{j_1, \dots, \hat{j}_s, \dots j_q} = \sum\limits_{h}([x]_e)^{i_1, \dots, h, \dots, i_p}_{j_1, \dots, h, \dots j_q}$ где при суммировании $h$ стоит сверху на месте $r$, снизу --- на месте $s$.
         \examples[Сворачивание]{
             \item Пусть $A \in T^1_1(V)$ --- эндоморфизм $V$.
@@ -534,7 +536,7 @@
             Это элемент $T^1_1(V)$, то есть эндоморфизм пространства $V$.
 
             Пусть $A = (v\otimes \phi), B = (u \otimes \psi)$.
-            \[C_1^2(A \otimes B) = C_1^2(v \otimes \phi) \otimes (u \otimes \psi) = C^2_1(v \otimes u \otimes \phi \otimes \psi) = \phi(u)(v \otimes \psi)\]
+            \[C_1^2(A \otimes B) = C_1^2\left((v \otimes \phi) \otimes (u \otimes \psi)\right) = C^2_1(v \otimes u \otimes \phi \otimes \psi) = \phi(u)(v \otimes \psi)\]
             Применение $C^2_1(A \otimes B)$ к некоторому $w \in V$ выдаст $\phi(u)(v \otimes \psi)(w) = v \cdot \phi(u)\psi(w)$, что в точности есть результат применения композиции $AB$ к $w$.
             Таким образом, $C^2_1$ соответствует умножению матриц.
         }
@@ -552,42 +554,42 @@
     Итого, зададим
     \[T(V) \coloneqq \bigoplus\limits_{n = 0}^{\infty}V^{\otimes n} = R \oplus V \oplus V^{\otimes 2} \oplus \dots\]
 
-    На \emph{однородных элементах} (элементах $V^{\otimes n}$ для некоего $n \in \N$) умножение определено, как описано выше.
+    На \emph{однородных элементах} (элементах $V^{\otimes n}$ для некоего $n \in \N_0$) умножение определено, как описано выше.
     Дальше, умножение продлевается по линейности на все элементы $T(V)$.
 
-    Что означает, что алгебра должно быть наименьшей?
+    Что означает, что алгебра должна быть наименьшей?
     Сформулируем универсальное свойство.
 
     С точки зрения теории категорий отображения из модуля в алгебру рассматривать нельзя.
-    Для этого обозначим за $\mathcal{F}(A)$ модуль, на котором построена данная алгебра (забыли про умножение).
-    Этот $\mathcal{F}$ --- \emph{забывающий функтор}.
+    Для этого обозначим за $\mathscr{F}(A)$ модуль, на котором построена данная алгебра (забыли про умножение).
+    Этот $\mathscr{F}$ --- \emph{забывающий функтор}.
 
     На самом деле, функторы переводят не только объекты из одной категории в другую, но и стрелки.
-    Гомоморфизму алгебр $\phi: A \map B$ соответствует гомоморфизм модулей $\mathcal{F}(\phi): A \map B$.
+    Гомоморфизму алгебр $\phi: A \map B$ соответствует гомоморфизм модулей $\mathscr{F}(\phi): A \map B$.
 
-    Потребуем, чтобы для любой алгебры $B$ и для любого гомоморфизма модулей $\psi: V \map \mathcal{F}(B)$ выполнялось условие: $\exists! \phi: A \map B$ --- гомоморфизм алгебр, такой, что диаграмма коммутативна.
+    Потребуем, чтобы для любой алгебры $B$ и для любого гомоморфизма модулей $\psi: V \map \mathscr{F}(B)$ выполнялось условие: $\exists! \phi: A \map B$ --- гомоморфизм алгебр, такой, что диаграмма коммутативна.
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJWIl0sWzEsMCwiXFxtYXRoc2Nye0Z9KEEpIl0sWzEsMSwiXFxtYXRoc2Nye0Z9KEIpIl0sWzAsMiwiXFxwc2kiLDJdLFsxLDIsIlxcbWF0aHNjcntGfShcXHBoaSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJcXHRleHR7aW59IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
-          V \& {\mathcal{F}(A)} \\
-          \& {\mathcal{F}(B)}
+          V \& {\mathscr{F}(A)} \\
+          \& {\mathscr{F}(B)}
           \arrow["\psi"', from=1-1, to=2-2]
-          \arrow["{\mathcal{F}(\phi)}", dashed, from=1-2, to=2-2]
+          \arrow["{\mathscr{F}(\phi)}", dashed, from=1-2, to=2-2]
           \arrow["{\text{in}}", hook, from=1-1, to=1-2]
     \end{tikzcd}\]
     \theorem{
         Для так построенной тензорной алгебры $T(V)$ в качестве $A$ выполняется выше описанное универсальное свойство.
         \provehere{
-            Если такое $\psi$ найдётся, то $\forall v \in V: \psi(v) = \phi(v)$, а так как $V$ --- множество образующих $\mathcal{F}(T(V))$, как алгебры, то $\psi$ единственно.
+            Если такое $\psi$ найдётся, то $\forall v \in V: \psi(v) = \phi(v)$, а так как $V$ --- множество образующих $\mathscr{F}(T(V))$, как алгебры, то $\psi$ единственно.
             Проверим, что $\psi$ существует.
 
-            Пусть $B$ --- произвольная $R$-алгебра, $\psi: V \map \mathcal{F}(A)$ --- гомоморфизм модулей.
+            Пусть $B$ --- произвольная $R$-алгебра, $\psi: V \map \mathscr{F}(A)$ --- гомоморфизм модулей.
 
             Определим полилинейное \begin{align*}
-                                       \theta_n: \underbrace{V \times \dots \times V}_{n} &\map \mathcal{F}(B)\\(v_1 \otimes \dots \otimes v_n)&\mapsto \phi(v_1) \proddots \phi(v_n)
+                                       \theta_n: \underbrace{V \times \dots \times V}_{n} &\map \mathscr{F}(B)\\(v_1 \otimes \dots \otimes v_n)&\mapsto \phi(v_1) \proddots \phi(v_n)
             \end{align*} на разложимых тензорах.
-            Согласно универсальному свойству тензорного произведения, для него найдётся единственное линейное отображение $\eta_n: V^{\otimes n} \map \mathcal{F}(B)$.
+            Согласно универсальному свойству тензорного произведения, для него найдётся единственное линейное отображение $\eta_n: V^{\otimes n} \map \mathscr{F}(B)$.
 
-            Зададим $\mathcal{F}(\psi): \mathcal{F}(T(V)) \map \mathcal{F}(B)$ на прямых слагаемых в соответствии с $\eta_n$, дальше оно продлевается по линейности.
+            Зададим $\mathscr{F}(\psi): \mathscr{F}(T(V)) \map \mathscr{F}(B)$ на прямых слагаемых в соответствии с $\eta_n$, дальше оно продлевается по линейности.
 
             Осталось проверить, что $\psi: T(V) \map B$ --- гомоморфизм алгебр, то есть сохраняет умножение.
             Это достаточно проверять на разложимых тензорах, так как умножение билинейно.
@@ -600,11 +602,12 @@
     Пусть $(N, +)$ --- аддитивный коммутативный моноид.
     Часто $N = \N_0$.
 
-    \definition[Градуированная $R$-алгебра]{
+    \definition[$N$-градуированная $R$-алгебра]{
         Такая $R$-алгебра $A$, которая раскладывается в прямую сумму $R$-модулей $A_n$.
         \[A = \bigoplus\limits_{n \in N}A_n\]
         причём умножение удовлетворяет свойствам $A_n \cdot A_m \le A_{n + m}$.
     }
+    Напоминание: как множество $\bigoplus\limits_{n \in N}A_n = \defset{\{a_n\}_{n \in N}}{\text{почти все $a_n$ нули}}$.
     \definition[Однородный элемент $x \in A$]{
         Элемент $x \in \bigcup\limits_{n \in N}A_n$.
     }
@@ -616,26 +619,27 @@
     Также часто встречаются $\Z/2\Z$ градуировки: $A = A_0 \oplus A_1$, где $A_0$ --- подалгебра, а $A_1$ --- подмодуль, такой, что $A_1 \cdot A_1 \le A_0$.
     Например, алгебры Клиффорда.
     \newlection{26 сентября 2023 г.}
+
     \lemma{
-        Пусть $A = \bigoplus\limits{_n \in N}A_n$ --- $N$-градуированная алгебра.
+        Пусть $A = \bigoplus\limits_{n \in N}A_n$ --- $N$-градуированная алгебра.
         Пусть $I \normeq A$ --- двусторонний идеал.
-        Следующие условия эквивалентны
+        Следующие условия эквивалентны:
         \numbers{
             \item $I = \bigoplus\limits_{n \in N}(A_n \cap I)$.
-            \item $\forall a \in I$ однородные компоненты $a$ лежат в $I$.
+            \item $\forall a \in I$: однородные компоненты $a$ лежат в $I$.
             \item $I$ порождён некоторым множеством однородных элементов.
             \item Проекция $A \map A/I$ является гомоморфизмом $N$-градуированных алгебр (то есть в том числе утверждается, что $A/I$ --- $N$-градуированная алгебра).
         }
         \provebullets{
-            \item[$(1)\iff(2)$] И (1), и (2) записываются в виде $\forall a \in I: \exists \{a_n\}$: $a_n \in I \cap A_n$ и $a = \sum\limits_{n \in N}a_n$.
+            \item[$(1)\Leftrightarrow(2)$] И (1), и (2) записываются в виде $\forall a \in I: \exists \{a_n\}$: $a_n \in I \cap A_n$ и $a = \sum\limits_{n \in N}a_n$.
             \item[$(2) \then (3)$] Для $a \in I$ обозначим за $s_a$ набор однородных компонент $a$.
             Согласно $(2)$ $s_a \subset I$, тогда $\angles{\bigcup\limits_{a \in I}s_a} = I$.
 
             \note{Если $I$ конечно порождён, то можно выбрать объединение $s_a$ для всех образующих $I$, тогда найдётся и конечная система однородных образующих.}
             \item[$(3) \then (2)$] Рассмотрим $\forall a \in I$.
-            Из условия на порождение получаем $a = x_1 \lambda_1 + \dots + x_n \lambda_n$, где $x_i \in I$ --- однородные.
-            Каждый $\lambda_i$ является конечной суммой однородных координат, таким образом, а произведение однородных однородно.
-            \item[$(1) \then (4)$] Для всяких модулей верно, что $A/I = \frac{\bigoplus A_n}{\bigoplus I_n} = \bigoplus \frac{A_n}{I_n}$.
+            Из условия на порождение получаем $a = \mu_1 x_1 \lambda_1 + \dots + \mu_n x_n \lambda_n$, где $x_i \in I$ --- однородные, $\mu_i, \lambda_i \in R$.
+            Каждый из $\mu_i, \lambda_i$ является конечной суммой однородных координат, а произведение однородных однородно.
+            \item[$(1) \then (4)$] Положим $I_n \coloneqq A \cap I$. Для всяких модулей верно, что $A/I = \frac{\bigoplus A_n}{\bigoplus I_n} = \bigoplus \frac{A_n}{I_n}$.
             Проекция отображает $a \in A_n$ в $a + I_n$, действительно она уважает градуировку.
             \item[$(4) \then (2)$] Рассмотрим $a \in I$, пусть $a = \sum\limits_{n \in N}a_n$, почти все $a_n = 0$.
 
@@ -648,7 +652,7 @@
     Тогда $A = \bigoplus\limits_{n \in N}A_n = \bigoplus\limits_{n' \in N'}\left(\bigoplus\limits_{n \in \phi^{-1}(n')}A_n\right)$, то есть $A$ можно превратить в $N'$-градуированную алгебру.
 
     \example{
-        Построим <<общую матрица с определителем 1>>: $\vect{x_{1,1} & \cdots & x_{n,n}\\\vdots&\ddots&\vdots\\x_{n,1}&\cdots&x_{n,n}}$.
+        Построим <<общую матрицу с определителем 1>>: $\vect{x_{1,1} & \cdots & x_{1,n}\\\vdots&\ddots&\vdots\\x_{n,1}&\cdots&x_{n,n}}$.
 
         Чтобы определитель был 1, мы рассматриваем эту матрицу над кольцом \[A \coloneqq \Z[x_{1,1}, \dots, x_{n,n}]/(\det(x) - 1)\]
 
@@ -678,23 +682,23 @@
         $S(V) \coloneqq T(V)/I_S$
     }
     Если $V$ --- свободный $R$-модуль с базисом мощности $n$, то $S(V) \cong R[x_1, \dots, x_n]$~(\ref{s_is_poly}).
+    В соответствии с этим, умножение в симметрической алгебре обозначают точкой.
 
     В пару к симметрической алгебре построим <<антисимметрическую>>.
     Здесь переменные будут \emph{антикоммутировать}, $x \otimes y = -y \otimes x$.
-    В характеристике 2 это то же самое, что и $x \otimes x = 0$ для любого $x \in V$, а в общем случае условие равенства квадрата нулю сильнее.
+    В характеристике не 2 это то же самое, что и $x \otimes x = 0$ для любого $x \in V$, а в общем случае условие равенства квадрата нулю сильнее.
 
-    Определим идеал $I_{\wedge} = \angles{x \otimes x \middle| x \otimes x \in V}\normeq T(V)$.
+    Определим идеал $I_{\wedge} = \angles{x \otimes x \middle| x \in V}\normeq T(V)$.
 
     \definition[Внешняя алгебра или алгебра Грассмана]{
         $\bigwedge(V) \coloneqq T(V)/I_{\wedge}$
     }
-    Если $V$ --- свободный $R$-модуль с базисом мощности $n$, то эта алгебра конечномерна над $R$.
-    Всякий разложимый тензор, где какие-то два множителя совпадают, равен нулю, так как из условия следует $x \otimes y = -y \otimes x$.
-    Если в разложимом тензоре какие-то две компоненты равны, то переставляя множители, их можно сделать соседними, после чего тензор оказывается равным нулю.
+    Если $V$ --- свободный $R$-модуль с базисом мощности $n$, то эта алгебра конечномерна над $R$~(\ref{s_is_poly}).
+    Умножение во внешней степени обозначают значком $\wedge$.
 
     $V$ вкладывается как в $S(V)$, так и в $\bigwedge(V)$ --- ядро композиции $V \hookrightarrow T(V) \map S(V)$ нулевое, так же как и у $V \hookrightarrow T(V) \map \bigwedge(W)$ (подмодуль, по которому происходит факторизация, содержит только элементы степени хотя бы 2).
 
-    \theorem{
+    \theorem[Универсальное свойство симметрической алгебры]{
         Для любой \textbf{коммутативной} алгебры $A$, для любого гомоморфизма $R$-модулей $\phi: V \map A$ найдётся единственный гомоморфизм $R$-алгебр $\eta: S(V) \map A$, такой, что диаграмма коммутирует.
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJWIl0sWzEsMCwiVChWKSJdLFsxLDEsIkEiXSxbMiwwLCJTKFYpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyLCJcXHBoaSIsMl0sWzEsMywiXFxyaG8iXSxbMywyLCJcXGV0YSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDIsIlxccHNpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -714,7 +718,7 @@
             Таким образом, $\psi$ пропускается через фактор, а так как $\rho$ --- редукция по $I_S$ --- эпиморфизм, то $\eta$ единственно.
         }
     }
-    \theorem{
+    \theorem[Универсальное свойство внешней алгебры]{
         Для любой градуировано коммутативной $\Z/2\Z$-градуированной $R$-алгебры $A$, и для любого гомоморфизма $R$-модулей $\phi: V \map A_1$ ($A_1$ --- однородная компонента $A$ с индексом 1) найдётся единственный гомоморфизм $\eta: \bigwedge(V) \map A$, такой, что диаграмма коммутирует.
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJWIl0sWzEsMCwiVChWKSJdLFsxLDEsIkEiXSxbMiwwLCJcXGJpZ3dlZGdlKFYpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyLCJcXHBoaSIsMl0sWzEsMiwiXFxwc2kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwzLCJcXHJobyJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -738,7 +742,7 @@
     \ok
     Итак, $I_S = (x \otimes y - y \otimes x)$.
     \note{
-        $I_S \cap V^{\otimes n}$ --- подмодуль в $V^{\otimes n}$, порождённый элементами вида \[(x_1 \otimes \dots \otimes y \otimes z \otimes \dots \otimes x_{n - 2}) - (x_1 \otimes \dots \otimes z \otimes y \otimes \dots \otimes x_{n - 2})\] где $y$ и $z$ на одном и том же месте в одном и том же кортеже $x_1 \otimes \dots \otimes x_{n-2}$.}
+        $I_S \cap V^{\otimes n}$ --- подмодуль в $V^{\otimes n}$, порождённый элементами вида \[(x_1 \otimes \dots \otimes y \otimes z \otimes \dots \otimes x_{n - 2}) - (x_1 \otimes \dots \otimes z \otimes y \otimes \dots \otimes x_{n - 2})\] где $y$ и $z$ на одном и том же месте в одном и том же кортеже $x_1 \otimes \cdots \otimes \_ \otimes \_ \otimes \cdots \otimes x_{n-2}$.}
     \begin{definition_env}[$n$-я симметрическая степень $V$]
         Фактормодуль $V^{\otimes n}/\left(I_S \cap V^{\otimes n}\right)$.
     \end{definition_env}
@@ -759,8 +763,8 @@
               \arrow["\psi", dashed, from=1-3, to=2-2]
         \end{tikzcd}\]
         \provehere{
-            Пусть $\text{in}: V \times \dots \times V \map V^{\otimes n}$
-            Согласно универсальному свойству тензорного произведения найдётся $\eta: V^{\otimes n} \map M$, такое, что $\phi = \eta \circ \text{in}$.
+            Пусть $\theta: V \times \dots \times V \map V^{\otimes n}$
+            Согласно универсальному свойству тензорного произведения найдётся $\eta: V^{\otimes n} \map M$, такое, что $\phi = \eta \circ \theta$.
             Из симметричности $\phi$ \[\forall a \in V^{\otimes k}, b \in V^{\otimes n - 2 - k}: \eta(a \otimes x \otimes y \otimes b) = \eta(a \otimes y \otimes x \otimes b)\] то есть образующие лежат в ядре $\eta$, и $\eta$ пропускается через фактор.
         }
     }
@@ -777,37 +781,35 @@
               \arrow["\psi", dashed, from=1-3, to=2-2]
         \end{tikzcd}\]
         \provehere{
-            Пусть $\text{in}: V \times \dots \times V \map V^{\otimes n}$
-            Согласно универсальному свойству тензорного произведения найдётся $\eta: V^{\otimes n} \map M$, такое, что $\phi = \eta \circ \text{in}$.
+            Пусть $\theta: V \times \dots \times V \map V^{\otimes n}$
+            Согласно универсальному свойству тензорного произведения найдётся $\eta: V^{\otimes n} \map M$, такое, что $\phi = \eta \circ \theta$.
             Из антисимметричности $\phi$ \[\forall a \in V^{\otimes k}, b \in V^{\otimes n - 2 - k}: \eta(a \otimes x \otimes x \otimes b) = 0\]то есть образующие лежат в ядре $\eta$, и $\eta$ пропускается через фактор.
         }
     }
     \newlection{28 сентября 2023 г.}
-    $I_\wedge, I_S \normeq T(V)$, где $I_S = \angles{x \otimes y - y \otimes x \middle| x, y \in V}, I_{\wedge} = \angles{x \otimes x \middle| x \otimes x \in V}$.
+%    $I_\wedge, I_S \normeq T(V)$, где $I_S = \angles{x \otimes y - y \otimes x \middle| x, y \in V}, I_{\wedge} = \angles{x \otimes x \middle| x \otimes x \in V}$.
+%    \gather{S(V) = T(V)/I_S\qquad\bigwedge(V) = T(V)/I_\wedge\\
+%    S^n(V) = V^{\otimes n}/\angles{a (x \otimes y - y \otimes x) b \middle | x, y \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}} \\
+%    \bigwedge\!\!{}^n(V) = V^{\otimes n}/\angles{a (x \otimes x) b \middle | x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}}}
+%
+%    Операция в $S(V)$ пишется $\cdot$, как обычное умножение, операция в $\bigwedge(V)$ пишется $\wedge$.
 
-    \gather{S(V) = T(V)/I_S\qquad\bigwedge(V) = T(V)/I_\wedge\\
-    S^n(V) = V^{\otimes n}/\angles{a (x \otimes y - y \otimes x) b \middle | x, y \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}} \\
-    \bigwedge\!\!{}^n(V) = V^{\otimes n}/\angles{a (x \otimes x) b \middle | x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - k - 2}}}
-
-    Операция в $S(V)$ пишется $\cdot$, как обычное умножение, операция в $\bigwedge(V)$ пишется $\wedge$.
-
-    \ok
+    \subsection{Базисы симметрической и внешней степеней}
     Пусть $V$ --- свободный модуль.
     Какие базисы у $S^n(V)$ и $\bigwedge^n(V)$?
 
     Пусть $(x_1, \dots, x_m)$ --- базис $V$.
 
     Зададим отображение $f$ из базиса в произвольную коммутативную алгебру.
-% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHt4XzEsIFxcZG90cywgeF9uXFx9Il0sWzEsMCwiViJdLFsyLDAsIlMoVikiXSxbMSwxLCJBIl0sWzEsMywiXFxleGlzdHMgISBcXHBoaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDMsIlxcZXhpc3RzICEgXFxwc2kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJmIiwyXSxbMCwxXSxbMSwyLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dXQ==
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHt4XzEsIFxcZG90cywgeF9tXFx9Il0sWzEsMCwiViJdLFsyLDAsIlMoVikiXSxbMSwxLCJBIl0sWzEsMywiXFxleGlzdHMgISBcXHBoaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDMsIlxcZXhpc3RzICEgXFxwc2kiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJmIiwyXSxbMCwxXSxbMSwyLCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {\{x_1, \dots, x_n\}}
-          \& V \& {S(V)} \\
-          \& A
-          \arrow["{\exists ! \phi}", dashed, from=1-2, to=2-2]
-          \arrow["{\exists ! \psi}", dashed, from=1-3, to=2-2]
-          \arrow["f"', from=1-1, to=2-2]
-          \arrow[from=1-1, to=1-2]
-          \arrow[hook, from=1-2, to=1-3]
+    {\{x_1, \dots, x_m\}} \& V \& {S(V)} \\
+    \& A
+    \arrow["{\exists ! \phi}", dashed, from=1-2, to=2-2]
+    \arrow["{\exists ! \psi}", dashed, from=1-3, to=2-2]
+    \arrow["f"', from=1-1, to=2-2]
+    \arrow[from=1-1, to=1-2]
+    \arrow[hook, from=1-2, to=1-3]
     \end{tikzcd}\]
     Тогда существует и единственно $\psi: S^n(V) \map A$ --- гомоморфизм алгебр, а это универсальное свойство кольца многочленов.\label{s_is_poly}
 
@@ -825,7 +827,7 @@
             Обозначим $\{1, \dots, n\} \eqqcolon [n]$.
 
             Предположим наличие линейной зависимости:
-            \[\sum\limits_{I \subset [m],|I| = n}x_{I}\alpha_I\]
+            \[\sum\limits_{I \subset [m],|I| = n}x_{I}\alpha_I = 0\]
             Домножим равенство на $x_{[m]\sm J}$, получим $\pm \alpha_J x_{[m]}$.
 
             Отсюда хочется доказать, что $\alpha_J = 0$ (и мы получим, что всякая линейная зависимость тривиальна), но для этого надо показать, что $x_J \ne 0$.
