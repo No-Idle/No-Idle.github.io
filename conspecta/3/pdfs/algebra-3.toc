@@ -30,9 +30,9 @@
 \contentsline {section}{\numberline {1.13}Грассманиан}{25}{section.1.13}%
 \contentsline {chapter}{\numberline {2}Теория представлений конечных групп}{27}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Теорема Жордана --- Гёльдера}{27}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Немножко фактов про кольца}{29}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Радикал Джекобсона и формулировка теоремы Веддербарна --- Артина}{29}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Три с половиной языка}{31}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Линейные представления группы $G$}{31}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Линейные представления группы $G$}{32}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Линейные действия}{32}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Структура $R[G]$ модуля над каким-то $R$-модулем}{32}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Глоссарий терминов}{33}{subsection.2.3.4}%
