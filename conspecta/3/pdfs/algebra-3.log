@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JAN 2024 16:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JAN 2024 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1539,13 +1539,13 @@ Overfull \hbox (34.40082pt too wide) in paragraph at lines 1493--1504
  []
 
 [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
-Overfull \hbox (18.42105pt too wide) in paragraph at lines 2000--2000
+Overfull \hbox (18.42105pt too wide) in paragraph at lines 2001--2001
 []\T2A/faq/bx/n/12 Классификация пред-став-ле-ний про-из-воль-ных ко-неч-ных аб
 е-ле-вых групп 
  []
 
 [43]
-Overfull \hbox (28.58427pt too wide) in paragraph at lines 2068--2070
+Overfull \hbox (28.58427pt too wide) in paragraph at lines 2069--2071
 \T2A/faq/m/n/10 функ-ци-ях $\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 ! \OML/cmm/m/it
 /10 K$\T2A/faq/m/n/10 : $\OML/cmm/m/it/10 G \U/msb/m/n/10 y \OML/cmm/m/it/10 K[
 ] \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 , или на фор-маль-ных ком-би-на-ци-ях: $
@@ -1554,10 +1554,10 @@ Overfull \hbox (28.58427pt too wide) in paragraph at lines 2068--2070
 
 [44] [45] [46] [47]
 LaTeX Font Info:    Font shape `T2A/faq/b/it' in size <10> not available
-(Font)              Font shape `T2A/faq/bx/it' tried instead on input line 2218
+(Font)              Font shape `T2A/faq/bx/it' tried instead on input line 2219
 .
  [48]
-Overfull \hbox (18.16406pt too wide) in paragraph at lines 2283--2283
+Overfull \hbox (18.16406pt too wide) in paragraph at lines 2284--2284
 []\T2A/faq/bx/n/14.4 Разложение пред-став-ле-ние на непри-во-ди-мые. Sum of squ
 ares
  []
@@ -1570,14 +1570,14 @@ sy/m/n/10 j\OML/cmm/m/it/10 g[]\OMS/cmsy/m/n/10 j$\T2A/faq/m/n/10 . Пер-вое со-
 _[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 )[] =
  []
 
-
-Overfull \hbox (9.69798pt too wide) in paragraph at lines 2368--2369
+[50]
+Overfull \hbox (10.54178pt too wide) in paragraph at lines 2368--2369
 []\T2A/faq/m/n/10 Рассмотрим про-стран-ство цен-траль-ных функ-ций на $\OML/cmm
 /m/it/10 G$\T2A/faq/m/n/10 : $\OML/cmm/m/it/10 cf[]\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 G\OT1/cmr/m/n/10 ) [] []$\T2A/faq/m/n/10 . 
  []
 
-[50]
+
 Overfull \hbox (1.8964pt too wide) in paragraph at lines 2421--2421
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 c[]; [] ; c[]$ \T2A/faq/m/n/10 --- кл
 ас-сы со-пря-жјн-ных эле-мен-тов, $\OML/cmm/m/it/10 ^^Y[]; [] ; ^^Y[]; ^^_[]; [
@@ -1772,13 +1772,13 @@ Overfull \hbox (2.76083pt too wide) in paragraph at lines 4942--4942
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `algebra-3.out' has not changed.
-(rerunfilecheck)             Checksum: F81867C24E0F5A218B21BAF4FE3B0DD5;28884.
+(rerunfilecheck)             Checksum: D34340837BDDE84784B59C776E88B7AF;28892.
  ) 
 Here is how much of TeX's memory you used:
- 35066 strings out of 479648
- 697449 string characters out of 5886115
- 936997 words of memory out of 5000000
- 52017 multiletter control sequences out of 15000+600000
+ 35070 strings out of 479648
+ 697531 string characters out of 5886115
+ 937205 words of memory out of 5000000
+ 52021 multiletter control sequences out of 15000+600000
  508156 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,28n,103p,749b,1301s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1807,10 +1807,10 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (98 pages, 768333 bytes).
+ (98 pages, 770531 bytes).
 PDF statistics:
- 1427 PDF objects out of 1440 (max. 8388607)
- 1265 compressed objects within 13 object streams
+ 1429 PDF objects out of 1440 (max. 8388607)
+ 1267 compressed objects within 13 object streams
  468 named destinations out of 1000 (max. 500000)
  765 words of extra memory for PDF output out of 10000 (max. 10000000)
 

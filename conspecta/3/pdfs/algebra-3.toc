@@ -46,29 +46,29 @@
 \contentsline {subsection}{\numberline {2.9.1}Усреднение векторов}{38}{subsection.2.9.1}%
 \contentsline {subsection}{\numberline {2.9.2}Усреднение линейных отображений}{38}{subsection.2.9.2}%
 \contentsline {section}{\numberline {2.10}Теорема Машке}{39}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Унитаризуемость}{40}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Характеры Фробениуса}{41}{section.2.12}%
-\contentsline {section}{\numberline {2.13}Представления абелевых групп. Лемма Шура}{42}{section.2.13}%
-\contentsline {subsection}{\numberline {2.13.1}Классификация циклических групп}{43}{subsection.2.13.1}%
-\contentsline {subsection}{\numberline {2.13.2}Классификация представлений произвольных конечных абелевых групп}{43}{subsection.2.13.2}%
-\contentsline {subsection}{\numberline {2.13.3}Одномерные представления любых конченых групп}{43}{subsection.2.13.3}%
-\contentsline {section}{\numberline {2.14}Формулировка теоремы Бернсайда --- Фробениуса, первые примеры}{44}{section.2.14}%
-\contentsline {subsection}{\numberline {2.14.1}Представления неабелевых групп}{44}{subsection.2.14.1}%
-\contentsline {section}{\numberline {2.15}Соотношения ортогональности Шура (лемма Шура в матричной форме)}{46}{section.2.15}%
-\contentsline {section}{\numberline {2.16}Первое соотношение ортогональности}{48}{section.2.16}%
-\contentsline {section}{\numberline {2.17}Разложение представление на неприводимые. Sum of squares formula}{49}{section.2.17}%
-\contentsline {section}{\numberline {2.18}Второе соотношение ортогональности (для столбцов)}{50}{section.2.18}%
-\contentsline {section}{\numberline {2.19}Усреднение с весом (averaging with weight)}{50}{section.2.19}%
-\contentsline {section}{\numberline {2.20}Количество неприводимых представлений конечной группы}{51}{section.2.20}%
-\contentsline {section}{\numberline {2.21}Дальнейшие конструкции над представлениями}{52}{section.2.21}%
-\contentsline {section}{\numberline {2.22}Представления прямого произведения групп}{53}{section.2.22}%
-\contentsline {section}{\numberline {2.23}Свойства целочисленности представлений}{53}{section.2.23}%
-\contentsline {section}{\numberline {2.24}Индуцированные представления}{54}{section.2.24}%
-\contentsline {subsection}{\numberline {2.24.1}Компактная индукция (compact induction)}{55}{subsection.2.24.1}%
-\contentsline {subsection}{\numberline {2.24.2}Полная индукция (complete induction)}{56}{subsection.2.24.2}%
-\contentsline {section}{\numberline {2.25}Индуцированные характеры}{57}{section.2.25}%
-\contentsline {section}{\numberline {2.26}Формула слияния (fusion formula)}{57}{section.2.26}%
-\contentsline {section}{\numberline {2.27}Закон взаимности Фробениуса}{58}{section.2.27}%
+\contentsline {subsection}{\numberline {2.10.1}Унитаризуемость}{40}{subsection.2.10.1}%
+\contentsline {section}{\numberline {2.11}Характеры Фробениуса}{41}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Представления абелевых групп. Лемма Шура}{42}{section.2.12}%
+\contentsline {subsection}{\numberline {2.12.1}Классификация циклических групп}{43}{subsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12.2}Классификация представлений произвольных конечных абелевых групп}{43}{subsection.2.12.2}%
+\contentsline {subsection}{\numberline {2.12.3}Одномерные представления любых конечных групп}{43}{subsection.2.12.3}%
+\contentsline {section}{\numberline {2.13}Формулировка теоремы Бёрнсайда --- Фробениуса, первые примеры}{44}{section.2.13}%
+\contentsline {subsection}{\numberline {2.13.1}Представления неабелевых групп}{44}{subsection.2.13.1}%
+\contentsline {section}{\numberline {2.14}Соотношения ортогональности Шура (лемма Шура в матричной форме)}{46}{section.2.14}%
+\contentsline {section}{\numberline {2.15}Первое соотношение ортогональности}{48}{section.2.15}%
+\contentsline {section}{\numberline {2.16}Разложение представление на неприводимые. Sum of squares formula}{49}{section.2.16}%
+\contentsline {section}{\numberline {2.17}Второе соотношение ортогональности (для столбцов)}{50}{section.2.17}%
+\contentsline {section}{\numberline {2.18}Усреднение с весом (averaging with weight)}{51}{section.2.18}%
+\contentsline {section}{\numberline {2.19}Количество неприводимых представлений конечной группы}{51}{section.2.19}%
+\contentsline {section}{\numberline {2.20}Дальнейшие конструкции над представлениями}{52}{section.2.20}%
+\contentsline {section}{\numberline {2.21}Представления прямого произведения групп}{53}{section.2.21}%
+\contentsline {section}{\numberline {2.22}Свойства целочисленности представлений}{54}{section.2.22}%
+\contentsline {section}{\numberline {2.23}Индуцированные представления}{55}{section.2.23}%
+\contentsline {subsection}{\numberline {2.23.1}Компактная индукция (compact induction)}{55}{subsection.2.23.1}%
+\contentsline {subsection}{\numberline {2.23.2}Полная индукция (complete induction)}{56}{subsection.2.23.2}%
+\contentsline {section}{\numberline {2.24}Индуцированные характеры}{57}{section.2.24}%
+\contentsline {section}{\numberline {2.25}Формула слияния (fusion formula)}{58}{section.2.25}%
+\contentsline {section}{\numberline {2.26}Закон взаимности Фробениуса}{58}{section.2.26}%
 \contentsline {chapter}{\numberline {3}Необработанные куски из теории представлений}{60}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Операции над представлениями}{60}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Таблицы характеров}{63}{section.3.2}%
