@@ -4348,7 +4348,7 @@
 
     Копределы пишутся $\varinjlim \cat F$.
     \examples[Пределы]{
-        \item % https://q.uiver.app/#q=WzAsNyxbMSwxLCJcXGNkb3RzIl0sWzIsMSwiRlt0XS8odF5uKSJdLFszLDFdLFs1LDEsIkZbdF0vKHReMikiXSxbNiwxLCJGW3RdLyh0KSJdLFs0LDFdLFswLDAsIlxcdmFycHJvamxpbSJdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdLFsxLDZdLFszLDZdLFs0LDYsIiIsMCx7ImN1cnZlIjoxfV1d
+        \item % https://q.uiver.app/#q=WzAsNyxbMSwxLCJcXGNkb3RzIl0sWzIsMSwiRlt0XS8odF5uKSJdLFszLDFdLFs1LDEsIkZbdF0vKHReMikiXSxbNiwxLCJGW3RdLyh0KSJdLFs0LDFdLFswLDAsIlxcdmFycHJvamxpbSJdLFswLDFdLFsxLDJdLFszLDRdLFs1LDNdLFsyLDUsIlxcY2RvdHMiLDFdLFsxLDYsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNiwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw2LCIiLDAseyJjdXJ2ZSI6MSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \varprojlim \\
               \& \cdots \& {F[t]/(t^n)} \& {} \& {} \& {F[t]/(t^2)} \& {F[t]/(t)}
@@ -4357,9 +4357,9 @@
               \arrow[from=2-6, to=2-7]
               \arrow[from=2-5, to=2-6]
               \arrow["\cdots"{description}, from=2-4, to=2-5]
-              \arrow[from=2-3, to=1-1]
-              \arrow[from=2-6, to=1-1]
-              \arrow[curve={height=6pt}, from=2-7, to=1-1]
+              \arrow[tail reversed, no head, from=2-3, to=1-1]
+              \arrow[tail reversed, no head, from=2-6, to=1-1]
+              \arrow[curve={height=6pt}, tail reversed, no head, from=2-7, to=1-1]
         \end{tikzcd}\]
         Предел факторизаций $F[t]/(t^{n+1}) \map F[t]/(t^{n})$ --- это формальные степенные ряды $F[[t]]$.
         Это можно обосновать с топологической точки зрения: например, если взять в качестве открытых множеств $(t), (t^2), \dots$, то пополнением $F[t]$ по данной топологии будет $F[[t]]$.
@@ -4514,10 +4514,10 @@
     }
     \note{
         В случае счётного предела надо добавить условие существования счётного обратного предела, то есть предела вида
-    % https://q.uiver.app/#q=WzAsNyxbMiwxLCJcXGJ1bGxldCJdLFszLDEsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFs2LDEsIlxcYnVsbGV0Il0sWzEsMV0sWzAsMCwiXFx2YXJwcm9qbGltIl0sWzAsMV0sWzEsMiwiXFxjZG90cyIsMV0sWzIsM10sWzMsNF0sWzUsMF0sWzYsMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNCwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+    % https://q.uiver.app/#q=WzAsNyxbMiwxLCJcXGJ1bGxldCJdLFszLDEsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFs2LDEsIlxcYnVsbGV0Il0sWzEsMSwiXFxjZG90cyJdLFswLDAsIlxcdmFycHJvamxpbSJdLFswLDFdLFsxLDIsIlxcY2RvdHMiLDFdLFsyLDNdLFszLDRdLFs1LDBdLFs2LDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDMsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDQsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               \varprojlim \\
-              \& {} \& \bullet \& \bullet \& \bullet \& \bullet \& \bullet
+              \& \cdots \& \bullet \& \bullet \& \bullet \& \bullet \& \bullet
               \arrow[from=2-3, to=2-4]
               \arrow["\cdots"{description}, from=2-4, to=2-5]
               \arrow[from=2-5, to=2-6]
@@ -4532,7 +4532,7 @@
     }
 
     \subsection{Схема построения алгебраического замыкания}
-    Пусть имеется поле $F$. КАк построить алгебраическое замыкание?
+    Пусть имеется поле $F$. Как построить алгебраическое замыкание?
 
     Пусть $P$ --- множество всех унитальных многочленов над $F$.
     Введём частичный порядок на $F: f \preceq g \iff f \divs g$.
@@ -4570,7 +4570,7 @@
         Если заменить $\cat{CRing}$ на $F\text{-}\cat{Alg}$, то $\mathbb{A}^n\cong\Mor(F[t_1, \dots, t_n], \_)$.
 
         Зафиксируем $f_1, \dots, f_m \in F[t_1, \dots, t_n]$.
-        Пусть $X_R \subset \mathbb{A}^n_R: X_R \coloneqq \defset{x \in \A}{f_1(x) = \cdots = f_m(x) = 0}$.
+        Пусть $X_R \subset \mathbb{A}^n_R: X_R \coloneqq \defset{x \in \A^n_R}{f_1(x) = \cdots = f_m(x) = 0}$.
         Это тоже функтор, причём он тоже представим: $X \cong \Mor_{F\text{-}\cat{Alg}}\left(F[t_1, \dots, t_n]/_{(f_1, \dots, f_m)}, \_\right)$.
         \item Рассмотрим представимый функтор $SL_n \cong \Mor(A, \_)$, где $A = F\left[g_{i,j}\right]_{i,j =1}^{n}/_{(\det g - 1)}$.
         Для точности стоит заметить, что здесь $SL_n$ бьёт в $\cat{Set}$, композиция с забывающим функтором.
@@ -4580,11 +4580,11 @@
 
         В частности, $g \in SL_n(A)$ --- общий элемент, $g \map \id_A \in \Mor(A, A)$.
     }
+    Пусть $\cat F, \cat G: \cat B \map \cat C$ --- два функтора.
+    Обозначим множество естественных преобразований $\cat F \map \cat G$ за $\Nat(\cat F, \cat G)$.
     \lemma[Йонеда]{
         Пусть $\cat F: \catC \map \cat{Set}$, $\cat C$ --- малая категория.
         Пусть $A \in \catC$.
-
-        Обозначим множество естественных преобразований $\Mor(A, \_) \map \cat F$ за $\Nat(\Mor(A, \_), \cat F)$.
 
         Тогда $\Nat(\Mor(A, \_), \cat F) \cong \cat F(A)$ естественно по $A$ и по $\cat F$.
         \provehere{
@@ -4668,7 +4668,7 @@
         Множество естественных преобразований $\Nat(\Mor(A, \_), \Mor(B, \_)) \cong \Mor(B, A)$.
         Категория представимых функторов антиэквивалентна категории $\cat C$.
     }
-    Иными словами лемма Йонеды, говорит, что всякий представимый функтор однозначно определяется своим общим элементом (?)
+    Иными словами, лемма Йонеды говорит, что всякий представимый функтор однозначно определяется своим общим элементом (?)
     \newlection{19 декабря 2023 г.}
 
 
@@ -4852,51 +4852,76 @@
                                          \arrow["\beta", from=1-3, to=2-3]
                                          \arrow["{\exists!}", dashed, from=1-2, to=2-2]
         \end{tikzcd}\]
-        В частности, такое представление единственно с точностью до единственного изморфизма --- рассмотреть $\phi = \phi', \alpha = \id_A, \beta = \id_B$ (?).
-        \provehere{
-            Устроим эпи-моно-разложение следующим образом: пусть $\mu = \Ker(\CoKer(\phi))$, тогда $\CoKer(\phi)\cdot \phi = 0$, и согласно универсальному свойству ядра $\exists! \eps$.
-        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzIsMCwiQiJdLFszLDAsIlxcYnVsbGV0Il0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJcXHBoaSJdLFsxLDIsIlxcQ29LZXIoXFxwaGkpIl0sWzMsMSwiXFxtdSA9IFxcS2VyKFxcQ29LZXIoXFxwaGkpKSIsMl0sWzAsMywiXFxleGlzdHMgISBcXGVwcyIsMl1d
+        В частности, такое представление единственно с точностью до единственного изоморфизма --- рассмотреть $\phi = \phi', \alpha = \id_A, \beta = \id_B$ (?).
+        \provehere[Доказательство]{
+        % https://q.uiver.app/#q=WzAsNSxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwwLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzAsMSwiQ0tcXHBoaSIsMix7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsyLDAsIktDS1xccGhpIiwyXSxbMywwLCJLXFxwaGkiXSxbMCw0LCJcXHBoaSJdLFszLDIsIlxcdmFyZXBzaWxvbl8yIiwwLHsib2Zmc2V0IjotMX1dLFsyLDMsIlxcdmFyZXBzaWxvbl8xIiwwLHsib2Zmc2V0IjotMX1dLFsxLDQsIlxcZXRhIiwyXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
-                  A \&\& B \& \bullet \\
+                  \bullet \&\& \bullet \&\& \bullet \\
+                  \bullet \&\&\&\& \bullet
+                  \arrow["CK\phi"', from=1-3, to=2-5]
+                  \arrow["KCK\phi"', from=2-1, to=1-3]
+                  \arrow["K\phi", from=1-1, to=1-3]
+                  \arrow["\phi", from=1-3, to=1-5]
+                  \arrow["{\varepsilon_2}", shift left, from=1-1, to=2-1]
+                  \arrow["{\varepsilon_1}", shift left, from=2-1, to=1-1]
+                  \arrow["\eta"', from=2-5, to=1-5]
+            \end{tikzcd}\]
+
+            1. Разместим стрелки $\phi, K\phi, CK\phi$ и $KCK\phi$.
+
+            2. $\phi(K\phi) = 0$, так что $\exists! \eta$.
+
+            3. $CK\phi(KCK\phi) = 0$, тогда и $\eta \cdot CK \phi(KCK \phi) = 0$, то есть $\phi (KCK \phi) = 0$.
+
+            4. $\phi (KCK \phi) = 0$, тогда $KCK\phi$ пропускается через $K\phi$: $\exists! \varepsilon_1$.
+
+            5. $CK\phi(K\phi) = 0$, тогда и $K\phi$ пропускается через $KCK\phi$: $\exists!\varepsilon_2$.
+
+            ===========================================
+
+            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. $\mu = KC \phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
+
+        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJCIl0sWzIsMCwiXFxidWxsZXQiXSxbMCwwLCJBIl0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJDXFxwaGkiXSxbMiwwLCJcXHBoaSJdLFsyLDMsIlxcZXhpc3RzIVxcdmFyZXBzaWxvbiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcbXUiLDJdXQ==
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  A \& B \& \bullet \\
                   \& \bullet
-                  \arrow["\phi", from=1-1, to=1-3]
-                  \arrow["{\CoKer(\phi)}", from=1-3, to=1-4]
-                  \arrow["{\mu = \Ker(\CoKer(\phi))}"', from=2-2, to=1-3]
-                  \arrow["{\exists ! \eps}"', from=1-1, to=2-2]
+                  \arrow["C\phi", from=1-2, to=1-3]
+                  \arrow["\phi", from=1-1, to=1-2]
+                  \arrow["{\exists!\varepsilon}"', dashed, from=1-1, to=2-2]
+                  \arrow["\mu"', from=2-2, to=1-2]
             \end{tikzcd}\]
-            \indentlemma{
-                $\Ker(\CoKer(\Ker(\phi))) = \Ker(\phi)$. Двойственно $\CoKer(\Ker(\CoKer(\phi))) = \\CoKer(\phi)$.
-            }{
-                Упражнение
-            % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbMCwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxLZXIoXFxwaGkpIl0sWzEsMiwiXFxwaGkiXSxbMywxLCJcXEtlcihcXENvS2VyKFxcS2VyKFxccGhpKSkpIiwyXSxbMSw0XSxbNCwyLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCIiLDAseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIiIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
-                \[\begin{tikzcd}[ampersand replacement=\&]
-                      \bullet \& \bullet \& \bullet \\
-                      \bullet \&\& \bullet
-                      \arrow["{\Ker(\phi)}", from=1-1, to=1-2]
-                      \arrow["\phi", from=1-2, to=1-3]
-                      \arrow["{\Ker(\CoKer(\Ker(\phi)))}"', from=2-1, to=1-2]
-                      \arrow[from=1-2, to=2-3]
-                      \arrow[dashed, from=2-3, to=1-3]
-                      \arrow[shift right, dashed, from=2-1, to=1-1]
-                      \arrow[shift right, dashed, from=1-1, to=2-1]
-                \end{tikzcd}\]
-            }
-            Далее...
-        % https://q.uiver.app/#q=WzAsOCxbMCwwLCJBIl0sWzEsMCwiXFxidWxsZXQiXSxbMCwxLCJBJyJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMCwiQiJdLFsyLDEsIkIiXSxbMywwLCJcXGJ1bGxldCJdLFszLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxlcHMiXSxbMiwzLCJcXGVwcyciLDJdLFswLDIsIlxcYWxwaGEiXSxbMyw1LCJcXG11JyIsMl0sWzEsNCwiXFxtdSJdLFs0LDUsIlxcYmV0YSJdLFsxLDMsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs0LDYsIlxcQ29LZXIoXFxwaGkpIl0sWzUsNywiXFxDb0tlcihcXG11JykiXSxbNiw3LCJcXGV4aXN0cyEiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+
+            $\mu$, как ядро стрелки, является эквалайзером (согласно Wiki), т.е. моно.
+
+            $\varepsilon$ --- эпи (упражнение).
+
+            ===========================================
+
+        % https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIkInIl0sWzAsMSwiQSciXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsyLDEsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFsyLDUsIlxcdmFyZXBzaWxvbiciLDJdLFs1LDEsIlxcbXUnIiwyXSxbMywwLCJcXHZhcmVwc2lsb24iXSxbMCw0LCJcXG11Il0sWzMsMiwiXFxhbHBoYSIsMl0sWzQsMSwiXFxiZXRhIl0sWzQsNiwiQ1xccGhpIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzEsNywiQ1xcbXUnIiwyLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzYsNywiXFxldGEiXSxbMCw1LCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
-                  A \& \bullet \& B \& \bullet \\
-                  {A'} \& \bullet \& B \& \bullet
-                  \arrow["\eps", from=1-1, to=1-2]
-                  \arrow["{\eps'}"', from=2-1, to=2-2]
-                  \arrow["\alpha", from=1-1, to=2-1]
-                  \arrow["{\mu'}"', from=2-2, to=2-3]
-                  \arrow["\mu", from=1-2, to=1-3]
-                  \arrow["\beta", from=1-3, to=2-3]
-                  \arrow["{\exists!}", dashed, from=1-2, to=2-2]
-                  \arrow["{\CoKer(\phi)}", from=1-3, to=1-4]
-                  \arrow["{\CoKer(\mu')}", from=2-3, to=2-4]
-                  \arrow["{\exists!}"{description}, dashed, from=1-4, to=2-4]
+                  A \&\& \bullet \&\& B \& \bullet \\
+                  {A'} \&\& \bullet \&\& {B'} \& \bullet
+                  \arrow["{\varepsilon'}"', from=2-1, to=2-3]
+                  \arrow["{\mu'}"', from=2-3, to=2-5]
+                  \arrow["\varepsilon", from=1-1, to=1-3]
+                  \arrow["\mu", from=1-3, to=1-5]
+                  \arrow["\alpha"', from=1-1, to=2-1]
+                  \arrow["\beta", from=1-5, to=2-5]
+                  \arrow["C\phi"{pos=0.4}, from=1-5, to=1-6]
+                  \arrow["{C\mu'}"'{pos=0.4}, from=2-5, to=2-6]
+                  \arrow["\eta", from=1-6, to=2-6]
+                  \arrow["\psi", dashed, from=1-3, to=2-3]
             \end{tikzcd}\]
-        }
+
+            1. $A\rightarrow A'\rightarrow\cdot\rightarrow B'\rightarrow\cdot = 0$, так как последние две стрелки --- уже ноль.
+
+            2. Тогда $(C\mu' \cdot\beta)\phi = 0$, тогда $C\phi \cdot \beta$ пропускается (единственным образом) через $C\phi$ --- получаем $\eta$.
+
+            3. $C\mu' \cdot \mu' = 0 \Rightarrow \mu' = KC \mu'$ (это надо ещё осознать)
+
+            4. $\varepsilon$ --- эпи, $0\varepsilon = (C\phi \cdot \mu)\varepsilon \Rightarrow 0 = C\phi \cdot \mu$.
+
+            5. Тогда $\eta \cdot C\phi\cdot \mu = 0$, т.е. $C\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $KC\mu' = \mu'$ --- получается $\psi$.
+    }
     }
 \end{document}
