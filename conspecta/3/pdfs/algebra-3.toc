@@ -86,8 +86,9 @@
 \contentsline {section}{\numberline {3.5}Произведения и копроизведения}{74}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Универсальные и коуниверсальные квадраты}{75}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Сопряжённые функторы}{78}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Левые сопряжённые к функторам типа забывающих}{82}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Левые сопряжённые к вложениям}{82}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.1}Связь сопряжённых функторов и категории запятой}{79}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Левые сопряжённые к функторам типа забывающих}{82}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Левые сопряжённые к вложениям}{82}{subsection.3.7.3}%
 \contentsline {section}{\numberline {3.8}Пределы}{83}{section.3.8}%
 \contentsline {subsection}{\numberline {3.8.1}Схема построения алгебраического замыкания}{87}{subsection.3.8.1}%
 \contentsline {section}{\numberline {3.9}Лемма Йонеды}{88}{section.3.9}%

@@ -3008,7 +3008,7 @@
     }
     \examples[Ещё категории]{
         \item \up \definition[Группоид]{Малая категория, в которой всякий морфизм --- изоморфизм.}
-        Например, в топологическом пространстве можно ввести аналог фундаментальной группы --- \emph{фундаментальный группоид}, в котором пути --- стрелки из начала пути в конец пути.
+        Например, в топологическом пространстве можно ввести аналог фундаментальной группы --- \emph{фундаментальный группоид}, в котором объекты --- некоторые точки пространства, стрелки --- пути из начала стрелки в её конец (отфакторизованные по связанной на концах гомотопности, естественно).
         \item Пусть $\Gamma = (V, E)$ --- ориентированный граф.
         \bullets{
             \item $\cat{P}_\Gamma$ --- категория путей в $\Gamma$, для $x, y \in V: \Mor_{\cat{P}_\Gamma}(x, y)$ --- пути из $x$ в $y$.
@@ -3106,7 +3106,7 @@
         Для любого $A \in \cat{C}: {\abs{\Mor(A, F)} = 1}$.
     }
     \examples{
-        \item В множествах инициальный --- пустое, финальный --- одноэлементное.
+        \item В множествах инициальный объект --- пустое множество, финальный --- одноэлементное.
         \item В $\cat{Group}$ тривиальная группа одновременно является и инициальным, и терминальным объектами.
         \definition[Нулевой объект]{Одновременно финальный и инициальный объект.}
         \item В категории полей таких объектов нет (гомоморфизм полей сохраняет характеристику, и вообще всякий гомоморфизм полей инъективен).
@@ -3125,7 +3125,7 @@
     \end{tikzcd}\]
     $\forall \psi: R \map A$, такого, что $\psi(S) \subset A^*: \exists ! \theta: S^{-1}R \map A$, такой, что диаграмма коммутативна.
 
-    Этому соответствует инициальный объект в категории $\cat{C}$, такой, что $\Obj\cat{C} = \defset{\phi: R \map A}{\phi(S) \subset A^*}$ и $\Mor_\catC(\phi, \psi) = \defset{\alpha: A \map B}{\alpha \phi = \psi}$.
+    Этому соответствует инициальный объект в категории $\cat{C}$, такой, что $\Obj\cat{C} = \defset{\phi: R \map A}{\phi(S) \subset A^*}$ и $\Mor_\catC(\phi, \psi) = \defset{\alpha: \target(\phi) \map \target(\psi)}{\alpha \phi = \psi}$.
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJSIl0sWzEsMCwiQSJdLFsxLDEsIkIiXSxbMCwyLCJcXHBzaSIsMl0sWzAsMSwiXFxwaGkiXSxbMSwyLCJcXGFscGhhIl1d
     \[\begin{tikzcd}[ampersand replacement=\&]
           R \& A \\
@@ -3154,7 +3154,7 @@
     \gather{\Obj\cat{C}^{\text{op}} = \Obj\cat{C}\qquad\forall A, B \in \cat{C}^{\text{op}}: \Mor_{\cat{C}^{\text{op}}}(A, B) = \Mor_{\cat{C}}(B, A)\\\alpha \underset{\cat{C}}\cdot \beta = \beta \underset{\cat{C}^{\text{op}}}\cdot \alpha}
     Неформально говоря, это категория с развёрнутыми стрелками.
 
-    Всякому утверждению соответствует двойственное, и, например, доказав, что инициальный объект единственен, мы автоматически доказали единственность и финального объекта.
+    Всякому утверждению соответствует двойственное, и, например, доказав, что инициальный объект единственен, мы автоматически доказали единственность и финального объекта --- принцип <<два по цене одного>>.
 
     \subsection{Декартово произведение категорий}
     Пусть $\cat{B}, \cat{C}$ --- категории.
@@ -3217,7 +3217,7 @@
 
             Рассмотрим две изомрфные копии $G: \hat{G} \cong \overline{G} \cong G$, такие, что $\hat{G} \cap \overline{G} = H$.
             Амальгамированное произведение $\hat{G} \underset{H}* \overline{G}$ состоит из всевозможных слов $\hat{g}_1 \overline{g}_1 \hat{g}_2 \overline{g}_2 \proddots \hat{g}_n \overline{g}_n$, где $\hat{g}_i \in \hat{G}, \overline{g}_i \in \overline{G}$.
-            Ещё надо добавить соотношения $\all{(\hat{g}h) \cdot (h^{-1}\overline{g}) \sim \hat{g}\cdot\overline{g}\\\hat{g}_1 \cdot 1_{\overline{G}}\cdot \hat{g}_2 = \hat{g}_1\cdot \hat{g}_2 \\ \overline{g}_1 \cdot1_{\hat{G}} \cdot\overline{g}_2 = \overline{g}_1\cdot \overline{g}_2}$, где $\hat{g}, \hat{g}_1, \hat{g}_2 \in G, \overline{g}, \overline{g}_1, \overline{g}_2 \in \overline{G}, h \in H$ и отфакторизовать по их нормальному замыканию.
+            Ещё надо добавить соотношения $\all{(\hat{g}h) \cdot (h^{-1}\overline{g}) \sim \hat{g}\cdot\overline{g}\\\hat{g}_1 \cdot 1_{\overline{G}}\cdot \hat{g}_2 = \hat{g}_1\cdot \hat{g}_2 \\ \overline{g}_1 \cdot1_{\hat{G}} \cdot\overline{g}_2 = \overline{g}_1\cdot \overline{g}_2}$, где $\hat{g}, \hat{g}_1, \hat{g}_2 \in \hat{G}, \overline{g}, \overline{g}_1, \overline{g}_2 \in \overline{G}, h \in H$ и отфакторизовать по их нормальному замыканию.
             Если $H = \{1\}$, то $\hat{G} \underset{H}* \overline{G}$ --- свободное произведение.
             Далее надо доказать, что если $\hat{g} \in \hat{G} \sm H, \overline{g} \in \overline{G} \sm H$, то элементы $\hat{g}, \overline{g} \in \hat{G} \underset{H}* \overline{G}$ не равны.
             Если это доказано, то далее видим, что при $H \lneq G$ нарушается определение эпиморфизма:
@@ -3235,12 +3235,14 @@
     }
 
     \subsection{(Ковариантные) функторы}
-    \definition[(Ковариантный) функтор между категориями $\cat{B}$ и $\cat{C}$ $\cat{F}: \cat{B} \map \cat{C}$] {\label{functor}Класс отображений
+    \definition[(Ковариантный) функтор между категориями $\cat{B}$ и $\cat{C}$] {\label{functor}Класс отображений
     \bullets{
         \item $\cat{F}: \Obj\cat{B} \map \Obj\cat{C}$.
         \item $\forall X, Y \in \cat{B}$: $\cat{F}_{X,Y}: \Mor_{\catB}(X, Y) \map \Mor_{\cat{C}}(\cat{F}(X), \cat{F}(Y))$.
     }
-    причём отображения должны сохранять композицию и единицу (второе условие обязательно, например, в категории из одного элемента --- моноиде --- очевидно недостаточно требовать только сохранения композиции, единица априори не сохранится).}
+    причём отображения должны сохранять композицию и единицу (второе условие обязательно, например, в категории из одного элемента --- моноиде --- очевидно недостаточно требовать только сохранения композиции, единица априори не сохранится).
+    Функтор обозначают записью  $\cat{F}: \cat{B} \map \cat{C}$.
+    }
     \definition[Строгий функтор $\cat{F}$]{
         $\forall X, Y \in \cat{B}: \cat{F}_{X,Y}$ инъективно.
     }
@@ -3270,22 +3272,27 @@
     \definition[Контравариантный функтор $\cat{F}: \cat{B} \map \cat{C}$]{Функтор $\cat{B}^\text{op} \map \cat{C}$.}
     Несложно проверить, что такие функторы взаимно однозначно соответствуют функторам $\cat{B} \map \cat{C}^\text{op}$.
 
-    В частности, $\forall X, Y \in \cat{B}: \cat{F}_{X,Y}: \Mor(Y, X) \map \Mor(\cat{F}(x), \cat{F}(y))$.
+    В частности, $\forall X, Y \in \cat{B}: \cat{F}_{X,Y}: \Mor(Y, X) \map \Mor(\cat{F}(X), \cat{F}(Y))$.
 
     Согласно этому определению, контравариантный функтор не является функтором.
-    \example{
+    \example[Контравариантный функтор]{
         Пусть $\cat{C}$ --- категория с объектом $X \in \cat{C}$.
-        Зададим функтор % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiXFxjYXRDIl0sWzIsMCwiXFxjYXR7U2V0fSJdLFswLDAsIlxcTW9yKFxcXywgWCk6ICJdLFsxLDEsIlkiXSxbMiwxLCJcXE1vcihZLCBYKSJdLFsxLDIsIlxccGhpIl0sWzIsMiwiXFxNb3IoXFxwaGksIFgpOiAiXSxbMywyLCJcXGFycntjfXtcXE1vcihZJywgWCkgXFxtYXAgXFxNb3IoWSwgWCkgXFxcXCBcXGFscGhhIFxcbWFwc3RvIFxcYWxwaGEgXFxwaGl9Il0sWzQsMSwiXFx0ZXh0e9C00LvRjyAkWSBcXGluIFxcT2JqXFxjYXRDJH0iXSxbNCwyLCJcXHRleHR70LTQu9GPICRcXHBoaSBcXGluIFxcTW9yX1xcY2F0QyhZLCBZJykkfSJdLFswLDFdLFszLDQsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbNSw2LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV1d
-        \[\begin{tikzcd}[ampersand replacement=\&,row sep=tiny]
-        {\Mor(\_, X): }
-              \& \cat{C} \& {\cat{Set}} \\
-              \& Y \& {\Mor(Y, X)} \&\& {\text{для $Y \in \Obj\cat{C}$}} \\
-              \& \phi \& {\Mor(\phi, X): } \& {\arr{c}{\Mor(Y', X) \map \Mor(Y, X) \\ \alpha \mapsto \alpha \phi}} \& {\text{для $\phi \in \Mor_{\cat{C}}(Y, Y')$}}
-              \arrow[from=1-2, to=1-3]
-              \arrow[maps to, from=2-2, to=2-3]
-              \arrow[maps to, from=3-2, to=3-3]
-        \end{tikzcd}\]
-        Функтор $\Mor(\_, X)$ особо опасен (например, он контравариантен), с ним стоит обращаться с чрезвычайной осторожностью.
+        Зададим функтор $\Mor(\_, X): \catC \map \cat{Set}$.
+    Пусть на объектах он действует по правилу $Y \mapsto \Mor(Y, X)$, а на морфизмах --- по правилу $\phi \mapsto \Mor(\phi, X)$.
+        Осталось определить $\Mor(\phi, X)$. Это должен быть морфизм в $\cat{Set}$ вида $\Mor(\target(\phi), X) \map \Mor(\source(\phi), X)$.
+        Подойдёт морфизм $\_ \cdot \phi: \alpha \mapsto \alpha \cdot \phi$.
+
+    % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiXFxjYXRDIl0sWzIsMCwiXFxjYXR7U2V0fSJdLFswLDAsIlxcTW9yKFxcXywgWCk6ICJdLFsxLDEsIlkiXSxbMiwxLCJcXE1vcihZLCBYKSJdLFsxLDIsIlxccGhpIl0sWzIsMiwiXFxNb3IoXFxwaGksIFgpOiAiXSxbMywyLCJcXGFycntjfXtcXE1vcihZJywgWCkgXFxtYXAgXFxNb3IoWSwgWCkgXFxcXCBcXGFscGhhIFxcbWFwc3RvIFxcYWxwaGEgXFxwaGl9Il0sWzQsMSwiXFx0ZXh0e9C00LvRjyAkWSBcXGluIFxcT2JqXFxjYXRDJH0iXSxbNCwyLCJcXHRleHR70LTQu9GPICRcXHBoaSBcXGluIFxcTW9yX1xcY2F0QyhZLCBZJykkfSJdLFswLDFdLFszLDQsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbNSw2LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV1d
+%        \[\begin{tikzcd}[ampersand replacement=\&,row sep=tiny]
+%        {\Mor(\_, X): }
+%              \& \cat{C} \& {\cat{Set}} \\
+%              \& Y \& {\Mor(Y, X)} \&\& {\text{для $Y \in \Obj\cat{C}$}} \\
+%              \& \phi \& {\Mor(\phi, X): } \& {\arr{c}{\Mor(Y', X) \map \Mor(Y, X) \\ \alpha \mapsto \alpha \phi}} \& {\text{для $\phi \in \Mor_{\cat{C}}(Y, Y')$}}
+%              \arrow[from=1-2, to=1-3]
+%              \arrow[maps to, from=2-2, to=2-3]
+%              \arrow[maps to, from=3-2, to=3-3]
+%        \end{tikzcd}\]
+        С контравариантным функтором $\Mor(\_, X)$ стоит обращаться с чрезвычайной осторожностью.
     }
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJZIl0sWzAsMSwiWSciXSxbMSwwLCJcXE1vcl9cXGNhdHtDfShZLCBYKSJdLFsxLDEsIlxcTW9yX1xcY2F0e0N9KFknLCBYKSJdLFswLDEsIlxccGhpIiwyXSxbMSwzXSxbMCwyXSxbMywyLCJcXF8gXFxjZG90IFxccGhpIiwyXSxbNCw3LCIiLDIseyJzaG9ydGVuIjp7InNvdXJjZSI6MTAsInRhcmdldCI6MTB9LCJsZXZlbCI6MSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoibWFwcyB0byJ9fX1dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -3334,9 +3341,9 @@
         Вместо этого рассмотрим категорию всех малых категорий $\cat{Cat}$.
         Морфизмами в ней являются функторы.
 
-        \item Категория диаграмм в $\cat{C}$ типа $\Gamma$, которая была рассмотрена ранее --- это функторы из путей $\mathcal{P}_\Gamma$ в графе в $\cat{C}$:
-        \[\cat{D}_\Gamma(\cat{C}) = \Func(\mathcal{P}_\Gamma, \cat{C})\]
-        \item Функторы из категории достижимости в $\cat{C}$ $\Func(\mathcal{C}_\Gamma, \cat{C})$ --- класс коммутативных диаграмм в $\cat{C}$.
+        \item Категория диаграмм в $\cat{C}$ типа $\Gamma$, которая была рассмотрена ранее --- это функторы из путей $\mathscr{P}_\Gamma$ в графе в $\cat{C}$:
+        \[\cat{D}_\Gamma(\cat{C}) = \Func(\mathscr{P}_\Gamma, \cat{C})\]
+        \item Функторы $\Func(\mathscr{C}_\Gamma, \cat{C})$ из категории достижимости в $\cat{C}$ --- класс коммутативных диаграмм в $\cat{C}$.
         Например, если $\Gamma$ --- такой граф $\begin{tikzcd}[ampersand replacement=\&]
                                                     A \& B \\
                                                     C \& D
@@ -3347,7 +3354,7 @@
         \end{tikzcd}$, то $|\Mor(A, D)| = 1$, поэтому функтор должен перевести стрелки $A \map B \map D$ и $A \map C \map D$ с равной композицией в стрелки с равной композицией.
 
         Превратим её в категорию коммутативных диаграмм.
-        Для этого надо ввести морфизмы между коммутативными диаграммами.
+        Для этого надо ввести морфизмы между коммутативными диаграммами, об этом ниже.
     }
 
 
@@ -3356,7 +3363,7 @@
     Пусть $\cat{F}, \cat{G}: \cat{B} \map \cat{C}$ --- два функтора.
     Категорию $\cat{B}$ здесь стоит воспринимать, как \emph{индексирующую категорию}, как граф, по которому строится категория диаграмм.
 
-    \emph{Естественное преобразование} $\eta: \cat{F} \map \cat{G}$ --- класс морфизмов, $\eta_B: \cat{F}(B) \map \cat{G}(B)$, где $B \in \cat{B}$, такой, что $\forall \phi \in \Mor_{\cat{B}}(A, B)$ диаграмма коммутирует.
+    \emph{Естественное преобразование} $\eta: \cat{F} \map \cat{G}$ --- класс морфизмов $\defset{\eta_B: \cat{F}(B) \map \cat{G}(B)}{B \in \catB}$, такой, что $\forall \phi \in \Mor_{\cat{B}}(A, B)$ диаграмма коммутирует.
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdHtGfShBKSJdLFsxLDAsIlxcY2F0e0Z9KEIpIl0sWzAsMSwiXFxjYXR7R30oQSkiXSxbMSwxLCJcXGNhdHtHfShCKSJdLFswLDEsIlxcY2F0e0Z9KFxccGhpKSJdLFsyLDMsIlxcY2F0e0d9KFxccGhpKSJdLFswLDIsIlxcZXRhX0EiLDJdLFsxLDMsIlxcZXRhX0IiXV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
     {\cat{F}(A)}
@@ -3384,7 +3391,16 @@
         Естественность означает $\phi(\det(a)) = \det(\phi(a))$, что верно, так как $\det$ --- многочлен от коэффициентов, а $\phi$ --- гомоморфизм коэффициентов.
         \item Рассмотрим два функтора $\cat{M}$ и ${}^{*}: \cat{CRing} \map \cat{Mon}$, отображающие кольцо в моноид его элементов по умножению, и группу обратимых элементов (являющуюся моноидом) соответственно.
         $\eta: R^* \hookrightarrow \cat{M}(R)$.
-        \item Вложение (?) --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \id: \cat{Group}\map\cat{Group}$:
+        \item Вложение --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \id: \cat{Group}\map\cat{Group}$:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJbRyxHXSJdLFsxLDAsIltILCBIXSJdLFswLDEsIkciXSxbMSwxLCJIIl0sWzAsMSwiXFxwaGlcXGJpZ3xfe1tHLEddfSJdLFswLDIsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCJcXHBoaSJdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {[G,G]} \& {[H, H]} \\
+        G \& H
+        \arrow["{\phi\big|_{[G,G]}}", from=1-1, to=1-2]
+        \arrow[hook, from=1-1, to=2-1]
+        \arrow[hook, from=1-2, to=2-2]
+        \arrow["\phi", from=2-1, to=2-2]
+        \end{tikzcd}\]
         \item\up\definition[Естественный изоморфизм]{Естественное преобразование, состоящее из изоморфизмов.}
         В категории множеств $\cat{Set}$: $\Mor(X, \Mor(Y, Z)) \leftrightarrow \Mor(X \times Y, Z)$: $g(x)(y) = f(x, y)$.
 
@@ -3438,11 +3454,11 @@
 
     }
     \examples[Ещё естественные преобразования]{
-        \item $R \otimes_R \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
+        \item Естественное преобразование между функторами $\Lmod{R} \map \Lmod{R}$: $R \otimes_R \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
 
         Элемент $\sum r_i \otimes m_i$ равен $1 \otimes \sum r_i m_i$, и отображается в $\sum r_i m_i$.
         \item $\Mor_{\Lmod{R}}(X, \Mor_{\Lmod{R}}(Y, Z)) \cong \text{Bi}_{\Lmod{R}}(X, Y; Z)\cong \Mor_{\Lmod{R}}(X \otimes_R Y, Z)$.
-        \item Естественный изоморфизм в категории конечномерных векторных пространств $\cat{Vect}_F$: $\Mor(X, Y \otimes Z) \cong \Mor(X \otimes Z^*, Y)$.
+        \item Естественный изоморфизм в категории конечномерных векторных пространств $\cat{Vect}_F$: $\Mor(X, Y \otimes Z) \cong \Mor(X \otimes Y^*, Z)$.
     }
 
     \subsection{Эквивалентность категорий}
@@ -3458,7 +3474,7 @@
     Рассмотрим категорию конечномерных векторных пространств $\cat{Vect}_F$ и категорию матриц $\cat{M}_F$.
     Идеологически правильнее рассматривать $\Obj \cat{M}_F$ не как натуральные числа, а как пространства столбцов.
     Определим \begin{align*}
-                  \cat{F}: \cat{M}_F &\map \cat{Vect}_F\\ \N = \Obj\cat{M}_F \ni A & \mapsto F^n \\ \Mor(n, m) \ni A &\mapsto \text{оператор умножения на матрицу $A$}
+                  \cat{F}: \cat{M}_F &\map \cat{Vect}_F\\ \N = \Obj\cat{M}_F \ni n & \mapsto F^n \\ \Mor(n, m) \ni A &\mapsto \text{оператор умножения на матрицу $A$}
     \end{align*}
 
         Далее чтобы доказать эквивалентность категорий, то надо либо уметь пользоваться аксиомой выбора для классов, либо каким-то образом сделать категорию $\cat{Vect}_F$ малой (которая пока не является множеством, но её объекты при фиксированном поле имеют фиксированную мощность, то есть идеологически не очень большие)
@@ -3498,7 +3514,7 @@
 
     Для определения коэквалайзера надо развернуть все стрелки:
 
-    Пусть $A \leftarrow B: \phi, \psi$.
+    Пусть $\phi,\psi: B \map A$.
     \definition[Коэквалайзер]{
         Морфизм $\eps: A \map E$, уравнивающий $\phi$ и $\psi$: $\eps\phi = \eps\psi$, причём такой, что $\forall \eps': A \map E'$ (такого, что $\eps'\phi = \eps'\psi$) $\exists! \alpha: E \map E'$, такая, что диаграмма коммутативна
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJFJyJdLFsxLDIsIlxccGhpIiwwLHsib2Zmc2V0IjotMSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwyLCJcXHBzaSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwzLCJcXGFscGhhIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMCwiXFxlcHMiLDJdLFsxLDMsIlxcZXBzJyJdXQ==
@@ -3590,7 +3606,7 @@
 
     Практически всегда в конкретных категориях произведение --- декартово произведение вместе с отображениями --- проекциями.
 
-    Копроизведение --- двойственный объект к произведению.
+    Копроизведение --- двойственный объект к произведению, копроизведение обозначается $A \sqcup B$.
     \examples[Копроизведение]{
         \item В $\cat{Set}$ копроизведение непересекающихся множеств --- это действительно дизъюнктное объединение.
         \item В $\cat{Group}$ копроизведение --- это свободное произведение групп.
@@ -3693,7 +3709,7 @@
                                                                B \times C &\map D \\ (b, c)& \mapsto \beta(b) \\ (b, c) & \mapsto \gamma(c)
         \end{align*}
         Таким образом, pullback $\beta$ и $\gamma$ --- это стрелки % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXGRlZnNldHsoYiwgYyl9e1xcYmV0YShiKSA9IFxcZ2FtbWEoYyl9Il0sWzEsMSwiQiBcXHRpbWVzIEMiXSxbMiwwLCJCIl0sWzIsMiwiQyJdLFswLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMiwiXFxwaV9CIiwyXSxbMSwzLCJcXHBpX0MiXV0=
-        $\begin{tikzcd}[ampersand replacement=\&,cramped,row sep=tiny]
+        $\begin{tikzcd}[ampersand replacement=\&,cramped,row sep=tiny,baseline=-3]
              \&\& B \\
              {\defset{(b, c)}{\beta(b) = \gamma(c)}} \& {B \times C} \\
              \&\& C
@@ -3735,14 +3751,13 @@
               \arrow[from=1-2, to=1-3]
               \arrow["\id", curve={height=-12pt}, from=1-1, to=1-3]
         \end{tikzcd}\]
-        Применяя какой-нибудь функтор $\Fc: \cat{Ring} \map \cat{Group}$ (например, $GL_n$), получим
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXEZjKFIpIl0sWzEsMCwiXFxGYyhSIFxcbHRpbWVzIEkpIl0sWzIsMCwiXFxGYyhSKSJdLFswLDEsIlxcYWxwaGEiLDJdLFsxLDIsIlxcYmV0YSIsMl0sWzAsMiwiXFxpZCIsMCx7ImN1cnZlIjotMn1dXQ==
+        Применяя какой-нибудь функтор $\cat{F}: \cat{Ring} \map \cat{Group}$ (например, $GL_n$), получим
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGNhdHtGfShSKSJdLFsxLDAsIlxcY2F0e0Z9KFIgXFxsdGltZXMgSSkiXSxbMiwwLCJcXGNhdHtGfShSKSJdLFswLDEsIlxcYWxwaGEiLDJdLFsxLDIsIlxcYmV0YSIsMl0sWzAsMiwiXFxpZCIsMCx7ImN1cnZlIjotMn1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
-        {\Fc(R)}
-              \& {\Fc(R \ltimes I)} \& {\Fc(R)}
-              \arrow["\alpha"', from=1-1, to=1-2]
-              \arrow["\beta"', from=1-2, to=1-3]
-              \arrow["\id", curve={height=-12pt}, from=1-1, to=1-3]
+        {\cat{F}(R)} \& {\cat{F}(R \ltimes I)} \& {\cat{F}(R)}
+        \arrow["\alpha"', from=1-1, to=1-2]
+        \arrow["\beta"', from=1-2, to=1-3]
+        \arrow["\id", curve={height=-12pt}, from=1-1, to=1-3]
         \end{tikzcd}\]
         Средняя группа --- полупрямое произведение ядра $\beta$ и образа $\alpha$.
 
@@ -3763,7 +3778,7 @@
         \end{tikzcd}\]
         Но в $\cat{CRing}$ пулбэк этой диаграммы --- что-то странное.
 
-        Поэтому можно считать $*$ не инициальным, а нулевым объектом --- если нулевой объект существует, то так определённое ядро будет совпадать со стандартным представлением о нём.
+        Поэтому можно считать $*$ не инициальным, а нулевым объектом --- если нулевой объект существует, то так определённое ядро будет совпадать со стандартным представлением о нём (почему?).
     }
     \definition[Pushout (пушаут)]{
         Двойственный объект к pullback'у.
@@ -3797,16 +3812,14 @@
     \proposal{
         Пусть в категории $\cat{C}$ существуют все копроизведения и коэквалайзеры (или как минимум те, о которых речь ниже).
 
-        Тогда $A$ --- pushout $\begin{tikzcd}[ampersand replacement=\&,cramped]
-                                   B \& D \& C\arrow[from=1-1, to=1-2]\arrow[from=1-3, to=1-2]
-        \end{tikzcd}$ $\iff A$ --- коэквалайзер отображений
-    % https://q.uiver.app/#q=WzAsNixbMCwxLCJEIl0sWzEsMCwiQiJdLFsyLDEsIkJcXHNxY3VwIEMiXSxbMCwyLCJEIl0sWzIsMiwiQlxcc3FjdXAgQyJdLFsxLDMsIkMiXSxbMCwxLCJcXGdhbW1hIl0sWzEsMiwiXFxwaV9CIl0sWzAsMiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsNSwiXFxnYW1tYSIsMl0sWzUsNCwiXFxwaV9DIiwyXSxbMyw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        Тогда $A$ --- pushout $\begin{tikzcd}[ampersand replacement=\&,cramped]B \& D \& C\arrow["\beta", from=1-1, to=1-2]\arrow["\gamma"', from=1-3, to=1-2]\end{tikzcd}$ $\iff A$ --- коэквалайзер отображений
+    % https://q.uiver.app/#q=WzAsNixbMCwxLCJEIl0sWzEsMCwiQiJdLFsyLDEsIkJcXHNxY3VwIEMiXSxbMCwyLCJEIl0sWzIsMiwiQlxcc3FjdXAgQyJdLFsxLDMsIkMiXSxbMCwxLCJcXGJldGEiXSxbMSwyLCJcXHBpX0IiXSxbMCwyLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMyw1LCJcXGdhbW1hIiwyXSxbNSw0LCJcXHBpX0MiLDJdLFszLDQsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&,row sep=tiny]
               \& B \\
               D \&\& {B\sqcup C} \\
               D \&\& {B\sqcup C} \\
               \& C
-              \arrow["\gamma", from=2-1, to=1-2]
+              \arrow["\beta", from=2-1, to=1-2]
               \arrow["{\pi_B}", from=1-2, to=2-3]
               \arrow[dashed, from=2-1, to=2-3]
               \arrow["\gamma"', from=3-1, to=4-2]
@@ -3850,7 +3863,7 @@
         Обозначается $B \underset{A}* C$.
 
         По-другому, данная конструкция называется HNN (?).
-        \item В категории модулей или абелевых групп всё проще, там вместо свободного произведения обычное декартово.
+        \item В категории модулей или абелевых групп всё проще, там вместо свободного произведения обычное декартово (а именно, прямая сумма --- разница появляется, если объектов бесконечное число, пусть мы и не определяли счётные пушауты).
     }
     \exercise{
         Дан pushout в произвольной категории:% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkIiXSxbMSwxLCJDIl0sWzAsMiwiXFx0aGV0YSJdLFswLDEsIlxcdGhldGEiLDJdLFsxLDMsIlxccGhpIiwyXSxbMiwzLCJcXHBzaSJdXQ==
@@ -3878,7 +3891,7 @@
     пусть имеется функтор $\cat{F}: \cat{B} \map \cat{C}$, пусть $X \in \cat{C}$.
     Построим категорию $(X \downarrow \cat{F})$.
 
-    Её объекты --- это $\{(B, \phi) \in B \times \Mor_\catC(X, \cat{F}(B))\}$.
+    Её объекты --- это $\defset{(B, \phi) \in \catB \times \Mor\cat C}{\phi: X \map \cat F(\cat B)}$.
 
     Морфизмы определены так: $(B, \phi) \map (B', \phi')$ --- это $\defset{\alpha \in \Mor_{\cat{B}}(B, B')}{% https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXR7Rn0oQikiXSxbMSwxLCJcXGNhdHtGfShCJykiXSxbMSwyLCJcXGNhdHtGfShcXGFscGhhKSJdLFswLDEsIlxccGhpIl0sWzAsMiwiXFxwaGknIl1d
         \begin{tikzcd}[ampersand replacement=\&]
@@ -3905,15 +3918,16 @@
     \examples{
         \item Пусть $\cat{F}: \cat{Group} \map \cat{Set}$ --- забывающий функтор, и зафиксируем $X \in \cat{Set}$.
 
-        Тогда инициальный объект -- это свободная группа $F_X$ вместе с вложением $X \hookrightarrow \cat{F}(F_X)$.
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXR7Rn0oRl9YKSJdLFsxLDEsIlxcY2F0e0Z9KEcpIl0sWzAsMV0sWzAsMl0sWzEsMl1d
+        Тогда инициальный объект -- это свободная группа $F_X$ вместе с вложением множеств $X \hookrightarrow \cat{F}(F_X)$.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzAsMSwiXFxjYXR7Rn0oRl9YKSJdLFsxLDEsIlxcY2F0e0Z9KEcpIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMCwyXSxbMSwyXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               X \\
               {\cat{F}(F_X)} \& {\cat{F}(G)}
-              \arrow[from=1-1, to=2-1]
+              \arrow[hook, from=1-1, to=2-1]
               \arrow[from=1-1, to=2-2]
               \arrow[from=2-1, to=2-2]
         \end{tikzcd}\]
+    В самом деле, для любого гомоморфизма множеств $X \map \cat F(G)$ должен найтись единственный гомоморфизм групп $F_X \map \cat G$, такой, что диаграмма коммутирует, то есть гомоморфизм определяется заданием на элементах $X$, и никаких соотношений нет.
         \item    Возьмём функтор вложения $\cat{F}: \cat{Ab} \map \cat{Group}$.
         Пусть $G \in \cat{Group}$. Тогда инициальный объект в $(G \downarrow \cat{F})$ --- это такой объект, что из него есть единственный морфизм в другую абелеву группу:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJHIl0sWzAsMSwiR157XFxhYn0iXSxbMSwxLCJBIl0sWzAsMl0sWzAsMV0sWzEsMiwiXFxleGlzdHMhIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
@@ -3924,7 +3938,7 @@
               \arrow[from=1-1, to=2-1]
               \arrow["{\exists!}"', dashed, from=2-1, to=2-2]
         \end{tikzcd}\]
-        Универсальное функтор $\cat{Group} \map \cat{Ab}$ --- это абелианизация.
+        Универсальный функтор $\cat{Group} \map \cat{Ab}$ --- это абелианизация.
     }
     Пусть $\cat{B}, \cat{C}$ --- категории.
     Рассмотрим два функтора % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXGNhdHtCfSJdLFsxLDAsIlxcY2F0e0N9Il0sWzAsMSwiXFxjYXR7Rn0iLDAseyJvZmZzZXQiOi0xfV0sWzEsMCwiXFxjYXR7R30iLDAseyJvZmZzZXQiOi0xfV1d
@@ -3937,7 +3951,7 @@
     \definition[$\cat{G}$ и $\cat{F}$ сопряжены]{
         $\forall B \in \cat{B}, C \in \cat{C}$: существует биекция между множествами морфизмов $\Mor_{\cat{C}}(C, \cat{F}(B))$ и $\Mor_{\cat{B}}(\cat{G}(C), B)$, причём биекция --- естественна и по $B$, и по $C$.
         То есть имеется естественная биекция между функторами $\cat{C}^{\text{op}} \times \cat{B} \map \cat{Set}$.
-        Здесь $\cat{F}$ называется правым сопряжённым, $\cat{G}$ --- левым сопряжённым.
+        Здесь $\cat{F}$ называется правым сопряжённым, $\cat{G}$ --- левым сопряжённым (надо посмотреть, слева или справа стоит данный функтор внутри $\Mor$).
     }
     Далее мы проверим, что инициальные объекты в категории $X \downarrow \cat{F}$ имеют самое непосредственное отношение к сопряжённым функторам.
     \newlection{30 ноября 2023 г.}
@@ -3949,6 +3963,7 @@
 %    \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G}"', curve={height=12pt}, tail reversed, no head, from=1-1, to=1-3]
 %    \arrow["\eta", "\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
 %    \end{tikzcd}\]
+    \subsection{Связь сопряжённых функторов и категории запятой}
     Пусть $\cat F: \cat B \map \cat C$ --- какой-то функтор.
 
     Рассмотрим $X \in \cat C$, и вместе с ним категорию $(X \downarrow \cat F)$~(\cref{comma-category}).
@@ -3995,7 +4010,7 @@
           \arrow["{\cat F(\id_{\cat G(X)}))}"', from=2-1, to=2-2]
     \end{tikzcd}\]
     Так как $\cat F$ --- сохраняет $\id$, то это действительно правда.
-    \theorem{
+    \theorem{\label{comma-and-conjugate}
         Так построенный функтор $\cat G: \cat C \map \cat B$ --- левый сопряжённый к $\cat F$.
         \provehere{
             Определим биекцию $\eta_{X,Y}: \Mor_\catC(X, \cat F(Y)) \map \Mor_{\catB}(\cat G(X), Y)$ следующим образом: морфизму $f: X \map \cat F(Y)$ сопоставим такой морфизм $\eta_{X,Y}(f)$, что диаграмма коммутативна:
@@ -4027,16 +4042,15 @@
             \indent{
                 Для этого будет полезно вспомнить/понять, что такое $\Mor_{\catA}(\alpha, \beta)$ (пусть $\alpha, \beta \in \Mor(\cat A)$).
                 Так как $\Mor_{\catA}(\_, \_): \cat A^{\op} \times \catA \map \cat{Set}$, то $\Mor_{\catA}(\alpha, \beta)$ --- некое отображение множеств.
-                Пусть $\alpha: A' \map A, \beta: B \map B'$. Тогда $\alpha,\beta:(A,B) \map (B,B')$ --- морфизм в $\catA^{\op} \times \catA$.
-            % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBLCBCIl0sWzEsMCwiQicsIEEnIl0sWzAsMSwiXFxNb3IoQSxCKSJdLFsxLDEsIlxcTW9yKEEnLEInKSJdLFswLDEsIlxcYWxwaGEsIFxcYmV0YSJdLFswLDIsIlxcTW9yKFxcXyxcXF8pIiwyXSxbMSwzLCJcXE1vcihcXF8sXFxfKSJdLFsyLDMsIj8iXV0=
+                Пусть $\alpha: A' \map A, \beta: B \map B'$. Тогда $\alpha,\beta:(A,B) \map (A',B')$ --- морфизм в $\catA^{\op} \times \catA$.
+            % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBLCBCIl0sWzEsMCwiQScsQiciXSxbMCwxLCJcXE1vcihBLEIpIl0sWzEsMSwiXFxNb3IoQScsQicpIl0sWzAsMSwiXFxhbHBoYSwgXFxiZXRhIl0sWzAsMiwiXFxNb3IoXFxfLFxcXykiLDJdLFsxLDMsIlxcTW9yKFxcXyxcXF8pIl0sWzIsMywiPyJdXQ==
                 \[\begin{tikzcd}[ampersand replacement=\&]
-                {A, B}
-                      \& {B', A'} \\
-                      {\Mor(A,B)} \& {\Mor(A',B')}
-                      \arrow["{\alpha, \beta}", from=1-1, to=1-2]
-                      \arrow["{\Mor(\_,\_)}"', from=1-1, to=2-1]
-                      \arrow["{\Mor(\_,\_)}", from=1-2, to=2-2]
-                      \arrow["{?}", from=2-1, to=2-2]
+                {A, B} \& {A',B'} \\
+                {\Mor(A,B)} \& {\Mor(A',B')}
+                \arrow["{\alpha, \beta}", from=1-1, to=1-2]
+                \arrow["{\Mor(\_,\_)}"', from=1-1, to=2-1]
+                \arrow["{\Mor(\_,\_)}", from=1-2, to=2-2]
+                \arrow["{?}", from=2-1, to=2-2]
                 \end{tikzcd}\]
                 Значит, $\Mor(\alpha, \beta)$ как-то сопоставляет отображению $\Mor(A, B)$ отображение $\Mor(A', B')$.
             % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQSciXSxbMCwxLCJCIl0sWzEsMSwiQiciXSxbMSwwLCJcXGFscGhhIiwyXSxbMiwzLCJcXGJldGEiXSxbMCwyXSxbMSwzLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
@@ -4094,7 +4108,7 @@
             \end{tikzcd}\]
             Так как по стрелке $f: X \map \cat F(Y)$ хочется получить стрелку $g: \cat G(X) \map Y$, то логично предположить, что $g = \eta_{X,Y}(f)$.
             Здесь, конечно, надо использовать естественность преобразования $\eta: \Mor_\catC(X, \cat F(Y)) \cong \Mor_{\catB}(\cat G(X), Y)$.
-            Изобразим диаграмму этой естественности для морфизма $(\id_X, g) \in \Mor_{\catC^{\op} \times \catB}((X, \cat G(X)), (X, Y))$:
+            Изобразим диаграмму этой естественности для морфизма $(\id_X, g) \in \Mor_{\catC^{\op} \times \catB}((X, \cat G(X)), (X, Y))$ (где $g \coloneqq \eta_{X,Y}(f)$):
         % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcl9cXGNhdEMoWCxcXGNhdCBGKFxcY2F0IEcoWCkpKSJdLFsxLDAsIlxcTW9yX1xcY2F0QyhYLFxcY2F0IEYoWSkpIl0sWzAsMSwiXFxNb3JfXFxjYXRDKFxcY2F0IEcoWCksXFxjYXQgRyhYKSkiXSxbMSwxLCJcXE1vcl9cXGNhdEMoXFxjYXQgRyhYKSwgWSkiXSxbMCwxLCJcXGNhdCBGKGcpIFxcY2RvdCBcXF8iXSxbMiwwLCJcXGV0YV97WCxcXGNhdCBHKFgpfV57LTF9Il0sWzMsMSwiXFxldGFfe1gsWX1eey0xfSIsMl0sWzIsMywiZyBcXGNkb3QgXFxfIiwyXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
             {\Mor_\catC(X,\cat F(\cat G(X)))}
@@ -4107,9 +4121,11 @@
             \end{tikzcd}\]
             Выберем $\id_{\cat G}(X) \in \Mor_\catC(\cat G(X),\cat G(X))$, тогда условие коммутативности диаграммы выглядит так:
             \[\cat F(g)\eta_{X,\cat G(X)}^{-1}(\id_{\cat G}(X)) = \eta_{X,Y}^{-1}(g)\]
-            Действительно, это в точности значит $\cat F(g) f_X = f$.
+            Действительно, это в точности значит $\cat F(g) f_X = f$, то есть $g = \eta_{X,Y}(f)$ делает диаграмму коммутативной.
 
-            Обратно, пусть $g'$ --- другой морфизм $(\cat G(X), f_X) \map (Y, f)$ в категории запятой. Заменив $g$ на $g'$ в диаграмме выше, получим $\cat F(g')f_X = \eta_{X,Y}^{-1}(g')$. Так как $g'$ --- морфизм, то $\cat F(g')f_X = f$, откуда $g' = g$.
+            Теперь проверим единственность.
+            Пусть $g'$ --- другой морфизм $(\cat G(X), f_X) \map (Y, f)$ в категории запятой.
+            Заменив $g$ на $g'$ в диаграмме выше, получим $\cat F(g')f_X = \eta_{X,Y}^{-1}(g')$. Так как $g'$ --- морфизм в категории запятой, то $\cat F(g')f_X = f$, откуда $g' = g$.
         }
     }
     \examples{
@@ -4124,6 +4140,8 @@
               \arrow["{\cat F(\exists!)}"', dashed, from=2-1, to=2-2]
         \end{tikzcd}\]
         Так как хочется, чтобы любому отображению множеств соответствовало единственное непрерывное отображение, делающее диаграмму коммутативной, то в качестве $\cat G(X)$ подойдёт $X$ с дискретной топологией.
+
+        Согласно~(\cref{comma-and-conjugate}) этот $\cat G$ --- левый сопряжённый к $\cat F$.
         \item Аналогично можно получить правый сопряжённый к $\cat F$.
         Здесь, двойственно, надо рассмотреть категорию $(\cat F \downarrow X)$, и в ней найти терминальный объект.
     % https://q.uiver.app/#q=WzAsMyxbMSwxLCJYIl0sWzAsMCwiXFxjYXQgRihZKSJdLFsxLDAsIlxcY2F0IEYoXFxjYXQgRyhYKSkiXSxbMiwwLCJmX1giXSxbMSwyLCJcXGNhdCBGKFxcZXhpc3RzISkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMSwwLCJcXGZvcmFsbCIsMl1d
@@ -4167,7 +4185,7 @@
             Иными словами, чтобы построить свободную алгебру на множестве $S$, можно сначала построить свободный моноид $F_S$, а потом на нём ввести структуру полугрупповой алгебры $R[F_S]$.
         }
         \item Левый сопряжённый к функтору $*: \cat{Ring} \map \cat{Group}$, сопоставляющему кольцу группу его обратимых элементов --- это $G \mapsto \Z[G]$, групповая алгебра.
-        \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{Alg} \map \Lmod{R}$ --- это $T$, групповая алгебра.
+        \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{Alg} \map \Lmod{R}$ --- это $T$, тензорная алгебра.
         \item Левый сопряжённый к забывающему функтору $R\text{-}\cat{CAlg} \map \Lmod{R}$ --- это $S$, симметрическая алгебра (здесь $R\text{-}\cat{CAlg}$ --- коммутативные алгебры над $R$).
         \item Внешняя степень $\ext$ --- это левый сопряжённый к функтору из $\Z$-градуированных $R$-алгебр в $R$-модули, сопоставляющий $A_0 \oplus A_1 \oplus \dots \mapsto A_1$.
         \item Пусть $\phi: R \map A$.
