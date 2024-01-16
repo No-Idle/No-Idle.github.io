@@ -1,6 +1,6 @@
 \babel@toc {russian}{}\relax 
 \contentsline {chapter}{\numberline {1}Полилинейная алгебра}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Полилинейные отображение}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Полилинейные отображения}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Определение тензорного произведения двух модулей}{4}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Мотивация}{4}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Симметричность}{5}{subsection.1.2.2}%

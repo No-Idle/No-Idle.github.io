@@ -50,7 +50,7 @@
     \newlection{5 сентября 2023 г.}
 
 
-    \section{Полилинейные отображение}
+    \section{Полилинейные отображения}
     Пусть $R$ --- коммутативное кольцо.
     \definition[Полилинейное отображение]{
         Отображение $\phi: M_1 \times \dots \times M_s \map M$, где $M_1, \dots, M_s, M$ --- $R$-модули, такое, что оно
@@ -4087,7 +4087,8 @@
     Верно и обратное утверждение~(\cref{conjugate-and-comma}), для этого нам потребуется по сопряжённым функторам восстанавливать $f_X \in \Mor_\catC(X, \cat F(\cat G(X)))$.
 
     Заметим, что $\eta_{X,\cat G(X)}(f_X) = \id_{\cat G(X)}$, то есть имея $\eta: \Mor_\catC(X, \cat F(Y)) \cong \Mor(\cat G(X), Y)$, мы можем восстановить $f_X$, подставив $Y = \cat G(X)$, и рассмотрев прообраз $\id_{\cat G(X)}$ из правой части.
-    Данный морфизм $f_X$ (а точнее функтор $X \mapsto f_X$) называется \emph{единицей сопряжения}.
+    Данный морфизм $f_X$ (а точнее функтор $\cat C \map \cat{Set}, X \mapsto f_X$) называется \emph{единицей сопряжения}.
+    Сразу разберёмся, как он действует на морфизмах
     \theorem{\label{conjugate-and-comma}
         Для сопряжённых функторов $\begin{tikzcd}[ampersand replacement=\&,cramped]
         {\cat B}
@@ -4397,7 +4398,7 @@
         \item Эквалайзер и пулбэк --- тоже пределы.
     }
     Определим категорию функторов $\Func(\cat J, \cat C)$, объекты которой --- функторы, морфизмы --- естественные преобразования.
-    Здесь стоит сказать либо что $\cat J$ --- малая категория, либо рассматривать \emph{большие категории} (?), либо ещё как-то обойтись с теорией множеств.
+    Здесь стоит сказать либо что $\cat J$ --- малая категория, либо рассматривать \emph{большие категории} (стрелки могут не образовывать множество), либо ещё как-то обойтись с теорией множеств.
 
     Теперь $\Delta$ --- функтор $\cat C \map \Func(\cat J, \cat C)$.
     Зафиксируем функтор $\cat F: \cat J \map \cat C$, и посмотрим на категорию запятой $(\Delta \downarrow \cat F)$ (здесь $\Delta$ рассматривается, как функтор, а $\cat F$ --- как объект).
@@ -4421,7 +4422,7 @@
     \arrow["{\Delta(\exists ! \psi)}", dashed, from=1-1, to=1-2]
     \end{tikzcd}\]
     \proposal{
-        Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть \[\Mor_{\Func(\cat J, \cat C)}(\Delta C, \cat F) \cong \Mor_{\catC}(C, \varprojlim \cat F)\] естественно по $C$ (естественность по $\cat F$ получается автоматически (?)).
+        Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть \[\Mor_{\Func(\cat J, \cat C)}(\Delta C, \cat F) \cong \Mor_{\catC}(C, \varprojlim \cat F)\] естественно по $C$ (естественность по $\cat F$ получается автоматически (это как?)).
         \provehere{
         % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwxLCJcXGNhdCBGIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMl0sWzEsMl1d
             \[\begin{tikzcd}[ampersand replacement=\&]
@@ -4432,7 +4433,7 @@
                   \arrow[from=1-1, to=2-2]
                   \arrow[from=1-2, to=2-2]
             \end{tikzcd}\]
-            Естественное преобразование $\Delta \cdot \varprojlim \map \cat{id}$ --- коединица сопряжения.
+            Естественное преобразование $\Delta \circ \varprojlim \map \cat{id}$, полученное из определения предела --- коединица сопряжения.
         }
     }
     Двойственно, $\varinjlim$ --- левый сопряжённый к $\Delta$.
@@ -4448,42 +4449,42 @@
 
     Пусть $\cat H: \cat J \map \cat B$. Тогда правый сопряжённый сохраняет пределы: $\cat F\left(\varprojlim \cat H\right) = \varprojlim \cat F \cat H$.
     \provehere{
-        \indent{\lemma{Пусть $\cat F, \cat G, \cat H$ как в теореме, $\cat K: \cat J \map \cat C$ --- функтор. Тогда \[\Mor_{\Func}(\cat K, \cat F \circ \cat H) \cong \Mor_{\Func}(\cat G\circ\cat K, \cat H)\] естественно по $\cat K, \cat H$.
+        \indent{\lemma{Пусть $\cat F, \cat G, \cat H$ как в теореме, $\cat K: \cat J \map \cat C$ --- функтор. Тогда \[\Mor_{\Func(\cat J, \cat C)}(\cat K, \cat F \circ \cat H) \cong \Mor_{\Func(\cat J, \cat B)}(\cat G\circ\cat K, \cat H)\] естественно по $\cat K, \cat H$.
         \provehere[Доказательство леммы]{
-            Возьмём естественное преобразование $\eta: \cat K \map \cat F \circ \cat H$. Пусть биекция сопоставляет ему преобразование $\theta: \cat G \circ \cat K \map \cat H$.
+            Возьмём естественное преобразование $\eta: \cat K \map \cat F \circ \cat H$. Пусть (гипотетическая) биекция сопоставляет ему преобразование $\theta: \cat G \circ \cat K \map \cat H$.
 
-            Тогда $\forall X \in \cat J$ имеется преобразование $\theta_X: \Mor_\catC(K(X), \cat F(\cat H(X))) \map \Mor_{\catB}(\cat G(\cat K(X)), \cat H(Y))$.
-            Проверим, что диаграмма ниже коммутативна.
-        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBHKFxcY2F0IEsoWCkpIl0sWzEsMCwiXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEcoXFxjYXQgSyhZKSkiXSxbMSwxLCJcXGNhdCBIKFkpIl0sWzAsMSwiXFx0aGV0YV9YIl0sWzEsMywiXFxjYXQgSChcXHBoaSkiXSxbMCwyLCJcXGNhdCBHKFxcY2F0IEsoXFxwaGkpKSIsMl0sWzIsMywiXFx0aGV0YV9ZIiwyXV0=
+            Тогда $\forall X \in \cat J$ имеется преобразование $\theta_X: \Mor_\catC(\cat K(\_), \cat F(\cat H(\_))) \map \Mor_{\catB}(\cat G(\cat K(\_)), \cat H(\_))$.
+            Определим $\theta$, и проверим, что $\forall X, Y \in \cat J$ диаграмма ниже коммутативна.
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEgoWCkiXSxbMCwxLCJcXGNhdCBHXFxjYXQgSyhZKSJdLFsxLDEsIlxcY2F0IEgoWSkiXSxbMCwxLCJcXHRoZXRhX1giXSxbMSwzLCJcXGNhdCBIKFxccGhpKSJdLFswLDIsIlxcY2F0IEdcXGNhdCBLKFxccGhpKSIsMl0sWzIsMywiXFx0aGV0YV9ZIiwyXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {\cat G(\cat K(X))}
-                  \& {\cat H(X)} \\
-                  {\cat G(\cat K(Y))} \& {\cat H(Y)}
-                  \arrow["{\theta_X}", from=1-1, to=1-2]
-                  \arrow["{\cat H(\phi)}", from=1-2, to=2-2]
-                  \arrow["{\cat G(\cat K(\phi))}"', from=1-1, to=2-1]
-                  \arrow["{\theta_Y}"', from=2-1, to=2-2]
+            {\cat G\cat K(X)} \& {\cat H(X)} \\
+            {\cat G\cat K(Y)} \& {\cat H(Y)}
+            \arrow["{\theta_X}", from=1-1, to=1-2]
+            \arrow["{\cat H(\phi)}", from=1-2, to=2-2]
+            \arrow["{\cat G\cat K(\phi)}"', from=1-1, to=2-1]
+            \arrow["{\theta_Y}"', from=2-1, to=2-2]
             \end{tikzcd}\]
-            Для $\eta$ эта диаграмма выглядит так:% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBLKFgpIl0sWzEsMCwiXFxjYXQgRlxcY2F0IEgoWCkiXSxbMCwxLCJcXGNhdCBLKFkpIl0sWzEsMSwiXFxjYXQgRlxcY2F0IEgoWSkpIl0sWzIsMywiXFxldGFfWSJdLFswLDEsIlxcZXRhX1giXV0=
+            Для $\eta$ эта диаграмма выглядит так:% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBLKFgpIl0sWzEsMCwiXFxjYXQgRlxcY2F0IEgoWCkiXSxbMCwxLCJcXGNhdCBLKFkpIl0sWzEsMSwiXFxjYXQgRlxcY2F0IEgoWSkiXSxbMiwzLCJcXGV0YV9ZIl0sWzAsMSwiXFxldGFfWCJdLFswLDIsIlxcY2F0IEsoXFxwaGkpIiwyXSxbMSwzLCJcXGNhdCBGXFxjYXQgSChcXHBoaSkiXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {\cat K(X)}
-                  \& {\cat F\cat H(X)} \\
-                  {\cat K(Y)} \& {\cat F\cat H(Y))}
-                  \arrow["{\eta_Y}", from=2-1, to=2-2]
-                  \arrow["{\eta_X}", from=1-1, to=1-2]
+            {\cat K(X)} \& {\cat F\cat H(X)} \\
+            {\cat K(Y)} \& {\cat F\cat H(Y)}
+            \arrow["{\eta_Y}", from=2-1, to=2-2]
+            \arrow["{\eta_X}", from=1-1, to=1-2]
+            \arrow["{\cat K(\phi)}"', from=1-1, to=2-1]
+            \arrow["{\cat F\cat H(\phi)}", from=1-2, to=2-2]
             \end{tikzcd}\]
-            Применяя $\cat G$ к диаграмме, получаем% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEdcXGNhdCBGXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEdcXGNhdCBLKFkpIl0sWzEsMSwiY2F0IEdcXGNhdCBGXFxjYXQgSChZKSkiXSxbMiwwLCJcXGNhdCBIKFgpIl0sWzIsMSwiXFxjYXQgSChZKSJdLFsyLDMsIlxcY2F0IEcoXFxldGFfWSkiXSxbMCwxLCJcXGNhdCBHKFxcZXRhX1gpIl0sWzAsMl0sWzEsM10sWzEsNCwiXFx0ZXh0e9C60L7QtdC00LjQvdC40YbQsH0iXSxbMyw1LCJcXHRleHR70LrQvtC10LTQuNC90LjRhtCwfSJdLFs0LDVdXQ==
+            Применяя $\cat G$ к диаграмме, получаем следующее (обозначим за $f$ коединицу сопряжения $\cat F$ и $\cat G$)
+        % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEdcXGNhdCBGXFxjYXQgSChYKSJdLFswLDEsIlxcY2F0IEdcXGNhdCBLKFkpIl0sWzEsMSwiXFxjYXQgR1xcY2F0IEZcXGNhdCBIKFkpIl0sWzIsMCwiXFxjYXQgSChYKSJdLFsyLDEsIlxcY2F0IEgoWSkiXSxbMiwzLCJcXGNhdCBHKFxcZXRhX1kpIl0sWzAsMSwiXFxjYXQgRyhcXGV0YV9YKSJdLFswLDJdLFsxLDNdLFsxLDQsImZfe1xcY2F0IEgoWCl9Il0sWzMsNSwiZl97XFxjYXQgSChZKX0iXSxbNCw1XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {\cat G\cat K(X)}
-                  \& {\cat G\cat F\cat H(X)} \& {\cat H(X)} \\
-                  {\cat G\cat K(Y)} \& {\cat G\cat F\cat H(Y))} \& {\cat H(Y)}
-                  \arrow["{\cat G(\eta_Y)}", from=2-1, to=2-2]
-                  \arrow["{\cat G(\eta_X)}", from=1-1, to=1-2]
-                  \arrow[from=1-1, to=2-1]
-                  \arrow[from=1-2, to=2-2]
-                  \arrow["{\text{коединица}}", from=1-2, to=1-3]
-                  \arrow["{\text{коединица}}", from=2-2, to=2-3]
-                  \arrow[from=1-3, to=2-3]
+            {\cat G\cat K(X)} \& {\cat G\cat F\cat H(X)} \& {\cat H(X)} \\
+            {\cat G\cat K(Y)} \& {\cat G\cat F\cat H(Y)} \& {\cat H(Y)}
+            \arrow["{\cat G(\eta_Y)}", from=2-1, to=2-2]
+            \arrow["{\cat G(\eta_X)}", from=1-1, to=1-2]
+            \arrow[from=1-1, to=2-1]
+            \arrow[from=1-2, to=2-2]
+            \arrow["{f_{\cat H(X)}}", from=1-2, to=1-3]
+            \arrow["{f_{\cat H(Y)}}", from=2-2, to=2-3]
+            \arrow[from=1-3, to=2-3]
             \end{tikzcd}\]
             Осталось проверить, что $\text{коединница} \cdot \cat G(\eta_X) = \theta_X$, то есть $\theta$ --- действительно естественное преобразование.
             И ещё композиция $\eta_X \rightsquigarrow \theta_X \rightsquigarrow \eta_X$, и обратно --- тождественна.
