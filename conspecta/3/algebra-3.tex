@@ -3391,7 +3391,7 @@
         Естественность означает $\phi(\det(a)) = \det(\phi(a))$, что верно, так как $\det$ --- многочлен от коэффициентов, а $\phi$ --- гомоморфизм коэффициентов.
         \item Рассмотрим два функтора $\cat{M}$ и ${}^{*}: \cat{CRing} \map \cat{Mon}$, отображающие кольцо в моноид его элементов по умножению, и группу обратимых элементов (являющуюся моноидом) соответственно.
         $\eta: R^* \hookrightarrow \cat{M}(R)$.
-        \item Вложение --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \cat{Id}: \cat{Group}\map\cat{Group}$:
+        \item Вложение --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \cat{id}: \cat{Group}\map\cat{Group}$:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJbRyxHXSJdLFsxLDAsIltILCBIXSJdLFswLDEsIkciXSxbMSwxLCJIIl0sWzAsMSwiXFxwaGlcXGJpZ3xfe1tHLEddfSJdLFswLDIsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCJcXHBoaSJdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
         {[G,G]} \& {[H, H]} \\
@@ -3405,7 +3405,7 @@
         В категории множеств $\cat{Set}$: $\Mor(X, \Mor(Y, Z)) \leftrightarrow \Mor(X \times Y, Z)$: $g(x)(y) = f(x, y)$.
 
         Это стоит читать, как естественное преобразование между функторами $\Mor(\_, \Mor(\_, \_)): \cat{Set}^{\op} \times \cat{Set}^{\op} \times \cat{Set} \map \cat{Set}$ и $\Mor(\_ \times \_, \_)): \cat{Set}^{\op} \times \cat{Set}^{\op} \times \cat{Set} \map \cat{Set}$.
-        \item Под естественным преобразованием $V \map V^{**}$ подразумевается естественное преобразование между функторам $\id$ и ${}^{**}$ действующих $\Lmod{F} \map \Lmod{F}$.
+        \item Под естественным преобразованием $V \map V^{**}$ подразумевается естественное преобразование между функторам $\cat{id}$ и ${}^{**}$ действующих $\Lmod{F} \map \Lmod{F}$.
 
         Промежуточный функтор ${}^{*}$ --- контравариантен.
 
@@ -3414,7 +3414,7 @@
 
         Это преобразование не является изоморфизмом даже для счётномерных векторных пространств --- для конечных полей легко проверить различие мощностей.
 
-        Естественное преобразование $\eps: \id \map {}^{**}$ можно сузить на категорию $\cat{Vect}_F$ конечномерных векторных пространств, там оно является изоморфизмом в силу подсчёта размерностей.
+        Естественное преобразование $\eps: \cat{id} \map {}^{**}$ можно сузить на категорию $\cat{Vect}_F$ конечномерных векторных пространств, там оно является изоморфизмом в силу подсчёта размерностей.
     }
     \counterexample[Неестественное преобразование]{
         Изоморфизм конечномерного векторного пространства, и двойственного к нему.
@@ -3454,7 +3454,7 @@
 
     }
     \examples[Ещё естественные преобразования]{
-        \item Естественное преобразование между функторами $\Lmod{R} \map \Lmod{R}$: $R \underset{R}{\otimes} \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
+        \item Естественное преобразование между функторами $\Lmod{R} \map \Lmod{R}$: $R \underset{R}{\otimes} \_ \cong \cat{id}$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
 
         Элемент $\sum r_i \otimes m_i$ равен $1 \otimes \sum r_i m_i$, и отображается в $\sum r_i m_i$.
         \item $\Mor_{\Lmod{R}}(X, \Mor_{\Lmod{R}}(Y, Z)) \cong \text{Bi}_{\Lmod{R}}(X, Y; Z)\cong \Mor_{\Lmod{R}}(X \otimes_R Y, Z)$.
@@ -3465,7 +3465,7 @@
     Изоморфизм категорий помнит слишком много, мы не хотим следить за кратностью изоморфных объектов.
 
     \definition[Категории $\cat{B}$ и $\cat{C}$ эквивалентны]{
-        Существуют функторы $\cat{F}: \cat{B} \map \cat{C}$ и $\cat{G}: \cat{C} \map \cat{B}$, такие, что $\cat{F}\circ\cat{G} \cong \id_{\cat{C}}$ и $\cat{G}\circ\cat{F} \cong \id_{\cat{B}}$, здесь $\cong$ --- естественный изоморфизм.
+        Существуют функторы $\cat{F}: \cat{B} \map \cat{C}$ и $\cat{G}: \cat{C} \map \cat{B}$, такие, что $\cat{F}\circ\cat{G} \cong \cat{id}_{\cat{C}}$ и $\cat{G}\circ\cat{F} \cong \cat{id}_{\cat{B}}$, здесь $\cong$ --- естественный изоморфизм.
     }
     Ранее мы фактически доказали, что категории $\cat{Vect}_F$ и $\cat{Vect}_F^{\op}$ эквивалентны (но они не изоморфны).
 
@@ -3560,7 +3560,7 @@
         \provehere{
             Пусть $\eps$ --- эквалайзер.
             Так как $\phi\eps = \psi\eps$, и $\eps$ --- эпиморфизм, то $\phi = \psi$. Но тогда $\id: A \map A$ --- тоже эквалайзер, и два эквалайзера отличаются на изоморфизм:
-        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJBIl0sWzEsMiwiXFxwaGkiLDAseyJvZmZzZXQiOi0xfV0sWzEsMiwiXFxwc2kiLDIseyJvZmZzZXQiOjF9XSxbMCwxLCJcXGVwcyJdLFszLDEsIlxcaWQiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCJcXGVwcyIsMCx7Im9mZnNldCI6LTF9XSxbMCwzLCJcXGV4aXN0cyEiLDAseyJvZmZzZXQiOi0xLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJFIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMCwxLCJBIl0sWzEsMiwiXFxwaGkiLDAseyJvZmZzZXQiOi0xfV0sWzEsMiwiXFxwc2kiLDIseyJvZmZzZXQiOjF9XSxbMCwxLCJcXGVwcyJdLFszLDEsIlxcaWQiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCJcXGVwcyIsMCx7Im9mZnNldCI6LTEsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiXFxleGlzdHMhIiwwLHsib2Zmc2V0IjotMSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
             \[\begin{tikzcd}[ampersand replacement=\&]
                   E \& A \& B \\
                   A
@@ -3568,8 +3568,8 @@
                   \arrow["\psi"', shift right, from=1-2, to=1-3]
                   \arrow["\eps", from=1-1, to=1-2]
                   \arrow["\id"', dashed, from=2-1, to=1-2]
-                  \arrow["\eps", shift left, from=2-1, to=1-1]
-                  \arrow["{\exists!}", shift left, dotted, from=1-1, to=2-1]
+                  \arrow["\eps", shift left, tail reversed, no head, from=2-1, to=1-1]
+                  \arrow["{\exists!}", shift left, dotted, tail reversed, no head, from=1-1, to=2-1]
             \end{tikzcd}\]
         }
     }
@@ -4001,14 +4001,14 @@
     По определению $\cat G(\gamma\beta)$ --- это та единственная стрелка $(\cat G(X), f_X) \map (\cat G(X''), f_{X''}\gamma\beta)$, которая делает диаграмму коммутативной, и можно заметить, что в качестве этой стрелки подходит $\cat G(\gamma)\cat G(\beta)$ (в проверке используется то, что $\cat F$ сохраняет композицию).
 
     Наконец, осталось проверить, что $\cat G$ сохраняет единицу, то есть фактически надо проверить, что диаграмма ниже --- коммутативна.
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiXFxjYXQgRihcXGNhdCBHKFgpKSJdLFsxLDAsIlgiXSxbMSwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzAsMiwiXFxpZF9YIl0sWzAsMSwiZl9YIiwyXSxbMiwzLCJmX1giXSxbMSwzLCJcXGNhdCBGKFxcaWRfe1xcY2F0IEcoWCl9KSkiLDJdXQ==
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzAsMSwiXFxjYXQgRihcXGNhdCBHKFgpKSJdLFsxLDAsIlgiXSxbMSwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzAsMiwiXFxpZF9YIl0sWzAsMSwiZl9YIiwyXSxbMiwzLCJmX1giXSxbMSwzLCJcXGNhdCBGKFxcaWRfe1xcY2F0IEcoWCl9KSIsMl1d
     \[\begin{tikzcd}[ampersand replacement=\&]
           X \& X \\
           {\cat F(\cat G(X))} \& {\cat F(\cat G(X))}
           \arrow["{\id_X}", from=1-1, to=1-2]
           \arrow["{f_X}"', from=1-1, to=2-1]
           \arrow["{f_X}", from=1-2, to=2-2]
-          \arrow["{\cat F(\id_{\cat G(X)}))}"', from=2-1, to=2-2]
+          \arrow["{\cat F(\id_{\cat G(X)})}"', from=2-1, to=2-2]
     \end{tikzcd}\]
     Так как $\cat F$ --- сохраняет $\id$, то это действительно правда.
     \theorem{\label{comma-and-conjugate}
@@ -4210,12 +4210,12 @@
         \item Рассмотрим функтор вложения $\cat{F}: \cat{Group} \map \cat{Mon}$.
         Какие к нему сопряжённые?
 
-        Если $\cat{G}$ --- правый сопряжённый к $\cat{F}$, то коединица сопряжения --- естественное преобразование $\cat{F}\cat{G} \map \id$.
+        Если $\cat{G}$ --- правый сопряжённый к $\cat{F}$, то коединица сопряжения --- естественное преобразование $\cat{F}\cat{G} \map \cat{id}$.
         \[\Mor(\cat{F}(X), Y) \map \Mor(X, \cat{G}(Y))\]
 
         $\cat{G}(M) = M^*$ --- сопоставляет моноиду группу его обратимых элементов.
 
-        Если $\cat{G}$ --- левый сопряжённый к $\cat{F}$, то единица сопряжения $\id \map \cat{F}\cat{G}$.
+        Если $\cat{G}$ --- левый сопряжённый к $\cat{F}$, то единица сопряжения $\cat{id} \map \cat{F}\cat{G}$.
         Надо по моноиду построить группу $M \mapsto \cat{G}(M)$, такую, что $M \hookrightarrow \cat{G}(M)$.
 
         Есть две конструкции построить по моноиду универсальную группу.
@@ -4434,7 +4434,7 @@
                   \arrow[from=1-1, to=2-2]
                   \arrow[from=1-2, to=2-2]
             \end{tikzcd}\]
-            Естественное преобразование $\Delta \cdot \varprojlim \map \id$ --- коединица сопряжения.
+            Естественное преобразование $\Delta \cdot \varprojlim \map \cat{id}$ --- коединица сопряжения.
         }
     }
     Аналогично, $\varinjlim$ --- левый сопряжённый к $\Delta$.
