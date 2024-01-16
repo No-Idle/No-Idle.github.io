@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  16 JAN 2024 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  16 JAN 2024 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1639,7 +1639,17 @@ mr/m/n/10 ) \OMS/cmsy/m/n/10 ^^B [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; C\OT1
 
 [63
 
-] [64] [65]
+] [64]
+Overfull \hbox (49.0099pt too wide) in paragraph at lines 3096--3096
+[]\T2A/faq/m/n/10 Пусть $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X; \U/msa/m/n/10 6\O
+T1/cmr/m/n/10 )$ \T2A/faq/m/n/10 --- ча-стич-но упо-ря-до-чен-ное мно-же-ство, 
+poset. Опре-де-лим $\U/BOONDOX-scr/m/n/10 C[]$\T2A/faq/m/n/10 . $[] \U/BOONDOX-
+scr/m/n/10 C[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 X; \OMS/cmsy/m/n/10 j [][]\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 x; y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr
+/m/n/10 =
+ []
+
+[65]
 Overfull \hbox (4.28975pt too wide) in paragraph at lines 3107--3107
 []\T2A/faq/bx/n/10 Определение 3.1.2 \T2A/faq/m/n/10 ($\OML/cmm/m/it/10 F$ \T2A
 /faq/m/n/10 --- фи-наль-ный (тер-ми-наль-ный) объ-ект)\T2A/faq/bx/n/10 . []\T2A
@@ -1688,7 +1698,7 @@ m/it/10 g[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\T2A/faq/m/n/10 .
  []
 
 [73] [74] [75] [76] [77] [78] [79]
-Overfull \hbox (21.86375pt too wide) in paragraph at lines 4085--4085
+Overfull \hbox (21.86375pt too wide) in paragraph at lines 4086--4086
 []\T2A/faq/m/n/10 Теперь до-ка-жем, что $\OML/cmm/m/it/10 ^^Q$ \T2A/faq/m/n/10 
 --- \T2A/faq/m/it/10 есте-ствен-ное \T2A/faq/m/n/10 пре-об-ра-зо-ва-ние меж-ду 
 функ-то-ра-ми $\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X; Y \OMS/cmsy/m/n/10 7! [][]\
@@ -1697,7 +1707,7 @@ L/cmm/m/it/10 Y\OT1/cmr/m/n/10 ))] \OMS/cmsy/m/n/10 !
  []
 
 [80] [81] [82] [83] [84] [85]
-Overfull \hbox (26.90097pt too wide) in paragraph at lines 4495--4495
+Overfull \hbox (26.90097pt too wide) in paragraph at lines 4496--4496
 []\T2A/faq/m/n/10 Тогда $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 
 2 \U/BOONDOX-scr/m/n/10 J$ \T2A/faq/m/n/10 име-ет-ся пре-об-ра-зо-ва-ние $\OML/
 cmm/m/it/10 ^^R[] \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (\OM
@@ -1711,11 +1721,11 @@ it/10 Y\OT1/cmr/m/n/10 ))$\T2A/faq/m/n/10 .
 
 [86]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 453
-1.
+2.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [87]
-Overfull \hbox (28.90138pt too wide) in paragraph at lines 4565--4565
+Overfull \hbox (28.90138pt too wide) in paragraph at lines 4566--4566
 []\T2A/faq/m/n/10 Нам это $\U/msb/m/n/10 A[]$ \T2A/faq/m/n/10 ин-те-рес-но имен
 -но, как функ-тор, и он яв-ля-ет-ся пред-ста-ви-мым: $\U/msb/m/n/10 A[] [] []\O
 T1/cmr/m/n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\O
@@ -1723,7 +1733,7 @@ T1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 .
  []
 
 
-Overfull \hbox (12.72997pt too wide) in paragraph at lines 4565--4565
+Overfull \hbox (12.72997pt too wide) in paragraph at lines 4566--4566
 []\T2A/faq/m/n/10 Зафиксируем $\OML/cmm/m/it/10 f[]; [] ; f[] \OMS/cmsy/m/n/10 
 2 \OML/cmm/m/it/10 F\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 t[]; [] ; t[]\OT1/cmr/m/n
 /10 ]$\T2A/faq/m/n/10 . Пусть $\OML/cmm/m/it/10 X[] \OMS/cmsy/m/n/10 ^^Z \U/msb
@@ -1732,7 +1742,7 @@ A/faq/m/n/10 .
  []
 
 [88]
-Overfull \hbox (16.6259pt too wide) in paragraph at lines 4653--4653
+Overfull \hbox (16.6259pt too wide) in paragraph at lines 4654--4654
 []\T2A/faq/bx/n/10 Следствие 3.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен-н
 ых пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/m/
 n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/n/
@@ -1740,7 +1750,7 @@ n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/n/
  []
 
 [89] [90]
-Overfull \hbox (2.76083pt too wide) in paragraph at lines 4812--4812
+Overfull \hbox (2.76083pt too wide) in paragraph at lines 4813--4813
 []\T2A/faq/bx/n/10 Определение 3.10.5 \T2A/faq/m/n/10 ((Ко)нормальный мо-но-мор
 -физм (эпи-мор-физм))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Он яв-ля-ет-ся (ко)эк
 валайзером
@@ -1786,7 +1796,7 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (93 pages, 756728 bytes).
+ (93 pages, 757149 bytes).
 PDF statistics:
  1401 PDF objects out of 1440 (max. 8388607)
  1244 compressed objects within 13 object streams

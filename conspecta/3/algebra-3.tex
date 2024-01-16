@@ -3013,10 +3013,10 @@
         \bullets{
             \item $\cat{P}_\Gamma$ --- категория путей в $\Gamma$, для $x, y \in V: \Mor_{\cat{P}_\Gamma}(x, y)$ --- пути из $x$ в $y$.
             Композиция путей --- конкатенация.
-            \item Категория достижимости $\cat{C}_\Gamma$. Для $x, y \in V: |\Mor_{\cat{C}_\Gamma}(x, y)| = \all{1,&x \cdots \rightarrow y \\ 0,& y\text{ недостижим из }x}$.
+            \item Категория достижимости $\cat{C}_\Gamma$. Для $x, y \in V: |\Mor_{\cat{C}_\Gamma}(x, y)| = \all{1,&x \rightarrow \cdots \rightarrow y \\ 0,& y\text{ недостижим из }x}$.
         }
         \item Пусть $(X, \le)$ --- частично упорядоченное множество, poset.
-        Определим индексирующую категорию $\cat{C}_X$. $\Obj\cat{C}_X = X, |\Mor_{\cat{C}_X}(x, y)| = \all{1,&x \le  y \\ 0,& \text{иначе}}$
+        Определим $\cat{C}_X$. $\Obj\cat{C}_X = X, |\Mor_{\cat{C}_X}(x, y)| = \all{1,&x \le  y \\ 0,& \text{иначе}}$, она часто используется, как \emph{индексирующая категория}.
         \item Категория матриц $\cat{M}$ (над кольцом $R$ с единицей).
         $\Obj\cat{M} = \N$. $\Mor_{\cat{M}}(m, n) = M_{n \times m}(R)$.
         Композиция в данной категории --- умножение матриц:
@@ -3024,9 +3024,9 @@
             \Mor(m, n) \times \Mor(k, m) &\map \Mor(k, n) \\ M_{n \times m}(R) \times M_{m \times k}(R) &\map M_{n \times k}(R)\\x, y &\mapsto xy
         \end{align*}
         Как будет видно позже~(\cref{matrices-and-vector-spaces}), эта категория эквивалентна категории конечномерных векторных пространств.
-        \item Категория стрелок. Пусть $\cat{C}$ --- категория, тогда $\cat{Arr}\cat{C}$ --- тоже категория.
-        $\Obj\cat{Arr}\cat{C} = \Mor\cat{C}$. Пусть $\alpha: A \map B, \beta: C \map D$.
-        Тогда $\Mor_{\cat{Arr}\cat{C}}(\alpha, \beta) = \defset{(\phi, \psi)}{\phi: A \map C, \psi: B \map D, \psi\alpha = \beta\phi}$
+        \item Категория стрелок. Пусть $\cat{C}$ --- категория, тогда $\cat{Arr}_{\cat{C}}$ --- тоже категория.
+        $\Obj\cat{Arr}_{\cat{C}} = \Mor\cat{C}$. Пусть $\alpha: A \map B, \beta: C \map D$.
+        Тогда $\Mor_{\cat{Arr}_{\cat{C}}}(\alpha, \beta) = \defset{(\phi, \psi)}{\phi: A \map C, \psi: B \map D, \psi\alpha = \beta\phi}$
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkMiXSxbMSwxLCJEIl0sWzAsMiwiXFxwaGkiXSxbMSwzLCJcXHBzaSJdLFswLDEsIlxcYWxwaGEiXSxbMiwzLCJcXGJldGEiXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               A \& B \\
@@ -3038,7 +3038,7 @@
         \end{tikzcd}\]
         \item Пусть $\Gamma = (V, E)$ --- ориентированный граф, $\cat{C}$ --- категория.
 
-        Определим категорию диаграмм в типе $\Gamma$ в категории $\cat{C}$ $\cat{D}_\catC^\Gamma$.
+        Определим категорию диаграмм в типе $\Gamma$ в категории $\cat{C}$, назовём её $\cat{D}_\catC^\Gamma$.
 
         Предыдущий пример --- данный пример для графа $\Gamma$ следующего вида: $\begin{tikzcd}[ampersand replacement=\&]
                                                                                      \bullet \& \bullet\arrow[from=1-1, to=1-2]
@@ -3099,7 +3099,7 @@
 
     \section{Универсальные объекты}
     Пусть $\cat{C}$ --- категория, $I, F \in \cat{C}$.
-    \definition[$I$ --- инициальный объект]{
+    \definition[$I$ --- инициальный (начальный) объект]{
         Для любого $A \in \cat{C}: \abs{\Mor(I, A)} = 1$.
     }
     \definition[$F$ --- финальный (терминальный) объект]{
@@ -3107,10 +3107,10 @@
     }
     \examples{
         \item В множествах инициальный объект --- пустое множество, финальный --- одноэлементное.
-        \item В $\cat{Group}$ тривиальная группа одновременно является и инициальным, и терминальным объектами.
+        \item В $\cat{Group}$ тривиальная группа одновременно является и инициальным, и терминальным объектом.
         \definition[Нулевой объект]{Одновременно финальный и инициальный объект.}
         \item В категории полей таких объектов нет (гомоморфизм полей сохраняет характеристику, и вообще всякий гомоморфизм полей инъективен).
-        \item В $\cat{CRing}$ инициальный объект --- $\Z$, финальный объект --- нулевое кольцо (кольцо, в котором 0 = 1).
+        \item В $\cat{CRing}$ и в $\cat{Ring}$ инициальный объект --- $\Z$, финальный объект --- нулевое кольцо (кольцо, в котором 0 = 1).
         \item В категории $F$-алгебр с отмеченной точкой финальный объект --- $(\{0\}, 0)$, а инициальный объект побольше --- $(F[x], x)$.
         В самом деле, из инициального объекта должна вести (единственная) стрелка в любой другой объект, и данная стрелка должна однозначно определяться образами отмеченной точки и единицы.
     }
@@ -3211,7 +3211,7 @@
         \item В $\cat{Group}$ эпиморфизмы --- сюръекции.
         \provehere[Идея доказательства]{
             Всякий морфизм в $\cat{Group}$ разложим в композицию эпиморфизма (морфизма на образ) и мономорфизма (вложения образа).
-            Тогда если нашёлся несюръективный эпиморфизм, то найдётся вложение в $H \hookrightarrow G$, являющаяся эпиморфизмом (при $H \lneq G$).
+            Тогда если нашёлся несюръективный эпиморфизм, то найдётся вложение $H \hookrightarrow G$, являющееся эпиморфизмом (при $H \lneq G$).
 
             Рассмотрим амальгамированное произведение $G \underset{H}* G$, оно определено в следующем абзаце.
 
@@ -3322,7 +3322,7 @@
         \item Сопоставление группе коммутанта --- функтор.
         \[\cat{D}: \cat{Group} \map \cat{Group}\]
         Пусть $\phi: G \map H$. Функтор определён так:
-        $\cat{D}(G) = [G, G], \cat{D}(\phi): [D, D] \map [H, H]$ --- сужение.
+        $\cat{D}(G) = [G, G], \cat{D}(\phi): [G, G] \map [H, H]$ --- сужение.
         \item Абелианизация тоже является функтором. $\ab: \cat{Group} \map \cat{Group}, \ab(G) = G^{\ab} = G/[G,G]$.
     %https://q.uiver.app/#q=WzAsNCxbMCwwLCJHIl0sWzEsMCwiSCJdLFsyLDAsIkheXFxhYiJdLFsxLDEsIkdee1xcYWJ9Il0sWzAsM10sWzMsMiwiXFxhYihcXHBoaSkiLDJdLFswLDEsIlxccGhpIl0sWzEsMl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -3391,7 +3391,7 @@
         Естественность означает $\phi(\det(a)) = \det(\phi(a))$, что верно, так как $\det$ --- многочлен от коэффициентов, а $\phi$ --- гомоморфизм коэффициентов.
         \item Рассмотрим два функтора $\cat{M}$ и ${}^{*}: \cat{CRing} \map \cat{Mon}$, отображающие кольцо в моноид его элементов по умножению, и группу обратимых элементов (являющуюся моноидом) соответственно.
         $\eta: R^* \hookrightarrow \cat{M}(R)$.
-        \item Вложение --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \id: \cat{Group}\map\cat{Group}$:
+        \item Вложение --- естественное преобразование между коммутантом и тождественным отображением $\cat{D}, \cat{Id}: \cat{Group}\map\cat{Group}$:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJbRyxHXSJdLFsxLDAsIltILCBIXSJdLFswLDEsIkciXSxbMSwxLCJIIl0sWzAsMSwiXFxwaGlcXGJpZ3xfe1tHLEddfSJdLFswLDIsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbMiwzLCJcXHBoaSJdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
         {[G,G]} \& {[H, H]} \\
@@ -3410,7 +3410,7 @@
         Промежуточный функтор ${}^{*}$ --- контравариантен.
 
         $V^* \coloneqq \Mor_{\Lmod{F}}(V, F)$, значит, $V^{**} = \Mor_{\Lmod{F}}(\Mor_{\Lmod{F}}(V, F), F)$.
-        Естественное преобразование сопоставляет функционалу $\phi \in V^*$ и вектору $x \in V$ их каноническое спаривание $\eps_x(f) = \phi(x) = \angles{\phi|x}$.
+        Естественное преобразование сопоставляет функционалу $\phi \in V^*$ и вектору $x \in V$ их каноническое спаривание $\eps_x(\phi) = \phi(x) = \angles{\phi|x}$.
 
         Это преобразование не является изоморфизмом даже для счётномерных векторных пространств --- для конечных полей легко проверить различие мощностей.
 
@@ -3454,7 +3454,7 @@
 
     }
     \examples[Ещё естественные преобразования]{
-        \item Естественное преобразование между функторами $\Lmod{R} \map \Lmod{R}$: $R \otimes_R \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
+        \item Естественное преобразование между функторами $\Lmod{R} \map \Lmod{R}$: $R \underset{R}{\otimes} \_ \cong \id$, или иначе пишут $R \otimes_R M \cong M$ естественно по $M$.
 
         Элемент $\sum r_i \otimes m_i$ равен $1 \otimes \sum r_i m_i$, и отображается в $\sum r_i m_i$.
         \item $\Mor_{\Lmod{R}}(X, \Mor_{\Lmod{R}}(Y, Z)) \cong \text{Bi}_{\Lmod{R}}(X, Y; Z)\cong \Mor_{\Lmod{R}}(X \otimes_R Y, Z)$.
@@ -3846,9 +3846,9 @@
         Тогда по универсальному свойству тензорного произведения $B \times C \map A$ пропускается через тензорное произведение $B \otimes_D C$ со вложениями $b \mapsto b \otimes 1_C, c \mapsto 1_B \otimes c$, и с умножением, определённым покомпонентно: $(b\otimes c) \cdot(b' \otimes c') = bb' \otimes cc'$.
 
         Но если единицы нет, то пушаут построить не получится.
-        Аналогично, в $\cat{CRing}$ не существует пулбэков.
+        Наоборот, в $\cat{CRing}$ не существует пулбэков.
 
-        \item В $\cat{Group}$ pushout --- \emph{амальгамированное свободное произведение} (такой термин употребляют, если $A \le B, C$, то есть $\beta, \gamma$ --- моно).
+        \item В $\cat{Group}$ pushout --- \emph{амальгамированное свободное произведение} (такой термин употребляют, если $A \hookrightarrow B, C$, то есть $\beta, \gamma$ --- моно).
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkMiXSxbMSwxLCIoQiAqIEMpL19OIl0sWzAsMSwiXFxiZXRhIl0sWzEsM10sWzAsMiwiXFxnYW1tYSIsMl0sWzIsM11d
         \[\begin{tikzcd}[ampersand replacement=\&]
               A \& B \\
@@ -3902,7 +3902,7 @@
             \arrow["{\phi'}", from=1-1, to=2-2]
         \end{tikzcd}}$.
 
-    По-английски эта категория почему-то называется comma-category, категория запятой.
+    По-английски эта категория почему-то называется comma category, категория запятой.
 
     Аналогично $(\cat F \downarrow X)$ --- это категория стрелок $\cat F(B) \map X$ с такими морфизмами $\alpha \in \Mor_{\catB}(B, B')$:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGNhdCBGKEIpIl0sWzEsMCwiXFxjYXQgRihCJykiXSxbMSwxLCJYIl0sWzAsMiwiXFxwaGkiLDJdLFsxLDIsIlxccGhpJyJdLFswLDEsIlxcY2F0IEYoXFxhbHBoYSkiXV0=
@@ -3948,10 +3948,11 @@
          \arrow["{\cat{F}}", shift left, from=1-1, to=1-2]
          \arrow["{\cat{G}}", shift left, from=1-2, to=1-1]
     \end{tikzcd}$.
-    \definition[$\cat{G}$ и $\cat{F}$ сопряжены]{
+    \definition[$\cat{G}$ и $\cat{F}$ сопряжены --- $\cat F$ правый сопряжённый к $\cat G$, $\cat G$ --- левый сопряжённый к $\cat F$]{
         $\forall B \in \cat{B}, C \in \cat{C}$: существует биекция между множествами морфизмов $\Mor_{\cat{C}}(C, \cat{F}(B))$ и $\Mor_{\cat{B}}(\cat{G}(C), B)$, причём биекция --- естественна и по $B$, и по $C$.
         То есть имеется естественная биекция между функторами $\cat{C}^{\text{op}} \times \cat{B} \map \cat{Set}$.
-        Здесь $\cat{F}$ называется правым сопряжённым, $\cat{G}$ --- левым сопряжённым (надо посмотреть, слева или справа стоит данный функтор внутри $\Mor$).
+
+    Чтобы понять, какой функтор левый сопряжённый, а какой --- правый, надо посмотреть на то, где они стоят внутри $\Mor$.
     }
     Далее мы проверим, что инициальные объекты в категории $X \downarrow \cat{F}$ имеют самое непосредственное отношение к сопряжённым функторам.
     \newlection{30 ноября 2023 г.}
@@ -3968,7 +3969,7 @@
 
     Рассмотрим $X \in \cat C$, и вместе с ним категорию $(X \downarrow \cat F)$~(\cref{comma-category}).
 
-    Пусть для всех $X \in \cat C$ в соответствующих категориях нашлось по инициальному объекту, обозначим объект их соответственно $(\cat G(X), f_X)$.
+    Пусть для всех $X \in \cat C$ в соответствующих категориях нашлось по инициальному объекту, обозначим их соответственно $(\cat G(X), f_X)$.
     Далее мы хотим показать, что $\cat{G}: \cat C \map \cat B$ --- функтор.
     Для этого сперва определим его на морфизмах следующим образом:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCciXSxbMCwxLCJcXGNhdCBGKFxcY2F0IEcoWCkpIl0sWzEsMSwiXFxjYXQgRihcXGNhdCBHKFgnKSkiXSxbMCwyLCJmX1giXSxbMSwzLCJmX3tYJ30iXSxbMCwxLCJcXGJldGEiXSxbMiwzLCJcXGNhdCBGKFxcY2F0IEcoXFxiZXRhKSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
