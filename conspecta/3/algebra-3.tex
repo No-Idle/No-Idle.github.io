@@ -4295,7 +4295,7 @@
                     \bullet
     \end{tikzcd}\]
     \ok
-    Пусть $\cat J$ --- индексирующая категория.
+    Пусть $\cat J$ --- какая-то категория, она будет играть роль индексирующей.
     Функтор $\cat F: \cat J \map \cat C$ --- \emph{диаграмма}.
     \definition[Конус $\eta$ над диаграммой $\cat F$]{\down
     \numbers{
@@ -4403,27 +4403,25 @@
     Зафиксируем функтор $\cat F: \cat J \map \cat C$, и посмотрим на категорию запятой $(\Delta \downarrow \cat F)$ (здесь $\Delta$ рассматривается, как функтор, а $\cat F$ --- как объект).
     В ней объекты --- рассматриваемые конусы над $\cat F$, морфизмы --- морфизмы конусов.
 
-    Если рассмотреть предел, как функтор $\Func(\cat J, \cat C) \map \cat C$ (то есть забыть про стрелки в конусе), то это действительно будет функтор, определённый так на морфизмах:
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbSBcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRiJdLFsxLDJdLFswLDIsIlxcZm9yYWxsIiwyXSxbMCwxLCJcXERlbHRhKFxcZXhpc3RzISkiXV0=
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEciXSxbMCwxLCJcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRyJdLFsyLDMsIlxccGhpIl0sWzAsMl0sWzEsM10sWzAsMSwiXFxEZWx0YShcXGV4aXN0cyAhIFxccGhpKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+    Если рассмотреть предел, как функтор $\Func(\cat J, \cat C) \map \cat C$ (то есть забыть про стрелки в конусе), то это действительно будет функтор, определённый так на морфизмах: $\varprojlim(\phi) \coloneqq \psi$
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbSBcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRiJdLFsxLDJdLFswLDIsIlxcZm9yYWxsIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMSwiXFxEZWx0YShcXGV4aXN0cyEpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEciXSxbMCwxLCJcXGNhdCBGIl0sWzEsMSwiXFxjYXQgRyJdLFsyLDMsIlxccGhpIl0sWzAsMl0sWzEsM10sWzAsMSwiXFxEZWx0YShcXGV4aXN0cyAhIFxccHNpKSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
-    {\Delta C}
-          \& {\Delta \varprojlim \cat F} \\
-          \& {\cat F}
-          \arrow[from=1-2, to=2-2]
-          \arrow["\forall"', from=1-1, to=2-2]
-          \arrow["{\Delta(\exists!)}", from=1-1, to=1-2]
+    {\Delta C} \& {\Delta \varprojlim \cat F} \\
+    \& {\cat F}
+    \arrow[from=1-2, to=2-2]
+    \arrow["\forall"', dashed, from=1-1, to=2-2]
+    \arrow["{\Delta(\exists!)}", dotted, from=1-1, to=1-2]
     \end{tikzcd}\qquad\begin{tikzcd}[ampersand replacement=\&]
-    {\Delta \varprojlim\cat F}
-                          \& {\Delta \varprojlim\cat G} \\
-                          {\cat F} \& {\cat G}
-                          \arrow["\phi", from=2-1, to=2-2]
-                          \arrow[from=1-1, to=2-1]
-                          \arrow[from=1-2, to=2-2]
-                          \arrow["{\Delta(\exists ! \phi)}", dashed, from=1-1, to=1-2]
+    {\Delta \varprojlim\cat F} \& {\Delta \varprojlim\cat G} \\
+    {\cat F} \& {\cat G}
+    \arrow["\phi", from=2-1, to=2-2]
+    \arrow[from=1-1, to=2-1]
+    \arrow[from=1-2, to=2-2]
+    \arrow["{\Delta(\exists ! \psi)}", dashed, from=1-1, to=1-2]
     \end{tikzcd}\]
     \proposal{
-        Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть $\Mor(\Delta C, \cat F) = \Mor(C, \varprojlim \cat F)$ естественно по $C$ (естественность по $\cat F$ получается автоматически (?)).
+        Функтор $\varprojlim$ является правым сопряжённым к $\Delta$, то есть \[\Mor_{\Func(\cat J, \cat C)}(\Delta C, \cat F) \cong \Mor_{\catC}(C, \varprojlim \cat F)\] естественно по $C$ (естественность по $\cat F$ получается автоматически (?)).
         \provehere{
         % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXERlbHRhIEMiXSxbMSwwLCJcXERlbHRhIFxcdmFycHJvamxpbVxcY2F0IEYiXSxbMSwxLCJcXGNhdCBGIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzAsMl0sWzEsMl1d
             \[\begin{tikzcd}[ampersand replacement=\&]
@@ -4437,8 +4435,8 @@
             Естественное преобразование $\Delta \cdot \varprojlim \map \cat{id}$ --- коединица сопряжения.
         }
     }
-    Аналогично, $\varinjlim$ --- левый сопряжённый к $\Delta$.
-    \ok
+    Двойственно, $\varinjlim$ --- левый сопряжённый к $\Delta$.
+    \subsection{Правый сопряжённый сохраняет пределы}
     \theorem{\label{save-limit}
     Пусть имеются сопряжённые функторы $\begin{tikzcd}[ampersand replacement=\&,cramped]
     {\cat B}
