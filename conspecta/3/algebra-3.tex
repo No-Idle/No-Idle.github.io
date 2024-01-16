@@ -4663,18 +4663,17 @@
             Она, конечно выполняется, так как построение не зависит ни от каких выборов, но давайте убедимся.
 
             Пусть $f: A \map B$ --- морфизм, $\theta: \cat F \map \cat G$ --- естественное преобразование.
-            В диаграмме~(\ref{yoneda}) вертикальные стрелки --- построенные $[\eta \mapsto \eta_A(\id_A)]$.
-            % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2RvdFxcXyJdLFswLDFdLFsyLDNdLFsxLDMsIlxcdGhldGFfQSJdLFsyLDQsIj8iXSxbNCw1XSxbMyw1LCJcXGNhdCBHKGYpIl1d
+            % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2RvdFxcXyJdLFswLDEsIlxcZXRhIFxcbWFwc3RvIFxcZXRhX0EoXFxpZF9BKSJdLFsyLDMsIlxcZXRhIFxcbWFwc3RvIFxcZXRhX0EoXFxpZF9BKSJdLFsxLDMsIlxcdGhldGFfQSJdLFsyLDQsIj8iXSxbNCw1LCJcXGV0YSBcXG1hcHN0byBcXGV0YV9CKFxcaWRfQikiXSxbMyw1LCJcXGNhdCBHKGYpIl1d
             \begin{figure}[ht!]\centering
             \begin{tikzcd}[ampersand replacement=\&]
             {\Nat(\Mor(A, \_), \cat F)} \& {\Nat(\Mor(A, \_), \cat G)} \& {\Nat(\Mor(B, \_), \cat G)} \\
             {\cat F(A)} \& {\cat G(A)} \& {\cat G(B)}
             \arrow["{\theta \cdot\_}", from=1-1, to=1-2]
-            \arrow[from=1-1, to=2-1]
-            \arrow[from=1-2, to=2-2]
+            \arrow["{\eta \mapsto \eta_A(\id_A)}", from=1-1, to=2-1]
+            \arrow["{\eta \mapsto \eta_A(\id_A)}", from=1-2, to=2-2]
             \arrow["{\theta_A}", from=2-1, to=2-2]
             \arrow["{?}", from=1-2, to=1-3]
-            \arrow[from=1-3, to=2-3]
+            \arrow["{\eta \mapsto \eta_B(\id_B)}", from=1-3, to=2-3]
             \arrow["{\cat G(f)}", from=2-2, to=2-3]
             \end{tikzcd}
             \caption{\label{yoneda}Естественность биекции}
@@ -4686,7 +4685,7 @@
             \item Во-вторых, надо проверить коммутативность правого квадрата, для этого сначала поймём, что за стрелка $\Nat(\Mor(A, \_), \cat G) \map \Nat(\Mor(B, \_), \cat G)$.
             $\Mor(B, \_) \overset{\_ \cdot f}\Map \Mor(A, \_)$.
             Далее, на естественных преобразованиях действие устроено так:
-            $\begin{tikzcd}[ampersand replacement=\&,cramped,row sep=tiny]
+            $\begin{tikzcd}[ampersand replacement=\&,cramped,row sep=small]
             {\lambda: \Mor(A, \_) \map \cat G}
                  \\
                  {\mu: \Mor(B, \_) \map \cat G}
@@ -4697,7 +4696,7 @@
             Теперь проверим коммутативность: $\lambda: \Mor(A, \_) \map \cat G$ отправляется вниз в $\lambda_A(\id_A)$, дальше вправо в $\cat G(f)(\lambda_A(\id_A))$.
             Если же пойти сначала вправо, потом вниз, то будет $\mu_B(\id_B)$, где $\mu$ определено выше; а именно, $\mu_B(\id_B) = \lambda_B(f)$.
 
-            Используя коммутативность диаграммы, которая уже была нарисована выше, получаем, что $\id_A$ вниз и вправо уходит в $\lambda_B(f)$, а вправо и вниз --- в $\cat G(f)(\lambda_A(\id_A))$.
+            Нарисовав диаграмму~(\ref{particular-case}) для случая $\eta=\lambda$, получаем, что $\id_A$ вниз и вправо уходит в $\lambda_B(f)$, а вправо и вниз --- в $\cat G(f)(\lambda_A(\id_A))$, то есть правый квадрат~(\ref{yoneda}) тоже коммутативен:
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcihBLCBBKSJdLFsxLDAsIlxcY2F0IEcoQSkiXSxbMCwxLCJcXE1vcihBLCBCKSJdLFsxLDEsIlxcY2F0IEcoQikiXSxbMCwxLCJcXGxhbWJkYV9BIl0sWzIsMywiXFxsYW1iZGFfQiJdLFswLDIsImYgXFxjZG90IFxcXyJdLFsxLDMsIlxcY2F0IEcoXFxwaGkpIl1d
             \[\begin{tikzcd}[ampersand replacement=\&]
             {\Mor(A, A)}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 JAN 2024 00:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 JAN 2024 01:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1730,12 +1730,12 @@ A/faq/m/n/10 .
  []
 
 [88]
-Overfull \hbox (2.65999pt too wide) in paragraph at lines 4713--4713
+Overfull \hbox (2.65999pt too wide) in paragraph at lines 4712--4712
 []$[]$ $[]$ 
  []
 
 [89]
-Overfull \hbox (16.6259pt too wide) in paragraph at lines 4717--4717
+Overfull \hbox (16.6259pt too wide) in paragraph at lines 4716--4716
 []\T2A/faq/bx/n/10 Следствие 3.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен-н
 ых пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/m/
 n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/n/
@@ -1743,7 +1743,7 @@ n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/n/
  []
 
 [90] [91]
-Overfull \hbox (2.76083pt too wide) in paragraph at lines 4875--4875
+Overfull \hbox (2.76083pt too wide) in paragraph at lines 4874--4874
 []\T2A/faq/bx/n/10 Определение 3.10.5 \T2A/faq/m/n/10 ((Ко)нормальный мо-но-мор
 -физм (эпи-мор-физм))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Он яв-ля-ет-ся (ко)эк
 валайзером
@@ -1759,7 +1759,7 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
 Here is how much of TeX's memory you used:
  35254 strings out of 479648
  702226 string characters out of 5886115
- 945702 words of memory out of 5000000
+ 945694 words of memory out of 5000000
  52213 multiletter control sequences out of 15000+600000
  508156 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1789,10 +1789,10 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (95 pages, 764965 bytes).
+ (95 pages, 765116 bytes).
 PDF statistics:
- 1436 PDF objects out of 1440 (max. 8388607)
- 1277 compressed objects within 13 object streams
+ 1437 PDF objects out of 1440 (max. 8388607)
+ 1278 compressed objects within 13 object streams
  460 named destinations out of 1000 (max. 500000)
  789 words of extra memory for PDF output out of 10000 (max. 10000000)
 
