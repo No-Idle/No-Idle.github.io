@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  16 JAN 2024 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  16 JAN 2024 17:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1796,7 +1796,7 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (93 pages, 757292 bytes).
+ (93 pages, 757351 bytes).
 PDF statistics:
  1407 PDF objects out of 1440 (max. 8388607)
  1250 compressed objects within 13 object streams
