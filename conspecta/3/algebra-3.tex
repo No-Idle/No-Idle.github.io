@@ -4663,9 +4663,10 @@
             Она, конечно выполняется, так как построение не зависит ни от каких выборов, но давайте убедимся.
 
             Пусть $f: A \map B$ --- морфизм, $\theta: \cat F \map \cat G$ --- естественное преобразование.
-            В данной диаграмме вертикальные стрелки --- построенные $[\eta \mapsto \eta_A(\id_A)]$.
-        % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2RvdFxcXyJdLFswLDFdLFsyLDNdLFsxLDMsIlxcdGhldGFfQSJdLFsyLDQsIj8iXSxbNCw1XSxbMyw1LCJcXGNhdCBHKGYpIl1d
-            \[\begin{tikzcd}[ampersand replacement=\&]
+            В диаграмме~(\ref{yoneda}) вертикальные стрелки --- построенные $[\eta \mapsto \eta_A(\id_A)]$.
+            % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2RvdFxcXyJdLFswLDFdLFsyLDNdLFsxLDMsIlxcdGhldGFfQSJdLFsyLDQsIj8iXSxbNCw1XSxbMyw1LCJcXGNhdCBHKGYpIl1d
+            \begin{figure}[ht!]\centering
+            \begin{tikzcd}[ampersand replacement=\&]
             {\Nat(\Mor(A, \_), \cat F)} \& {\Nat(\Mor(A, \_), \cat G)} \& {\Nat(\Mor(B, \_), \cat G)} \\
             {\cat F(A)} \& {\cat G(A)} \& {\cat G(B)}
             \arrow["{\theta \cdot\_}", from=1-1, to=1-2]
@@ -4675,16 +4676,17 @@
             \arrow["{?}", from=1-2, to=1-3]
             \arrow[from=1-3, to=2-3]
             \arrow["{\cat G(f)}", from=2-2, to=2-3]
-            \end{tikzcd}\tag{Yoneda}\label{yoneda}
-            \]
-            \item Сначала проверим коммутативность левого квадратика.
+            \end{tikzcd}
+            \caption{\label{yoneda}Естественность биекции}
+            \end{figure}
+            \item Во-первых, надо проверить коммутативность левого квадратика.
             $\eta: \Mor(A, \_) \map \cat F$ отправляется вниз в $\eta_A(\id_A)$, после чего вправо уходит в $\theta_A(\eta_A(\id_A))$.
             Надо проверить, что это равно $(\theta \cdot \eta)_A(\id_A)$, но это просто определение композиции естественных преобразований.
 
-            \item Теперь надо проверить коммутативность правого квадрата, для этого сначала поймём, что за стрелка $\Nat(\Mor(A, \_), \cat G) \map \Nat(\Mor(B, \_), \cat G)$.
+            \item Во-вторых, надо проверить коммутативность правого квадрата, для этого сначала поймём, что за стрелка $\Nat(\Mor(A, \_), \cat G) \map \Nat(\Mor(B, \_), \cat G)$.
             $\Mor(B, \_) \overset{\_ \cdot f}\Map \Mor(A, \_)$.
             Далее, на естественных преобразованиях действие устроено так:
-            $\begin{tikzcd}[ampersand replacement=\&,cramped]
+            $\begin{tikzcd}[ampersand replacement=\&,cramped,row sep=tiny]
             {\lambda: \Mor(A, \_) \map \cat G}
                  \\
                  {\mu: \Mor(B, \_) \map \cat G}
@@ -4713,7 +4715,6 @@
         Множество естественных преобразований $\Nat(\Mor(A, \_), \Mor(B, \_)) \cong \Mor(B, A)$.
         Категория представимых функторов антиэквивалентна категории $\cat C$.
     }
-    Иными словами, лемма Йонеды говорит, что всякий представимый функтор однозначно определяется своим общим элементом (?)
     \newlection{19 декабря 2023 г.}
 
 
