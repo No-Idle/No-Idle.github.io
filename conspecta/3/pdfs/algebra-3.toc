@@ -93,4 +93,6 @@
 \contentsline {subsection}{\numberline {3.8.1}Правый сопряжённый сохраняет пределы}{86}{subsection.3.8.1}%
 \contentsline {subsection}{\numberline {3.8.2}Схема построения алгебраического замыкания}{88}{subsection.3.8.2}%
 \contentsline {section}{\numberline {3.9}Лемма Йонеды}{88}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Примеры представимых функторов}{88}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Формулировка и доказательство леммы}{89}{subsection.3.9.2}%
 \contentsline {section}{\numberline {3.10}Абелевы категории}{90}{section.3.10}%

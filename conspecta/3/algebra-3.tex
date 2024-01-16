@@ -4550,6 +4550,7 @@
 
 
     \section{Лемма Йонеды}
+    \subsection{Примеры представимых функторов}
     \definition[Представимый функтор]{
         Ковариантный функтор $\catC \map \cat{Set}$, естественно изоморфный $\Mor_\catC(A, \_)$ для некоторого $ A\in \cat C$.
 
@@ -4580,8 +4581,15 @@
 
         В частности, $g \in SL_n(A)$ --- общий элемент, $g \map \id_A \in \Mor(A, A)$.
     }
+    \subsection{Формулировка и доказательство леммы}
     Пусть $\cat F, \cat G: \cat B \map \cat C$ --- два функтора.
     Обозначим множество естественных преобразований $\cat F \map \cat G$ за $\Nat(\cat F, \cat G)$.
+
+    Лемма Йонеды говорит об описании множества $\Nat(\Mor(A, \_), \cat F)$ для некоего фиксированного объекта $A$.
+    Всякому естественному преобразованию $\eta: \Mor(A, \_) \map \cat F$ отвечает её \emph{универсальная компонента} $\eta_A: \Mor(A, A) \map \cat F(A)$.
+
+    Оказывается, универсальные компоненты хранят в себе всю информацию о естественном преобразовании $\eta$.
+    Более того, по элементу $\eta_A(\id_A)$, который называется \emph{универсальным (или общим) элементом}, преобразование $\eta$ однозначно восстанавливается.
     \lemma[Йонеда]{
         Пусть $\cat F: \catC \map \cat{Set}$, $\cat C$ --- малая категория.
         Пусть $A \in \catC$.
@@ -4589,26 +4597,37 @@
         Тогда $\Nat(\Mor(A, \_), \cat F) \cong \cat F(A)$ естественно по $A$ и по $\cat F$.
         \provehere{
             Пусть $\eta: \Mor(A, \_) \map \cat F$.
-            Сопоставим $\eta \rightsquigarrow \eta_A(\id_A) \in \cat F(A)$.
+            Сопоставим этому преобразованию его общий элемент: $\eta \rightsquigarrow \eta_A(\id_A) \in \cat F(A)$.
 
-            Обратно, элементу $a \in \cat F(A)$ хотим сопоставить $\eta^{(a)} \in \Nat(\Mor(A, \_), \cat F)$.
-            Рассмотрим $\phi \in \Mor(A, B)$, ей соответствует $\Mor(A, \phi) = \phi \cdot \_$. Так как $\eta^{(a)}$ должно быть естественным преобразованием, то диаграмма ниже должна быть коммутативной.
-        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcihBLCBBKSJdLFsxLDAsIlxcY2F0IEYoQSkiXSxbMCwxLCJcXHBoaSBcXGluIFxcTW9yKEEsIEIpIl0sWzEsMSwiXFxjYXQgRihCKSJdLFswLDFdLFsyLDNdLFswLDIsIlxccGhpIFxcY2RvdCBcXF8iXSxbMSwzLCJcXGNhdCBGKFxccGhpKSJdXQ==
+            Обратно, попытаемся сопоставить элементу $a \in \cat F(A)$ естественное преобразование с таким общим элементом.
+            Пусть это некое $\eta^{(a)} \in \Nat(\Mor(A, \_), \cat F)$.
+
+            Так как $\eta^{(a)}$ должно быть естественным преобразованием, то должна быть коммутативна диаграммав частности для $\phi: A \map B$ диаграмма ниже должна быть коммутативной.
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcihBLCBYKSJdLFsxLDAsIlxcY2F0IEYoWCkiXSxbMCwxLCJcXE1vcihBLCBZKSJdLFsxLDEsIlxcY2F0IEYoWSkiXSxbMCwxLCJcXGV0YV57KGEpfV9YIl0sWzIsMywiXFxldGFeeyhhKX1fWSJdLFswLDIsIlxccGhpXFxjZG90XFxfIl0sWzEsMywiXFxjYXQgRihcXHBoaSkiXV0=
+        % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXE1vcihBLCBBKSJdLFsxLDAsIlxcY2F0IEYoQSkiXSxbMCwxLCJcXHBoaSBcXGluIFxcTW9yKEEsIEIpIl0sWzEsMSwiXFxjYXQgRihCKSJdLFswLDEsIlxcZXRhXnsoYSl9X0EiXSxbMiwzLCJcXGV0YV57KGEpfV9CIl0sWzAsMiwiXFxwaGkgXFxjZG90IFxcXyJdLFsxLDMsIlxcY2F0IEYoXFxwaGkpIl1d
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {\Mor(A, A)}
-                  \& {\cat F(A)} \\
-                  {\phi \in \Mor(A, B)} \& {\cat F(B)}
-                  \arrow[from=1-1, to=1-2]
-                  \arrow[from=2-1, to=2-2]
-                  \arrow["{\phi \cdot \_}", from=1-1, to=2-1]
-                  \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
+            {\Mor(A, X)} \& {\cat F(X)} \\
+            {\Mor(A, Y)} \& {\cat F(Y)}
+            \arrow["{\eta^{(a)}_X}", from=1-1, to=1-2]
+            \arrow["{\eta^{(a)}_Y}", from=2-1, to=2-2]
+            \arrow["{\phi\cdot\_}", from=1-1, to=2-1]
+            \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
+            \end{tikzcd}\qquad\begin{tikzcd}[ampersand replacement=\&]
+            {\Mor(A, A)} \& {\cat F(A)} \\
+            {\phi \in \Mor(A, B)} \& {\cat F(B)}
+            \arrow["{\eta^{(a)}_A}", from=1-1, to=1-2]
+            \arrow["{\eta^{(a)}_B}", from=2-1, to=2-2]
+            \arrow["{\phi \cdot \_}", from=1-1, to=2-1]
+            \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
             \end{tikzcd}\]
             Проверим коммутативность на элементе $\id_A$. Вниз он уходит в $\phi$, далее вправо --- в $\eta^{(a)}_B(\phi)$, что мы и хотим определить.
 
-            Если же сначала пойти вправо, то будет $\eta_A^{(a)}(\id_A)$, и так как мы хотим, чтобы это преобразование было обратным, то надо положить $\eta_A^{(a)}(\id A) = a$. Отсюда получаем $\eta^{(a)}_B(\phi) \coloneqq \cat F(\phi)(a)$.
+            Если же сначала пойти вправо, то будет $\eta_A^{(a)}(\id_A)$, и так как мы хотим, чтобы общий элемент $\eta^{(a)}$ был равен $a$, то надо положить $\eta_A^{(a)}(\id A) = a$.
+            Отсюда получаем \[\eta^{(a)}_B(\phi) \coloneqq \cat F(\phi)(a)\tag{$*$}\label{eta-a-def}\]
 
-            Это размышление показывает, что если $\eta_A^{(a)}(\id_A) = a$, то $\eta^{(a)}_A$ задано единственным образом.
+            Это размышление показывает, что при заданном общем элементе $\eta_A^{(a)}(\id_A) = a$, само преобразование $\eta^{(a)}$ задаётся единственным образом.
 
+            Понятное дело, так определённое $\eta^{(a)}$~(\ref{eta-a-def}) является естественным преобразованием
             Заметим, что $\eta_A^{(a)}(\id) = \cat F(\id)(a) = \id(a) = a$, поэтому построенные отображения $[\eta \mapsto \eta_A(\id_A)]$ и $[a \mapsto \eta^{(a)}]$ --- взаимно обратные.
 
             Теперь надо показать естественность.
@@ -4854,6 +4873,23 @@
         \end{tikzcd}\]
         В частности, такое представление единственно с точностью до единственного изоморфизма --- рассмотреть $\phi = \phi', \alpha = \id_A, \beta = \id_B$ (?).
         \provehere[Доказательство]{
+            \indentlemma{
+                $\Ker(\CoKer(\Ker(\phi))) = \Ker(\phi)$. Двойственно $\CoKer(\Ker(\CoKer(\phi))) = \\CoKer(\phi)$.
+            }{
+                Упражнение
+            % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbMCwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxLZXIoXFxwaGkpIl0sWzEsMiwiXFxwaGkiXSxbMywxLCJcXEtlcihcXENvS2VyKFxcS2VyKFxccGhpKSkpIiwyXSxbMSw0XSxbNCwyLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCIiLDAseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIiIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+                \[\begin{tikzcd}[ampersand replacement=\&]
+                      \bullet \& \bullet \& \bullet \\
+                      \bullet \&\& \bullet
+                      \arrow["{\Ker(\phi)}", from=1-1, to=1-2]
+                      \arrow["\phi", from=1-2, to=1-3]
+                      \arrow["{\Ker(\CoKer(\Ker(\phi)))}"', from=2-1, to=1-2]
+                      \arrow[from=1-2, to=2-3]
+                      \arrow[dashed, from=2-3, to=1-3]
+                      \arrow[shift right, dashed, from=2-1, to=1-1]
+                      \arrow[shift right, dashed, from=1-1, to=2-1]
+                \end{tikzcd}\]
+            }
         % https://q.uiver.app/#q=WzAsNSxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwwLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzAsMSwiQ0tcXHBoaSIsMix7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsyLDAsIktDS1xccGhpIiwyXSxbMywwLCJLXFxwaGkiXSxbMCw0LCJcXHBoaSJdLFszLDIsIlxcdmFyZXBzaWxvbl8yIiwwLHsib2Zmc2V0IjotMX1dLFsyLDMsIlxcdmFyZXBzaWxvbl8xIiwwLHsib2Zmc2V0IjotMX1dLFsxLDQsIlxcZXRhIiwyXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \bullet \&\& \bullet \&\& \bullet \\
