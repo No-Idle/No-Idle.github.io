@@ -4513,11 +4513,28 @@
         }
     }
     \note{
-        В случае счётного предела надо добавить условие существования счётного обратного предела --- предела диаграммы.
+        В случае счётного предела надо добавить условие существования счётного обратного предела, то есть предела вида
+    % https://q.uiver.app/#q=WzAsNyxbMiwxLCJcXGJ1bGxldCJdLFszLDEsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFs2LDEsIlxcYnVsbGV0Il0sWzEsMV0sWzAsMCwiXFx2YXJwcm9qbGltIl0sWzAsMV0sWzEsMiwiXFxjZG90cyIsMV0sWzIsM10sWzMsNF0sWzUsMF0sWzYsMCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMSwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMiwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNCwiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \varprojlim \\
+              \& {} \& \bullet \& \bullet \& \bullet \& \bullet \& \bullet
+              \arrow[from=2-3, to=2-4]
+              \arrow["\cdots"{description}, from=2-4, to=2-5]
+              \arrow[from=2-5, to=2-6]
+              \arrow[from=2-6, to=2-7]
+              \arrow[from=2-2, to=2-3]
+              \arrow[dashed, from=1-1, to=2-3]
+              \arrow[dashed, from=1-1, to=2-4]
+              \arrow[dashed, from=1-1, to=2-5]
+              \arrow[dashed, from=1-1, to=2-6]
+              \arrow[dashed, from=1-1, to=2-7]
+        \end{tikzcd}\]
     }
 
     \subsection{Схема построения алгебраического замыкания}
-    Берём $F$, пусть $P$ --- множество всех унитальных многочленов над $F$.
+    Пусть имеется поле $F$. КАк построить алгебраическое замыкание?
+
+    Пусть $P$ --- множество всех унитальных многочленов над $F$.
     Введём частичный порядок на $F: f \preceq g \iff f \divs g$.
     Далее рассматриваем категорию $\cat P$, построенную по данному частично упорядоченному множеству.
 
@@ -4529,7 +4546,7 @@
 
     Так вот, тогда копредел этого функтора $\varinjlim\limits_{f \in P}F_f$ --- это некоторое кольцо.
     В этом кольце выбирается произвольный максимальный идеал $\mathfrak{m} \normeq \varinjlim\limits_{f \in P}F_f$.
-    Он есть всегда, если $\varinjlim\limits_{f \in P}F_f \ne \{0\}$, и факторполе $F_f/\mathfrak{m}$ назовём это поле \emph{алгебраическим замыканием} $F$
+    Он есть всегда, если $\varinjlim\limits_{f \in P}F_f \ne \{0\}$ (и надо как-то доказать, что это кольцо --- ненулевое), и факторполе $\varinjlim\limits_{f \in P}F_f/\mathfrak{m}$ называется \emph{алгебраическим замыканием} $F$
 
 
     \section{Лемма Йонеды}
@@ -4540,7 +4557,7 @@
     }
     Оказывается, это весьма частая ситуация.
 
-    \examples{
+    \examples[Представимые функторы]{
         \item    Возьмём аффинное $n$-мерное пространство $\mathbb{A}^n$.
         С одной стороны, это функтор \begin{align*}
                                          \mathbb{A}^n: \cat{CRing} &\map \cat{Set} \\ R &\mapsto \mathbb{A}^n_R \bydef \defset{(r_1, \dots, r_n)}{r_i \in R}
@@ -4549,7 +4566,7 @@
 
         С другой стороны, в классической алгебраической геометрии фиксируют какое-то алгебраически замкнутое поле, и рассматривают значения этого функтора на данном поле.
 
-        Нам это $\mathbb{A}^n$ интересно именно, как функтор, и он является представимым: $\mathbb{A}^n\cong\Mor(\Z[t_1, \dots, t_n], \_)$.
+        Нам это $\mathbb{A}^n$ интересно именно как функтор, и он является представимым: $\mathbb{A}^n\cong\Mor(\Z[t_1, \dots, t_n], \_)$.
         Если заменить $\cat{CRing}$ на $F\text{-}\cat{Alg}$, то $\mathbb{A}^n\cong\Mor(F[t_1, \dots, t_n], \_)$.
 
         Зафиксируем $f_1, \dots, f_m \in F[t_1, \dots, t_n]$.
