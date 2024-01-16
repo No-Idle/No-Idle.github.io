@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  16 JAN 2024 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  16 JAN 2024 15:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1764,10 +1764,10 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
 (rerunfilecheck)             Checksum: 170FD6D34EE7BD117E765EA5165A33F7;29279.
  ) 
 Here is how much of TeX's memory you used:
- 35060 strings out of 479648
- 697342 string characters out of 5886115
- 937311 words of memory out of 5000000
- 52027 multiletter control sequences out of 15000+600000
+ 35062 strings out of 479648
+ 697391 string characters out of 5886115
+ 937390 words of memory out of 5000000
+ 52029 multiletter control sequences out of 15000+600000
  508156 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,28n,103p,749b,1301s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1796,10 +1796,10 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (93 pages, 756945 bytes).
+ (93 pages, 756970 bytes).
 PDF statistics:
- 1401 PDF objects out of 1440 (max. 8388607)
- 1244 compressed objects within 13 object streams
+ 1402 PDF objects out of 1440 (max. 8388607)
+ 1245 compressed objects within 13 object streams
  452 named destinations out of 1000 (max. 500000)
  765 words of extra memory for PDF output out of 10000 (max. 10000000)
 
