@@ -4247,6 +4247,7 @@
 
 
     \section{Пределы}
+    \label{limits}
     Пусть есть последовательность отображений $A_1 \map A_2 \map \dots ?$
     Что естественно считать пределом?
 
@@ -4452,7 +4453,6 @@
         \provehere[Доказательство леммы]{
             Возьмём естественное преобразование $\eta: \cat K \map \cat F \circ \cat H$. Пусть (гипотетическая) биекция сопоставляет ему преобразование $\theta: \cat G \circ \cat K \map \cat H$.
 
-            Тогда $\forall X \in \cat J$ имеется преобразование $\theta_X: \Mor_\catC(\cat K(\_), \cat F(\cat H(\_))) \map \Mor_{\catB}(\cat G(\cat K(\_)), \cat H(\_))$.
             Определим $\theta$, и проверим, что $\forall X, Y \in \cat J$ диаграмма ниже коммутативна.
         % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBHXFxjYXQgSyhYKSJdLFsxLDAsIlxcY2F0IEgoWCkiXSxbMCwxLCJcXGNhdCBHXFxjYXQgSyhZKSJdLFsxLDEsIlxcY2F0IEgoWSkiXSxbMCwxLCJcXHRoZXRhX1giXSxbMSwzLCJcXGNhdCBIKFxccGhpKSJdLFswLDIsIlxcY2F0IEdcXGNhdCBLKFxccGhpKSIsMl0sWzIsMywiXFx0aGV0YV9ZIiwyXV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
@@ -4488,7 +4488,8 @@
             Осталось проверить, что $f_{\cat H(X)} \cdot \cat G(\eta_X) = \theta_X$, то есть $\theta$ --- действительно естественное преобразование.
             И ещё композиция $\eta_X \rightsquigarrow \theta_X \rightsquigarrow \eta_X$, и обратно --- тождественна.
         }}}
-        \multline{\Mor_{\Func}\left(\Delta C, \cat F\cdot\cat H\right) \cong \Mor_{\Func}\left(\cat G \Delta C, \cat H\right) \cong \Mor_{\Func}\left(\Delta \cat G(C), \cat H\right) \cong\\\cong \Mor_{\catB}\left(\cat G(C), \varprojlim\cat H\right) \cong \Mor_\catC\left(C, \cat F\left(\varprojlim \cat H\right)\right)}
+        Ниже в зависимости от аргумента, $\Delta: \cat B \map \Func(\cat J, \cat B)$, или $\Delta: \cat C \map \Func(\cat J, \cat C)$, оно определено выше~(\cref{limits}).
+        \multline{\Mor_{\Func}\left(\Delta C, \cat F\circ\cat H\right) \cong \Mor_{\Func}\left(\cat G \Delta C, \cat H\right) \cong \Mor_{\Func}\left(\Delta \cat G(C), \cat H\right) \cong\\\cong \Mor_{\catB}\left(\cat G(C), \varprojlim\cat H\right) \cong \Mor_\catC\left(C, \cat F\left(\varprojlim \cat H\right)\right)}
         Отсюда (по определению предела) следует, что $\cat F\left(\varprojlim \cat H\right) = \varprojlim\cat F \circ \cat H$.
     }
     }
@@ -4497,12 +4498,12 @@
     \proposal{
         Пусть $\cat C$ --- категория, следующие условия эквивалентны.
         \numbers{
-            \item В $\cat C$ существуют финальный объект, произведения и эквалайзеры.
+            \item В $\cat C$ существуют финальный объект, все произведения и все эквалайзеры.
             \item В $\cat C$ существуют финальный объект и все пулбэки.
             \item В $\cat C$ существуют все конечные пределы.
         }
         \provehere[Схема доказательства]{
-            Понятно, что достаточно доказать $1 \then 3$.
+            Понятно, что достаточно доказать $1 \then 3$, так как $3 \then 2 \then 1$ очевидно.
             Это доказывается индукцией по количеству морфизмов.
 
             \underline{База:} если морфизмов нуль, то предел функтора $\cat F: \cat J \map \cat C$ --- произведение объектов $\cat F(J)$ по всем $J \in \cat J$.
