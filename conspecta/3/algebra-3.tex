@@ -394,7 +394,7 @@
 
     Выберем унитальный многочлен $f \in R[t]$, пусть $f = x^n + a_{n-1}x^{n-1} + \dots + a_0$.
     Ему можно сопоставить сопровождающую матрицу
-    \[B(f) = (-1)^{n-1}\vect{0 & \dots & \dots & a_0 \\ 1 & & & a_1 \\ & \ddots & &\vdots\\ 0 & & 1 & a_{n-1}}\]
+    \[B(f) = (-1)^n\vect{0 & \dots & \dots & -a_0 \\ 1 & & & -a_1 \\ & \ddots & &\vdots\\ 0 & & 1 & -a_{n-1}}\]
     Она обладает тем свойством, что $\chi(B(f)) = f$.
 
     Из подсчёта собственных чисел получается, что $\chi(B(f) \otimes B(g))$ --- многочлен, корни которого --- попарные произведения корней $f$ и $g$.
@@ -568,13 +568,13 @@
     На самом деле, функторы переводят не только объекты из одной категории в другую, но и стрелки.
     Гомоморфизму алгебр $\phi: A \map B$ соответствует гомоморфизм модулей $\cat{F}(\phi): A \map B$.
 
-    Потребуем, чтобы для любой алгебры $B$ и для любого гомоморфизма модулей $\psi: V \map \cat{F}(B)$ выполнялось условие: $\exists! \phi: A \map B$ --- гомоморфизм алгебр, такой, что диаграмма коммутативна.
-% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWIl0sWzEsMCwiXFxtYXRoc2Nye0Z9KEEpIl0sWzEsMSwiXFxtYXRoc2Nye0Z9KEIpIl0sWzAsMiwiXFxwc2kiLDJdLFsxLDIsIlxcbWF0aHNjcntGfShcXHBoaSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJcXHRleHR7aW59IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
+    Потребуем, чтобы для любой $R$-алгебры с единицей $B$ и для любого гомоморфизма $R$-модулей $\phi: V \map \cat{F}(B)$ выполнялось условие: $\exists! \psi: A \map B$ --- гомоморфизм алгебр, такой, что диаграмма коммутативна.
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJWIl0sWzEsMCwiXFxtYXRoc2Nye0Z9KEEpIl0sWzEsMSwiXFxtYXRoc2Nye0Z9KEIpIl0sWzAsMiwiXFxwaGkiLDJdLFsxLDIsIlxcbWF0aHNjcntGfShcXHBzaSkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJcXHRleHR7aW59IiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
-          V \& {\cat{F}(A)} \\
-          \& {\cat{F}(B)}
-          \arrow["\psi"', from=1-1, to=2-2]
-          \arrow["{\cat{F}(\phi)}", dashed, from=1-2, to=2-2]
+          V \& {\mathscr{F}(A)} \\
+          \& {\mathscr{F}(B)}
+          \arrow["\phi"', from=1-1, to=2-2]
+          \arrow["{\mathscr{F}(\psi)}", dashed, from=1-2, to=2-2]
           \arrow["{\text{in}}", hook, from=1-1, to=1-2]
     \end{tikzcd}\]
     \theorem{
@@ -819,7 +819,7 @@
           \arrow[from=1-1, to=1-2]
           \arrow[hook, from=1-2, to=1-3]
     \end{tikzcd}\]
-    Тогда существует и единственно $\psi: S^n(V) \map A$ --- гомоморфизм алгебр, а это универсальное свойство кольца многочленов.\label{s_is_poly}
+    Тогда существует и единственно $\psi: S(V) \map A$ --- гомоморфизм алгебр, а это универсальное свойство кольца многочленов.\label{s_is_poly}
 
     Таким образом, $S^n(V) \cong R[x_1, \dots, x_m]_{\deg = n}$.
     Можно явно выписать базис.
@@ -904,7 +904,7 @@
     }
 
     Рассмотрим алгебру Грассмана $\ext(V)$.
-    \lemma{\label{calculations_in_grassman}
+    \theorem{\label{calculations_in_grassman}
     Пусть $(u_1, \dots, u_n)C = (v_1, \dots, v_m)$, где $C \in M(n, m, R)$, $u_i, v_j \in V$.
     Интересным случаем является $m \le n$, иначе в обеих частях равенства стоят нули. Утверждается, что
         \[v_{[m]} \coloneqq v_1 \wedge \dots \wedge v_m = \sum\limits_{|I| = m, I \subset [n]}u_{I}\det (C^I)\]
@@ -1032,7 +1032,7 @@
         \[(\ext^k A)_{I,J} = \det(A^{-1})^I_J = (-1)^{\eps_I + \eps_J}\frac{1}{\det A}A^{[n] \sm J}_{[n]\sm I}\]
         $\eps_I$ и $\eps_J$ определены здесь~(\cref{eps_def})
         \provehere{
-            Пусть $B$ --- матрица $\ext^k A$ в базисе $\ext^k e$.
+            Пусть $B \coloneqq \ext^k A$.
             Cогласно~(\cref{elements-of-ext-matrix}), для $I, J \subset [n]; |I| = |J| = k$:
             \[(B^{-1})_{I,J} = \det\left(A^{-1}\right)_I^J\qquad\text{и}\qquad B_{I,J} = \det\left(A\right)_I^J\]
 
