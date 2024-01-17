@@ -406,7 +406,7 @@
     }
     Это многочлен, корни которого --- попарные суммы корней $f$ и $g$.
     \corollary{
-        Множество алгебраических чисел образует кольцо.
+        Множество целых алгебраических чисел образует кольцо.
     }
 
 
@@ -777,15 +777,15 @@
     }
     Аналогично определяется $n$-я внешняя степень
     \[\ext^n(V) \bydef V^{\otimes n}/I_n = V^{\otimes n}/\angles{a \otimes x \otimes x \otimes b \middle| x \in V, a \in V^{\otimes k}, b \in V^{\otimes n - 2 - k}}\]
-    \theorem[Универсальное свойство внешней $n$-й степени]{
+    \theorem[Универсальное свойство $n$-й внешней степени]{
         $\forall R$-модуля $M$ и антисимметричного полилинейного отображения $\phi: V \times \dots \times V \map M: \exist! \psi: \ext^n(V) \map V$, такое что диаграмма коммутативна.
-        % https://q.uiver.app/#q=WzAsMyxbMCwwLCJWIl0sWzIsMCwiXFxiaWd3ZWRnZV5uKFYpIl0sWzEsMSwiTSJdLFswLDFdLFswLDIsIlxccGhpIiwyXSxbMSwyLCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        % https://q.uiver.app/#q=WzAsMyxbMCwwLCJWXFx0aW1lc1xcY2RvdHNcXHRpbWVzIFYiXSxbMiwwLCJcXGV4dF5uKFYpIl0sWzEsMSwiTSJdLFswLDFdLFswLDIsIlxccGhpIiwyXSxbMSwyLCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
-              V \&\& {\ext^n(V)} \\
-              \& M
-              \arrow[from=1-1, to=1-3]
-              \arrow["\phi"', from=1-1, to=2-2]
-              \arrow["\psi", dashed, from=1-3, to=2-2]
+        {V\times\cdots\times V} \&\& {\ext^n(V)} \\
+        \& M
+        \arrow[from=1-1, to=1-3]
+        \arrow["\phi"', from=1-1, to=2-2]
+        \arrow["\psi", dashed, from=1-3, to=2-2]
         \end{tikzcd}\]
         \provehere{
             Пусть $\theta: V \times \dots \times V \map V^{\otimes n}$
