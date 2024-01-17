@@ -1055,12 +1055,12 @@
             Таким образом $\ext(L)$ --- эндоморфизм алгебры $\ext(V)$, и также имеются эндоморфизмы модулей матриц над $\ext(V)$, сохраняющие произведение матриц.
             Применяя их к равенству~(\ref{matrix-form}) (иначе говоря, применяя $\ext(L)$ ко всем элементам матриц), получаем
             \[L(f) \cdot L(\ext^k e) = \underbrace{L(e_{[n]})}_{\det A \cdot e_{[n]}} \cdot E\]
-            Обозначим $D \coloneqq [\ext^{n-k}(L)]_f, B \coloneqq [\ext^k L]_{\ext e} = \ext^k A$.
+            Обозначим $D \coloneqq [\ext^{n-k}(L)]_f, B \coloneqq [\ext^k L]_{\ext^k e} = \ext^k A$.
             Равенство выше говорит, что $D^t \cdot B = \det A$.
             В самом деле, $L(f) = D^t \cdot f$, и $L(\ext^k e) = \ext^k e \cdot B$.
 
             Получаем $B^{-1} = \frac{1}{\det A}D^t$, и осталось подставить
-            \[D_{I,J} = ([\ext^{n-k}(L)]_f)_{I,J} = (-1)^{\eps_I+\eps_J}\left([\ext^{n-k}(L)]_{\ext^{n-k}(e)}\right)_{[n]\sm I,[n]\sm J} = (-1)^{\eps_I+\eps_J}\det A_{[n]\sm J}^{[n]\sm I}\]
+            \[D_{I,J} = ([\ext^{n-k}(L)]_f)_{I,J} = (-1)^{\eps_I+\eps_J}\left([\ext^{n-k}(L)]_{\ext^{n-k}(e)}\right)_{[n]\sm I,[n]\sm J} = (-1)^{\eps_I+\eps_J}\det A_{[n]\sm J}^{[n]\sm I}\qedhere\]
 %            $L$ индуцирует эндоморфизм внешней алгебры
 %            \[\ext^k(L): \ext^k(V) \map \ext^k(V)\]
 %            В $\ext^k(V)$ имеется базис $\ext^k(e) \coloneqq \defset{e_J}{J \subset [n]}$.
