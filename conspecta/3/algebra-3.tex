@@ -4905,7 +4905,7 @@
         \end{tikzcd}\]
 
         \provehere[Доказательство]{
-            \indentlemma{
+            \indentlemma{\label{kercokerker}
                 Для всякой стрелки $\phi$: $\Ker\Coker\Ker\phi = \Ker\phi$.
             }{
             % https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxLZXJcXHBoaSIsMl0sWzAsMiwiXFxwaGkiLDJdLFswLDMsIlxcQ29rZXJcXEtlclxccGhpIl0sWzQsMCwiXFxLZXJcXENva2VyXFxLZXJcXHBoaSJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiXFxlcHNfMiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiXFxlcHNfMSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
@@ -4942,7 +4942,7 @@
                   \arrow["{\exists!\varepsilon}"', dashed, from=1-1, to=2-2]
                   \arrow["\mu"', from=2-2, to=1-2]
             \end{tikzcd}\]
-            $\mu$, как ядро стрелки, является мономорфизмом. $\varepsilon$ --- эпи (упражнение).
+            $\mu$, как ядро стрелки --- моно. $\varepsilon$ --- эпи (упражнение).
 
             Теперь проверим функториальность.
             Пусть имеются два произвольных эпи-моно разложения двух произвольных стрелок, докажем, что $\exists!\psi$, делающая диаграмму коммутативной.
@@ -4966,9 +4966,11 @@
         \numbers{
             \item $\Coker\mu'\cdot\mu'\cdot\eps'\cdot\alpha = 0$, так как уже $\Coker\mu'\cdot\mu' = 0$.
             Значит, $\Coker\mu' \cdot\beta\cdot\phi = 0$, тогда $\Coker\mu' \cdot \beta$ пропускается (единственным образом) через $\Coker\phi$ --- получаем $\eta$.
-            \item $\Coker\mu' \cdot \mu' = 0 \then \mu' = \Ker\Coker \mu'$ (почему?)
+            \item Так как $\mu'$ --- моно, а категория абелева, то он --- чьё-то ядро. Cогласно~(\cref{kercokerker}) $\mu' = \Ker\Coker \mu'$.
             \item $\eps$ --- эпи, $0\cdot\eps = (\Coker\phi \cdot \mu)\cdot \eps \then 0 = \Coker\phi \cdot \mu$.
-            \item Тогда $\eta \cdot \Coker\phi\cdot \mu = 0$, т.е. $\Coker\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\Ker\Coker\mu' = \mu'$ --- получается $\psi$.
+            \item Тогда $\eta \cdot \Coker\phi\cdot \mu = 0$, то есть $\Coker\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\Ker\Coker\mu' = \mu'$ --- получается $\psi$.
+        \item По построению $\psi$: $\beta\mu = \mu'\psi$, надо ещё проверить коммутативность левого квадрата.
+            Действительно, так как $\mu'$ --- моно, то $\mu'(\psi\eps) = \mu'(\eps'\alpha) \then \psi\eps = \eps'\alpha$.
         }
         }
     }
