@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 JAN 2024 01:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  17 JAN 2024 15:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1730,26 +1730,26 @@ A/faq/m/n/10 .
  []
 
 [88]
-Overfull \hbox (2.65999pt too wide) in paragraph at lines 4712--4712
+Overfull \hbox (2.65999pt too wide) in paragraph at lines 4716--4716
 []$[]$ $[]$ 
  []
 
 [89]
-Overfull \hbox (16.6259pt too wide) in paragraph at lines 4716--4716
+Overfull \hbox (16.6259pt too wide) in paragraph at lines 4720--4720
 []\T2A/faq/bx/n/10 Следствие 3.9.1. []\T2A/faq/m/it/10 Мно-же-ство есте-ствен-н
 ых пре-об-ра-зо-ва-ний $[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 A; []\OT1/cmr/m/
 n/10 )\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B; []\OT1/cmr/m/n/
 10 )) [] [](\OML/cmm/m/it/10 B; A\OT1/cmr/m/n/10 )$\T2A/faq/m/it/10 .
  []
 
-[90] [91]
-Overfull \hbox (2.76083pt too wide) in paragraph at lines 4874--4874
-[]\T2A/faq/bx/n/10 Определение 3.10.5 \T2A/faq/m/n/10 ((Ко)нормальный мо-но-мор
+[90] [91] [92]
+Overfull \hbox (2.76083pt too wide) in paragraph at lines 4879--4879
+[]\T2A/faq/bx/n/10 Определение 3.10.6 \T2A/faq/m/n/10 ((Ко)нормальный мо-но-мор
 -физм (эпи-мор-физм))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Он яв-ля-ет-ся (ко)эк
 валайзером
  []
 
-[92] [93] [94] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
+[93] [94] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1757,10 +1757,10 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
 (rerunfilecheck)             Checksum: 98986F094182DE1C0ADD0391EF6D8704;30273.
  ) 
 Here is how much of TeX's memory you used:
- 35254 strings out of 479648
- 702226 string characters out of 5886115
- 945694 words of memory out of 5000000
- 52213 multiletter control sequences out of 15000+600000
+ 35280 strings out of 479648
+ 702638 string characters out of 5886115
+ 944770 words of memory out of 5000000
+ 52227 multiletter control sequences out of 15000+600000
  508156 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,28n,103p,745b,1312s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1789,10 +1789,10 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (95 pages, 765116 bytes).
+ (95 pages, 767496 bytes).
 PDF statistics:
- 1437 PDF objects out of 1440 (max. 8388607)
- 1278 compressed objects within 13 object streams
- 460 named destinations out of 1000 (max. 500000)
+ 1454 PDF objects out of 1728 (max. 8388607)
+ 1295 compressed objects within 13 object streams
+ 472 named destinations out of 1000 (max. 500000)
  789 words of extra memory for PDF output out of 10000 (max. 10000000)
 

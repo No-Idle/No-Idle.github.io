@@ -4628,25 +4628,27 @@
             \begin{figure}[!ht]
                 \begin{minipage}{0.5\textwidth}
                     \centering\begin{tikzcd}[ampersand replacement=\&]
-                    {\Mor(A, X)} \& {\cat F(X)} \\
-                    {\Mor(A, Y)} \& {\cat F(Y)}
-                    \arrow["{\eta^{(a)}_X}", from=1-1, to=1-2]
-                    \arrow["{\eta^{(a)}_Y}", from=2-1, to=2-2]
-                    \arrow["{\phi\cdot\_}", from=1-1, to=2-1]
-                    \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
+                    {\Mor(A, X)}
+                                  \& {\cat F(X)} \\
+                                  {\Mor(A, Y)} \& {\cat F(Y)}
+                                  \arrow["{\eta^{(a)}_X}", from=1-1, to=1-2]
+                                  \arrow["{\eta^{(a)}_Y}", from=2-1, to=2-2]
+                                  \arrow["{\phi\cdot\_}", from=1-1, to=2-1]
+                                  \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
                     \end{tikzcd}
-                \caption{Общий случай\label{common-case}}
+                    \caption{Общий случай\label{common-case}}
                 \end{minipage}
                 \begin{minipage}{0.5\textwidth}
                     \centering\begin{tikzcd}[ampersand replacement=\&]
-                    {\Mor(A, A)} \& {\cat F(A)} \\
-                    {\phi \in \Mor(A, B)} \& {\cat F(B)}
-                    \arrow["{\eta^{(a)}_A}", from=1-1, to=1-2]
-                    \arrow["{\eta^{(a)}_B}", from=2-1, to=2-2]
-                    \arrow["{\phi \cdot \_}", from=1-1, to=2-1]
-                    \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
-                \end{tikzcd}
-                \caption{Частный случай $X = A$\label{particular-case}}
+                    {\Mor(A, A)}
+                                  \& {\cat F(A)} \\
+                                  {\phi \in \Mor(A, B)} \& {\cat F(B)}
+                                  \arrow["{\eta^{(a)}_A}", from=1-1, to=1-2]
+                                  \arrow["{\eta^{(a)}_B}", from=2-1, to=2-2]
+                                  \arrow["{\phi \cdot \_}", from=1-1, to=2-1]
+                                  \arrow["{\cat F(\phi)}", from=1-2, to=2-2]
+                    \end{tikzcd}
+                    \caption{Частный случай $X = A$\label{particular-case}}
                 \end{minipage}
             \end{figure}
 
@@ -4663,20 +4665,22 @@
             Она, конечно выполняется, так как построение не зависит ни от каких выборов, но давайте убедимся.
 
             Пусть $f: A \map B$ --- морфизм, $\theta: \cat F \map \cat G$ --- естественное преобразование.
-            % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2RvdFxcXyJdLFswLDEsIlxcZXRhIFxcbWFwc3RvIFxcZXRhX0EoXFxpZF9BKSJdLFsyLDMsIlxcZXRhIFxcbWFwc3RvIFxcZXRhX0EoXFxpZF9BKSJdLFsxLDMsIlxcdGhldGFfQSJdLFsyLDQsIj8iXSxbNCw1LCJcXGV0YSBcXG1hcHN0byBcXGV0YV9CKFxcaWRfQikiXSxbMyw1LCJcXGNhdCBHKGYpIl1d
-            \begin{figure}[ht!]\centering
-            \begin{tikzcd}[ampersand replacement=\&]
-            {\Nat(\Mor(A, \_), \cat F)} \& {\Nat(\Mor(A, \_), \cat G)} \& {\Nat(\Mor(B, \_), \cat G)} \\
-            {\cat F(A)} \& {\cat G(A)} \& {\cat G(B)}
-            \arrow["{\theta \cdot\_}", from=1-1, to=1-2]
-            \arrow["{\eta \mapsto \eta_A(\id_A)}", from=1-1, to=2-1]
-            \arrow["{\eta \mapsto \eta_A(\id_A)}", from=1-2, to=2-2]
-            \arrow["{\theta_A}", from=2-1, to=2-2]
-            \arrow["{?}", from=1-2, to=1-3]
-            \arrow["{\eta \mapsto \eta_B(\id_B)}", from=1-3, to=2-3]
-            \arrow["{\cat G(f)}", from=2-2, to=2-3]
-            \end{tikzcd}
-            \caption{\label{yoneda}Естественность биекции}
+        % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBGKSJdLFswLDEsIlxcY2F0IEYoQSkiXSxbMSwwLCJcXE5hdChcXE1vcihBLCBcXF8pLCBcXGNhdCBHKSJdLFsxLDEsIlxcY2F0IEcoQSkiXSxbMiwwLCJcXE5hdChcXE1vcihCLCBcXF8pLCBcXGNhdCBHKSJdLFsyLDEsIlxcY2F0IEcoQikiXSxbMCwyLCJcXHRoZXRhIFxcY2RvdFxcXyJdLFswLDEsIlxcZXRhIFxcbWFwc3RvIFxcZXRhX0EoXFxpZF9BKSJdLFsyLDMsIlxcZXRhIFxcbWFwc3RvIFxcZXRhX0EoXFxpZF9BKSJdLFsxLDMsIlxcdGhldGFfQSJdLFsyLDQsIj8iXSxbNCw1LCJcXGV0YSBcXG1hcHN0byBcXGV0YV9CKFxcaWRfQikiXSxbMyw1LCJcXGNhdCBHKGYpIl1d
+            \begin{figure}[ht!]
+                \centering
+                \begin{tikzcd}[ampersand replacement=\&]
+                {\Nat(\Mor(A, \_), \cat F)}
+                    \& {\Nat(\Mor(A, \_), \cat G)} \& {\Nat(\Mor(B, \_), \cat G)} \\
+                    {\cat F(A)} \& {\cat G(A)} \& {\cat G(B)}
+                    \arrow["{\theta \cdot\_}", from=1-1, to=1-2]
+                    \arrow["{\eta \mapsto \eta_A(\id_A)}", from=1-1, to=2-1]
+                    \arrow["{\eta \mapsto \eta_A(\id_A)}", from=1-2, to=2-2]
+                    \arrow["{\theta_A}", from=2-1, to=2-2]
+                    \arrow["{?}", from=1-2, to=1-3]
+                    \arrow["{\eta \mapsto \eta_B(\id_B)}", from=1-3, to=2-3]
+                    \arrow["{\cat G(f)}", from=2-2, to=2-3]
+                \end{tikzcd}
+                \caption{\label{yoneda}Естественность биекции}
             \end{figure}
             \item Во-первых, надо проверить коммутативность левого квадратика.
             $\eta: \Mor(A, \_) \map \cat F$ отправляется вниз в $\eta_A(\id_A)$, после чего вправо уходит в $\theta_A(\eta_A(\id_A))$.
@@ -4783,7 +4787,7 @@
                 }
                 Докажем $1 \iff 3$, $2 \iff 3$ следует из двойственности.
                 \bullets{
-                    \item % https://q.uiver.app/#q=WzAsNCxbMCwwLCJEIl0sWzEsMSwiQyJdLFsxLDIsIkEiXSxbMiwxLCJCIl0sWzAsMSwiXFxwaGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJcXHBoaV8yIiwwLHsiY3VydmUiOi0yfV0sWzAsMiwiXFxwaGlfMSIsMix7ImN1cnZlIjoyfV0sWzEsMiwiXFxwaV8xIiwwLHsib2Zmc2V0IjotMX1dLFsyLDEsIlxcaW90YV8xIiwwLHsib2Zmc2V0IjotMX1dLFsxLDMsIlxccGlfMiIsMix7Im9mZnNldCI6MX1dLFszLDEsIlxcaW90YV8yIiwyLHsib2Zmc2V0IjoxfV1d
+                    \item[$1 \then 3$] % https://q.uiver.app/#q=WzAsNCxbMCwwLCJEIl0sWzEsMSwiQyJdLFsxLDIsIkEiXSxbMiwxLCJCIl0sWzAsMSwiXFxwaGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwzLCJcXHBoaV8yIiwwLHsiY3VydmUiOi0yfV0sWzAsMiwiXFxwaGlfMSIsMix7ImN1cnZlIjoyfV0sWzEsMiwiXFxwaV8xIiwwLHsib2Zmc2V0IjotMX1dLFsyLDEsIlxcaW90YV8xIiwwLHsib2Zmc2V0IjotMX1dLFsxLDMsIlxccGlfMiIsMix7Im9mZnNldCI6MX1dLFszLDEsIlxcaW90YV8yIiwyLHsib2Zmc2V0IjoxfV1d
                     \[\begin{tikzcd}[ampersand replacement=\&]
                           D \\
                           \& C \& B \\
@@ -4798,18 +4802,18 @@
                     \end{tikzcd}\]
                     Определим $\phi\coloneqq \iota_1 \phi_1 + \iota_2 \phi_2$, тогда $\pi_2 \phi = \underbrace{\pi_2 \iota_1}_{0} \phi_1 + \underbrace{\pi_2 \iota_2}_{\id} \phi_2 = \phi_2$, то есть диаграмма коммутативна.
 
-                    Если же $\pi_2 \phi_2 = \phi$ и $\pi_1 \phi_1 = \phi$, то $\underbrace{(\iota_2 \pi_2 + \iota_1 \pi_1)}_{\id} \phi = \iota_2 \phi_2 + \iota_1 \phi_1$, то есть никак по другому задать $\phi$ нельзя.
-                    \item Построим $\iota_1$ согласно универсальному свойству:% https://q.uiver.app/#q=WzAsNCxbMCwxLCJBIl0sWzEsMSwiQyJdLFsyLDEsIkIiXSxbMCwwLCJBIl0sWzMsMCwiXFxpZF9BIiwyXSxbMywyLCIwIiwwLHsiY3VydmUiOi0yfV0sWzMsMSwiXFxpb3RhXzEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJcXHBpXzEiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDEsIlxccGlfMiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+                    Если же $\pi_1 \phi = \phi_1$ и $\pi_2 \phi = \phi_2$, то $\underbrace{(\iota_1 \pi_1 + \iota_2 \pi_2)}_{\id} \phi = \iota_1 \phi_1 + \iota_2 \phi_2$, то есть никак по другому задать $\phi$ нельзя.
+                    \item[$3 \then 1$] Построим $\iota_1$ согласно универсальному свойству:% https://q.uiver.app/#q=WzAsNCxbMCwxLCJBIl0sWzEsMSwiQyJdLFsyLDEsIkIiXSxbMSwwLCJBIl0sWzAsMSwiXFxwaV8xIiwyLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiwxLCJcXHBpXzIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDEsIlxcaW90YV8xIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMCwiXFxpZF9BIiwyXSxbMywyLCIwIl1d
                     \[\begin{tikzcd}[ampersand replacement=\&]
-                          A \\
+                          \& A \\
                           A \& C \& B
-                          \arrow["{\id_A}"', from=1-1, to=2-1]
-                          \arrow["0", curve={height=-12pt}, from=1-1, to=2-3]
-                          \arrow["{\iota_1}", dashed, from=1-1, to=2-2]
                           \arrow["{\pi_1}"', tail reversed, no head, from=2-1, to=2-2]
                           \arrow["{\pi_2}"', tail reversed, no head, from=2-3, to=2-2]
+                          \arrow["{\iota_1}", dashed, from=1-2, to=2-2]
+                          \arrow["{\id_A}"', from=1-2, to=2-1]
+                          \arrow["0", from=1-2, to=2-3]
                     \end{tikzcd}\]
-                    Аналогично $\exists! \iota_2: B \map C: \pi_2 \iota_2 = \id_B, \pi_2 \id_1 = 0$.
+                    Аналогично $\exists! \iota_2: B \map C: \pi_2 \iota_2 = \id_B, \pi_1 \iota_2 = 0$.
 
                     Отсюда получаем $\all{\pi_1(\iota_1 \pi_1 + \iota_2 \pi_2) = \pi_1 \\ \pi_2(\iota_1 \pi_1 + \iota_2 \pi_2) = \pi_2}$, а по универсальному свойству такое отображение только одно --- $\id_C$:
                 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJDIl0sWzEsMSwiQyJdLFsxLDIsIkEiXSxbMiwxLCJCIl0sWzAsMSwiXFxpZCIsMix7Im9mZnNldCI6MX1dLFsxLDIsIlxccGlfMSJdLFsxLDMsIlxccGlfMiIsMl0sWzAsMywiXFxwaV8yIiwwLHsiY3VydmUiOi01fV0sWzAsMiwiXFxwaV8xIiwyLHsiY3VydmUiOjN9XSxbMCwxLCJcXGlvdGFfMSBcXHBpXzEgKyBcXGlvdGFfMiBcXHBpXzIiLDAseyJsYWJlbF9wb3NpdGlvbiI6NzAsIm9mZnNldCI6LTF9XV0=
@@ -4831,6 +4835,7 @@
         Предаддитивная категория с финальным объектом и произведениями (любых двух объектов).
     }
     Из лемм ясно, что это эквивалентно, например, предаддитивной категории с нулевым объектом и бипроизведениями.
+    \definition[Ядро стрелки $\phi: A \map B$]{Эквалайзер $\phi$ и $0$.}
     \lemma{
         Если $\cat C$ --- предаддитивная категория, то (ко)эквалайзер $\begin{tikzcd}[ampersand replacement=\&,cramped]
                                                                            A \& B
@@ -4868,16 +4873,17 @@
     }
     Понятно, что можно требовать существование эквалайзера и коэквалайзера у всех пар морфизмов с одинаковыми началом и концом.
 
-    Ещё можно требовать существование всех конечных пределов и копределов.
+    Ещё можно требовать существование всех конечных пределов и копределов, так как категория аддитивна, то это опять же эквивалентно.
     \definition[(Ко)нормальный мономорфизм (эпиморфизм)]{
         Он является (ко)эквалайзером (какой-то, неважно какой, пары стрелок).
     }
     \definition[Абелева категория]{
         Предабелева категория, в которой все мономорфизмы нормальны.
     }
-    \theorem{
-        В абелевой категории любой морфизм $\phi$ представляется в виде $\phi = \mu\eps$, где $\mu$ --- моно, $\eps$ --- эпи, и данное представление функториально
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkEnIl0sWzEsMSwiQiciXSxbMCwxLCJcXHBoaSJdLFsyLDMsIlxccGhpJyJdLFswLDIsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYmV0YSciXV0=
+    \theorem{\label{epi-mono}
+    В абелевой категории любой морфизм $\phi$ представляется в виде $\phi = \mu\eps$, где $\mu$ --- моно, $\eps$ --- эпи, и эпи-моно представление функториально:
+    если в левой диаграмме для $\phi$ и $\phi'$ нашли какие-то эпи-моно разложения, то в получившейся правой диаграмме $\exists!$ стрелка посередине.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIkEnIl0sWzEsMSwiQiciXSxbMCwxLCJcXHBoaSJdLFsyLDMsIlxccGhpJyJdLFswLDIsIlxcYWxwaGEiLDJdLFsxLDMsIlxcYmV0YSJdXQ==
     % https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiXFxidWxsZXQiXSxbMCwxLCJBJyJdLFsxLDEsIlxcYnVsbGV0Il0sWzIsMCwiQiJdLFsyLDEsIkIiXSxbMCwxLCJcXGVwcyJdLFsyLDMsIlxcZXBzJyIsMl0sWzAsMiwiXFxhbHBoYSJdLFszLDUsIlxcbXUnIiwyXSxbMSw0LCJcXG11Il0sWzQsNSwiXFxiZXRhIl0sWzEsMywiXFxleGlzdHMhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               A \& B \\
@@ -4885,7 +4891,7 @@
               \arrow["\phi", from=1-1, to=1-2]
               \arrow["{\phi'}", from=2-1, to=2-2]
               \arrow["\alpha"', from=1-1, to=2-1]
-              \arrow["{\beta'}", from=1-2, to=2-2]
+              \arrow["\beta", from=1-2, to=2-2]
         \end{tikzcd}\quad \then \quad\begin{tikzcd}[ampersand replacement=\&]
                                          A \& \bullet \& B \\
                                          {A'} \& \bullet \& B
@@ -4897,69 +4903,50 @@
                                          \arrow["\beta", from=1-3, to=2-3]
                                          \arrow["{\exists!}", dashed, from=1-2, to=2-2]
         \end{tikzcd}\]
-        В частности, такое представление единственно с точностью до единственного изоморфизма --- рассмотреть $\phi = \phi', \alpha = \id_A, \beta = \id_B$ (?).
+
         \provehere[Доказательство]{
             \indentlemma{
-                $\Ker(\CoKer(\Ker(\phi))) = \Ker(\phi)$. Двойственно $\CoKer(\Ker(\CoKer(\phi))) = \\CoKer(\phi)$.
+                Для всякой стрелки $\phi$: $\Ker\Coker\Ker\phi = \Ker\phi$.
             }{
-                Упражнение
-            % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbMCwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxLZXIoXFxwaGkpIl0sWzEsMiwiXFxwaGkiXSxbMywxLCJcXEtlcihcXENvS2VyKFxcS2VyKFxccGhpKSkpIiwyXSxbMSw0XSxbNCwyLCIiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMywwLCIiLDAseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDMsIiIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+            % https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxLZXJcXHBoaSIsMl0sWzAsMiwiXFxwaGkiLDJdLFswLDMsIlxcQ29rZXJcXEtlclxccGhpIl0sWzQsMCwiXFxLZXJcXENva2VyXFxLZXJcXHBoaSJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiXFxlcHNfMiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiXFxlcHNfMSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
                 \[\begin{tikzcd}[ampersand replacement=\&]
-                      \bullet \& \bullet \& \bullet \\
-                      \bullet \&\& \bullet
-                      \arrow["{\Ker(\phi)}", from=1-1, to=1-2]
-                      \arrow["\phi", from=1-2, to=1-3]
-                      \arrow["{\Ker(\CoKer(\Ker(\phi)))}"', from=2-1, to=1-2]
-                      \arrow[from=1-2, to=2-3]
-                      \arrow[dashed, from=2-3, to=1-3]
-                      \arrow[shift right, dashed, from=2-1, to=1-1]
-                      \arrow[shift right, dashed, from=1-1, to=2-1]
+                      \bullet \& \bullet \\
+                      \bullet \\
+                      \bullet \& \bullet
+                      \arrow["\Ker\phi"', from=1-1, to=2-1]
+                      \arrow["\phi"', from=2-1, to=3-1]
+                      \arrow["\Coker\Ker\phi", from=2-1, to=3-2]
+                      \arrow["\Ker\Coker\Ker\phi", from=1-2, to=2-1]
+                      \arrow["\eta", dashed, from=3-2, to=3-1]
+                      \arrow["{\eps_2}"', shift right, dashed, from=1-1, to=1-2]
+                      \arrow["{\eps_1}"', shift right, dashed, from=1-2, to=1-1]
                 \end{tikzcd}\]
+                \numbers{
+                    \item Разместим на диаграмме стрелки $\phi, \Ker\phi, \Coker\Ker\phi$ и $\Ker\Coker\Ker\phi$.
+                    \item $\phi \cdot \Ker\phi = 0$, значит, $\phi$ пропускается через $\Coker\Ker\phi$: $\exists! \eta$.
+                    \item $\Coker\Ker\phi\cdot\Ker\Coker\Ker\phi = 0$, тогда и $\eta \cdot \Coker\Ker \phi\cdot \Ker\Coker\Ker \phi = 0$, то есть ${\phi \cdot \Ker\Coker\Ker \phi = 0}$.
+                    А значит, $\Ker\Coker\Ker\phi$ пропускается через $\Ker\phi$: $\exists! \eps_1$.
+                    \item $\Coker\Ker\phi\cdot \Ker\phi = 0$, тогда и $\Ker\phi$ пропускается через $\Ker\Coker\Ker\phi$: $\exists!\eps_2$.
+                    \item $\Ker\phi\cdot\eps_1 = \Ker\Coker\Ker\phi \then \Ker \phi \cdot\eps_1 \cdot\eps_2 = \Ker\phi$, и так как ядра определены с точностью до единственного изоморфизма, то $\eps_1\cdot\eps_2 = \id$.
+                    \item    Аналогично $\eps_2\cdot\eps_1 = \id$\qedhere
+                }
             }
-        % https://q.uiver.app/#q=WzAsNSxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwwLCJcXGJ1bGxldCJdLFs0LDAsIlxcYnVsbGV0Il0sWzAsMSwiQ0tcXHBoaSIsMix7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsyLDAsIktDS1xccGhpIiwyXSxbMywwLCJLXFxwaGkiXSxbMCw0LCJcXHBoaSJdLFszLDIsIlxcdmFyZXBzaWxvbl8yIiwwLHsib2Zmc2V0IjotMX1dLFsyLDMsIlxcdmFyZXBzaWxvbl8xIiwwLHsib2Zmc2V0IjotMX1dLFsxLDQsIlxcZXRhIiwyXV0=
-            \[\begin{tikzcd}[ampersand replacement=\&]
-                  \bullet \&\& \bullet \&\& \bullet \\
-                  \bullet \&\&\&\& \bullet
-                  \arrow["CK\phi"', from=1-3, to=2-5]
-                  \arrow["KCK\phi"', from=2-1, to=1-3]
-                  \arrow["K\phi", from=1-1, to=1-3]
-                  \arrow["\phi", from=1-3, to=1-5]
-                  \arrow["{\varepsilon_2}", shift left, from=1-1, to=2-1]
-                  \arrow["{\varepsilon_1}", shift left, from=2-1, to=1-1]
-                  \arrow["\eta"', from=2-5, to=1-5]
-            \end{tikzcd}\]
+            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. Положим $\mu \coloneqq \Ker\Coker\phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
 
-            1. Разместим стрелки $\phi, K\phi, CK\phi$ и $KCK\phi$.
-
-            2. $\phi(K\phi) = 0$, так что $\exists! \eta$.
-
-            3. $CK\phi(KCK\phi) = 0$, тогда и $\eta \cdot CK \phi(KCK \phi) = 0$, то есть $\phi (KCK \phi) = 0$.
-
-            4. $\phi (KCK \phi) = 0$, тогда $KCK\phi$ пропускается через $K\phi$: $\exists! \varepsilon_1$.
-
-            5. $CK\phi(K\phi) = 0$, тогда и $K\phi$ пропускается через $KCK\phi$: $\exists!\varepsilon_2$.
-
-            ===========================================
-
-            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. $\mu = KC \phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
-
-        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJCIl0sWzIsMCwiXFxidWxsZXQiXSxbMCwwLCJBIl0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJDXFxwaGkiXSxbMiwwLCJcXHBoaSJdLFsyLDMsIlxcZXhpc3RzIVxcdmFyZXBzaWxvbiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcbXUiLDJdXQ==
+        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJCIl0sWzIsMCwiXFxidWxsZXQiXSxbMCwwLCJBIl0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJcXENva2VyXFxwaGkiXSxbMiwwLCJcXHBoaSJdLFsyLDMsIlxcZXhpc3RzIVxcdmFyZXBzaWxvbiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcbXUiLDJdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
                   A \& B \& \bullet \\
                   \& \bullet
-                  \arrow["C\phi", from=1-2, to=1-3]
+                  \arrow["\Coker\phi", from=1-2, to=1-3]
                   \arrow["\phi", from=1-1, to=1-2]
                   \arrow["{\exists!\varepsilon}"', dashed, from=1-1, to=2-2]
                   \arrow["\mu"', from=2-2, to=1-2]
             \end{tikzcd}\]
+            $\mu$, как ядро стрелки, является мономорфизмом. $\varepsilon$ --- эпи (упражнение).
 
-            $\mu$, как ядро стрелки, является эквалайзером (согласно Wiki), т.е. моно.
-
-            $\varepsilon$ --- эпи (упражнение).
-
-            ===========================================
-
-        % https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIkInIl0sWzAsMSwiQSciXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsyLDEsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFsyLDUsIlxcdmFyZXBzaWxvbiciLDJdLFs1LDEsIlxcbXUnIiwyXSxbMywwLCJcXHZhcmVwc2lsb24iXSxbMCw0LCJcXG11Il0sWzMsMiwiXFxhbHBoYSIsMl0sWzQsMSwiXFxiZXRhIl0sWzQsNiwiQ1xccGhpIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzEsNywiQ1xcbXUnIiwyLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzYsNywiXFxldGEiXSxbMCw1LCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+            Теперь проверим функториальность.
+            Пусть имеются два произвольных эпи-моно разложения двух произвольных стрелок, докажем, что $\exists!\psi$, делающая диаграмму коммутативной.
+% https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIkInIl0sWzAsMSwiQSciXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsyLDEsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFsyLDUsIlxcdmFyZXBzaWxvbiciLDJdLFs1LDEsIlxcbXUnIiwyXSxbMywwLCJcXHZhcmVwc2lsb24iXSxbMCw0LCJcXG11Il0sWzMsMiwiXFxhbHBoYSIsMl0sWzQsMSwiXFxiZXRhIl0sWzQsNiwiXFxDb2tlclxccGhpIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzEsNywiXFxDb2tlclxcbXUnIiwyLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzYsNywiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCJcXGV4aXN0cyFcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFszLDQsIlxccGhpIiwwLHsiY3VydmUiOi0zfV0sWzIsMSwiXFxwaGknIiwyLHsiY3VydmUiOjN9XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
                   A \&\& \bullet \&\& B \& \bullet \\
                   {A'} \&\& \bullet \&\& {B'} \& \bullet
@@ -4969,21 +4956,42 @@
                   \arrow["\mu", from=1-3, to=1-5]
                   \arrow["\alpha"', from=1-1, to=2-1]
                   \arrow["\beta", from=1-5, to=2-5]
-                  \arrow["C\phi"{pos=0.4}, from=1-5, to=1-6]
-                  \arrow["{C\mu'}"'{pos=0.4}, from=2-5, to=2-6]
-                  \arrow["\eta", from=1-6, to=2-6]
-                  \arrow["\psi", dashed, from=1-3, to=2-3]
+                  \arrow["\Coker\phi"{pos=0.4}, from=1-5, to=1-6]
+                  \arrow["{\Coker\mu'}"'{pos=0.4}, from=2-5, to=2-6]
+                  \arrow["\eta", dashed, from=1-6, to=2-6]
+                  \arrow["{\exists!\psi}", dotted, from=1-3, to=2-3]
+                  \arrow["\phi", curve={height=-18pt}, from=1-1, to=1-5]
+                  \arrow["{\phi'}"', curve={height=18pt}, from=2-1, to=2-5]
             \end{tikzcd}\]
-
-            1. $A\rightarrow A'\rightarrow\cdot\rightarrow B'\rightarrow\cdot = 0$, так как последние две стрелки --- уже ноль.
-
-            2. Тогда $(C\mu' \cdot\beta)\phi = 0$, тогда $C\phi \cdot \beta$ пропускается (единственным образом) через $C\phi$ --- получаем $\eta$.
-
-            3. $C\mu' \cdot \mu' = 0 \Rightarrow \mu' = KC \mu'$ (это надо ещё осознать)
-
-            4. $\varepsilon$ --- эпи, $0\varepsilon = (C\phi \cdot \mu)\varepsilon \Rightarrow 0 = C\phi \cdot \mu$.
-
-            5. Тогда $\eta \cdot C\phi\cdot \mu = 0$, т.е. $C\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $KC\mu' = \mu'$ --- получается $\psi$.
+        \numbers{
+            \item $\Coker\mu'\cdot\mu'\cdot\eps'\cdot\alpha = 0$, так как уже $\Coker\mu'\cdot\mu' = 0$.
+            Значит, $\Coker\mu' \cdot\beta\cdot\phi = 0$, тогда $\Coker\mu' \cdot \beta$ пропускается (единственным образом) через $\Coker\phi$ --- получаем $\eta$.
+            \item $\Coker\mu' \cdot \mu' = 0 \then \mu' = \Ker\Coker \mu'$ (почему?)
+            \item $\eps$ --- эпи, $0\cdot\eps = (\Coker\phi \cdot \mu)\cdot \eps \then 0 = \Coker\phi \cdot \mu$.
+            \item Тогда $\eta \cdot \Coker\phi\cdot \mu = 0$, т.е. $\Coker\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\Ker\Coker\mu' = \mu'$ --- получается $\psi$.
+        }
+        }
+    }
+    \fact{
+        Функториальность, заявленная в~(\cref{epi-mono}), в частности говорит, что такое разложение стрелки единственно с точностью до единственного изоморфизма.
+        \provehere{
+            Пусть $\phi = \mu\eps = \mu'\eps'$ для разных мономорфизмов $\mu, \mu'$ и эпиморфизмов $\eps, \eps'$.
+        % https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiQyJdLFswLDEsIkEnIl0sWzEsMSwiQyciXSxbMiwwLCJCIl0sWzIsMSwiQiJdLFswLDEsIlxcZXBzIl0sWzIsMywiXFxlcHMnIiwyXSxbMCwyLCJcXGlkX0EiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbMyw1LCJcXG11JyIsMl0sWzEsNCwiXFxtdSJdLFs0LDUsIlxcaWRfQiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcZXhpc3RzIVxccHNpIiwwLHsib2Zmc2V0IjotMiwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMSwiXFxleGlzdHMhXFxwaGkiLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  A \& C \& B \\
+                  {A'} \& {C'} \& B
+                  \arrow["\eps", from=1-1, to=1-2]
+                  \arrow["{\eps'}"', from=2-1, to=2-2]
+                  \arrow["{\id_A}"', tail reversed, from=1-1, to=2-1]
+                  \arrow["{\mu'}"', from=2-2, to=2-3]
+                  \arrow["\mu", from=1-2, to=1-3]
+                  \arrow["{\id_B}", tail reversed, from=1-3, to=2-3]
+                  \arrow["{\exists!\psi}", shift left=2, dashed, from=1-2, to=2-2]
+                  \arrow["{\exists!\phi}", shift left=2, dashed, from=2-2, to=1-2]
+            \end{tikzcd}\]
+            Согласно функториальности, найдутся $\phi$ и $\psi$, такие, что диаграмма выше коммутативна.
+            Но тогда $\phi\psi = \id_C$, так как они оба удовлетворяют универсальному свойству~(\cref{epi-mono}): по отношению к двум одинаковым разложениям $\phi = \eps\mu$.
+            Аналогично $\psi\phi = \id_{C'}$.
         }
     }
 \end{document}
