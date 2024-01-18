@@ -2848,7 +2848,7 @@
     }
 
     \subsection{Закон взаимности Фробениуса}
-    Пусть $H \le G$, $\pi: H \map GL(U). \rho: G \map GL(V)$ --- неприводимые представления.
+    Пусть $H \le G$, $\pi: H \map GL(U)$, $\rho: G \map GL(V)$ --- неприводимые представления.
 
     Рассмотрим $\pi^G \coloneqq \induced^G_H(\pi)$ и $\rho_H \coloneqq \restricted_H^G(\rho)$.
     Закон взаимности Фробениуса говорит, что $\pi^G$ содержит $\rho$ с той же кратностью, что $\rho_H$ содержит $\pi$.
@@ -2903,17 +2903,17 @@
     \corollary{
         Имеет место естественный изоморфизм $\Hom_R(M, \phi^{\#}(N)) \cong \Hom_A(\phi_{\#}(M), N)$.
 
-        В теории категорий такие два функтора $\phi^{\#}$ и $\phi_{\#}$ называются сопряжёнными.
+        В теории категорий такие два функтора $\phi^{\#}$ и $\phi_{\#}$ называются \emph{сопряжёнными}.
     }
 
     \theorem[Закон взаимности Фробениуса]{
         Предположим, что $H \le G$, $\chr(F) = 0$ (на самом деле достаточно $\chr(F)\notdivs|G|$), $F$ алгебраически замкнуто.
         Пусть даны два представления $\pi: H \map GL(V)$, $\rho: G \map GL(U)$.
 
-        Тогда $\text{Mor}(\induced^G_H(\pi), \rho) \cong \text{Mor}(\pi, \restricted^G_H\rho)$.
+        Тогда $\Mor(\induced^G_H(\pi), \rho) \cong \Mor(\pi, \restricted^G_H\rho)$.
 
         Отсюда следует $B_H(\chi_\pi, \chi_{\restricted_H^G\rho}) = B_G(\chi_{\induced_H^G \pi}, \chi_\rho)$. Обычно пишут $B_H(\chi_\pi, {\restricted_H^G\chi_\rho}) = B_G(\induced_H^G \pi_\chi, \chi_\rho)$
-        \provehere[Доказательство закона взаимности Фробениуса]{
+        \provehere{
             Рассмотрим следующую ситуацию.
 
             Пусть $\phi: H \hookrightarrow G$ --- вложение.
@@ -3957,7 +3957,7 @@
         $\forall B \in \cat{B}, C \in \cat{C}$: существует биекция между множествами морфизмов $\Mor_{\cat{C}}(C, \cat{F}(B))$ и $\Mor_{\cat{B}}(\cat{G}(C), B)$, причём биекция --- естественна и по $B$, и по $C$.
         То есть имеется естественная биекция между функторами $\cat{C}^{\text{op}} \times \cat{B} \map \cat{Set}$.
 
-        Чтобы понять, какой функтор левый сопряжённый, а какой --- правый, надо посмотреть на то, где они стоят внутри $\Mor$.
+        Чтобы понять, какой функтор левый сопряжённый, а какой --- правый, надо посмотреть на то, где они стоят внутри $\Mor$. Иногда пишут $\cat G \dashv \cat F$
     }
     Далее мы проверим, что инициальные объекты в категории $X \downarrow \cat{F}$ имеют самое непосредственное отношение к сопряжённым функторам.
     \newlection{30 ноября 2023 г.}
@@ -4101,7 +4101,7 @@
                                    \&\& {\cat C}
                                    \arrow[""{name=0, anchor=center, inner sep=0}, "{\cat F}", curve={height=-12pt}, from=1-1, to=1-3]
                                    \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G}"', curve={height=12pt}, tail reversed, no head, from=1-1, to=1-3]
-                                   \arrow["\eta", "\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+                                   \arrow["\eta", "\dashv"{anchor=center, rotate=90}, draw=none, from=0, to=1]
     \end{tikzcd}$ ($\eta$ --- естественное преобразование $\Mor_\catC(\_, \cat F(\_)) \cong \Mor_{\catB}(\cat G(\_), \_)$), и для любого $X \in \cat C$, категория запятой $(X \downarrow \cat F)$ имеет инициальный объект, причём он равен $(\cat G(X), f_X)$, где $f_X$ ---   единица сопряжения.
     \provehere{
         Рассмотрим какой-нибудь другой объект $(Y, f) \in (X \downarrow \cat F)$ (иными словами $Y \in \cat B, f \in \Mor_\catC(X, \cat F(Y))$).
@@ -4187,8 +4187,8 @@
                   \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G_1}", curve={height=-12pt}, from=1-2, to=1-1]
                   \arrow[""{name=2, anchor=center, inner sep=0}, "{\cat G_2}"', curve={height=12pt}, tail reversed, no head, from=1-2, to=1-3]
                   \arrow[""{name=3, anchor=center, inner sep=0}, "{\cat F_2}", curve={height=-12pt}, from=1-2, to=1-3]
-                  \arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
-                  \arrow["\dashv"{anchor=center, rotate=-90}, draw=none, from=3, to=2]
+                  \arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=0, to=1]
+                  \arrow["\dashv"{anchor=center, rotate=90}, draw=none, from=3, to=2]
             \end{tikzcd}\]
             Иными словами, чтобы построить свободную алгебру на множестве $S$, можно сначала построить свободный моноид $F_S$, а потом на нём ввести структуру полугрупповой алгебры $R[F_S]$.
         }
@@ -4454,7 +4454,7 @@
                                             \&\& {\cat C}
                                             \arrow[""{name=0, anchor=center, inner sep=0}, "{\cat F}", curve={height=-12pt}, from=1-1, to=1-3]
                                             \arrow[""{name=1, anchor=center, inner sep=0}, "{\cat G}"', curve={height=12pt}, tail reversed, no head, from=1-1, to=1-3]
-                                            \arrow["\eta", "\dashv"{anchor=center, rotate=-90}, draw=none, from=0, to=1]
+                                            \arrow["\eta", "\dashv"{anchor=center, rotate=90}, draw=none, from=0, to=1]
     \end{tikzcd}$.
 
     Пусть $\cat H: \cat J \map \cat B$. Тогда правый сопряжённый сохраняет пределы: $\cat F\left(\varprojlim \cat H\right) = \varprojlim \cat F \cat H$.
