@@ -4498,8 +4498,9 @@
                   \arrow["{f_{\cat H(Y)}}", from=2-2, to=2-3]
                   \arrow["{\cat H(\phi)}", from=1-3, to=2-3]
             \end{tikzcd}\]
-            Осталось проверить, что $f_{\cat H(X)} \cdot \cat G(\eta_X) = \theta_X$, то есть $\theta$ --- действительно естественное преобразование.
-            И ещё композиция $\eta_X \rightsquigarrow \theta_X \rightsquigarrow \eta_X$, и обратно --- тождественна.
+            Определим $\theta_X \coloneqq f_{\cat H(X)} \cdot \cat G(\eta_X)$, диаграмма выше показывает, что это действительно естественное преобразование.
+
+            Осталось проверить, что композиция $\eta_X \rightsquigarrow \theta_X \rightsquigarrow \eta_X$, и обратно --- тождественна.
         }}}
         Ниже в зависимости от аргумента, $\Delta: \cat B \map \Func(\cat J, \cat B)$, или $\Delta: \cat C \map \Func(\cat J, \cat C)$, оно определено выше~(\cref{limits}).
         \multline{\Mor_{\Func}\left(\Delta C, \cat F\circ\cat H\right) \cong \Mor_{\Func}\left(\cat G \Delta C, \cat H\right) \cong \Mor_{\Func}\left(\Delta \cat G(C), \cat H\right) \cong\\\cong \Mor_{\catB}\left(\cat G(C), \varprojlim\cat H\right) \cong \Mor_\catC\left(C, \cat F\left(\varprojlim \cat H\right)\right)}
@@ -4527,20 +4528,20 @@
     }
     \note{
         В случае счётного предела надо добавить условие существования счётного обратного предела, то есть предела вида
-    % https://q.uiver.app/#q=WzAsNyxbMiwxLCJcXGJ1bGxldCJdLFszLDEsIlxcYnVsbGV0Il0sWzQsMSwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFs2LDEsIlxcYnVsbGV0Il0sWzEsMSwiXFxjZG90cyJdLFswLDAsIlxcdmFycHJvamxpbSJdLFswLDFdLFsxLDIsIlxcY2RvdHMiLDFdLFsyLDNdLFszLDRdLFs1LDBdLFs2LDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDMsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDQsIiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+% https://q.uiver.app/#q=WzAsNixbNCwyLCJcXGJ1bGxldCJdLFszLDIsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFswLDIsIlxcY2RvdHMiXSxbMCwwLCJcXHZhcnByb2psaW0iXSxbNCwzXSxbMywyXSxbMiwxXSxbMSwwXSxbNSw0LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDMsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDEsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDAsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               \varprojlim \\
-              \& \cdots \& \bullet \& \bullet \& \bullet \& \bullet \& \bullet
-              \arrow[from=2-3, to=2-4]
-              \arrow["\cdots"{description}, from=2-4, to=2-5]
-              \arrow[from=2-5, to=2-6]
-              \arrow[from=2-6, to=2-7]
-              \arrow[from=2-2, to=2-3]
-              \arrow[dashed, from=1-1, to=2-3]
-              \arrow[dashed, from=1-1, to=2-4]
-              \arrow[dashed, from=1-1, to=2-5]
-              \arrow[dashed, from=1-1, to=2-6]
-              \arrow[dashed, from=1-1, to=2-7]
+              \\
+              \cdots \& \bullet \& \bullet \& \bullet \& \bullet
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow[from=3-4, to=3-5]
+              \arrow[dashed, no head, from=1-1, to=3-1]
+              \arrow[dashed, from=1-1, to=3-2]
+              \arrow[dashed, from=1-1, to=3-3]
+              \arrow[dashed, from=1-1, to=3-4]
+              \arrow[dashed, from=1-1, to=3-5]
         \end{tikzcd}\]
     }
 

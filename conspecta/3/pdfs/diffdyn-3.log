@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  21 JAN 2024 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1069,10 +1069,11 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box71
 )
-(pdfs/diffdyn-3.aux
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
- (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+
+(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `diffdyn-3.aux'.
@@ -1179,7 +1180,8 @@ LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
 LaTeX Info: Redefining \nameref on input line 11.
 
-(pdfs/diffdyn-3.out) (pdfs/diffdyn-3.out)
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.out)
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.out)
 \@outlinefile=\write4
 \openout4 = `diffdyn-3.out'.
 
@@ -1210,7 +1212,8 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 14.
- (pdfs/diffdyn-3.toc
+
+(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1266,14 +1269,22 @@ LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 [13
 
-] [14] [15]
-Overfull \hbox (12.98161pt too wide) in paragraph at lines 507--507
+] [14]
+Overfull \hbox (1.72078pt too wide) in paragraph at lines 506--506
+[]$[]$ \T2A/faq/m/n/10 Для $\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 = 1$\T2A/faq/m/n
+/10 : $\OML/cmm/m/it/10 g$ \T2A/faq/m/n/10 опре-де-ле-на на $\OT1/cmr/m/n/10 [\
+OML/cmm/m/it/10 t[]; t[]\OT1/cmr/m/n/10 ]$\T2A/faq/m/n/10 , как за-пи-са-но вы-
+ше. $[] \OT1/cmr/m/n/10 = [] \U/msa/m/n/10 6
+ []
+
+[15]
+Overfull \hbox (12.98161pt too wide) in paragraph at lines 506--506
 \T2A/faq/m/n/10 Интегрируя по от-рез-ку, чья дли-на огра-ни-че-на, по-лу-ча-ем,
  что весь ин-те-грал $[]$
  []
 
 [16]
-Overfull \hbox (36.0604pt too wide) in paragraph at lines 538--538
+Overfull \hbox (36.0604pt too wide) in paragraph at lines 537--537
 []\T2A/faq/m/n/10 Рассмотрим $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]; x[]\OT1/cm
 r/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 G$\T2A/faq/m/n/10 , най-дут-ся т
 а-кие $\OML/cmm/m/it/10 ; ^^L > \OT1/cmr/m/n/10 0$\T2A/faq/m/n/10 : $\OML/cmm/
@@ -1281,15 +1292,15 @@ m/it/10 R \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^Z
  []
 
 [17] [18] [19]
-Overfull \hbox (2.26564pt too wide) in paragraph at lines 659--659
+Overfull \hbox (5.49562pt too wide) in paragraph at lines 660--660
 []\T2A/faq/bx/n/10 Теорема 2.2.4 \T2A/faq/m/n/10 (О су-ще-ство-ва-нии ре-ше-ния
-. ма-тод сжи-ма-ю-щих отоб-ра-же-ний)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Пусть
+. Ме-тод сжи-ма-ю-щих отоб-ра-же-ний)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Пусть
  $[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; x
 \OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; f \OMS/cmsy/m/n/10 2
  []
 
 
-Overfull \hbox (24.49275pt too wide) in paragraph at lines 659--659
+Overfull \hbox (24.49275pt too wide) in paragraph at lines 660--660
 \OML/cmm/m/it/10 C\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )\OML/cmm/
 m/it/10 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$\T2A/faq/m/n
 /10 , $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]; x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/
@@ -1298,32 +1309,32 @@ n/10 2 \OML/cmm/m/it/10 G$\T2A/faq/m/n/10 . Бе-рјм тот же са-мый па-рал-ле-ле-п
  []
 
 
-Overfull \hbox (4.10228pt too wide) in paragraph at lines 659--659
+Overfull \hbox (4.10228pt too wide) in paragraph at lines 660--660
 []\T2A/faq/m/n/10 Рассмотрим про-стран-ство $\OML/cmm/m/it/10 X \OT1/cmr/m/n/10
  = []$\T2A/faq/m/n/10 . Вве-
  []
 
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 10.0pt on input line 659.
+(Font)              scaled to size 10.0pt on input line 660.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 7.0pt on input line 659.
+(Font)              scaled to size 7.0pt on input line 660.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 5.0pt on input line 659.
+(Font)              scaled to size 5.0pt on input line 660.
 [20]
-Overfull \hbox (1.43303pt too wide) in paragraph at lines 711--711
+Overfull \hbox (1.43303pt too wide) in paragraph at lines 712--712
 []$\OML/cmm/m/it/10 T \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 . По-ло-жим $\OML/cm
 m/m/it/10 A \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 a$\T2A/faq/m/n/10 ;
  []
 
 [21] [22] [23]
-Overfull \hbox (16.07932pt too wide) in paragraph at lines 854--854
+Overfull \hbox (16.07932pt too wide) in paragraph at lines 855--855
 []\T2A/faq/bx/n/10 Предложение 2.4.1 \T2A/faq/m/n/10 (Об ове-ществ-ле-нии фун-д
 а-мен-таль-ной мат-ри-цы)\T2A/faq/bx/n/10 . []\T2A/faq/m/it/10 Пусть $\OT1/cmr/
 m/n/10 ^^H(\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = []$
  []
 
 [24]
-Overfull \hbox (2.08994pt too wide) in paragraph at lines 873--875
+Overfull \hbox (2.08994pt too wide) in paragraph at lines 874--876
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10
  M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 C\OT1/cmr/m/n/10 )$\T2A/fa
 q/m/n/10 . Рас-смот-рим пол-ное мет-ри-че-ское про-стран-ство $\OML/cmm/m/it/10
@@ -1334,10 +1345,10 @@ aq/m/n/10 с рас-сто-я-ни-ем $\OML/cmm/m/it/10 ^^Z\OT1/cmr/m/n/10 (\OML/cmm/m/it
 
 [25]
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 9
-13.
+14.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [26] [27]
 [28] [29]
-Overfull \hbox (19.8176pt too wide) in paragraph at lines 1111--1111
+Overfull \hbox (19.8176pt too wide) in paragraph at lines 1113--1113
 []\T2A/faq/bx/n/10 Теорема 2.9.1 \T2A/faq/m/n/10 (Фор-му-ла Остро-град-ско-го -
 -- Ли-увил-ля (фор-му-ла Яко-би))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 То-гда $[
 ]\OML/cmm/m/it/10 W\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [](\O
@@ -1351,7 +1362,7 @@ ML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))\OML/cmm/m
 [33
 
 ]
-Overfull \hbox (54.3531pt too wide) in paragraph at lines 1171--1173
+Overfull \hbox (54.3531pt too wide) in paragraph at lines 1173--1175
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; x[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 t\OT1/cmr/m/n/10 )$ \T2A/faq/m/n/10 --- ре-ше-ния. Со-по-ста-вим им врон-ски-ан
@@ -1361,7 +1372,7 @@ t\OT1/cmr/m/n/10 )$ \T2A/faq/m/n/10 --- ре-ше-ния. Со-по-ста-вим им врон-ски-ан
  []
 
 
-Overfull \hbox (15.29962pt too wide) in paragraph at lines 1174--1176
+Overfull \hbox (15.29962pt too wide) in paragraph at lines 1176--1178
 \T2A/faq/m/n/10 нент вектора-решения $\OML/cmm/m/it/10 y[]; [] ; y[]$\T2A/faq/m
 /n/10 , по-лу-чен-ных из ре-ше-ний $\OML/cmm/m/it/10 x[]; [] ; x[]$\T2A/faq/m/n
 /10 : $\OML/cmm/m/it/10 W\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; y[]; [] ; y[]\OT1
@@ -1372,7 +1383,7 @@ Overfull \hbox (15.29962pt too wide) in paragraph at lines 1174--1176
 [34] [35]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
 
-Overfull \hbox (13.30063pt too wide) in paragraph at lines 1237--1237
+Overfull \hbox (13.30063pt too wide) in paragraph at lines 1239--1239
 []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t
 []\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 x[]; y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 ^^\[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 y[]; t[]; ^^\[] \OMS/cmsy/m/n/10 2 \O
@@ -1386,7 +1397,7 @@ mr/m/n/10 (\OML/cmm/m/it/10 t; x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n
 [36
 
 ]
-Overfull \hbox (7.87567pt too wide) in paragraph at lines 1282--1282
+Overfull \hbox (7.87567pt too wide) in paragraph at lines 1284--1284
 []\T2A/faq/m/n/10 Определим $\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 t\OT1/cmr/m/n/10 ) [][]= \OMS/cmsy/m/n/10 j [] ^^@ [] j$\T2A/faq/m/n/10 . До-
 ка-жем, что $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 (\OML/cmm/m/it
@@ -1395,7 +1406,7 @@ Overfull \hbox (7.87567pt too wide) in paragraph at lines 1282--1282
  []
 
 [37] [38] [39]
-Overfull \hbox (35.505pt too wide) in paragraph at lines 1375--1376
+Overfull \hbox (35.505pt too wide) in paragraph at lines 1377--1378
 []\T2A/faq/m/n/10 Фиксируем $\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 t; ^^\; ^^X; ^^V[]\OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 , и за-да-јм-ся во-про-со
 м о су-ще-ство-ва-нии $\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT
@@ -1407,7 +1418,7 @@ Overfull \hbox (35.505pt too wide) in paragraph at lines 1375--1376
 [45
 
 ] [46]
-Overfull \hbox (49.50716pt too wide) in paragraph at lines 1751--1751
+Overfull \hbox (49.50716pt too wide) in paragraph at lines 1753--1753
 \T2A/faq/m/n/10 У си-сте-мы есть сим-мет-рии: ре-ше-нию $\OT1/cmr/m/n/10 (\OML/
 cmm/m/it/10 x\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/
 10 ; y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))$ \T2A/faq/m/n/10 со
@@ -1428,7 +1439,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[48] [49] (pdfs/diffdyn-3.aux)
+[48] [49] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1439,10 +1450,10 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: F675163D86D9065F2A4198C5D66AF36F;14869.
  ) 
 Here is how much of TeX's memory you used:
- 30622 strings out of 479648
- 581940 string characters out of 5886115
- 958524 words of memory out of 5000000
- 47839 multiletter control sequences out of 15000+600000
+ 30624 strings out of 479648
+ 582510 string characters out of 5886115
+ 958628 words of memory out of 5000000
+ 47841 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,737b,862s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1467,7 +1478,8 @@ ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/boondox/zxxrw8a.pfb>
-Output written on pdfs/diffdyn-3.pdf (50 pages, 479732 bytes).
+Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
+ (50 pages, 480246 bytes).
 PDF statistics:
  728 PDF objects out of 1000 (max. 8388607)
  625 compressed objects within 7 object streams

@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {2.1}Системы, разрешённые относительно старших производных}{13}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Векторная запись нормальной системы}{14}{subsection.2.1.1}%
 \contentsline {section}{\numberline {2.2}Существование и единственность решения задачи Коши}{14}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Теорема Пеано о существовании решения}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.1}Теорема Пеано о существовании решения}{15}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Теорема Пикара о существовании и единственности решения}{17}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Теорема о существовании и единственности решения методом сжимающих отображений}{20}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Продолжимость решений}{21}{section.2.3}%
