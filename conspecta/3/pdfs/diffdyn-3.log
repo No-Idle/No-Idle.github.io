@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 12:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1308,12 +1308,6 @@ n/10 2 \OML/cmm/m/it/10 G$\T2A/faq/m/n/10 . Бе-рјм тот же са-мый па-рал-ле-ле-п
 и-пед $\OML/cmm/m/it/10 R \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 ,
  []
 
-
-Overfull \hbox (4.10228pt too wide) in paragraph at lines 660--660
-[]\T2A/faq/m/n/10 Рассмотрим про-стран-ство $\OML/cmm/m/it/10 X \OT1/cmr/m/n/10
- = []$\T2A/faq/m/n/10 . Вве-
- []
-
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 10.0pt on input line 660.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
@@ -1479,7 +1473,7 @@ t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/boondox/zxxrw8a.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (50 pages, 480168 bytes).
+ (50 pages, 480156 bytes).
 PDF statistics:
  728 PDF objects out of 1000 (max. 8388607)
  625 compressed objects within 7 object streams

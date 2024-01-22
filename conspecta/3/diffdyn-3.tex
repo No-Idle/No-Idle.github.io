@@ -532,7 +532,7 @@
             Пусть $V = \Int R$, $L = \max\limits_{(t, x) \in R}\left\|\left(\der{f_i}{x_j}\right)\right\|$.
 
             Тогда для $(t, x_1), (t, x_2) \in V$ можно рассмотреть $g(s) = f(t, s x_1 + (1 - s)x_2), s \in [0, 1]$.
-            \[|g(1) - g(0)| = \abs{\int\limits_{0}^{1}\der{g}{s}\d s} = \abs{\int\limits_{0}^{1}\der{f}{x}(t, s x_1 + (1 - s)x_2)\d s} \le L\abs{x_1 - x_2}\]
+            \[|g(1) - g(0)| = \abs{\int\limits_{0}^{1}\der{g}{s}\d s} = \abs{\int\limits_{0}^{1}\der{f}{x}(t, s x_1 + (1 - s)x_2)\d s}\abs{x_1 - x_2} \le L\abs{x_1 - x_2}\]
         }
     }
     Пусть $f \in C(G), \Lip_{x,loc}(G)$, пусть $K \subset G$ --- компакт.
@@ -600,7 +600,7 @@
 
             \underline{База:} $|\psi_1(t)| = |\phi_1(t) - \phi_0(t)| = \abs{\int\limits_{t_0}^{t}f(s, x_0)\d s} \le M(t - t_0) = \frac{M}{L}\frac{L(t - t_0)}{1}$
 
-            \underline{Переход:}\up \multline{|\psi_{k + 1}(t)| = |\phi_{k + 1}(t) - \phi_k(t)| = \abs{\int\limits_{t_0}^{t}\left[f(s, \phi_{k + 1}(s)) - f(s, \phi_k(s))\right]\d s} \le\\\le \int\limits_{t_0}^{t}|f(s, \phi_{k + 1}(s)) - f(s, \phi_k(s))|\d s \le L\int\limits_{t_0}^{t}|\phi_k(s) - \phi_{k - 1}(s)|\d s}
+            \underline{Переход:}\up \multline{|\psi_{k + 1}(t)| = |\phi_{k + 1}(t) - \phi_k(t)| = \abs{\int\limits_{t_0}^{t}\left[f(s, \phi_{k}(s)) - f(s, \phi_{k-1}(s))\right]\d s} \le\\\le \int\limits_{t_0}^{t}|f(s, \phi_{k}(s)) - f(s, \phi_{k-1}(s))|\d s \le L\int\limits_{t_0}^{t}|\phi_k(s) - \phi_{k - 1}(s)|\d s}
             Воспользовавшись индукционным предположением, получаем
             \[|\psi_{k + 1}(t)| \le L\int\limits_{t_0}^{t}\frac{M}{L}\frac{L^k(s - t_0)^k}{k!}\d s = \frac{M}{L}\cdot L^{k+1}\int\limits_{0}^{t - t_0}\frac{s^k}{k!}\d s = \frac{M}{L}\frac{L^{k + 1}(t - t_0)^{k + 1}}{(k + 1)!}\]
         }
@@ -641,7 +641,7 @@
 
     Докажем существование решения на промежутке $[t_0 - h, t_0 + h]$.
 
-    Рассмотрим пространство $X = \defset{\phi \in C^1([t_0 - h, t_0 + h] \map \R)}{\forall t \in [t_0 - h, t_0 + h]: (t, \phi(t)) \in R}$.
+    Рассмотрим пространство $X = \defset{\phi \in C^1\left([t_0 - h, t_0 + h] \map \R^n\right)}{\forall t \in [t_0 - h, t_0 + h]: (t, \phi(t)) \in R}$.
     Введём на $X$ метрику $\rho(\phi_1, \phi_2) = \max\limits_{t \in [t_0 - h, t_0 + h]}|\phi_1(t) - \phi_2(t)|$.
     \intfact{Данная метрика превращает $X$ в полное метрическое пространство.}
 
@@ -940,7 +940,7 @@
     Тогда $e^{Jt} = \text{diag}\left(e^{\lambda_1 t}, \dots, e^{\lambda_n t}\right)$.
 
     Жорданова форма была взята из сопряжения $S^{-1} A S = J \iff A S = SJ$.
-    Обозначив $S = \vect{\gamma_1 & \dots & \gamma_n}$, получаем $A\vect(\gamma_1, \dots, \gamma_n) = (\gamma_1, \dots, \gamma_n)\text{diag}(\lambda_1, \dots, \lambda_n)$
+    Обозначив $S = \vect{\gamma_1 & \dots & \gamma_n}$, получаем $A(\gamma_1, \dots, \gamma_n) = (\gamma_1, \dots, \gamma_n)\text{diag}(\lambda_1, \dots, \lambda_n)$
 
     Таким образом, столбцы матрицы $S$ --- в точности собственные векторы, получаемые в методе Эйлера.
     \subsection{Оценка фундаментальной матрицы}
