@@ -38,9 +38,9 @@
 \contentsline {subsection}{\numberline {4.3.1}Кратные степенные ряды}{42}{subsection.4.3.1}%
 \contentsline {subsubsection}{Многомерное суммирование}{42}{section*.3}%
 \contentsline {subsubsection}{Многомерные степенные ряды}{43}{section*.4}%
-\contentsline {chapter}{\numberline {5}Автономные системы}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Виды траекторий}{45}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Точка покоя}{45}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Замкнутая траектория}{45}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Обыкновенная траектория}{46}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Классификация Пуанкаре}{46}{section.5.2}%
+\contentsline {chapter}{\numberline {5}Автономные системы}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Виды траекторий}{47}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Точка покоя}{47}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Замкнутая траектория}{47}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Обыкновенная траектория}{48}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Классификация Пуанкаре}{48}{section.5.2}%
