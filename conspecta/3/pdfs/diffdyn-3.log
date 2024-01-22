@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 21:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,10 +1451,10 @@ Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: F675163D86D9065F2A4198C5D66AF36F;14869.
  ) 
 Here is how much of TeX's memory you used:
- 30627 strings out of 479648
- 582541 string characters out of 5886115
- 958811 words of memory out of 5000000
- 47841 multiletter control sequences out of 15000+600000
+ 30629 strings out of 479648
+ 582578 string characters out of 5886115
+ 958890 words of memory out of 5000000
+ 47843 multiletter control sequences out of 15000+600000
  505365 words of font info for 92 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,737b,862s stack positions out of 5000i,500n,10000p,200000b,80000s
