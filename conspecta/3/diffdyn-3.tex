@@ -247,7 +247,7 @@
         \item Заметим, что если $y_1(x)$ --- решение неоднородного уравнения ($y'(x) = p(x)y + q(x)$), $y_2(x)$ --- решение соответствующего однородного ($y'(x) = p(x)y$), то $y_1 + y_2$ --- тоже решение данного неоднородного уранвения.
 
         Получаем довольно громоздкую формулу для решения задачи Коши
-        \[y(x) = \exp\left(\int\limits_{x_0}^{x}p(t)\d t\right)\cdot \left(y_0 + \int\limits_{x_0}^{x}q(t)\exp\left(\int\limits_{x_0}^{x}p(s)\d s\right)\d t\right)\]
+        \[y(x) = \exp\left(\int\limits_{x_0}^{x}p(t)\d t\right)\cdot \left(y_0 + \int\limits_{x_0}^{x}q(t)\exp\left(-\int\limits_{x_0}^{x}p(s)\d s\right)\d t\right)\]
     }
 
 
@@ -322,7 +322,7 @@
 
             Рассмотрим уравнение $\frac{\d y}{\d x} = -\frac{m}{n}$ в $V$.
             Действительно, $U \in C^1$, частная производная по $y$ не обнуляется, осталось проверить, что на неком промежутке $(a, b)$ интеграл от решения постоянен.
-            \[\frac{\d}{\d y}U(x, y(x)) = \der{U}{x}(x, y(x)) + \der{U}{y}(x, y(x)) \cdot y'(x) = m + n \frac{\d y}{\d x} = m + n \cdot \left(-\frac{m}{n}\right) \equiv 0\]
+            \[\frac{\d}{\d x}U(x, y(x)) = \der{U}{x}(x, y(x)) + \der{U}{y}(x, y(x)) \cdot y'(x) = m + n \frac{\d y}{\d x} = m + n \cdot \left(-\frac{m}{n}\right) \equiv 0\]
         }
     }
     Это очень удобно, но как проверять, что форма точная?
@@ -418,7 +418,7 @@
         Функция $x(t)$ --- решение задачи Коши с начальными данными $(t_0, x_0)$, если и только если $\dot{x}(t)$ --- решение эквивалентного интегрального уравнения.
         \provetwhen{
             $(1) \then (1), (2) \then (2)$, (3) доказывается интегрированием $\dot{x} = f(t, x)$ на промежутке $\angles{t_0, t}$.
-            Слева получается $x(t) - x(0)$, справа $\int\limits_{t_0}^{t}f(t, x(t))\d t$.
+            Слева получается $x(t) - x(0)$, справа $\int\limits_{t_0}^{t}f(s, x(s))\d s$.
         }{
             $f(t, x(t)) \in C \then \exists \frac{\d}{\d t}\int\limits_{t_0}^{t} f(s, x(s))\d s$.
             $(2) \then (2)$, (3) получается дифференцированием равенства $\frac{\d}{\d t}\left(x_0 + \int\limits_{t_0}^{t}f(s, x(s))\d s\right) = f(t, x(t))$.
@@ -1207,7 +1207,7 @@
     По формуле Остроградского --- Лиувилля $\frac{\d W}{\d t} = \tr P(t) W$.
 
     Применяя формулу к уравнению $x^{(n)} + p_1(t)x^{(n - 1)} + \dots + p_n(t)x = 0$, видим, что матрица уравнения --- это
-    \[\vect{ & 1 & \dots & 0 \\ && \ddots & \\ &0&&1 \\ -p_n &\cdots &\cdots & -p_1 }\]
+    \[\vect{0 & 1 & \dots & 0 \\\vdots && \ddots & \\0 &0&&1 \\ -p_n &\cdots &\cdots & -p_1 }\]
 Таким образом, $\frac{\d W}{\d t} = -p_1 W$.
     \chapter{Зависимость решений от начальных данных и параметров}
     Рассмотрим уравнение $\dot{x} = f(t, x, \mu)$, где $x \in \R^n, \mu \in \R^m$, $\mu$ --- какой-то параметр.
@@ -1267,13 +1267,13 @@
     \item Определим $y(t) \coloneqq |\underbrace{x(t,\tau,\xi,\mu)}_{x(t)} - \underbrace{x(t,\tau_0,\xi_0,\mu_0)}_{x_0(t)}|$.
         Докажем, что $|y(t)| < \eps$ для ${t \in [a, b] \cap I(\tau,\xi,\mu)}$.
 
-        $|y(\tau)| = \abs{x(\tau) - x_0 - \int\limits_{\tau_0}^{\tau}f(s,x_0(s),\mu_0)\d s} \le |\xi - \xi_0| + \abs{\int\limits_{\tau_0}^{\tau}f(s,x_0(s),\mu_0)\d s} < \delta + N \delta < \eps$.
+        $|y(\tau)| = \abs{x(\tau) - \xi_0 - \int\limits_{\tau_0}^{\tau}f(s,x_0(s),\mu_0)\d s} \le |\xi - \xi_0| + \abs{\int\limits_{\tau_0}^{\tau}f(s,x_0(s),\mu_0)\d s} < \delta + N \delta < \eps$.
         Таким образом $(\tau, x(\tau)) \in R_0$.
 
     От противного: пусть не всегда $|y(t)| < \eps$. Выберем первый момент $t' \in [a, b] \cap I(\tau,\xi,\mu)$, когда $|y(t)|$ стал равен $\eps$.
     Без потери общности $t' < \tau$.
     \[y(t') = \eps, y(t) < \eps\text{ при }t \in [\tau, t')\]
-    Применим лемму об оценке разности решений $f(t, x, \mu)$ и $f(t, x, \mu_0)$.
+    Применим лемму об оценке разности решений для функций $f(t, x, \mu)$ и $f(t, x, \mu_0)$.
     \[|y(t)| < \Big(\delta + N\delta + \delta_1(b - a)\Big)\cdot e^{L(b - a)} < \eps\text{, это противоречие.}\]
     \item Покажем, что $I(\tau,\xi,\mu) \supset [a, b]$.
     Согласно теореме о максимальном решении $I(\tau,\xi,\mu) = (\alpha, \beta)$ --- некий интервал.
@@ -1341,7 +1341,7 @@
             Для этого вычтем предполагаемый предел следующим образом:
         рассмотрим решение $\psi(t)$ системы $\dot{y} = \mathcal{F}(t)y$ с начальным условием $\psi(\tau) = e_i$.
 
-        Так как $\dot{g} = \mathcal{F}(t)g + \Gamma$, то $\frac{\dot{g}}{h} = \mathcal{F}(t)\frac{g}{h} + \gamma$, где $|\gamma\| \underset{[a, b]}\rightrightarrows 0$ при $h \to 0$.
+        Так как $\dot{g} = \mathcal{F}(t)g + \Gamma$, то $\frac{\dot{g}}{h} = \mathcal{F}(t)\frac{g}{h} + \gamma$, где $|\gamma| \underset{[a, b]}\rightrightarrows 0$ при $h \to 0$.
         Рассмотрим ещё систему $\dot{\phi}(\tau) = \mathcal{F}(t)\phi + \gamma$ с начальным условием $\phi(\tau) = \frac{1}{h}\underbrace{(\xi_0 + h e_i - \xi_0)}_{g(\tau)} = e_i$.
 
         Итак, у нас есть две системы
@@ -1350,14 +1350,14 @@
         \[\abs{\phi(t) - \psi(t)} = \abs{\int\limits_{\tau}^{t}\mathcal{F}(s)(\phi - \psi)\d s} + \abs{\int\limits_{\tau}^{t}\gamma(s)\d s} \le N\abs{\int\limits_{\tau}^{t}\abs{\phi(s) - \psi(s)}\d s} + \max\limits_{t \in [a, b]}|\gamma(t)|(b - a)\]
         Это условия леммы Гронуолла, откуда $\abs{\phi(t) - \psi(t)} \le \max\limits_{t \in [a, b]}|\gamma(t)| \cdot e^{N(b - a)}$.
 
-        Действительно, мы доказали, что $i$-й столбец $v(t)$ стремится к решения системы в вариациях с начальными данными $e_i$ в точке $\tau$ (да?).
+        Действительно, мы доказали, что $i$-й столбец $v(t)$ стремится к решению системы в вариациях с начальными данными $e_i$ в точке $\tau$ (да?).
     }
     }
     \theorem[О дифференцируемости по $\tau$]{
         Теперь рассматривается решение $x(t, \tau_0, \xi)$ на его максимальном промежутке $I(\tau_0, \xi)$.
 
     Пусть $f, \der{f}{x} \in C(G)$.
-        Система в вариациях чуть-чуть поменялась: $\mathcal{F}(t) \coloneqq f(t, x(t,\tau_0, \xi))$ (вот прямо без производной?) а сама система по-прежнему $\dot{y} = \mathcal{F}(t)y$.
+        Система в вариациях чуть-чуть поменялась: $\mathcal{F}(t) \coloneqq \der{f}{x}(t, x(t,\tau_0, \xi))$ а сама система по-прежнему $\dot{y} = \mathcal{F}(t)y$.
     Утверждается, что \[\exists u(t) \coloneqq \frac{\partial x(t, \tau, \xi)}{\partial \tau}\big|_{\tau = \tau_0}\]
     и она является решением системы в вариациях с начальными данными $u(\tau_0) = -f(\tau_0, \xi)$.
 
@@ -1395,9 +1395,9 @@
     \newlection{1 декабря 2023 г.}
     Рассмотрим систему $\dot{x} = f(t, x, \mu)$, где $x \in \R^n, \mu \in \R^m, f, \der{f}{x}, \der{f}{\mu} \in C(G \times M)$, где $G \subset \R^{n+1}_{t,x}$ --- область, задания самого уравнения, $M \subset \R^m$ --- область парамеров.
 
-    Ранее мы получили $v(t) = \frac{\partial x(t,\tau, \xi, \mu)}{\partial \xi}$, и доказали $\dot{v}(t) = \der{f}{x}(t, x(t, \tau, \xi, \mu), \mu)v$.
+    Ранее мы получили $v(t) = \frac{\partial x(t,\tau, \xi, \mu)}{\partial \xi}$, и доказали $\dot{v}(t) = \der{f}{x}(t, x(t, \tau, \xi, \mu), \mu)\cdot v(t)$.
 
-    Кроме того, для $z(t) = \frac{\partial x(t, \tau, \xi, \mu)}{\partial \mu}$ было получено $\dot{z}(t) = \der{f}{x}(t, x(t, \tau,\xi,\mu),\mu)(t)z + \der{f}{\mu}(t, x(t, \tau, \xi, \mu), \mu)$.
+    Кроме того, для $z(t) = \frac{\partial x(t, \tau, \xi, \mu)}{\partial \mu}$ было получено $\dot{z}(t) = \der{f}{x}(t, x(t, \tau,\xi,\mu),\mu)\cdot z(t) + \der{f}{\mu}(t, x(t, \tau, \xi, \mu), \mu)$.
 
     Обобщим эти результаты: пусть $f = \vect{f_1, \cdots,  f_n}$.
     Для $K = \vect{k_1, \cdots, k_n, k_{n+1}, \cdots, k_{n+m}}$ ($k_i \in \N_0$) введём \[\frac{\partial^K f_i}{\partial (x, \mu)^K} \bydef \frac{\partial^{|K|} f_i}{\partial x_1^{k_1} \cdots \partial x_n^{k_n}\partial \mu_1^{k_{n+1}} \cdots \partial\mu_n^{k_{n+m}}}\]
@@ -1418,14 +1418,14 @@
     \section{Теорема о выпрямлении для неавтономных систем}
     Рассматриваем систему $\dot{x} = f(t, x), x \in \R^n, f \in C, \Lip_{x,loc}(G)$.
     \theorem[О выпрямлении для неавтономных систем]{
-    $\forall (\tau_0, \xi_0) \in G: \exists$ окрестность $U \ni (\tau_0, \xi_0)$, и $\exists$ гомеоморфизм $h: \overline{U} \map \R^{n + 1}$ (гомеоморфизм на образ?), переводящий пересечение интегральных кривых с $\overline{U}$ в отрезки параллельных прямых:
+    $\forall (\tau_0, \xi_0) \in G: \exists$ окрестность $U \ni (\tau_0, \xi_0)$, и $\exists$ гомеоморфизм $h: \overline{U} \map \R^{n + 1}$ (гомеоморфизм на образ), переводящий пересечение интегральных кривых с $\overline{U}$ в отрезки параллельных прямых:
         \[\begin{tikzpicture}
 % Smooth curve lines passing over the circle on the left
               \draw[gray,smooth] (-1.118,1) to[out=30, in=250] (1.118,1);
               \draw[gray,smooth] (-1.5,0) to[out=25, in=200] (1.5,0);
               \draw[gray,smooth] (-1.118,-1) to[out=70, in=210] (1.118,-1);
 % Circle on the left
-              \draw[dashed] (0,0) circle (1.5cm);
+              \draw (0,0) circle (1.5cm);
               \fill (0,0) circle (0.05cm);
               \node[below] at (0,0) {$(\tau_0, \xi_0)$};
 % Straight lines passing over the circle on the right
@@ -1433,7 +1433,7 @@
               \draw[gray] (5.5,0) -- (8.5,0);
               \draw[gray] ({7 - sqrt(1.5 * 1.5 - 1)},-1) -- ({7 + sqrt(1.5 * 1.5 - 1)},-1);
 % Circle on the right
-              \draw[dashed] (7,0) circle (1.5cm);
+              \draw (7,0) circle (1.5cm);
               \fill (7,0) circle (0.05cm);
               \node[below] at (7,0) {$(\tau_0, \xi_0)$};
 % Arrow connecting the two circles
@@ -1445,12 +1445,13 @@
 
     По теореме об интегральной непрерывности $\exists \delta > 0: \forall \xi: |\xi - \xi_0| \le \delta \then (t, x(t, \tau_0, \xi)) \in R$ при $t \in [a, b]$.
 
-    Положим $V = \defset{(t, x) \in [a, b] \times \R^n}{|x(t, \tau_0, \xi) - x(t, \tau_0, \xi_0) < \eps}$ --- это окрестность $(\tau_0, \xi_0)$.
+    Положим $V = \defset{(t, x) \in [a, b] \times \R^n}{|x - x(t, \tau_0, \xi_0)| < \eps}$ --- это окрестность $(\tau_0, \xi_0)$.
         Построим $g: \overline{V} \map \R^{n + 1}$ следующим образом:
     \[g(t, \xi) = (t, x(t, \tau_0, \xi))\]
     $g$ непрерывна на $\overline{V}$:
-    \[\abs{g(t, \xi) - g(t', \xi')} \le \underbrace{|x(t, \tau_0, \xi) - x(t', \tau_0, \xi)|}_{\abs{\int\limits_{t}^{t'}f(s, x(s, \tau_0, \xi))\d s} \le M|t - t'|} + \underbrace{|x(t', \tau_0, \xi) - x(t', \tau_0, \xi')|}_{\text{по теореме об интегральной непрерывности }\to 0}\]
+    \[\abs{g(t, \xi) - g(t', \xi')} \le |t - t'| + \underbrace{|x(t, \tau_0, \xi) - x(t', \tau_0, \xi)|}_{\abs{\int\limits_{t}^{t'}f(s, x(s, \tau_0, \xi))\d s} \le M|t - t'|} + \underbrace{|x(t', \tau_0, \xi) - x(t', \tau_0, \xi')|}_{\text{по теореме об интегральной непрерывности }\to 0}\]
     Инъективность $g$ прямо следует из теоремы единственности: $g(t, \xi) = g(t', \xi') \then t = t' \text { и } x(t, \tau_0, \xi) = x(t, \tau_0, \xi') \then \xi = \xi'$.
+        Также несложно проверить, что $g(\tau_0, \xi_0) = (\tau_0, \xi_0)$.
 
     Теперь построим обратное отображение $h$. Пусть $\overline{W} = g\left(\overline{V}\right)$, $U \coloneqq \Int\left(\overline{W}\right)$.
         Инъективное отображение компакта --- гомеоморфизм на образ, поэтому $\exists h: U \map V$ --- искомый гомеоморфизм.
@@ -1464,7 +1465,7 @@
         То, что $g \in C^1$ следует из того, что решение дифференцируемо по $t$ и по начальным данным.
 
     Дальше мы хотим применить теорему об обратной функции, для этого надо показать невырожденность $\det \der{g}{(t, \xi)}\big|_{(\tau_0, \xi_0)}$.
-    Расписав покомпонентно $g = (t, \xi)$, получаем \[\der{g}{(t, \xi)} = \vect{1 & 0 \\ \der{x}{t} & \der{x}{\xi}}\]
+    Расписав покомпонентно $g(t, \xi) = (t, x)$, получаем \[\der{g}{(t, \xi)} = \vect{1 & 0 \\ \der{x}{t} & \der{x}{\xi}}\]
     Достаточно показать, что $\der{x}{\xi}$ невырождена, но это фундаментальная матрица системы в вариациях.
 
     Значит, по теореме об обратной функции $g$ --- диффеоморфизм окрестности $(\tau_0, \xi_0)$ на окрестность $(\tau_0, \xi_0)$.
@@ -1479,7 +1480,7 @@
 
     Назовём суммой ряда $\sum\limits_{k_1 = \cdots = k_n = 0}^{\infty}a_{k_1, \cdots, k_n}$ сумму семейства $\defset{a_{k_1, \cdots, k_n}}{k_1, \cdots, k_n \in \N_{0}}$.
 
-    Ещё это можно записать так: если $A$ --- сумма семейства, то по определению $\forall \eps > 0: \exists N: \forall m_1, \cdots, m_n \ge N: \abs{\sum\limits_{m_1, \cdots, m_n}a_{*} - A} < \eps$, где $\sum\limits^{m_1, \cdots, m_n}a_{*} \coloneqq \sum\limits_{k_1 = 0}^{m_1} \cdots \sum\limits_{k_n = 0}^{m_n}a_{k_1, \cdots, k_n}$ --- краткое обозначение для частичной суммы.
+    Ещё это можно записать так: если $A$ --- сумма семейства, то по определению $\forall \eps > 0: \exists N: \forall m_1, \cdots, m_n \ge N: \abs{\sum\limits_{m_1, \cdots, m_n}a_{*} - A} < \eps$, где $\sum\limits_{m_1, \cdots, m_n}a_{*} \coloneqq \sum\limits_{k_1 = 0}^{m_1} \cdots \sum\limits_{k_n = 0}^{m_n}a_{k_1, \cdots, k_n}$ --- краткое обозначение для частичной суммы.
 
     Работая с абсолютно сходящимися многомерными рядами, мы сможем выполнять все действия над ними, какие захотим (например, потому что можно всё перевести на язык суммируемых семейств).
     \subsubsection{Многомерные степенные ряды}
@@ -1544,9 +1545,9 @@
     По определению $\phi(0, x_0) = x_0$.
     Максимальный промежуток решения $\phi(t, x_0)$ будет обозначаться за $I(x_0)$.
     \theorem[Групповое свойство автономных систем]{
-    Если $s, t, t + s \in I(x_0)$, то $\phi(t + s, x_0) = \phi(t, \phi(s, x_0))$.
+    Если $s, t + s \in I(x_0)$, то $\phi(t + s, x_0) = \phi(t, \phi(s, x_0))$.
     \provehere{
-    Рассмотрим обе части, как функции от $t$.
+        Рассмотрим обе части, как функции от $t$.
         Левая часть --- сдвиг какого-то решения, правая часть --- какое-то решение, и при $t = 0$ части равны друг другу.
     }
     }
@@ -1618,7 +1619,7 @@
     \bullets{
     \item $\lambda, \mu \in \R$ --- собственные числа $A$, причём $\lambda \ne \mu$.
     Тогда уравнение сводится к
-    \[\all{\dot{x} = \lambda x \\ \dot{y} = \lambda y}\]
+    \[\all{\dot{x} = \lambda x \\ \dot{y} = \mu y}\]
     У системы есть симметрии: решению $(x(t), y(t))$ соответствуют другие решения $(-x, y), (x, -y), (-x, -y)$.
 
     Имеется точка покоя $(0, 0)$. Далее, открытые полуоси тоже являются траекториями решений $(x_0 e^{\lambda t}, 0)$ и $(0, y_0 e^{\mu t})$.
@@ -1695,7 +1696,7 @@
               }
               \fill[blue] (0,0) circle (1.5pt);
         \end{tikzpicture}\]
-    \item Пусть $A = \vect{\lambda & 0 \\ 1 & \lambda}$. Тогда решение системы $\all{\dot{x}, \lambda x \\ \dot{y} = x + \lambda y}$.
+    \item Пусть $A = \vect{\lambda & 0 \\ 1 & \lambda}$. Тогда решение системы $\all{\dot{x} = \lambda x \\ \dot{y} = x + \lambda y}$.
     Здесь симметрий меньше --- есть только центральная $(x, y) \leftrightsquigarrow (-x, -y)$, но нет осевых.
     \bullets{
     \item Имеется траектория $\all{x = 0 \\ y = y_0 e^{\lambda t}}$, делящая плоскость на две половинки, и картинку можно рисовать только в правой полуплоскости, а потом отражать.
@@ -1712,7 +1713,7 @@
               \pgfmathsetmacro\R{0.1};
               \foreach \c in {-2,-1.5,-1,0} {
                   \draw[scale=1,domain=0.1:2.8,smooth,variable=\x,blue,line width=0.8pt] plot ({\x},{\x*(ln(\x)+\c)});
-                  \draw[scale=1,domain=0.1:2.8,smooth,variable=\x,blue,line width=0.8pt] plot ({-\x},{\x*(ln(\x)+\c)});
+                  \draw[scale=1,domain=0.1:2.8,smooth,variable=\x,blue,line width=0.8pt] plot ({-\x},{-\x*(ln(\x)+\c)});
               }
               \foreach \x/\y in {0/1,0/-1} {
                   \draw[blue,line width=0.8pt] (0.1*\x,0.1*\y) -- (\r*\x,\r*\y);
@@ -1724,13 +1725,13 @@
     \item Теперь пусть собственные числа $B$ комплексные: $\lambda_{1,2} = a \pm bi$.
     Тогда можно сопряжением привести $B$ к виду $A \coloneqq S^{-1}BS = \vect{a & -b \\ b & a}$.
 
-    Тогда система имеет вид $\all{\dot{x} = ax - yb \\ \dot{y} = bx + ay}$.
+    Тогда система имеет вид $\all{\dot{x} = ax - by \\ \dot{y} = bx + ay}$.
         Переходя к полярным координатам, получаем $\all{\dot{r}\cos \phi - r \sin \phi \cdot \dot{\phi} = ar \cos \phi - br \sin \phi \\ \dot{r}\sin\phi + r\cos\phi \cdot \dot{\phi} = br \cos \phi + ar \sin \phi}$.
     Выражая отдельно $\dot{r}$ и $\dot{\phi}$, получаем $\all{\dot{r} = ar \\ r \dot{\phi} = br}$.
 
     Теперь данную систему несложно решить $\all{r(t) = r_0 e^{a t} \\ \phi(t) = bt + \phi_0}$, и выразить, например, как функцию $r(\phi) = r_0 e^{\frac{a}{b}(\phi - \phi_0)}$, или $r = \tilde{r}_0e^{\frac{a}{b}\phi}$.
     \bullets{
-    \item При $a = 0$ экспоненты чисто мнимая, и траектории --- концентрические окружности с центром в нуле.
+    \item При $a = 0$ показатели экспоненты чисто мнимые, и траектории --- концентрические окружности с центром в нуле.
     Здесь кроме точки покоя никакая к нулю не примыкают, Пуанкаре дал название \emph{центр} этому виду траекторий.
     \item Наконец, если $a \ne 0$, то получаются логарифмические спирали, образующие \emph{фокус} --- все траектории примыкают к нулю, но ни одна не имеет предельного положения касательной.
         \[\begin{tikzpicture}
