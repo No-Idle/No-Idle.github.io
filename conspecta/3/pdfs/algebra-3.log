@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 JAN 2024 21:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  22 JAN 2024 21:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1609,7 +1609,7 @@ cmm/m/it/10 ^^_\OT1/cmr/m/n/10 ) = [][]([][](\OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/1
  []
 
 [60]
-Overfull \hbox (12.93846pt too wide) in paragraph at lines 2907--2907
+Overfull \hbox (12.21762pt too wide) in paragraph at lines 2907--2907
 []\T2A/faq/bx/n/10 Следствие 2.24.5. []\T2A/faq/m/it/10 Име-ет ме-сто есте-стве
 н-ный изо-мор-физм $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; ^^^[]\OT1/cmr/m/n/
 10 (\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 )) [] [][](\OML/cmm/m/it/10 ^^^[]\OT1/cmr
@@ -1758,8 +1758,8 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  35273 strings out of 479648
- 702408 string characters out of 5886115
- 945483 words of memory out of 5000000
+ 702409 string characters out of 5886115
+ 945485 words of memory out of 5000000
  52219 multiletter control sequences out of 15000+600000
  508156 words of font info for 100 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1789,7 +1789,7 @@ ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (95 pages, 767300 bytes).
+ (95 pages, 767313 bytes).
 PDF statistics:
  1455 PDF objects out of 1728 (max. 8388607)
  1296 compressed objects within 13 object streams
