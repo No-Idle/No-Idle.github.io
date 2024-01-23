@@ -1398,10 +1398,11 @@
 
             Рассмотрим последовательность $\delta_n = \frac{1}{2^n}$. Для каждого $\delta_n$ найдётся $e_n \in \Sigma$: $\mu(e_n) \le \frac{1}{2^n}$, но $\int\limits_{e_n}|f|\d\mu \ge \eps$.
 
-            Пусть $E_n = \bigcup\limits_{k \ge n}$, тогда из монотонности $\int\limits_{E}|F|\d\mu \ge \eps$. С другой стороны. $\mu E_n \le \sum\limits_{k \ge n}\mu(e_k) \le \sum\limits_{k \ge n}\frac{1}{2^k} = \frac{1}{2^{k - 1}}$.
+            Пусть $E_n = \bigcup\limits_{k \ge n}e_k$, тогда из монотонности $\int\limits_{E_n}|f|\d\mu \ge \eps$.
+            С другой стороны. $\mu E_n \le \sum\limits_{k \ge n}\mu(e_k) \le \sum\limits_{k \ge n}\frac{1}{2^k} = \frac{1}{2^{k - 1}}$.
 
             Таким образом, $\mu(E_n) \underset{n \to \infty}\Map 0$, но с другой стороны $E_1 \supset E_2 \supset \cdots$
-            Из счётной аддитивности $\int\limits_{E}|f|\d\mu = \lim\limits_{n \to \infty}\int\limits_{E_n}|f|\d\mu$, но левый интеграл равен нулю, как интеграл по множеству меры нуль.
+            Положим $E = \bigcap\limits_{n \in \N}E_n$. Из счётной аддитивности $\int\limits_{E}|f|\d\mu = \lim\limits_{n \to \infty}\int\limits_{E_n}|f|\d\mu$, но левый интеграл равен нулю, как интеграл по множеству меры нуль.
         }
     }
     \note{
