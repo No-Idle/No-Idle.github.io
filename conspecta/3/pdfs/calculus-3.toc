@@ -8,9 +8,9 @@
 \contentsline {subsection}{\numberline {1.3.1}Про счётную аддитивность}{9}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Продолжение меры}{11}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}Предмера}{14}{subsection.1.3.3}%
-\contentsline {section}{\numberline {1.4}Структура измеримых множеств}{17}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Множества меры нуль}{17}{subsection.1.4.1}%
-\contentsline {section}{\numberline {1.5}Двоичные (диадические) кубы}{20}{section.1.5}%
+\contentsline {section}{\numberline {1.4}Структура измеримых множеств}{16}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Множества меры нуль}{16}{subsection.1.4.1}%
+\contentsline {section}{\numberline {1.5}Двоичные (диадические) кубы}{19}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Поведение меры Лебега при линейных отображениях}{21}{subsection.1.5.1}%
 \contentsline {chapter}{\numberline {2}Интеграл Лебега}{24}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Измеримые отображения}{25}{section.2.1}%

@@ -69,21 +69,21 @@
     }
     Вещественная функция множества $\phi: \mathcal{A} \map \R_{\ge 0}$ называется \emph{неотрицательной}.
 
-    Иногда также разрешают функции приобретать значения на расширенной прямой $\phi: \mathcal{A} \map \overline{\R_+} = [0, +\infty]$.
+    Иногда также разрешают функции приобретать значения на расширенной прямой $\phi: \mathcal{A} \map \overline{\R}_{\ge 0 } = [0, +\infty]$.
 
     \definition[Мера]{
-        Аддитивная функция $\phi: \mathcal{A} \map \overline{\R_+}$.
+        Аддитивная функция $\phi: \mathcal{A} \map \overline{\R}_{\ge 0}$.
     }
     Аддитивность означает, что в случае $e_1, \dots, e_k \in \mathcal{A}$, если $e \coloneqq \bigsqcup\limits_{j=1}^{k} e_j \in \mathcal{A}$, то $\phi(e) = \phi(e_1) + \dots + \phi(e_k)$.
     \note{
-        Если $\phi$ --- аддитивная функция, то $\phi(\o) = \phi(\o) + \phi(\o)$, откуда $\phi(\o) = 0$.
+        Если $\phi$ --- аддитивная функция, то $\phi(\o) = \phi(\o) + \phi(\o)$, откуда $\phi(\o) = 0$ (формально, $\phi(\o) = \infty$ тоже подходит, но тогда из аддитивности $\phi \equiv +\infty$, это скучный случай).
     }
     \examples{
         \item Пусть $\mathcal{P}_0(\R)$ --- совокупность конечных промежутков, $\mathcal{P}(\R)$ --- совокупность всех промежутков.
 
-        Тогда для обоих семейств можно ввести меру $\phi(|I|) = |I|$.
+        Тогда для обоих семейств можно ввести меру $\phi(I) = |I|$.
 
-        Заметим, что аддитивность действительно выполняется: если отрезок $[a, b]$ разбит на отрезки $[a_0, a_1], \dots, [a_{n - 1}, a_n]$, где $a_0 = a, a_n = b$, то и правда
+        Заметим, что аддитивность действительно выполняется: если отрезок $\angles{a, b}$ разбит на отрезки $\angles{a_0, a_1}, \dots, \angles{a_{n - 1}, a_n}$, где $a_0 = a, a_n = b$, то и правда
         \[b - a = \sum\limits_{j = 1}^{n}(a_j - a_{j - 1})\]
         \item То же самое можно сделать в $\R^n$: введём множества ограниченных и всех прямоугольных параллелепипедов. \gather{\mathcal{P}_0(\R^n) = \defset{I_1 \times \dots \times I_n}{\text{все }I_j\text{ --- конечные промежутки}} \\ \mathcal{P}(\R^n) = \defset{I_1 \times \dots \times I_n}{\text{все }I_j\text{ --- промежутки}}}
 
@@ -101,7 +101,7 @@
 
                 $J$ корректно определена для некоторой совокупности функций, которые образуют линейное пространство.
 
-                Рассмотрим $K = \delta_q \times \dots \times \delta_n \subset Q$.
+                Рассмотрим $K = \delta_1 \times \dots \times \delta_n \subset Q$.
                 Тогда для $\chi_K$ --- характеристической функции $K$ --- $J$ определён, причём $J(\chi_K) = |\delta_1| \proddots |\delta_n| = V_n(K)$.
 
                 Отсюда видно, что так как $\chi_Q = \sum\limits_{j = 1}^{k}\chi_{Q_j}$, то $V_n(Q) = \sum\limits_{j=1}^{k}V_n(Q_j)$.
@@ -131,7 +131,7 @@
                 \note{Эта часть верна для любой аддитивной меры.}
                 \item Докажем обратное: $\sum\limits_{j = 1}^{\infty}V_n(Q_j) \ge V_n(Q)$.
 
-                Пусть $Q = I_1 \times \dots I_n$. Если $\exists s: I_s = 0$, то доказывать нечего.
+                Пусть $Q = I_1 \times \dots \times I_n$. Если $\exists s: I_s = 0$, то доказывать нечего.
 
                 Выберем $\eps > 0$.
                 Существуют замкнутые отрезки $\overline{I_1}, \dots, \overline{I_s}$, такие что $\overline{I_j} \subset I_j$, причём для $\overline{Q} = \overline{I_1} \times \dots \times \overline{I_n}$ его объём уменьшился несильно: $V_n(Q) \le V_n\left(\overline{Q}\right)+ \eps$.
@@ -162,7 +162,7 @@
         Система множеств $\mathcal{A} \subset 2^X$, такое что $\forall a, b \in \mathcal{A}: (a \cap b) \in \mathcal{A}$, а разность $(a \sm b)$ есть объединение конечного числа попарно непересекающихся подмножеств из $\mathcal{A}$.
     }
     \example[Полукольцо]{
-        Отрезки и конечные отрезки (или даже параллелепипеды~(\cref{multiplication_of_semirings})) $\mathcal{P}(\R^n)$ и $\mathcal{P}_0(\R^n)$.
+        Отрезки и конечные отрезки (или даже параллелепипеды~(\cref{multiplication_of_semirings})) ($\mathcal{P}(\R^n)$ или $\mathcal{P}_0(\R^n)$).
     }
 
     Пусть $X, Y$ --- множества, $\mathcal{A} \subset 2^X, \mathcal{B} \subset 2^Y$ --- полукольца.
@@ -174,10 +174,10 @@
     \provebullets{
         \item $\o \in \mathcal{C}: \o \times \o = \o$.
         \item $(a_1 \times b_1) \cap (a_2 \times b_2) = (a_1 \cap a_2) \times (b_1 \cap b_2)$, поэтому $\mathcal{C}$ замкнуто относительно пересечения.
-        \item Рассмотрим $u, v \in \mathcal{C}$. $u \sm v = u \sm (u \cap v)$, поэтому можно считать, что $v \in \mathcal{C}$.
+        \item Рассмотрим $u, v \in \mathcal{C}$. $u \sm v = u \sm (u \cap v)$, поэтому можно считать, что $v \subset u$.
 
         Пусть $u = a_1 \times b_1, v = a_2 \times b_2$. Так как $v \subset u$, то $b_2 \subset b_1, a_2 \subset a_1$.
-        Пусть $a_1 \sm a_2 = \bigcup\limits_{s = 1}^{n}e_s$, $b_1 \sm b_2 = \bigcup\limits_{t = 1}^{m}f_t$.
+        Пусть $a_1 \sm a_2 = \bigsqcup\limits_{s = 1}^{n}e_s$, $b_1 \sm b_2 = \bigsqcup\limits_{t = 1}^{m}f_t$.
 
         Несложно видеть, что $u \sm v = \left(a_2 \sqcup \bigsqcup\limits_{s = 1}^{n}e_s\right) \times \left(b_2 \sqcup \bigsqcup\limits_{t = 1}^{m}f_t\right) \sm (a_2 \times b_2)$, что есть объединение $(n + 1)(m + 1) - 1$ понятного обобщённого прямоугольника.
     }
@@ -199,7 +199,7 @@
     \theorem{
         Пускай $\mathcal{A} \subset 2^X, \mathcal{B} \subset 2^Y$ --- полукольца, $\mu$ и $\nu$ на них --- (конечные) меры, определим меру на произведении
         \[\gamma(u \times v) \coloneqq \mu(u) \cdot \nu(v)\]
-        Утверждается, что $\gamma$ аддитивна~(\cref{why}).
+        Утверждается, что $\gamma$ аддитивна (это можно было бы доказать при помощи интеграла, но интеграл Римана здесь не подойдёт)
     }
     \newlection{8 сентября 2023 г.}
     Пусть $\mathcal{A}$ --- полукольцо.
@@ -215,9 +215,9 @@
                 Тогда \[u \cap v = \bigsqcup\limits_{i,j}(c_i \cap d_j)\]
                 \item Проверим, что $\mathcal{R}(\mathcal{A})$ замкнуто относительно разности при помощи индукции по $t$.
 
-                \underline{База:} $t = 1$. \[(c_1 \sqcup \dots \sqcup c_s) \sm d_1 = (d_1 \sm c_s) \sqcup \dots \sqcup (c_s \sqcup d_1)\]
+                \underline{База:} $t = 1$. \[(c_1 \sqcup \dots \sqcup c_s) \sm d_1 = (c_1 \sm d_1) \sqcup \dots \sqcup (c_s \sm d_1)\]
 
-                \underline{Переход:} \[(c_1 \sqcup \dots \sqcup c_s) \sm (d_1 \sqcup \dots \sqcup d_t) = \Big((c_1 \sqcup \dots \sqcup c_s) \sm (d_1 \sqcup \dots \sqcup d_{t-1})\Big) \cap \Big((c_1 \sqcup \dots \sqcup c_s) \sm d_t\Big)\]
+                \underline{Переход:} \[(c_1 \sqcup \dots \sqcup c_s) \sm (d_1 \sqcup \dots \sqcup d_t) = \Big((c_1 \sqcup \dots \sqcup c_s) \sm (d_1 \sqcup \dots \sqcup d_{t-1})\Big) \sm d_t\]
                 \item Проверим, что $\mathcal{R}(\mathcal{A})$ замкнуто относительно объединения.
                 \[u \cup v = (u \sm v) \sqcup (v \sm u) \sqcup (u \cap v)\qedhere\]
             }
@@ -244,11 +244,11 @@
         \provehere{
             Пусть $f = \sum\limits_{i=1}^{k}\alpha_i\chi_{e_i} = \sum\limits_{j=1}^{m}\beta_j\chi_{e_j'}$, где $\alpha_i, \beta_j \ne 0$.
 
-            Обозначим $A = \supp f = \defset{x}{f(x) \ne 0}$.
+            Обозначим $A = \defset{x}{f(x) \ne 0}$ (кстати, носитель $\supp f \bydef \defset{x}{f(x) \ne 0}$).
             Очевидно, $(e_1, \dots, e_k)$, как и $(e_1', \dots, e_m')$ --- разбиения $A$.
-            У них есть общее измельчение $e''$, причём на каждом элементе $e''_{i,j} \coloneqq e_i \cap e_j'$ $\alpha_i = \beta_j$, откуда оба интеграла от простой функции --- через $e$ и через $e'$ --- совпадают с определением через $e''$.
-            \[\sum\limits_{i = 1}^{k}\alpha_i\mu(e_i) = \sum\limits_{i = 1}^{k}\alpha_i\mu\left(\bigsqcup\limits_{j = 1}^{m}e_{i,j}\right) = \sum\limits_{i = 1}^{k}\sum\limits_{j = 1}^{m}\alpha_i\mu(e_{i,j}) = \sum\limits_{j = 1}^{m}\beta_j\mu(e_{i,j}) = \sum\limits_{j = 1}^{m}\beta_j\mu(e_j')\]
-            Если $e_i$ бесконечен, то один из конечного числа кусочков, на которые мы его разобьём $e_i \cap e_j'$ тоже будет бесконечным, поэтому в случае бесконечностей (если обе суммы определены) обе суммы будут бесконечностями одного знака.
+            У них есть общее измельчение $e''$, причём на каждом элементе $e''_{i,j} \coloneqq e_i \cap e_j'$ выполняется $\alpha_i = \beta_j$, откуда оба интеграла от простой функции --- через $e$ и через $e'$ --- совпадают с определением через $e''$.
+            \[\sum\limits_{i = 1}^{k}\alpha_i\mu(e_i) = \sum\limits_{i = 1}^{k}\alpha_i\mu\left(\bigsqcup\limits_{j = 1}^{m}e_{i,j}\right) = \sum\limits_{i = 1}^{k}\sum\limits_{j = 1}^{m}\alpha_i\mu(e_{i,j}) = \sum\limits_{j = 1}^{m}\beta_j\mu\left(\bigsqcup\limits_{i = 1}^{k}e_{i,j}\right) = \sum\limits_{j = 1}^{m}\beta_j\mu(e_j')\]
+            Если $e_i$ бесконечен, то один из конечного числа кусочков, на которые мы его разобьём ($e_i \cap e_j'$) тоже будет бесконечным, поэтому в случае бесконечностей (если обе суммы определены) обе суммы будут бесконечностями одного знака.
         }
     }
     \properties[Интеграл от простой функции]{
@@ -303,7 +303,7 @@
 
             Дано, что $\chi_P = \sum\limits_{j = 1}^{k}\chi_{P_j}$, то есть $\chi_a(s)\chi_b(t) = \sum\limits_{j = 1}^{k}\chi_{a_j}(s)\chi_{b_j}(t)$.
 
-            Интегрируем:
+            Интегрируем ($I_{\nu,t}$ означает интеграл по мере $\nu$ функции от переменной $t$ при фиксированном $s$):
             \gather{
                 I_{\nu, t}\left(\chi_a(s)\chi_b(t)\right) = \sum\limits_{j = 1}^{k}I_{\nu,t}\left(\chi_{a_j}(s)\cdot \chi_{b_j}(t)\right)\quad\then\quad
                 \chi_a(s)\nu(b) = \sum\limits_{j = 1}^{k}\chi_{a_j}(s)\cdot \nu(b_j) \\
@@ -339,15 +339,15 @@
         Утверждается, что $\mu$ счётно аддитивна.
         \provehere{
             Рассмотрим $a \in \mathcal{A}, \{a_j\}_{j = 1}^{\infty}\subset\mathcal{A}$. Пусть $a = \bigsqcup\limits_{j = 1}^{\infty}a_j$.
-            Для доказательства $\mu(a) = \sum\limits_{j = 1}^{\infty}$ покажем неравенства в обе стороны.
+            Для доказательства $\mu(a) = \sum\limits_{j = 1}^{\infty}\mu(a_j)$ покажем неравенства в обе стороны.
             \bullets{
-                \item $\forall k \in \N: \sum\limits_{j =1}^{k} \le \mu(a)$~(\cref{subunion_is_less_than_the_whole}), производим предельный переход.
+                \item $\forall k \in \N: \sum\limits_{j =1}^{k}\mu(a_j) \le \mu(a)$~(\cref{subunion_is_less_than_the_whole}), производим предельный переход.
                 \item Если $\mu(a_j) = \infty$, или $\mu(a) = 0$, то доказывать нечего.
 
                 Выберем $\eps > 0$.
-                Найдём такие $U_j, K \in \mathcal{A}$, что $U_j$ открыты, $K$ компактно, $U_j \supset a_j, K \subset a$, причём $\mu(U_j) \le \mu(a_j) + \frac{\eps}{2^j}$ и $\mu(a) \ge \mu(K) - \eps$.
+                Найдём такие $U_j, K \in \mathcal{A}$, что $U_j$ открыты, $K$ компактно, $U_j \supset a_j, K \subset a$, причём $\mu(U_j) \le \mu(a_j) + \frac{\eps}{2^j}$ и $\mu(K) \ge \mu(a) - \eps$.
 
-                Так как из открытого покрытия компакта можно выделить конечное подпокрытие (и пусть $N$ --- максимальный номер элемента подпокрытия), то \[\mu(a) - \eps \le \mu(K) \le \sum\limits_{j = 1}^{N}\mu(U_j) \le \sum\limits_{j = 1}^{N}\left(\mu(a_j) + \frac{\eps}{2^j}\right) = \sum\limits_{j = 1}^{+\infty}\mu(a_j) + \eps\]
+                Так как из открытого покрытия компакта можно выделить конечное подпокрытие (и пусть $N$ --- максимальный номер элемента подпокрытия), то \[\mu(a) - \eps \le \mu(K) \le \sum\limits_{j = 1}^{N}\mu(U_j) \le \sum\limits_{j = 1}^{N}\left(\mu(a_j) + \frac{\eps}{2^j}\right) = \sum\limits_{j = 1}^{\infty}\mu(a_j) + \eps\]
                 Устремляя $\eps \to 0$ получаем необходимое.\qedhere
             }
         }
@@ -368,7 +368,7 @@
     Вспомним, что мы определяли квазидлину $l_f(\angles{a, b}) = f(b) - f(a)$ для возрастающей функции $f: \R \map \R$.
     Это функция может быть не счётно аддитивной, что случается, если $f$ разрывна.
 
-    Поправим это определение, чтобы мера была аддитивной.
+    Поправим это определение, чтобы мера стала счётно-аддитивной.
     Пусть $f$ --- возрастающая функция.
 
     Рассмотрим $\mathcal{P}(\angles{a, b})$ --- полукольцо промежутков, содержащихся в $\angles{a, b}$.
@@ -390,8 +390,8 @@
 
             Рассмотрим $\eps > 0$, для открытого подмножества, содержащего $[c, d)$ выберем $(c - \delta, d)$.
             Для достаточно маленьких $\delta$: $f((c - \delta)+) > f(c-) - \eps$.
-            Для компактного подмножества, содержащегося в $[c, d)$, выберем $[c, d - \delta]$.
-            Для достаточно маленьких $\delta$: $f((d - \delta)+) > f(d-) - \eps$.
+            В качестве компактного подмножества, содержащегося в $[c, d)$, выберем $[c, d - \delta]$.
+            При достаточно маленьких $\delta$: $f((d - \delta)+) > f(d-) - \eps$.
 
             Также можно проверить регулярность для бесконечных промежутков.
         }
@@ -410,7 +410,7 @@
         Пусть $\mathcal{C} \subset 2^X$ --- система подмножеств $X$.
         Тогда в $X$ есть наименьшая $\sigma$-алгебра, содержащая $\mathcal{C}$.
         \provehere{
-            Пересечение любого множества $\sigma$-алгебр --- $\sigma$-алгебр.
+            Пересечение любого множества $\sigma$-алгебр --- $\sigma$-алгебра.
             Хотя бы одна есть --- это $2^X$.
             Тогда в качестве наименьшей подойдёт пересечение всех $\sigma$-алгебр, содержащих $\mathcal{C}$.
         }
@@ -450,7 +450,7 @@
             \item Для всех $A_i \in \mathcal{A}, i \in \N$ верно, что $\bigcap\limits_{i \in \N}A_i \in \mathcal{A}$.
             \item Для всех $A_i \in \mathcal{A}$, таких что $A_1 \subset A_2 \subset \dots$ верно, что $\bigcup\limits_{i \in \N}A_i \in \mathcal{A}$.
             \item Для всех $A_i \in \mathcal{A}$, таких, что $A_1 \supset A_2 \supset \dots$ верно, что $\bigcap\limits_{i \in \N}A_i \in \mathcal{A}$.
-            \item Для всех $A_i \in \mathcal{A}$, таких, что $A_i \cap A_j = \o$ для $i \ne j$ верно, что $\bigcup\limits_{i \in \N}A_i \in \mathcal{A}$.
+            \item Для всех $A_i \in \mathcal{A}$, таких, что $A_i \cap A_j = \o$ для $i \ne j$ верно, что $\bigsqcup\limits_{i \in \N}A_i \in \mathcal{A}$.
         }
         \provebullets{
             \item[$2 \iff 3$] Закон де Моргана.
@@ -462,7 +462,7 @@
             \item[$4 \then 6$] Пусть $A_i \in \mathcal{A}$, причём $A_i \cap A_j = \o$ для $i \ne j$.
             Выберем $\tilde{A}_i \coloneqq A_1 \cup \dots \cup A_i$. Согласно (4) $\bigcup\limits_{i \in \N}\tilde{A}_i \in \mathcal{A}$.
             \item[$6 \then 4$] Пусть $A_i \in \mathcal{A}$, причём $A_i \subset A_{i + 1}$. Положим $e_1 = A_1$, $e_j = A_{j} \sm A_{j - 1}$ для $j \ge 2$.
-            Тогда $e_i \cap e_j = \o$ для $i \ne j$, и $\bigcup\limits_{i \in \N}e_i = \bigcup\limits_{i \in \N}A_i \in \mathcal{A}$.
+            Тогда $e_i \cap e_j = \o$ для $i \ne j$, и $\bigsqcup\limits_{i \in \N}e_i = \bigcup\limits_{i \in \N}A_i \in \mathcal{A}$.
         }
     }
     \fact{
@@ -476,21 +476,21 @@
         \provebullets{
             \item[$1 \iff 2$] Так как $\mathcal{A}$ --- $\sigma$-алгебра, то $\bigsqcup\limits_{i \in \N}A_i$ автоматически лежит в $\mathcal{A}$, и $1$ тавтологично $2$.
             \item[$2 \then 3$] Пускай $A_1 \subset A_2 \subset \dots$. Введём $e_1 = A_1$, $e_j = A_j \sm A_{j - 1}$ для $j \ge 2$. $e_i \cap e_j = \o$ для $i \ne j$.
-            Тогда $\mu\left(\bigcup\limits_{i \in \N}A_i\right) = \mu\left(\bigcup\limits_{i \in \N}e_i\right) = \sum\limits_{i \in \N}\mu(e_i) = \lim\limits_{n \to \infty}\mu\left(\bigcup\limits_{i = 1}^{n}e_i\right) = \lim\limits_{n \to \infty}\mu(A_n)$.
+            Тогда $\mu\left(\bigcup\limits_{i \in \N}A_i\right) = \mu\left(\bigsqcup\limits_{i \in \N}e_i\right) = \sum\limits_{i \in \N}\mu(e_i) = \lim\limits_{n \to \infty}\mu\left(\bigsqcup\limits_{i = 1}^{n}e_i\right) = \lim\limits_{n \to \infty}\mu(A_n)$.
             \item[$3 \then 2$] То же самое в обратном порядке.
         }
     }
     \precaution{
         Монотонность по убывающим последовательностям не выполняется:
 
-        рассмотрев на $\mathcal{P}(\R)$ $A_n = (n, +\infty)$ видим, что хотя $A_1 \supset A_2 \supset$, и $\mu\left(\bigcap\limits_{i \in \N}A_i\right) = \mu(\o) = 0 \ne \lim\limits_{n \to \infty}\mu(A_n) = \infty$.
+        рассмотрев на $\mathcal{P}(\R)$ $A_n = (n, +\infty)$ видим, что хотя $A_1 \supset A_2 \supset \dots$, и $\mu\left(\bigcap\limits_{i \in \N}A_i\right) = \mu(\o) = 0 \ne \lim\limits_{n \to \infty}\mu(A_n) = \infty$.
     }
     \theorem{
         Если $B_i \in \mathcal{A}$, $B_1 \supset B_2 \supset \dots$, причём $\mu(B_1) < +\infty$, то $\mu(\bigcap\limits_{i \in \N}B_i) = \lim\limits_{j \to \infty}\mu(B_j)$.
         \provehere{
             Положим $A_i = B_1 \sm B_i$.
 
-            Тогда $\bigcap\limits_{i \in \N}B_i = B_1 \sm \bigcup\limits_{i \in \N}A_i$, и $\mu\left(\bigcap\limits_{i \in \N}B_i\right) = \mu(B_1) - \mu\left(\bigcup\limits_{i \in \N}B_i\right) = \mu(B_1) - \lim\limits_{n \to \infty}\mu(A_n) = \mu(B_1) - \lim\limits_{n \to \infty}\left(\mu(B_1) - \mu\left(B_n\right)\right) = \lim\limits_{n \to \infty}\mu(B_n)$
+            Тогда $\bigcap\limits_{i \in \N}B_i = B_1 \sm \bigcup\limits_{i \in \N}A_i$, и $\mu\left(\bigcap\limits_{i \in \N}B_i\right) = \mu(B_1) - \mu\left(\bigcup\limits_{i \in \N}A_i\right) = \mu(B_1) - \lim\limits_{n \to \infty}\mu(A_n) = \mu(B_1) - \lim\limits_{n \to \infty}\left(\mu(B_1) - \mu\left(B_n\right)\right) = \lim\limits_{n \to \infty}\mu(B_n)$
 
             Так как $\mu(B_1)$ конечна, то все производимые вычитания справедливы --- не происходит вычитания бесконечности из бесконечности.
         }
@@ -541,7 +541,7 @@
                 Переходя к инфимуму, получаем $\mu^{\triangle}(e) \le \mu^*(e)$.
             }
             Используя лемму, рассмотрим произвольное дизъюнктное покрытие $e_j \in \mathcal{P}$ такое, что $\bigsqcup\limits_{j \in \N}e_j \supset e$.
-            Введём $\tilde{e}_j \coloneqq e_j \cup e$. Для них $\bigsqcup\limits_{j \in \N}\tilde{e}_j = e$.
+            Введём $\tilde{e}_j \coloneqq e_j \cap e$. Для них $\bigsqcup\limits_{j \in \N}\tilde{e}_j = e$.
 
             Согласно счётной аддитивности $\mu(e) = \sum\limits_{j \in \N}\mu(\tilde{e}_j) \le \sum\limits_{j \in \N}\mu(e_j)$.
             Переходя к инфимуму, получаем искомое.
@@ -577,7 +577,7 @@
         \[\forall a \subset X: \gamma(a) = \gamma(a \cap e) + \gamma(a \sm e) = \gamma(a \cap e) + \gamma\left(a \cap e^\comp\right)\]
     \end{definition_env}
     \theorem[Лебег-Каратеодори]{
-        Совокупность $\Sigma$ всех $\gamma$-измеримых множеств образует $\sigma$-алгебру на которой функция $\gamma\big|_\Sigma$ счётно-аддитивна.
+        Совокупность $\Sigma$ всех $\gamma$-измеримых множеств образует $\sigma$-алгебру, на которой функция $\gamma\big|_\Sigma$ счётно-аддитивна.
         \supplement{
             Если $\gamma = \mu^*$, где $\mu$ --- мера на полукольце $\mathcal{P}$, то все множества из $\mathcal{P}$ автоматически $\gamma$-измеримы.
         }
@@ -603,13 +603,13 @@
                 \item Так как $(e_1 \cup e_2) = (e_1^\comp \cap e_2^\comp)^\comp$ и $(e_1 \sm e_2) = e_1 \cap e_2^\comp$, то $\Sigma$ --- действительно алгебра.
             }
             \item Проверим <<усиленную аддитивность>>: для произвольного $a \subset X$, $b_1, b_2 \in \Sigma, b_1 \cap b_2 = \o \then$
-            \[\gamma(a \cap (b_1 \cup b_2)) = \gamma(a \cap b_1) + \gamma(a \cap b_2)\]
+            \[\gamma(a \cap (b_1 \sqcup b_2)) = \gamma(a \cap b_1) + \gamma(a \cap b_2)\]
             Данный факт потребуется для доказательства того, что $\Sigma$ --- $\sigma$-алгебра.
 
             Доказательство напрямую следует из измеримости $b_1$ при пересечении с $a \cap (b_1 \cup b_2)$.
 
             Отсюда по индукции видно, что для попарно непересекающихся $b_1, \dots, b_n \in \Sigma$:
-            \[\gamma\left( a \cap \bigcup\limits_{j \in \N}b_j\right) = \sum\limits_{j \in \N}\gamma(a \cap b_j)\]
+            \[\gamma\left( a \cap \bigsqcup\limits_{j \in \N}b_j\right) = \sum\limits_{j \in \N}\gamma(a \cap b_j)\]
 
             \item Проверим, что $\Sigma$ является $\sigma$-алгеброй.
             Для этого достаточно проверить, что для счётного семейства $b_i \in \Sigma: b \coloneqq \bigsqcup\limits_{j \in \N}b_j \in \Sigma$.
@@ -618,14 +618,14 @@
             Дополнительно можно считать, что $\gamma(a)$ конечно.}
 
             Выберем произвольное $a \in X$, для него
-            \[\gamma(a) = \gamma(a \cap (b_1 \cup \dots \cup b_n)) + \gamma(a \sm (b_1 \cup \dots \cup b_n)) \ge \sum\limits_{j = 1}^{n}\gamma(a \cap b_j) + \gamma(a \sm b)\]
+            \[\gamma(a) = \gamma(a \cap (b_1 \sqcup \dots \sqcup b_n)) + \gamma(a \sm (b_1 \sqcup \dots \sqcup b_n)) \ge \sum\limits_{j = 1}^{n}\gamma(a \cap b_j) + \gamma(a \sm b)\]
             Переходя к пределу $n \to \infty$, получаем
             \[\gamma(a) \ge \sum\limits_{j = 1}^{\infty}\gamma(a \cap b_j) + \gamma(a \sm b)\]
-            Так как $a \cap b = \bigcup\limits_{j \in \N}(a \cap b_j)$, то из счётной полуаддитивности $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
+            Так как $a \cap b = \bigsqcup\limits_{j \in \N}(a \cap b_j)$, то из счётной полуаддитивности $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
             Отсюда
             \[\gamma(a) \ge \sum\limits_{j = 1}^{\infty}\gamma(a \cap b_j) + \gamma(a \sm b) \ge \gamma(a \cap b) + \gamma(a \sm b)\]
             \item Проверим, что $\gamma\big|_\Sigma$ --- <<усиленно счётно-аддитивная мера>>, то есть для счётного семейства дизъюнктных $b_j \in \Sigma$ $\left(b \coloneqq \bigsqcup\limits_{j \in \N}b_j\right)$ и произвольного $\forall a \in X$:
-            \[\gamma\left( a\cap\bigcup\limits_{j \in \N}b_j\right) = \sum\limits_{j \in \N}\gamma(a \cap b_j)\]
+            \[\gamma\left( a\cap\bigsqcup\limits_{j \in \N}b_j\right) = \sum\limits_{j \in \N}\gamma(a \cap b_j)\]
             При $a = X$ свойство обращается в обычную счётную аддитивность, но усиленная даётся даром.
 
             С одной стороны, из счётной аддитивности $\gamma$: $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
@@ -635,7 +635,7 @@
             Достаточно показать, что для любого $e \in \mathcal{P}, a \in X$: $\mu^*(a) \ge \mu^*(a \cap e) + \mu^*(a \sm e)$, обратное следует из полуаддитивности внешней меры.
 
             Рассмотрим произвольное счётное покрытие $\{c_i\}_{i \in \N}$ множества $e$ элементами множества $\mathcal{P}$.
-            Можно считать, что $\forall i: c_i \in e$ (пересекая каждое из $c_i$ с $e$).
+            Можно считать, что $\forall i: c_i \subset e$ (пересекая каждое из $c_i$ с $e$).
 
             \bullets{
                 \item Во-первых, по определению меры $\mu^*(a \cap e) \le \sum\limits_{i \in \N}\mu(c_i \cap e)$
@@ -649,7 +649,7 @@
                 Переходя к инфимуму по всем покрытиям получаем, что
                 \[\mu^*(a \cap e) + \mu^*(a \sm e) \le \inf\sum\limits_{i = 1}^{\infty}\mu(c_i) = \mu^*(a)\]
             }
-            \item Наконец, для доказательства второго дополнения сошлёмся на пятый пункт свойств меры~(\cref{outer-measure}).
+            \item Наконец, для доказательства второго дополнения сошлёмся на четвёртый пункт свойств меры~(\cref{outer-measure}).
         }
     }
     \definition[Стандартное продолжение меры $\mu$ на полукольце $\mathcal{P} \subset 2^X$]{
@@ -710,7 +710,7 @@
         }
     }
     \definition[Свойство точек множества $X$ выполняется почти всюду]{
-        Множество точек, где она не выполняется, имеет меру нуль.
+        Множество точек, где оно не выполняется, имеет меру нуль.
     }
     Пусть $\mathcal{P}$ --- полукольцо подмножеств $X$, $\mu$ --- счётно аддитивная мера на $\mathcal{P}$.
     Стандартное продолжение часто тоже будем обозначать через $\mu$, иногда через $\overline{\mu}$.
@@ -749,7 +749,7 @@
         Пересечение счётного семейства $\sigma$-множеств.
     \end{definition_env}
     \begin{definition_env}[$\sigma$-конечная мера $\mu$]
-        Такая мера, что $\exists E_1 \subset E_2 \subset \dots$, все $E_i \in \Sigma$, все $\mu(E_i) < +\infty$, причём $X = \bigcup\limits_{i = 1}^{\infty}E_i = X$.
+        Такая мера, что $\exists E_1 \subset E_2 \subset \dots$, все $E_i \in \Sigma$, все $\mu(E_i) < +\infty$, причём $X = \bigcup\limits_{i = 1}^{\infty}E_i$.
     \end{definition_env}
     \examples{
         \item Считающая мера на несчётном множестве не является $\sigma$-конечной.
@@ -787,19 +787,20 @@
     Такая счётно-аддитивная мера $\nu$ на $\sigma$-алгебре $\mathcal{C}$, что $\forall b \in \mathcal{C}: \nu(b) = 0 \then \forall a \subset b: a \in \mathcal{C}$.
     }
     \theorem{\label{uniqueness_of_measure}
-    Если мера $\nu$ полна, то $\Sigma \subset \mathcal{C}$, причём меры $\nu$ и $\mu$ совпадают на $\Sigma$.
+    Меры $\nu$ и $\overline{\mu}$ совпадают на $\Sigma \cap \mathcal{C}$, а если $\nu$ полна, то $\Sigma \subset \mathcal{C}$.
     \provebullets{
         \item Пусть $A \in \Sigma$ есть $\sigma$-множество относительно полукольца $\mathcal{A}$.
-        Тогда $A = a_1 \sqcup a_2 \dots$, где $a_j \in \mathcal{A}$
+        Тогда $A = a_1 \sqcup a_2\sqcup \dots$, где $a_j \in \mathcal{A}$
 
         Отсюда $A\in \mathcal{C}$, причём $\nu(A) = \sum\limits_{j = 1}^{\infty}\nu(a_j) = \sum\limits_{j = 1}^{\infty}\mu(a_j) = \overline{\mu}(A)$.
-        \item Пусть $B \in \Sigma$ --- $\delta\sigma$-множество относительно полукольца $\mathcal{A}$, то есть $B = \bigcup\limits_{k = 1}^{\infty}A_k$, где $A_k$ --- $\sigma$-множества.
+        \item Пусть $B \in \Sigma$ --- $\delta\sigma$-множество относительно полукольца $\mathcal{A}$, то есть $B = \bigcap\limits_{k = 1}^{\infty}A_k$, где $A_k$ --- $\sigma$-множества (дополнительно считаем, что $A_1 \supset A_2 \supset \dots$).
 
         Тогда $B \in \mathcal{C}$.
         Если $\overline{\mu}(B) < \infty$, то множества $A_j$ тоже можно выбрать конечной меры.
 
         Тогда $\nu(B) = \lim\limits_{k\to\infty}\nu(A_k) = \lim\limits_{k\to\infty}\overline{\mu}(A_k) = \overline{\mu}(B)$.
-        \item Пускай $E \in \mathcal{C} \cap \Sigma$. Найдётся такое $\delta\sigma$-множество $E_1 \supset E$: $\overline{\mu}(E_1 \sm E) = 0$ (если $E$ бесконечно, то используем $\sigma$-конечность $\mu$), причём так как $E_1$ --- $\delta\sigma$-множество относительно $\mathcal{A}$, то про него уже известно, что $\nu(E_1) = \overline{\mu}(E_1)$.
+        \item Пускай $E \in \mathcal{C} \cap \Sigma$. Найдётся такое $\delta\sigma$-множество $E_1 \supset E$: $\overline{\mu}(E_1 \sm E) = 0$
+        (если $E$ бесконечно, то это следует из $\sigma$-конечности $\mu$), причём так как $E_1$ --- $\delta\sigma$-множество относительно $\mathcal{A}$, то про него уже известно, что $\nu(E_1) = \overline{\mu}(E_1)$.
         Тогда $E_1 \sm E$ тоже содержится в $\mathcal{C} \cap \Sigma$.
         \indentlemma{
             Если $b \in \mathcal{C} \cap \Sigma$, причём $\overline{\mu}(b) = 0$, то $\nu(b) = 0$.
@@ -814,7 +815,7 @@
         \item Проверим, что если $\nu$ полна, то $\Sigma \subset \mathcal{C}$.
 
         Если $\overline{\mu}(e) = 0$, то $e \in \mathcal{C}$, так как найдётся $\delta\sigma$-множество $e_1 \supset e$: $\overline{\mu}(e_1) = 0$.
-        Из полноты меры автоматически $e \in \mathcal{C}$.
+        Из полноты меры $\nu$ автоматически $e \in \mathcal{C}$.
 
         Теперь рассмотрим $D \in \Sigma$. Найдётся $\delta\sigma$-множество $\overline{D} \supset D$, такое, что $\overline{\mu}(\overline{D}\sm D) = 0$, то есть $\overline{D}\sm D \in \mathcal{C}$.
         Таким образом, $D \in \mathcal{C}$, причём $\nu(\overline{D} \sm D) = 0$.
@@ -898,7 +899,7 @@
     \definition[Измеримое отображение $F: X \map Y$ (относительно данных $\sigma$-алгебр)]{\label{measured_map}
     Такое отображение $F$, что $\forall a \in \mathcal{A}_Y: F^{-1}(a) \in \mathcal{A}_X$.
     }
-    В частном случае $\mathcal{A}_X = \mathcal{B}(X)$ и $\mathcal{A}_Y = \mathcal{B}_Y$ измеримое отображение называется \emph{измеримым по Борелю}.
+    В частном случае $\mathcal{A}_X = \mathcal{B}(X)$ и $\mathcal{A}_Y = \mathcal{B}(Y)$ измеримое отображение называется \emph{измеримым по Борелю}.
     \lemma{
         Всякое непрерывное отображение $F: X \map Y$ измеримо по Борелю.
         \provehere{
@@ -912,7 +913,7 @@
     }
     Для счётно-аддитивной меры $\nu$, заданной на $\mathcal{A}_X$ можно ввести её образ.
     \definition[Образ меры $\mu$ при (измеримом) отображении $F$]{
-        Мера $\rho$, заданная на $\mathcal{A}_Y$ следующим образом: $\rho(e) =\nu(F^{-1}(e))$.
+        Мера $\rho$, заданная на $\mathcal{A}_Y$ следующим образом: $\rho(e) =\mu(F^{-1}(e))$.
     }
     Пусть $F: \R^n \map \R^n$ непрерывно.
     Рассмотрим меру $\mu(e) \coloneqq \lambda_n(F^{-1}(e))$.
@@ -930,7 +931,7 @@
         Тогда $\nu$ корректно определена на $\mathcal{B}(G_1)$.}
     Пусть $a \subset G$ --- измеримое по Лебегу множество, $\lambda_n(a) = 0$.
     Тогда хочется, чтобы выполнялось $\nu(a) = 0$.
-    В таком случае $\nu(e) = \lambda_n(\Phi(e))$ будет определена на всех измеримых по Лебегу множеств (всякое измеримое по Лебегу множество --- разность $\delta\sigma$-множества, и множества меры нуль).
+    В таком случае $\nu(e) = \lambda_n(\Phi(e))$ будет определена на всех измеримых по Лебегу множествах (всякое измеримое по Лебегу множество --- разность $\delta\sigma$-множества, и множества меры нуль).
 
 
     Пусть $G_1, G_2$ --- открытые множества в $\R^n$, $\Phi: G_1 \map G_2$ --- гомеоморфизм.
@@ -938,7 +939,7 @@
     тогда $\Phi^{-1}$ измеримо по Борелю, и если $\Phi$ липшицево, то $\Phi^{-1}$ измеримо по Лебегу.
     \theorem{
         Пусть $\Phi: G_1 \map G_2$ --- $C$-липшицево отображение, пусть $A \subset G_1$ --- меры нуль.
-        Тогда $\Phi(A)$ тоже имеет меры нуль.
+        Тогда $\Phi(A)$ тоже имеет меру нуль.
         \provehere{
             \indentlemma{
                 Пусть $e \subset \R^n$. Тогда $e$ есть множество меры нуль $\iff \forall \eps > 0: \exists \{a_i\}_{i \in \N}: e \subset \bigcup\limits_{i}a_i$, причём
@@ -947,7 +948,7 @@
                 \bullets{
                     \item[$\then$] $\lambda_n(e) = 0 \iff \lambda_n^*(e) = 0 \iff \forall \eps > 0: \exists \{Q_i\}_{i \in \N}$ --- такое семейство двоичных кубов, что $\sum\limits_{i = 1}^{\infty}v_n(Q_i) < \eps$.
                     Учитывая, что $v_n(Q_i) = \left(\frac{\diam Q_i}{\sqrt{n}}\right)^n$ сразу получаем $\sum\limits_{i = 1}^{\infty}(\diam Q_i)^n < n^n\eps$.
-                    \item[$\when$] Всякое множество $a_i$ содержится в кубе $Q_i$ со стороной $\diam(a_i)$ (проекция на любую координатную ось не больше $\diam(a_i)$).
+                    \item[$\when$] Всякое множество $a_i$ содержится в кубе (необязательно двоичном) $Q_i$ со стороной $\diam(a_i)$ (проекция на любую координатную ось не больше $\diam(a_i)$).
                 }
 
             }
@@ -969,7 +970,7 @@
         Иначе положим $\tilde{K}_i = \defset{x \in G}{\dist(x, G^\comp) \ge \frac{1}{i}}$. Несложно видеть, что $\bigcup\limits_{i}\tilde{K}_i = G$ --- это следует из замкнутости $G^\comp$.
         Из непрерывности функции расстояния (она даже липшицева) $\tilde{K}_i$ тоже замкнуто.
 
-        Наконец, $\tilde{K}_i \subset \tilde{K}_{i + 1}$. Если $G$ неограничено, то $\tilde{K}_i$ может быть некомпактно хотя и замкнуто.
+        Наконец, $\tilde{K}_i \subset \Int\tilde{K}_{i + 1}$. Если $G$ неограничено, то $\tilde{K}_i$ может быть некомпактно хотя и замкнуто.
         Чтобы избежать этой проблемы, положим $K_i = \tilde{K}_i \cap \overline{B_i}(0)$.
     }
     }
@@ -984,7 +985,7 @@
             Тогда это гомеоморфизм $\R^n$ на себя.
             В любом случае, $T$ липшицево, например, с константой $\|T\|$.
 
-            Таким образом, если положить $\nu = \lambda_n\circ T$, то окажется, что $\nu$ --- корректно определённая счётно-аддитивная мера на $\sigma$-алгебра измеримых по Лебегу множеств.
+            Таким образом, если положить $\nu = \lambda_n\circ T$, то окажется, что $\nu$ --- корректно определённая счётно-аддитивная мера на $\sigma$-алгебре измеримых по Лебегу множеств.
             Заметим, что $\nu$ инвариантна относительно сдвига: $\forall t \in \R^n$. $\lambda_n(Te + Tt) = \lambda_n(Te)$.
             Таким образом~(\cref{measure_is_invariant}): $\exists c: \nu = c \lambda_n$. Осталось проверить, что $c = |\det T|$.
 
