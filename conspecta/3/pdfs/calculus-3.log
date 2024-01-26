@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 JAN 2024 23:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 JAN 2024 23:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1346,14 +1346,6 @@ L/cmm/m/it/10 x$\T2A/faq/m/it/10 , кро-ме мно-же-ства ме-ры нуль) $[]$.
  []
 
 [29] [30] [31]
-Overfull \hbox (1.63242pt too wide) in paragraph at lines 1428--1428
-[]\T2A/faq/bx/n/10 Теорема 2.5.3 \T2A/faq/m/n/10 (Ва-ри-ант тео-ре-мы Ле-ви для
- ря-дов)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 u[]$ \T2A/
-faq/m/n/10 --- сум-ми-ру-е-мые функ-ции, $[] \OML/cmm/m/it/10 u[]\OT1/cmr/m/n/1
-0 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =[][]
- []
-
-
 Overfull \hbox (14.17601pt too wide) in paragraph at lines 1443--1443
 []\T2A/faq/bx/n/10 Теорема 2.5.4 \T2A/faq/m/n/10 (Ле-бег, о ма-жо-ри-ру-е-мой с
 хо-ди-мо-сти)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 f; g$
@@ -1542,7 +1534,7 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (62 pages, 560502 bytes).
+f (62 pages, 560680 bytes).
 PDF statistics:
  937 PDF objects out of 1000 (max. 8388607)
  817 compressed objects within 9 object streams

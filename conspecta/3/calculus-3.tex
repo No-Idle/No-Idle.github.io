@@ -1039,13 +1039,13 @@
             Проверим предельное соотношение для интегралов: так как $s$ пробегает конечное множество значений, то достаточно доказать только для одного значения.
             Далее считаем, что $g = c \chi_e$.
 
-            Тем самым, утверждение свелось к следующему: для $e \in \Sigma$, для последовательности простых функций $g_j$, таких, что поточечно $0 \le g_j \le g_{j + 1} \le c\chi_e = g$, причём $\forall x \in X: \lim\limits_{j \to \infty}g_j(x) = c\chi_e(x)$,
+            Тем самым, утверждение свелось к следующему: для $e \in \Sigma$, для последовательности простых функций $g_j$, таких, что поточечно $0 \le g_1 \le \dots \le g_j \le g_{j + 1} \le \dots \le c\chi_e = g$, причём $\forall x \in X: \lim\limits_{j \to \infty}g_j(x) = c\chi_e(x)$,
             необходимо и достаточно показать, что $I(g_j) \underset{j \to \infty}\Map I(c\chi_e) = c\mu(e)$.
 
             Рассмотрим $d \in (0, c)$. Положим $E_n \coloneqq \defset{x}{g_n(x) > d}$. Понятно, что $E_n \subset e$, причём $\bigcup\limits_{n = 1}^{\infty}E_n = e$.
 
             Обозначим $h_n = d \cdot \chi_{E_n}$. По определению $E_n$: $h_n \le g_n$. Таким образом, \[\underbrace{I(h_n)}_{d \cdot\mu(E_n)\underset{n \to \infty}\Map d\cdot \mu(e)} \le I(g_n) \le \underbrace{I(g)}_{c \cdot \mu(e)}\]
-            Так как $I(g_i) \le I(g_{i + 1})$, то существует предел $V = \lim\limits_{j \to \infty}I(g_n)$.
+            Так как $I(g_j) \le I(g_{j + 1})$, то существует предел $V = \lim\limits_{j \to \infty}I(g_j)$.
             Отсюда $d \cdot \mu(e) \le V \le c\cdot\mu(e)$, причём это верно для любого $d < c$.
         }
     }
@@ -1059,7 +1059,7 @@
     \definition[Измеримое отображение $F: X \map Y$ (относительно данных $\sigma$-алгебр)]{
         Такое отображение $F$, что $\forall c \in \mathcal{A}_Y: F^{-1}(c) \in \mathcal{A}_X$.
     }
-    Если в качестве $Y$ рассмотреть топологическое пространство без определённой $\sigma$-алгебры, то в качестве $\sigma$-алгебры в $Y$ можно выбрать $\sigma$-алгебру борелевских множеств $\mathcal{B}(Y)$.
+    Если в качестве $X, Y$ рассмотреть топологические пространства без определённых $\sigma$-алгебр, то в качестве этих $\sigma$-алгебр в $X, Y$ можно выбрать $\sigma$-алгебры борелевских множеств $\mathcal{B}(X), \mathcal{B}(Y)$.
     В таком случае $F$ называется \emph{измеримой по Борелю}.
     \theorem{
         Пусть в $Y$ содержится счётная база топологии $\mathcal{A}_Y$;\ пускай $\mathcal{D}$ --- какая-нибудь (даже необязательно счётная) база для топологии в $Y$.
@@ -1071,7 +1071,7 @@
             Представим $G = \bigcup\limits_{x \in G}a_x$, где $a_x \in \mathcal{D}$ содержит $x$.
 
             Пускай $\mathcal{A}_Y$ --- счётная база топологии в $Y$.
-            Для любого $x \in G$: $\exists c_x \in \mathcal{A}_Y: x \in c_x \subset a$, где $a \in \mathcal{D}$.
+            Для любого $x \in G$: $\exists c_x \in \mathcal{A}_Y: x \in c_x \subset a_x$, где $a_x \in \mathcal{D}$.
             $\bigcup\limits_{x \in G}c_x = G$. Так как среди $c_x$ всего счётное число различных, то можно выбрать представителей --- счётное множество $X \subset G: \bigcup\limits_{x \in X}c_x = G$.
             Тогда и подавно $\bigcup\limits_{x \in X}a_x = G$.
 
@@ -1096,7 +1096,7 @@
     }
     \corollary{
         Рассмотрим композицию $X \overset{F}\Map Y \overset{\Phi}\Map Z$.
-        $X$ --- пространство с $\sigma$-алгеброй $\mathcal{A}$, $Y, Z$ --- топологические пространства, $F$ измеримо, $\Phi$ непрерывно.
+        $X$ --- пространство с $\sigma$-алгеброй $\mathcal{A}$, $Y, Z$ --- топологические пространства с борелевскими $\sigma$-алгебрами, $F$ измеримо, $\Phi$ непрерывно.
         Тогда $\Phi \circ F$ непрерывно.
     }
     \ok
@@ -1176,7 +1176,7 @@
     }
     \corollary{
         Пусть $f_n$ измеримы, и $\forall x$: числовая последовательность $\{f_n(x)\}$ ограничена.
-        Тогда $\varlimsup\limits_{n}f_n(x) = \varliminf\limits_{n}f(x)$ тоже измеримы.
+        Тогда $\varlimsup\limits_{n}f_n(x) = \varliminf\limits_{n}f_n(x)$ тоже измеримы.
         \provehere{
             Например, $\varlimsup\limits_{n}f_n(x) = \inf\limits_{k}\sup\limits_{n \ge k}f_n(x)$.
         }
@@ -1221,7 +1221,7 @@
 
             Заметим, что $\forall x: f_n(x) \le f_{n + 1}(x)$.
             \item[2] Аналогично предыдущему пункту, берём полуинтервалы $\left[\frac{j}{2^n}, \frac{j + 1}{2^n}\right)$, и строим $f_n$ точно так же.
-            Они сходятся к $f(x)$, но, увы, не простые.
+            Они сходятся к $g(x)$, но, увы, не простые.
             Тогда положим $\tilde{f}_n(x) = \min(f_n(x), n)$.
             Здесь $\tilde{f}_n(x)$ уже простые, по-прежнему возрастают монотонно, и всё ещё сходятся к $g$.
         }
@@ -1233,7 +1233,7 @@
 
         Доопределим $\hat{f}_n(x) = \all{f_n(x),&g(x) \in \R \\ +\infty,& g(x) = +\infty \\ -\infty,&g(x) = -\infty}$.
 
-        Тогда это всё ещё простые функции, и естественно считать, что они сходятся к $g$ равномерно.
+        Тогда это всё ещё ступенчатые функции, и естественно считать, что они сходятся к $g$ равномерно.
         На том множестве, где $g(x)$ конечно, $|f_n(x) - g(x)|$ равномерно сходится к нулю, а если $g(x)$ бесконечно, то разность, конечно, не определена, но $f_n(x) = g(x)$.
 
         Похожую вещь можно применить и ко второму пункту теоремы.
@@ -1332,7 +1332,7 @@
             Пускай $h \ge 0$ --- неотрицательная измеримая функция, $\lambda > 0$.
             Тогда $\mu\defset{x}{h(x) > \lambda} \le \frac{1}{\lambda}J(h)$.
         }{
-            Пусть $e = \defset{x}{h(x)>\lambda}$. Заметим, что $h \ge \lambda \chi_e$, из монотонности интеграла $J(h) \le \lambda \mu(e)$.
+            Пусть $e = \defset{x}{h(x)>\lambda}$. Заметим, что $h \ge \lambda \chi_e$, из монотонности интеграла $J(h) \ge \lambda \mu(e)$.
         }
         Пусть $A_n = \defset{x}{f(x) > \frac{1}{n}}$.
         $A = \bigcup\limits_{n \ge 1}A_n$.
@@ -1362,7 +1362,7 @@
 
     \subsection{Про линейность интеграла}
     Пусть $f = g - h$, где $g, h \ge 0$.
-    Тогда во всяком случае $g \ge f_+, h \ge f_-$: \[f = g - h \then f \le g\text{, а так как }f \ge 0\text{, то }f_+ \le g\text{ тоже}\qquad f_- = (-f)_+\]
+    Тогда во всяком случае $g \ge f_+, h \ge f_-$: \[f = g - h \then f \le g\text{, а так как }g \ge 0\text{, то }f_+ \le g\text{ тоже}\qquad f_- = (-f)_+\]
     \proposal{
         Если $f = g - h$. $g, h$ измеримы и неотрицательны, причём хотя бы одно из $J(g), J(h)$ конечно, то $f$ обладает интегралом $J(f) = J(g) - J(h)$.
         \provehere{
@@ -1408,7 +1408,7 @@
     \note{
         Если $f$ --- суммируемая функция, то $\defset{x}{f(x) \ne 0}$ $\sigma$-конечно.
         \provehere{
-            Применить неравенство Чебышёва. $\defset{x}{f(x)} = \bigcup\limits_{n \ge 0}\bigdefset{x}{|f|(x) \ge \frac{1}{n}}$.
+            Применить неравенство Чебышёва. $\defset{x}{f(x) \ne 0} = \bigcup\limits_{n \ge 0}\bigdefset{x}{|f|(x) \ge \frac{1}{n}}$.
         }
     }
     \theorem[Общая теорема Леви]{
@@ -1420,10 +1420,10 @@
         }
     }
     \corollary{
-        $f$ суммируема $\iff J(f_j) < +\infty$, при этом $J(f) = \lim\limits_{n \to \infty}J(f_n)$.
+        $f$ суммируема $\iff \sup\limits_{n}J(f_n) < +\infty$, при этом $J(f) = \lim\limits_{n \to \infty}J(f_n)$.
     }
     \theorem[Вариант теоремы Леви для рядов]{
-        Пусть $u_n$ --- суммируемые функции, $\sum\limits_{n = 1}^{\infty}u_n(x) \eqqcolon u(x)$.
+        Пусть $u_n$ --- неотрицательные суммируемые функции, $\sum\limits_{n = 1}^{\infty}u_n(x) \eqqcolon u(x)$.
         Тогда $u$ суммируема $\iff \sum\limits_{n = 1}^{\infty}\int\limits_{X}u_n \d \mu < +\infty$.
     }
     В случае монотонной сходимости почти всегда почти всё можно делать, а если сходимость не монотонна, то есть следующая теорема.
@@ -1438,7 +1438,7 @@
     Положим $h_k \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
         Так как $0 \le h_0(x) \le 2g(x)$, то $h_0$ суммируема, откуда по теореме Леви: $\int\limits_{X}h_k(x)\d\mu \underset{k \to \infty}\Map 0$.
 
-    Осталось применить принцип двух полицейских для неравенства \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
+    Осталось применить принцип двух полицейских для проинтегрированного неравенства справа от $\then$ \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
     }
     }
     \counterexample{
@@ -1461,7 +1461,7 @@
     \fact{
     \down\numbers{
     \item Из сходимости $f_n \almost{n \to \infty} f$ следует сходимость по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$.
-    \item Если $\mu(X) < \infty$, то из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$: $f_{n_k} \almost{k \to \infty} f$.
+    \item Если $\mu(X) < \infty$, то из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$, таких, что $f_{n_k} \almost{k \to \infty} f$.
     }
     \provehere{\down\numbers{
     \item Пусть $\eps > 0$, обозначим $A_n \coloneqq \defset{x \in X}{\exists k \ge n: |f_k(x) - f(x)| \ge \eps}$. Они вложены: ${A_1 \supset A_2 \supset \dots}$
@@ -2224,7 +2224,7 @@
     \section{Мера Лебега на поверхностях}
     Пусть теперь $m \le n$, и для $U \subset \R^m$ имеется гладкое инъективное $f: U \map \R^n$ со всюду неврожденным дифференциалом.
 
-    Тогда $\forall e \subset U: f(e)$ --- какая-то $m$-мерная поверхность в $\R^n$, и её $m$-мерная мера равна нулю, но есть же у поверхности какая-то площадь, и хочется уметь её вычислять.
+    Тогда $\forall e \subset U: f(e)$ --- какая-то $m$-мерная поверхность в $\R^n$, и её $n$-мерная мера равна нулю, но есть же у поверхности какая-то площадь, и хочется уметь её вычислять.
     \subsection{Частный случай линейного $f$}
     Пусть $A: \R^m \map \R^n$ --- линейный оператор.
     Тогда $A(\R^m)$ --- линейное подпространство размерности $m$ в $\R^n$, и в нём есть какая-то своя $m$-мерная мера Лебега.
@@ -2350,7 +2350,7 @@
     }
     }
     \corollary{
-    Пусть $\alpha = \inf\defset{p > 0}{\mu_*^p(a) < \infty}$. Тогда $\mu_s^*(a) = \infty$ при $s > \alpha$, и при $s < \alpha$, то $\mu^*_s(a) = +\infty$.
+    Пусть $\alpha = \inf\defset{p > 0}{\mu_*^p(a) < \infty}$. Тогда $\mu_s^*(a) = \infty$ при $s > \alpha$, и $\mu^*_s(a) = 0$при $s < \alpha$.
     }
     \definition[Хаусдорфова размерность $a\subset \R^n$]{
     Вот это число $\alpha$, отвечающее $a$.
