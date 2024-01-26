@@ -15,6 +15,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+\RequirePackage{upgreek}
 \RequirePackage{graphicx}
 \RequirePackage{varioref}
 \RequirePackage{hyperref}
@@ -117,6 +118,8 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 
 %\renewcommand*{\emph}[1]{\ifx\f@shape\my@test@it\textup{#1}\else\textit{#1}\fi}
 %\newcommand*{\my@test@it}{it}
+
+\newcommand{\comment}[1]{\textcolor{magenta}{#1}}
 
 \newcommand{\pic}[3][0.3]{\begin{figure}[h!]\centering\includegraphics[width=#1\textwidth]{#2}\caption{\label{#2}#3}\end{figure}}
 \newcommand{\theorem}[2][]{\begin{theorem_env}[#1]#2\end{theorem_env}}

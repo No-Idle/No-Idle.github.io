@@ -825,11 +825,11 @@
     }
     \theorem[О приклеивании двумерной клетки]{
         Пусть $Y$ --- <<хорошее>>, приклеим двумерную клетку $D^2$ по отображению $\alpha: \partial D^2 \map Y$.
-        $X \coloneqq Y \sqcup_\alpha D^2$. Тогда $\pi_1(X) = \pi_1(Y)/[\alpha]^{\pi_1(Y)}$ (где $[\alpha]^{\pi_1(Y)}$ --- нормальное замыкание подгруппы $\angles{[\alpha]} \le \pi_1(Y)$).
+        $X \coloneqq Y \sqcup_\alpha D^2$. Тогда $\pi_1(X) = \pi_1(Y)/\angles{[\alpha]}^{\pi_1(Y)}$ (где $\angles{[\alpha]}^{\pi_1(Y)}$ --- нормальное замыкание подгруппы $\angles{[\alpha]} \le \pi_1(Y)$).
         \provehere[Доказательство из теоремы Зейферта --- ван Кампена]{
             Пусть $y \in D^2$ --- центр диска.
             Рассмотрим $U = X \sm \{y\}, V = B_{\frac{1}{2}}(y)$. Тогда пересечение $U \cap V$ гомотопически эквивалентно (внутри $U \cup V$) петле $\alpha$, $\pi_1(V) = \{e\}$.
-            \[\pi_1(X) = \pi_1(Y) \underset{\angles{[\alpha]}}\star \{e\} = \pi_1(Y)/[\alpha]^{\pi_1(Y)}\]
+            \[\pi_1(X) = \pi_1(Y) \underset{\angles{[\alpha]}}\star \{e\} = \pi_1(Y)/\angles{[\alpha]}^{\pi_1(Y)}\]
         }
         \provehere[Другое доказательство]{
             Пусть $\alpha: S^1 \map Y, X = Y \sqcup_{\alpha} D^2, i: Y \map X, i_*: \pi_1(Y) \map \pi_1(X)$.
@@ -837,10 +837,10 @@
             Заметим, что $i_*$ --- эпиморфизм: используя лемму о свободной точке (появлялась при доказательстве того, что на $D^n$ для $n \ge 2$ всякая петля гомотопически эквивалентна несюръективной) можно гомотопией любую петлю $\beta: S^1 \map X$ привести к петле $\beta: S^1 \map Y$.
             Для этого надо рассмотреть линейное <<отталкивание>> от данной свободной точки.
 
-            Теперь осталось проверить, что $\Ker(i_*) = [\alpha]^{\pi_1(Y)}$.
-            Очевидно включение $[\alpha] \in \Ker(i_*)$, так как ядро нормально, то $[\alpha]^{\pi_1(Y)} \le \Ker(i_*)$.
+            Теперь осталось проверить, что $\Ker(i_*) = \angles{[\alpha]}^{\pi_1(Y)}$.
+            Очевидно включение $[\alpha] \in \Ker(i_*)$, так как ядро нормально, то $\angles{[\alpha]}^{\pi_1(Y)} \le \Ker(i_*)$.
 
-            Рассмотрим накрытие $p_1: \tilde{Y} \map Y$ с группой $\Image((p_1)_*) = [\alpha]^{\pi_1(Y)}$.
+            Рассмотрим накрытие $p_1: \tilde{Y} \map Y$ с группой $\Image((p_1)_*) = \angles{[\alpha]}^{\pi_1(Y)}$.
 
             Зафиксируем $w_0 \coloneqq \alpha(0) \in W$, и положим $W \coloneqq \Image(\alpha) \subset Y$, $\tilde{W} \coloneqq p_1^{-1}(W)$.
             Из регулярности накрытия: $\forall \tilde{w}_\gamma \in p_1^{-1}(w_0)$: группа накрытия с отмеченной точкой $\tilde{w}_\gamma$ --- это $\angles{[\alpha]}^{\pi_1(Y)}$.
@@ -853,10 +853,10 @@
             Построим $p_2: \tilde{X} \map X$, такое, что $p_2\big|_{\tilde{Y}} = p_1$, и $p_2$ отображает тождественно $D^2_\gamma \map D^2$.
             Оно непрерывно, и, более того, это накрытие --- в этом несложно убедиться руками, оно очень похоже на накрытие $p_1$.
 
-            Теперь мы готовы доказать, что $\Ker(i_*) \le [\alpha]^{\pi_1(Y)}$.
-            Рассмотрим $[\beta] \notin [\alpha]^{\pi_1(Y)}$.
+            Теперь мы готовы доказать, что $\Ker(i_*) \le \angles{[\alpha]}^{\pi_1(Y)}$.
+            Рассмотрим $[\beta] \notin \angles{[\alpha]}^{\pi_1(Y)}$.
             Эту петлю можно поднять, получив разомкнутый путь $\tilde{\beta}: [0, 1] \map \tilde{Y}$.
-        % https://q.uiver.app/#q=WzAsNSxbMCwxLCJbMCwgMV0iXSxbMSwxLCJZIl0sWzIsMSwiWCJdLFsxLDAsIlxcdGlsZGV7WX0iXSxbMiwwLCJcXHRpbGRle1h9Il0sWzMsNCwiXFx0aWxkZXtpfSJdLFsxLDIsImkiLDJdLFszLDEsInBfMSJdLFs0LDIsInBfMiJdLFswLDEsIlxcYmV0YSIsMl0sWzAsMywiXFx0aWxkZXtcXGJldGF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+            % https://q.uiver.app/#q=WzAsNSxbMCwxLCJbMCwgMV0iXSxbMSwxLCJZIl0sWzIsMSwiWCJdLFsxLDAsIlxcdGlsZGV7WX0iXSxbMiwwLCJcXHRpbGRle1h9Il0sWzMsNCwiXFx0aWxkZXtpfSJdLFsxLDIsImkiLDJdLFszLDEsInBfMSJdLFs0LDIsInBfMiJdLFswLDEsIlxcYmV0YSIsMl0sWzAsMywiXFx0aWxkZXtcXGJldGF9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \& {\tilde{Y}} \& {\tilde{X}} \\
                   {[0, 1]} \& Y \& X
