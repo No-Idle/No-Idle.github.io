@@ -1196,6 +1196,7 @@
         Тогда всё равно $f$ измерима.
         \provehere{
             Пусть $f(x_0) = +\infty$. Тогда $\forall N \in \N: \exists k \in \N: \forall n \ge k: f_n(x_0) \ge N$.
+
             Тем самым, $\defset{x_0}{f(x_0) = +\infty} = \bigcap\limits_{N \in \N}\bigcup\limits_{k\in\N}\bigcap\limits_{n \ge k}\defset{x_0}{f_n(x_0) \ge N}$.
         }
     }
@@ -1386,7 +1387,7 @@
             \[f = f_+ - f_- = g - h \quad\then\quad f_+ + h = g + f_-\]
             Для неотрицательных функций известна аддитивность, откуда $J(f_+) + J(h) = J(g) + J(f_-)$.
             Перенося в противоположные части конечные слагаемые $J(f_+)$ и $J(g)$, получаем
-            \[-J(g) + J(h) = J(f_-) - J(f_+)\]
+            \[J(h) - J(g) = J(f_-) - J(f_+)\]
             Умножая обе части на $-1$, получаем искомое.
         }
     }
@@ -1422,7 +1423,7 @@
     \fact{
         Если $f$ --- суммируемая функция, то $\defset{x}{f(x) \ne 0}$ $\sigma$-конечно.
         \provehere{
-            Применить неравенство Чебышёва~(\cref{tschebyschev-inequality}).\[\defset{x}{f(x) \ne 0} = \bigcup\limits_{n \ge 0}\bigdefset{x}{|f|(x) \ge \frac{1}{n}}\qedhere\]
+            Применить неравенство Чебышёва~(\cref{tschebyschev-inequality}).\[\defset{x}{f(x) \ne 0} = \bigcup\limits_{n > 0}\bigdefset{x}{|f|(x) \ge \frac{1}{n}}\qedhere\]
         }
     }
     \theorem[Общая теорема Леви]{
@@ -1434,7 +1435,7 @@
         }
     }
 %    \corollary{
-%        Пусть $f = \lim\limits_{n \to \infty}f_n$, где все $f_n$ суммируемы.
+%        Пусть $f = \lim\limits_{n \to \infty}f_n$, где $f_1 \le f_2 \le \dots$.
 %        $f$ суммируема $\iff \sup\limits_{n}J(f_n) < +\infty$, при этом $J(f) = \lim\limits_{n \to \infty}J(f_n)$.
 %    }
     \theorem[Вариант теоремы Леви для рядов]{
@@ -1450,7 +1451,7 @@
         % Покажем, что почти всюду $\varlimsup\limits_{n \to \infty}|f_n(x) - f(x)| = 0$. Что там в скобочках написано?
             Так как $g$ --- мажоранта, то везде на $X: |f_n(x) - f(x)| \le 2g(x)$.
 
-            Положим $h_k \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
+            Положим $h_k(x) \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
             Так как $0 \le h_0(x) \le 2g(x)$, то $h_0$ суммируема, откуда по теореме Леви: $\int\limits_{X}h_k(x)\d\mu \underset{k \to \infty}\Map 0$.
 
             Осталось применить принцип двух полицейских для проинтегрированного неравенства: \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
@@ -1477,35 +1478,40 @@
         \item Сходимость почти всюду: мера множества, где сходимости нет, равна нулю.
         \item Сходимость по мере: $f_n \underset{n \to \infty}{\overset{\mu}\Map} f \overset{def}\iff \forall \eps > 0: \mu\bigdefset{x \in X}{|f_n(x) - f(x)| > \eps} \underset{n \to \infty}\Map 0$.
     }
+    \definition[Последовательность Коши по мере]{
+        Последовательность измеримых функций $f_n$, такая, что $\forall \eps > 0: \lim\limits_{(n, m) \to \infty}\mu\bigdefset{x \in X}{|f_n(x) - f_m(x)| > \eps} = 0$.
+    }
     \fact{
         \down\numbers{
             \item Если $\mu(X) < \infty$, то из сходимости $f_n \almost{n \to \infty} f$ следует сходимость по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$.
-            \item Из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$, таких, что $f_{n_k} \almost{k \to \infty} f$.
+            \item Из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность $n_1 < n_2 < \dots$: $f_{n_k} \almost{k \to \infty} f$.
+
+            Докажем даже более сильное утверждение: для последовательности Коши по мере $f_n$ найдутся измеримая $f$, и сходящаяся к ней подпоследовательность $n_1 < n_2 < \dots$: $f_{n_k} \almost{k \to \infty} f$.
         }
-        \provehere{\down\numbers{
+        \provenumbers{
             \item Пусть $\eps > 0$, обозначим $A_n \coloneqq \defset{x \in X}{\exists k \ge n: |f_k(x) - f(x)| \ge \eps}$. Они вложены: ${A_1 \supset A_2 \supset \dots}$
 
-            Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: $f_n \centernot\Map f$.
-            Но раз есть сходимость почти всюду, то $\mu(A) = 0$, то есть $\mu(A_n) \underset{n \to \infty}\Map 0$.
-            \item \up \definition[Последовательность Коши по мере]{
-                Последовательность измеримых функций $f_n$, такая, что $\forall \eps > 0: \lim\limits_{(n, m) \to \infty}\mu\bigdefset{x \in X}{|f_n(x) - f_m(x)| > \eps} = 0$.}
+            Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: ${f_n \centernot\Map f}$.
+            Но раз есть сходимость почти всюду, то $\mu(A) = 0$, то есть (так как мера конечна) ${\mu(A_n) \underset{n \to \infty}\Map 0}$.
+            \item
             Найдутся такие $N_1 \le N_2 \le \dots$, что $\mu\defset{x \in X}{\forall n, m \ge N_k: |f_n(x) - f_m(x)| \ge \frac{1}{2^k}} \le \frac{1}{2^k}$.
 
             Положим $E_k \coloneqq \bigdefset{x \in X}{\abs{f_{N_k}(x) - f_{N_{k+1}}(x)} \le \frac{1}{2^k}}$. $\mu(X \sm E_k) \le \frac{1}{2^k}$.
-            Пусть $\tilde{E}_k = \bigcap\limits_{n \ge k}E_n$, тогда $\mu\left(X \sm \tilde{E}_k\right) = \mu\left(\bigcup\limits_{n \ge k}X \sm E_n\right) \le \sum\limits_{n \ge k}\mu(X \sm E_n) \le \frac{1}{2^{k-1}}$.
+            Пусть $\tilde{E}_k = \bigcap\limits_{n \ge k}E_n$, тогда $\mu\left(X \sm \tilde{E}_k\right) = \mu\left(\bigcup\limits_{n \ge k}(X \sm E_n)\right) \le \sum\limits_{n \ge k}\mu(X \sm E_n) \le \frac{1}{2^{k-1}}$.
 
             Если $x \in \tilde{E}_k \then \forall n \ge k: \abs{f_{N_n}(x) - f_{N_{n+1}}(x)} \le \frac{1}{2^n}$, то есть $\forall x \in \tilde{E}_k: \sum\limits_{j = 1}^{\infty}\abs{f_{N_j}(x) - f_{N_{j+1}}(x)}$ сходится.
 
             А тогда эта сумма сходится и на $\bigcup\limits_{k = 1}^{\infty}\tilde{E}_k$. Это влечёт $\forall x \in \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k: \exists \lim\limits_{k \to \infty}f_{N_k}(x)$. К этому пределу $f_{N_k}$ сходятся почти всюду: мера $X \sm \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k = \bigcap\limits_{k = 1}^{\infty}(X \sm \tilde{E}_k)$ равна нулю.
         }
-        }
     }
-    Видно, что на самом деле мы доказали более сильное утверждение: для последовательности Коши по мере $\exists$ измеримая $f$: $f_n \almost{n \to \infty} f$.
+    \note{
+        Ещё мы доказали, что для последовательности Коши по мере $f_n$ найдётся измеримая $f$, такая, что $\underset{n \to \infty}{\overset{\mu}\Map} f$.
+    }
 
 
     \section{Классы $L^p$}
     Определим $L^p(\mu) \bydef \defset{f: X \map \R}{f \text{ --- измерима, и }\int\limits_{X}|f|^p \d\mu < \infty}$.
-    Как следует из первой буквы, класс назван в честь Лебега.
+    Как видно из первой буквы, класс назван в честь Лебега.
 
     В дальнейшем мы будем считать, что $p \ge 1$.
 
