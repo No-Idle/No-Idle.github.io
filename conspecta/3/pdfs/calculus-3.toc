@@ -36,10 +36,10 @@
 \contentsline {subsubsection}{Интегрирование по мере $\nu $}{44}{section*.4}%
 \contentsline {subsection}{\numberline {2.9.3}Свойства свёртки}{44}{subsection.2.9.3}%
 \contentsline {subsection}{\numberline {2.9.4}Слегка другой способ построения аппроксимативной единицы}{47}{subsection.2.9.4}%
-\contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{47}{section.2.10}%
+\contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{48}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Мера Лебега на поверхностях}{50}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Частный случай линейного $f$}{50}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.1}Частный случай линейного $f$}{51}{subsection.2.11.1}%
 \contentsline {subsection}{\numberline {2.11.2}$p$-мера Хаусдорфа}{51}{subsection.2.11.2}%
 \contentsline {section}{\numberline {2.12}Элементы общей теории меры}{56}{section.2.12}%
-\contentsline {subsection}{\numberline {2.12.1}Интеграл по комплексной мере}{60}{subsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12.1}Интеграл по комплексной мере}{61}{subsection.2.12.1}%
 \contentsline {subsection}{\numberline {2.12.2}Разложение Лебега}{61}{subsection.2.12.2}%

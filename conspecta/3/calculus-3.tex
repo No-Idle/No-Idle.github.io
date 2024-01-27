@@ -1553,9 +1553,9 @@
 
             Теперь проверим неравенство треугольника $\|f + g\|_{L^p} \le \|f\|_{L^p}+ \|g\|_{L^p}$.
             Для данной нормы оно носит название \emph{неравенства Минковского}.
-            \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{$\le$}\]
+            \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{\le}\]
             Применив к каждому слагаемому неравенство Гёльдера ($|f + g|^{p - 1} \in L^q$, так как $\int\limits_{X}|f + g|^{(p - 1)q}\d\mu = \int\limits_{X}|f + g|^{p}\d\mu \le 2^p\int\limits_{X}\max(f, g)^p\d\mu\le 2^p\int\limits_{X}\left(|f|^p + |g|^p\right)\d\mu$), получаем
-            \[\circlesign{$\le$} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
+            \[\circlesign{\le} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
             Далее делим обе части неравенства на $\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}$, и остаётся \[\underbrace{\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{1 - \frac{1}{q}}}_{\|f + g\|_{L^p}} \le \|f\|_{L^p} + \|g\|_{L^p}\qedhere\]
         }
     }
@@ -1923,7 +1923,7 @@
 
         По теореме Тонелли $\phi$ суммируема, тем самым, $(x, y) \mapsto f(y)g(x - y)$ тоже суммируема.
         По теореме Фубини $(f * g)(x)$ определена для почти всех $x$, причём она суммируема.
-        \[\int\limits_{R^n}|(f * g)(x)| \d x \le \int\limits_{\R^n}\int\limits_{\R^n}|f(y)g(x-y)|\d y\d x \le \|f\|_{L^1}\|g\|_{L^1}\]
+        \[\int\limits_{R^n}|(f * g)(x)| \d x \le \int\limits_{\R^n}\int\limits_{\R^n}|f(y)g(x-y)|\d y\d x \le \|f\|_{L^1}\|g\|_{L^1}\qedhere\]
     }
     }
 
@@ -1968,14 +1968,14 @@
             Формула верна для $g = \chi_e$: \[\int\limits_{X}\chi_e\d\nu = \nu(e) = \int\limits_{X}\chi_e\phi\d\mu\]
             Значит, формула верна для неотрицательных простых функций.
 
-            Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви.
+            Теперь пусть $g$ --- произвольная измеримая. Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви (два раза, в левой и правой частях равенства).
         }
     }
     \corollary{
         Неотрицательная функция $g$ $\nu$-суммируема $\iff g\phi$ $\mu$-суммируема.
     }
     \corollary{
-        Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
+        $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
     }
 
     \subsection{Образ меры}
@@ -1984,7 +1984,7 @@
     Пусть $F: X \map Y$ измеримо относительно $(\mathcal{A}, \mathcal{B})$.
 
     Пускай  $\mu \ge 0$ --- счётно-аддитивная мера на $(X, \mathcal{A})$.
-    Её \emph{образ} $F^0(\mu) = \nu$ --- счётно-аддитивная мера на $(Y, \mathcal{B})$, такая, что $\nu(b) = \mu(F^{-1}(b))$.
+    Её \emph{образ} $F^0(\mu) \eqqcolon \nu$ --- счётно-аддитивная мера на $(Y, \mathcal{B})$, такая, что $\nu(b) = \mu(F^{-1}(b))$.
     Счётная аддитивность следует из того, что прообраз уважает все теоретико-множественные операции.
 
     \subsubsection{Интегрирование по мере $\nu$}
@@ -1997,59 +1997,59 @@
             Формула верна для $g = \chi_e$.
             Значит, формула верна для неотрицательных простых функций.
 
-            Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви (два раза, в левой и правой частях равенства).
+            Теперь пусть $g$ --- произвольная измеримая. Существуют неотрицательные простые $g_n \nearrow g$, применяем теорему Леви (два раза, в левой и правой частях равенства).
         }
     }
-    Все замечания из предыдущего раздела повторяются.
+    Все замечания из предыдущего раздела повторяются:
     \corollary{
-        Неотрицательная функция $g$ $\nu$-суммируема $\iff g\phi$ $\mu$-суммируема.
+        Неотрицательная функция $g$ $\nu$-суммируема $\iff g\circ F$ $\mu$-суммируема.
     }
     \corollary{
-        Тогда $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\phi$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\phi\d\mu$.
+        $h$ (возможно, меняющая знак) $\nu$-суммируема $\iff h\circ F$ $\mu$-суммируема, причём $\int\limits_{X}h\d\nu = \int\limits_{X}h\circ F\d\mu$.
     }
     Данная формула очень полезна при замене переменной в интеграле.
 
-    Например, ранее записанное равенство $\int\limits_{X}f(x - y)\d y = \int\limits_{X}f(\xi)\d\xi$ видно из данной формулы при $g(y) = x - y$ --- здесь образ меры будет её самой.
+    Например, ранее записанное равенство $\int\limits_{X}f(x - y)\d y = \int\limits_{X}f(\xi)\d\xi$ видно из данной формулы при $F(y) = x - y$ --- здесь образ меры будет ей самой.
 
     \subsection{Свойства свёртки}
+    Пусть $1 \le p \le \infty$.
     \theorem{
-        Если $g$ лежит в $L^1(\R^n)$, $f \in L^p(\R^n)$, где $1 \le p \le \infty$, то $\|f * g\|_{L^p(\R^n)} \le \|f\|_{L^p(\R^n)}\|g\|_{L^1(\R^n)}$.
+        Если $g \in L^1(\R^n)$, $f \in L^p(\R^n)$, то $\|f * g\|_{L^p(\R^n)} \le \|f\|_{L^p(\R^n)}\|g\|_{L^1(\R^n)}$.
         \provehere{
-            Пусть $p = \infty$.
+            Пусть $p = \infty$. Тогда это следует из оценки
             \[|(f * g)(x)| \le \int\limits_{\R^n}|f(x - y)| \cdot |g(y)| \d y \le \underbrace{\|f\|_{L^{\infty}}}_{\esssup(f)~}\int\limits_{\R^n}|g(y)|\d y\]
-            При $p = 1$ доказано выше:~(\cref{p-equals-1}).
+            При $p = 1$ доказано выше~(\cref{p-equals-1}).
 
             Теперь пусть $1 < p < \infty$, $q$ --- сопряжённый к $p$ показатель.
-            \[\int\limits_{\R^n}|(f * g)(x)|^p\d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)||g(y)|\d y\right)^p \d x = \cdots\]
+            \[\int\limits_{\R^n}|(f * g)(x)|^p\d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)||g(y)|\d y\right)^p \d x \circlesign{=}\]
             Определим из меры Лебега новую меру с плотностью $|g(y)|$: $\nu(e) \coloneqq \int\limits_{e}|g(y)|\d y$.
             Это конечная мера на $\R^n$, так как $g \in L^1$.
-            \[\cdots = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)| \cdot 1\d \nu(y)\right)^p \d x \le \cdots\]
+            \[\circlesign{=} \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)| \cdot 1\d \nu(y)\right)^p \d x \circlesign{\le}\]
             Теперь применим неравенство Гёльдера относительно данной меры $\nu$.
             \multline{
-                \le \int\limits_{\R^n}\left[\left(~\int\limits_{\R^n}|f(x - y)|^p\d\nu(y)\right)^{\frac{1}{p}}\left(~\int\limits_{\R^n}1^q\d\nu\right)^{\frac{1}{q}}\right]^p \d x=\\= \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)|^p|g(y)|\d y\right)\d x \cdot \|g\|_{L^1}^{\frac{p}{q}}            = \|g\|_{L^1}^{\frac{p}{q}}\|f\|^p_{L^1}\|g\|_{L^1}
+                \circlesign{\le} \int\limits_{\R^n}\left[\left(~\int\limits_{\R^n}|f(x - y)|^p\d\nu(y)\right)^{\frac{1}{p}}\left(~\int\limits_{\R^n}1^q\d\nu\right)^{\frac{1}{q}}\right]^p \d x=\\= \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)|^p|g(y)|\d y\right)\d x \cdot \|g\|_{L^1}^{\frac{p}{q}} \underset{\text{\cref{p-equals-1}}}{\le} \|f\|^p_{L^p}\cdot \|g\|_{L^1} \cdot \|g\|_{L^1}^{\frac{p}{q}}
             }
-            Тем самым, $\|f * g\|_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|_{L^p}^p$ и $\|f * g\|^p_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
-
+            Тем самым, $\|f * g\|^p_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|_{L^p}$ и $\|f * g\|^p_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
         }
     }
     \exercise[Неравенство Юнга]{
-        Пусть $f \in L^s(\R^n), g \in L^t(\R^n)$, где $s, t > 1$. Предположим, что $\frac{1}{r} = \frac{1}{s} + \frac{1}{t} - 1$, и пусть $r \ge 1$.
+        Пусть $f \in L^s(\R^n), g \in L^t(\R^n)$, где $s, t > 1$.
+        Предположим, что $\frac{1}{r} = \frac{1}{s} + \frac{1}{t} - 1$, и пусть $r \ge 1$.
         Тогда $\|f * g\|_{L^r} \le \|f\|_{L^s}\|g\|_{L^t}$.
     }
     \exercise{
-        Если $\frac{1}{p} + \frac{1}{q} = 1$, и $1 < p, q < \infty$, то $\|f*g\| \le \|f\|_{L^p} \|g\|_{L^q}$, и при этом $\|f * g\|$ непрерывна и стремится к нулю на $\infty$.
+        Если $\frac{1}{p} + \frac{1}{q} = 1$, и $1 < p, q < \infty$, то $\|f*g\| \le \|f\|_{L^p} \|g\|_{L^q}$, и при этом $f * g$ непрерывна и стремится к нулю на $\infty$.
     }
     \fact{
-        Пусть $g \in L^1(\R^n)$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p \le \infty$:
-        \comment{Надо проверить, что всё сходится, тут было немного не это написано.}
-        \[\|f * g - f\|^p_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y\cdot|g(x)| \d x\]
+        Пусть $g \in L^1(\R^n)$, $g \ge 0$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p < \infty$:
+        \[\|f * g - f\|^p_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y \d x\]
         \provehere{
             $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
             Возьмём модуль, возведём в степень $p$, и проинтегрируем:
-            \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x \le \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)||g(y)|\d y\right)^p \d x\]
-            Далее вводим меру $\nu(e) = \int\limits_{e}|g(y)|\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$.
-            \note{
-                При $p = \infty$ тоже верно, доказательство другое (проще).\qedhere
+            \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)|g(y)\d y\right)^p \d x\]
+            Далее вводим меру $\nu(e) = \int\limits_{e}g(y)\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$ (применяем к выражению внутри скобок):
+            \gather{\int\limits_{\R^n}\left(|f(x - y) - f(x)| \cdot 1\right)\nu(y) \le \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p\nu(y)\right)^{\frac{1}{p}} \cdot \underbrace{\left(~\int\limits_{\R^n}1^q\nu(y)\right)^{\frac{1}{q}}}_{1} = \\
+            = \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p g(y)\d y\right)^{\frac{1}{p}} \underset{\text{\cref{p-equals-1}}}{\le} \left(~\int\limits_{\R^n}|f(x - y) - f(x)|\d y \cdot \int\limits_{\R^n}g(y)\d y\right)^{\frac1p}
             }
         }
     }
@@ -2058,26 +2058,27 @@
         Пусть $u$ --- непрерывна, с компактным носителем, $f \in L^p(\R^n)$. Тогда $f * u$ непрерывна.
         Если $u \in \mathcal{D}(\R^n)$, то $f * u \in C^{\infty}(\R^n)$.
         \provehere{
-            \[(f * g)(x) = \int\limits_{\R^n}f(y)u(x - y)\d y = \cdots \]
+            \[(f * g)(x) = \int\limits_{\R^n}f(y)u(x - y)\d y \circlesign{=} \]
             Проверим непрерывность в $x_0 \in \R^n$, рассмотрим $B_r(x_0)$.
-            Пусть $S = \supp u$.
-            Теперь можно считать, что интегрирование берётся по компакту $K = \overline{B_r(x_0)} - S$.
-            \[\cdots \underset{\text{при $x \in B_r(x_0)$}}= \int\limits_{K}f(y)u(x - y)\d y\]
-            Заметим, что для всякой последовательности $x_j \to x_0: u(x_j - y) \to u(x_0 - y)$, откуда $|f(y)u(x_j - x_0)| \le C|f(y)|$, и можно применить теорему Лебега о мажоранте.
+            Пусть $S \coloneqq \supp u$.
+            Можно считать, что интегрирование берётся по компакту $K \coloneqq \overline{B_r(x_0)} - S$.
+            \[\underset{\text{при $x \in B_r(x_0)$}}{\circlesign{=}} \int\limits_{K}f(y)u(x - y)\d y\]
+            Заметим, что для всякой последовательности $x_j \to x_0: u(x_j - y) \to u(x_0 - y)$, откуда при $x_j$, близких к $x_0$: $\exists C$: $|f(y)u(x_j - x_0)| \le C|f(y)|$, и можно применить теорему Лебега о мажоранте:
             \indentlemma{
                 Пусть $K \subset \R^n$ --- компактное множество, $I = (a, b)\subset \R$ --- интервал, $v: K \times I \map \R$.
                 Пусть $\exists \der{}{t}v(x, t)$, и она непрерывна на $(a, b)$ при всяком фиксированном $x \in K$.
                 Также предположим наличие суммируемой мажоранты $w$ на $K$: для всех $t \in (a, b): \abs{\der{}{t}v(x, t_0)} \le w(x)$.
 
-                Определим $\phi(t) = \int\limits_{K}v(x, t)\d x$ (предполагаем, что $v(x, t)$ суммируема при всяком $t$). Тогда $\phi$ дифференцируема на $(a, b)$, и
-                \[\phi'(t_0) = \int\limits_{K}\der{}{t}v(x, t_0)\d x\]
+                Определим $\phi(t) \coloneqq \int\limits_{K}v(x, t)\d x$ (предполагаем, что $v(x, t)$ суммируема при всяком $t$). Тогда $\phi$ дифференцируема на $(a, b)$, и
+                \[\phi'(t_0) = \int\limits_{K}\der{}{t}v(x, t)\d x\]
             }{
                 Выберем последовательность $t_n \to t_0$, запишем разностное отношение
-                $\frac{\phi(t_n) - \phi(t_0)}{t_n - t_0} = \int\limits_{K}\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0}\d x \underset{n \to \infty}\Map\phi'(t_0)$
+                $\frac{\phi(t_n) - \phi(t_0)}{t_n - t_0} = \int\limits_{K}\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0}\d x \underset{n \to \infty}\Map\phi'(t_0)$.
                 По формуле Лагранжа $\frac{v(x, t_n) - v(x, t_0)}{t_n - t_0} = \der{}{t}v(x, \xi)$ для некой $\xi \in (t_n, t_0)$.
                 $\abs{\der{}{t}v(x, \xi)} \le w(x)$, значит, у подынтегральной функции есть мажоранта, и можно перейти к пределу.
             }
-            Заметим, что $(f * u)(x) = \int\limits_{K}f(y)u(x - y)\d y$, и её действительно можно дифференцировать бесконечно много раз (?).
+            Заметим, что $(f * u)(x) = \int\limits_{K}f(y)u(x - y)\d y$, и её действительно можно дифференцировать бесконечно много раз:
+        \[(f * u)^{(k)}(x) = \int\limits_{K}f(y)u^{(k)}(x - y)\d y\qedhere\]
         %$u$ ограничена, значит, есть мажоранта
         }
     }
@@ -2085,23 +2086,25 @@
         Пусть $\supp f = A, \supp g = B$. Тогда $\supp(f * g) \subset A + B$.
     }
     \definition[Аппроксимативная единица для $\R^n$]{
-        Последовательность функций $g_j \in L^1(\R^n)$, $g_j \ge 0, \int\limits_{\R^n}g_j = 1, \forall r > 0: \int\limits_{|y| > \delta}g_j(y)\d y \underset{j \to \infty}\Map 0$
+        Последовательность функций $g_j \in L^1(\R^n)$, $g_j \ge 0, \int\limits_{\R^n}g_j = 1, \forall \delta > 0: \int\limits_{|y| > \delta}g_j(y)\d y \underset{j \to \infty}\Map 0$
     }
     \theorem{
-        Пусть $g_j$ --- аппроксимативная единица, $f \in L^p(\R^n)$, $f * g_j \underset{j \to \infty}{\overset{L^p}\Map} f$, то $\|f * g_j - f\|_{L^p} \underset{j \to \infty}\Map 0$.
+        Пусть $g_j$ --- аппроксимативная единица, $f \in L^p(\R^n)$, $f * g_j \underset{j \to \infty}{\overset{L^p}\Map} f$.
+
+        Тогда $\|f * g_j - f\|_{L^p} \underset{j \to \infty}\Map 0$.
 
         Если $f$ непрерывна с компактным носителем (достаточно потребовать равномерной непрерывности), то $f * g_j \rightrightarrows f$
         \provehere{
-            При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x}
+            При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x \cdot g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x \d y + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x\d y}
             $2^p\int\limits_{\R^n}|f(x - y)|^p + |f(y)|^p\d x \le 2^{p + 1}\int\limits_{\R^n}|f(x)|^p\d x$, и это конечно.
             Значит, по определению аппроксимативной единицы второе слагаемое мало при больших $j$.
 
-            Для первого слагаемого применим непрерывность сдвигов в $L^p$: $\forall \eps > 0: \exists \delta: f \in L^p(\R^n), 1 \le p < \infty$ при $|y| \le \delta \then \int\limits_{\R^n}|f(x - y) - f(x)|^p \d x < \eps$. Значит, оно тоже маленькое.
+            Для первого слагаемого применим непрерывность сдвигов для $f \in L^p(\R^n), 1 \le p < \infty$: $\forall \eps > 0: \exists \delta$: $|y| \le \delta \then \int\limits_{\R^n}|f(x - y) - f(x)|^p \d x < \eps$. Значит, оно тоже маленькое.
 
             Теперь проверим равномерную сходимость.
             Так как $f$ имеет компактный носитель, то она равномерно непрерывна: $\forall \eps > 0: \exists \delta > 0: |x_1 - x_2| < \delta \then |f(x_1) - f(x_2)| < \eps$. Пусть $K = \max\limits_{x \in \R^n}|f(x)|$.
             \gather{(f * g_j)(x) - g(x) = \int\limits_{\R^n}f(x - y)g_j(y)\d y - f(x) = \int\limits_{\R^n}\left(f(x - y) - f(x) \right)g_j(y)\d y\\
-            \abs{(f * g_j)(x) - g(x) } \le \int\limits_{|y| \le \delta}|f(x - y) - f(x)|g_j(y)\d y + \int\limits_{|y| > \delta}\left(|f(x - y)| + |f(x)|\right)g_j(y)\d y \le \eps + 2K\int\limits_{|y| > \delta}g_y(y)\d y \underset{j \to \infty}\Map 0}
+            \abs{(f * g_j)(x) - g(x) } \le \int\limits_{|y| < \delta}|f(x - y) - f(x)|g_j(y)\d y + \int\limits_{|y| \ge \delta}\left(|f(x - y)| + |f(x)|\right)g_j(y)\d y \le \eps + 2K\int\limits_{|y| \ge \delta}g_y(y)\d y \underset{j \to \infty}\Map 0}
         }
     }
     \fact{
@@ -2111,7 +2114,7 @@
                 \item Пускай $\phi: \R \map \R$ --- бесконечно дифференцируемая неотрицательная функция с компактным носителем, $\phi = 0$ вне $(-1, 1)$.
 
                 Например, $\phi(x) = \all{\exp\left(\frac{1}{x^2 - 1}\right),& |x| <1 \\ 0,&|x| \ge 1}$.
-                \item Положим $a \coloneqq\int\limits_{\R}\phi \d x$. Положим $\psi = \frac{\phi}{a}$. Это функция с единичным интегралом.
+                \item Положим $a \coloneqq\int\limits_{\R}\phi \d x$. Положим $\psi \coloneqq \frac{\phi}{a}$. Это функция с единичным интегралом.
                 \item $\Psi(x_1, \dots, x_n) \coloneqq \psi(x_1)\proddots \psi(x_n)$.
                 Это функция с единичным интегралом, сосредоточенная на единичном кубе со стороной 2 и центром в нуле.
                 \item В качестве аппроксимативной единицы выберем $\Psi_j(x) = j^n\Psi\left(jx\right)$.
@@ -2119,7 +2122,7 @@
             }
             Теперь выберем $\eps > 0$, и функции $f \in L^p(\R^n)$ сопоставим $g$ с компактным носителем, такую, что $\|f - g\|_{L^p} < \eps$.
             При больших $j$:
-            \[|g * \Psi_j - g\|_{L^p} < \eps\]
+            \[|g * \Psi_j - g\|_{L^p} < \eps\qedhere\]
         }
     }
     \newlection{6 декабря 2023 г.}
@@ -2135,9 +2138,8 @@
 
     Также можно вместо дискретного параметра $j$ выбрать непрерывный параметр $t$.
     Пусть $t$ мало, и пусть $\phi_t = \frac{1}{t^n}\Phi\left(\frac{x}{t}\right)$ --- аппроксимативные единицы.
-    Тогда для $g \in L^p(\R^n)$: $g * \phi_t \underset{t \to 0}{\overset{L^p}\Map} g$.
 
-    Это разумеется правда, так как вместо обычной сходимости можно рассматривать сходимости по последовательностям, стремящимся к нулю.
+    Тогда для $g \in L^p(\R^n)$: $g * \phi_t \underset{t \to 0}{\overset{L^p}\Map} g$ --- разумеется правда, так как вместо обычной сходимости можно рассматривать сходимости по последовательностям, стремящимся к нулю.
 
     Пусть $K \subset \R^n$ --- компактное множество положительной меры ($\abs{K} > 0$).
     Можно также положить $\phi = \frac{\chi_K}{|K|}$, и $\phi_t(x) = \frac{1}{t}\phi\left(\frac{x}{t}\right)$.
@@ -2159,7 +2161,7 @@
     Рассмотрим некоторое расширение понятия меры. Пусть $(S, \Sigma)$ --- пространство с $\sigma$-алгеброй.
     \definition[Знакопеременная мера]{
         Счётно-аддитивная (необязательно положительная) функция $\nu: \Sigma \map \R$.
-        Счётная аддитивность понимается в обычном смысле: для непересекающихся $e_j \in \Sigma: \nu\left(\bigcup\limits_{j = 1}^{\infty}e_j\right) = \sum\limits_{j = 1}^{\infty}\nu(e_j)$.
+        Счётная аддитивность понимается в обычном смысле: для непересекающихся $e_j \in \Sigma: \nu\left(\bigsqcup\limits_{j = 1}^{\infty}e_j\right) = \sum\limits_{j = 1}^{\infty}\nu(e_j)$.
 
         Из определения сразу следует, что сходимость должна быть абсолютной: формула верна с любой перестановкой.
     }
@@ -2195,11 +2197,12 @@
     \note{
         $\nu \ge 0 \iff $ плотность $g \ge 0$.
         \provehere{
-            $g$ не может быть отрицательной на множестве положительной меры, иначе мера этого множества была бы меньше нуля.
+            $g$ не может быть отрицательной на множестве положительной меры $e$, иначе бы было $\nu(e) < 0$
         }
     }
     Вернёмся к ситуации дифференцируемого отображения $F: G \map \R^n$.
     Определим $\nu(e) = |F(e)|$ --- образ меры Лебега $\lambda_n$ на $F(G)$ при отображении $F^{-1}$.
+    $\nu$ --- мера на $G$, определённая на той же алгебре $\lambda_n$-измеримых подмножеств $\Sigma \subset 2^G$ (да?).
 
     Факт $|e| = 0 \then \nu(e) = 0$ как раз и говорит, что $\nu$ абсолютно непрерывна относительно меры Лебега $\lambda_n$ на $G$.
 
@@ -2210,8 +2213,8 @@
     Это сужение конечно, и тогда по теорема Радона --- Никодима $\exists g \in L^1(L_j)$, такая, что $\forall e \in L_j: \nu(e) = \int\limits_{e}g_j\d\lambda$.
 
     Теперь рассмотрим $g_k$ для $k > j$. $\nu(e) = \int\limits_{e}g_k\d\lambda$.
-    Понятно, что $g_k\big|_{L_j}$ ---- плотность меры $\nu$ на $L_j$, и получается, что эти плотности согласованы: из единственности плотности $g_k\big|_{L_j} = g_j$ почти всюду.
-    Тогда они <<склеиваются>> в одну измеримую функцию $g: G \map F(G)$, для которой всё верно: $\forall e \in G: |F(e \cap L_j)| = \int\limits_{e \cap L_j}g \d\lambda$, и можно перейти к пределу.
+    Понятно, что $g_k\big|_{L_j}$ --- плотность меры $\nu$ на $L_j$, и получается, что эти плотности согласованы: из единственности плотности $g_k\big|_{L_j} = g_j$ почти всюду.
+    Тогда они <<склеиваются>> в одну измеримую функцию $g: G \map \R$, для которой всё верно: $\forall e \in G: |F(e \cap L_j)| = \int\limits_{e \cap L_j}g \d\lambda$, и можно перейти к пределу.
     Не исключено, что полученная $G$ не суммируема, что естественно --- образ маленького множества даже при дифференцируемом отображении может очень сильно растянуться.
     \corollary[Вывод из теоремы Радона --- Никодима]{
         $\exists$ измеримая на $G$ функция $g$, измеримая по Лебегу, такая, что $|F(e)| = \int\limits_{e}g(x)\d x$.
@@ -2225,7 +2228,7 @@
 
     Значит, плотность можно искать по кусочкам: $\forall e \in U \cap G: \nu(e) = \int\limits_{e}h(x)\chi_U(x)\d x$.
     \intfact[Теорема о дифференцировании]{
-        Пусть $B_r$ --- шар (можно куб) радиуса $r$ с центром в $0 \in \R^n$.
+        Пусть $B_r$ --- шар (или куб) радиуса $r$ с центром в $0 \in \R^n$.
         Тогда в этих условиях ($h \in L^1(\R^n)$ --- локально суммируема, $\nu(e) = \int\limits_{e}h(x)\d x$) почти всюду $h(x) = \lim\limits_{r \to 0}\frac{1}{|B_r|}\nu(x + B_r)$.
     }
     В случае одномерного пространства $n = 1$ это оказывается теоремой Ньютона --- Лейбница.
@@ -2242,11 +2245,11 @@
             Известно, что $h * \phi_r \overset{L^1(\R^n)}{\underset{r \to \infty}\Map} h$.
 
             Запишем \[h * \phi_r = \int\limits_{\R^n}h(y)\phi_r(x - y)\d y = \int\limits_{\R^n}h(y)\frac{1}{|B_r|}\chi_{B_r}(x - y)\d y = \frac{1}{|B_r|}\int\limits_{|x - y| < r}h(y)\d y\]
-            Справа как раз стоит выражение, которое мы хотим показать, что стремится к $h(x)$. Сходимость в $L^1$ означает сходимость по мере, а раз имеется сходимость по мере, то имеется последовательность $r_n$, стремящаяся к нулю, такая что $h * \phi_{r_n} \underset{n \to \infty}\Map h$ почти всюду.
+            Справа как раз стоит выражение, про которое мы хотим показать, что стремится к $h(x)$. Сходимость в $L^1$ означает сходимость по мере, а раз имеется сходимость по мере, то имеется последовательность $r_n$, стремящаяся к нулю, такая что $h * \phi_{r_n} \underset{n \to \infty}\Map h$ почти всюду.
         }
     }
     Осталось доказать, что всюду \[\frac{|F(x + B_r)|}{|B_r|} \underset{r \to 0}\Map |J_F(x)|\label{jacobian}\tag{$*$}\]
-    Раз доказав это, мы получим, что раз левая часть почти всюду сходится к плотности $h$, и тогда получится, что плотность как раз равна модулю якобиана.
+    Раз доказав это, мы получим, что так как левая часть почти всюду сходится к плотности $h$, и тогда окажется, что плотность как раз равна модулю якобиана.
     \lemma[Об искажении]{
         Пусть $H: U \map \R^n$, выберем $x_0 \in U$, пусть $H$ непрерывно дифференцируемо и $\d H(x_0, \_) = E$, тождественный оператор.
         Положим $y_0 \coloneqq H(x_0)$.
@@ -2266,14 +2269,14 @@
     }
     Приступим к доказательству \eqref{jacobian}.
     Пусть $A = \d F(x_0, \_)$.
-    \[\frac{\nu(B_r(x_0))}{|B_r(x_0)|} = \frac{|F(B_r(x_0))|}{|B_r(x_0|)} = \frac{\abs{AA^{-1}F(B_r(x_0))}}{\abs{B_r(x_0)}} = |\det A|\frac{\abs{A^{-1}F(B_r(x_0))}}{B_r(x_0)} =\Big\|\phi \coloneqq A^{-1}F\Big\|= |J_F(x_0)|\frac{|\phi(B_r(x_0))|}{B_r(x_0)}\]
-    Но раз $\det \phi(x_0, \_) =E$, то по теореме об искажении и принципу двух полицейских ${\frac{|\phi(B_r(x_0))|}{B_r(x_0)} \underset{r \to 0}\Map 1}$:
+    \[\frac{\nu(B_r(x_0))}{|B_r(x_0)|} = \frac{|F(B_r(x_0))|}{|B_r(x_0|)} = \frac{\abs{AA^{-1}F(B_r(x_0))}}{\abs{B_r(x_0)}} = |\det A|\frac{\abs{A^{-1}F(B_r(x_0))}}{|B_r(x_0)|} =\Big\|\phi \coloneqq A^{-1}F\Big\|= |J_F(x_0)|\frac{|\phi(B_r(x_0))|}{|B_r(x_0)|}\]
+    Но раз $\det \phi(x_0, \_) =E$, то по лемме об искажении и принципу двух полицейских ${\frac{|\phi(B_r(x_0))|}{|B_r(x_0)|} \underset{r \to 0}\Map 1}$:
     \[\frac{r^n (1 - \eps)^n v}{r^n v} = \frac{|B_{r(1 - \eps)}(y_0)|}{|B_r(x_0)|} \le \frac{|\phi(B_r(x_0))}{|B_r(x_0)|}\le \frac{|B_{r(1 + \eps)}(y_0)|}{|B_r(x_0)|} = \frac{r^n(1 + \eps)^n v}{r^n v}\]
     \newlection{9 декабря 2023 г.}
 
 
     \section{Мера Лебега на поверхностях}
-    Пусть теперь $m \le n$, и для $U \subset \R^m$ имеется гладкое инъективное $f: U \map \R^n$ со всюду неврожденным дифференциалом.
+    Пусть теперь $m \le n$, и для $U \subset \R^m$ имеется гладкое инъективное $f: U \map \R^n$ со всюду невырожденным дифференциалом.
 
     Тогда $\forall e \subset U: f(e)$ --- какая-то $m$-мерная поверхность в $\R^n$, и её $n$-мерная мера равна нулю, но есть же у поверхности какая-то площадь, и хочется уметь её вычислять.
 
@@ -2285,14 +2288,14 @@
     Как вычислить $A(e)$?
 
     Выберем ортонормированные базисы $e_1, \dots, e_m$ --- в $\R^m$ и $g_1, \dots, g_m$ --- в $A(\R^m)$.
-    Пусть $T$ --- матрица оператора в этих базисах: $T_{i,j} = \angles{A g_i, e_j}$.
+    Пусть $T$ --- матрица оператора в этих базисах: $T_{i,j} = \angles{A e_i, g_j}$.
     Тогда $\lambda(Ae) = |\det T|\cdot|e|$.
 
     В этой формуле есть тот недостаток, что при определении $T$ используется произвольно выбранный базис $g_1, \dots, g_m$ в $A(\R^m)$.
     От этой проблемы можно избавиться так: $(\det T)^2 = \det(T^t T)$.
     Оказывается, матрица $T^t T$ выглядит приятно:
-    \[(T^t T)_{i,k} = \sum\limits_{j = 1}^{m}\angles{A e_i g_j}\angles{A e_k g_j}\]
-    Так как $g_{i}$ --- ортонормированный базис, то выше написано скалярное произведение $\angles{Ae_i, A e_k}$.
+    \[\left(T^t T\right)_{i,k} = \sum\limits_{j = 1}^{m}\angles{A e_i, g_j}\angles{A e_k, g_j}\]
+    Так как $g_{j}$ --- ортонормированный базис, то выше написано скалярное произведение $\angles{Ae_i, A e_k}$.
 
     Обозначим эту матрицу за $\Gamma(A)$: $\Gamma(A)_{i,k} = \angles{A e_i, A e_k}$.
     Эта $\Gamma(A)$ называется \emph{матрицей Грама} для оператора $A$.
@@ -2331,7 +2334,7 @@
             \provehere{
                 Можно считать, что $\forall k: \mu^*_p(e_k) < \infty$, иначе доказывать нечего.
 
-                Возьмём $\eps > 0, \delta > 0$, для каждого $k$ выберем $\eps$-покрытие $\{a_{k,j}\}_{k}$ множества $e_k$, такое, что $\sum\limits_{j}\left(\frac{\diam a_{k,j}}{2}\right)^p < \mu_p(e_k, \eps) + \frac{\delta}{2^k}$.
+                Возьмём $\eps > 0, \delta > 0$, для каждого $k$ выберем $\eps$-покрытие $\{a_{k,j}\}_{j}$ множества $e_k$, такое, что $\sum\limits_{j}\left(\frac{\diam a_{k,j}}{2}\right)^p < \mu_p(e_k, \eps) + \frac{\delta}{2^k}$.
                 Так как мера Хаусдорфа больше каждого из этих чисел, то они все конечны.
 
                 Таким образом, $\{a_{k,j}\}_{k,j}$ --- $\eps$-покрытие $e$, откуда $\mu_p(e, \eps) \le \sum\limits_{j,k}\left(\frac{\diam a_{k,j}}{2}\right)^p \le \sum\limits_{k}\mu_p(e_k, \eps) + \delta$.
@@ -2342,38 +2345,38 @@
     Теперь можно применить теорему Лебега --- Каратеодори, и получить настоящую меру.
     Хочется узнать, какие множества будут измеримыми после данной процедуры.
     \fact{
-        Если $\dist(e_1, e_2) > 0$, то $\mu^*_p(e_1\cup e_2) = \mu_p^*(e_1) + \mu_p^*(e_2)$.
+        Если $\dist(e_1, e_2) > 0$, то $\mu^*_p(e_1\sqcup e_2) = \mu_p^*(e_1) + \mu_p^*(e_2)$.
         \provehere{
             В определении $\mu_p(e, \eps)$ можно ограничиться $\eps$-покрытиями $\{a_j\}$, такими, что $\forall j:a_j \cap e \ne \o$.
 
-            В силу счётной полуаддитивности $\mu_p^*(e_1 \cup e_2) \le \mu_p^*(e_1) + \mu_p^*(e_2)$.
+            В силу счётной полуаддитивности $\mu_p^*(e_1 \sqcup e_2) \le \mu_p^*(e_1) + \mu_p^*(e_2)$.
 
             Пусть $\delta = \dist(e_1, e_2)$, рассмотрим $\eps < \delta$.
-            Пусть $\{a_j\}$ --- $\eps$-покрытие объединения, такое, что $\forall j: a_j \cap (e_1 \cup e_2) \ne \o$. Тогда для каждого $j: a_j \cap e_1 = \o$ либо $a_j \cap e_2 = \o$. Стало быть \[\sum\limits_{j}\left(\frac{\diam (a_j)}{2}\right)^p = \sum\limits_{j: a_j \cap e_1 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p + \sum\limits_{j: a_j \cap e_2 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p \ge \mu_p(e_1, \eps) + \mu_p(e_2, \eps)\qedhere\]
+            Пусть $\{a_j\}$ --- $\eps$-покрытие объединения, такое, что $\forall j: a_j \cap (e_1 \cup e_2) \ne \o$. Тогда для каждого $j: a_j \cap e_1 = \o$ либо $a_j \cap e_2 = \o$. Стало быть \multline{\mu_p(e_1 \sqcup e_2, \eps) = \sum\limits_{j}\left(\frac{\diam (a_j)}{2}\right)^p =\\= \sum\limits_{j: a_j \cap e_1 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p + \sum\limits_{j: a_j \cap e_2 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p \ge \mu_p(e_1, \eps) + \mu_p(e_2, \eps)\qedhere}
         }
     }
     \theorem{
-        Пусть $(X, d)$ --- метрическое пространство, пусть $\eta$ --- предмера на $X$, причём $\forall e_1, e_2 \subset X: \dist(e_1, e_2) > 0 \then \eta(e_1 \cup e_2) = \eta(e_1) + \eta(e_2)$. Тогда все замкнутые множества в $X$: $\eta$-измеримы.
+        Пусть $(X, d)$ --- метрическое пространство, пусть $\eta$ --- предмера на $X$, причём $\forall e_1, e_2 \subset X: \dist(e_1, e_2) > 0 \then \eta(e_1 \sqcup e_2) = \eta(e_1) + \eta(e_2)$. Тогда все замкнутые множества в $X$ $\eta$-измеримы.
         \provehere{
             Пусть $F \subset X$ замкнуто, проверим, что $\forall a \in X: \eta(a) = \eta(a \cap F) + \eta(a \sm F)$.
             Из полуаддитивности достаточно проверять $\eta(a) \ge \eta(a \cap F) + \eta(a \sm F)$.
 
-            Пусть $F_n = \defset{x \in X}{\dist(x, F) < \frac{1}{n}}$. Из замкнутости $F$: $\bigcap\limits_{n \ge 1}F_n = F$.
-            Пусть $B_n = a \sm F_n$.
+            Пусть $F_n \coloneqq \defset{x \in X}{\dist(x, F) < \frac{1}{n}}$. Из замкнутости $F$: $\bigcap\limits_{n \ge 1}F_n = F$.
+            Пусть $C_n \coloneqq a \sm F_n$.
 
-            Если $x \in a \cap F$, а $y \in B_n$, то разумеется $\dist(x, y) \ge \nicefrac1n$.
-            Таким образом, заведомо $\eta(a) \ge \eta(a \cap F) + \eta(B_n)$.
-            Так как $B_n$, возрастая, в объединении дают $a \sm F$, то хочется поверить, что $\lim\limits_{n \to \infty}\eta(B_n) = \eta(a \sm F)$.
+            Если $x \in a \cap F$, а $y \in C_n$, то разумеется $\dist(x, y) \ge \nicefrac1n$.
+            Таким образом, заведомо $\eta(a) \ge \eta(a \cap F) + \eta(C_n)$.
+            Так как $C_n$, возрастая, в объединении дают $a \sm F$, то хочется проверить, что $\lim\limits_{n \to \infty}\eta(C_n) = \eta(a \sm F)$.
             Запишем
-            \[a \sm F = \bigcup\limits_{n = 1}^{\infty}B_n = B_n \sqcup\bigsqcup\limits_{j \ge n}(B_{j+1} \sm B_{j})\]
-            Из счётной полуаддитивности $\eta(a \sm F) \le \eta(B_n) + \sum\limits_{j \ge n}\eta(B_{j+1}\sm B_j)$, но с другой стороны ${\eta(a \sm F)\ge \eta(B_n)}$.
-            Значит, надо доказать, что $\sum\limits_{j \ge n}\eta(B_{j+1}\sm B_j)\underset{j \to \infty}\Map 0$. Но это просто значит, что ряд $\sum\limits_{j = 1}^{\infty}\eta(B_{j+1}\sm B_j)$ сходится.
+            \[a \sm F = \bigcup\limits_{n = 1}^{\infty}C_n = C_n \sqcup\bigsqcup\limits_{j \ge n}(C_{j+1} \sm C_{j})\]
+            Из счётной полуаддитивности $\eta(a \sm F) \le \eta(C_n) + \sum\limits_{j \ge n}\eta(C_{j+1}\sm C_j)$, но с другой стороны ${\eta(a \sm F)\ge \eta(C_n)}$.
+            Значит, необходимо и достаточно доказать, что $\sum\limits_{j \ge n}\eta(C_{j+1}\sm C_j)\underset{j \to \infty}\Map 0$. Но это просто значит, что ряд $\sum\limits_{j = 1}^{\infty}\eta(C_{j+1}\sm C_j)$ сходится.
 
-            Разобьём ряд на два: $\sum\limits_{j = 2k}\eta(B_{j+1}\sm B_j) + \sum\limits_{j = 2k+1}\eta(B_{j+1}\sm B_j)$.
-            Теперь все подряд идущие слагаемые отстоят друг от друга на положительное расстояние: $\dist(B_{2k+1}\sm B_{2k}, B_{2k-1}\sm B_{2k-2}) > 0$.
+            Разобьём ряд на два: $\sum\limits_{j = 2k}\eta(C_{j+1}\sm C_j) + \sum\limits_{j = 2k+1}\eta(C_{j+1}\sm C_j)$.
+            Теперь все подряд идущие слагаемые отстоят друг от друга на положительное расстояние: $\dist(C_{2k+1}\sm C_{2k}, C_{2k-1}\sm C_{2k-2}) > 0$.
 
-            Стало быть, $\forall n: \sum\limits_{j = 2k}^{j \le n}\eta(B_{j+1}\sm B_j) \le \eta\left(\bigcup\limits_{j = 1}^{n}B_{j}\right) \le \eta(a)$.
-            Аналогично сходится ряд ${\sum\limits_{j = 2k+1}\eta(B_{j+1}\sm B_j)}$.
+            Стало быть, $\forall n: \sum\limits_{j = 2k}^{j \le n}\eta(C_{j+1}\sm C_j) \le \eta\left(\bigcup\limits_{j = 1}^{n}С_{j}\right) \le \eta(a)$.
+            Аналогично сходится ряд ${\sum\limits_{j = 2k+1}\eta(С_{j+1}\sm С_j)}$.
         }
     }
     \corollary{
