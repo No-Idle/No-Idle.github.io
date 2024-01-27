@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  27 JAN 2024 13:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  27 JAN 2024 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1506,13 +1506,13 @@ Package rerunfilecheck Info: File `calculus-3.out' has not changed.
 (rerunfilecheck)             Checksum: 7FF786DA38BFEAC18350F5AD23B5FEC9;9865.
  ) 
 Here is how much of TeX's memory you used:
- 30062 strings out of 479648
- 567673 string characters out of 5886115
- 842743 words of memory out of 5000000
- 47124 multiletter control sequences out of 15000+600000
+ 30005 strings out of 479648
+ 566166 string characters out of 5886115
+ 841743 words of memory out of 5000000
+ 47067 multiletter control sequences out of 15000+600000
  509776 words of font info for 110 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,16n,103p,578b,1196s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,15n,103p,578b,803s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1537,7 +1537,7 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (62 pages, 561451 bytes).
+f (62 pages, 561138 bytes).
 PDF statistics:
  937 PDF objects out of 1000 (max. 8388607)
  817 compressed objects within 9 object streams

@@ -1480,14 +1480,12 @@
     \fact{
         \down\numbers{
             \item Если $\mu(X) < \infty$, то из сходимости $f_n \almost{n \to \infty} f$ следует сходимость по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$.
-            \item Если $\mu(X) < \infty$, то из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$, таких, что $f_{n_k} \almost{k \to \infty} f$.
+            \item Из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$, таких, что $f_{n_k} \almost{k \to \infty} f$.
         }
         \provehere{\down\numbers{
             \item Пусть $\eps > 0$, обозначим $A_n \coloneqq \defset{x \in X}{\exists k \ge n: |f_k(x) - f(x)| \ge \eps}$. Они вложены: ${A_1 \supset A_2 \supset \dots}$
 
-            Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: $\begin{tikzcd}[ampersand replacement=\&,column sep=small,cramped]
-                                                                                                                                         f_n \arrow[r, "/"{marking, allow upside down}] \& f
-            \end{tikzcd}$.
+            Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: $f_n \centernot\Map f$.
             Но раз есть сходимость почти всюду, то $\mu(A) = 0$, то есть $\mu(A_n) \underset{n \to \infty}\Map 0$.
             \item \up \definition[Последовательность Коши по мере]{
                 Последовательность измеримых функций $f_n$, такая, что $\forall \eps > 0: \lim\limits_{(n, m) \to \infty}\mu\bigdefset{x \in X}{|f_n(x) - f_m(x)| > \eps} = 0$.}
