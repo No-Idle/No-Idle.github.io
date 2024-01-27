@@ -1720,27 +1720,27 @@
         Тогда $f$ суммируема, и интеграл Лебега такой же.
         \provehere{
             В данной постановке простые функции --- линейные комбинации характеристических функций отрезков, $\phi = \sum\limits_{j = 1}^{N}c_j \chi_{I_j}$.
-            В этой лекции они назывались элементарными, так и продолжим их называть.
+            В этой лекции они назывались элементарными.
 
             Простые функции интегрируемы и по Риману, и по Лебегу, и интеграл у них один и тот же.
 
             Пусть $\angles{a, b} = I_1 \sqcup \dots \sqcup I_k$ --- разбиение $\Delta = \{I_1, \dots, I_k\}$.
 
-            Зададим $\phi_{\Delta} = \sum\limits_{j = 1}^{k}(\sup\limits_{I_j} f)\chi_{I_j}, \psi_{\Delta} = \sum\limits_{j = 1}^{k}(\inf\limits_{I_j}f)\chi_{I_j}$.
+            Зададим $\phi_{\Delta} = \sum\limits_{j = 1}^{k}\left(\sup\limits_{I_j} f\right)\chi_{I_j}, \psi_{\Delta} = \sum\limits_{j = 1}^{k}\left(\inf\limits_{I_j}f\right)\chi_{I_j}$.
             Тогда $\int\limits_{\angles{a,b}}\phi_{\Delta}$ --- верхняя сумма Дарбу для $f$ по отрезку $\angles{a, b}$, $\int\limits_{\angles{a, b}}\psi_{\Delta}$ --- нижняя сумма Дарбу.
 
             Понятно, что $\psi_\Delta \le f \le \phi_\Delta$ всюду на $\angles{a, b}$, причём для измельчения $\Delta'$ верно, что
             \[\psi_\Delta \le \psi_{\Delta'} \le f \le \phi_{\Delta'} \le \phi_\Delta\]
             Критерием интегрируемости по Риману является то, что $\osc\limits_{I_j}f $ могут быть сколь угодно малыми, то есть $\forall \eps > 0: \exists \Delta: \int\limits_{\angles{a,b}}(\phi_{\Delta} - \psi_{\Delta}) \le \eps$.
 
-            Выберем $\eps = \frac{1}{n}$, построим разбиения $\Delta_n$ так, что каждое следующее является измельчением предыдущего.
+            Выберем последовательность $\eps_n = \frac{1}{n}$, построим разбиения $\Delta_n$ так, что каждое следующее является измельчением предыдущего.
 
             Тогда $\int\limits_{\R}(\phi_n - \psi_n)\d\lambda = \int\limits_{\R}|\phi_n - \psi_n|\d\lambda < \frac{1}{n}$.
 
-            Отсюда следует, что существует последовательность индексов (?) $n_j$, таких, что $\phi_{n_j} - \psi_{n_j} \underset{n \to \infty}\Map 0$ почти всюду.
-            Таким образом, $\psi_n$ и $\phi_n$ стремятся к $f$ почти всюду, тем самым $f$ измерима!
+            Отсюда следует, что существует последовательность индексов $n_j$, таких, что $\phi_{n_j} - \psi_{n_j} \underset{n \to \infty}\Map 0$ почти всюду.
+            Таким образом, $\psi_{n_j}$ и $\phi_{n_j}$ стремятся к $f$ почти всюду, тем самым $f$ измерима!
 
-            Теперь $\int\limits_{\R^n}\psi_n \le \text{интеграл Лебега или Римана }f \le \int\limits_{\R^n}\phi_n$.
+            Теперь $\int\limits_{\R^n}\psi_{n_j} \le \text{интеграл Лебега или Римана }f \le \int\limits_{\R^n}\phi_{n_j}$.
         }
     }
     \intfact[Теорема Лебега]{
@@ -1767,10 +1767,10 @@
     Рассмотрим полукольцо $\mathcal{P} = X \times Y$ обобщённых прямоугольников: $c \in \mathcal{P} \iff c = a \times b$ для $a \in \mathcal{A}, b \in \mathcal{B}$.
 
     \proposal{
-        Тогда мера $\lambda \coloneqq \mu \otimes \nu$ на $\mathcal{P}$ (определённая так: $\lambda(a \times b) = \mu(a)\nu(b)$) счётно-аддитивна.
+        Мера $\lambda \coloneqq \mu \otimes \nu$ на $\mathcal{P}$ ($\lambda(a \times b) \coloneqq \mu(a)\nu(b)$) счётно-аддитивна.
         \provehere{
             Выберем $\{a_j\}_{j = 1}^{\infty}\subset\mathcal{A}, \{b_j\}_{j = 1}^{\infty}\subset\mathcal{B}, \{c_j\}_{j = 1}^{\infty}\subset\mathcal{P}$ так, что $c_j = a_j \times b_j$.
-            Пусть $c_j$ дизъюнктны; положим $c \coloneqq \bigsqcup\limits_{j = 1}^{\infty}c_j$, пусть $c \in \mathcal{P}$.
+            Пусть $c_j$ дизъюнктны; положим $c \coloneqq \bigsqcup\limits_{j = 1}^{\infty}c_j$, пусть $c \in \mathcal{P}$, то есть $\exists a \in \mathcal{A}, b \in \mathcal{B}: c = a \times b$.
 
             Надо проверить, что $\lambda(c) = \sum\limits_{j = 1}^{\infty}\lambda(c_j)$.
 
@@ -1798,17 +1798,17 @@
         Пусть $f$ --- $\lambda$-измеримая функция на $X \times Y$, $f \ge 0$. Тогда
         \numbers{
             \item Для $\mu$-почти всех $x \in X$: $f(x, \_)$ измерима на $Y$.
-            \item Функция $\phi(x) = \int\limits_{Y}f(x, \_)\d\nu$ измерима на $X$.
+            \item Функция $\phi(x) \coloneqq \int\limits_{Y}f(x, \_)\d\nu$ измерима на $X$.
             \item $\int\limits_{X}\phi(x)\d\mu(x) = \int\limits_{X \times Y}f \d\lambda$.
         }
         \provehere{
             Назовём функцию $f$ допустимой, если она определена на $X \times Y$, и удовлетворяет всем трём условиям.
             \numbers{
                 \item Если $a \in \mathcal{A}, b \in \mathcal{B}$, то $\chi_{a \times b}$ допустима: $\chi_{a \times b}(x, y) = \chi_a(x)\chi_b(y)$.
-                \item Неотрицательные простые (элементарные) функции, построенные по полукольцу $\mathcal{P}$, допустимы.
+                \item Неотрицательные простые (элементарные) функции, построенные по полукольцу $\mathcal{P}$, допустимы:
                 \bullets{
                     \item Если $f, g$ --- допустимы, $\alpha, \beta \ge 0$, то $\alpha f + \beta g$ тоже допустима.
-                    \item Если $f, g$ --- допустимы и $f$ суммируема, причём $0 \le g \le f$, то $g - f$ тоже допустима.
+                    \item Если $f, g$ --- допустимы и $f$ суммируема, причём $0 \le g \le f$, то $f - g$ тоже допустима.
                     \provehere{
                         Пусть $\phi(x) = \int\limits_{X}f(x, \_)\d\nu$. В силу 3. она суммируема, откуда $\phi$ конечна почти всюду. Пусть $\psi(x) = \int\limits_{X}g(x, \_)\d\nu$.
                         Так как $\psi \le \phi$, то $\psi$ тоже конечна почти всюду, тогда дальше всё хорошо.
@@ -1817,7 +1817,7 @@
                 \item Пусть $f_n$ --- допустимые функции на $X \times Y$, пусть $0 \le f_1 \le f_2 \le \dots$, пусть $f(x, y) = \lim\limits_{n \to \infty}f_n(x, y)$. Автоматически $f$ измерима.
                 Тогда $f$ тоже допустима.
                 \provehere{
-                    Пускай $E_n = \defset{x \in X}{f_n(x, \_)\text{ не измерима}}$. $\mu E_n = 0$, так как $f_n$ допустимы. Положим $E \coloneqq \bigcup\limits_{n \in \N}\E_n$, $\mu E = 0$.
+                    Пускай $E_n = \defset{x \in X}{f_n(x, \_)\text{ не измерима}}$. $\forall n: \mu E_n = 0$, так как $f_n$ допустимы. Положим $E \coloneqq \bigcup\limits_{n \in \N}E_n$, $\mu E = 0$.
 
                     $x \notin E \then$ все функции $f_n(x, \_)$ измеримы на $Y$. Имеется монотонная сходимость $f_n \nearrow f$, значит $f(x, \_)$ тоже измерима на $Y$ при $x \notin E$.
 
@@ -1825,7 +1825,7 @@
                     По теореме Леви (относительно меры $\nu$) для $x \notin E: \phi(x) = \lim\limits_{n \to \infty}\phi_n(x)$.
                     Тем самым $\phi$ измерима, как предел измеримых функций.
 
-                    Более того, $\phi_n \nearrow \phi$, опять по теореме Леви (относительно меры $\mu$): \[\int\limits_{X}\phi\d\mu = \lim\limits_{n \to \infty}\int\limits_{X}\phi_n\d\mu = \lim\limits_{n \to \infty}\int\limits_{X \times Y}f_n \d\lambda \underset{\text{теорема Леви относительно $\lambda$}}= \int\limits_{X \times Y}f\d\lambda\]
+                    Более того, $\phi_n \nearrow \phi$, опять по теореме Леви (относительно меры $\mu$): \[\int\limits_{X}\phi\d\mu = \lim\limits_{n \to \infty}\int\limits_{X}\phi_n\d\mu = \lim\limits_{n \to \infty}\int\limits_{X \times Y}f_n \d\lambda \underset{\text{теорема Леви относительно $\lambda$}}= \int\limits_{X \times Y}f\d\lambda\qedhere\]
                 }
                 \item Пусть $f_n$ --- допустимые функции на $X \times Y$, пусть $f_1 \ge f_2 \ge \dots$, пусть $f(x, y) = \lim\limits_{n \to \infty}f_n(x, y)$. Автоматически $f$ измерима.
                 Если $f_1$ суммируема, то $f$ тоже допустима.
@@ -1860,7 +1860,7 @@
                 \item Если $A \subset X \times Y$ --- измеримое множество относительно меры $\lambda$, причём $\lambda(A) < +\infty$, то $\chi_A$ допустима.
                 \provehere{
                     $\exists \delta\sigma$-множество $\overline{A} \supset A$, такое, что $\lambda(\overline{A}\sm A) = 0$.
-                    Применим $\chi_A = \chi_{\overline{A}} - \chi_{A \sm \overline{A}}$.
+                    Применим второй $\bullet$ из 2. $\chi_A = \chi_{\overline{A}} - \chi_{A \sm \overline{A}}$.
                 }
                 \item Пусть $f$ --- простая функция относительно $\sigma$-алгебры $\lambda$-измеримых множеств, $f \ge 0$. Иными словами,
                 \[f = \sum\limits_{j = 1}^{N}\alpha_j\chi_{e_j}, \alpha_j \ge 0, e_i \cap e_j = \o \text{ (при $i \ne j$)}\]
@@ -1913,13 +1913,13 @@
     }
     Рассмотрим $L: \R^n \times \R^n \map \R^n \times \R^n, (x, y)\mapsto (y, x - y)$.
     $L$ линейно, значит, $L, L^{-1}$ измеримы по Лебегу.
-    Определив $T: \R^n\times\R^n \map \R, (u, v) \mapsto f(u)g(v)$ видим, что $T$ измерима, откуда $(T \circ L)(x, y) = f(y)g(x - y)$ тоже измерима.
+    Определив $T: \R^n\times\R^n \map \R, (u, v) \mapsto f(u)g(v)$, видим, что $T$ измерима, откуда $(T \circ L)(x, y) = f(y)g(x - y)$ тоже измерима.
     \theorem{\label{p-equals-1}
     Если $f, g \in L^1(\R^n)$, то $(f * g)$ определена почти всюду, и $\|f * g\|_{L^1} \le \|f\|_{L^1} \|g\|_{L^1}$.
     \provehere{
         Рассмотрим $\phi(x, y) = |f(x)|\cdot |g(x - y)|$. Она неотрицательна, применяем теорему Тонелли:
-        \multline{\int\limits_{\R^n \times \R^n}\phi\d\lambda_{2n} = \int\limits_{\R^n}\left(\int\limits_{\R^n}|f(y)|\cdot|g(x-y)|\d x\right)\d y = \\
-            = \int\limits_{\R^n}|f(y)|(\int\limits_{\R^n}|g(x - y)|\d x)\d y = \int\limits_{\R^n}|f(y)|\left(\int\limits_{\R^n}|g(x)|\d x\right)\d y = \|f\|_{L^1}\|g\|_{L^1}}
+        \multline{\int\limits_{\R^n \times \R^n}\phi\d\lambda_{2n} = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(y)|\cdot|g(x-y)|\d x\right)\d y = \\
+            = \int\limits_{\R^n}|f(y)|\left(~\int\limits_{\R^n}|g(x - y)|\d x\right)\d y = \int\limits_{\R^n}|f(y)|\left(~\int\limits_{\R^n}|g(x)|\d x\right)\d y = \|f\|_{L^1}\|g\|_{L^1}}
 
         По теореме Тонелли $\phi$ суммируема, тем самым, $(x, y) \mapsto f(y)g(x - y)$ тоже суммируема.
         По теореме Фубини $(f * g)(x)$ определена для почти всех $x$, причём она суммируема.
@@ -1927,7 +1927,10 @@
     }
     }
 
-    \note{Неформально говоря, если сворачивать $f$ с какими-то хорошими свойствами, и $g$ с какими-то другими хорошими свойствами, то свёртка обладает всеми хорошими свойствами каждой из них.}
+    \note{
+        Неформально говоря, если сворачивать $f$ с какими-то хорошими свойствами, и $g$ с какими-то другими хорошими свойствами, то свёртка обладает всеми хорошими свойствами каждой из них.
+        В этом мы убедимся на некоторых примерах.
+    }
 
     \statement{
         $f * g = g * f$ всегда, когда существует:
