@@ -23,17 +23,17 @@
 \contentsline {section}{\numberline {2.5}Интегралы от знакопеременных функций}{30}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Про линейность интеграла}{31}{subsection.2.5.1}%
 \contentsline {section}{\numberline {2.6}Виды сходимости}{33}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Классы $L^p$}{33}{section.2.7}%
+\contentsline {section}{\numberline {2.7}Классы $L^p$}{34}{section.2.7}%
 \contentsline {subsection}{\numberline {2.7.1}Приближение функций из класса $L^p$}{35}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Связь интегралов Лебега и Римана}{37}{subsection.2.7.2}%
-\contentsline {section}{\numberline {2.8}Теоремы Тонелли и Фубини}{38}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Как применять}{41}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.7.2}Связь интегралов Лебега и Римана}{38}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}Теоремы Тонелли и Фубини}{39}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Как применять}{42}{subsection.2.8.1}%
 \contentsline {section}{\numberline {2.9}Свёртки. Приближение функций с помощью свёрток}{42}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Меры с плотностью}{42}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.1}Меры с плотностью}{43}{subsection.2.9.1}%
 \contentsline {subsubsection}{Куда должна бить $\phi \geqslant 0$?}{43}{section*.2}%
 \contentsline {subsubsection}{Интегрирование по мере $\nu $}{43}{section*.3}%
 \contentsline {subsection}{\numberline {2.9.2}Образ меры}{43}{subsection.2.9.2}%
-\contentsline {subsubsection}{Интегрирование по мере $\nu $}{43}{section*.4}%
+\contentsline {subsubsection}{Интегрирование по мере $\nu $}{44}{section*.4}%
 \contentsline {subsection}{\numberline {2.9.3}Свойства свёртки}{44}{subsection.2.9.3}%
 \contentsline {subsection}{\numberline {2.9.4}Слегка другой способ построения аппроксимативной единицы}{47}{subsection.2.9.4}%
 \contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{47}{section.2.10}%

@@ -1501,13 +1501,32 @@
 
             Если $x \in \tilde{E}_k \then \forall n \ge k: \abs{f_{N_n}(x) - f_{N_{n+1}}(x)} \le \frac{1}{2^n}$, то есть $\forall x \in \tilde{E}_k: \sum\limits_{j = 1}^{\infty}\abs{f_{N_j}(x) - f_{N_{j+1}}(x)}$ сходится.
 
-            А тогда эта сумма сходится и на $\bigcup\limits_{k = 1}^{\infty}\tilde{E}_k$. Это влечёт $\forall x \in \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k: \exists \lim\limits_{k \to \infty}f_{N_k}(x)$. К этому пределу $f_{N_k}$ сходятся почти всюду: мера $X \sm \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k = \bigcap\limits_{k = 1}^{\infty}(X \sm \tilde{E}_k)$ равна нулю.
+            А тогда эта сумма сходится и на $\bigcup\limits_{k = 1}^{\infty}\tilde{E}_k$. Это влечёт $\forall x \in \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k: \exists \lim\limits_{k \to \infty}f_{N_k}(x)$.
+            К этому пределу $f_{N_k}$ сходятся почти всюду: мера $X \sm \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k = \bigcap\limits_{k = 1}^{\infty}(X \sm \tilde{E}_k)$ равна нулю.
         }
     }
-    \note{
-        Ещё мы доказали, что для последовательности Коши по мере $f_n$ найдётся измеримая $f$, такая, что $\underset{n \to \infty}{\overset{\mu}\Map} f$.
-    }
+    \fact{
+        Также для последовательности Коши по мере $f_n$ найдётся измеримая $f$, такая, что $\underset{n \to \infty}{\overset{\mu}\Map} f$.
+        \provehere{
+            Выберем, как выше, подпоследовательность $f_{n_k} \almost{k \to \infty} f$.
 
+            Зафиксируем $\eps, \delta > 0$.
+
+            Так как подпоследовательность --- тоже последовательность Коши, то $\exists N_1 \in \N: \forall m, l > N_1: \mu\defset{x \in X}{\abs{f_{n_m} - f_{n_l}} > \eps} < \delta$.
+            Устремляя $l \to \infty$, получаем $\forall m > N_1: \mu\defset{x \in X}{\abs{f_{n_m} - f} > \eps} \le \delta$.
+
+            Далее из того, что исходная последовательность --- тоже последовательность Коши, получаем, что $\exists N_2: \forall m, l > N_2: \defset{x \in X}{\abs{f_m - f_l} > \eps} < \delta$.
+
+        Из неравенства треугольника $\forall n > \max(n_{N_1}, N_2): \mu\defset{x \in X}{\abs{f_n - f} > 2\eps} \le \delta$.
+        }
+    }
+    \counterexamples{
+    \item Последовательность функций $f_n \coloneqq \chi_{[n, n + 1]}$ сходится почти всюду к $0$, но сходимости по мере нет, так как мера бесконечна.
+    \item Пусть $H_n = \sum\limits_{k = 1}^{n}\frac{1}{k}$ --- гармоническое число.
+    Обозначим за $\{x\}$ дробную часть числа $x\in\R$.
+
+        $f_n \coloneqq \all{\chi_{[\{H_n\}, \{H_{n+1}\}]},&\{H_n\} < \{H_{n+1}\} \\ \chi_{[\{H_n\}, 1]} + \chi_{[0, \{H_{n+1}\}]},&\{H_n\} > \{H_{n+1}\}}$ --- последовательность Коши по мере, которая сходится по мере к $0$, но сходимости нет нигде на $[0, 1]$.
+    }
 
     \section{Классы $L^p$}
     Определим $L^p(\mu) \bydef \defset{f: X \map \R}{f \text{ --- измерима, и }\int\limits_{X}|f|^p \d\mu < \infty}$.
@@ -1525,7 +1544,7 @@
             \indentlemma[Неравенство Гёльдера]{
                 Пусть $p, q > 1$ --- сопряжённые показатели (${\nicefrac1p + \nicefrac1q = 1}$), тогда для $f \in L^p, g \in L^q: fg \in L^1$, и $\|fg\|_{L^1} \le \|f\|_{L^p}\|g\|_{L^q}$.
             }{
-                Деля $f \rightsquigarrow \frac{f}{\left(\int\limits_{X}|f|^p\right)^{\nicefrac{1}{p}}}$ и $g \rightsquigarrow \frac{g}{\left(\int\limits_{X}|g|^q\right)^{\nicefrac{1}{q}}}$, получаем $\|f\|_{L^p} = \|g\|_{L^q} = 1$.
+                Неравенство однородное, можно считать $\|f\|_{L^p} = \|g\|_{L^q} = 1$ --- для этого надо заменить $f \rightsquigarrow \frac{f}{\left(\int\limits_{X}|f|^p\right)^{\nicefrac{1}{p}}}$ и $g \rightsquigarrow \frac{g}{\left(\int\limits_{X}|g|^q\right)^{\nicefrac{1}{q}}}$.
 
                 Для $a, b > 0$ имеется неравенство Юнга (доказывали через выпуклость $\exp$): $\frac{a^p}{p} + \frac{b^q}{q} \ge ab$.
                 Применяя его, получаем $|f(x)|\cdot|g(x)| \le \frac{|f(x)|^p}{p} + \frac{|g(x)|^q}{q}$.
@@ -1533,7 +1552,7 @@
             }
 
             Теперь проверим неравенство треугольника $\|f + g\|_{L^p} \le \|f\|_{L^p}+ \|g\|_{L^p}$.
-            Для интегралов оно носит название \emph{неравенства Минковского}.
+            Для данной нормы оно носит название \emph{неравенства Минковского}.
             \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{$\le$}\]
             Применив к каждому слагаемому неравенство Гёльдера ($|f + g|^{p - 1} \in L^q$, так как $\int\limits_{X}|f + g|^{(p - 1)q}\d\mu = \int\limits_{X}|f + g|^{p}\d\mu \le 2^p\int\limits_{X}\max(f, g)^p\d\mu\le 2^p\int\limits_{X}\left(|f|^p + |g|^p\right)\d\mu$), получаем
             \[\circlesign{$\le$} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
@@ -1543,11 +1562,11 @@
     \theorem{
         $L^p(\mu)$ --- полно.
         \provehere{
-            Рассмотрим последовательность Коши $f_n$, и пусть $E_{k,l} \coloneqq \defset{x \in X}{\abs{f_k(x) - f_l(x)} > \delta}$.
+            Рассмотрим последовательность Коши $f_n \in L^p(\mu)$, и пусть $E_{k,l} \coloneqq \defset{x \in X}{\abs{f_k(x) - f_l(x)} > \delta}$.
 
             По определению последовательности Коши $\forall \eps > 0: \exists N \in \N: k, l \ge N \then \int\limits_{X}|f_k - f_l|^p < \eps^p$.
 
-            Тогда $\mu E_{k,l} = \mu\defset{x \in X}{\abs{f_k(x) - f_l(x)}^p > \delta^p} \le \frac{\eps^p}{\delta^p}$. Значит, $f_n$ --- последовательность Коши по мере.
+            Тогда $\forall k, l \ge N: \mu(E_{k,l}) = \mu\defset{x \in X}{\abs{f_k(x) - f_l(x)}^p > \delta^p} \le \frac{\eps^p}{\delta^p}$. Значит, $f_n$ --- последовательность Коши по мере.
 
             Пусть $f_{k_j} \almost{j \to \infty} f$, тогда $\forall \eps > 0: \exists N \in \N: \forall j, s > N: \int\limits_{X}|f_{k_j} - f_{k_s}|^p < \eps$. Устремляя $s \to \infty$, по лемме Фату получаем $\int\limits_{X}|f_{k_j} - f|^p \le \eps$.
             Значит, $f$ --- предел подпоследовательности $f_{k_j}$, и из неравенства треугольника и фундаментальности можно показать, что $f$ --- предел.
@@ -1565,12 +1584,14 @@
             Всякая простая функция имеет вид $\phi = \sum\limits_{j = 1}^{N}\alpha_j\chi_{e_j}$, дизъюнктные $e_j \in \Sigma$.
             Если $\phi \in L^p(\mu)$, то меры всех $e_j$, таких, что $\alpha_j \ne 0$, конечны.
 
-            Пусть $f \in L^p(\mu)$, разложим $f = f_+ - f_-$. Приблизим $f_+$ и $f_-$ по отдельности.
+            Пусть $f \in L^p(\mu)$, разложим $f = f_+ - f_-$.
+            Приблизим $f_+$ и $f_-$ по отдельности.
             Тем самым, без потери общности $f \ge 0$.
 
-            Раз $f$ измерима, то существует последовательность простых функций $\phi_n \in L^p(\mu): 0 \le \phi_n \le f, \phi_n \nearrow f$.
+            Раз $f$ измерима, то существует последовательность простых функций $\phi_n \in L^p(\mu): 0 \le \phi_n \le f$, $\phi_n \nearrow f$ почти всюду.
 
-            Так как $f - \phi_n \searrow 0$ почти всюду, то $|f - \phi_n|^p \searrow 0$. Применяем теорему Леви, и действительно получаем, что $\int\limits_{X}|f - \phi_n|^p\d\mu \to 0$.
+            Так как $f - \phi_n \searrow 0$ почти всюду, то $|f - \phi_n|^p \searrow 0$ почти всюду.
+            Применяем теорему Леви, и действительно получаем, что $\int\limits_{X}|f - \phi_n|^p\d\mu \to 0$.
         }
     }
     Пусть мера $\mu$ получена продолжением по Лебегу --- Каратеодори из меры $\nu$ на полукольце $\mathcal{A} \subset \Sigma$.
@@ -1582,14 +1603,14 @@
             Пускай $f \in L^p(\mu)$. $\exists \phi = \sum\limits_{j = 1}^{k}\alpha_j \chi_{e_j}, e_j \in \Sigma$ --- простая функция, хорошо приближающая $f: \|f - \phi\|_{L^p} < \eps$.
             Теперь достаточно приблизить $\phi$, или даже каждое слагаемое $\phi$ элементарными функциями.
 
-            Для всякого $\delta > 0,e_j \in \Sigma$ найдём множество $a_j \in \mathcal{R}(\mathcal{A}): \|\chi_{e_j} - \chi_{e_j}\|_{L^p} < \delta$.
+            Для всякого $\delta > 0,e_j \in \Sigma$ найдём множество $a_j \in \mathcal{R}(\mathcal{A}): \|\chi_{a_j} - \chi_{e_j}\|_{L^p} < \delta$.
 
             $\phi \in L^p(\mu) \then \forall j: \mu(e_j) < \infty \then \forall j: \exists A_j$ --- $\sigma$-множество, такое, что $\mu(A_j \sm e_j) < \frac{\delta}{2}$.
 
             Как $\sigma$-множество, $A_j = \bigcup\limits_{k = 1}^{\infty}b_k, b_k \in \mathcal{A}$.
             Положим $a_j^{(s)} = \bigcup\limits_{k = 1}^{s}b_k \in \mathcal{R}(\mathcal{A})$.
 
-            Но тогда $\int\limits_{X}|\chi_{a_j^{(s)}} - \chi_{e_j}|^p \d\mu = \int\limits_{X}|\chi_{a_j^{(s)}} - \chi_{e_j}|\d\mu \le \int\limits_{X}|\chi_{a_j^{(s)}}-  \chi_{{A_j}}|\d\mu+\int\limits_{X}|\chi_{A_j}-  \chi_{e_j}|\d\mu \underset{\text{при больших $s$}}\le \frac{\delta}{2} + \frac{\delta}{2}$
+            Но тогда \[\int\limits_{X}|\chi_{a_j^{(s)}} - \chi_{e_j}|^p \d\mu = \int\limits_{X}|\chi_{a_j^{(s)}} - \chi_{e_j}|\d\mu \le \int\limits_{X}|\chi_{a_j^{(s)}}-  \chi_{{A_j}}|\d\mu+\int\limits_{X}|\chi_{A_j}-  \chi_{e_j}|\d\mu \underset{\text{при больших $s$}}\le \frac{\delta}{2} + \frac{\delta}{2}\qedhere\]
         }
     }
     \corollary{
@@ -1598,20 +1619,20 @@
     \corollary{
         Непрерывные функции с компактным носителем плотны в $L^p(\R^n)$.
         \provehere{
-            Достаточно доказать, что для любого двоичного куба $K$: $\exists$ непрерывная функция $v$ с компактным носителем $\|\chi_K - v\| < \eps$.
-            Приблизим $\chi_{\left[\frac{l-1}{2^k},\frac{l}{2^k}\right]}$ ломаной, которая равна 1 на $\left[\frac{l-1}{2^k},\frac{l}{2^k}\right]$, и равна нулю в $\nicefrac\eps2$-окрестности $\left[\frac{l-1}{2^k},\frac{l}{2^k}\right]$.
+            Достаточно доказать, что для любого двоичного куба $K$: $\exists$ непрерывная функция $v$ с компактным носителем $\|\chi_K - v\|_{L^p} < \eps$.
+            Приблизим $\chi_{\left[\frac{l-1}{2^k},\frac{l}{2^k}\right]}$ ломаной, которая равна $1$ на $\left[\frac{l-1}{2^k},\frac{l}{2^k}\right]$, и равна нулю вне $\nicefrac\eps2$-окрестности $\left[\frac{l-1}{2^k},\frac{l}{2^k}\right]$.
 
             Теперь если $n$ --- любое, то $K = I_1 \times \dots \times I_n$, перемножим функции, приближающие $I_j$.
         }
     }
     Пусть $t \in \R^n, f$ --- функция на $\R^n$.
-    Тогда сдвиг $f$ на $t$ --- это $f_t(x) = f(x + t)$ (иногда пишут минус).
+    Тогда \emph{сдвиг} $f$ на $t$ --- это $f_t(x) = f(x + t)$ (иногда пишут минус).
     \theorem[Непрерывность сдвига в среднем]{
         Если $f \in L^p(\R^n), 1 \le p < +\infty$, то ${\|f - f_t\|_{L^p}\underset{t \to 0}\Map 0}$.
         \provehere{
             Пусть $\eps > 0$. Найдём $v$ --- непрерывную функцию с компактным носителем, такую, что $\|f - v\|_{L^p(\R^n)} < \eps$.
             \[\|f - f_t\|_{L^p(\R^n)} < \|f - v\|_{L^p(\R^n)} + \|v - v_t\|_{L^p(\R^n)} + \|v_t - f_t\|_{L^p(\R^n)} \le 2\eps + \|v - v_t\|_{L^p(\R^n)}\]
-            Осталось доказать ту же теорему для непрерывной функции с компактным носителем, а она очевидна из теоремы Кантора --- функции $v$ и $v_t$ равномерно непрерывны.
+            Осталось доказать ту же теорему для непрерывной функции с компактным носителем, а она очевидна из теоремы Кантора --- $v$ равномерно непрерывна.
 
             Чуть подробнее: выберем $\delta > 0$, найдётся шар $\overline{B}$, такой, что он содержит $\delta$-окрестность $\supp(v)$. На нём $\forall \eps' > 0: \exists \delta' \in (0, \delta): |x - y| < \delta' \then \abs{v(x) - v(y)} < \eps'$.
             Интегрируя по шару $\overline{B}$ с конечной мерой, получаем $\|v - v_t\| \le |\overline{B}|\eps'^{\nicefrac1p}$ и $\eps'$ можно сделать сколь угодно малым.
@@ -1626,7 +1647,7 @@
         Пускай $f \in L^p(\mu)$.
         \[\int\limits_{X}|f|^s\d\mu = \int\limits_{X}|f|^s \cdot 1 \d\mu \le \left(\int\limits_{X}\left(|f|^s\right)^r\d\mu\right)^{\nicefrac{1}{r}} \cdot \left(\int\limits_{X}(1)^{r'}\d\mu\right)^{\nicefrac{1}{r'}} = \left(\int\limits_{X}|f|^p\d\mu\right)^{\nicefrac{1}{r}} \cdot \mu(X)^{\nicefrac{1}{r'}}\]
     }
-    Отсюда видно, что $\mu(X) = 1$, то $\|f\|_{L^s(\mu)} \le \|f\|_{L^p(\mu)} \cdot \mu(X)^{\frac{1}{sr'}}$, что особенно красиво при \emph{вероятностной мере} --- $\mu(X) = 1$.
+    Отсюда видно, что $\|f\|_{L^s(\mu)} \le \|f\|_{L^p(\mu)} \cdot \mu(X)^{\frac{1}{sr'}}$, это особенно красиво при \emph{вероятностной мере} --- $\mu(X) = 1$.
 
     В случае конечной меры следствие можно применять к функциям, сосредоточенных на множествах конечной меры.
     \ok
@@ -1645,23 +1666,23 @@
         }
     }
     \note{
-        Пусть $f$ существенно ограниченна, $A = \esssup f$. Тогда $\exists E: \mu(E) = 0 \then \sup\limits_{x \in X \sm E}f(x) = A$.
+        Пусть $f$ существенно ограниченна, $A = \esssup f$. Тогда $\exists E: \mu(E) = 0$ и ${\sup\limits_{x \in X \sm E}f(x) = A}$.
     }
     \definition[Норма $f \in L^{\infty}(\mu)$]{
         $\|f\|_{L^{\infty}(\mu)} = \essssup\limits_{X}|f|$.
     }
-    Если в пространстве $L^{\infty}$ отождествить функции, отличающиеся на множестве меры нуль, то норма станет нормой.
+    Если в пространстве $L^{\infty}$ отождествить функции, отличающиеся на множестве меры нуль, то $\|\_\|$ станет нормой.
 
     Расстояние между функциями в данном пространстве $d(f, g) = \|f - g\|$, неравенство треугольника здесь очевидно:
     \[\|u + v\|_{L^{\infty}} \le \|u\|_{L^{\infty}} + \|v\|_{L^{\infty}}\]
     \theorem{
         $L^{\infty}(\mu)$ полно.
         \provehere{
-            Пусть $\{f_n\}$ --- последовательность Коши в $L^{\infty}(\mu)$, то есть $\esssup\limits_{x \in X}|f_n(x) - f_m(x)| \underset{\min(n,m)\to \infty}\Map 0$.
+            Пусть $\{f_n\}$ --- последовательность Коши в $L^{\infty}(\mu)$, то есть $\esssup\limits_{x \in X}|f_n(x) - f_m(x)| \underset{(n,m)\to \infty}\Map 0$.
 
             Тогда найдутся множества $E_{n,m}: \essssup|f_n - f_m| = \sup\limits_{x \notin E_{n,m}}|f_n(x) - f_m(x)|$.
 
-            Положим $E = \bigcup\limits_{n,m}E_{n,m}$, $\mu E = 0$. Тогда $\{f_n\big|_{X \sm E}\}$ --- последовательность Коши на пространстве ограниченных функций на $E$.
+            Положим $E = \bigcup\limits_{n,m}E_{n,m}$, $\mu E = 0$. Тогда $\left\{f_n\big|_{X \sm E}\right\}_{n}$ --- последовательность Коши на пространстве ограниченных функций на $X\sm E$.
             Тем самым, $f_n\rightrightarrows f$ равномерно на $X \sm E$.
             Доопределим $f$ на $E$ как угодно, её класс эквивалентности в $L^{\infty}$ не поменяется.
         }
@@ -1676,14 +1697,14 @@
         \provehere{
             Пусть $p = 1$. $|f(x)|\cdot|g(x)| \le |f(x)| \cdot \|g\|_{L^{\infty}(\mu)}$ почти всюду.
             Интегрируя это неравенство, получаем
-            \[\int\limits_{X}|f|\cdot|g|\d\mu \le \int\limits_{X}|f(x)|\d\mu\cdot\|g\|_{L^{\infty}(\mu)} = \|f\|_{L^{1}(\mu)}\cdot\|g\|_{L^{\infty}(\mu)}\]
+            \[\int\limits_{X}|f|\cdot|g|\d\mu \le \int\limits_{X}|f(x)|\d\mu\cdot\|g\|_{L^{\infty}(\mu)} = \|f\|_{L^{1}(\mu)}\cdot\|g\|_{L^{\infty}(\mu)}\qedhere\]
         }
     }
     \note{
         Пусть $\mu(X) = 1$ (или просто конечна).
         Тогда $\|f\|_{L^p(\mu)} \le \|f\|_{L^{\infty}(\mu)}$ при любом $p < \infty$.
         \provehere{
-            \[\|f\|_{L^p} = \left(\int\limits_{X}|f|^p\d\mu\right)^{\nicefrac1p} \le \left(\int\limits_{X}\|f\|_{L^p(\mu)}^p\d\mu\right)^{\nicefrac1p} = \|f\|_{L^p(\mu)\cdot\mu(X)}\]
+            \[\|f\|_{L^p} = \left(\int\limits_{X}|f|^p\d\mu\right)^{\nicefrac1p} \le \left(\int\limits_{X}\|f\|_{L^\infty(\mu)}^p\d\mu\right)^{\nicefrac1p} = \|f\|_{L^\infty(\mu)\cdot\mu(X)}\qedhere\]
         }
     }
     Пусть $\mu(X) = 1$.
@@ -1695,7 +1716,7 @@
 
     \subsection{Связь интегралов Лебега и Римана}
     \theorem{
-        Пусть $f$ --- функция на отрезке $\angles{a, b}$, интегрируема по Риману --- Дарбу.
+        Пусть $f$ --- функция на отрезке $\angles{a, b}$, интегрируемая по Риману --- Дарбу.
         Тогда $f$ суммируема, и интеграл Лебега такой же.
         \provehere{
             В данной постановке простые функции --- линейные комбинации характеристических функций отрезков, $\phi = \sum\limits_{j = 1}^{N}c_j \chi_{I_j}$.
