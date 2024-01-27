@@ -1,45 +1,48 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {0.1}Литература}{2}{section.0.1}%
-\contentsline {chapter}{\numberline {1}Теория меры}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Меры}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Обобщения}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Область задания меры (системы множеств)}{6}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Поговорим про интеграл}{7}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Про счётную аддитивность}{9}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Продолжение меры}{11}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Предмера}{14}{subsection.1.3.3}%
-\contentsline {section}{\numberline {1.4}Структура измеримых множеств}{17}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Множества меры нуль}{17}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}$\sigma $-множества и $\delta \sigma $-множества}{17}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}$\sigma $-конечность}{18}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Полнота}{19}{subsection.1.4.4}%
-\contentsline {subsection}{\numberline {1.4.5}Двоичные (диадические) кубы}{20}{subsection.1.4.5}%
-\contentsline {section}{\numberline {1.5}Поведение меры Лебега при линейных отображениях}{21}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Интеграл Лебега}{24}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Измеримые отображения}{25}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Грани и предельные переходы}{27}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Интеграл}{28}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Применения теоремы Леви. Свойства интеграла}{29}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Интегралы от знакопеременных функций}{30}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Про линейность интеграла}{31}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Виды сходимости}{33}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Классы $L^p$}{34}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Приближение функций из класса $L^p$}{35}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Связь интегралов Лебега и Римана}{38}{subsection.2.7.2}%
-\contentsline {section}{\numberline {2.8}Теоремы Тонелли и Фубини}{39}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Как применять}{42}{subsection.2.8.1}%
-\contentsline {section}{\numberline {2.9}Свёртки. Приближение функций с помощью свёрток}{42}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Меры с плотностью}{43}{subsection.2.9.1}%
-\contentsline {subsubsection}{Куда должна бить $\phi \geqslant 0$?}{43}{section*.2}%
-\contentsline {subsubsection}{Интегрирование по мере $\nu $}{43}{section*.3}%
-\contentsline {subsection}{\numberline {2.9.2}Образ меры}{43}{subsection.2.9.2}%
-\contentsline {subsubsection}{Интегрирование по мере $\nu $}{44}{section*.4}%
-\contentsline {subsection}{\numberline {2.9.3}Свойства свёртки}{44}{subsection.2.9.3}%
-\contentsline {subsection}{\numberline {2.9.4}Слегка другой способ построения аппроксимативной единицы}{47}{subsection.2.9.4}%
-\contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{48}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Мера Лебега на поверхностях}{50}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Частный случай линейного $f$}{51}{subsection.2.11.1}%
-\contentsline {subsection}{\numberline {2.11.2}$p$-мера Хаусдорфа}{51}{subsection.2.11.2}%
-\contentsline {section}{\numberline {2.12}Элементы общей теории меры}{56}{section.2.12}%
-\contentsline {subsection}{\numberline {2.12.1}Интеграл по комплексной мере}{61}{subsection.2.12.1}%
-\contentsline {subsection}{\numberline {2.12.2}Разложение Лебега}{61}{subsection.2.12.2}%
+\contentsline {section}{\numberline {0.1}Литература}{3}{section.0.1}%
+\contentsline {chapter}{\numberline {1}Теория меры}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Меры}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Обобщения}{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Область задания меры (системы множеств)}{7}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Поговорим про интеграл}{8}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Про счётную аддитивность}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Продолжение меры}{12}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Предмера}{15}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Структура измеримых множеств}{18}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Множества меры нуль}{18}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}$\sigma $-множества и $\delta \sigma $-множества}{18}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}$\sigma $-конечность}{19}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Полнота}{20}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.5}Двоичные (диадические) кубы}{21}{subsection.1.4.5}%
+\contentsline {section}{\numberline {1.5}Поведение меры Лебега при линейных отображениях}{22}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Интеграл Лебега}{25}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Измеримые отображения}{26}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Грани и предельные переходы}{28}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Интеграл}{29}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Применения теоремы Леви. Свойства интеграла}{30}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Интегралы от знакопеременных функций}{31}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Про линейность интеграла}{32}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Виды сходимости}{34}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Классы $L^p$}{35}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Приближение функций из класса $L^p$}{36}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Связь интегралов Лебега и Римана}{39}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}Теоремы Тонелли и Фубини}{40}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Как применять}{43}{subsection.2.8.1}%
+\contentsline {section}{\numberline {2.9}Свёртки. Приближение функций с помощью свёрток}{43}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Меры с плотностью}{44}{subsection.2.9.1}%
+\contentsline {subsubsection}{Куда должна бить $\phi \geqslant 0$?}{44}{section*.2}%
+\contentsline {subsubsection}{Интегрирование по мере $\nu $}{44}{section*.3}%
+\contentsline {subsection}{\numberline {2.9.2}Образ меры}{44}{subsection.2.9.2}%
+\contentsline {subsubsection}{Интегрирование по мере $\nu $}{45}{section*.4}%
+\contentsline {subsection}{\numberline {2.9.3}Свойства свёртки}{45}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Слегка другой способ построения аппроксимативной единицы}{48}{subsection.2.9.4}%
+\contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{49}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Мера Лебега на поверхностях}{51}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Частный случай линейного $f$}{52}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}$p$-мера Хаусдорфа}{52}{subsection.2.11.2}%
+\contentsline {section}{\numberline {2.12}Некоторые конкретные интегралы}{57}{section.2.12}%
+\contentsline {chapter}{\numberline {3}Элементы общей теории меры}{58}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Разложение Хана}{59}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Интеграл комплексных функций}{60}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Интеграл по комплексной мере}{62}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Разложение Лебега}{63}{section.3.3}%

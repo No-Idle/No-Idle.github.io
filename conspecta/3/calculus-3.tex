@@ -2417,11 +2417,14 @@
         $\dim_H(\R^n) = n$.
         \provehere{
             Пусть $K = [0, 1]^n$ --- куб в $\R^n$.
-            Докажем, что $\mu_n^*(K) \in (0, \infty)$ (или можно сказать, что $\mu_n(K) \in (0, \infty)$, так как куб --- борелевское множество).
+            Докажем, что $\mu_n^*(K) \in (0, \infty)$ (или что $\mu_n(K) \in (0, \infty)$, куб --- борелевское множество, поэтому неважно).
             Так как счётное число кубов покрывает всё $\R^n$ (и при сдвиге мера не меняется), то легко показать, что размерность $\R^n$ такая же, как и размерность куба.
 
-            Пусть $\{e_j\}$ --- $\eps$-покрытие куба $K$, и пусть $b_j$ --- шар радиуса $\eps$, содержащий $e_j$.
-            \[1 = |K| \le \underset{\text{мера Лебега шара пропорциональна его радиусу}}{\le} c\sum\limits_{j}\left(\diam(e_j)\right)^n \le 4^n c\cdot \sum\limits_{j}\left(\frac{\diam(b_j)}2\right)^n \]
+            Пусть $\{e_j\}$ --- произвольное $\eps$-покрытие куба $K$, и пусть $b_j$ --- шар радиуса $\diam(e_j)$, содержащий $e_j$.
+            Тогда $\{b_j\}$ --- тоже покрытие, откуда $\sum\limits_{j}\abs{b_j} \ge |K|$.
+            $n$-мерная мера Лебега шара $B_r \subset \R^n$ пропорциональна $r^n$.
+            Для конкретики положим, что она равна $c r^n$.
+            \[1 = |K|\le c\sum\limits_{j}\left(\diam(e_j)\right)^n = 2^n c\cdot \sum\limits_{j}\left(\frac{\diam(e_j)}2\right)^n\]
             В другую сторону пойдём так: разобьём куб $K$ на диадические кубы ранга $s$, пусть $K_s$ --- диадические кубы ранга $s$, содержащиеся в $K$.
             Тогда $\left\{\overline{K}_s\right\}_s$ образуют $\eps$-покрытие $K$ при $\eps = 2^{-s}\sqrt{n}$.
             Отсюда получаем оценку
@@ -2432,7 +2435,7 @@
 
     Обозначим за $\mu_p$ результат продолжения предмеры $\mu_p^*$ по теореме Лебега --- Каратеодори.
     \fact{
-        $\exists C_{(m)}: C^{\lambda}_{\mu}\mu_n = \lambda_n$.
+        $\exists C_{(m)}: C_{(m)}\mu_n = \lambda_n$.
         \provehere{
             $\mu_n$ не меняется при изометриях, в частности, при сдвиге.
             Значит, по теореме единственности, они пропорциональны.
@@ -2457,29 +2460,29 @@
 %    Если же ситуация не такова, то можно взять исчерпывающую последовательность компактов.
             \indent{
                 \theorem[Регулярность меры Лебега]{
-                    $\forall$ измеримого по Лебегу $e \subset \R^k$, $\forall \eps > 0: \exists U \supset e: \abs{U \sm e} < \eps$.
+                    $\forall$ измеримого по Лебегу $e \subset \R^k$, $\forall \eps > 0: \exists \text{ открытое }U \supset e: \abs{U \sm e} < \eps$.
                     Кроме того, $|e| = \sup\limits_{K \subset e}|K|$, где $K$ --- компактны (запись другая, так как мера любого компактного множества конечна).
                     \provebullets{
                         \item Пусть $|e| < \infty$.
-                        Так как оно измеримо, то $\exists$ параллелепипеды $\{P_j\}_j$, такие, что $\bigcup\limits_{j}P_j \supset e, \abs{\bigcup\limits_{j}P_j} < |e| + \eps$.
-                        Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\abs{\tilde{P}}_j < \frac{\eps}{2^j}$.
+                        Так как оно измеримо, то $\exists$ параллелепипеды $\{P_j\}_j$, такие, что $\bigcup\limits_{j}P_j \supset e, \biggl|\bigcup\limits_{j}P_j\biggr| < |e| + \eps$.
+                        Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\bigl|\tilde{P}_j\bigr| < \frac{\eps}{2^j}$.
                         Положим $U \coloneqq \bigcup\limits_{j = 1}^{\infty}\tilde{P}_j$, тогда $U$ открыто, и $|U| < |e| + 2\eps$.
 
                         Теперь если $|e| = \infty$, то воспользуемся $\sigma$-конечностью: пусть $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$, тогда подберём открытые $U_s \supset (e \cap B_s): |U_s \sm (e \cap B_s)| < \frac{\eps}{2^s}$. Объединение $U \coloneqq \bigcup\limits_{s}U_s$ подходит: $U \supset e$, и $|U \sm a| < \eps$.
-                        \item Из предыдущего пункта можно найти подходящее замкнутое множество: пусть $a \coloneqq \R^k \sm b$, найдётся открытое $U \supset a, |U \sm a| < \eps$, тогда для замкнутого $F \coloneqq \R^k \sm U: |b \sm F| = |U \sm a| < \eps$.
+                        \item Из предыдущего пункта можно найти подходящее замкнутое множество: пусть $a \coloneqq \R^k \sm e$, найдётся открытое $U \supset a, |U \sm a| < \eps$, тогда для замкнутого $F \coloneqq \R^k \sm U: |e \sm F| = |U \sm a| < \eps$.
 
-                        Чтобы сделать $F$ компактным, возьмём пересечения $F_s \coloneqq F \cap B_s$, где $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$.
+                        Чтобы сделать $F$ компактным, возьмём пересечения $F_s \coloneqq F \cap \overline{B_s}$, где $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$.
                         Тогда легко видеть, что $|e| = \sup\limits_{s}|F_s|$.
                     }
                 }
             }
             Возьмём исчерпывающую последовательность компактов $K_1 \subset K_2 \subset \cdots \subset \R^m$ ($K_i \subset \Int K_{i+1}$).
 
-            Рассмотрим измеримое $E \subset K_j$. $|E|_m = C_{(m)}\mu_m^*(E) < +\infty$.
-            Тем самым, согласно регулярности найдутся вложенные компакты $\Phi_1 \subset \Phi_2 \subset \cdots \subset E$, такие, что $|\Phi_j| \underset{j \to \infty}\Map |E|$.
+            Рассмотрим измеримое $E \subset K_j$. $|E| = C_{(m)}\mu_m^*(E) < +\infty$.
+            Тем самым, согласно регулярности, найдутся вложенные компакты $\Phi_1 \subset \Phi_2 \subset \cdots \subset E$, такие, что $|\Phi_j| \underset{j \to \infty}\Map |E|$.
             Положим $\Phi \coloneqq \bigcup\limits_{j = 1}^{\infty}\Phi_j$.
 
-            А раз так, то $f(E) = F(E \sm \Phi) \cup \bigcup\limits_{j = 1}^{\infty}F(\Phi_j)$.
+            А раз так, то $f(E) = f(E \sm \Phi) \cup \bigcup\limits_{j = 1}^{\infty}f(\Phi_j)$.
             Значит, $f(E)$ измеримо --- это объединение множества меры нуль $f(E \sm \Phi)$, и счётного числа компактов $f(\Phi_j)$.
 
             Получается, на измеримых подмножествах $K_j$ корректно определена мера $\rho \coloneqq \lambda_m(f)$ ($\rho(e) \coloneqq \lambda_m(f(e))$).
@@ -2489,7 +2492,7 @@
                 $\rho$ абсолютно непрерывна относительно меры Лебега $\lambda_m$ на $U$.
             }{
                 Пусть $\lambda_m(e) = 0$.
-                Тогда $\mu_m(e) = 0$, и так как $f$ --- локально липшицево, то $\lambda_m(f(e)) = 0$.
+                Тогда $\mu_m(e) = 0$, и так как $f$ --- локально липшицева, то $\lambda_m(f(e)) = 0$.
             }
 %            $\rho(e) = C_{(m)}\mu_m^*(F(e))$.
 %        Пусть $|e| = C_{(m)}\mu_m^*(e) = 0$, где $e \in K_j$.
@@ -2517,26 +2520,29 @@
             \[h(u_1) - h(u_2) \le |u_1 - u_2| + \underbrace{|\phi(u_1) - \phi(u_2)|}_{\le |\d_{\phi}(v, u_1 - u_2)|}\text{, где некая точка $v \in [u_1, u_2]$.}\]
             Устроим $\tilde{f}: U \map \Pi, \tilde{f}(x) = P f(x)$.
             Заметим, что меры $f(B_r(x_0))$ и $\tilde{f}(B_r(x_0))$ близки.
-            В самом деле, из липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0))))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
+            В самом деле, из липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0)))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0)))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
             Отсюда видно, что \[\lim\limits_{r \to 0}\mu_m(\tilde{f}(B_r(x_0))) = \lim\limits_{r \to 0}\mu_m(f(B_r(x_0)))\]
             Но так как $\tilde{f}$ --- отображение между двумя $m$-мерными евклидовыми пространствами, то можно записать $\lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{B_r(x_0)} = \lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{B_r(x_0)} = |J_{\tilde{f}}(x)|$.
 
             Осталось заметить, что образом $\d_f(x_0, \_)$ является $\Pi$.
-            Значит, $P$ ничего не делает, $\d_{\tilde{f}}(x_0, \_) = \d_f(x_0, \_)$.
+            Значит, $P$ не меняет дифференциал, $\d_{\tilde{f}}(x_0, \_) = \d_f(x_0, \_)$.
         }
     }
     Рассмотрим оператор $A: \R^m \map \R^n$, где $m < n$.
     Пусть $e_j$ --- стандартный базис в $\R^m$, тогда $Ae_j$ --- столбцы матрицы $A$.
 
     Можно посчитать определитель Грама матрицы $A$: $\det(\angles{A e_i, A e_j})_{i,j}$ по формуле Бине --- Коши: $\det(A^t A) = \sum\limits_{I \subset [n], |I| = m}\det((A^t)_I)\det(A^I) = \sum\limits_{I \subset [n], |I| = m}\det(A^I)^2$.
-    \examples{
+    \examples[Меры поверхностей]{
         \item Пусть $m = 1$.
         Рассмотрим путь $\gamma: (a, b) \map \R^n$. $\gamma = \vect{\gamma_1 \\ \vdots \\ \gamma_n}$.
         Тогда $J_{\gamma}(x_0, \_) = \vect{\gamma_1'(x_0) \\ \vdots \\ \gamma_n'(x_0)}$, и $\abs{\Gamma(\d_{\gamma}(x_0, \_))} = \sqrt{|\gamma_1^2(x_0) + \cdots + \gamma_n^2(x_0)|}$.
         Если $\gamma$ инъективна, то получается формула длины пути $\int\limits_{a}^{b}\sqrt{|\gamma_1^2(x) + \cdots + \gamma_n^2(x)|}\d x$.
         \item Пусть $G \subset \R^2$, и отображение представляет собой график: $F(x, y) = (x, y, \phi(x, y))$, где $\phi: \R \times \R \map \R$.
-        Здесь матрица Якоби $J_F(x, y) = \vect{1  & 0 \\ 0 & 1 \\ \partial_1\phi(x, y) & \partial_2\phi(x, y)}$, здесь $\partial_i$ --- производная по $i$-му аргументу.
+        Здесь матрица Якоби $J_F(x, y) = \vect{1  & 0 \\ 0 & 1 \\ \partial_1\phi(x, y) & \partial_2\phi(x, y)}$, где $\partial_i$ --- производная по $i$-му аргументу.
         Тем самым, $\mu_2(F(e)) = \int\limits_{e}\sqrt{1 + (\partial_1 \phi)^2 + (\partial_2 \phi)^2}\d\lambda_2$.
+    }
+    \section{Некоторые конкретные интегралы}
+    \numbers{
         \item Заинтересуемся сходимостью $\int\limits_{\R^n \sm B_1}|x|^{\alpha}\d x$.
         Сделаем полярную замену $r, \phi_1, \dots, \phi_{n - 1}$. Интеграл обращается в $\int\limits_{1}^{\infty}r^{n - 1}r^{\alpha}\d r \cdot \Psi(\phi_1, \dots, \phi_n)$.
         Отсюда видно, что так как $\Psi(\phi_1, \dots, \phi_n)$ интегрируемо, то интеграл сходится $\iff n - 1 + \alpha < -1 \iff \alpha < -n$.
@@ -2550,7 +2556,7 @@
     }
 
 
-    \section{Элементы общей теории меры}
+    \chapter{Элементы общей теории меры}
     Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, на которой мы будем рассматривать разные меры.
 
     Так как у этих мер могут быть разные множества меры нуль, то может не получиться пополнить одну, продолжив на новые подмножества --- элементы $\Sigma$-алгебры --- и другую, поэтому здесь никаких предположений о полноте мер скорее не будет.
@@ -2570,7 +2576,7 @@
         }
     }
     \theorem{\label{bounded}
-    Множество значений любой комплексной меры ограничено.
+    Множество значений любой комплексной (\textbf{конечной}) меры ограничено.
     \provehere{
         В пределах данного доказательства назовём множество $a \in \Sigma$ <<плохим>>, если $\sup\defset{|\nu(b)|}{b \subset a, b \in \Sigma} = +\infty$.
         Пусть наше пространство --- $(X, \Sigma)$.
@@ -2595,17 +2601,19 @@
     }
     }
     \newlection{20 декабря 2023 г.}
+    \section{Разложение Хана}
     Сужение меры можно определить так $\mu\big|_E(a) \bydef \mu(a \cap E)$.
 
     Иногда сужение определяют немного по-другому: $\mu\big|_E(a)$ --- мера, заданная как $\mu$, но теоретико-множественно суженная на $\defset{b \in \Sigma}{b \subset E}$.
-    В теореме Хана ниже, по-видимому, используется именно это, последнее, определение.
+    Если $E \in \Sigma$, то ясно, что эти определения совпадают (да?).
     \theorem[Хан]{
         Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$.
         Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\big|_E \ge 0, \mu\big|_F \le 0$. Такое $E$, что $\mu\big|_E \ge 0$ называется \emph{множеством положительности} (аналогично, $F$ --- \emph{множество отрицательности}).
         \provehere{
             $\defset{\mu(b)}{b \in \Sigma}$ ограничено~(\cref{bounded}), пусть $M = \sup\limits_{b \in \Sigma}\mu(b)$. Так как $\mu(\o) = 0$, то $M \ge 0$.
+            Рассмотрим два случая.
             \bullets{
-                \item $M = 0$. Тогда $\mu \le 0$, и $F = X, E = \o$.
+                \item $M = 0$. Тогда $\mu \le 0$, и $F \coloneqq X, E \coloneqq \o$ подходят.
                 \item $M > 0$. По определению супремума $\exists b_k \in \Sigma: M - \frac{1}{2^k} \le \mu(b_k) \le M$.
                 \indentlemma{
                     Пусть $b \subset X$, $\mu(b) = M - \eps$. Если измеримое $e \subset b$, то $\mu(e) \ge -\eps$.
@@ -2617,14 +2625,15 @@
                 \gather{\mu\left(b_k \cup b_{k+1} \cup \cdots \cup b_n\right) = \mu(b_k) + \mu(b_{k+1} \sm b_k) + \mu\left(b_{k+2}\sm(b_k \cup b_{k+1})\right) + \cdots + \mu(b_{n} \sm (\cdots))\ge\\\ge \left(M - \frac{1}{2^k}\right) - \frac{1}{2^{k+1}} - \frac{1}{2^{k+2}} - \cdots - \frac{1}{2^n} \ge M - \frac{1}{2^{k-1}}}
                 Переходя к пределу в силу счётной аддитивности, получаем $\mu\left(b_k \cup b_{k+1} \cup \cdots\right) \ge M - \frac{1}{2^{k-1}}$.
 
-                Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \subset \cdots$ Положим $E \coloneqq \bigcup\limits_{k = 1}^{\infty}b_k$ В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(b_k) = M$.
+                Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \subset \cdots$ Положим $E \coloneqq \bigcap\limits_{k = 1}^{\infty}\overline{b_k}$.
+                В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(\overline{b_k}) = M$.
 
                 Теперь в силу леммы все подмножества $E$ имеют положительную меру. Положим $F \coloneqq X \sm E$, все подмножества $F$ имеют отрицательную меру (от противного: если $f \subset F$ имеет положительную меру, то $\mu(E \cup f) > M$).\qedhere
             }
         }
     }
     Такие $E, F \subset X$ из теоремы --- \emph{разложение Хана}.
-    Оно единственно с точностью до множества меру нуль --- если $A \subset E$ имеет меру нуль, то все его подмножества тоже имеют меру нуль, и $(E \sm A, F \cup A)$ --- тоже разложение Хана.
+    Оно единственно с точностью до множества меры нуль --- если $A \subset E$ имеет меру нуль, то все его измеримые подмножества тоже имеют меру нуль, и $(E \sm A, F \cup A)$ --- тоже разложение Хана.
 
     Теперь можно определить \emph{положительную} и \emph{отрицательную части меры} $\mu^+(a) \bydef \mu(A \cap E)$ и $\mu^-(a) \bydef -\mu(a \cap E)$.
     Тогда $\mu(a) = \mu^{+}(a) - \mu^-(a)$, тем самым любая конечная вещественная мера есть разность двух неотрицательных.
@@ -2637,7 +2646,7 @@
         $\mu^+$ есть наименьшая из неотрицательных мер $\nu: \nu \ge \mu$.
         \provehere{
             Пусть $E, F$ --- разложение Хана для $\mu$.
-            Пусть $\nu \ge \mu$. Тогда $\nu(a) = \nu(a \cap E) + \nu(a \cap F) \ge \mu(a \cap E) = \mu^+(a)$.
+            Пусть неотрицательная $\nu \ge \mu$. Тогда $\nu(a) = \nu(a \cap E) + \nu(a \cap F) \ge \mu(a \cap E) = \mu^+(a)$.
         }
     }
     \note{
@@ -2649,10 +2658,11 @@
             \[\int\limits_{e}g\d|\mu| = \int\limits_{e \cap E}\d|\mu| - \int\limits_{e \cap F}\d|\mu| = \int\limits_{e \cap E}\d\mu^+ - \int\limits_{e \cap F}\d\mu^- = \mu^+(e \cap E) - \mu^-(e \cap F) = \mu(e)\qedhere\]
         }
     }
+    \section{Интеграл комплексных функций}
     Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, и $\rho$ --- неотрицательная счётно-аддитивная мера.
 
-    Пусть $\phi: X \map \C$ $\Sigma$-измерим (прообраз любого борелевского множества измерим).
-    Пусть $\phi = \alpha + i\beta$, где $\alpha, \beta$ --- вещественные измеримые функции.
+    Пусть $\phi: X \map \C$ является $\Sigma$-измеримым (прообраз любого борелевского множества измерим).
+    Разложим $\phi = \alpha + i\beta$, где $\alpha, \beta$ --- вещественные измеримые функции.
 
     Определим $\int\limits_{a}\phi \d\rho \bydef \int\limits_{a}\alpha\d\rho + i\int\limits_{a}\beta\d\rho$.
     Данный интеграл обладает всеми свойствами, которые от него ожидаются --- аддитивность, $\C$-линейность, счётная аддитивность по множеству, счётная аддитивность по функции.
@@ -2660,7 +2670,7 @@
     Основную оценку интеграла удобно доказывать так:
     \gather{\exists \theta \in \R: e^{i\theta}\int\limits_{a}\phi\d\rho \in \R_{\ge 0} \\ \abs{\int\limits_{a}\phi\d\rho} = \Re\int\limits_{a}e^{i\theta}\phi\d\rho = \abs{\int\limits_{a}\Re(e^{i\theta}\phi)\d\rho} \le \int\limits_{a}|e^{i\theta}\phi|\d\rho = \int\limits_{a}|\phi|\d\rho}
 
-    Многие комплексные меры как раз приходят из таких интегралов.
+    Многие комплексные меры (как счётно-аддитивные функции множеств) как раз происходят из таких интегралов.
 
     Пускай $\mu$ --- комплексная мера на $\Sigma$.
     \definition[Полная вариация $\mu$ на $a \in \Sigma$]{$|\mu|(a) = \sup\defset{\sum\limits_{j = 1}^{N}|\mu(e_j)|}{e_1\sqcup \dots\sqcup e_N = a}$}
@@ -2687,7 +2697,9 @@
     }
     \corollary{
         Если $\rho$ --- комплексная мера, то $\forall a: |\rho|(a) < +\infty$.
-        \provehere{Разложим $\rho = \rho_1 + i\rho_2$.}
+        \provehere{
+            Разложим $\rho = \rho_1 + i\rho_2$. $\rho_1, \rho_2$ --- вещественные меры, их модули принимают конечные значения.
+        }
     }
     \proposal{
         Пусть $\nu$ --- неотрицательная (необязательно конечная) мера на $\Sigma$, пусть $g$ --- комплексная суммируемая (относительно $\nu$) функция.
@@ -2697,7 +2709,7 @@
         \provenumbers{
             \item[0.] Пусть $g \in L^1(\nu)$. Тогда $|\mu|(a) \le \int\limits_{a}|g|\d\nu$.
             Действительно, пусть $e_1 \sqcup \cdots \sqcup e_n = a$. Тогда $\sum\limits_{j = 1}^{n}|\mu(e_j)| = \sum\limits_{j = 1}^{n}\abs{\int\limits_{e_j}g\d\nu} \le \sum\limits_{j = 1}^{n}\int\limits_{e_j}|g|\d\nu = \int\limits_{a}|g|\d\nu$.
-            \item Пусть $g = \sum\limits_{j = 1}^{k}c_j \chi_{e_j}$ --- простая функция, где мы считаем, что $b_j \in \Sigma$ попарно не пересекаются.
+            \item Пусть $g = \sum\limits_{j = 1}^{k}c_j \chi_{e_j}$ --- простая функция, где мы считаем, что $e_j \in \Sigma$ попарно не пересекаются.
 
             Рассмотрим разбиение $a = (a \cap e_1) \sqcup \cdots \sqcup (a \cap e_k) \sqcup \left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)$.
             \[|\mu|(a) \ge \sum\limits_{j = 1}^{k}|\mu(a \cap e_j)| +\underbrace{ \abs{\mu\left(a \sm \bigcup\limits_{j = 1}^{k}e_j\right)}}_{= 0} = \sum\limits_{j = 1}^{k}\abs{\,\int\limits_{a \cap e_j}g\d\nu} = \sum\limits_{j = 1}^{k}|c_j|\nu(a \cap e_j) = \int\limits_{a}|g|\d\nu\]
@@ -2708,7 +2720,7 @@
             \[\mu(a) = \int\limits_{a}h\d\nu + \int\limits_{a}(g - h)\d\nu = \mu_1(a) + \mu_2(a)\]
             \[\all{|\mu|(a) \le |\mu_1(a)|(a) + |\mu_2|(a) \\ |\mu_1|(a) \le |\mu|(a) + |\mu_2|(a) \qquad \then \quad |\mu_1|(a) - |\mu_2|(a) \le |\mu|(a) \le |\mu_1|(a) + |\mu_2|(a)}\]
             Оценим $\mu_2(a)$:
-            \[|\mu_2(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le \eps|\]
+            \[|\mu_2(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le |\eps|\]
             Отсюда получается
             \[\int\limits_{a}|h|\d\nu - \eps \le |\mu|(a) \le \int\limits_{a}|h|\d\nu + \eps\]
             И наконец можно заменить $h$ на $g$, при этом мы ошибёмся не больше, чем на $\eps$.
@@ -2735,7 +2747,7 @@
     Оказывается, $g \in L^1(\mu_{1,2}^\pm) \iff g \in L^1(|\mu|)$, так как $\mu_{1,2}^\pm \le |\mu|$.
     \lemma[Линейность по мере]{
         Пусть $\rho, \sigma$ --- две комплексные меры на $\Sigma$, пусть $g$ суммируема относительно $|\rho|$ и $|\sigma|$.
-        Утверждается, что \[\int\limits_{a}g\d(\rho+\sigma) = \int\limits_{a}g \d\rho + \int\limits_{a}g \d\sigma\]
+        Утверждается, что \[\int\limits_{a}g\d\,(\rho+\sigma) = \int\limits_{a}g \d\rho + \int\limits_{a}g \d\sigma\]
         \provehere{
             Утверждается, что $\exists \lambda$ --- положительная мера на $\Sigma$, относительно которой $\rho,\sigma$ абсолютно непрерывны: $\exists u, v: X \map \C$, такие, что $\rho(e) = \int\limits_{e}u\d\lambda$ и $\sigma(e) = \int\limits_{e}v\d\lambda$.
             Например, в качестве $\lambda$ можно взять $\rho_1^+ + \rho_1^- + \rho_2^+ + \rho_2^- + \sigma_1^+ + \sigma_1^- + \sigma_2^+ + \sigma_2^-$.
@@ -2743,11 +2755,11 @@
             Разложим на вещественную и мнимую части $u = u_1 + i u_2, v =  v_1 + i v_2$.
             \[\int\limits_{a}g\d\rho = \int\limits_{a}g u_1^+\d\lambda - \int\limits_{a}g u_1^-\d\lambda + i\left(\int\limits_{a}g u_2^+\d\lambda - \int\limits_{a}g u_2^-\d\lambda\right) = \int\limits_{a}gu\d\lambda\]
             Аналогично $\int\limits_{a}g\d\sigma = \int\limits_{a}gv\d\lambda$.
-            \[\int\limits_{a}g\d\rho + \int\limits_{a}g\d\sigma = \int\limits_{a}g(u + v)\d\lambda = \int\limits_{a}g\d(\rho+\sigma)\]
+            \[\int\limits_{a}g\d\rho + \int\limits_{a}g\d\sigma = \int\limits_{a}g(u + v)\d\lambda = \int\limits_{a}g\d\,(\rho+\sigma)\]
         }
     }
 
-    \subsection{Разложение Лебега}
+    \section{Разложение Лебега}
     Пусть $(X,\Sigma,\lambda)$ --- пространство с неотрицательной $\sigma$-конечной мерой $\lambda \ge 0$.
 
     Пусть $\rho$ --- комплексная мера на $\Sigma$.
@@ -2763,7 +2775,7 @@
     \theorem[Лебег]{
         Для произвольной комплексной меры $\rho$ на $\Sigma$ существует и единственно представление $\rho = \rho_1 + \rho_2$, где $\rho_1$ абсолютно непрерывна относительно $\lambda$, а $\rho_2$ сингулярна относительно $\lambda$.
         \provehere{
-            Пусть $A = \sup\defset{|\rho|(e)}{e \in \Sigma, \lambda(e) = 0}$. Тогда $\exists e_n \in \Sigma: |\rho|(e_n) > A - \frac{1}{n}$.
+            Положим $A \coloneqq \sup\defset{|\rho|(e)}{e \in \Sigma, \lambda(e) = 0}$. Тогда $\exists e_n \in \Sigma: |\rho|(e_n) > A - \frac{1}{n}$.
 
             Положим $\overline{e_n} = e_n \cup e_{n + 1} \cup \cdots$. Тогда $\overline{e_1} \subset \overline{e_2} \subset \cdots$, и положим $E = \bigcup\limits_{n = 1}^{\infty}\overline{e_n}$.
 
@@ -2776,7 +2788,7 @@
         }
     }
     \example{
-        Определим рекурсивно канторову лестницу $[0, 1] \map [0, 1]$.
+        Определим рекурсивно канторову лестницу $C: [0, 1] \map [0, 1]$.
         \[\begin{tikzpicture}
               \draw[->] (-0.5,0) -- (3.5,0) node[above]{$x$};
               \draw[->] (0,-0.5) -- (0,3.5) node[right]{$y$};
@@ -2800,7 +2812,7 @@
               }
               \cantor{0}{3}{0}{3}{0}
         \end{tikzpicture}\]
-        Построив по данной функции меру, мы получим меру, сосредоточенную на канторовом множестве меры нуль.
+        Построив по данной функции меру $\mu(e) = \int\limits_{e}C(x)\d x$, мы получим меру, сосредоточенную на канторовом множестве меры нуль.
         Она сингулярна относительно стандартной меры Лебега на $\R$.
     }
 
