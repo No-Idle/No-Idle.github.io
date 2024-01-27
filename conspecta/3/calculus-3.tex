@@ -189,7 +189,7 @@
     \ok
     Пусть $\mathcal{P}_0(\R)$ --- полукольцо конечных отрезков, $f: \R \map \R$ --- нестрого возрастающая функция.
     \definition[Квазидлина, порождённая $f$]{\label{quasilength}
-        $\mu_f(\angles{a, b}) \bydef f(b) - f(a)$.
+    $\mu_f(\angles{a, b}) \bydef f(b) - f(a)$.
     }
     Эта квазидлина, понятное дело, аддитивна, но не для всех функций она счётно аддитивна.
     \counterexample{
@@ -288,30 +288,30 @@
     }
     }
     \theorem{\label{about-product}
-        Пусть $\mathcal{A} \subset 2^X, \mathcal{B} \subset 2^Y$ --- полукольца обобщённых прямоугольников. Положим $\mathcal{C} \coloneqq \mathcal{A} \times \mathcal{B}$, это полукольцо подмножеств $X \times Y$.
+    Пусть $\mathcal{A} \subset 2^X, \mathcal{B} \subset 2^Y$ --- полукольца обобщённых прямоугольников. Положим $\mathcal{C} \coloneqq \mathcal{A} \times \mathcal{B}$, это полукольцо подмножеств $X \times Y$.
 
-        Пусть $\mu$ --- мера на $\mathcal{A}$, $\nu$ --- мера на $\mathcal{B}$.
-        Определим произведение мер $(\mu \otimes \nu)(a \times b) \bydef \mu(a)\nu(b)$.
+    Пусть $\mu$ --- мера на $\mathcal{A}$, $\nu$ --- мера на $\mathcal{B}$.
+    Определим произведение мер $(\mu \otimes \nu)(a \times b) \bydef \mu(a)\nu(b)$.
 
-        Утверждается, что $\mu \otimes \nu$ --- мера на $\mathcal{C}$.
-        \provehere{
-            Докажем аддитивность. Пусть $P = a \times b$, причём $P = \bigsqcup\limits_{j = 1}^{k}P_j$, где $P_j = a_j \times b_j$.
+    Утверждается, что $\mu \otimes \nu$ --- мера на $\mathcal{C}$.
+    \provehere{
+        Докажем аддитивность. Пусть $P = a \times b$, причём $P = \bigsqcup\limits_{j = 1}^{k}P_j$, где $P_j = a_j \times b_j$.
 
-            Проверим, что $(\mu \otimes \nu)(P) \overset{?}= \sum\limits_{j=1}^k(\mu \otimes \nu)(P_j)$.
+        Проверим, что $(\mu \otimes \nu)(P) \overset{?}= \sum\limits_{j=1}^k(\mu \otimes \nu)(P_j)$.
 
-            Разделим переменные: $\chi_{c \times d}(s, t) = \chi_c(s) \cdot \chi_d(t)$.
+        Разделим переменные: $\chi_{c \times d}(s, t) = \chi_c(s) \cdot \chi_d(t)$.
 
-            Дано, что $\chi_P = \sum\limits_{j = 1}^{k}\chi_{P_j}$, то есть $\chi_a(s)\chi_b(t) = \sum\limits_{j = 1}^{k}\chi_{a_j}(s)\chi_{b_j}(t)$.
+        Дано, что $\chi_P = \sum\limits_{j = 1}^{k}\chi_{P_j}$, то есть $\chi_a(s)\chi_b(t) = \sum\limits_{j = 1}^{k}\chi_{a_j}(s)\chi_{b_j}(t)$.
 
-            Интегрируем ($I_{\nu,t}$ означает интеграл по мере $\nu$ функции от переменной $t$ при фиксированном $s$):
-            \gather{
-                I_{\nu, t}\left(\chi_a(s)\chi_b(t)\right) = \sum\limits_{j = 1}^{k}I_{\nu,t}\left(\chi_{a_j}(s)\cdot \chi_{b_j}(t)\right)\quad\then\quad
-                \chi_a(s)\nu(b) = \sum\limits_{j = 1}^{k}\chi_{a_j}(s)\cdot \nu(b_j) \\
-                I_{\mu}\left(\chi_a(s)\nu(b)\right) =\sum\limits_{j = 1}^{k} I_{\mu}\left(\chi_{a_j}(s)\cdot \nu(b_j)\right) \quad\then\quad
-                \mu(a)\nu(b) = \sum\limits_{j = 1}^{k}\mu(a_j)\nu(b_j)
-            }
-            Данное доказательство также допускает бесконечные меры.
+        Интегрируем ($I_{\nu,t}$ означает интеграл по мере $\nu$ функции от переменной $t$ при фиксированном $s$):
+        \gather{
+            I_{\nu, t}\left(\chi_a(s)\chi_b(t)\right) = \sum\limits_{j = 1}^{k}I_{\nu,t}\left(\chi_{a_j}(s)\cdot \chi_{b_j}(t)\right)\quad\then\quad
+            \chi_a(s)\nu(b) = \sum\limits_{j = 1}^{k}\chi_{a_j}(s)\cdot \nu(b_j) \\
+            I_{\mu}\left(\chi_a(s)\nu(b)\right) =\sum\limits_{j = 1}^{k} I_{\mu}\left(\chi_{a_j}(s)\cdot \nu(b_j)\right) \quad\then\quad
+            \mu(a)\nu(b) = \sum\limits_{j = 1}^{k}\mu(a_j)\nu(b_j)
         }
+        Данное доказательство также допускает бесконечные меры.
+    }
     }
     \note{
         Пусть $\mu$ --- мера на полукольце $\mathcal{A}$.
@@ -394,7 +394,6 @@
             Также можно проверить регулярность для бесконечных промежутков.
         }
     }
-
 
     \subsection{Продолжение меры}
     Продолжать можно только счётно-аддитивные меры, иначе будет неоднозначно.
@@ -576,79 +575,79 @@
         \[\forall a \subset X: \gamma(a) = \gamma(a \cap e) + \gamma(a \sm e) = \gamma(a \cap e) + \gamma\left(a \cap e^\comp\right)\]
     \end{definition_env}
     \theorem[Лебег --- Каратеодори]{\label{lebesgue-caratheodory}
-        Совокупность $\Sigma$ всех $\gamma$-измеримых множеств образует $\sigma$-алгебру, на которой функция $\gamma\big|_\Sigma$ счётно-аддитивна.
-        \supplement{
-            Если $\gamma = \mu^*$, где $\mu$ --- мера на полукольце $\mathcal{P}$, то все множества из $\mathcal{P}$ автоматически $\gamma$-измеримы.
-        }
-        \supplement{
-            Если $\mu$ счётно аддитивна на исходном полукольце $\mathcal{P}$, то $\mu^*\big|_{\mathcal{P}} = \mu$.
-        }
-        \provebullets{
-            \item Покажем, что $\Sigma$ --- алгебра множеств.
-            \bullets{
-                \item Определение симметрично относительно $e$ и $e^\comp$, поэтому $e \in \Sigma \iff e^\comp \in \Sigma$.
-                \item $\o \in \Sigma$ прямо из определения.
-                Используя предыдущий пункт, $X \in \Sigma$.
-                \item Пусть $e_1, e_2 \in \Sigma$. Проверим, что $e_1 \cap e_2 \in \Sigma$.
-                Рассмотрим произвольное $a \subset X$. Запишем измеримость для $e_1$ при пересечении с $a$ и измеримость для $e_2$ при пересечении с $a \cap e_1$.
-                \gather{
-                    \gamma(a) = \gamma(a \cap e_1) + \gamma(a \cap e_1^\comp) \\
-                    \gamma(a \cap e_1) = \gamma(a \cap e_1 \cap e_2) + \gamma(a \cap e_1 \cap e_2^\comp) \\
-                }
-                Отсюда подстановкой получаем
-                \[\gamma(a) = \gamma(a \cap e_1 \cap e_2) + \underbrace{\gamma\left(a \cap e_1 \cap e_2^\comp\right) + \gamma\left(a \cap e_1^\comp\right)}_{\text{хотим показать, что это }\gamma(a \cap (e_1 \cap e_2)^\comp)}\]
-                Записав измеримость $e_1$ при пересечении с $a \cap \left(e_1^\comp \cup e_2^\comp\right)$, получаем
-                \multline{\gamma\left(a \cap (e_1^\comp \cup e_2^\comp)\right) = \gamma\left(a \cap (e_1^\comp \cup e_2^\comp) \cap e_1\right) + \gamma\left(a \cap (e_1^\comp \cup e_2^\comp) \cap e_1^\comp\right) =\\= \gamma\left(a \cap e_1 \cap e_2^\comp\right) + \gamma\left(a \cap e_1^\comp\right)}
-                \item Так как $(e_1 \cup e_2) = (e_1^\comp \cap e_2^\comp)^\comp$ и $(e_1 \sm e_2) = e_1 \cap e_2^\comp$, то $\Sigma$ --- действительно алгебра.
+    Совокупность $\Sigma$ всех $\gamma$-измеримых множеств образует $\sigma$-алгебру, на которой функция $\gamma\big|_\Sigma$ счётно-аддитивна.
+    \supplement{
+        Если $\gamma = \mu^*$, где $\mu$ --- мера на полукольце $\mathcal{P}$, то все множества из $\mathcal{P}$ автоматически $\gamma$-измеримы.
+    }
+    \supplement{
+        Если $\mu$ счётно аддитивна на исходном полукольце $\mathcal{P}$, то $\mu^*\big|_{\mathcal{P}} = \mu$.
+    }
+    \provebullets{
+        \item Покажем, что $\Sigma$ --- алгебра множеств.
+        \bullets{
+            \item Определение симметрично относительно $e$ и $e^\comp$, поэтому $e \in \Sigma \iff e^\comp \in \Sigma$.
+            \item $\o \in \Sigma$ прямо из определения.
+            Используя предыдущий пункт, $X \in \Sigma$.
+            \item Пусть $e_1, e_2 \in \Sigma$. Проверим, что $e_1 \cap e_2 \in \Sigma$.
+            Рассмотрим произвольное $a \subset X$. Запишем измеримость для $e_1$ при пересечении с $a$ и измеримость для $e_2$ при пересечении с $a \cap e_1$.
+            \gather{
+                \gamma(a) = \gamma(a \cap e_1) + \gamma(a \cap e_1^\comp) \\
+                \gamma(a \cap e_1) = \gamma(a \cap e_1 \cap e_2) + \gamma(a \cap e_1 \cap e_2^\comp) \\
             }
-            \item Проверим <<усиленную аддитивность>>: для произвольного $a \subset X$, $b_1, b_2 \in \Sigma, b_1 \cap b_2 = \o \then$
-            \[\gamma(a \cap (b_1 \sqcup b_2)) = \gamma(a \cap b_1) + \gamma(a \cap b_2)\]
-            Данный факт потребуется для доказательства того, что $\Sigma$ --- $\sigma$-алгебра.
-
-            Доказательство напрямую следует из измеримости $b_1$ при пересечении с $a \cap (b_1 \cup b_2)$.
-
-            Отсюда по индукции видно, что для попарно непересекающихся $b_1, \dots, b_n \in \Sigma$:
-            \[\gamma\left( a \cap \bigsqcup\limits_{j = 1}^{n}b_j\right) = \sum\limits_{j = 1}^{n}\gamma(a \cap b_j)\]
-
-            \item Проверим, что $\Sigma$ является $\sigma$-алгеброй.
-            Для этого достаточно проверить, что для счётного семейства $b_i \in \Sigma: b \coloneqq \bigsqcup\limits_{j \in \N}b_j \in \Sigma$.
-
-            \indent{Чтобы доказать измеримость множества $e$, достаточно проверить неравенство $\gamma(a) \ge \gamma(a \cap e) + \gamma(a \sm e)$, потому что неравенство в другую сторону следует из счётной полуаддитивности.
-            Дополнительно можно считать, что $\gamma(a)$ конечно.}
-
-            Выберем произвольное $a \in X$, для него
-            \[\gamma(a) = \gamma(a \cap (b_1 \sqcup \dots \sqcup b_n)) + \gamma(a \sm (b_1 \sqcup \dots \sqcup b_n)) \ge \left(\sum\limits_{j = 1}^{n}\gamma\left(a \cap b_j\right)\right) + \gamma(a \sm b)\]
-            Переходя к пределу $n \to \infty$, получаем
-            \[\gamma(a) \ge \left(\sum\limits_{j \in\N}\gamma(a \cap b_j)\right) + \gamma(a \sm b)\]
-            Так как $a \cap b = \bigsqcup\limits_{j \in \N}(a \cap b_j)$, то из счётной полуаддитивности $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
-            Отсюда
-            \[\gamma(a) \ge \left(\sum\limits_{j = 1}^{\infty}\gamma(a \cap b_j)\right) + \gamma(a \sm b) \ge \gamma(a \cap b) + \gamma(a \sm b)\]
-            \item Проверим, что $\gamma\big|_\Sigma$ --- <<усиленно счётно-аддитивная мера>>, то есть для счётного семейства дизъюнктных $b_j \in \Sigma$ $\left(b \coloneqq \bigsqcup\limits_{j \in \N}b_j\right)$ и произвольного $\forall a \in X$:
-            \[\gamma\left( a\cap\bigsqcup\limits_{j \in \N}b_j\right) = \sum\limits_{j \in \N}\gamma(a \cap b_j)\]
-            При $a = X$ свойство обращается в обычную счётную аддитивность, но усиленная даётся даром, так что докажем и её тоже.
-
-            С одной стороны, из счётной аддитивности $\gamma$: $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
-            С другой стороны, \[\gamma( a\cap b) \ge \gamma(a \cap (b_1 \cup \dots \cup b_n)) = \sum\limits_{j = 1}^{n}\gamma(a \cap b_j)\]
-            и можно перейти к пределу по $n$.
-            \item Докажем первое дополнение.
-
-            Достаточно показать, что для любого $e \in \mathcal{P}, a \in X$: $\mu^*(a) \ge \mu^*(a \cap e) + \mu^*(a \sm e)$, обратное следует из полуаддитивности внешней меры.
-
-            Рассмотрим произвольное счётное покрытие $\{c_i\}_{i \in \N}$ множества $a$ элементами множества $\mathcal{P}$.
-            \bullets{
-                \item Во-первых, по определению внешней меры $\mu^*(a \cap e) \le \sum\limits_{i \in \N}\mu(c_i\cap e)$
-                \item Во-вторых, оценим $\mu^*(a \sm e)$.
-
-                Каждое $b_i \coloneqq c_{i} \sm e$ представимо в виде конечного объединения $b_i = \bigcup\limits_{j = 1}^{s_i}d_i^{(j)}$, где $d_i^{(j)} \in \mathcal{P}$ попарно дизъюнктны.
-
-                $\{d_i^{(j)}\}_{i,j}$ --- счётная совокупность множеств из $\mathcal{A}$, покрывающая $a \sm e$.
-                \item Таким образом
-                \[\mu^*(a \cap e) + \mu^*(a \sm e) \le \sum\limits_{i \in \N}\underbrace{\left(\mu(c_i \cap e) + \sum\limits_{j = 1}^{s_i}\mu\left(d_i^{(j)}\right)\right)}_{\mu(c_i)}\]
-                Переходя к инфимуму по всем покрытиям, получаем
-                \[\mu^*(a \cap e) + \mu^*(a \sm e) \le \inf\sum\limits_{i = 1}^{\infty}\mu(c_i) = \mu^*(a)\]
-            }
-            \item Наконец, для доказательства второго дополнения сошлёмся на четвёртый пункт свойств внешней меры~(\cref{outer-measure}).
+            Отсюда подстановкой получаем
+            \[\gamma(a) = \gamma(a \cap e_1 \cap e_2) + \underbrace{\gamma\left(a \cap e_1 \cap e_2^\comp\right) + \gamma\left(a \cap e_1^\comp\right)}_{\text{хотим показать, что это }\gamma(a \cap (e_1 \cap e_2)^\comp)}\]
+            Записав измеримость $e_1$ при пересечении с $a \cap \left(e_1^\comp \cup e_2^\comp\right)$, получаем
+            \multline{\gamma\left(a \cap (e_1^\comp \cup e_2^\comp)\right) = \gamma\left(a \cap (e_1^\comp \cup e_2^\comp) \cap e_1\right) + \gamma\left(a \cap (e_1^\comp \cup e_2^\comp) \cap e_1^\comp\right) =\\= \gamma\left(a \cap e_1 \cap e_2^\comp\right) + \gamma\left(a \cap e_1^\comp\right)}
+            \item Так как $(e_1 \cup e_2) = (e_1^\comp \cap e_2^\comp)^\comp$ и $(e_1 \sm e_2) = e_1 \cap e_2^\comp$, то $\Sigma$ --- действительно алгебра.
         }
+        \item Проверим <<усиленную аддитивность>>: для произвольного $a \subset X$, $b_1, b_2 \in \Sigma, b_1 \cap b_2 = \o \then$
+        \[\gamma(a \cap (b_1 \sqcup b_2)) = \gamma(a \cap b_1) + \gamma(a \cap b_2)\]
+        Данный факт потребуется для доказательства того, что $\Sigma$ --- $\sigma$-алгебра.
+
+        Доказательство напрямую следует из измеримости $b_1$ при пересечении с $a \cap (b_1 \cup b_2)$.
+
+        Отсюда по индукции видно, что для попарно непересекающихся $b_1, \dots, b_n \in \Sigma$:
+        \[\gamma\left( a \cap \bigsqcup\limits_{j = 1}^{n}b_j\right) = \sum\limits_{j = 1}^{n}\gamma(a \cap b_j)\]
+
+        \item Проверим, что $\Sigma$ является $\sigma$-алгеброй.
+        Для этого достаточно проверить, что для счётного семейства $b_i \in \Sigma: b \coloneqq \bigsqcup\limits_{j \in \N}b_j \in \Sigma$.
+
+        \indent{Чтобы доказать измеримость множества $e$, достаточно проверить неравенство $\gamma(a) \ge \gamma(a \cap e) + \gamma(a \sm e)$, потому что неравенство в другую сторону следует из счётной полуаддитивности.
+        Дополнительно можно считать, что $\gamma(a)$ конечно.}
+
+        Выберем произвольное $a \in X$, для него
+        \[\gamma(a) = \gamma(a \cap (b_1 \sqcup \dots \sqcup b_n)) + \gamma(a \sm (b_1 \sqcup \dots \sqcup b_n)) \ge \left(\sum\limits_{j = 1}^{n}\gamma\left(a \cap b_j\right)\right) + \gamma(a \sm b)\]
+        Переходя к пределу $n \to \infty$, получаем
+        \[\gamma(a) \ge \left(\sum\limits_{j \in\N}\gamma(a \cap b_j)\right) + \gamma(a \sm b)\]
+        Так как $a \cap b = \bigsqcup\limits_{j \in \N}(a \cap b_j)$, то из счётной полуаддитивности $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
+        Отсюда
+        \[\gamma(a) \ge \left(\sum\limits_{j = 1}^{\infty}\gamma(a \cap b_j)\right) + \gamma(a \sm b) \ge \gamma(a \cap b) + \gamma(a \sm b)\]
+        \item Проверим, что $\gamma\big|_\Sigma$ --- <<усиленно счётно-аддитивная мера>>, то есть для счётного семейства дизъюнктных $b_j \in \Sigma$ $\left(b \coloneqq \bigsqcup\limits_{j \in \N}b_j\right)$ и произвольного $\forall a \in X$:
+        \[\gamma\left( a\cap\bigsqcup\limits_{j \in \N}b_j\right) = \sum\limits_{j \in \N}\gamma(a \cap b_j)\]
+        При $a = X$ свойство обращается в обычную счётную аддитивность, но усиленная даётся даром, так что докажем и её тоже.
+
+        С одной стороны, из счётной аддитивности $\gamma$: $\gamma(a \cap b) \le \sum\limits_{j \in \N}\gamma(a \cap b_j)$.
+        С другой стороны, \[\gamma( a\cap b) \ge \gamma(a \cap (b_1 \cup \dots \cup b_n)) = \sum\limits_{j = 1}^{n}\gamma(a \cap b_j)\]
+        и можно перейти к пределу по $n$.
+        \item Докажем первое дополнение.
+
+        Достаточно показать, что для любого $e \in \mathcal{P}, a \in X$: $\mu^*(a) \ge \mu^*(a \cap e) + \mu^*(a \sm e)$, обратное следует из полуаддитивности внешней меры.
+
+        Рассмотрим произвольное счётное покрытие $\{c_i\}_{i \in \N}$ множества $a$ элементами множества $\mathcal{P}$.
+        \bullets{
+            \item Во-первых, по определению внешней меры $\mu^*(a \cap e) \le \sum\limits_{i \in \N}\mu(c_i\cap e)$
+            \item Во-вторых, оценим $\mu^*(a \sm e)$.
+
+            Каждое $b_i \coloneqq c_{i} \sm e$ представимо в виде конечного объединения $b_i = \bigcup\limits_{j = 1}^{s_i}d_i^{(j)}$, где $d_i^{(j)} \in \mathcal{P}$ попарно дизъюнктны.
+
+            $\{d_i^{(j)}\}_{i,j}$ --- счётная совокупность множеств из $\mathcal{A}$, покрывающая $a \sm e$.
+            \item Таким образом
+            \[\mu^*(a \cap e) + \mu^*(a \sm e) \le \sum\limits_{i \in \N}\underbrace{\left(\mu(c_i \cap e) + \sum\limits_{j = 1}^{s_i}\mu\left(d_i^{(j)}\right)\right)}_{\mu(c_i)}\]
+            Переходя к инфимуму по всем покрытиям, получаем
+            \[\mu^*(a \cap e) + \mu^*(a \sm e) \le \inf\sum\limits_{i = 1}^{\infty}\mu(c_i) = \mu^*(a)\]
+        }
+        \item Наконец, для доказательства второго дополнения сошлёмся на четвёртый пункт свойств внешней меры~(\cref{outer-measure}).
+    }
     }
     \definition[Стандартное продолжение меры $\mu$ на полукольце $\mathcal{P} \subset 2^X$]{
         Построенные данным образом $\Sigma$, и сужение $\mu^*\big|_{\Sigma}$ --- счётно-аддитивная мера на $\sigma$-алгебре.
@@ -689,29 +688,30 @@
         \item Канторово множество --- на $n$-м шаге его мера равна $\left(\frac{2}{3}\right)^n$.
     }
     \proposal{\label{lebesgue-sets-are-frequent}
-        Так как канторово множество континуально, то все его подмножества (коих $2^{|\R|}$) имеют меру нуль и измеримы по Лебегу.
-        Отсюда получаем, что всего измеримых множеств на прямой $2^{|\R|}$, так как это уже мощность всех подмножеств прямой.
+    Так как канторово множество континуально, то все его подмножества (коих $2^{|\R|}$) имеют меру нуль и измеримы по Лебегу.
+    Отсюда получаем, что всего измеримых множеств на прямой $2^{|\R|}$, так как это уже мощность всех подмножеств прямой.
 
-        С другой стороны, Борелевских множеств всего континуум.
-        \provehere[Схема доказательства]{
-            Пусть $\mathcal{A}_0$ --- все интервалы с рациональными границами. Их счётное число.
-            Но это пока даже не алгебра.
+    С другой стороны, Борелевских множеств всего континуум.
+    \provehere[Схема доказательства]{
+        Пусть $\mathcal{A}_0$ --- все интервалы с рациональными границами. Их счётное число.
+        Но это пока даже не алгебра.
 
-            Обозначим за $\mathcal{A}_1$ все их счётные объединения, их континуально.
-            Но это пока не $\sigma$-алгебра.
+        Обозначим за $\mathcal{A}_1$ все их счётные объединения, их континуально.
+        Но это пока не $\sigma$-алгебра.
 
-            За $\mathcal{A}_2$ обозначим все счётные пересечения множеств из $\mathcal{A}_1$.
-            За $\mathcal{A}_3$ обозначим все счётные объединения множеств из $\mathcal{A}_2$.
+        За $\mathcal{A}_2$ обозначим все счётные пересечения множеств из $\mathcal{A}_1$.
+        За $\mathcal{A}_3$ обозначим все счётные объединения множеств из $\mathcal{A}_2$.
 
-            И так далее. Заведём трансфинитную индукцию, на первом несчётном ординале всё перестанет меняться.
-            Объединение не более чем континуального числа континуальных множеств континуально.
-        }
+        И так далее. Заведём трансфинитную индукцию, на первом несчётном ординале всё перестанет меняться.
+        Объединение не более чем континуального числа континуальных множеств континуально.
+    }
     }
     \definition[Свойство точек множества $X$ выполняется почти всюду]{
         Множество точек, где оно не выполняется, имеет меру нуль.
     }
     Пусть $\mathcal{P}$ --- полукольцо подмножеств $X$, $\mu$ --- счётно аддитивная мера на $\mathcal{P}$.
     Стандартное продолжение часто тоже будем обозначать через $\mu$, иногда через $\overline{\mu}$.
+
     \subsection{$\sigma$-множества и $\delta\sigma$-множества}
     \begin{definition_env}[$\sigma$-множество относительно $\mathcal{P}$]
         Объединение счётного семейства элементов $\mathcal{P}$.
@@ -746,6 +746,7 @@
     \begin{definition_env}[$\delta\sigma$-множество относительно $\mathcal{P}$]
         Пересечение счётного семейства $\sigma$-множеств.
     \end{definition_env}
+
     \subsection{$\sigma$-конечность}
     \begin{definition_env}[$\sigma$-конечная мера $\mu$]
         Такая мера, что $\exists E_1 \subset E_2 \subset \dots$, все $E_i \in \Sigma$, все $\mu(E_i) < +\infty$, причём $X = \bigcup\limits_{i = 1}^{\infty}E_i$.
@@ -776,6 +777,7 @@
             Но отсюда пересечение $D$ по всем $\eps = \frac{1}{N}$ даёт подходящее $\delta\sigma$-множество.
         }
     }
+
     \subsection{Полнота}
     Пусть $\mathcal{C}\subset2^X$ --- $\sigma$-алгебра, на которой задана счётно-аддитивная мера $\nu$.
 
@@ -821,10 +823,9 @@
     }
     }
 
-
     \subsection{Двоичные (диадические) кубы}
     \definition[Двоичный отрезок ранга $n$]{
-    Отрезок вида $I_n^{(k)} \coloneqq \left[\frac{k}{2^n}, \frac{k + 1}{2^n}\right)$ (здесь $n,k \in \Z$).
+        Отрезок вида $I_n^{(k)} \coloneqq \left[\frac{k}{2^n}, \frac{k + 1}{2^n}\right)$ (здесь $n,k \in \Z$).
     }
 
     Заметим, что $\forall n \in \Z: \bigsqcup\limits_{k \in \Z}I_n^{(k)} = \R$, причём любые двоичные отрезки либо не пересекаются, либо вложены.
@@ -889,6 +890,7 @@
         }
     }
     }
+
 
     \section{Поведение меры Лебега при линейных отображениях}
     Пусть $T: \R^n \map \R^n$ --- линейное отображение, $e \in \Sigma$.
@@ -1019,35 +1021,35 @@
         Можно считать, что $e_i \cap e_j = \o$ для $i \ne j$.
     }
     \newlection{18 октября 2023 г.}
-    \theorem[Малая теорема Леви]{
-        Пусть $g_1, g_2, \dots,$ --- счётное семейство неотрицательных простых функций;\ пусть $g$ --- ещё одна простая функция.
-        Предположим, что $\forall x \in X: g_1(x) \le g_2(x) \le \dots$, причём $g_j(x) \underset{j \to \infty}\Map g(x)$ (можно записать $g_n(x) \nearrow g(x)$).
-        Тогда $\lim\limits_{j \to \infty}I(g_j) = I(g)$.
-        \provehere{
-            Сложность заключается в том, что число ступенек у $g_j$ может неограниченно расти.
+    \theorem[Малая теорема Леви]{\label{levi-small}
+    Пусть $g_1, g_2, \dots,$ --- счётное семейство неотрицательных простых функций;\ пусть $g$ --- ещё одна простая функция.
+    Предположим, что $\forall x \in X: g_1(x) \le g_2(x) \le \dots$, причём $g_j(x) \underset{j \to \infty}\Map g(x)$ (можно записать $g_n(x) \nearrow g(x)$).
+    Тогда $\lim\limits_{j \to \infty}I(g_j) = I(g)$.
+    \provehere{
+        Сложность заключается в том, что число ступенек у $g_j$ может неограниченно расти.
 
-            Заметим, что так как $g_j$ неотрицательны, то $I(g_j)$ всегда определён (число из $\R$ или $+\infty$).
+        Заметим, что так как $g_j$ неотрицательны, то $I(g_j)$ всегда определён (число из $\R$ или $+\infty$).
 
-            Если $\exists j: I(g_j) = +\infty$, то $I(g) = +\infty$, и доказывать нечего.
-            Далее считаем, что $\forall j: I(g_j) \in \R$.
+        Если $\exists j: I(g_j) = +\infty$, то $I(g) = +\infty$, и доказывать нечего.
+        Далее считаем, что $\forall j: I(g_j) \in \R$.
 
-           Так как $g$ простая, то $g = \sum\limits_{s = 1}^{n}c_s\chi_{e_s}$, где $e_s$ --- попарно дизъюнктные множества из $\Sigma$.
-            Положим $g_j^s \coloneqq g_j \cdot \chi_{e_s}$.
-            Эти функции тоже простые.
+        Так как $g$ простая, то $g = \sum\limits_{s = 1}^{n}c_s\chi_{e_s}$, где $e_s$ --- попарно дизъюнктные множества из $\Sigma$.
+        Положим $g_j^s \coloneqq g_j \cdot \chi_{e_s}$.
+        Эти функции тоже простые.
 
-            Зафиксируем $s~(1 \le s \le n)$, зафиксируем $x \in e_s$, посмотрим на $\lim\limits_{j \to \infty}g_j^s(x) = c_s \chi_{e_s}$.
-            Проверим предельное соотношение для интегралов: так как $s$ пробегает конечное множество значений, то достаточно доказать только для одного значения.
-            Далее считаем, что $g = c \chi_e$.
+        Зафиксируем $s~(1 \le s \le n)$, зафиксируем $x \in e_s$, посмотрим на $\lim\limits_{j \to \infty}g_j^s(x) = c_s \chi_{e_s}$.
+        Проверим предельное соотношение для интегралов: так как $s$ пробегает конечное множество значений, то достаточно доказать только для одного значения.
+        Далее считаем, что $g = c \chi_e$.
 
-            Тем самым, утверждение свелось к следующему: для $e \in \Sigma$, для последовательности простых функций $g_j$, таких, что поточечно $0 \le g_1 \le \dots \le g_j \le g_{j + 1} \le \dots \le c\chi_e = g$, причём $\forall x \in X: \lim\limits_{j \to \infty}g_j(x) = c\chi_e(x)$,
-            необходимо и достаточно показать, что $I(g_j) \underset{j \to \infty}\Map I(c\chi_e) = c\mu(e)$.
+        Тем самым, утверждение свелось к следующему: для $e \in \Sigma$, для последовательности простых функций $g_j$, таких, что поточечно $0 \le g_1 \le \dots \le g_j \le g_{j + 1} \le \dots \le c\chi_e = g$, причём $\forall x \in X: \lim\limits_{j \to \infty}g_j(x) = c\chi_e(x)$,
+        необходимо и достаточно показать, что $I(g_j) \underset{j \to \infty}\Map I(c\chi_e) = c\mu(e)$.
 
-            Рассмотрим $d \in (0, c)$. Положим $E_n \coloneqq \defset{x}{g_n(x) > d}$. Понятно, что $E_n \subset e$, причём $\bigcup\limits_{n = 1}^{\infty}E_n = e$.
+        Рассмотрим $d \in (0, c)$. Положим $E_n \coloneqq \defset{x}{g_n(x) > d}$. Понятно, что $E_n \subset e$, причём $\bigcup\limits_{n = 1}^{\infty}E_n = e$.
 
-            Обозначим $h_n = d \cdot \chi_{E_n}$. По определению $E_n$: $h_n \le g_n$. Таким образом, \[\underbrace{I(h_n)}_{d \cdot\mu(E_n)\underset{n \to \infty}\Map d\cdot \mu(e)} \le I(g_n) \le \underbrace{I(g)}_{c \cdot \mu(e)}\]
-            Так как $I(g_j) \le I(g_{j + 1})$, то существует предел $V = \lim\limits_{j \to \infty}I(g_j)$.
-            Отсюда $d \cdot \mu(e) \le V \le c\cdot\mu(e)$, причём это верно для любого $d < c$.
-        }
+        Обозначим $h_n = d \cdot \chi_{E_n}$. По определению $E_n$: $h_n \le g_n$. Таким образом, \[\underbrace{I(h_n)}_{d \cdot\mu(E_n)\underset{n \to \infty}\Map d\cdot \mu(e)} \le I(g_n) \le \underbrace{I(g)}_{c \cdot \mu(e)}\]
+        Так как $I(g_j) \le I(g_{j + 1})$, то существует предел $V = \lim\limits_{j \to \infty}I(g_j)$.
+        Отсюда $d \cdot \mu(e) \le V \le c\cdot\mu(e)$, причём это верно для любого $d < c$.
+    }
     }
 
 
@@ -1120,7 +1122,7 @@
     \definition[Лебеговы множества функции $f$]{
         Для $a \in \R$ это множества вида $\defset{x}{f(x) < a}$, $\defset{x}{f(x) \le a}$, $\defset{x}{f(x)>a}$, $\defset{x}{f(x)\ge a}$.
     }
-    Таким образом, проверку того, что $f$ измерима, можно выполнять только на Лебеговых множествах.
+    Таким образом, для проверки того, что $f$ измерима, достаточно проверять измеримость только её Лебеговых множеств (достаточно какого-то одного типа).
     \ok
     Теперь рассмотрим отображение $F: X\map \R^n$, где $F(x) = \vect{f_1(x) \\ \vdots \\ f_n(x)}$ --- столбец координатных функций.
     \proposal{
@@ -1184,9 +1186,9 @@
     \theorem{
         Пусть $f_n$ всюду конечны и измеримы, пусть $f_n(x) \underset{n \to \infty}\Map f(x)$, где $f(x)$ --- тоже конечна.
         Тогда $f$ измерима.
-    \provehere{
-        Это следствие из предыдущего.
-    }
+        \provehere{
+            Это следствие из предыдущего.
+        }
     }
     \note{
         Пусть $f_n(x) \underset{n \to \infty}\Map f(x)$, но допустимо, чтобы $f(x)$ принимало значения $\pm \infty$. (При этом $\forall n: f_n$ конечна)
@@ -1247,7 +1249,7 @@
 
     Предположим, что $\mu$ --- полная мера~(\cref{full-measure}).
     Если это не так, то можно продолжить $\mu$ по Лебегу --- Каратеодори.
-    Тогда в целом ничего особо не поменяется, в предположении $\sigma$-конечности для продолжения меры $\tilde{\mu}$ на $\tilde{\Sigma}$: $\forall a \in \tilde{\Sigma}: \mu(a) < +\infty \then \exists b \in \Sigma: b \supset a, \tilde{\mu}(b \sm a) = 0$.
+    Тогда в целом ничего особо не поменяется. Так, в предположении $\sigma$-конечности для продолжения меры $\tilde{\mu}$ на $\tilde{\Sigma}$: $\forall a \in \tilde{\Sigma}: \mu(a) < +\infty \then \exists b \in \Sigma: b \supset a, \tilde{\mu}(b \sm a) = 0$.
 
     Пусть $f$ --- неотрицательная измеримая функция на $X$ (возможно, принимающая значения $+\infty$).
 
@@ -1265,9 +1267,9 @@
     \newlection{25 октября 2023 г.}
     Пусть $a, b$ --- два числа.
     Для их минимума и максимума иногда используются обозначения
-    \[\max(a, b) = a \fmax b \qquad \min(a, b) = a \fmin b\]
+    \[a \fmax b \bydef \max(a, b) \qquad a \fmin b \bydef \min(a, b)\]
     В частности, это используется для поточечного максимума или минимума функций: \[(f \fmax g)(x) \bydef f(x) \fmax g(x) \bydef \max(f(x), g(x))\]
-    \theorem[Леви для неотрицательных измеримых функций (теорема о монотонной сходимости)]{
+    \theorem[Леви, для неотрицательных функций (теорема о монотонной сходимости)]{
         Пусть $f_n$ --- измеримые функции, $0 \le f_1 \le f_2 \le \dots$
         Пускай $f(x) = \lim\limits_{n \to \infty}f_n(x)$.
         Тогда $J(f) = \lim\limits_{n \to \infty}J(f_n)$.
@@ -1276,18 +1278,20 @@
             Отметим, что $f$ измерима, как предел измеримых.
 
             Теперь будем считать, что $\forall n: J(f_n) < +\infty$.
-
-            Заметим, что можно считать, что $f$ принимает только конечные значения. Сведение выглядит так: обозначим $E = \defset{y}{f(y) = +\infty}$, найдём искомую последовательность функций $g_n$ для $f\big|_{E\inv}$, а дальше положим $\hat{g}_n \coloneqq \all{g(x),&x \in E \\ n,&x \notin E}$.
+            Понятно, что $J(f) \ge \lim\limits_{n \to \infty}J(f_n)$, так как
+            \[\defset{g}{0 \le g \le f, g\text{ --- простая}} \supset \bigcup\limits_{n \in \N}\defset{g_n}{0 \le g_n \le f_n, g_n\text{ --- простая}}\]
+            Далее мы доказываем, что $J(f) \le \lim\limits_{n \to \infty}J(f_n)$.
 
             $\forall n: \exists$ простая функция $\psi_n: 0 \le \psi_n \le f_n, I(\psi_n) \ge J(f_n) - \frac{1}{2^{2n}}$.
-            Сделаем так, чтобы $\{\psi_n\}$ возрастали: $\phi_n = \psi_1 \fmax \dots \fmax \psi_n$.
+            Сделаем так, чтобы $\{\psi_n\}$ возрастали: $\phi_n \coloneqq \psi_1 \fmax \dots \fmax \psi_n$.
+            Отметим, что $\phi_n$ --- тоже простые функции.
             \indentlemma{
                 Почти всюду (для всех $x$, кроме множества меры нуль) ${\lim\limits_{n \to \infty}\phi_n(x) = f(x)}$.
             }{
-                Обозначим $e_n = \defset{x}{\phi_n(x) < f(x) - \frac{1}{2^n}}$.
-                Заметим, что тогда всё ещё $\phi_n + \frac{1}{2^n}\chi_{e_n} \le f$.
-                Слева стоит простая функция, откуда $\underbrace{I\left(\phi_n + \frac{1}{2^n}\chi_{e_n}\right)}_{I(\phi_n) + \frac{1}{2^n}\mu(e_n)} \le J(f)$.
-                Так как $I(\phi_n) + \frac{1}{2^n}\mu(e_n) \ge J(f) - \frac{1}{2^{2n}} + \frac{1}{2^n}\mu(e_n)$, то $\mu(e_n) \le \frac{1}{2^n}$.
+                Обозначим $e_n = \defset{x}{\phi_n(x) < f_n(x) - \frac{1}{2^n}}$.
+                Заметим, что тогда всё ещё $\phi_n + \frac{1}{2^n}\chi_{e_n} \le f_n$.
+                Слева стоит простая функция, откуда $\underbrace{I\left(\phi_n + \frac{1}{2^n}\chi_{e_n}\right)}_{I(\phi_n) + \frac{1}{2^n}\mu(e_n)} \le J(f_n)$.
+                Так как $I(\phi_n) \ge J(f_n) - \frac{1}{2^{2n}}$, то $\mu(e_n) \le \frac{1}{2^n}$.
 
                 Обозначим $E_n = \bigcup\limits_{k \ge n}e_k$.
                 Его мера тоже не очень большая: $\mu(E_n) \le \sum\limits_{k \ge n}\mu(e_k) \le \sum\limits_{k \ge n}\frac{1}{2^k} = \frac{1}{2^{n - 1}}$.
@@ -1295,21 +1299,49 @@
 
                 Осталось заметить, что $\phi_n(x) \underset{n \to \infty}\Map f(x)$ везде кроме $E$.
             }
-            Так как по определению $J(f) \bydef \defset{I(g)}{0 \le g \le f, g \text{ --- простая}}$, то достаточно доказать, что для данной простой функции $g$: $\lim\limits_{n \to \infty}I(\phi_n) \le I(g)$.
+            Так как по определению $J(f) \bydef \sup\defset{I(g)}{0 \le g \le f, g \text{ --- простая}}$, то достаточно доказать, что для всякой простой функции $g \le f$: $I(g) \le \lim\limits_{n \to \infty}I(\phi_n)$.
 
-            Тут я немного выключился из лекции, над додумать.
+            Пусть $E \subset X$ --- множество меры нуль, на котором $\phi_n(x) \underset{n \to \infty}{\centernot\Map} f(x)$.
+            Положим $\tilde{g} = g \fmin \chi_{E\inv}$ (занулим $g(x)$ при $x \in E$).
+            Так как $\mu(E) = 0$, то $I(g) = I(\tilde{g})$.
+
+            Пусть $\tilde{\phi}_n \coloneqq \phi_n \fmin \tilde{g}$.
+            Согласно лемме, $\lim\limits_{n \to \infty}\tilde{\phi}_n(x) = \tilde{g}(x)$ всюду.
+            Значит, согласно малой теореме Леви~(\cref{levi-small}) $\lim\limits_{n \to \infty}I(\tilde{\phi}_n) = I(\tilde{g})$.
+            Но так как $\tilde{\phi}_n \le \phi_n$, а $I(\tilde{g}) = I(g)$, то действительно $\lim\limits_{n \to \infty}I(\phi_n) \ge I(g)$.
         }
     }
 
 
-    \section{Применения интеграла}
-    \numbers{
+    \section{Применения теоремы Леви. Свойства интеграла}
+    \fact{\label{supp-size}Пусть $f \ge 0$ --- измеримая функция, положим $A \coloneqq \defset{x}{f(x) \ne 0}$.
+
+    Тогда $J(f) = 0 \iff \mu(A) = 0$.
+    \provewthen{
+        $J(f) = \sup I(g)$, где $0 \le g \le f$. Из монотонности меры всякая такая $g$ сосредоточена на множестве меры нуль.
+        Считая интеграл $g$ по определению, получаем нуль.
+    }{\up\up
+        \indentlemma[Неравенство Чебышёва]{
+            Пускай $h \ge 0$ --- неотрицательная измеримая функция, $\lambda > 0$.
+            Тогда $\mu\defset{x}{h(x) > \lambda} \le \frac{1}{\lambda}J(h)$.
+        }{
+            Пусть $e = \defset{x}{h(x)>\lambda}$.
+            Заметим, что $h \ge \lambda \chi_e$, из монотонности интеграла $J(h) \ge \lambda \mu(e)$.
+        }
+        Пусть $A_n = \defset{x}{f(x) > \frac{1}{n}}$.
+        $A = \bigcup\limits_{n \ge 1}A_n$.
+        Согласно неравенству Чебышёва $\mu(A_n)\le n J(f) = 0$. Таким образом, $\mu(A) = 0$.
+    }}
+    \note{
+        Теорема Леви сохраняет силу, если неравенство $f_n(x) \le f_{n + 1}(x)$ выполнено почти всюду (нарушаются на множестве меры нуль), и стремление $f_n(x) \underset{n \to \infty}\Map f(x)$ тоже имеется почти всюду.
+    }
+    \properties[Свойства интеграла]{
         \item Линейность интеграла.
 
         Пусть $f, g \ge 0$ --- измеримые функции, $\alpha, \beta \ge 0$. Тогда $J(\alpha f + \beta g) = \alpha J(f) + \beta J(g)$.
         \provehere{
-            Выбираем последовательность простых функций $0 \le u_n \nearrow f$ и $0 \le v_n \nearrow g$, тогда воспользуемся линейностью предела и теоремой Леви:
-            \[J(\alpha f + \beta g) = \lim\limits_{n \to \infty}I(\alpha u_n + \beta v_n) = \lim\limits_{n \to \infty}(\alpha I(u_n) + \beta I(v_n)) = \alpha J(f) + \beta J(g)\]
+            Выбираем последовательность простых функций $0 \le u_n \nearrow f$ и $0 \le v_n \nearrow g$ почти всюду, воспользуемся линейностью предела и теоремой Леви:
+            \[J(\alpha f + \beta g) = \lim\limits_{n \to \infty}I(\alpha u_n + \beta v_n) = \lim\limits_{n \to \infty}(\alpha I(u_n) + \beta I(v_n)) = \alpha J(f) + \beta J(g)\qedhere\]
         }
         \item Счётная аддитивность по множеству.
         Пусть $f \ge 0$ --- измеримая функция, положим $\nu(e) = J(f \cdot \chi_e)$ для $e \in \Sigma$.
@@ -1319,29 +1351,11 @@
 
             Для проверки счётной аддитивности удостоверимся в монотонной непрерывности: пусть $E_1 \subset E_2 \subset \cdots$, где $E_j \in \Sigma$.
 
-            Определим $E = \bigcup\limits_{j = 1}^{\infty}E_j$. $f \cdot \chi_E = \lim\limits_{n \to \infty}f \cdot \chi_{E_n}$, теперь воспользуемся теоремой Леви.
-        }
-    }
-    \fact{\label{supp-size}Пусть $f \ge 0$ --- измеримая функция, обозначим $A = \defset{x}{f(x) \ne 0}$.
-    Тогда $J(f) = 0 \iff \mu(A) = 0$.
-    \provewthen{
-        $J(f) = \sup I(g)$, где $0 \le g \le f$. Из монотонности меры всякая такая $g$ сосредоточена на множестве меры нуль.
-        Считая интеграл $g$ по определению, получаем нуль.
-    }{
-        \indentlemma[Неравенство Чебышёва]{
-            Пускай $h \ge 0$ --- неотрицательная измеримая функция, $\lambda > 0$.
-            Тогда $\mu\defset{x}{h(x) > \lambda} \le \frac{1}{\lambda}J(h)$.
-        }{
-            Пусть $e = \defset{x}{h(x)>\lambda}$. Заметим, что $h \ge \lambda \chi_e$, из монотонности интеграла $J(h) \ge \lambda \mu(e)$.
-        }
-        Пусть $A_n = \defset{x}{f(x) > \frac{1}{n}}$.
-        $A = \bigcup\limits_{n \ge 1}A_n$.
-        Согласно неравенству Чебышёва $\mu(A_n)\le n J(f) = 0$. Таким образом, $\mu(A) = 0$.
-    }}
-    \note{
-        Теорема Леви сохраняет силу, если неравенство $f_n(x) \le f_{n + 1}(x)$ выполнено почти всюду (нарушаются на множестве меры нуль), и стремление $f_n(x) \underset{n \to \infty}\Map f(x)$ тоже имеется почти всюду.
-    }
+            Определим $E \coloneqq \bigcup\limits_{j = 1}^{\infty}E_j$. Надо проверить, что $J(f \cdot \chi_{E}) = \lim\limits_{n \to \infty}J(f \cdot \chi_{E_n})$.
 
+            $f \cdot \chi_E = \lim\limits_{n \to \infty}f \cdot \chi_{E_n}$, значит, можно воспользоваться теоремой Леви.
+        }
+    }
 
     \section{Интегралы от знакопеременных функций}
     Пускай $f$ --- измеримая функция на $X$, возможно, принимающая значения $\pm \infty$.
@@ -1362,11 +1376,11 @@
 
     \subsection{Про линейность интеграла}
     Пусть $f = g - h$, где $g, h \ge 0$.
-    Тогда во всяком случае $g \ge f_+, h \ge f_-$: \[f = g - h \then f \le g\text{, а так как }g \ge 0\text{, то }f_+ \le g\text{ тоже}\qquad f_- = (-f)_+\]
+    Тогда во всяком случае $g \ge f_+$ и $h \ge f_-$: \[f = g - h \then f \le g\text{, а так как }g \ge 0\text{, то }f_+ \le g\text{ тоже;}\qquad f_- = (-f)_+\]
     \proposal{
-        Если $f = g - h$. $g, h$ измеримы и неотрицательны, причём хотя бы одно из $J(g), J(h)$ конечно, то $f$ обладает интегралом $J(f) = J(g) - J(h)$.
+        Если $f = g - h$, где $g, h$ измеримы и неотрицательны, причём хотя бы одно из $J(g), J(h)$ конечно, то $f$ обладает интегралом $J(f) = J(g) - J(h)$.
         \provehere{
-            Рассмотрим случай, когда $J(g) < +\infty$, в случае $J(h) < +\infty$, аналогично.
+            Рассмотрим случай, когда $J(g) < +\infty$, в случае $J(h) < +\infty$ всё аналогично.
 
             Тогда $J(f_+) < +\infty$, и $f$ по определению обладает интегралом.
             \[f = f_+ - f_- = g - h \quad\then\quad f_+ + h = g + f_-\]
@@ -1431,57 +1445,62 @@
     \theorem[Лебег, о мажорируемой сходимости]{
         Пусть $f, g$ --- измеримые функции, ${f_n \almost{n \to \infty} f}$.
         Предположим, что у $f_n$ есть общая суммируемая мажоранта: $|f_n(x)| \le g(x)$ и $\int\limits_{X}g\d\mu < +\infty$. Тогда $\int\limits_{X}f_n \d \mu \underset{n \to \infty}\Map \int\limits_{X}f\d\mu$.
-    \provehere{
-    % Покажем, что почти всюду $\varlimsup\limits_{n \to \infty}|f_n(x) - f(x)| = 0$. Что там в скобочках написано?
-        Так как $g$ --- мажоранта, то везде на $X: |f_n(x) - f(x)| \le 2g(x)$.
+        \provehere{
+        % Покажем, что почти всюду $\varlimsup\limits_{n \to \infty}|f_n(x) - f(x)| = 0$. Что там в скобочках написано?
+            Так как $g$ --- мажоранта, то везде на $X: |f_n(x) - f(x)| \le 2g(x)$.
 
-    Положим $h_k \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
-        Так как $0 \le h_0(x) \le 2g(x)$, то $h_0$ суммируема, откуда по теореме Леви: $\int\limits_{X}h_k(x)\d\mu \underset{k \to \infty}\Map 0$.
+            Положим $h_k \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
+            Так как $0 \le h_0(x) \le 2g(x)$, то $h_0$ суммируема, откуда по теореме Леви: $\int\limits_{X}h_k(x)\d\mu \underset{k \to \infty}\Map 0$.
 
-    Осталось применить принцип двух полицейских для проинтегрированного неравенства справа от $\then$ \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
-    }
+            Осталось применить принцип двух полицейских для проинтегрированного неравенства справа от $\then$ \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
+        }
     }
     \counterexample{
         Совсем без мажоранты ничего не получится. Если $X = \R$, и $f_n = n\chi_{[0, \frac1n]}$, то $f$ сходятся к нулю почти всюду, но интегралы у всех $f_n$ единичные.
     }
     \lemma[Фату]{
-    Пусть $f_n \ge 0$ --- измеримые функции, тогда $\int\limits_{X}\left(\varliminf\limits_{n \to \infty}f_n\right) \d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n\d\mu$.
+        Пусть $f_n \ge 0$ --- измеримые функции, тогда $\int\limits_{X}\left(\varliminf\limits_{n \to \infty}f_n\right) \d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n\d\mu$.
     }
     \corollary{
-    Если измеримые $g_n \almost{n \to \infty} g$, и $\int\limits_{X}|g_n|\d\mu \le C$, то $g$ суммируема, причём $\int\limits_{X}|g|d\mu \le C$.
-    \provehere{
-    Положим $h_k(x) = \inf\limits_{n \ge k}f_n(x)$. $h_k(x) \nearrow h(x) = \varliminf\limits_{n \to \infty}f_n(x)$. \[\int\limits_{X}h\d\mu = \lim\limits_{k \to \infty}\int\limits_{X}h_k\d\mu = \varliminf\limits_{k \to \infty}\int\limits_{X}h_k\d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n \d\mu\qedhere\]
+        Если измеримые $g_n \almost{n \to \infty} g$, и $\int\limits_{X}|g_n|\d\mu \le C$, то $g$ суммируема, причём $\int\limits_{X}|g|d\mu \le C$.
+        \provehere{
+            Положим $h_k(x) = \inf\limits_{n \ge k}f_n(x)$. $h_k(x) \nearrow h(x) = \varliminf\limits_{n \to \infty}f_n(x)$. \[\int\limits_{X}h\d\mu = \lim\limits_{k \to \infty}\int\limits_{X}h_k\d\mu = \varliminf\limits_{k \to \infty}\int\limits_{X}h_k\d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n \d\mu\qedhere\]
+        }
     }
-    }
+
+
     \section{Виды сходимости}
     \bullets{
-    \item Сходимость почти всюду: мера множества, где сходимости нет, равна нулю.
-    \item Сходимость по мере: $f_n \underset{n \to \infty}{\overset{\mu}\Map} f \overset{def}\iff \forall \eps > 0: \mu\bigdefset{x \in X}{|f_n(x) - f(x)| > \eps} \underset{n \to \infty}\Map 0$.
+        \item Сходимость почти всюду: мера множества, где сходимости нет, равна нулю.
+        \item Сходимость по мере: $f_n \underset{n \to \infty}{\overset{\mu}\Map} f \overset{def}\iff \forall \eps > 0: \mu\bigdefset{x \in X}{|f_n(x) - f(x)| > \eps} \underset{n \to \infty}\Map 0$.
     }
     \fact{
-    \down\numbers{
-    \item Из сходимости $f_n \almost{n \to \infty} f$ следует сходимость по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$.
-    \item Если $\mu(X) < \infty$, то из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$, таких, что $f_{n_k} \almost{k \to \infty} f$.
-    }
-    \provehere{\down\numbers{
-    \item Пусть $\eps > 0$, обозначим $A_n \coloneqq \defset{x \in X}{\exists k \ge n: |f_k(x) - f(x)| \ge \eps}$. Они вложены: ${A_1 \supset A_2 \supset \dots}$
+        \down\numbers{
+            \item Если $\mu(X) < \infty$, то из сходимости $f_n \almost{n \to \infty} f$ следует сходимость по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$.
+            \item Если $\mu(X) < \infty$, то из сходимости по мере $f_n \underset{n \to \infty}{\overset{\mu}\Map} f$ следует, что найдётся сходящаяся подпоследовательность: $\exists n_1 < n_2 < \dots$, таких, что $f_{n_k} \almost{k \to \infty} f$.
+        }
+        \provehere{\down\numbers{
+            \item Пусть $\eps > 0$, обозначим $A_n \coloneqq \defset{x \in X}{\exists k \ge n: |f_k(x) - f(x)| \ge \eps}$. Они вложены: ${A_1 \supset A_2 \supset \dots}$
 
-        Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: $\begin{tikzcd}[ampersand replacement=\&,column sep=small,cramped]f_n \arrow[r, "/"{marking, allow upside down}] \& f\end{tikzcd}$.
-        Но раз есть сходимость почти всюду, то $\mu(A) = 0$, то есть $\mu(A_n) \underset{n \to \infty}\Map 0$.
-    \item \up \definition[Последовательность Коши по мере]{
-        Последовательность измеримых функций $f_n$, такая, что $\forall \eps > 0: \lim\limits_{(n, m) \to \infty}\mu\bigdefset{x \in X}{|f_n(x) - f_m(x)| > \eps} = 0$.}
-        Найдутся такие $N_1 \le N_2 \le \dots$, что $\mu\defset{x \in X}{\forall n, m \ge N_k: |f_n(x) - f_m(x)| \ge \frac{1}{2^k}} \le \frac{1}{2^k}$.
+            Отметим, что $A_n$ измеримы, и пусть $A \coloneqq \bigcap\limits_{n = 1}^{\infty}A_n$. На множестве $A$ нет сходимости: $\begin{tikzcd}[ampersand replacement=\&,column sep=small,cramped]
+                                                                                                                                         f_n \arrow[r, "/"{marking, allow upside down}] \& f
+            \end{tikzcd}$.
+            Но раз есть сходимость почти всюду, то $\mu(A) = 0$, то есть $\mu(A_n) \underset{n \to \infty}\Map 0$.
+            \item \up \definition[Последовательность Коши по мере]{
+                Последовательность измеримых функций $f_n$, такая, что $\forall \eps > 0: \lim\limits_{(n, m) \to \infty}\mu\bigdefset{x \in X}{|f_n(x) - f_m(x)| > \eps} = 0$.}
+            Найдутся такие $N_1 \le N_2 \le \dots$, что $\mu\defset{x \in X}{\forall n, m \ge N_k: |f_n(x) - f_m(x)| \ge \frac{1}{2^k}} \le \frac{1}{2^k}$.
 
-    Положим $E_k \coloneqq \bigdefset{x \in X}{\abs{f_{N_k}(x) - f_{N_{k+1}}(x)} \le \frac{1}{2^k}}$. $\mu(X \sm E_k) \le \frac{1}{2^k}$.
-    Пусть $\tilde{E}_k = \bigcap\limits_{n \ge k}E_n$, тогда $\mu\left(X \sm \tilde{E}_k\right) = \mu\left(\bigcup\limits_{n \ge k}X \sm E_n\right) \le \sum\limits_{n \ge k}\mu(X \sm E_n) \le \frac{1}{2^{k-1}}$.
+            Положим $E_k \coloneqq \bigdefset{x \in X}{\abs{f_{N_k}(x) - f_{N_{k+1}}(x)} \le \frac{1}{2^k}}$. $\mu(X \sm E_k) \le \frac{1}{2^k}$.
+            Пусть $\tilde{E}_k = \bigcap\limits_{n \ge k}E_n$, тогда $\mu\left(X \sm \tilde{E}_k\right) = \mu\left(\bigcup\limits_{n \ge k}X \sm E_n\right) \le \sum\limits_{n \ge k}\mu(X \sm E_n) \le \frac{1}{2^{k-1}}$.
 
-    Если $x \in \tilde{E}_k \then \forall n \ge k: \abs{f_{N_n}(x) - f_{N_{n+1}}(x)} \le \frac{1}{2^n}$, то есть $\forall x \in \tilde{E}_k: \sum\limits_{j = 1}^{\infty}\abs{f_{N_j}(x) - f_{N_{j+1}}(x)}$ сходится.
+            Если $x \in \tilde{E}_k \then \forall n \ge k: \abs{f_{N_n}(x) - f_{N_{n+1}}(x)} \le \frac{1}{2^n}$, то есть $\forall x \in \tilde{E}_k: \sum\limits_{j = 1}^{\infty}\abs{f_{N_j}(x) - f_{N_{j+1}}(x)}$ сходится.
 
-        А тогда эта сумма сходится и на $\bigcup\limits_{k = 1}^{\infty}\tilde{E}_k$. Это влечёт $\forall x \in \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k: \exists \lim\limits_{k \to \infty}f_{N_k}(x)$. К этому пределу $f_{N_k}$ сходятся почти всюду: мера $X \sm \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k = \bigcap\limits_{k = 1}^{\infty}(X \sm \tilde{E}_k)$ равна нулю.
-    }
-    }
+            А тогда эта сумма сходится и на $\bigcup\limits_{k = 1}^{\infty}\tilde{E}_k$. Это влечёт $\forall x \in \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k: \exists \lim\limits_{k \to \infty}f_{N_k}(x)$. К этому пределу $f_{N_k}$ сходятся почти всюду: мера $X \sm \bigcup\limits_{k = 1}^{\infty}\tilde{E}_k = \bigcap\limits_{k = 1}^{\infty}(X \sm \tilde{E}_k)$ равна нулю.
+        }
+        }
     }
     Видно, что на самом деле мы доказали более сильное утверждение: для последовательности Коши по мере $\exists$ измеримая $f$: $f_n \almost{n \to \infty} f$.
+
 
     \section{Классы $L^p$}
     Определим $L^p(\mu) \bydef \defset{f: X \map \R}{f \text{ --- измерима, и }\int\limits_{X}|f|^p \d\mu < \infty}$.
@@ -1495,40 +1514,39 @@
         В случае $p \ge 1: d$ --- реально метрика на $L^p(\mu)$.
         Чтобы выполнялась положительная определённость ($\|f\| = 0 \iff f = 0$), будем рассматривать функции определённые с точностью до меры нуль на $X$.
         Иными словами $\|f\| = 0 \iff f = 0$ почти всюду~(\cref{supp-size}).
-    \provehere{
-        \indentlemma[Неравенство Гёльдера]{
-            Пусть $p, q > 1$ --- сопряжённые показатели (${\nicefrac1p + \nicefrac1q = 1}$), тогда для $f \in L^p, g \in L^q: fg \in L^1$, и $\|fg\|_{L^1} \le \|f\|_{L^p}\|g\|_{L^q}$.
-        }{
-            Деля $f \rightsquigarrow \frac{f}{\left(\int\limits_{X}|f|^p\right)^{\nicefrac{1}{p}}}$ и $g \rightsquigarrow \frac{g}{\left(\int\limits_{X}|g|^q\right)^{\nicefrac{1}{q}}}$, получаем $\|f\|_{L^p} = \|g\|_{L^q} = 1$.
+        \provehere{
+            \indentlemma[Неравенство Гёльдера]{
+                Пусть $p, q > 1$ --- сопряжённые показатели (${\nicefrac1p + \nicefrac1q = 1}$), тогда для $f \in L^p, g \in L^q: fg \in L^1$, и $\|fg\|_{L^1} \le \|f\|_{L^p}\|g\|_{L^q}$.
+            }{
+                Деля $f \rightsquigarrow \frac{f}{\left(\int\limits_{X}|f|^p\right)^{\nicefrac{1}{p}}}$ и $g \rightsquigarrow \frac{g}{\left(\int\limits_{X}|g|^q\right)^{\nicefrac{1}{q}}}$, получаем $\|f\|_{L^p} = \|g\|_{L^q} = 1$.
 
-            Для $a, b > 0$ имеется неравенство Юнга (доказывали через выпуклость $\exp$): $\frac{a^p}{p} + \frac{b^q}{q} \ge ab$.
-            Применяя его, получаем $|f(x)|\cdot|g(x)| \le \frac{|f(x)|^p}{p} + \frac{|g(x)|^q}{q}$.
-            Интегрируя, получаем искомое $\int\limits_{X}|f(x)|\cdot|g(x)|\d\mu \le \frac{1}{p} + \frac{1}{q} = 1$.
+                Для $a, b > 0$ имеется неравенство Юнга (доказывали через выпуклость $\exp$): $\frac{a^p}{p} + \frac{b^q}{q} \ge ab$.
+                Применяя его, получаем $|f(x)|\cdot|g(x)| \le \frac{|f(x)|^p}{p} + \frac{|g(x)|^q}{q}$.
+                Интегрируя, получаем искомое $\int\limits_{X}|f(x)|\cdot|g(x)|\d\mu \le \frac{1}{p} + \frac{1}{q} = 1$.
+            }
+
+            Теперь проверим неравенство треугольника $\|f + g\|_{L^p} \le \|f\|_{L^p}+ \|g\|_{L^p}$.
+            Для интегралов оно носит название \emph{неравенства Минковского}.
+            \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{$\le$}\]
+            Применив к каждому слагаемому неравенство Гёльдера ($|f + g|^{p - 1} \in L^q$, так как $\int\limits_{X}|f + g|^{(p - 1)q}\d\mu = \int\limits_{X}|f + g|^{p}\d\mu \le 2^p\int\limits_{X}\max(f, g)^p\d\mu\le 2^p\int\limits_{X}\left(|f|^p + |g|^p\right)\d\mu$), получаем
+            \[\circlesign{$\le$} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
+            Далее делим обе части неравенства на $\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}$, и остаётся \[\underbrace{\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{1 - \frac{1}{q}}}_{\|f + g\|_{L^p}} \le \|f\|_{L^p} + \|g\|_{L^p}\qedhere\]
         }
-
-    Теперь проверим неравенство треугольника $\|f + g\|_{L^p} \le \|f\|_{L^p}+ \|g\|_{L^p}$.
-        Для интегралов оно носит название \emph{неравенства Минковского}.
-    \[\|f + g\|_{L^p}^p = \int\limits_{X}|f + g|^p \d\mu = \int\limits_{X}|f + g|\cdot|f + g|^{p - 1}\d\mu \le \int\limits_{X}|f|\cdot|f + g|^{p - 1}\d\mu+\int\limits_{X}|g|\cdot|f + g|^{p - 1}\d\mu \circlesign{$\le$}\]
-    Применив к каждому слагаемому неравенство Гёльдера ($|f + g|^{p - 1} \in L^q$, так как $\int\limits_{X}|f + g|^{(p - 1)q}\d\mu = \int\limits_{X}|f + g|^{p}\d\mu \le 2^p\int\limits_{X}\max(f, g)^p\d\mu\le 2^p\int\limits_{X}\left(|f|^p + |g|^p\right)\d\mu$), получаем
-    \[\circlesign{$\le$} \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{(p-1)q}\d\mu\right)^{\frac{1}{q}} = \left(\|f\|_{L^p} + \|g\|_{L^p}\right)\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}\]
-    Далее делим обе части неравенства на $\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{\frac{1}{q}}$, и остаётся \[\underbrace{\left(\int\limits_{X}|f + g|^{p}\d\mu\right)^{1 - \frac{1}{q}}}_{\|f + g\|_{L^p}} \le \|f\|_{L^p} + \|g\|_{L^p}\qedhere\]
-    }
     }
     \theorem{
-    $L^p(\mu)$ --- полно.
-    \provehere{
-    Рассмотрим последовательность Коши $f_n$, и пусть $E_{k,l} \coloneqq \defset{x \in X}{\abs{f_k(x) - f_l(x)} > \delta}$.
+        $L^p(\mu)$ --- полно.
+        \provehere{
+            Рассмотрим последовательность Коши $f_n$, и пусть $E_{k,l} \coloneqq \defset{x \in X}{\abs{f_k(x) - f_l(x)} > \delta}$.
 
-    По определению последовательности Коши $\forall \eps > 0: \exists N \in \N: k, l \ge N \then \int\limits_{X}|f_k - f_l|^p < \eps^p$.
+            По определению последовательности Коши $\forall \eps > 0: \exists N \in \N: k, l \ge N \then \int\limits_{X}|f_k - f_l|^p < \eps^p$.
 
-        Тогда $\mu E_{k,l} = \mu\defset{x \in X}{\abs{f_k(x) - f_l(x)}^p > \delta^p} \le \frac{\eps^p}{\delta^p}$. Значит, $f_n$ --- последовательность Коши по мере.
+            Тогда $\mu E_{k,l} = \mu\defset{x \in X}{\abs{f_k(x) - f_l(x)}^p > \delta^p} \le \frac{\eps^p}{\delta^p}$. Значит, $f_n$ --- последовательность Коши по мере.
 
-    Пусть $f_{k_j} \almost{j \to \infty} f$, тогда $\forall \eps > 0: \exists N \in \N: \forall j, s > N: \int\limits_{X}|f_{k_j} - f_{k_s}|^p < \eps$. Устремляя $s \to \infty$, по лемме Фату получаем $\int\limits_{X}|f_{k_j} - f|^p \le \eps$.
-    Значит, $f$ --- предел подпоследовательности $f_{k_j}$, и из неравенства треугольника и фундаментальности можно показать, что $f$ --- предел.
-    }
+            Пусть $f_{k_j} \almost{j \to \infty} f$, тогда $\forall \eps > 0: \exists N \in \N: \forall j, s > N: \int\limits_{X}|f_{k_j} - f_{k_s}|^p < \eps$. Устремляя $s \to \infty$, по лемме Фату получаем $\int\limits_{X}|f_{k_j} - f|^p \le \eps$.
+            Значит, $f$ --- предел подпоследовательности $f_{k_j}$, и из неравенства треугольника и фундаментальности можно показать, что $f$ --- предел.
+        }
     }
     \newlection{8 ноября 2023 г.}
-
 
     \subsection{Приближение функций из класса $L^p$}
     В дальнейшем часто будем обозначать меру множества $X$ за $|X|$.
@@ -1992,7 +2010,7 @@
     }
     \fact{
         Пусть $g \in L^1(\R^n)$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p \le \infty$:
-    \comment{Надо проверить, что всё сходится, тут было немного не это написано.}
+        \comment{Надо проверить, что всё сходится, тут было немного не это написано.}
         \[\|f * g - f\|^p_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y\cdot|g(x)| \d x\]
         \provehere{
             $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
@@ -2165,7 +2183,7 @@
     Тогда они <<склеиваются>> в одну измеримую функцию $g: G \map F(G)$, для которой всё верно: $\forall e \in G: |F(e \cap L_j)| = \int\limits_{e \cap L_j}g \d\lambda$, и можно перейти к пределу.
     Не исключено, что полученная $G$ не суммируема, что естественно --- образ маленького множества даже при дифференцируемом отображении может очень сильно растянуться.
     \corollary[Вывод из теоремы Радона --- Никодима]{
-    $\exists$ измеримая на $G$ функция $g$, измеримая по Лебегу, такая, что $|F(e)| = \int\limits_{e}g(x)\d x$.
+        $\exists$ измеримая на $G$ функция $g$, измеримая по Лебегу, такая, что $|F(e)| = \int\limits_{e}g(x)\d x$.
     }
     Таким образом, такая функция $g$ найдётся, осталось её как-то найти, а точнее, доказать, что это $|J_F(x)|$.
 
@@ -2184,36 +2202,36 @@
 
     \theorem[Слабая теорема о дифференцировании]{
         $\forall h \in L^1(\R^n): \exists$ последовательность $r_n$: $r_n \underset{n \to \infty}\Map 0$, и почти всюду \[\frac{1}{\abs{B_{r_n}}}\int\limits_{x + B_{r_n}}h(y)\d y \underset{n \to \infty}\Map h(x)\]
-    \provehere{
-    Это, конечно, частный случай теоремы о дифференцировании, но зато доказывается проще.
+        \provehere{
+            Это, конечно, частный случай теоремы о дифференцировании, но зато доказывается проще.
 
-    Построим аппроксимативную единицу по функции $\phi \coloneqq \frac{1}{|B_1|}\chi_{B_1}$.
+            Построим аппроксимативную единицу по функции $\phi \coloneqq \frac{1}{|B_1|}\chi_{B_1}$.
 
-        Она будет иметь вид $\phi_r(x) = \frac{1}{r^n}\phi\left(\frac{x}{r}\right) = \frac{1}{r^n|B_1|}\phi\left(\frac{x}{r}\right) = \frac{1}{|B_r|}\chi_{B_r}(x)$.
-        Известно, что $h * \phi_r \overset{L^1(\R^n)}{\underset{r \to \infty}\Map} h$.
+            Она будет иметь вид $\phi_r(x) = \frac{1}{r^n}\phi\left(\frac{x}{r}\right) = \frac{1}{r^n|B_1|}\phi\left(\frac{x}{r}\right) = \frac{1}{|B_r|}\chi_{B_r}(x)$.
+            Известно, что $h * \phi_r \overset{L^1(\R^n)}{\underset{r \to \infty}\Map} h$.
 
-        Запишем \[h * \phi_r = \int\limits_{\R^n}h(y)\phi_r(x - y)\d y = \int\limits_{\R^n}h(y)\frac{1}{|B_r|}\chi_{B_r}(x - y)\d y = \frac{1}{|B_r|}\int\limits_{|x - y| < r}h(y)\d y\]
-    Справа как раз стоит выражение, которое мы хотим показать, что стремится к $h(x)$. Сходимость в $L^1$ означает сходимость по мере, а раз имеется сходимость по мере, то имеется последовательность $r_n$, стремящаяся к нулю, такая что $h * \phi_{r_n} \underset{n \to \infty}\Map h$ почти всюду.
-    }
+            Запишем \[h * \phi_r = \int\limits_{\R^n}h(y)\phi_r(x - y)\d y = \int\limits_{\R^n}h(y)\frac{1}{|B_r|}\chi_{B_r}(x - y)\d y = \frac{1}{|B_r|}\int\limits_{|x - y| < r}h(y)\d y\]
+            Справа как раз стоит выражение, которое мы хотим показать, что стремится к $h(x)$. Сходимость в $L^1$ означает сходимость по мере, а раз имеется сходимость по мере, то имеется последовательность $r_n$, стремящаяся к нулю, такая что $h * \phi_{r_n} \underset{n \to \infty}\Map h$ почти всюду.
+        }
     }
     Осталось доказать, что всюду \[\frac{|F(x + B_r)|}{|B_r|} \underset{r \to 0}\Map |J_F(x)|\label{jacobian}\tag{$*$}\]
     Раз доказав это, мы получим, что раз левая часть почти всюду сходится к плотности $h$, и тогда получится, что плотность как раз равна модулю якобиана.
     \lemma[Об искажении]{
-    Пусть $H: U \map \R^n$, выберем $x_0 \in U$, пусть $H$ непрерывно дифференцируемо и $\d H(x_0, \_) = E$, тождественный оператор.
-    Положим $y_0 \coloneqq H(x_0)$.
+        Пусть $H: U \map \R^n$, выберем $x_0 \in U$, пусть $H$ непрерывно дифференцируемо и $\d H(x_0, \_) = E$, тождественный оператор.
+        Положим $y_0 \coloneqq H(x_0)$.
         Утверждается, что $\forall \eps \in (0, 1): \exists \delta > 0: r \in (0, \delta) \then B_{r(1 - \eps)}(y_0) \subset H(B_r(x_0)) \subset B_{r(1 + \eps)}(y_0)$.
-    \provehere{
-    Выберем маленький $u \in \R^n$. По определению дифференцируемости $H(x_0 + u) = y_0 + \underbrace{\d H(x_0, u)}_{u} + v(u)$, где $v(u) = o(|u|)$.
+        \provehere{
+            Выберем маленький $u \in \R^n$. По определению дифференцируемости $H(x_0 + u) = y_0 + \underbrace{\d H(x_0, u)}_{u} + v(u)$, где $v(u) = o(|u|)$.
 
-    Выберем $\eps \in (0, 1)$, по определению $o$-маленького: $\exists \delta > 0: |u| < \delta \then |v(u)| < \eps|u|$. Тогда, действительно, $r < \delta \then |H(x_0 + u) - y_0| \le |u| + |v(u)| \le (1 + \eps)|u| \le (1 + \eps)r$.
-    Это доказывает правое включение.
+            Выберем $\eps \in (0, 1)$, по определению $o$-маленького: $\exists \delta > 0: |u| < \delta \then |v(u)| < \eps|u|$. Тогда, действительно, $r < \delta \then |H(x_0 + u) - y_0| \le |u| + |v(u)| \le (1 + \eps)|u| \le (1 + \eps)r$.
+            Это доказывает правое включение.
 
-    Для доказательства левого включения возьмём $H^{-1}$, определённое в некоторой окрестности $y_0$, причём $\d H^{-1}(y_0, \_) = E$.
-    Здесь уже доказано $\forall \eps > 0: \exists \delta > 0: \rho < \delta \then H^{-1}(B_{\rho}(y_0)) \subset B_{\rho(1 + \eps)}(x_0)$.
+            Для доказательства левого включения возьмём $H^{-1}$, определённое в некоторой окрестности $y_0$, причём $\d H^{-1}(y_0, \_) = E$.
+            Здесь уже доказано $\forall \eps > 0: \exists \delta > 0: \rho < \delta \then H^{-1}(B_{\rho}(y_0)) \subset B_{\rho(1 + \eps)}(x_0)$.
 
-    Применяя $H$ ко включению, получаем $B_{\rho}(y_0) \subset H\left(B_{\rho(1 + \eps)}\right)\left(x_0\right)$.
-        Обозначив $r = \rho(1 + \eps)$, получаем искомое включение, так как $B_{r(1 - \eps)} \subset B_{\frac{r}{1 + \eps}}$.
-    }
+            Применяя $H$ ко включению, получаем $B_{\rho}(y_0) \subset H\left(B_{\rho(1 + \eps)}\right)\left(x_0\right)$.
+            Обозначив $r = \rho(1 + \eps)$, получаем искомое включение, так как $B_{r(1 - \eps)} \subset B_{\frac{r}{1 + \eps}}$.
+        }
     }
     Приступим к доказательству \eqref{jacobian}.
     Пусть $A = \d F(x_0, \_)$.
@@ -2221,10 +2239,13 @@
     Но раз $\det \phi(x_0, \_) =E$, то по теореме об искажении и принципу двух полицейских ${\frac{|\phi(B_r(x_0))|}{B_r(x_0)} \underset{r \to 0}\Map 1}$:
     \[\frac{r^n (1 - \eps)^n v}{r^n v} = \frac{|B_{r(1 - \eps)}(y_0)|}{|B_r(x_0)|} \le \frac{|\phi(B_r(x_0))}{|B_r(x_0)|}\le \frac{|B_{r(1 + \eps)}(y_0)|}{|B_r(x_0)|} = \frac{r^n(1 + \eps)^n v}{r^n v}\]
     \newlection{9 декабря 2023 г.}
+
+
     \section{Мера Лебега на поверхностях}
     Пусть теперь $m \le n$, и для $U \subset \R^m$ имеется гладкое инъективное $f: U \map \R^n$ со всюду неврожденным дифференциалом.
 
     Тогда $\forall e \subset U: f(e)$ --- какая-то $m$-мерная поверхность в $\R^n$, и её $n$-мерная мера равна нулю, но есть же у поверхности какая-то площадь, и хочется уметь её вычислять.
+
     \subsection{Частный случай линейного $f$}
     Пусть $A: \R^m \map \R^n$ --- линейный оператор.
     Тогда $A(\R^m)$ --- линейное подпространство размерности $m$ в $\R^n$, и в нём есть какая-то своя $m$-мерная мера Лебега.
@@ -2249,6 +2270,7 @@
     Тем самым, для линейного $f = A: \lambda(Ae) = (\det \Gamma(A))^{\nicefrac12}|e|$.
     Несложно догадаться, что для нелинейного $f$ формула будет такая (хотя мы ещё не определили меру $f(e)$, но догадаться-то можно): \[\lambda(f(e)) = \int\limits_{e}(\det \Gamma(\d_f(x, \_)))^{\nicefrac12}\d x\]
     Самым главным вопросом является --- как определить меру Лебега на такой поверхности.
+
     \subsection{$p$-мера Хаусдорфа}
     Здесь произвольное $p > 0$.
     Нам понадобятся только случаи $p \in \N$, но теорию удобнее развивать для всех положительных $p$.
@@ -2263,68 +2285,68 @@
     Двойка в знаменателе стоит <<по традиции>>, чтобы $\mu_p$ было больше похоже на меру Лебега.
 
     \fact{
-    $\eps_1 < \eps_2 \then \mu_p(e, \eps_1) \ge \mu_p(e, \eps_2)$.
-    \provehere{
-    Все покрытия диаметра не более $\eps_2$ являются и покрытиями диаметра не более $\eps_1$.
-    }
+        $\eps_1 < \eps_2 \then \mu_p(e, \eps_1) \ge \mu_p(e, \eps_2)$.
+        \provehere{
+            Все покрытия диаметра не более $\eps_2$ являются и покрытиями диаметра не более $\eps_1$.
+        }
     }
     Раз так, то $\exists \lim\limits_{\eps \to 0}\mu_p(e, \eps) = \sup\limits_{\eps > 0}\mu_p(e, \eps) \bydef \mu_p^*(e)$ (где-то супремум конечен, где-то бесконечен).
     \fact{
-    $\mu_p^*$ --- предмера на $\R^n$.
-    \provebullets{
-    \item $\mu_p^*(\o) = 0$.
-    \item $e_1 \subset e_2 \then \mu_p^*(e_1) \le \mu_p^*(e_2)$, так как при уменьшении множества $\eps$-покрытий становится больше, то есть $\forall \eps > 0: \mu_p(e_1, \eps) \le \mu_p(e_2, \eps)$.
-    \item Осталась счётная полуаддитивность: пусть $e \subset \bigcup\limits_{k = 1}^{\infty}e_k$, тогда надо проверить, что ${\mu^*_p(e) \le \sum\limits_{k}\mu^*_p(e_k)}$.
-    \provehere{
-        Можно считать, что $\forall k: \mu^*_p(e_k) < \infty$, иначе доказывать нечего.
+        $\mu_p^*$ --- предмера на $\R^n$.
+        \provebullets{
+            \item $\mu_p^*(\o) = 0$.
+            \item $e_1 \subset e_2 \then \mu_p^*(e_1) \le \mu_p^*(e_2)$, так как при уменьшении множества $\eps$-покрытий становится больше, то есть $\forall \eps > 0: \mu_p(e_1, \eps) \le \mu_p(e_2, \eps)$.
+            \item Осталась счётная полуаддитивность: пусть $e \subset \bigcup\limits_{k = 1}^{\infty}e_k$, тогда надо проверить, что ${\mu^*_p(e) \le \sum\limits_{k}\mu^*_p(e_k)}$.
+            \provehere{
+                Можно считать, что $\forall k: \mu^*_p(e_k) < \infty$, иначе доказывать нечего.
 
-        Возьмём $\eps > 0, \delta > 0$, для каждого $k$ выберем $\eps$-покрытие $\{a_{k,j}\}_{k}$ множества $e_k$, такое, что $\sum\limits_{j}\left(\frac{\diam a_{k,j}}{2}\right)^p < \mu_p(e_k, \eps) + \frac{\delta}{2^k}$.
-        Так как мера Хаусдорфа больше каждого из этих чисел, то они все конечны.
+                Возьмём $\eps > 0, \delta > 0$, для каждого $k$ выберем $\eps$-покрытие $\{a_{k,j}\}_{k}$ множества $e_k$, такое, что $\sum\limits_{j}\left(\frac{\diam a_{k,j}}{2}\right)^p < \mu_p(e_k, \eps) + \frac{\delta}{2^k}$.
+                Так как мера Хаусдорфа больше каждого из этих чисел, то они все конечны.
 
-        Таким образом, $\{a_{k,j}\}_{k,j}$ --- $\eps$-покрытие $e$, откуда $\mu_p(e, \eps) \le \sum\limits_{j,k}\left(\frac{\diam a_{k,j}}{2}\right)^p \le \sum\limits_{k}\mu_p(e_k, \eps) + \delta$.
-        Устремляя $\delta \to 0$, получаем $\mu_p(e, \eps) \le \sum\limits_{k}\mu_p(a_k, \eps)$.
-    }
-    }
+                Таким образом, $\{a_{k,j}\}_{k,j}$ --- $\eps$-покрытие $e$, откуда $\mu_p(e, \eps) \le \sum\limits_{j,k}\left(\frac{\diam a_{k,j}}{2}\right)^p \le \sum\limits_{k}\mu_p(e_k, \eps) + \delta$.
+                Устремляя $\delta \to 0$, получаем $\mu_p(e, \eps) \le \sum\limits_{k}\mu_p(a_k, \eps)$.
+            }
+        }
     }
     Теперь можно применить теорему Лебега --- Каратеодори, и получить настоящую меру.
     Хочется узнать, какие множества будут измеримыми после данной процедуры.
     \fact{
-    Если $\dist(e_1, e_2) > 0$, то $\mu^*_p(e_1\cup e_2) = \mu_p^*(e_1) + \mu_p^*(e_2)$.
-    \provehere{
-    В определении $\mu_p(e, \eps)$ можно ограничиться $\eps$-покрытиями $\{a_j\}$, такими, что $\forall j:a_j \cap e \ne \o$.
+        Если $\dist(e_1, e_2) > 0$, то $\mu^*_p(e_1\cup e_2) = \mu_p^*(e_1) + \mu_p^*(e_2)$.
+        \provehere{
+            В определении $\mu_p(e, \eps)$ можно ограничиться $\eps$-покрытиями $\{a_j\}$, такими, что $\forall j:a_j \cap e \ne \o$.
 
-        В силу счётной полуаддитивности $\mu_p^*(e_1 \cup e_2) \le \mu_p^*(e_1) + \mu_p^*(e_2)$.
+            В силу счётной полуаддитивности $\mu_p^*(e_1 \cup e_2) \le \mu_p^*(e_1) + \mu_p^*(e_2)$.
 
-        Пусть $\delta = \dist(e_1, e_2)$, рассмотрим $\eps < \delta$.
-    Пусть $\{a_j\}$ --- $\eps$-покрытие объединения, такое, что $\forall j: a_j \cap (e_1 \cup e_2) \ne \o$. Тогда для каждого $j: a_j \cap e_1 = \o$ либо $a_j \cap e_2 = \o$. Стало быть \[\sum\limits_{j}\left(\frac{\diam (a_j)}{2}\right)^p = \sum\limits_{j: a_j \cap e_1 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p + \sum\limits_{j: a_j \cap e_2 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p \ge \mu_p(e_1, \eps) + \mu_p(e_2, \eps)\qedhere\]
-    }
+            Пусть $\delta = \dist(e_1, e_2)$, рассмотрим $\eps < \delta$.
+            Пусть $\{a_j\}$ --- $\eps$-покрытие объединения, такое, что $\forall j: a_j \cap (e_1 \cup e_2) \ne \o$. Тогда для каждого $j: a_j \cap e_1 = \o$ либо $a_j \cap e_2 = \o$. Стало быть \[\sum\limits_{j}\left(\frac{\diam (a_j)}{2}\right)^p = \sum\limits_{j: a_j \cap e_1 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p + \sum\limits_{j: a_j \cap e_2 \ne \o}\left(\frac{\diam (a_j)}{2}\right)^p \ge \mu_p(e_1, \eps) + \mu_p(e_2, \eps)\qedhere\]
+        }
     }
     \theorem{
-    Пусть $(X, d)$ --- метрическое пространство, пусть $\eta$ --- предмера на $X$, причём $\forall e_1, e_2 \subset X: \dist(e_1, e_2) > 0 \then \eta(e_1 \cup e_2) = \eta(e_1) + \eta(e_2)$. Тогда все замкнутые множества в $X$: $\eta$-измеримы.
-    \provehere{
-    Пусть $F \subset X$ замкнуто, проверим, что $\forall a \in X: \eta(a) = \eta(a \cap F) + \eta(a \sm F)$.
-    Из полуаддитивности достаточно проверять $\eta(a) \ge \eta(a \cap F) + \eta(a \sm F)$.
+        Пусть $(X, d)$ --- метрическое пространство, пусть $\eta$ --- предмера на $X$, причём $\forall e_1, e_2 \subset X: \dist(e_1, e_2) > 0 \then \eta(e_1 \cup e_2) = \eta(e_1) + \eta(e_2)$. Тогда все замкнутые множества в $X$: $\eta$-измеримы.
+        \provehere{
+            Пусть $F \subset X$ замкнуто, проверим, что $\forall a \in X: \eta(a) = \eta(a \cap F) + \eta(a \sm F)$.
+            Из полуаддитивности достаточно проверять $\eta(a) \ge \eta(a \cap F) + \eta(a \sm F)$.
 
-    Пусть $F_n = \defset{x \in X}{\dist(x, F) < \frac{1}{n}}$. Из замкнутости $F$: $\bigcap\limits_{n \ge 1}F_n = F$.
-    Пусть $B_n = a \sm F_n$.
+            Пусть $F_n = \defset{x \in X}{\dist(x, F) < \frac{1}{n}}$. Из замкнутости $F$: $\bigcap\limits_{n \ge 1}F_n = F$.
+            Пусть $B_n = a \sm F_n$.
 
-    Если $x \in a \cap F$, а $y \in B_n$, то разумеется $\dist(x, y) \ge \nicefrac1n$.
-        Таким образом, заведомо $\eta(a) \ge \eta(a \cap F) + \eta(B_n)$.
-        Так как $B_n$, возрастая, в объединении дают $a \sm F$, то хочется поверить, что $\lim\limits_{n \to \infty}\eta(B_n) = \eta(a \sm F)$.
-    Запишем
-    \[a \sm F = \bigcup\limits_{n = 1}^{\infty}B_n = B_n \sqcup\bigsqcup\limits_{j \ge n}(B_{j+1} \sm B_{j})\]
-    Из счётной полуаддитивности $\eta(a \sm F) \le \eta(B_n) + \sum\limits_{j \ge n}\eta(B_{j+1}\sm B_j)$, но с другой стороны ${\eta(a \sm F)\ge \eta(B_n)}$.
-    Значит, надо доказать, что $\sum\limits_{j \ge n}\eta(B_{j+1}\sm B_j)\underset{j \to \infty}\Map 0$. Но это просто значит, что ряд $\sum\limits_{j = 1}^{\infty}\eta(B_{j+1}\sm B_j)$ сходится.
+            Если $x \in a \cap F$, а $y \in B_n$, то разумеется $\dist(x, y) \ge \nicefrac1n$.
+            Таким образом, заведомо $\eta(a) \ge \eta(a \cap F) + \eta(B_n)$.
+            Так как $B_n$, возрастая, в объединении дают $a \sm F$, то хочется поверить, что $\lim\limits_{n \to \infty}\eta(B_n) = \eta(a \sm F)$.
+            Запишем
+            \[a \sm F = \bigcup\limits_{n = 1}^{\infty}B_n = B_n \sqcup\bigsqcup\limits_{j \ge n}(B_{j+1} \sm B_{j})\]
+            Из счётной полуаддитивности $\eta(a \sm F) \le \eta(B_n) + \sum\limits_{j \ge n}\eta(B_{j+1}\sm B_j)$, но с другой стороны ${\eta(a \sm F)\ge \eta(B_n)}$.
+            Значит, надо доказать, что $\sum\limits_{j \ge n}\eta(B_{j+1}\sm B_j)\underset{j \to \infty}\Map 0$. Но это просто значит, что ряд $\sum\limits_{j = 1}^{\infty}\eta(B_{j+1}\sm B_j)$ сходится.
 
-    Разобьём ряд на два: $\sum\limits_{j = 2k}\eta(B_{j+1}\sm B_j) + \sum\limits_{j = 2k+1}\eta(B_{j+1}\sm B_j)$.
-    Теперь все подряд идущие слагаемые отстоят друг от друга на положительное расстояние: $\dist(B_{2k+1}\sm B_{2k}, B_{2k-1}\sm B_{2k-2}) > 0$.
+            Разобьём ряд на два: $\sum\limits_{j = 2k}\eta(B_{j+1}\sm B_j) + \sum\limits_{j = 2k+1}\eta(B_{j+1}\sm B_j)$.
+            Теперь все подряд идущие слагаемые отстоят друг от друга на положительное расстояние: $\dist(B_{2k+1}\sm B_{2k}, B_{2k-1}\sm B_{2k-2}) > 0$.
 
-    Стало быть, $\forall n: \sum\limits_{j = 2k}^{j \le n}\eta(B_{j+1}\sm B_j) \le \eta\left(\bigcup\limits_{j = 1}^{n}B_{j}\right) \le \eta(a)$.
-    Аналогично сходится ряд ${\sum\limits_{j = 2k+1}\eta(B_{j+1}\sm B_j)}$.
-    }
+            Стало быть, $\forall n: \sum\limits_{j = 2k}^{j \le n}\eta(B_{j+1}\sm B_j) \le \eta\left(\bigcup\limits_{j = 1}^{n}B_{j}\right) \le \eta(a)$.
+            Аналогично сходится ряд ${\sum\limits_{j = 2k+1}\eta(B_{j+1}\sm B_j)}$.
+        }
     }
     \corollary{
-    Все борелевские множества $\mu_p^*$-измеримы.
+        Все борелевские множества $\mu_p^*$-измеримы.
     }
     \proposal{
         Пусть $E_1, E_2$ --- два евклидовых пространства (возможно, разных размерностей).
@@ -2343,44 +2365,44 @@
     \theorem{
         Пусть $a \subset \R^n$ --- какое-то.
         Пусть $\exists p > 0: \mu_p^*(a) < \infty$. Тогда $\forall s > p: \mu_s^*(a) = 0$.
-    \provehere{
-        Выберем $\eps > 0$, так как $\mu_p^*(a) < \infty$, то $\exists \eps$-покрытие $\{b_j\}$ множества $a$, такое, что $\sum\limits_{j}\left(\frac{\diam b_j}2\right)^p \le \mu_p^*(a) + 1$.
-        Тогда $\sum\limits_{j}\left(\frac{\diam b_j}{2}\right)^s = \sum\limits_{j}\left(\frac{\diam b_j}{2}\right)^p\underbrace{\left(\tfrac{\diam b_j}{2}\right)}_{\le \nicefrac\eps2}{}^{s - p}$.
-        Тем самым, \[\sum\limits_{j}\left(\frac{\diam b_j}{2}\right)^s \le \left(\frac{\eps}2\right)^{s-p}(\mu^*_p(a) + 1) \underset{\eps \to 0}\Map 0\]
-    }
+        \provehere{
+            Выберем $\eps > 0$, так как $\mu_p^*(a) < \infty$, то $\exists \eps$-покрытие $\{b_j\}$ множества $a$, такое, что $\sum\limits_{j}\left(\frac{\diam b_j}2\right)^p \le \mu_p^*(a) + 1$.
+            Тогда $\sum\limits_{j}\left(\frac{\diam b_j}{2}\right)^s = \sum\limits_{j}\left(\frac{\diam b_j}{2}\right)^p\underbrace{\left(\tfrac{\diam b_j}{2}\right)}_{\le \nicefrac\eps2}{}^{s - p}$.
+            Тем самым, \[\sum\limits_{j}\left(\frac{\diam b_j}{2}\right)^s \le \left(\frac{\eps}2\right)^{s-p}(\mu^*_p(a) + 1) \underset{\eps \to 0}\Map 0\]
+        }
     }
     \corollary{
-    Пусть $\alpha = \inf\defset{p > 0}{\mu_*^p(a) < \infty}$. Тогда $\mu_s^*(a) = 0$ при $s > \alpha$, и $\mu^*_s(a) = \infty$ при $s < \alpha$.
+        Пусть $\alpha = \inf\defset{p > 0}{\mu_*^p(a) < \infty}$. Тогда $\mu_s^*(a) = 0$ при $s > \alpha$, и $\mu^*_s(a) = \infty$ при $s < \alpha$.
     }
     \definition[Хаусдорфова размерность $a\subset \R^n$]{
-    Вот это число $\alpha$, отвечающее $a$.
-    Обозначается $\dim_H(a)$.
+        Вот это число $\alpha$, отвечающее $a$.
+        Обозначается $\dim_H(a)$.
     }
     \intfact{Хаусдорфова размерность стандартного Канторова множества равна $\frac{\log 2}{\log 3}$.}
     \theorem{
-    $\dim_H(\R^n) = n$.
-    \provehere{
-        Пусть $K = [0, 1]^n$ --- куб в $\R^n$.
-        Докажем, что $\mu_n^*(K) \in (0, \infty)$ (или можно сказать, что $\mu_n(K) \in (0, \infty)$, так как куб --- борелевское множество).
-        Так как счётное число кубов покрывает всё $\R^n$ (и при сдвиге мера не меняется), то легко показать, что размерность $\R^n$ такая же, как и размерность куба.
+        $\dim_H(\R^n) = n$.
+        \provehere{
+            Пусть $K = [0, 1]^n$ --- куб в $\R^n$.
+            Докажем, что $\mu_n^*(K) \in (0, \infty)$ (или можно сказать, что $\mu_n(K) \in (0, \infty)$, так как куб --- борелевское множество).
+            Так как счётное число кубов покрывает всё $\R^n$ (и при сдвиге мера не меняется), то легко показать, что размерность $\R^n$ такая же, как и размерность куба.
 
-    Пусть $\{e_j\}$ --- $\eps$-покрытие куба $K$, и пусть $b_j$ --- шар радиуса $\eps$, содержащий $e_j$.
-        \[1 = |K| \le \underset{\text{мера Лебега шара пропорциональна его радиусу}}{\le} c\sum\limits_{j}\left(\diam(e_j)\right)^n \le 4^n c\cdot \sum\limits_{j}\left(\frac{\diam(b_j)}2\right)^n \]
-    В другую сторону пойдём так: разобьём куб $K$ на диадические кубы ранга $s$, пусть $K_s$ --- диадические кубы ранга $s$, содержащиеся в $K$.
-    Тогда $\left\{\overline{K}_s\right\}_s$ образуют $\eps$-покрытие $K$ при $\eps = 2^{-s}\sqrt{n}$.
-    Отсюда получаем оценку
-    \[\mu_n^*\left(K, 2^{-s}\sqrt{n}\right) \le \sum\limits_{s}\left(\frac{\diam K_s}2\right)^n = 2^{sn} \cdot \left(\frac{2^{-s}\sqrt{n}}2\right)^n = \left(\frac{\sqrt{n}}{2}\right)^n\qedhere\]
-    }
+            Пусть $\{e_j\}$ --- $\eps$-покрытие куба $K$, и пусть $b_j$ --- шар радиуса $\eps$, содержащий $e_j$.
+            \[1 = |K| \le \underset{\text{мера Лебега шара пропорциональна его радиусу}}{\le} c\sum\limits_{j}\left(\diam(e_j)\right)^n \le 4^n c\cdot \sum\limits_{j}\left(\frac{\diam(b_j)}2\right)^n \]
+            В другую сторону пойдём так: разобьём куб $K$ на диадические кубы ранга $s$, пусть $K_s$ --- диадические кубы ранга $s$, содержащиеся в $K$.
+            Тогда $\left\{\overline{K}_s\right\}_s$ образуют $\eps$-покрытие $K$ при $\eps = 2^{-s}\sqrt{n}$.
+            Отсюда получаем оценку
+            \[\mu_n^*\left(K, 2^{-s}\sqrt{n}\right) \le \sum\limits_{s}\left(\frac{\diam K_s}2\right)^n = 2^{sn} \cdot \left(\frac{2^{-s}\sqrt{n}}2\right)^n = \left(\frac{\sqrt{n}}{2}\right)^n\qedhere\]
+        }
     }
     Размерность $m$-мерного подпространства в $\R^n$ равна $m$, например, потому что оно изометрично $\R^m$.
 
     Обозначим за $\mu_p$ результат продолжения предмеры $\mu_p^*$ по теореме Лебега --- Каратеодори.
     \fact{
-    $\exists C_{(m)}: C^{\lambda}_{\mu}\mu_n = \lambda_n$.
-    \provehere{
-        $\mu_n$ не меняется при изометриях, в частности, при сдвиге.
-        Значит, по теореме единственности, они пропорциональны.
-    }
+        $\exists C_{(m)}: C^{\lambda}_{\mu}\mu_n = \lambda_n$.
+        \provehere{
+            $\mu_n$ не меняется при изометриях, в частности, при сдвиге.
+            Значит, по теореме единственности, они пропорциональны.
+        }
     }
     Пусть $m \le n$ (нас интересует на самом деле случай $m < n$, если равно, то всё и так известно), посмотрим на $\mu_m$.
 
@@ -2391,107 +2413,109 @@
     \newlection{13 декабря 2023 г.}
     \theorem{
         При сделанных предположениях $\lambda_m(f(e)) = \int\limits_{e}|\det \Gamma(\d_f(x, \_))|^{\nicefrac12}\d x$.
-    \provebullets{
-    \item Сначала обоснуем вообще, что $\dim_H(f(e)) = m$.
+        \provebullets{
+            \item Сначала обоснуем вообще, что $\dim_H(f(e)) = m$.
 %
 %        Пусть ситуация такова: $U \supset \overline{U}_1 \supset e$, где $U_1$ открыто.
 %        Тогда $f$ липшицева на $\overline{U}_1$, откуда $\mu_m^*(f(e)) < \infty$.
 %        Кроме этого, $f(e)$ --- борелевское множество, откуда $\mu_m(f(e)) < \infty$.
 %
 %    Если же ситуация не такова, то можно взять исчерпывающую последовательность компактов.
-        \indent{
-            \theorem[Регулярность меры Лебега]{
-                $\forall$ измеримого по Лебегу $e \subset \R^k$, $\forall \eps > 0: \exists U \supset e: \abs{U \sm e} < \eps$.
-                Кроме того, $|e| = \sup\limits_{K \subset e}|K|$, где $K$ --- компактны (запись другая, так как мера любого компактного множества конечна).
-                \provebullets{
-                    \item Пусть $|e| < \infty$.
-                    Так как оно измеримо, то $\exists$ параллелепипеды $\{P_j\}_j$, такие, что $\bigcup\limits_{j}P_j \supset e, \abs{\bigcup\limits_{j}P_j} < |e| + \eps$.
-                    Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\abs{\tilde{P}}_j < \frac{\eps}{2^j}$.
-                    Положим $U \coloneqq \bigcup\limits_{j = 1}^{\infty}\tilde{P}_j$, тогда $U$ открыто, и $|U| < |e| + 2\eps$.
+            \indent{
+                \theorem[Регулярность меры Лебега]{
+                    $\forall$ измеримого по Лебегу $e \subset \R^k$, $\forall \eps > 0: \exists U \supset e: \abs{U \sm e} < \eps$.
+                    Кроме того, $|e| = \sup\limits_{K \subset e}|K|$, где $K$ --- компактны (запись другая, так как мера любого компактного множества конечна).
+                    \provebullets{
+                        \item Пусть $|e| < \infty$.
+                        Так как оно измеримо, то $\exists$ параллелепипеды $\{P_j\}_j$, такие, что $\bigcup\limits_{j}P_j \supset e, \abs{\bigcup\limits_{j}P_j} < |e| + \eps$.
+                        Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\abs{\tilde{P}}_j < \frac{\eps}{2^j}$.
+                        Положим $U \coloneqq \bigcup\limits_{j = 1}^{\infty}\tilde{P}_j$, тогда $U$ открыто, и $|U| < |e| + 2\eps$.
 
-                    Теперь если $|e| = \infty$, то воспользуемся $\sigma$-конечностью: пусть $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$, тогда подберём открытые $U_s \supset (e \cap B_s): |U_s \sm (e \cap B_s)| < \frac{\eps}{2^s}$. Объединение $U \coloneqq \bigcup\limits_{s}U_s$ подходит: $U \supset e$, и $|U \sm a| < \eps$.
-                    \item Из предыдущего пункта можно найти подходящее замкнутое множество: пусть $a \coloneqq \R^k \sm b$, найдётся открытое $U \supset a, |U \sm a| < \eps$, тогда для замкнутого $F \coloneqq \R^k \sm U: |b \sm F| = |U \sm a| < \eps$.
+                        Теперь если $|e| = \infty$, то воспользуемся $\sigma$-конечностью: пусть $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$, тогда подберём открытые $U_s \supset (e \cap B_s): |U_s \sm (e \cap B_s)| < \frac{\eps}{2^s}$. Объединение $U \coloneqq \bigcup\limits_{s}U_s$ подходит: $U \supset e$, и $|U \sm a| < \eps$.
+                        \item Из предыдущего пункта можно найти подходящее замкнутое множество: пусть $a \coloneqq \R^k \sm b$, найдётся открытое $U \supset a, |U \sm a| < \eps$, тогда для замкнутого $F \coloneqq \R^k \sm U: |b \sm F| = |U \sm a| < \eps$.
 
-                    Чтобы сделать $F$ компактным, возьмём пересечения $F_s \coloneqq F \cap B_s$, где $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$.
-                    Тогда легко видеть, что $|e| = \sup\limits_{s}|F_s|$.
+                        Чтобы сделать $F$ компактным, возьмём пересечения $F_s \coloneqq F \cap B_s$, где $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$.
+                        Тогда легко видеть, что $|e| = \sup\limits_{s}|F_s|$.
+                    }
                 }
             }
-        }
-        Возьмём исчерпывающую последовательность компактов $K_1 \subset K_2 \subset \cdots \subset \R^m$ ($K_i \subset \Int K_{i+1}$).
+            Возьмём исчерпывающую последовательность компактов $K_1 \subset K_2 \subset \cdots \subset \R^m$ ($K_i \subset \Int K_{i+1}$).
 
-        Рассмотрим измеримое $E \subset K_j$. $|E|_m = C_{(m)}\mu_m^*(E) < +\infty$.
-        Тем самым, согласно регулярности найдутся вложенные компакты $\Phi_1 \subset \Phi_2 \subset \cdots \subset E$, такие, что $|\Phi_j| \underset{j \to \infty}\Map |E|$.
-        Положим $\Phi \coloneqq \bigcup\limits_{j = 1}^{\infty}\Phi_j$.
+            Рассмотрим измеримое $E \subset K_j$. $|E|_m = C_{(m)}\mu_m^*(E) < +\infty$.
+            Тем самым, согласно регулярности найдутся вложенные компакты $\Phi_1 \subset \Phi_2 \subset \cdots \subset E$, такие, что $|\Phi_j| \underset{j \to \infty}\Map |E|$.
+            Положим $\Phi \coloneqq \bigcup\limits_{j = 1}^{\infty}\Phi_j$.
 
-        А раз так, то $f(E) = F(E \sm \Phi) \cup \bigcup\limits_{j = 1}^{\infty}F(\Phi_j)$.
-        Значит, $f(E)$ измеримо --- это объединение множества меры нуль $f(E \sm \Phi)$, и счётного числа компактов $f(\Phi_j)$.
+            А раз так, то $f(E) = F(E \sm \Phi) \cup \bigcup\limits_{j = 1}^{\infty}F(\Phi_j)$.
+            Значит, $f(E)$ измеримо --- это объединение множества меры нуль $f(E \sm \Phi)$, и счётного числа компактов $f(\Phi_j)$.
 
-        Получается, на измеримых подмножествах $K_j$ корректно определена мера $\rho \coloneqq \lambda_m(f)$ ($\rho(e) \coloneqq \lambda_m(f(e))$).
+            Получается, на измеримых подмножествах $K_j$ корректно определена мера $\rho \coloneqq \lambda_m(f)$ ($\rho(e) \coloneqq \lambda_m(f(e))$).
 
-        \item Пусть $\rho(e) = \lambda_m(f(e))$ --- мера на $U$.
-    \indentlemma{
-    $\rho$ абсолютно непрерывна относительно меры Лебега $\lambda_m$ на $U$.
-    }{
-    Пусть $\lambda_m(e) = 0$.
-        Тогда $\mu_m(e) = 0$, и так как $f$ --- локально липшицево, то $\lambda_m(f(e)) = 0$.
-    }
+            \item Пусть $\rho(e) = \lambda_m(f(e))$ --- мера на $U$.
+            \indentlemma{
+                $\rho$ абсолютно непрерывна относительно меры Лебега $\lambda_m$ на $U$.
+            }{
+                Пусть $\lambda_m(e) = 0$.
+                Тогда $\mu_m(e) = 0$, и так как $f$ --- локально липшицево, то $\lambda_m(f(e)) = 0$.
+            }
 %            $\rho(e) = C_{(m)}\mu_m^*(F(e))$.
 %        Пусть $|e| = C_{(m)}\mu_m^*(e) = 0$, где $e \in K_j$.
 %        Тогда из локальной липшицевости $\mu_m^*(F(e)) = 0$.
 
-        По теореме Радона --- Никодима: $\exists g_j: K_j \map \R$ --- неотрицательные измеримые функции, такие, что
-        \[\forall e \subset K_j: \rho(e) = \lambda_m(f(e)) = \int\limits_{e}w(x)\d x\label{density}\tag{$*$}\]
-        Далее, как и раньше, $g_{j + 1}$ почти всюду совпадает с $g_j$, поэтому $\exists g: U \map \R$ --- искомая плотность меры.
+            По теореме Радона --- Никодима: $\exists g_j: K_j \map \R$ --- неотрицательные измеримые функции, такие, что
+            \[\forall e \subset K_j: \rho(e) = \lambda_m(f(e)) = \int\limits_{e}w(x)\d x\label{density}\tag{$*$}\]
+            Далее, как и раньше, $g_{j + 1}$ почти всюду совпадает с $g_j$, поэтому $\exists g: U \map \R$ --- искомая плотность меры.
 
-        \item Осталось показать, что $g(x) = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$, а это делается с помощью слабой теоремы о дифференцируемости.
+            \item Осталось показать, что $g(x) = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$, а это делается с помощью слабой теоремы о дифференцируемости.
 
-        А именно, из теоремы о дифференцируемости $\exists r_n \underset{n \to \infty}\Map 0$: $g(x) = \lim\limits_{n \to \infty}\frac{1}{|B_{r_n}(x)|}\int\limits_{B_{r_n}(x)}g(x) \d x$.
+            А именно, из теоремы о дифференцируемости $\exists r_n \underset{n \to \infty}\Map 0$: $g(x) = \lim\limits_{n \to \infty}\frac{1}{|B_{r_n}(x)|}\int\limits_{B_{r_n}(x)}g(x) \d x$.
 
-        Теперь достаточно показать $\forall x \in U: \lim\limits_{r \to 0}\frac{\lambda_m(f(B_r(x)))}{|B_r(x)|} = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$.
+            Теперь достаточно показать $\forall x \in U: \lim\limits_{r \to 0}\frac{\lambda_m(f(B_r(x)))}{|B_r(x)|} = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$.
 
-        Пусть $x_0 \in U, y_0 \coloneqq f(x_0)$, тогда $\Pi \coloneqq \d_f(x_0, \R^m)$ --- $m$-мерная касательная плоскость к $f$ в точке $x_0$.
-        Для удобства будем считать $y_0 = 0$ (заменим $f \rightsquigarrow f - y_0$).
+            Пусть $x_0 \in U, y_0 \coloneqq f(x_0)$, тогда $\Pi \coloneqq \d_f(x_0, \R^m)$ --- $m$-мерная касательная плоскость к $f$ в точке $x_0$.
+            Для удобства будем считать $y_0 = 0$ (заменим $f \rightsquigarrow f - y_0$).
 
-        В предыдущем семестре была доказана теорема о том, что $\exists V \ni 0$, такая, что $A \coloneqq f(U) \cap V$ задаётся в виде $A = \defset{h(u) \coloneqq (u,\phi(u))}{u \in W}$, где $W \subset \Pi$ --- окрестность нуля, $\phi: \Pi \map \Pi^\perp$ --- некоторое непрерывно дифференцируемое отображение, причём $\d_\phi(x_0, \_) = \0$.
+            В предыдущем семестре была доказана теорема о том, что $\exists V \ni 0$, такая, что $A \coloneqq f(U) \cap V$ задаётся в виде $A = \defset{h(u) \coloneqq (u,\phi(u))}{u \in W}$, где $W \subset \Pi$ --- окрестность нуля, $\phi: \Pi \map \Pi^\perp$ --- некоторое непрерывно дифференцируемое отображение, причём $\d_\phi(x_0, \_) = \0$.
 
-    Пусть $P: \R^n \map \Pi$ --- ортогональный проектор.
-        Тогда $P$ и $h$ взаимно обратны ($P \circ h = \id$).
+            Пусть $P: \R^n \map \Pi$ --- ортогональный проектор.
+            Тогда $P$ и $h$ взаимно обратны ($P \circ h = \id$).
 
-    Из непрерывной дифференцируемости $\phi$: $\forall \eps > 0: \exists \rho > 0: |u| \le \rho \then h$ --- липшицево с константой не выше $1 + \eps$:
-    \[h(u_1) - h(u_2) \le |u_1 - u_2| + \underbrace{|\phi(u_1) - \phi(u_2)|}_{\le |\d_{\phi}(v, u_1 - u_2)|}\text{, где некая точка $v \in [u_1, u_2]$.}\]
-    Устроим $\tilde{f}: U \map \Pi, \tilde{f}(x) = P f(x)$.
-    Заметим, что меры $f(B_r(x_0))$ и $\tilde{f}(B_r(x_0))$ близки.
-        В самом деле, из липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0))))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
-    Отсюда видно, что \[\lim\limits_{r \to 0}\mu_m(\tilde{f}(B_r(x_0))) = \lim\limits_{r \to 0}\mu_m(f(B_r(x_0)))\]
-    Но так как $\tilde{f}$ --- отображение между двумя $m$-мерными евклидовыми пространствами, то можно записать $\lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{B_r(x_0)} = \lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{B_r(x_0)} = |J_{\tilde{f}}(x)|$.
+            Из непрерывной дифференцируемости $\phi$: $\forall \eps > 0: \exists \rho > 0: |u| \le \rho \then h$ --- липшицево с константой не выше $1 + \eps$:
+            \[h(u_1) - h(u_2) \le |u_1 - u_2| + \underbrace{|\phi(u_1) - \phi(u_2)|}_{\le |\d_{\phi}(v, u_1 - u_2)|}\text{, где некая точка $v \in [u_1, u_2]$.}\]
+            Устроим $\tilde{f}: U \map \Pi, \tilde{f}(x) = P f(x)$.
+            Заметим, что меры $f(B_r(x_0))$ и $\tilde{f}(B_r(x_0))$ близки.
+            В самом деле, из липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0))))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
+            Отсюда видно, что \[\lim\limits_{r \to 0}\mu_m(\tilde{f}(B_r(x_0))) = \lim\limits_{r \to 0}\mu_m(f(B_r(x_0)))\]
+            Но так как $\tilde{f}$ --- отображение между двумя $m$-мерными евклидовыми пространствами, то можно записать $\lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{B_r(x_0)} = \lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{B_r(x_0)} = |J_{\tilde{f}}(x)|$.
 
-    Осталось заметить, что образом $\d_f(x_0, \_)$ является $\Pi$.
-        Значит, $P$ ничего не делает, $\d_{\tilde{f}}(x_0, \_) = \d_f(x_0, \_)$.
-    }
+            Осталось заметить, что образом $\d_f(x_0, \_)$ является $\Pi$.
+            Значит, $P$ ничего не делает, $\d_{\tilde{f}}(x_0, \_) = \d_f(x_0, \_)$.
+        }
     }
     Рассмотрим оператор $A: \R^m \map \R^n$, где $m < n$.
     Пусть $e_j$ --- стандартный базис в $\R^m$, тогда $Ae_j$ --- столбцы матрицы $A$.
 
     Можно посчитать определитель Грама матрицы $A$: $\det(\angles{A e_i, A e_j})_{i,j}$ по формуле Бине --- Коши: $\det(A^t A) = \sum\limits_{I \subset [n], |I| = m}\det((A^t)_I)\det(A^I) = \sum\limits_{I \subset [n], |I| = m}\det(A^I)^2$.
     \examples{
-    \item Пусть $m = 1$.
+        \item Пусть $m = 1$.
         Рассмотрим путь $\gamma: (a, b) \map \R^n$. $\gamma = \vect{\gamma_1 \\ \vdots \\ \gamma_n}$.
         Тогда $J_{\gamma}(x_0, \_) = \vect{\gamma_1'(x_0) \\ \vdots \\ \gamma_n'(x_0)}$, и $\abs{\Gamma(\d_{\gamma}(x_0, \_))} = \sqrt{|\gamma_1^2(x_0) + \cdots + \gamma_n^2(x_0)|}$.
         Если $\gamma$ инъективна, то получается формула длины пути $\int\limits_{a}^{b}\sqrt{|\gamma_1^2(x) + \cdots + \gamma_n^2(x)|}\d x$.
-    \item Пусть $G \subset \R^2$, и отображение представляет собой график: $F(x, y) = (x, y, \phi(x, y))$, где $\phi: \R \times \R \map \R$.
+        \item Пусть $G \subset \R^2$, и отображение представляет собой график: $F(x, y) = (x, y, \phi(x, y))$, где $\phi: \R \times \R \map \R$.
         Здесь матрица Якоби $J_F(x, y) = \vect{1  & 0 \\ 0 & 1 \\ \partial_1\phi(x, y) & \partial_2\phi(x, y)}$, здесь $\partial_i$ --- производная по $i$-му аргументу.
         Тем самым, $\mu_2(F(e)) = \int\limits_{e}\sqrt{1 + (\partial_1 \phi)^2 + (\partial_2 \phi)^2}\d\lambda_2$.
-    \item Заинтересуемся сходимостью $\int\limits_{\R^n \sm B_1}|x|^{\alpha}\d x$.
+        \item Заинтересуемся сходимостью $\int\limits_{\R^n \sm B_1}|x|^{\alpha}\d x$.
         Сделаем полярную замену $r, \phi_1, \dots, \phi_{n - 1}$. Интеграл обращается в $\int\limits_{1}^{\infty}r^{n - 1}r^{\alpha}\d r \cdot \Psi(\phi_1, \dots, \phi_n)$.
         Отсюда видно, что так как $\Psi(\phi_1, \dots, \phi_n)$ интегрируемо, то интеграл сходится $\iff n - 1 + \alpha < -1 \iff \alpha < -n$.
-    \item Вычислим $\int\limits_{0}^{\infty}e^{-x^2}\d x$.
+        \item Вычислим $\int\limits_{0}^{\infty}e^{-x^2}\d x$.
         Разумеется, интеграл суммируем. Пусть $I \coloneqq \int\limits_{-\infty}^{\infty}e^{-x^2}\d x$.
-    \[I^2 = \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-x^2}e^{-y^2}\d x\d y \circlesign{=}\]
-    Так как функция $e^{-x^2}e^{-y^2}$ суммируема на плоскости, то по теореме Фубини он равен двойному интегралу:
-    \[\circlesign{=}\iint\limits_{\R^2}e^{-x^2 - y^2}\d x\d y = \int\limits_{0}^{2\pi}\int\limits_{0}^{\infty}e^{-r^2}r\d r\d \phi = \left\|t = r^2\right\| = 2\pi \cdot \frac{1}{2}\int\limits_{0}^{\infty}e^{-t}\d t = \pi\]
-    Тем самым, $I = \sqrt{\pi}$, и из чётности функции $e^{-x^2}$:
-    \encircle{\int\limits_{0}^{\infty}e^{-x^2}\d x = \frac{\sqrt{\pi}}{2}}
+        \[I^2 = \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}e^{-x^2}e^{-y^2}\d x\d y \circlesign{=}\]
+        Так как функция $e^{-x^2}e^{-y^2}$ суммируема на плоскости, то по теореме Фубини он равен двойному интегралу:
+        \[\circlesign{=}\iint\limits_{\R^2}e^{-x^2 - y^2}\d x\d y = \int\limits_{0}^{2\pi}\int\limits_{0}^{\infty}e^{-r^2}r\d r\d \phi = \left\|t = r^2\right\| = 2\pi \cdot \frac{1}{2}\int\limits_{0}^{\infty}e^{-t}\d t = \pi\]
+        Тем самым, $I = \sqrt{\pi}$, и из чётности функции $e^{-x^2}$:
+        \encircle{\int\limits_{0}^{\infty}e^{-x^2}\d x = \frac{\sqrt{\pi}}{2}}
     }
+
+
     \section{Элементы общей теории меры}
     Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, на которой мы будем рассматривать разные меры.
 
@@ -2506,34 +2530,34 @@
     Понятно, что $\nu$ счётно-аддитивна $\iff \alpha, \beta$ каждая счётно-аддитивна.
 
     \proposal{
-    Для всяких непересекающихся $e_j$: ряд $\sum\limits_{j}\nu(e_j)$ сходится абсолютно.
-    \provehere{
-    По определению сумма не зависит от перестановок слагаемых.
-    }
+        Для всяких непересекающихся $e_j$: ряд $\sum\limits_{j}\nu(e_j)$ сходится абсолютно.
+        \provehere{
+            По определению сумма не зависит от перестановок слагаемых.
+        }
     }
     \theorem{\label{bounded}
     Множество значений любой комплексной меры ограничено.
     \provehere{
         В пределах данного доказательства назовём множество $a \in \Sigma$ <<плохим>>, если $\sup\defset{|\nu(b)|}{b \subset a, b \in \Sigma} = +\infty$.
         Пусть наше пространство --- $(X, \Sigma)$.
-    \indentlemma{
-    Если $e$ --- плохое множество, и $e = e_1 \sqcup e_2$, то хотя бы одно из $e_1$ и $e_2$ --- плохое.
-    }{
-    От противного: если оба хорошие, то и $e$ хорошее, так как $\forall b \subset e: b = (b \cap e_1) \cup (b \cap e_2)$, и меры $(b \cap e_1)$ и $(b \cap e_2)$ ограничены.
-    }
         \indentlemma{
-    Если $e$ --- плохое множество, то $\exists F, G: F \sqcup G = e$, такие, что $|\nu(F)|, |\nu(G)| \ge 1$.
-    }{
-        Так как $e$ --- плохое, то $\exists F: |\nu(F)| \ge |\nu(e)| + 1$. Но тогда для $G \coloneqq e \sm F: |\nu(G)| = |\nu(e) - \nu(F)| \ge |\nu(F)| - |\nu(e)| \ge 1$.
-    }
-    От противного: пусть $X$ --- плохое.
-    Тогда $\exists a, b: a \sqcup b = X$, где $|\nu(a)|, |\nu(b)| \ge 1$.
+            Если $e$ --- плохое множество, и $e = e_1 \sqcup e_2$, то хотя бы одно из $e_1$ и $e_2$ --- плохое.
+        }{
+            От противного: если оба хорошие, то и $e$ хорошее, так как $\forall b \subset e: b = (b \cap e_1) \cup (b \cap e_2)$, и меры $(b \cap e_1)$ и $(b \cap e_2)$ ограничены.
+        }
+        \indentlemma{
+            Если $e$ --- плохое множество, то $\exists F, G: F \sqcup G = e$, такие, что $|\nu(F)|, |\nu(G)| \ge 1$.
+        }{
+            Так как $e$ --- плохое, то $\exists F: |\nu(F)| \ge |\nu(e)| + 1$. Но тогда для $G \coloneqq e \sm F: |\nu(G)| = |\nu(e) - \nu(F)| \ge |\nu(F)| - |\nu(e)| \ge 1$.
+        }
+        От противного: пусть $X$ --- плохое.
+        Тогда $\exists a, b: a \sqcup b = X$, где $|\nu(a)|, |\nu(b)| \ge 1$.
         Одно из них плохое, обозначим его через $F_1$, а второе обозначим $G_1$.
         Применяя ту же самую конструкцию к $F_1$, получим $F_1 = F_2 \sqcup G_2$, где $|\nu(F_2)|, |\nu(G_2)| \ge 1$, причём $F_2$ --- плохое.
 
-    И так далее, в итоге $X = \bigsqcup\limits_{j = 1}^{\infty}G_j \sqcup \bigcap\limits_{j = 1}^{\infty}F_j$.
+        И так далее, в итоге $X = \bigsqcup\limits_{j = 1}^{\infty}G_j \sqcup \bigcap\limits_{j = 1}^{\infty}F_j$.
 
-    Тогда $\nu\left(\bigsqcup\limits_{j = 1}^{\infty}G_j\right) = \sum\limits_{j = 1}^{\infty}\nu(G_j) = \infty$, ряд не сходится, противоречие.
+        Тогда $\nu\left(\bigsqcup\limits_{j = 1}^{\infty}G_j\right) = \sum\limits_{j = 1}^{\infty}\nu(G_j) = \infty$, ряд не сходится, противоречие.
     }
     }
     \newlection{20 декабря 2023 г.}
@@ -2729,18 +2753,18 @@
               \fill (0,1.5) circle (1.5pt) node[left] {$\nicefrac12$};
               \fill (0,3) circle (1.5pt) node[left] {$1$};
               \newcommand{\cantor}[5]{ %l, r, d, u, depth
-                \pgfmathsetmacro{\depth}{\numexpr#5}
+                  \pgfmathsetmacro{\depth}{\numexpr#5}
 
-                \draw ({(#1+2*#2)/3},{(#3+#4)/2}) -- ({(2*#1+#2)/3},{(#3+#4)/2});
+                  \draw ({(#1+2*#2)/3},{(#3+#4)/2}) -- ({(2*#1+#2)/3},{(#3+#4)/2});
 
-                \ifnum\depth<5
-                \cantor{#1}{(2*#1+#2)/3}{#3}{(#3+#4)/2}{#5+1}
-                \cantor{(#1+2*#2)/3}{#2}{(#3+#4)/2}{#4}{#5+1}
-                \else
-                \draw ({#1}, {#3}) -- ({#2}, {#4});
-                \fi
-            }
-            \cantor{0}{3}{0}{3}{0}
+                  \ifnum\depth<5
+                  \cantor{#1}{(2*#1+#2)/3}{#3}{(#3+#4)/2}{#5+1}
+                  \cantor{(#1+2*#2)/3}{#2}{(#3+#4)/2}{#4}{#5+1}
+                  \else
+                  \draw ({#1}, {#3}) -- ({#2}, {#4});
+                  \fi
+              }
+              \cantor{0}{3}{0}{3}{0}
         \end{tikzpicture}\]
         Построив по данной функции меру, мы получим меру, сосредоточенную на канторовом множестве меры нуль.
         Она сингулярна относительно стандартной меры Лебега на $\R$.

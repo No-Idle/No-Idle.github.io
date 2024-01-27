@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  27 JAN 2024 00:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  27 JAN 2024 13:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -715,6 +715,9 @@ Package trimclip Info: Using driver 'tc-pdftex.def'.
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1302,18 +1305,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 749.
+(hyperref)                removing `math shift' on input line 750.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 749.
+(hyperref)                removing `\sigma' on input line 750.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 749.
+(hyperref)                removing `math shift' on input line 750.
 
 
-Overfull \hbox (4.50647pt too wide) in paragraph at lines 778--778
+Overfull \hbox (4.50647pt too wide) in paragraph at lines 779--779
 []\T2A/faq/bx/n/10 Лемма 1.4.2. []\T2A/faq/m/it/10 Про-стран-ство $\OML/cmm/m/i
 t/10 X$ $^^[$\T2A/faq/m/it/10 -конечно, ес-ли и толь-ко ес-ли $\OMS/cmsy/m/n/10
  9\OML/cmm/m/it/10 e[]; e[]; [] \OMS/cmsy/m/n/10 ^^Z \OML/cmm/m/it/10 X$\T2A/fa
@@ -1325,7 +1328,7 @@ q/m/it/10 : $[]$
 [24
 
 ] [25]
-Overfull \hbox (2.31102pt too wide) in paragraph at lines 1122--1122
+Overfull \hbox (2.31102pt too wide) in paragraph at lines 1124--1124
 []\T2A/faq/bx/n/10 Определение 2.1.2 \T2A/faq/m/n/10 (Ле-бе-го-вы мно-же-ства ф
 унк-ции $\OML/cmm/m/it/10 f$\T2A/faq/m/n/10 )\T2A/faq/bx/n/10 . []\T2A/faq/m/n/
 10 Для $\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R$ \T2A/faq/m/n/10 
@@ -1333,27 +1336,27 @@ Overfull \hbox (2.31102pt too wide) in paragraph at lines 1122--1122
  []
 
 
-Overfull \hbox (1.45995pt too wide) in paragraph at lines 1150--1150
+Overfull \hbox (1.45995pt too wide) in paragraph at lines 1152--1152
 \T2A/faq/m/n/10 мо. Ском-по-ну-ем $\OML/cmm/m/it/10   \OMS/cmsy/m/n/10 ^^N \OML
 /cmm/m/it/10 F$\T2A/faq/m/n/10 , где $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 : []$ 
 \T2A/faq/m/n/10 Для част-но-го: $\OML/cmm/m/it/10   \OT1/cmr/m/n/10 : []$
  []
 
 [26] [27] [28]
-Overfull \hbox (4.2441pt too wide) in paragraph at lines 1302--1302
+Overfull \hbox (4.2441pt too wide) in paragraph at lines 1313--1313
 []\T2A/faq/bx/n/10 Лемма 2.3.1. []\T2A/faq/m/it/10 По-чти всю-ду (для всех $\OM
 L/cmm/m/it/10 x$\T2A/faq/m/it/10 , кро-ме мно-же-ства ме-ры нуль) $[]$. 
  []
 
 [29] [30] [31]
-Overfull \hbox (14.17601pt too wide) in paragraph at lines 1443--1443
+Overfull \hbox (14.17601pt too wide) in paragraph at lines 1457--1457
 []\T2A/faq/bx/n/10 Теорема 2.5.4 \T2A/faq/m/n/10 (Ле-бег, о ма-жо-ри-ру-е-мой с
 хо-ди-мо-сти)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 f; g$
  \T2A/faq/m/n/10 --- из-ме-ри-мые функ-ции, $[]$.
  []
 
 [32]
-Overfull \hbox (6.61755pt too wide) in paragraph at lines 1483--1483
+Overfull \hbox (6.61755pt too wide) in paragraph at lines 1501--1501
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 " > \OT1/cmr/m/n/10 0$\T2A/faq/m/n/10
  , обо-зна-чим $\OML/cmm/m/it/10 A[] [][]\OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 .
  Они вло-же-ны: $[]$ 
@@ -1361,18 +1364,18 @@ Overfull \hbox (6.61755pt too wide) in paragraph at lines 1483--1483
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1486.
+(hyperref)                removing `math shift' on input line 1505.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1486.
+(hyperref)                removing `superscript' on input line 1505.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1486.
+(hyperref)                removing `math shift' on input line 1505.
 
 [33]
-Overfull \hbox (21.02802pt too wide) in paragraph at lines 1529--1529
+Overfull \hbox (21.02802pt too wide) in paragraph at lines 1548--1548
 []\T2A/faq/m/n/10 Рассмотрим по-сле-до-ва-тель-ность Ко-ши $\OML/cmm/m/it/10 f[
 ]$\T2A/faq/m/n/10 , и пусть $\OML/cmm/m/it/10 E[] [][]\OT1/cmr/m/n/10 = []$\T2A
 /faq/m/n/10 . 
@@ -1380,18 +1383,18 @@ Overfull \hbox (21.02802pt too wide) in paragraph at lines 1529--1529
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1533.
+(hyperref)                removing `math shift' on input line 1551.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1533.
+(hyperref)                removing `superscript' on input line 1551.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1533.
+(hyperref)                removing `math shift' on input line 1551.
 
 [34]
-Overfull \hbox (12.85002pt too wide) in paragraph at lines 1594--1594
+Overfull \hbox (12.85002pt too wide) in paragraph at lines 1612--1612
 []\T2A/faq/bx/n/10 Теорема 2.7.5 \T2A/faq/m/n/10 (Непре-рыв-ность сдви-га в сре
 д-нем)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Ес-ли $\OML/cmm/m/it/10 f \OMS/cmsy/
 m/n/10 2 \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\U/msb/m/n/10 R[]\OT1/cmr/m/n/10 
@@ -1400,7 +1403,7 @@ m/n/10 2 \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\U/msb/m/n/10 R[]\OT1/cmr/m/n/10
  []
 
 [35] [36] [37]
-Overfull \hbox (11.6239pt too wide) in paragraph at lines 1719--1720
+Overfull \hbox (11.6239pt too wide) in paragraph at lines 1737--1738
 []\T2A/faq/m/n/10 Рассмотрим два про-стран-ства с ме-рой $\OT1/cmr/m/n/10 (\OML
 /cmm/m/it/10 X; \OMS/cmsy/m/n/10 A\OML/cmm/m/it/10 ; ^^V\OT1/cmr/m/n/10 )\OML/c
 mm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y; \OMS/cmsy/m/n/10 B\OML/cmm/m/
@@ -1411,7 +1414,7 @@ n/10 -алгебры, $\OML/cmm/m/it/10 ^^V; ^^W$ \T2A/faq/m/n/10 --- счјтно-аддитивны
  []
 
 [38] [39]
-Overfull \hbox (33.32086pt too wide) in paragraph at lines 1835--1835
+Overfull \hbox (33.32086pt too wide) in paragraph at lines 1853--1853
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 E \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/1
 0 . Для $\OML/cmm/m/it/10 x [] E \OT1/cmr/m/n/10 : [] \OML/cmm/m/it/10 ^^_[]\OT
 1/cmr/m/n/10 (\OML/cmm/m/it/10 x; []\OT1/cmr/m/n/10 ) []  \OML/cmm/m/it/10 ^^W 
@@ -1419,7 +1422,7 @@ Overfull \hbox (33.32086pt too wide) in paragraph at lines 1835--1835
  []
 
 [40] [41] [42] [43] [44]
-Overfull \hbox (6.98045pt too wide) in paragraph at lines 2006--2006
+Overfull \hbox (6.98045pt too wide) in paragraph at lines 2024--2024
 \T2A/faq/m/n/10 Далее вво-дим ме-ру $\OML/cmm/m/it/10 ^^W\OT1/cmr/m/n/10 (\OML/
 cmm/m/it/10 e\OT1/cmr/m/n/10 ) = [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 g\OT1/cm
 r/m/n/10 (\OML/cmm/m/it/10 y\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j []  \OML/cmm/m/
@@ -1428,12 +1431,12 @@ it/10 y$\T2A/faq/m/n/10 , и опять при-ме-ня-ем нера-вен-ство Гјль-де-ра к $[]$.
  []
 
 [45]
-Overfull \hbox (70.43639pt too wide) detected at line 2057
+Overfull \hbox (70.43639pt too wide) detected at line 2075
 []
  []
 
 [46] [47] [48] [49]
-Overfull \hbox (51.92429pt too wide) detected at line 2220
+Overfull \hbox (51.92429pt too wide) detected at line 2238
 [] \OT1/cmr/m/n/10 = [] = [] = \OMS/cmsy/m/n/10 j [] \OML/cmm/m/it/10 A\OMS/cms
 y/m/n/10 j[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ^^^ [][]\OT1/cmr/m/n/10 = \OM
 L/cmm/m/it/10 A[]F[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 J[]\O
@@ -1441,7 +1444,7 @@ T1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j[]
  []
 
 
-Overfull \hbox (0.25601pt too wide) in paragraph at lines 2220--2222
+Overfull \hbox (0.25601pt too wide) in paragraph at lines 2238--2240
 \T2A/faq/m/n/10 Но раз $[] \OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
 0 x[]; []\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 E$\T2A/faq/m/n/10 , то по тео-ре-
 ме об ис-ка-же-нии и прин-ци-пу двух по-ли-цей-ских $[]$: 
@@ -1449,30 +1452,30 @@ Overfull \hbox (0.25601pt too wide) in paragraph at lines 2220--2222
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2228.
+(hyperref)                removing `math shift' on input line 2249.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2228.
+(hyperref)                removing `math shift' on input line 2249.
 
 [50]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2252.
+(hyperref)                removing `math shift' on input line 2274.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2252.
+(hyperref)                removing `math shift' on input line 2274.
 
 
-Overfull \hbox (19.97247pt too wide) in paragraph at lines 2288--2288
+Overfull \hbox (19.97247pt too wide) in paragraph at lines 2310--2310
 []\T2A/faq/m/n/10 Осталась счјт-ная по-лу-ад-ди-тив-ность: пусть $\OML/cmm/m/it
 /10 e \OMS/cmsy/m/n/10 ^^Z [] \OML/cmm/m/it/10 e[]$\T2A/faq/m/n/10 , то-гда на-
 до про-ве-рить, что $[]$. 
  []
 
 [51]
-Overfull \hbox (14.8335pt too wide) in paragraph at lines 2325--2325
+Overfull \hbox (14.8335pt too wide) in paragraph at lines 2347--2347
 \T2A/faq/m/n/10 Из счјт-ной по-лу-ад-ди-тив-но-сти $\OML/cmm/m/it/10 ^^Q\OT1/cm
 r/m/n/10 (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 F\OT1/cmr/m/n/
 10 ) \U/msa/m/n/10 6 \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]\
@@ -1482,7 +1485,7 @@ OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]
  []
 
 
-Overfull \hbox (8.49907pt too wide) in paragraph at lines 2325--2325
+Overfull \hbox (8.49907pt too wide) in paragraph at lines 2347--2347
 []\T2A/faq/m/n/10 Стало быть, $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 n \OT1/cmr/m/
 n/10 : [] \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[] \OMS/cmsy/m
 /n/10 n \OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 ) \U/msa/m/n/10 6 \OML/cmm/m/it/10 
@@ -1492,7 +1495,7 @@ OT1/cmr/m/n/10 )$\T2A/faq/m/n/10 . Ана-ло-гич-но схо-дит-ся ряд $[]$.
 
 [52] [53] [54]
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 2
-471.
+493.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 [55] [56] [57] [58] [59] [60] [61]
 (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.aux)
@@ -1500,13 +1503,13 @@ LaTeX Font Info:    Trying to load font information for U+bbold on input line 2
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `calculus-3.out' has not changed.
-(rerunfilecheck)             Checksum: 1EE0CFD862AA1976F6E59884C58C9241;9684.
+(rerunfilecheck)             Checksum: 7FF786DA38BFEAC18350F5AD23B5FEC9;9865.
  ) 
 Here is how much of TeX's memory you used:
- 30035 strings out of 479648
- 566852 string characters out of 5886115
- 842381 words of memory out of 5000000
- 47100 multiletter control sequences out of 15000+600000
+ 30059 strings out of 479648
+ 567609 string characters out of 5886115
+ 842629 words of memory out of 5000000
+ 47122 multiletter control sequences out of 15000+600000
  509776 words of font info for 110 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,16n,103p,578b,1196s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1534,10 +1537,10 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (62 pages, 560727 bytes).
+f (62 pages, 561325 bytes).
 PDF statistics:
- 937 PDF objects out of 1000 (max. 8388607)
- 817 compressed objects within 9 object streams
- 343 named destinations out of 1000 (max. 500000)
+ 935 PDF objects out of 1000 (max. 8388607)
+ 815 compressed objects within 9 object streams
+ 341 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
