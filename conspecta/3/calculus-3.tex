@@ -1321,7 +1321,7 @@
         $J(f) = \sup I(g)$, где $0 \le g \le f$. Из монотонности меры всякая такая $g$ сосредоточена на множестве меры нуль.
         Считая интеграл $g$ по определению, получаем нуль.
     }{\up\up
-        \indentlemma[Неравенство Чебышёва]{
+        \indentlemma[Неравенство Чебышёва]{\label{tschebyschev-inequality}
             Пускай $h \ge 0$ --- неотрицательная измеримая функция, $\lambda > 0$.
             Тогда $\mu\defset{x}{h(x) > \lambda} \le \frac{1}{\lambda}J(h)$.
         }{
@@ -1387,18 +1387,17 @@
             Для неотрицательных функций известна аддитивность, откуда $J(f_+) + J(h) = J(g) + J(f_-)$.
             Перенося в противоположные части конечные слагаемые $J(f_+)$ и $J(g)$, получаем
             \[-J(g) + J(h) = J(f_-) - J(f_+)\]
-            Умножая обе части на -1, получаем искомое.
+            Умножая обе части на $-1$, получаем искомое.
         }
     }
     \corollary{
         Если $f, g$ суммируемы (и, вообще говоря, знакопеременны), то $f + g$ тоже суммируема, и $J(f + g) = J(f) + J(g)$.
         \provehere{
-            \[(f_+ - f_-) + (g_+ - g_-) = (f_+ + g_+) - (f_- + g_-)\]
+            \[(f_+ - f_-) + (g_+ - g_-) = (f_+ + g_+) - (f_- + g_-)\qedhere\]
         }
     }
-    \note{Если $f$ суммируема, $\alpha \in \R$, то $J(\alpha f) = \alpha J(f)$.}
-
-    \bullets{
+    \fact{Если $f$ суммируема, $\alpha \in \R$, то $J(\alpha f) = \alpha J(f)$.}
+    \properties[Ещё свойства интеграла]{
         \item Основная оценка интеграла: если $f$ обладает интегралом, то $|J(f)| \le J(|f|)$.
         \item Если $f, g$ --- измеримы, и обладают интегралами, причём $f \le g$, то $J(f) \le J(g)$.
     }
@@ -1406,23 +1405,24 @@
     \encircle{\int\limits_{e}f \d \mu = J(f \cdot \chi_e)}
     \theorem[Абсолютная непрерывность интеграла]{
         Пускай $f$ --- суммируемая функция.
-        Тогда $\forall \eps > 0: \exists \delta > 0$: если $e \in \Sigma$, $\mu e < \delta$, то $\int\limits_{e}|f| \d \mu < \eps$.
+        Тогда $\forall \eps > 0: \exists \delta > 0$: если $e \in \Sigma$, $\mu(e) < \delta$, то $\int\limits_{e}|f| \d \mu < \eps$.
         \provehere{
-            От противного: пусть $\exists \eps > 0: \forall \delta > 0: \exists e \in \Sigma: \mu e < \delta$, но $\int\limits_{e}|f| \d \mu \ge \eps$.
+            От противного: пусть $\exists \eps > 0: \forall \delta > 0: \exists e \in \Sigma: \mu(e) < \delta$, но $\int\limits_{e}|f| \d \mu \ge \eps$.
 
-            Рассмотрим последовательность $\delta_n = \frac{1}{2^n}$. Для каждого $\delta_n$ найдётся $e_n \in \Sigma$: $\mu(e_n) \le \frac{1}{2^n}$, но $\int\limits_{e_n}|f|\d\mu \ge \eps$.
+            Рассмотрим последовательность $\delta_n = \frac{1}{2^n}$.
+            Для каждого $\delta_n$ найдётся $e_n \in \Sigma$: $\mu(e_n) \le \frac{1}{2^n}$, но $\int\limits_{e_n}|f|\d\mu \ge \eps$.
 
             Пусть $E_n = \bigcup\limits_{k \ge n}e_k$, тогда из монотонности $\int\limits_{E_n}|f|\d\mu \ge \eps$.
-            С другой стороны. $\mu E_n \le \sum\limits_{k \ge n}\mu(e_k) \le \sum\limits_{k \ge n}\frac{1}{2^k} = \frac{1}{2^{k - 1}}$.
+            С другой стороны. $\mu(E_n) \le \sum\limits_{k \ge n}\mu(e_k) \le \sum\limits_{k \ge n}\frac{1}{2^k} = \frac{1}{2^{k - 1}}$.
 
             Таким образом, $\mu(E_n) \underset{n \to \infty}\Map 0$, но с другой стороны $E_1 \supset E_2 \supset \cdots$
-            Положим $E \coloneqq \bigcap\limits_{n \in \N}E_n$. Из счётной аддитивности $\int\limits_{E}|f|\d\mu = \lim\limits_{n \to \infty}\int\limits_{E_n}|f|\d\mu$, но левый интеграл равен нулю, как интеграл по множеству меры нуль.
+            Положим $E \coloneqq \bigcap\limits_{n \in \N}E_n$. Из счётной аддитивности $\int\limits_{E}|f|\d\mu = \lim\limits_{n \to \infty}\int\limits_{E_n}|f|\d\mu$, но левый интеграл равен нулю, как интеграл по множеству меры нуль, а правый предел --- хотя бы $\eps$.
         }
     }
-    \note{
+    \fact{
         Если $f$ --- суммируемая функция, то $\defset{x}{f(x) \ne 0}$ $\sigma$-конечно.
         \provehere{
-            Применить неравенство Чебышёва. $\defset{x}{f(x) \ne 0} = \bigcup\limits_{n \ge 0}\bigdefset{x}{|f|(x) \ge \frac{1}{n}}$.
+            Применить неравенство Чебышёва~(\cref{tschebyschev-inequality}).\[\defset{x}{f(x) \ne 0} = \bigcup\limits_{n \ge 0}\bigdefset{x}{|f|(x) \ge \frac{1}{n}}\qedhere\]
         }
     }
     \theorem[Общая теорема Леви]{
@@ -1433,11 +1433,12 @@
             Положим $h_j(x) = f_j(x) - f_1(x)$, и применим теорему Леви для неотрицательных функций.
         }
     }
-    \corollary{
-        $f$ суммируема $\iff \sup\limits_{n}J(f_n) < +\infty$, при этом $J(f) = \lim\limits_{n \to \infty}J(f_n)$.
-    }
+%    \corollary{
+%        Пусть $f = \lim\limits_{n \to \infty}f_n$, где все $f_n$ суммируемы.
+%        $f$ суммируема $\iff \sup\limits_{n}J(f_n) < +\infty$, при этом $J(f) = \lim\limits_{n \to \infty}J(f_n)$.
+%    }
     \theorem[Вариант теоремы Леви для рядов]{
-        Пусть $u_n$ --- неотрицательные суммируемые функции, $\sum\limits_{n = 1}^{\infty}u_n(x) \eqqcolon u(x)$.
+        Пусть $u_n$ --- неотрицательные суммируемые функции, $u(x) \coloneqq \sum\limits_{n = 1}^{\infty}u_n(x)$.
         Тогда $u$ суммируема $\iff \sum\limits_{n = 1}^{\infty}\int\limits_{X}u_n \d \mu < +\infty$.
     }
     В случае монотонной сходимости почти всегда почти всё можно делать, а если сходимость не монотонна, то есть следующая теорема.
@@ -1452,7 +1453,7 @@
             Положим $h_k \coloneqq \sup\limits_{n \ge k}|f_n(x) - f(x)|$, заметим, что $h_k \searrow 0$.
             Так как $0 \le h_0(x) \le 2g(x)$, то $h_0$ суммируема, откуда по теореме Леви: $\int\limits_{X}h_k(x)\d\mu \underset{k \to \infty}\Map 0$.
 
-            Осталось применить принцип двух полицейских для проинтегрированного неравенства справа от $\then$ \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
+            Осталось применить принцип двух полицейских для проинтегрированного неравенства: \[0 \le |f_k(x) - f(x)| \le h_k(x) \quad \then \quad \int\limits_{X}0\d\mu \le \int\limits_{X}|f_k(x) - f(x)|\d\mu \le \int\limits_{X}h_k(x)\d\mu\qedhere\]
         }
     }
     \counterexample{
@@ -1460,12 +1461,14 @@
     }
     \lemma[Фату]{
         Пусть $f_n \ge 0$ --- измеримые функции, тогда $\int\limits_{X}\left(\varliminf\limits_{n \to \infty}f_n\right) \d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n\d\mu$.
+        \provehere{
+            Положим $h_k(x) \coloneqq \inf\limits_{n \ge k}f_n(x)$.
+            Заметим, что $h_k(x) \nearrow h(x) \coloneqq \varliminf\limits_{n \to \infty}f_n(x)$.
+            \[\int\limits_{X}h\d\mu = \lim\limits_{k \to \infty}\int\limits_{X}h_k\d\mu = \varliminf\limits_{k \to \infty}\int\limits_{X}h_k\d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n \d\mu\qedhere\]
+        }
     }
     \corollary{
         Если измеримые $g_n \almost{n \to \infty} g$, и $\int\limits_{X}|g_n|\d\mu \le C$, то $g$ суммируема, причём $\int\limits_{X}|g|d\mu \le C$.
-        \provehere{
-            Положим $h_k(x) = \inf\limits_{n \ge k}f_n(x)$. $h_k(x) \nearrow h(x) = \varliminf\limits_{n \to \infty}f_n(x)$. \[\int\limits_{X}h\d\mu = \lim\limits_{k \to \infty}\int\limits_{X}h_k\d\mu = \varliminf\limits_{k \to \infty}\int\limits_{X}h_k\d\mu \le \varliminf\limits_{n \to \infty}\int\limits_{X}f_n \d\mu\qedhere\]
-        }
     }
 
 
