@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  28 JAN 2024 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  28 JAN 2024 23:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1535,10 +1535,10 @@ Package rerunfilecheck Info: File `calculus-3.out' has not changed.
 (rerunfilecheck)             Checksum: 695059BA052C067B5B4D3A13F7663F8B;10592.
  ) 
 Here is how much of TeX's memory you used:
- 30020 strings out of 479648
- 566298 string characters out of 5886115
- 842816 words of memory out of 5000000
- 47072 multiletter control sequences out of 15000+600000
+ 30022 strings out of 479648
+ 566327 string characters out of 5886115
+ 842889 words of memory out of 5000000
+ 47074 multiletter control sequences out of 15000+600000
  509776 words of font info for 110 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,17n,103p,578b,837s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1566,10 +1566,10 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (65 pages, 569524 bytes).
+f (65 pages, 569562 bytes).
 PDF statistics:
- 986 PDF objects out of 1000 (max. 8388607)
- 849 compressed objects within 9 object streams
+ 987 PDF objects out of 1000 (max. 8388607)
+ 850 compressed objects within 9 object streams
  352 named destinations out of 1000 (max. 500000)
  365 words of extra memory for PDF output out of 10000 (max. 10000000)
 
