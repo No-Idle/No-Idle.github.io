@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {2.8.1}Как применять}{43}{subsection.2.8.1}%
 \contentsline {section}{\numberline {2.9}Свёртки. Приближение функций с помощью свёрток}{43}{section.2.9}%
 \contentsline {subsection}{\numberline {2.9.1}Меры с плотностью}{44}{subsection.2.9.1}%
-\contentsline {subsubsection}{Куда должна бить $\phi \geqslant 0$?}{44}{section*.2}%
+\contentsline {subsubsection}{Куда должна бить $\phi $?}{44}{section*.2}%
 \contentsline {subsubsection}{Интегрирование по мере $\nu $}{44}{section*.3}%
 \contentsline {subsection}{\numberline {2.9.2}Образ меры}{44}{subsection.2.9.2}%
 \contentsline {subsubsection}{Интегрирование по мере $\nu $}{45}{section*.4}%
