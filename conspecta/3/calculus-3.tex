@@ -134,7 +134,7 @@
                 Пусть $Q = I_1 \times \dots \times I_n$. Если $\exists s: I_s = 0$, то доказывать нечего.
 
                 Выберем $\eps > 0$.
-                Существуют замкнутые отрезки $\overline{I_1}, \dots, \overline{I_s}$, такие что $\overline{I_j} \subset I_j$, причём для $\overline{Q} = \overline{I_1} \times \dots \times \overline{I_n}$ его объём уменьшился несильно: $V_n(Q) \le V_n\left(\overline{Q}\right)+ \eps$.
+                Существуют замкнутые отрезки $\overline{I_1}, \dots, \overline{I_s}$, такие, что $\overline{I_j} \subset I_j$, причём для $\overline{Q} = \overline{I_1} \times \dots \times \overline{I_n}$ его объём уменьшился несильно: $V_n(Q) \le V_n\left(\overline{Q}\right)+ \eps$.
 
                 Аналогично раздуем составляющие параллелепипеды: $\forall j \in \N$ построим $\tilde{Q_j} = \tilde{I_1} \times \dots \times \tilde{I_n}$, так что открытый интервал $\tilde{I_j} \supset I_j$, причём $V_n(\tilde{Q_j}) \le V_n(Q_j) + \frac{\eps}{2^j}$.
 
@@ -2503,12 +2503,12 @@
 %        Тогда из локальной липшицевости $\mu_m^*(F(e)) = 0$.
 
             По теореме Радона --- Никодима: $\exists g_j: K_j \map \R$ --- неотрицательные измеримые функции, такие, что
-            \[\forall e \subset K_j: \rho(e) = \lambda_m(f(e)) = \int\limits_{e}w(x)\d x\label{density}\tag{$*$}\]
+            \[\forall e \subset K_j: \rho(e) = \lambda_m(f(e)) = \int\limits_{e}g_j(x)\d x\label{density}\tag{$*$}\]
             Далее, как и раньше, $g_{j + 1}$ почти всюду совпадает с $g_j$, поэтому $\exists g: U \map \R$ --- искомая плотность меры.
 
             \item Осталось показать, что $g(x) = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$, а это делается с помощью слабой теоремы о дифференцируемости.
 
-            А именно, из теоремы о дифференцируемости $\exists r_n \underset{n \to \infty}\Map 0$: $g(x) = \lim\limits_{n \to \infty}\frac{1}{|B_{r_n}(x)|}\int\limits_{B_{r_n}(x)}g(x) \d x$.
+            А именно, из слабой теоремы о дифференцировании $\exists r_n \underset{n \to \infty}\Map 0$: $g(x) = \lim\limits_{n \to \infty}\frac{1}{|B_{r_n}(x)|}\int\limits_{B_{r_n}(x)}g(y) \d y$ почти всюду.
 
             Теперь достаточно показать $\forall x \in U: \lim\limits_{r \to 0}\frac{\lambda_m(f(B_r(x)))}{|B_r(x)|} = |\det \Gamma(\d_f(x, \_))|^{\nicefrac12}$.
 
@@ -2524,9 +2524,9 @@
             \[h(u_1) - h(u_2) \le |u_1 - u_2| + \underbrace{|\phi(u_1) - \phi(u_2)|}_{\le |\d_{\phi}(v, u_1 - u_2)|}\text{, где некая точка $v \in [u_1, u_2]$.}\]
             Устроим $\tilde{f}: U \map \Pi, \tilde{f}(x) = P f(x)$.
             Заметим, что меры $f(B_r(x_0))$ и $\tilde{f}(B_r(x_0))$ близки.
-            В самом деле, из липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0)))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0)))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
-            Отсюда видно, что \[\lim\limits_{r \to 0}\mu_m(\tilde{f}(B_r(x_0))) = \lim\limits_{r \to 0}\mu_m(f(B_r(x_0)))\]
-            Но так как $\tilde{f}$ --- отображение между двумя $m$-мерными евклидовыми пространствами, то можно записать $\lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{B_r(x_0)} = \lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{B_r(x_0)} = |J_{\tilde{f}}(x)|$.
+            В самом деле, из $1$-липшицевости $P$: всегда $\mu_m(P f(B_r(x_0))) \le \mu_m(f(B_r(x_0)))$, и при $r \le \rho: \mu_m(f(B_r(x_0))) = \mu_m(h(\tilde{f}(B_r(x_0)))) \le (1 + \eps)^m\mu_m(\tilde{f}(B_r(x_0)))$.
+            Отсюда видно, что \[\lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{|B_r(x_0)|} = \lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{|B_r(x_0)|}\]
+            Но так как $\tilde{f}$ --- отображение между двумя $m$-мерными евклидовыми пространствами, то можно записать $\lim\limits_{r \to 0}\frac{\mu_m(f(B_r(x_0)))}{|B_r(x_0)|} = \lim\limits_{r \to 0}\frac{\mu_m(\tilde{f}(B_r(x_0)))}{|B_r(x_0)|} = |J_{\tilde{f}}(x)|$.
 
             Осталось заметить, что образом $\d_f(x_0, \_)$ является $\Pi$.
             Значит, $P$ не меняет дифференциал, $\d_{\tilde{f}}(x_0, \_) = \d_f(x_0, \_)$.
@@ -2539,7 +2539,7 @@
     \examples[Меры поверхностей]{
         \item Пусть $m = 1$.
         Рассмотрим путь $\gamma: (a, b) \map \R^n$. $\gamma = \vect{\gamma_1 \\ \vdots \\ \gamma_n}$.
-        Тогда $J_{\gamma}(x_0, \_) = \vect{\gamma_1'(x_0) \\ \vdots \\ \gamma_n'(x_0)}$, и $\abs{\Gamma(\d_{\gamma}(x_0, \_))} = \sqrt{|\gamma_1^2(x_0) + \cdots + \gamma_n^2(x_0)|}$.
+        Тогда $\d_{\gamma}(x_0, \_) = \vect{\gamma_1'(x_0) \\ \vdots \\ \gamma_n'(x_0)}$, и $\abs{\Gamma(\d_{\gamma}(x_0, \_))} = \sqrt{|\gamma_1^2(x_0) + \cdots + \gamma_n^2(x_0)|}$.
         Если $\gamma$ инъективна, то получается формула длины пути $\int\limits_{a}^{b}\sqrt{|\gamma_1^2(x) + \cdots + \gamma_n^2(x)|}\d x$.
         \item Пусть $G \subset \R^2$, и отображение представляет собой график: $F(x, y) = (x, y, \phi(x, y))$, где $\phi: \R \times \R \map \R$.
         Здесь матрица Якоби $J_F(x, y) = \vect{1  & 0 \\ 0 & 1 \\ \partial_1\phi(x, y) & \partial_2\phi(x, y)}$, где $\partial_i$ --- производная по $i$-му аргументу.
@@ -2563,7 +2563,8 @@
     \chapter{Элементы общей теории меры}
     Пусть $(X, \Sigma)$ --- пространство с $\sigma$-алгеброй, на которой мы будем рассматривать разные меры.
 
-    Так как у этих мер могут быть разные множества меры нуль, то может не получиться пополнить одну, продолжив на новые подмножества --- элементы $\Sigma$-алгебры --- и другую, поэтому здесь никаких предположений о полноте мер скорее не будет.
+    Так как у этих мер могут быть разные множества меры нуль, то при пополнении одной меры могут появиться новые элементы $\Sigma$, на которые непонятно, как продолжать другую.
+    Поэтому здесь никаких предположений о полноте мер скорее не будет.
 
     Здесь \emph{мера} --- счётно-аддитивная и, вообще говоря, комплексная функция $\nu: \Sigma \map \C$.
     Вспомним, что счётная аддитивность означает $\nu\left(\bigsqcup\limits_{j}e_j\right) = \sum\limits_{j}\nu(e_j)$.
@@ -2601,7 +2602,7 @@
 
         И так далее, в итоге $X = \bigsqcup\limits_{j = 1}^{\infty}G_j \sqcup \bigcap\limits_{j = 1}^{\infty}F_j$.
 
-        Тогда $\nu\left(\bigsqcup\limits_{j = 1}^{\infty}G_j\right) = \sum\limits_{j = 1}^{\infty}\nu(G_j) = \infty$, ряд не сходится, противоречие.
+        Тогда $\nu\left(\bigsqcup\limits_{j = 1}^{\infty}G_j\right) = \sum\limits_{j = 1}^{\infty}\nu(G_j)$, ряд не сходится (члены не стремятся к нулю, например), противоречие.
     }
     }
     \newlection{20 декабря 2023 г.}
@@ -2610,7 +2611,7 @@
 
     Иногда сужение определяют немного по-другому: $\mu\big|_E(a)$ --- мера, заданная как $\mu$, но теоретико-множественно суженная на $\defset{b \in \Sigma}{b \subset E}$.
 
-    Разницы особой нет (конечно, предполагается, что $E \in \Sigma$), можно считать и так, и так.
+    Разницы особой нет (конечно, предполагается, что $E \in \Sigma$), можно считать и так, и так: для множеств $a \subset E$ оба определения идентичны.
     \theorem[Хан]{
         Пусть $\mu$ --- \textbf{конечная} вещественная мера на $(X, \Sigma)$.
         Тогда $\exists E, F \in \Sigma: E \sqcup F = X$, такие, что $\mu\big|_E \ge 0, \mu\big|_F \le 0$. Такое $E$, что $\mu\big|_E \ge 0$ называется \emph{множеством положительности} (аналогично, $F$ --- \emph{множество отрицательности}).
@@ -2630,23 +2631,23 @@
                 \gather{\mu\left(b_k \cup b_{k+1} \cup \cdots \cup b_n\right) = \mu(b_k) + \mu(b_{k+1} \sm b_k) + \mu\left(b_{k+2}\sm(b_k \cup b_{k+1})\right) + \cdots + \mu(b_{n} \sm (\cdots))\ge\\\ge \left(M - \frac{1}{2^k}\right) - \frac{1}{2^{k+1}} - \frac{1}{2^{k+2}} - \cdots - \frac{1}{2^n} \ge M - \frac{1}{2^{k-1}}}
                 Переходя к пределу в силу счётной аддитивности, получаем $\mu\left(b_k \cup b_{k+1} \cup \cdots\right) \ge M - \frac{1}{2^{k-1}}$.
 
-                Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \subset \cdots$ Положим $E \coloneqq \bigcap\limits_{k = 1}^{\infty}\overline{b_k}$.
-                В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(\overline{b_k}) = M$.
+                Теперь заметим, что $\overline{b_1} \supset \overline{b_2} \supset \cdots$ Положим $E \coloneqq \bigcap\limits_{k = 1}^{\infty}\overline{b_k}$.
+                В силу монотонной непрерывности $\mu(E) = \lim\limits_{k \to \infty}\mu(\overline{b_k}) = M$ (формально, хотя бы $M$, но так как $M$ --- супремум всех мер, то больше быть не может).
 
-                Теперь в силу леммы все подмножества $E$ имеют положительную меру. Положим $F \coloneqq X \sm E$, все подмножества $F$ имеют отрицательную меру (от противного: если $f \subset F$ имеет положительную меру, то $\mu(E \cup f) > M$).\qedhere
+                Теперь в силу леммы все подмножества $E$ имеют неотрицательную меру. Положим $F \coloneqq X \sm E$, все подмножества $F$ имеют неположительную меру (от противного: если $f \subset F$ имеет положительную меру, то $\mu(E \cup f) > M$).\qedhere
             }
         }
     }
     Такие $E, F \subset X$ из теоремы --- \emph{разложение Хана}.
     Оно единственно с точностью до множества меры нуль --- если $A \subset E$ имеет меру нуль, то все его измеримые подмножества тоже имеют меру нуль, и $(E \sm A, F \cup A)$ --- тоже разложение Хана.
 
-    Теперь можно определить \emph{положительную} и \emph{отрицательную части меры} $\mu^+(a) \bydef \mu(A \cap E)$ и $\mu^-(a) \bydef -\mu(a \cap E)$.
+    Теперь можно определить \emph{положительную} и \emph{отрицательную части меры} $\mu^+(a) \bydef \mu(a \cap E)$ и $\mu^-(a) \bydef -\mu(a \cap F)$.
     Тогда $\mu(a) = \mu^{+}(a) - \mu^-(a)$, тем самым любая конечная вещественная мера есть разность двух неотрицательных.
 
     \definition[Модуль меры]{
         $|\mu|(a) \bydef \mu^+(a) + \mu^-(a)$.
     }
-    Введём естественный частичный порядок на мерах: поточечно $\mu \le \nu \iff \forall e \in \Sigma: \mu(e) \le \nu(e)$.
+    Введём естественный частичный порядок на мерах: $\mu \le \nu \iff \forall e \in \Sigma: \mu(e) \le \nu(e)$.
     \proposal{
         $\mu^+$ есть наименьшая из неотрицательных мер $\nu: \nu \ge \mu$.
         \provehere{
@@ -2660,7 +2661,7 @@
     \note{
         Пусть $g: X \map \R, g(x) = \all{1,&x \in E \\ -1,&x \in F}$. Тогда $\mu(e) = \int\limits_{e}g\d\abs{\mu}$.
         \provehere{
-            \[\int\limits_{e}g\d|\mu| = \int\limits_{e \cap E}\d|\mu| - \int\limits_{e \cap F}\d|\mu| = \int\limits_{e \cap E}\d\mu^+ - \int\limits_{e \cap F}\d\mu^- = \mu^+(e \cap E) - \mu^-(e \cap F) = \mu(e)\qedhere\]
+            \[\int\limits_{e}g\d|\mu| = \int\limits_{e \cap E}\d|\mu| - \int\limits_{e \cap F}\d|\mu| = \int\limits_{e \cap E}\d\mu^+ - \int\limits_{e \cap F}\d\mu^- = \mu^+(e) - \mu^-(e) = \mu(e)\qedhere\]
         }
     }
     \section{Интеграл комплексных функций}
@@ -2688,13 +2689,13 @@
 
         Иными словами, не зря модуль меры и её полную вариацию обозначают одинаково.
         \provehere{
-            Если $a \in \Sigma$, и $e_1 \sqcup \cdots \sqcup e_n = a$, то $\sum\limits_{j =1}^{n}|\mu(e_j)| \le \sum\limits_{j = 1}^{n}\mu^+(e_j) + \mu^-(e_j) \le \mu^+(a) + \mu^-(a)$.
+            Если $a \in \Sigma$, и $e_1 \sqcup \cdots \sqcup e_n = a$, то $\sum\limits_{j =1}^{n}|\mu(e_j)| \le \sum\limits_{j = 1}^{n}(\mu^+(e_j) + \mu^-(e_j)) = \mu^+(a) + \mu^-(a)$.
 
             Обратно, разобьём $a =  (a \cap E) \cup (a \cap F)$ (где $E,F$ --- разложение Хана). Тогда $|\mu|(a) \ge |\mu(a \cap E)| + |\mu(a \cap F)| = \mu^+(a) + \mu^-(a)$.
         }
     }
     \lemma{
-        Пусть $\rho_1, \rho_2$ --- комплексные меры на $\Sigma$, $\alpha,\beta \in \C$. Тогда $\forall a \in \Sigma: |(\alpha \rho_1 + \beta \rho_2)(a)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)$.
+        Пусть $\rho_1, \rho_2$ --- комплексные меры на $\Sigma$, $\alpha,\beta \in \C$. Тогда $\forall a \in \Sigma: |(\alpha \rho_1 + \beta \rho_2)|(a) \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)$.
         \provehere{ Пусть $a = e_1 \sqcup \cdots \sqcup e_n$. Оценим
             \[\sum\limits_{j = 1}^{n}|(\alpha \rho_1 + \beta \rho_2)(e_j)| \le |\alpha|\sum\limits_{j = 1}^{n}|\rho_1(e_j)| + |\beta|\sum\limits_{j = 1}^{n}|\rho_2(e_j)| \le |\alpha||\rho_1|(a) + |\beta||\rho_2|(a)\]
             и перейдём к супремуму по всем разбиениям $a = e_1 \sqcup \cdots \sqcup e_n$.
@@ -2723,9 +2724,9 @@
 
             Пусть $\mu_1(a) = \int\limits_{a}h\d\nu$, и положим $\mu_2 \coloneqq \mu - \mu_1$.
             \[\mu(a) = \int\limits_{a}h\d\nu + \int\limits_{a}(g - h)\d\nu = \mu_1(a) + \mu_2(a)\]
-            \[\all{|\mu|(a) \le |\mu_1(a)|(a) + |\mu_2|(a) \\ |\mu_1|(a) \le |\mu|(a) + |\mu_2|(a) \qquad \then \quad |\mu_1|(a) - |\mu_2|(a) \le |\mu|(a) \le |\mu_1|(a) + |\mu_2|(a)}\]
+            \[\all{|\mu|(a) \le |\mu_1|(a) + |\mu_2|(a) \\ |\mu_1|(a) \le |\mu|(a) + |\mu_2|(a) \qquad \then \quad |\mu_1|(a) - |\mu_2|(a) \le |\mu|(a) \le |\mu_1|(a) + |\mu_2|(a)}\]
             Оценим $\mu_2(a)$:
-            \[|\mu_2(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le |\eps|\]
+            \[|\mu_2|(a) \le \int\limits_{a}|g - h|\d\nu \le \int\limits_{X}|g - h|\d\nu \le \eps\]
             Отсюда получается
             \[\int\limits_{a}|h|\d\nu - \eps \le |\mu|(a) \le \int\limits_{a}|h|\d\nu + \eps\]
             И наконец можно заменить $h$ на $g$, при этом мы ошибёмся не больше, чем на $\eps$.
@@ -2782,13 +2783,13 @@
         \provehere{
             Положим $A \coloneqq \sup\defset{|\rho|(e)}{e \in \Sigma, \lambda(e) = 0}$. Тогда $\exists e_n \in \Sigma: |\rho|(e_n) > A - \frac{1}{n}$.
 
-            Положим $\overline{e_n} = e_n \cup e_{n + 1} \cup \cdots$. Тогда $\overline{e_1} \subset \overline{e_2} \subset \cdots$, и положим $E = \bigcup\limits_{n = 1}^{\infty}\overline{e_n}$.
+            Положим $\overline{e_n} = e_n \cup e_{n + 1} \cup \cdots$. Тогда $\overline{e_1} \supset \overline{e_2} \supset \cdots$, и положим $E = \bigcap\limits_{n = 1}^{\infty}\overline{e_n}$.
 
-            В силу монотонной непрерывности $|\rho|(E) = \lim\limits_{n \to \infty}|\rho|(e_n) = A$. Так как $\forall n: \lambda(\overline{e_n}) = 0$, то $\lambda(E) = 0$.
+            В силу монотонной непрерывности $|\rho|(E) = \lim\limits_{n \to \infty}|\rho|(\overline{e_n}) = A$. Так как $\forall n: \lambda(\overline{e_n}) = 0$, то $\lambda(E) = 0$.
 
             Разложим $\rho_1(e) \coloneqq \rho(e \sm E), \rho_2(e) \coloneqq \rho(a \cap E)$. В таком представлении $\rho_2$ очевидно сингулярна относительно $\lambda$. Абсолютную непрерывность $\rho_1$ относительно $\lambda$ докажем от противного.
 
-            Пусть $\exists b \in \Sigma, b \subset X \sm E: |\rho_1(b)| > 0, \lambda(b) = 0$.
+            Пусть $\exists b \in \Sigma, b \subset X \sm E: |\rho_1|(b) > 0, \lambda(b) = 0$.
             Тогда определим $E_1 = E \cup b$, и окажется, что $|\rho|(E_1) = |\rho|(E) + |\rho|(b) \ge A + |\rho_1|(b) > A$, противоречие.
         }
     }
