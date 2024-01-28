@@ -334,7 +334,7 @@
         Мера Лебега на $\mathcal{P}_0(\R^n)$.
     }
     \precaution{
-        Для полукольца возможно бесконечных параллелепипедов теорема Александрова не применима: $\R \times \{0\} \subset \R^2$ не регулярно сверху, всякий параллелепипед, содержащий $\R \times \{0\}$ уже имеет бесконечную меру \comment{(но ведь можно приблизить сколь угодно близко открытым множеством, в чём проблема?)}.
+        Для полукольца возможно бесконечных параллелепипедов теорема Александрова не применима: $\R \times \{0\} \subset \R^2$ не регулярно сверху, всякий параллелепипед, содержащий $\R \times \{0\}$ уже имеет бесконечную меру.
     }
     \theorem[А. Д. Александров]{
         Пусть $X$ --- топологическое пространство, $\mathcal{A} \subset 2^X$ --- полукольцо, $\mu$ --- регулярная мера на $\mathcal{A}$.
@@ -2049,7 +2049,7 @@
             Возьмём модуль, возведём в степень $p$, и проинтегрируем:
             \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}{|f(x - y) - f(x)|g(y)}\d y\right)^p \d x\]
             Далее вводим меру $\nu(e) = \int\limits_{e}g(y)\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$ (применяем к выражению внутри скобок):
-            \gather{\int\limits_{\R^n}\left(|f(x - y) - f(x)| \cdot 1\right)\nu(y) \le \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p\nu(y)\right)^{\frac{1}{p}} \cdot \underbrace{\left(~\int\limits_{\R^n}1^q\nu(y)\right)^{\frac{1}{q}}}_{1} = \\
+            \gather{\int\limits_{\R^n}\left(|f(x - y) - f(x)| \cdot 1\right)\d\nu(y) \le \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p\d\nu(y)\right)^{\frac{1}{p}} \cdot \underbrace{\left(~\int\limits_{\R^n}1^q\d\nu(y)\right)^{\frac{1}{q}}}_{1} = \\
             = \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p g(y)\d y\right)^{\frac{1}{p}}
             }
             Далее, подставляя внутрь скобок полученную оценку, получаем
@@ -2787,7 +2787,7 @@
 
             В силу монотонной непрерывности $|\rho|(E) = \lim\limits_{n \to \infty}|\rho|(\overline{e_n}) = A$. Так как $\forall n: \lambda(\overline{e_n}) = 0$, то $\lambda(E) = 0$.
 
-            Разложим $\rho_1(e) \coloneqq \rho(e \sm E), \rho_2(e) \coloneqq \rho(a \cap E)$. В таком представлении $\rho_2$ очевидно сингулярна относительно $\lambda$. Абсолютную непрерывность $\rho_1$ относительно $\lambda$ докажем от противного.
+            Разложим $\rho_1(e) \coloneqq \rho(e \sm E), \rho_2(e) \coloneqq \rho(e \cap E)$. В таком представлении $\rho_2$ очевидно сингулярна относительно $\lambda$. Абсолютную непрерывность $\rho_1$ относительно $\lambda$ докажем от противного.
 
             Пусть $\exists b \in \Sigma, b \subset X \sm E: |\rho_1|(b) > 0, \lambda(b) = 0$.
             Тогда определим $E_1 = E \cup b$, и окажется, что $|\rho|(E_1) = |\rho|(E) + |\rho|(b) \ge A + |\rho_1|(b) > A$, противоречие.
