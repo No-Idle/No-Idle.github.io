@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  28 JAN 2024 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  28 JAN 2024 21:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1449,12 +1449,7 @@ Overfull \hbox (33.32086pt too wide) in paragraph at lines 1882--1882
 \OT1/cmr/m/n/10 = 0$\T2A/faq/m/n/10 . »ны-ми сло-ва-ми, $[]$. 
  []
 
-[42] [43] [44] [45] [46] [47]
-Overfull \hbox (70.43639pt too wide) detected at line 2112
-[]
- []
-
-[48] [49] [50]
+[42] [43] [44] [45] [46] [47] [48] [49] [50]
 Overfull \hbox (51.92429pt too wide) detected at line 2276
 [] \OT1/cmr/m/n/10 = [] = [] = \OMS/cmsy/m/n/10 j [] \OML/cmm/m/it/10 A\OMS/cms
 y/m/n/10 j[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ^^^ [][]\OT1/cmr/m/n/10 = \OM
@@ -1494,7 +1489,7 @@ ut line 2361.
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
 ut line 2361.
 
-
+[53]
 Overfull \hbox (13.08203pt too wide) in paragraph at lines 2385--2385
 \T2A/faq/m/n/10 »з счЉт-ной по-лу-ад-ди-тив-но-сти $\OML/cmm/m/it/10 ^^Q\OT1/cm
 r/m/n/10 (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 F\OT1/cmr/m/n/
@@ -1504,7 +1499,6 @@ OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 C[]
 с дру-гой сто-ро-ны $[]$.
  []
 
-[53]
 
 LaTeX Warning: Command \CYRS invalid in math mode on input line 2385.
 
@@ -1572,7 +1566,7 @@ ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/wasy-type1/wasy10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/calculus-3.pd
-f (65 pages, 568868 bytes).
+f (65 pages, 569252 bytes).
 PDF statistics:
  986 PDF objects out of 1000 (max. 8388607)
  849 compressed objects within 9 object streams

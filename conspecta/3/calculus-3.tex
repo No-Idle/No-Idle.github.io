@@ -2039,7 +2039,7 @@
         Тогда $\|f * g\|_{L^r} \le \|f\|_{L^s}\|g\|_{L^t}$.
     }
     \exercise{
-        Если $\frac{1}{p} + \frac{1}{q} = 1$, и $1 < p, q < \infty$, то $\|f*g\|_{L^{\infty}} \le \|f\|_{L^p} \|g\|_{L^q}$, и при этом $f * g$ непрерывна и стремится к нулю на $\infty$ \comment{Что? Не верится, что свёртка двух произвольных функций непрерывна}.
+        Если $\frac{1}{p} + \frac{1}{q} = 1$, и $1 < p, q < \infty$, то $\|f*g\|_{L^{\infty}} \le \|f\|_{L^p} \|g\|_{L^q}$, и при этом $f * g$ непрерывна и стремится к нулю на $\infty$. \comment{Что? Не верится, что свёртка двух произвольных функций непрерывна}.
     }
     \fact{\label{strange-fact}
         Пусть $g \in L^1(\R^n)$, $g \ge 0$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p < \infty$:
@@ -2106,8 +2106,8 @@
 
             Теперь проверим равномерную сходимость.
             Так как $f$ имеет компактный носитель, то она равномерно непрерывна: $\forall \eps > 0: \exists \delta > 0: |x_1 - x_2| < \delta \then |f(x_1) - f(x_2)| < \eps$. Пусть $K = \max\limits_{x \in \R^n}|f(x)|$.
-            \gather{(f * g_j)(x) - g(x) = \int\limits_{\R^n}f(x - y)g_j(y)\d y - f(x) = \int\limits_{\R^n}\left(f(x - y) - f(x) \right)g_j(y)\d y\\
-            \abs{(f * g_j)(x) - g(x) } \le \int\limits_{|y| < \delta}|f(x - y) - f(x)|g_j(y)\d y + \int\limits_{|y| \ge \delta}\left(|f(x - y)| + |f(x)|\right)g_j(y)\d y \le \eps + 2K\int\limits_{|y| \ge \delta}g_y(y)\d y \underset{j \to \infty}\Map 0}
+            \[(f * g_j)(x) - g(x) = \int\limits_{\R^n}f(x - y)g_j(y)\d y - f(x) = \int\limits_{\R^n}\left(f(x - y) - f(x) \right)g_j(y)\d y\]
+            \multline{\abs{(f * g_j)(x) - g(x) } \le\\\le \int\limits_{|y| < \delta}|f(x - y) - f(x)|g_j(y)\d y + \int\limits_{|y| \ge \delta}\left(|f(x - y)| + |f(x)|\right)g_j(y)\d y \le\\\le \eps + 2K\int\limits_{|y| \ge \delta}g_y(y)\d y \underset{j \to \infty}\rightrightarrows 0}
         }
     }
     \fact{
