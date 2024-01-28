@@ -2029,7 +2029,7 @@
             \multline{
                 \circlesign{\le} \int\limits_{\R^n}\left[\left(~\int\limits_{\R^n}|f(x - y)|^p\d\nu(y)\right)^{\frac{1}{p}}\left(~\int\limits_{\R^n}1^q\d\nu\right)^{\frac{1}{q}}\right]^p \d x=\\= \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y)|^p|g(y)|\d y\right)\d x \cdot \|g\|_{L^1}^{\frac{p}{q}} \underset{\text{\cref{p-equals-1}}}{\le} \|f\|^p_{L^p}\cdot \|g\|_{L^1} \cdot \|g\|_{L^1}^{\frac{p}{q}}
             }
-            Тем самым, $\|f * g\|^p_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|_{L^p}$ и $\|f * g\|^p_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
+            Тем самым, $\|f * g\|^p_{L^p} \le \|g\|_{L^1}^{\frac{p}{q} + 1} \|f\|^p_{L^p}$ и $\|f * g\|_{L^p} \le \|f\|_{L^p}\|g\|_{L^1}$.
         }
     }
     \exercise[Неравенство Юнга]{
@@ -2040,17 +2040,19 @@
     \exercise{
         Если $\frac{1}{p} + \frac{1}{q} = 1$, и $1 < p, q < \infty$, то $\|f*g\| \le \|f\|_{L^p} \|g\|_{L^q}$, и при этом $f * g$ непрерывна и стремится к нулю на $\infty$.
     }
-    \fact{
+    \fact{\label{strange-fact}
         Пусть $g \in L^1(\R^n)$, $g \ge 0$, $\int\limits_{\R^n}g(x)\d x = 1$. Тогда для $f \in L^p(\R^n)$ при $1 \le p < \infty$:
-        \[\|f * g - f\|^p_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d y \d x\]
+        \[\|f * g - f\|^p_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g(y)\d y \d x\]
         \provehere{
             $(f * g)(x) - f(x) = \int\limits_{\R^n}f(x - y)g(y)\d y - \int\limits_{\R^n}f(x)g(y)\d y = \int\limits_{\R^n}(f(x - y) - f(x))g(y)\d y$
             Возьмём модуль, возведём в степень $p$, и проинтегрируем:
-            \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}|f(x - y) - f(x)|g(y)\d y\right)^p \d x\]
+            \[\int\limits_{\R^n}|(f * g)(x) - f(x)|^p \d x = \int\limits_{\R^n}\left(~\int\limits_{\R^n}{|f(x - y) - f(x)|g(y)}\d y\right)^p \d x\]
             Далее вводим меру $\nu(e) = \int\limits_{e}g(y)\d y$, и опять применяем неравенство Гёльдера к ${|f(x - y) - f(x)| \cdot 1}$ (применяем к выражению внутри скобок):
             \gather{\int\limits_{\R^n}\left(|f(x - y) - f(x)| \cdot 1\right)\nu(y) \le \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p\nu(y)\right)^{\frac{1}{p}} \cdot \underbrace{\left(~\int\limits_{\R^n}1^q\nu(y)\right)^{\frac{1}{q}}}_{1} = \\
-            = \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p g(y)\d y\right)^{\frac{1}{p}} \underset{\text{\cref{p-equals-1}}}{\le} \left(~\int\limits_{\R^n}|f(x - y) - f(x)|\d y \cdot \int\limits_{\R^n}g(y)\d y\right)^{\frac1p}
+            = \left(~\int\limits_{\R^n}|f(x - y) - f(x)|^p g(y)\d y\right)^{\frac{1}{p}}
             }
+            Далее, подставляя внутрь скобок полученную оценку, получаем
+            \[\int\limits_{\R^n}\left(\left(~\int\limits_{\R^n}{|f(x - y) - f(x)|^p g(y)}\d y\right)^{\frac{1}{p}}\right)^p \d x\]
         }
     }
     Будем обозначать пространство \emph{бесконечно дифференцируемых функций на $\R^n$ с компактным носителем} значком $\mathcal{D}(\R^n)$.
@@ -2095,7 +2097,7 @@
 
         Если $f$ непрерывна с компактным носителем (достаточно потребовать равномерной непрерывности), то $f * g_j \rightrightarrows f$
         \provehere{
-            При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \le \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x \cdot g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x \d y + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x\d y}
+            При $1 \le p < \infty$: \multline{\|(f * g_j) - f\|_{L^p} \underset{\text{\cref{strange-fact}}}{\le} \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p g_j(y)\d x \d y = \int\limits_{\R^n}\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x \cdot g_j(y)\d y =\\= \int\limits_{|y| < \delta}g_j(y)\int\limits_{\R^n}|f(x - y) - f(x)|^p\d x \d y + \int\limits_{|y| \ge \delta}g_j(y)\int\limits_{\R^n}\underbrace{|f(x - y) - f(x)|^p}_{\le 2^p\left(|f(x - y)|^p + |f(y)|^p\right)}\d x\d y}
             $2^p\int\limits_{\R^n}|f(x - y)|^p + |f(y)|^p\d x \le 2^{p + 1}\int\limits_{\R^n}|f(x)|^p\d x$, и это конечно.
             Значит, по определению аппроксимативной единицы второе слагаемое мало при больших $j$.
 

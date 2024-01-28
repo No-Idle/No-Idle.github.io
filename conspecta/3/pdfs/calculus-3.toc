@@ -37,12 +37,12 @@
 \contentsline {subsection}{\numberline {2.9.3}Свойства свёртки}{45}{subsection.2.9.3}%
 \contentsline {subsection}{\numberline {2.9.4}Слегка другой способ построения аппроксимативной единицы}{48}{subsection.2.9.4}%
 \contentsline {section}{\numberline {2.10}Преобразования меры при дифференцируемом отображении}{49}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Мера Лебега на поверхностях}{51}{section.2.11}%
+\contentsline {section}{\numberline {2.11}Мера Лебега на поверхностях}{52}{section.2.11}%
 \contentsline {subsection}{\numberline {2.11.1}Частный случай линейного $f$}{52}{subsection.2.11.1}%
 \contentsline {subsection}{\numberline {2.11.2}$p$-мера Хаусдорфа}{52}{subsection.2.11.2}%
 \contentsline {section}{\numberline {2.12}Некоторые конкретные интегралы}{57}{section.2.12}%
-\contentsline {chapter}{\numberline {3}Элементы общей теории меры}{58}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Разложение Хана}{59}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Интеграл комплексных функций}{60}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Интеграл по комплексной мере}{62}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Разложение Лебега}{63}{section.3.3}%
+\contentsline {chapter}{\numberline {3}Элементы общей теории меры}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Разложение Хана}{60}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Интеграл комплексных функций}{61}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Интеграл по комплексной мере}{63}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Разложение Лебега}{64}{section.3.3}%
