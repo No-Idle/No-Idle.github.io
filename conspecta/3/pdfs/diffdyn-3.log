@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  23 JAN 2024 12:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,6 +406,13 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip54
 \dth@everypar=\toks30
 )
+(/usr/share/texlive/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -587,7 +594,7 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
+\symrsfs=\mathgroup7
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
@@ -625,7 +632,7 @@ Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
-\symstmry=\mathgroup7
+\symstmry=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
@@ -708,6 +715,9 @@ Package trimclip Info: Using driver 'tc-pdftex.def'.
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1069,11 +1079,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box71
 )
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux
+(pdfs/diffdyn-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `diffdyn-3.aux'.
@@ -1180,8 +1189,7 @@ LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
 LaTeX Info: Redefining \nameref on input line 11.
 
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.out)
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.out)
+(pdfs/diffdyn-3.out) (pdfs/diffdyn-3.out)
 \@outlinefile=\write4
 \openout4 = `diffdyn-3.out'.
 
@@ -1212,15 +1220,14 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 14.
-
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.toc
+ (pdfs/diffdyn-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ...�раектория}{47}{subsection.5.1.2}
+l.44 ...�раектория}{46}{subsection.5.1.2}
                                                   % [1
 
 ])
@@ -1436,19 +1443,22 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[50] [51] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.aux)
+[50] [51] (pdfs/diffdyn-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: F675163D86D9065F2A4198C5D66AF36F;14869.
  ) 
 Here is how much of TeX's memory you used:
- 30628 strings out of 479648
- 582557 string characters out of 5886115
- 958854 words of memory out of 5000000
- 47842 multiletter control sequences out of 15000+600000
- 505365 words of font info for 92 fonts, out of 8000000 for 9000
+ 30773 strings out of 479648
+ 584182 string characters out of 5886115
+ 959063 words of memory out of 5000000
+ 47976 multiletter control sequences out of 15000+600000
+ 507063 words of font info for 98 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,737b,862s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
@@ -1472,8 +1482,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/boondox/zxxrw8a.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/diffdyn-3.pdf
- (52 pages, 492646 bytes).
+Output written on pdfs/diffdyn-3.pdf (52 pages, 492648 bytes).
 PDF statistics:
  739 PDF objects out of 1000 (max. 8388607)
  634 compressed objects within 7 object streams

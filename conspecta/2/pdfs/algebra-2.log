@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,6 +406,13 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip54
 \dth@everypar=\toks30
 )
+(/usr/share/texlive/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -587,7 +594,7 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
+\symrsfs=\mathgroup7
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
@@ -625,7 +632,7 @@ Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
-\symstmry=\mathgroup7
+\symstmry=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
@@ -708,6 +715,9 @@ Package trimclip Info: Using driver 'tc-pdftex.def'.
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1217,7 +1227,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.48 ...јРЅРѕРіРѕС‡Р»РµРЅС‹}{31}{subsection.2.9.1}
+l.48 ...јРЅРѕРіРѕС‡Р»РµРЅС‹}{29}{subsection.2.9.1}
                                                   % [1
 
 ] [2])
@@ -1523,13 +1533,6 @@ $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V [] V[] [] U[]\OT1/cmr/m/n/10 ) = []$\T2A
  []
 
 [61] [62] [63]
-Overfull \hbox (34.6016pt too wide) in paragraph at lines 2946--2946
-[]\T2A/faq/m/n/10 По лем-ме $\OML/cmm/m/it/10 H$ \T2A/faq/m/n/10 су-ще-ству-ет;
- $\OML/cmm/m/it/10 H$ \T2A/faq/m/n/10 невы-рож-де-на, зна-чит до-ста-точ-но со-
-слать-ся на (lemma []5.6.1[]).
- []
-
-
 Overfull \hbox (41.91989pt too wide) in paragraph at lines 2949--2951
 []\T2A/faq/m/n/10 Пусть $\OML/cmm/m/it/10 K$ \T2A/faq/m/n/10 --- про-из-воль-но
 е по-ле, $\OML/cmm/m/it/10 V$ \T2A/faq/m/n/10 --- сим-плек-ти-че-ское про-стран
@@ -1689,15 +1692,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `algebra-2.out' has not changed.
 (rerunfilecheck)             Checksum: 9CE9AE2B986B02C339BF584F4F442DFB;42883.
  ) 
 Here is how much of TeX's memory you used:
- 31526 strings out of 479648
- 604745 string characters out of 5886115
- 861266 words of memory out of 5000000
- 48271 multiletter control sequences out of 15000+600000
- 508221 words of font info for 101 fonts, out of 8000000 for 9000
+ 31674 strings out of 479648
+ 606954 string characters out of 5886115
+ 861574 words of memory out of 5000000
+ 48408 multiletter control sequences out of 15000+600000
+ 510202 words of font info for 108 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,24n,103p,973b,1179s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
@@ -1723,7 +1729,7 @@ onts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/
 stmary10.pfb>
-Output written on pdfs/algebra-2.pdf (91 pages, 686629 bytes).
+Output written on pdfs/algebra-2.pdf (91 pages, 686528 bytes).
 PDF statistics:
  1797 PDF objects out of 2073 (max. 8388607)
  1640 compressed objects within 17 object streams

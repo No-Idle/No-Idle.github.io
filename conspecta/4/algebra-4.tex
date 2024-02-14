@@ -1,0 +1,170 @@
+\documentclass[a4paper]{report}
+
+\usepackage{../mathstemplate}
+
+\date{IV семестр, весна 2024 г.}
+\title{Алгебра. Неофициальный конспект}
+\author{Лектор: Алексей Владимирович Степанов\\ Конспектировал Леонид Данилевич}
+
+\begin{document}
+    \shorthandoff{"}
+    \maketitle
+    \tableofcontents
+    \newpage
+    \setcounter{lection}{0}
+
+
+    \chapter{Гомологическая алгебра}
+    \newlection{12 февраля 2024 г.}
+
+
+    \section{Абелевы категории}
+    Напомним некоторые определения из предыдущей лекции.
+    \definition[Предаддитивная категория $\cat{A}$]{
+        $\forall A, B \in \cat{A}: \Mor_{\cat{A}}(A, B)$ образует абелеву группу, и везде, где определена, выполнена дистрибутивность: \[\alpha(\beta+\gamma) = \alpha\beta + \alpha\gamma \qquad (\beta + \gamma)\alpha = \beta\alpha + \gamma\alpha\]
+    }
+    \definition[Бипроизведение]{ Такая диаграмма, что
+    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJDIl0sWzAsMCwiQSJdLFsyLDAsIkIiXSxbMSwwLCJcXGlvdGFfMSIsMix7Im9mZnNldCI6MX1dLFswLDEsIlxccGlfMSIsMix7Im9mZnNldCI6MX1dLFswLDIsIlxccGlfMiIsMCx7Im9mZnNldCI6LTF9XSxbMiwwLCJcXGlvdGFfMiIsMCx7Im9mZnNldCI6LTF9XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              A \& C \& B
+              \arrow["{\iota_1}"', shift right, from=1-1, to=1-2]
+              \arrow["{\pi_1}"', shift right, from=1-2, to=1-1]
+              \arrow["{\pi_2}", shift left, from=1-2, to=1-3]
+              \arrow["{\iota_2}", shift left, from=1-3, to=1-2]
+        \end{tikzcd}\]
+        \numbers{
+            \item $\pi_1\iota_1 = \id_A$.
+            \item $\pi_2\iota_2 = \id_B$.
+            \item $ \iota_2 \pi_2+ \iota_1\pi_1  = \id_C$.
+            \item $\pi_2\iota_1 = 0$.
+            \item $\pi_1\iota_2 = 0$.
+        }
+    }
+    \definition[Аддитивная категория]{
+        Предаддитивная категория с финальным объектом и произведениями (любых двух объектов).
+    }
+    Эквивалентно, существуют инициальный объект и копроизведения, эквивалентно существуют нулевой объект и бипроизведения.
+    \definition[Предабелева категория]{
+        Аддитивная категория, в которой у всех морфизмов есть ядро и коядро.
+    }
+    \definition[(Ко)нормальный мономорфизм (эпиморфизм)]{
+        Он является (ко)эквалайзером (какой-то, неважно какой, пары стрелок).
+    }
+    \definition[Абелева категория]{
+        Предабелева категория, в которой все мономорфизмы нормальны.
+    }
+    Пусть $\cat C$ --- категория.
+    Вспомним про категорию стрелок $\cat{Arr}\cat{C}$, в которой объекты --- стрелки из $\Mor(\cat C)$, морфизм между стрелками $\phi, \psi$ --- коммутативная диаграмма:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsIlxccGhpIl0sWzIsMywiXFxwc2kiXSxbMCwyLCJcXGFscGhhIl0sWzEsMywiXFxiZXRhIl1d
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \bullet \& \bullet \\
+          \bullet \& \bullet
+          \arrow["\phi", from=1-1, to=1-2]
+          \arrow["\psi", from=2-1, to=2-2]
+          \arrow["\alpha", from=1-1, to=2-1]
+          \arrow["\beta", from=1-2, to=2-2]
+    \end{tikzcd}\]
+    Далее будем обозначать за $\ker f$ ядро стрелки, как уравнитель стрелки и нуля, а за $\Ker f \coloneqq \source(\ker f)$ --- объект (в конкретных категориях типа $\modR{R}$ это докатегорное понятие ядра --- подмодуль без стрелки-вложения).
+    \lemma{
+        $\ker, \coker$ --- функторы $\cat{Arr} \cat A \map \cat{Arr} \cat A$.
+        \provehere{
+            Достаточно доказать для ядер, для коядер двойственно.
+
+        Определим действие $\ker$ на морфизмах:
+        % https://q.uiver.app/#q=WzAsNixbMSwwLCJBIl0sWzEsMSwiQSciXSxbMiwwLCJCIl0sWzIsMSwiQiciXSxbMCwwLCJcXEtlciBmIl0sWzAsMSwiXFxLZXIgZiciXSxbMCwyLCJmIl0sWzEsMywiZiciXSxbMCwxLCJcXGFscGhhIl0sWzIsMywiXFxiZXRhIl0sWzQsMCwiXFxrZXIgZiJdLFs1LDEsIlxca2VyIGYnIl0sWzQsNSwiXFxleGlzdHMhXFxwaGkiLDAseyJsYWJlbF9wb3NpdGlvbiI6NDAsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+            \[\begin{tikzcd}[ampersand replacement=\&]
+            {\Ker f} \& A \& B \\
+            {\Ker f'} \& {A'} \& {B'}
+            \arrow["f", from=1-2, to=1-3]
+            \arrow["{f'}", from=2-2, to=2-3]
+            \arrow["\alpha", from=1-2, to=2-2]
+            \arrow["\beta", from=1-3, to=2-3]
+            \arrow["{\ker f}", from=1-1, to=1-2]
+            \arrow["{\ker f'}", from=2-1, to=2-2]
+            \arrow["{\exists!\phi}"{pos=0.4}, dashed, from=1-1, to=2-1]
+            \end{tikzcd}\]
+            $f \cdot \ker f = 0 \then \beta \cdot f \cdot \ker f = 0 \then f' \cdot \alpha \cdot \ker f = 0$, откуда по универсальному свойству ядра $\exists !\phi: \ker f' \cdot \phi = \alpha \cdot \ker f$.
+
+            Положим $\ker(\alpha, \beta) = (\phi, \alpha)$.
+            Далее несложно проверить, что данное определение сохраняет композицию и $\id$.
+        }
+    }
+    \definition[Точный функтор]{Функтор, сохраняющий ядра и коядра.}
+    \intfact[Теорема Фрейда --- Митчелла (Freyd --- Mitchell)] {\label{mitchell}
+    Для любой малой абелевой категории $\cat{A}$: $\exists R \in \cat{Ring}$ (необязательно коммутативное кольцо с единицей) и строгий, полный, точный функтор $\cat{A} \map \modR{R}$.
+    }
+    \proposal{
+        Для всякого морфизма $f: A \map B$ найдётся пунктирная стрелка, делающая диаграмму коммутативной.
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXEtlciBmIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMywwLCJcXENvS2VyIGYiXSxbMSwxLCJcXENvS2VyIFxca2VyIGYiXSxbMiwxLCJcXEtlciBcXGNva2VyIGYiXSxbMSwyLCJmIl0sWzAsMSwiXFxrZXIgZiJdLFsyLDMsIlxcY29rZXIgZiJdLFsxLDRdLFsyLDVdLFs0LDUsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Ker f}
+              \& A \& B \& {\CoKer f} \\
+              \& {\CoKer \ker f} \& {\Ker \coker f}
+              \arrow["f", from=1-2, to=1-3]
+              \arrow["{\ker f}", from=1-1, to=1-2]
+              \arrow["{\coker f}", from=1-3, to=1-4]
+              \arrow[from=1-2, to=2-2]
+              \arrow[from=1-3, to=2-3]
+              \arrow["{\exists!}", dashed, from=2-2, to=2-3]
+        \end{tikzcd}\]
+        Более того, в абелевой категории эта стрелка --- изоморфизм.
+        \provehere{
+            Следует из эпи-моно разложения, доказанного на прошлой лекции, или из теоремы Митчелла.
+
+            Само построение пунктирной стрелки получается из универсальных свойств, а доказательство того, что это --- изо --- непростое.
+        }
+    }
+    \lemma{ Пусть $\cat C$ --- полная подкатегория в абелевой категории $\cat A$. Следующие условия равносильны
+    \bullets{
+        \item $\cat C$ является абелевой.
+        \item \bullets{
+            \item $0 \in \cat C$.
+            \item $\cat C$ содержит бипроизведение любых двух своих объектов.
+            \item Ядра и коядра (взятые в $\cat A$) любых морфизмов из $\cat C$ лежат в $\cat C$.
+        }
+    }
+    \provewthen{
+        Очевидно.
+    }{
+        Чуть сложнее, доказывать не будем (и использовать тоже).
+    }
+    }
+    \section{Компл$\acute{\text{е}}$ксы}
+    Если противное не оговорено, то всё происходит в абелевой категории $\cat A$, большими буквами обозначены объекты данной категории, маленькими --- морфизмы.
+    \definition[Компл$\acute{\text{е}}$кс]{
+        Такая диаграмма, что $\forall k \in \Z: d_k \cdot d_{k+1} = 0$.
+        % https://q.uiver.app/#q=WzAsNSxbMSwwLCJDX3tuKzF9Il0sWzIsMCwiQ19uIl0sWzMsMCwiQ197bi0xfSJdLFswLDAsIlxcY2RvdHMiXSxbNCwwLCJcXGNkb3RzIl0sWzMsMCwiZF97bisxfSJdLFswLDEsImRfbiJdLFsxLDIsImRfe24tMX0iXSxbMiw0LCJkX3tuLTJ9Il1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {C_{n+1}} \& {C_n} \& {C_{n-1}} \& \cdots
+              \arrow["{d_{n+1}}", from=1-1, to=1-2]
+              \arrow["{d_n}", from=1-2, to=1-3]
+              \arrow["{d_{n-1}}", from=1-3, to=1-4]
+              \arrow["{d_{n-2}}", from=1-4, to=1-5]
+        \end{tikzcd}\]
+    }
+    Альтернативно, комплекс можно рассматривать, как функтор из категории $(\Z, \ge)$ (полуенной из частивно упорядоченного множества) в $\cat A$ (при котором образ композиции любых двух нетождественных морфизмов нулевой).
+
+    Ещё один, следующий, взгляд на комплексы работает только для конкретной категории, уже вложенной в $R$-модули.
+    \definition[Градуированный объект]{
+        $C_{\bullet} = \bigoplus\limits_{n \in \Z}C_n$ с морфизмом $d: C_\bullet \map C_\bullet$, таким, что $d(C_n) \subset C_{n+p}$ для некоторой фиксированной \emph{степени объекта} $p$ (чаще всего она равна $\pm1$).
+    }
+    \definition[Дифференциальный модуль]{
+        Градуированный объект $(C_\bullet, d)$ со свойством $d^2 = 0$.
+    }
+    \definition[Комплекс]{ Дифференциальный модуль степени $-1$. }
+    При развороте стрелок получается дифференциальный модуль степени $+1$, также известный, как \emph{кокомплекс}:
+    % https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiQ157bisxfSJdLFsyLDAsIkNee259Il0sWzMsMCwiQ157bi0xfSJdLFs0LDAsIlxcY2RvdHMiXSxbMSwwLCJkXntuKzJ9IiwyXSxbMiwxLCJkXntuKzF9IiwyXSxbMywyLCJkXm4iLDJdLFs0LDMsImRee24tMX0iLDJdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \cdots \& {C^{n+1}} \& {C^{n}} \& {C^{n-1}} \& \cdots
+          \arrow["{d^{n+2}}"', from=1-2, to=1-1]
+          \arrow["{d^{n+1}}"', from=1-3, to=1-2]
+          \arrow["{d^n}"', from=1-4, to=1-3]
+          \arrow["{d^{n-1}}"', from=1-5, to=1-4]
+    \end{tikzcd}\]
+    \precaution{
+    У кокомплекса несколько другая нумерация стрелок, но кокомплексы мы практически не будем использовать.
+    }
+    \definition[Сдвиг комплекса $(C_\bullet, d)$ на $p \in \Z$]{
+    Комплекс $(C[p]_\bullet, d[p])$, где $C[p]_n = C_{n+p}$ и $d[p]_n = (-1)^{p}d_{n+p}$.
+    }
+\end{document}

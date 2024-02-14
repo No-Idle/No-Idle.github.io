@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 JAN 2024 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,6 +406,13 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip54
 \dth@everypar=\toks30
 )
+(/usr/share/texlive/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -587,7 +594,7 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
+\symrsfs=\mathgroup7
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
@@ -625,7 +632,7 @@ Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
-\symstmry=\mathgroup7
+\symstmry=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
@@ -708,6 +715,9 @@ Package trimclip Info: Using driver 'tc-pdftex.def'.
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
 Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
 
@@ -1061,7 +1071,7 @@ File: tikzlibrarybabel.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
-\symwasy=\mathgroup8
+\symwasy=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
 LaTeX Font Info:    Redeclaring math symbol \ocircle on input line 243.
@@ -1378,11 +1388,11 @@ Package rerunfilecheck Info: File `probability-theory-2.out' has not changed.
 (rerunfilecheck)             Checksum: 8456DE56C8988920BAE1B8BF00F4191E;10225.
  ) 
 Here is how much of TeX's memory you used:
- 30190 strings out of 479648
- 574116 string characters out of 5886115
- 850347 words of memory out of 5000000
- 47431 multiletter control sequences out of 15000+600000
- 505373 words of font info for 102 fonts, out of 8000000 for 9000
+ 30338 strings out of 479648
+ 576325 string characters out of 5886115
+ 850782 words of memory out of 5000000
+ 47568 multiletter control sequences out of 15000+600000
+ 507354 words of font info for 109 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,20n,103p,1216b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
@@ -1404,7 +1414,7 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/probability-theory-2.pdf (37 pages, 407759 bytes).
+Output written on pdfs/probability-theory-2.pdf (37 pages, 407783 bytes).
 PDF statistics:
  660 PDF objects out of 1000 (max. 8388607)
  557 compressed objects within 6 object streams
