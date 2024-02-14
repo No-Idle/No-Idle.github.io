@@ -4901,8 +4901,8 @@
         \end{tikzcd}\]
 
         \provehere[Доказательство]{
-            \indentlemma{\label{kercokerker}
-                Для всякой стрелки $\phi$: $\Ker\Coker\Ker\phi = \Ker\phi$.
+            \indentlemma{\label{kerCoKerker}
+                Для всякой стрелки $\phi$: $\Ker\CoKer\Ker\phi = \Ker\phi$.
             }{
             % https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxLZXJcXHBoaSIsMl0sWzAsMiwiXFxwaGkiLDJdLFswLDMsIlxcQ29rZXJcXEtlclxccGhpIl0sWzQsMCwiXFxLZXJcXENva2VyXFxLZXJcXHBoaSJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiXFxlcHNfMiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiXFxlcHNfMSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
                 \[\begin{tikzcd}[ampersand replacement=\&]
@@ -4911,29 +4911,29 @@
                       \bullet \& \bullet
                       \arrow["\Ker\phi"', from=1-1, to=2-1]
                       \arrow["\phi"', from=2-1, to=3-1]
-                      \arrow["\Coker\Ker\phi", from=2-1, to=3-2]
-                      \arrow["\Ker\Coker\Ker\phi", from=1-2, to=2-1]
+                      \arrow["\CoKer\Ker\phi", from=2-1, to=3-2]
+                      \arrow["\Ker\CoKer\Ker\phi", from=1-2, to=2-1]
                       \arrow["\eta", dashed, from=3-2, to=3-1]
                       \arrow["{\eps_2}"', shift right, dashed, from=1-1, to=1-2]
                       \arrow["{\eps_1}"', shift right, dashed, from=1-2, to=1-1]
                 \end{tikzcd}\]
                 \numbers{
-                    \item Разместим на диаграмме стрелки $\phi, \Ker\phi, \Coker\Ker\phi$ и $\Ker\Coker\Ker\phi$.
-                    \item $\phi \cdot \Ker\phi = 0$, значит, $\phi$ пропускается через $\Coker\Ker\phi$: $\exists! \eta$.
-                    \item $\Coker\Ker\phi\cdot\Ker\Coker\Ker\phi = 0$, тогда и $\eta \cdot \Coker\Ker \phi\cdot \Ker\Coker\Ker \phi = 0$, то есть ${\phi \cdot \Ker\Coker\Ker \phi = 0}$.
-                    А значит, $\Ker\Coker\Ker\phi$ пропускается через $\Ker\phi$: $\exists! \eps_1$.
-                    \item $\Coker\Ker\phi\cdot \Ker\phi = 0$, тогда и $\Ker\phi$ пропускается через $\Ker\Coker\Ker\phi$: $\exists!\eps_2$.
-                    \item $\Ker\phi\cdot\eps_1 = \Ker\Coker\Ker\phi \then \Ker \phi \cdot\eps_1 \cdot\eps_2 = \Ker\phi$, и так как ядра определены с точностью до единственного изоморфизма, то $\eps_1\cdot\eps_2 = \id$.
+                    \item Разместим на диаграмме стрелки $\phi, \Ker\phi, \CoKer\Ker\phi$ и $\Ker\CoKer\Ker\phi$.
+                    \item $\phi \cdot \Ker\phi = 0$, значит, $\phi$ пропускается через $\CoKer\Ker\phi$: $\exists! \eta$.
+                    \item $\CoKer\Ker\phi\cdot\Ker\CoKer\Ker\phi = 0$, тогда и $\eta \cdot \CoKer\Ker \phi\cdot \Ker\CoKer\Ker \phi = 0$, то есть ${\phi \cdot \Ker\CoKer\Ker \phi = 0}$.
+                    А значит, $\Ker\CoKer\Ker\phi$ пропускается через $\Ker\phi$: $\exists! \eps_1$.
+                    \item $\CoKer\Ker\phi\cdot \Ker\phi = 0$, тогда и $\Ker\phi$ пропускается через $\Ker\CoKer\Ker\phi$: $\exists!\eps_2$.
+                    \item $\Ker\phi\cdot\eps_1 = \Ker\CoKer\Ker\phi \then \Ker \phi \cdot\eps_1 \cdot\eps_2 = \Ker\phi$, и так как ядра определены с точностью до единственного изоморфизма, то $\eps_1\cdot\eps_2 = \id$.
                     \item    Аналогично $\eps_2\cdot\eps_1 = \id$\qedhere
                 }
             }
-            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. Положим $\mu \coloneqq \Ker\Coker\phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
+            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. Положим $\mu \coloneqq \Ker\CoKer\phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
 
         % https://q.uiver.app/#q=WzAsNCxbMSwwLCJCIl0sWzIsMCwiXFxidWxsZXQiXSxbMCwwLCJBIl0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJcXENva2VyXFxwaGkiXSxbMiwwLCJcXHBoaSJdLFsyLDMsIlxcZXhpc3RzIVxcdmFyZXBzaWxvbiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcbXUiLDJdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
                   A \& B \& \bullet \\
                   \& \bullet
-                  \arrow["\Coker\phi", from=1-2, to=1-3]
+                  \arrow["\CoKer\phi", from=1-2, to=1-3]
                   \arrow["\phi", from=1-1, to=1-2]
                   \arrow["{\exists!\varepsilon}"', dashed, from=1-1, to=2-2]
                   \arrow["\mu"', from=2-2, to=1-2]
@@ -4952,19 +4952,19 @@
                   \arrow["\mu", from=1-3, to=1-5]
                   \arrow["\alpha"', from=1-1, to=2-1]
                   \arrow["\beta", from=1-5, to=2-5]
-                  \arrow["\Coker\phi"{pos=0.4}, from=1-5, to=1-6]
-                  \arrow["{\Coker\mu'}"'{pos=0.4}, from=2-5, to=2-6]
+                  \arrow["\CoKer\phi"{pos=0.4}, from=1-5, to=1-6]
+                  \arrow["{\CoKer\mu'}"'{pos=0.4}, from=2-5, to=2-6]
                   \arrow["\eta", dashed, from=1-6, to=2-6]
                   \arrow["{\exists!\psi}", dotted, from=1-3, to=2-3]
                   \arrow["\phi", curve={height=-18pt}, from=1-1, to=1-5]
                   \arrow["{\phi'}"', curve={height=18pt}, from=2-1, to=2-5]
             \end{tikzcd}\]
         \numbers{
-            \item $\Coker\mu'\cdot\mu'\cdot\eps'\cdot\alpha = 0$, так как уже $\Coker\mu'\cdot\mu' = 0$.
-            Значит, $\Coker\mu' \cdot\beta\cdot\phi = 0$, тогда $\Coker\mu' \cdot \beta$ пропускается (единственным образом) через $\Coker\phi$ --- получаем $\eta$.
-            \item Так как $\mu'$ --- моно, а категория абелева, то он --- чьё-то ядро. Cогласно~(\cref{kercokerker}) $\mu' = \Ker\Coker \mu'$.
-            \item $\eps$ --- эпи, $0\cdot\eps = (\Coker\phi \cdot \mu)\cdot \eps \then 0 = \Coker\phi \cdot \mu$.
-            \item Тогда $\eta \cdot \Coker\phi\cdot \mu = 0$, то есть $\Coker\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\Ker\Coker\mu' = \mu'$ --- получается $\psi$.
+            \item $\CoKer\mu'\cdot\mu'\cdot\eps'\cdot\alpha = 0$, так как уже $\CoKer\mu'\cdot\mu' = 0$.
+            Значит, $\CoKer\mu' \cdot\beta\cdot\phi = 0$, тогда $\CoKer\mu' \cdot \beta$ пропускается (единственным образом) через $\CoKer\phi$ --- получаем $\eta$.
+            \item Так как $\mu'$ --- моно, а категория абелева, то он --- чьё-то ядро. Cогласно~(\cref{kerCoKerker}) $\mu' = \Ker\CoKer \mu'$.
+            \item $\eps$ --- эпи, $0\cdot\eps = (\CoKer\phi \cdot \mu)\cdot \eps \then 0 = \CoKer\phi \cdot \mu$.
+            \item Тогда $\eta \cdot \CoKer\phi\cdot \mu = 0$, то есть $\CoKer\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\Ker\CoKer\mu' = \mu'$ --- получается $\psi$.
         \item По построению $\psi$: $\beta\mu = \mu'\psi$, надо ещё проверить коммутативность левого квадрата.
             Действительно, так как $\mu'$ --- моно, то $\mu'(\psi\eps) = \mu'(\eps'\alpha) \then \psi\eps = \eps'\alpha$.
         }
