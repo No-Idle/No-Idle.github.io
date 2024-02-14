@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 20:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 21:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1271,10 +1271,10 @@ Package rerunfilecheck Info: File `diffgeo-4.out' has not changed.
 (rerunfilecheck)             Checksum: 1E2D7AF225B5F4C9B9344FF7599976CA;614.
  ) 
 Here is how much of TeX's memory you used:
- 29332 strings out of 479648
- 557152 string characters out of 5886115
+ 29355 strings out of 479648
+ 557743 string characters out of 5886115
  834774 words of memory out of 5000000
- 46729 multiletter control sequences out of 15000+600000
+ 46752 multiletter control sequences out of 15000+600000
  505484 words of font info for 91 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,503b,1055s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1293,7 +1293,7 @@ cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/diffgeo-4.pdf
- (5 pages, 151960 bytes).
+ (5 pages, 153097 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
