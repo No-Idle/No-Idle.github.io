@@ -1,0 +1,4 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Гомологическая алгебра}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Абелевы категории}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Компл$\acute {\text {е}}$ксы}{4}{section.1.2}%

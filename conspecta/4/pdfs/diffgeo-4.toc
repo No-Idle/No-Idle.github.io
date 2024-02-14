@@ -1,0 +1,4 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Риманова геометрия}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Гладкие многообразия}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Гладкие отображения}{3}{subsection.1.1.1}%
