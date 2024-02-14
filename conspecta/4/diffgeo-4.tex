@@ -127,27 +127,27 @@
         Пусть $M$ --- гладкое многообразие, тогда карта --- диффеоморфизм между $U$ и $\phi(U)$.
         Обратно, любой диффеоморфизм между открытым подмножеством $W \subset M$ и областью $\Omega \subset \R^m$ --- карта.
         \provehere{
-            \[\begin{tikzpicture}
-                  \draw (-2,2) ellipse (2cm and 1cm);
-                  \draw (-2.5,2) ellipse (0.75cm and 0.5cm);
-                  \draw (-1.5,2) ellipse (0.75cm and 0.5cm);
-                  \node at (-2.5,2) {$V$};
-                  \node at (-1.5,2) {$U$};
-                  \node[above] at (-2,3) {$M$};
-                  \draw[->] (-1, 2) -- (1.5,2);
-                  \node[above] at (0.7,2) {$\phi$};
-                  \draw (2,2) ellipse (0.75cm and 0.5cm);
-                  \node at (2,2) {$\phi(U)$};
-                  \node[above] at (2,3) {$N$};
-                  \draw[->] (2,1.6) -- (2,0.2);
-                  \node[right] at (2,1) {$\id$};
-                  \draw (2,-0.1) ellipse (0.75 cm and 0.5 cm) node {$\phi(U)$};
-                  \draw[->] (-2.5,1.6) -- (-2.5,0.2);
-                  \node[left] at (-2.5, 0.7) {$\psi$};
-                  \draw (-2.5,-0.1) ellipse (0.75 cm and 0.5 cm) node {$\psi(V)$};
-                  \draw[->,dashed] (-2,-0.1) -- (1.5,-0.1);
-            \end{tikzpicture}\]
-            Гладкость карты, как диффеоморфизма, эквивалентна тому, что карта согласована с остальными в атласе: пунктирная стрелка $\psi(U \cap V) \map \phi(U \cap V)$ одновременно является отображением перехода между картами $(U, \phi)$ и $(V, \psi)$, и координатным представлением $\phi$ в картах $(V, \psi), (U, \id)$.
+        \[\begin{tikzpicture}
+              \draw (-2,2) ellipse (2cm and 1cm);
+              \draw (-2.5,2) ellipse (0.75cm and 0.5cm);
+              \draw (-1.5,2) ellipse (0.75cm and 0.5cm);
+              \node at (-2.5,2) {$V$};
+              \node at (-1.5,2) {$U$};
+              \node[above] at (-2,3) {$M$};
+              \draw[->] (-1, 2) -- (1.5,2);
+              \node[above] at (0.7,2) {$\phi$};
+              \draw (2,2) ellipse (0.75cm and 0.5cm);
+              \node at (2,2) {$\phi(U)$};
+              \node[above] at (2,2.5) {$N$};
+              \draw[->] (2,1.6) -- (2,0.2);
+              \node[right] at (2,1) {$\id$};
+              \draw (2,-0.1) ellipse (0.75 cm and 0.5 cm) node {$\phi(U)$};
+              \draw[->] (-2.5,1.6) -- (-2.5,0.2);
+              \node[left] at (-2.5, 0.7) {$\psi$};
+              \draw (-2.5,-0.1) ellipse (0.75 cm and 0.5 cm) node {$\psi(V)$};
+              \draw[->,dashed] (-2,-0.1) -- (1.5,-0.1);
+        \end{tikzpicture}\]
+            Гладкость карты, как диффеоморфизма, эквивалентна тому, что карта согласована с остальными в атласе: пунктирная стрелка $\psi(U \cap V) \map \phi(U \cap V)$ одновременно является и отображением перехода между картами $(U, \phi)$ и $(V, \psi)$, и координатным представлением $\phi$ в картах $(V, \psi), (U, \id)$.
         }
     }
     \corollary{Диффеоморфизм $f: M \map N$ задаёт естественную биекцию между картами $M$ и картами $N$ (а ещё между (максимальными) атласами $M$ и (максимальными) атласами $N$). }
