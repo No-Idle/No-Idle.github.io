@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 20:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 20:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1255,6 +1255,12 @@ LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textbullet' on input line 74.
 
+
+Overfull \hbox (10.10057pt too wide) in paragraph at lines 74--74
+[]\T2A/faq/m/it/10 Предостережение. []\T2A/faq/m/n/10 Это дей-стви-тель-но глад
+-кая струк-ту-ра, хо-тя об-рат-ное отоб-ра-же-ние $[]$
+ []
+
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 78.
 [3] [4] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/diffgeo-4.aux)
@@ -1287,7 +1293,7 @@ cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/diffgeo-4.pdf
- (5 pages, 152002 bytes).
+ (5 pages, 151960 bytes).
 PDF statistics:
  148 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
