@@ -95,17 +95,16 @@
     }
     \proposal{
         Для всякого морфизма $f: A \map B$ найдётся пунктирная стрелка, делающая диаграмму коммутативной.
-% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXEtlciBmIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMywwLCJcXENvS2VyIGYiXSxbMSwxLCJcXENvS2VyIFxca2VyIGYiXSxbMiwxLCJcXEtlciBcXGNva2VyIGYiXSxbMSwyLCJmIl0sWzAsMSwiXFxrZXIgZiJdLFsyLDMsIlxcY29rZXIgZiJdLFsxLDRdLFsyLDVdLFs0LDUsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXEtlciBmIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMywwLCJcXENvS2VyIGYiXSxbMSwxLCJcXENvS2VyIFxca2VyIGYiXSxbMiwxLCJcXEtlciBcXGNva2VyIGYiXSxbMSwyLCJmIl0sWzAsMSwiXFxrZXIgZiJdLFsyLDMsIlxcY29rZXIgZiJdLFsxLDQsIlxcY29rZXJcXGtlciBmIiwyXSxbNSwyLCJcXGtlciBcXGNva2VyIGYiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDUsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
-        {\Ker f}
-              \& A \& B \& {\CoKer f} \\
-              \& {\CoKer \ker f} \& {\Ker \coker f}
-              \arrow["f", from=1-2, to=1-3]
-              \arrow["{\ker f}", from=1-1, to=1-2]
-              \arrow["{\coker f}", from=1-3, to=1-4]
-              \arrow[from=1-2, to=2-2]
-              \arrow[from=1-3, to=2-3]
-              \arrow["{\exists!}", dashed, from=2-2, to=2-3]
+        {\Ker f} \& A \& B \& {\CoKer f} \\
+        \& {\CoKer \ker f} \& {\Ker \coker f}
+        \arrow["f", from=1-2, to=1-3]
+        \arrow["{\ker f}", from=1-1, to=1-2]
+        \arrow["{\coker f}", from=1-3, to=1-4]
+        \arrow["{\coker\ker f}"', from=1-2, to=2-2]
+        \arrow["{\ker \coker f}"', tail reversed, no head, from=2-3, to=1-3]
+        \arrow["{\exists!}", dashed, from=2-2, to=2-3]
         \end{tikzcd}\]
         Более того, в абелевой категории эта стрелка --- изоморфизм.
         \provehere{
