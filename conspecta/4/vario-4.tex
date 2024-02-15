@@ -24,7 +24,7 @@
 
     Пускай $X$ --- метрическое пространство, $J: X \map \R$ --- функция.
     \definition[$x \in X$ --- cтрогий локальный минимум]{
-        $\forall y \in U_{\delta}(x): \exists \delta > 0: J[y] > J[x]$. Квадратные скобочки --- косметическое.
+        $\exists \delta > 0: \forall y \in U_{\delta}(x): J[y] > J[x]$. Квадратные скобочки --- косметическое.
     }
     Аналогично определяются нестрогий минимум и максимумы.
 
@@ -45,8 +45,8 @@
 
     Они называются интегральные функционалы --- богатая теория, но часто встречаются в приложениях.
     \examples{
-        \item $u \in C^1, u(a) = u_a, u(b) = u_b, J[u] = \int\limits_{a}^{b}\sqrt{1 + (u')^2}\d x$ --- функционал длин графиков кривых.
-        \item $J = \int\limits_{a}^{b}(\frac{u^2}{2} - V(u))\d x$, где $V$ --- заданная функция. В механике называется действием.
+        \item $X = \defset{u \in C^1[a, b]}{u(a) = u_a, u(b) = u_b}, J[u] = \int\limits_{a}^{b}\sqrt{1 + (u')^2}\d x$ --- функционал длин графиков кривых.
+        \item $J = \int\limits_{a}^{b}(\frac{\dot u^2}{2} - V(u))\d x$, где $V$ --- заданная функция. В механике называется действием.
     }
     Сначала убедимся, что они непрерывны.
     \note[О норме]{
@@ -55,8 +55,8 @@
     \proposal{
         Пусть $X = C^1[a, b], L \in C([a, b] \times \R^n \times \R^n)$. Тогда $J$ (определена где-то выше) --- непрерывна на $X$.
         \provehere{
-            Пусть $u, \tilde{u} \in X, \|u - \tilde{u}\| < \delta < 1$. $J[u] - J[\tilde{u}] = \int\limits_{a}^{b}L(x, \tilde{u}(x), \dot{\tilde{u}}(x)) - L(x, u(x) \dot{u}(x))\d x \circlesign{\le}$
-            Заметим, что    $\|(x, \tilde{u}(x), \dot{\tilde{u}}(x)) - (x, u(x) \dot{u}(x))\|_{\R^{2n + 1}} < \delta$
+            Пусть $u, \tilde{u} \in X, \|u - \tilde{u}\| < \delta < 1$. $\left|J[u] - J[\tilde{u}]\right| = \left|\int\limits_{a}^{b}L(x, \tilde{u}(x), \dot{\tilde{u}}(x)) - L(x, u(x), \dot{u}(x))\d x\right| \circlesign{\le}$
+            Заметим, что    $\|(x, \tilde{u}(x), \dot{\tilde{u}}(x)) - (x, u(x), \dot{u}(x))\|_{\R^{2n + 1}} < \delta$
 
             Рассмотрим $K = [a, b] \times \overline{B_{\|u\|_x + 1}} \times \overline{B_{\|u\|_x + 1}}$ --- компакт в $\R^{2n + 1}$.
 
@@ -68,7 +68,7 @@
     Пусть $X$ --- нормированное пространство (необязательно замкнутое), $J: X \map \R$.
 
     \definition[Производная функционала $J$ в точке $x$ по направлению $h \in X$]{
-        $\delta J[x, h] = \frac{1}{\d t}\big|_{t = 0}J[x + th]$.
+        $\delta J[x, h] = \frac{\d}{\d t}\big|_{t = 0}J[x + th]$.
         Иначе говоря, \emph{вариация} $J$ по направлению $h$.
     }
     Вариация однородна: $\delta J[x, ch] = c \cdot \delta J[x, h]$. Неаддитивна: $\exists \delta J[x, h_1], \delta J[x, h_2]$ --- не следует существование $J[x, h_1 + h_2]$, а если и есть, то необязана быть суммой.
@@ -84,7 +84,7 @@
     }
 
     \subsection{Необходимые условия}
-    \lemma[Ди Буа-Руйона, что-то такое]{
+    \lemma[Дюбуа-Реймона, что-то такое]{
         Пускай $f \in C[a, b], \omega \in C^1[a, b], \omega(a) = \omega(b) = 0$, известно, что $\int\limits_{a}^{b}f \omega' = 0$ для всех таких $\omega$.
 
         Тогда $f \equiv \const$.
@@ -93,7 +93,7 @@
 
             Надеемся, что $f = \overline{f} = \frac{1}{b - a}\int\limits_{a}^{b}f$
 
-            Проинтегируем $f - \overline{f}$. $\omega(x) \coloneqq \int\limits_{a}^{x}f(x') - \overline{f}\d x'$ --- функция из $C^1$.
+            Проинтегируем $f - \overline{f}$. $\omega(x) \coloneqq \int\limits_{a}^{x}\left(f(x') - \overline{f}\right)\d x'$ --- функция из $C^1$.
 
             Дальше $\omega(a) = \omega(b) = 0$.
 
@@ -104,23 +104,23 @@
     \lemma[Формула первой вариации]{
         Давайте дифференцировать по всевозможным направлениям. Потребуем для этого $L \in C^1([a, b] \times \R^n \times \R^n)$.
 
-        Пусть $u, h \in X$. $J[u + th] - J[u] = \int L(t, u(t) + \tau h(t) + \dot{u}(t) + \tau \dot{h}(t)) - L(t, u(t), \dot{u}(t))\d t$.
+        Пусть $u, h \in X$. $J[u + th] - J[u] = \int\limits_{a}^{b}\left[ L(t, u(t) + \tau h(t) , \dot{u}(t) + \tau \dot{h}(t)) - L(t, u(t), \dot{u}(t))\right]\d t$.
 
         Формула Лагранжа.
 
         $\grad_u L$ --- вектор из $\R^n$, градиент
 
-        $\tau\int\limits_{a}^{b} \angles{ (\grad_u L)(t, u(t) + \tau_* h(t), \dot{u}(t) + \tau_* h'(t)), h(t)} + \angles{(\grad_{\dot{u}} L)(\dots), \dot{h}(t)}\d t$ где $\tau_* = \tau_*(t) \in [0, \tau]$.
+        $\tau\int\limits_{a}^{b} \left[\angles{ (\grad_u L)(t, u(t) + \tau_* h(t), \dot{u}(t) + \tau_* \dot{h}(t)), h(t)} + \angles{(\grad_{\dot{u}} L)(\dots), \dot{h}(t)}\right]\d t$ где $\tau_* = \tau_*(t) \in [0, \tau]$.
 
         Значит, $\frac{J[u + \tau h] - J[u]}{\tau} = \int\limits_{a}^{b} \dots$ --- вот тот, что выше
 
-        $\int\limits_{a}^{b}\angles{(\grad_u L)(t, u(t) + \tau_* h(t), \dot{u}(t) + \tau_* h'(t)), h(t)} \Map \int\limits_{a}^{b}\angles{(\grad_{u} L)(t, u(t), \dot{u}(t)), h(t)}\d t$
+        $\int\limits_{a}^{b}\angles{(\grad_u L)(t, u(t) + \tau_* h(t), \dot{u}(t) + \tau_* \dot{h}(t)), h(t)}\d t \Map \int\limits_{a}^{b}\angles{(\grad_{u} L)(t, u(t), \dot{u}(t)), h(t)}\d t$
 
-        Модуль разности аргументов не превосходит $\tau_* \|h\|_{X}$. Значит, $\|\grad_u L(\dots) - \grad_u L(\dots)\| \le \omega_{L\big|_K}(\tau_* \| h\|_X)$. Здесь $K \coloneqq [a, b] \times \overline{B}_{\|u\| + \|h\|} \times \overline{B_{\|u\| + \|h\|}}$.
+        Модуль разности аргументов не превосходит $\tau_* \|h\|_{X}$. Значит, $\|\grad_u L(\dots) - \grad_u L(\dots)\|_{\R^n} \le \omega_{L\big|_K}(\tau_* \| h\|_X)$. Здесь $K \coloneqq [a, b] \times \overline{B_{\|u\| + \|h\|}} \times \overline{B_{\|u\| + \|h\|}}$. %Здесь, видимо, $\tau_* \le 1$, чтобы задать именно такой компакт.
 
-        Значит, модуль разности интегралов I и II (где один стремится к другому) не превосходит $|(I) - (II)| \le \int\limits_{a}^{b}\omega_{L\big|_K}(\tau_* \|h\|)\d t \le (b - a)\omega_{L\big|_K}(\tau \|h\|)\d t \underset{t \to 0}\Map 0$.
+        Значит, модуль разности интегралов I и II (где один стремится к другому) не превосходит $|(I) - (II)| \le \int\limits_{a}^{b}\omega_{L\big|_K}(\tau_* \|h\|)\d t \le (b - a)\omega_{L\big|_K}(\tau \|h\|)\d t \underset{\tau \to 0}\Map 0$.
 
-        Разобрались с первым слагаемом под интегралом --- естественный предел. Аналогично со вторым слагаемым, значит, $\frac{J[u + \tau h] - J[u]}\tau \underset{t \to 0}\Map \int\limits_a^b\angles{(\grad_u L)(t, u(t), \dot{u}(t)), h(t)} + \angles{(\grad_{\dot{u}} L)(t, u(t), \dot{u}(t)), \dot{h}(t)}\d t$. Оказалось, что производная по любому направлению $\exists $ и равна тому, что слева.
+        Разобрались с первым слагаемом под интегралом --- естественный предел. Аналогично со вторым слагаемым, значит, $\frac{J[u + \tau h] - J[u]}\tau \underset{\tau \to 0}\Map \int\limits_a^b\left[\angles{(\grad_u L)(t, u(t), \dot{u}(t)), h(t)} + \angles{(\grad_{\dot{u}} L)(t, u(t), \dot{u}(t)), \dot{h}(t)}\right]\d t$. Оказалось, что производная по любому направлению $\exists $ и равна тому, что справа.
     }
     Пусть $u \in X$ --- экстремум.
     Тогда $\forall h \in X: \delta J[u, h] = 0$
@@ -128,31 +128,33 @@
     Градиент нуль --- уравнение на точку. Хотим уравнение на $u(t)$, избавимся от $h$. Подгоним под лемму Ди-кого?
 
     Введём $R(x) = \int\limits_{a}^{x}(\grad_u L)(t, u(t), \dot{u}(t))\d t$.
-    Тогда $\delta J[x, h] = \int\limits_a^b \angles{\dot{R}(t), h(t)} + \angles{\grad_{\dot{u}} L(t, u(t), \dot{u}(t)), h'(t)}$ Интегируем по частям.
+    Тогда $\delta J[x, h] = \int\limits_a^b \angles{\dot{R}(t), h(t)} + \angles{(\grad_{\dot{u}} L)(t, u(t), \dot{u}(t)), \dot{h}(t)}\d t$ Интегируем по частям. Получается (поскольку $R(a) = 0$) $\angles{R(b), h(b)} + \int\limits_{a}^{b}\angles{(\grad_{\dot{u}}L)(t, u(t), \dot{u}(t)) - R(t), \dot{h}(t)}\d t$
 
+    И это равно нулю $\forall h \in C^1[a, b]$. Рассмотрим $h$, обращающийся на концах в ноль: $h(a)=h(b)=0$. Теперь $\int\limits_{a}^{b}\angles{\xi(t), \dot{h}(t)}\d t = 0$, где $\xi(t)$ --- то, что стоит в левом слоте скалярного произведения чуть выше в формуле, получившейся после интегрирования по частям. Теперь мы покомпонентно можем применить лемму Д-Р.
+    
     $\angles{\grad_{\dot{u}}}$
-    Дальше я записал в тетрадку кое-что
+    Дальше я записал в тетрадку кое-что %видимо, я это выписал
 
-    $\xi(t) = \const$. Но теперь $R(t) \in C^1$, значит, $\grad_{\dot{u}}L(t, u(t), \dot{u}(t)) \in C^1$ тоже.
+    $\xi(t) \equiv \const$. Но теперь $R(t) \in C^1$, значит, $\grad_{\dot{u}}L(t, u(t), \dot{u}(t)) \in C^1$ тоже.
 
     Дифференцируя: $\frac{\d}{\d t}(\grad_{\dot{u}} L)(t, u(t), \dot{u}(t)) - (\grad_u L)(t, u(t), \dot{u}(t)) = 0$. Ого, уравнение на $L$. Уравнение Эйлера --- Лагранжа, основное уравнение вариационки.
 
     Примечание: в случае общего положения уравнение Э --- Л --- второго порядка ($u \in C^2$), потому что экстремаль \comment{как правильно сказать?}
 
-    $C \coloneqq \xi$. Теперь $h$ опять произвольный $\delta J[u, h] = \angles{R(b), h(b)} + \angles{C, \dot{h}(t)}\d t = \angles{R(b), h(b)} + \angles{C, h(b)} - \angles{C, h(a)}$.
+    $C \coloneqq \xi$. Теперь $h$ опять произвольный $\delta J[u, h] = \angles{R(b), h(b)} + \int\limits_{a}^{b}\angles{C, \dot{h}(t)}\d t = \angles{R(b), h(b)} + \angles{C, h(b)} - \angles{C, h(a)}$.
 
-    Теперь в качестве $h$ возьмём $h(b) = 0, h(a) = C$. Для него $\delta J[u, h] = -\|C\|^2$, значит, $\xi = C = 0$.
+    Теперь в качестве $h$ возьмём такую функцию, что $h(b) = 0, h(a) = C$. Для него $\delta J[u, h] = -\|C\|^2$, значит, $\xi = C = 0$.
 
     Что это означает? См. определение $\xi$. $R(a) = 0$, значит, $(\grad_{\dot{u}} L)(a, u(a), \dot{u}(a)) = 0$.
 
     Теперь наоборот, $h(b) = R(b)$. Тогда $\delta J[u, h] = \|R(b)\|^2 \then R(b) = 0$.
-    Аналогично $(\grad_{\dot{u}} L)(b, u(b), \dot{u}(b)) = 0$.
+    Аналогично (рассматривая $\xi(b)$) $(\grad_{\dot{u}} L)(b, u(b), \dot{u}(b)) = 0$.
 
     Два условия (но в разных точках) на уравнение второго порядка, можно надеяться, что хватит (но это совсем не факт).
 
     Подытожим в теорему.
     \theorem[Задача со свободными концами]{
-        Пусть $J \in C^1([a, b] \times \R^n \times \R^n)$, пусть $X = C^1[a, b]$, пусть $u$ --- локальный экстремум $J$.
+        Пусть $L \in C^1([a, b] \times \R^n \times \R^n)$, пусть $X = C^1[a, b]$, пусть $u$ --- локальный экстремум $J$.
 
         Тогда
         \numbers{
@@ -179,12 +181,12 @@
 
     Тем самым, такие функции $h$ прибавлять можно, будем это тоже называть вариацией: $\delta J[u, h]$ задаётся той же формулой.
     Дальше работает то же самое рассуждение, все действия те же самые, только при интегрировании по частям внеинтегральный член занулится, никаких дополнительных соотношений не возникнет.
-    \theorem[ с фиксированными концами]{
-        $L \in C^1(...), X = ...$, пусть $u$ --- локальный экстремум от $J$. Тогда
+    \theorem[ с фиксированными концами]{ %"Задача"?
+        $L \in C^1([a, b] \times \R^n \times \R^n), X = \defset{f \in C^1[a, b]}{f(a) = f_a, f(b) = f_b}$, пусть $u$ --- локальный экстремум $J$. Тогда
         \numbers{
             \item $(\grad_{\dot{u}} L)(t, u(t), \dot{u}(t)) \in C^1[a, b]$.
             \item $\frac{\d }{\d t} \grad_{\dot{u}} L = \grad_{u} L$ --- Э --- Л
         }
     }
-    Заметим, что у нас по-прежнему два условия и уравнение второго порядка.
+    Заметим, что у нас по-прежнему два условия (теперь уже данные в самой задаче) и уравнение второго порядка.
 \end{document}
