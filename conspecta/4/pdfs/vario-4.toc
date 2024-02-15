@@ -1,0 +1,2 @@
+\babel@toc {russian}{}\relax 
+\contentsline {subsection}{\numberline {0.0.1}Необходимые условия}{3}{subsection.0.0.1}%
