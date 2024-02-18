@@ -26,6 +26,7 @@ jobs:
         run: |
          for file in $(git diff --name-only main HEAD); do
           if [[ $file == *.tex ]]; then
+            echo "$file"
             base_dir=$(dirname $file)
             mkdir -p $base_dir/pdf
             pdflatex -output-directory=$base_dir/pdf $file
