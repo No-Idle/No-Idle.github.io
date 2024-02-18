@@ -17,6 +17,11 @@ jobs:
       - name: Install LaTeX
         run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended
 
+      - name: Config git
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          
       - name: Find and compile LaTeX files
         run: |
          for file in $(git diff --name-only main HEAD); do
@@ -24,5 +29,18 @@ jobs:
             base_dir=$(dirname $file)
             mkdir -p $base_dir/pdf
             pdflatex -output-directory=$base_dir/pdf $file
+            filename=$(basename "$file" .tex)
+            new_file="folder/pdf/$filename.pdf"
+            git add "$new_file"
           fi
          done
+         
+      - name: Pull latest changes from the remote repository
+        run: |
+         git pull origin main
+         git commit -m "add auto-compile pdf"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
