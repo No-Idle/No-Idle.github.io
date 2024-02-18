@@ -1,0 +1,28 @@
+name: Compile LaTeX PDF
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install LaTeX
+        run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended
+
+      - name: Find and compile LaTeX files
+        run: |
+          for file in $(git diff --name-only HEAD^); do
+            if [[ $file == *.tex ]]; then
+              base_dir=$(dirname $file)
+              mkdir -p $base_dir/pdf
+              pdflatex -output-directory=$base_dir/pdf $file
+            fi
+          done
