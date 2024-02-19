@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 FEB 2024 15:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1242,77 +1242,90 @@ l.13     \newpage
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <20.74> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <14.4> not available
-(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 21.
+(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 10.0pt on input line 25.
+(Font)              scaled to size 10.0pt on input line 23.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 7.0pt on input line 25.
+(Font)              scaled to size 7.0pt on input line 23.
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 5.0pt on input line 25.
+(Font)              scaled to size 5.0pt on input line 23.
 [2
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+faq on input line 1
-30.
-LaTeX Font Info:    No file TS1faq.fd. on input line 130.
+28.
+LaTeX Font Info:    No file TS1faq.fd. on input line 128.
 
 
 LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 130.
+(Font)              for symbol `textbullet' on input line 128.
 
 [3]
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
-(Font)              scaled to size 14.4pt on input line 131.
+(Font)              scaled to size 14.4pt on input line 129.
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <7> not available
-(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 131.
+(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 131.
+(hyperref)                removing `math shift' on input line 129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 131.
+(hyperref)                removing `math shift' on input line 129.
 
-[4] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/algebra-4.aux)
+[4]
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 2
+34.
+ (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
+LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
+(Font)              Font shape `T2A/faq/bx/n' tried instead on input line 235.
+ [5]
+Overfull \hbox (34.55272pt too wide) in paragraph at lines 324--327
+[]\T2A/faq/m/n/10 ќтвет по-лу-чил-с€ тот же са-мый, и это не слу-чай-но --- ест
+ь та-ка€ тео-ре-ма, что син-гу-л€р-ные/симплициальные
+ []
+
+[6] [7] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/algebra-4.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `algebra-4.out' has not changed.
-(rerunfilecheck)             Checksum: 6D991DD8D10A726102993A23B5590802;527.
+(rerunfilecheck)             Checksum: 7A83FDF27992AAC8048F87CBB04A83EE;660.
  ) 
 Here is how much of TeX's memory you used:
- 29678 strings out of 479648
- 565269 string characters out of 5886115
- 844881 words of memory out of 5000000
- 47067 multiletter control sequences out of 15000+600000
- 507294 words of font info for 107 fonts, out of 8000000 for 9000
+ 30386 strings out of 479648
+ 583186 string characters out of 5886115
+ 851028 words of memory out of 5000000
+ 47755 multiletter control sequences out of 15000+600000
+ 509387 words of font info for 111 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,15n,103p,503b,1110s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,15n,103p,633b,1115s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
 b></usr/share/texmf/fonts/type1/public/pscyr/antiq7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
+mf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/boondox/zxxrw8a.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/algebra-4.pdf
- (5 pages, 185379 bytes).
+ (8 pages, 214467 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
