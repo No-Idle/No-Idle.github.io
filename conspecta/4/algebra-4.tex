@@ -163,9 +163,9 @@
     У кокомплекса несколько другая нумерация стрелок, но мы их практически не будем использовать.
     }
     \definition[Сдвиг комплекса $(C_\bullet, d)$ на $p \in \Z$]{
-        Комплекс $(C[p]_\bullet, d[p])$, где $C[p]_n = C_{n+p}$ и $d[p]_n = (-1)^{p}d_{n+p}$.
+        Комплекс $(C[p]_\bullet, d[p])$, где $C[p]_n = C_{n+p}$ и $d[p]_n = d_{n+p}$.
     }
-    $(-1)^p$ в данном определении имеет непонятную цель, но, видимо, людям так удобнее.
+    Иногда при сдвиге комплекса определяют $d[p]_n = (-1)^p d_{n+p}$, но мы так делать не будем.
     \newlection{19 февраля 2023 г.}
     \definition[Морфизм дифференциальных модулей $\bigoplus A_n \map \bigoplus B_n$]{
         Такое $f: \bigoplus A_n \map \bigoplus B_n$, что $f(A_n) \subset B_n$, и диаграммы коммутативны:
@@ -178,9 +178,9 @@
         \arrow["f", from=1-1, to=2-1]
         \arrow["f", from=1-2, to=2-2]
         \end{tikzcd}\]
-        На языке абелевых категорий, надо рассматривать не одно отображение $f$, так как отношение $f(A_n) \subset B_n$ не выражается, а серию гомоморфизмов $f_n: A_n \map B_n$.
+        На языке абелевых категорий, надо рассматривать не одно отображение $f$, так как отношение $f(A_n) \subset B_n$ не выражается, а серию морфизмов $f_n: A_n \map B_n$.
     }
-    Для всякого морфизма $f$ коммутативна диаграмма в категории комплексов \comment{(по-видимому, здесь сдвиг комплекса не использует домножение на $(-1)^p$)}:
+    Для всякого морфизма $f$ коммутативна диаграмма в категории комплексов:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBWzFdIl0sWzEsMCwiQSJdLFswLDEsIkJbMV0iXSxbMSwxLCJCIl0sWzAsMSwiZF5BIl0sWzIsMywiZF5CIl0sWzAsMiwiZlsxXSJdLFsxLDMsImYiXV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
     {A[1]} \& A \\
@@ -232,8 +232,8 @@
         Двойственно с коядрами.
     }
     }
-    \subsection{Гомологии}
-    Гомоморфизм $d$ является морфизмом комплексов $d: C[1] \map C$ (по-хорошему, $C[1]_\bullet \map C_\bullet$, но точку будем опускать):
+    \section{Гомологии}
+    Дифференциал $d$ является морфизмом комплексов $d: C[1] \map C$ (по-хорошему, $C[1]_\bullet \map C_\bullet$, но точку будем опускать):
     % https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiQ197bisxfSJdLFsyLDAsIkNfbiJdLFszLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzEsMSwiQ19uIl0sWzIsMSwiQ197bi0xfSJdLFszLDEsIlxcY2RvdHMiXSxbMCwxXSxbMSwyLCJkX24iXSxbMiwzXSxbNiw3XSxbNSw2LCJkX3tuLTF9Il0sWzQsNV0sWzEsNSwiZF9uIl0sWzIsNiwiZF97bi0xfSJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
           \cdots \& {C_{n+1}} \& {C_n} \& \cdots \\
@@ -247,15 +247,16 @@
           \arrow["{d_n}", from=1-2, to=2-2]
           \arrow["{d_{n-1}}", from=1-3, to=2-3]
     \end{tikzcd}\]
-    \definition[Циклы]{$Z = Z(C) \bydef \Ker d[-1]$.}
-    \definition[Границы]{$B = B(C) \bydef \Image d[-1]$.}
-    По определению, образ --- это ядра коядра: $\Image \phi \bydef \Ker(\coker \phi)$.
+    Ниже мы по произвольному комплексу $C$ строим новые комплексы.
+    \definition[Циклы]{Комплекс $Z = Z(C) \bydef \Ker d[-1]$.}
+    \definition[Границы]{Комплекс $B = B(C) \bydef \Image d[-1]$.}
+    По определению, образ --- это ядро коядра: $\Image \phi \bydef \Ker(\coker \phi)$.
     В абелевой категории канонически $\Image \phi \cong \CoIm \phi \bydef \CoKer(\ker \phi)$.
 
     На языке конкретных категорий, так как $d^2 = 0$, то $B \subset Z$, и можно определить фактормодуль $H \coloneqq Z/B$ --- \emph{гомологии}.
 
-    Аналогично то же самое можно сказать на языке универсальных свойств:
-    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJaWzFdIl0sWzEsMCwiQ1sxXSJdLFsxLDEsIkIiXSxbMiwwLCJDIl0sWzMsMCwiQ1stMV0iXSxbMiwxLCJaIl0sWzMsMSwiSCJdLFs0LDEsIjAiXSxbMyw0LCJkWy0xXSJdLFsxLDMsImQiXSxbMSwyLCJiIiwyXSxbMCwxLCJ6WzFdIl0sWzUsMywieiIsMl0sWzEsNSwiXFxhbHBoYSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDUsIlxcYmV0YSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs1LDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs2LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
+    То же самое можно сказать на языке универсальных свойств, хотя в будущем мы, ссылаясь на теорему Митчелла, будем всё писать исключительно в терминах элементов.
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJaWzFdIl0sWzEsMCwiQ1sxXSJdLFsxLDEsIkIiXSxbMiwwLCJDIl0sWzMsMCwiQ1stMV0iXSxbMiwxLCJaIl0sWzMsMSwiSCJdLFs0LDEsIjAiXSxbMyw0LCJkWy0xXSJdLFsxLDMsImQiXSxbMSwyLCJiIiwyXSxbMCwxLCJ6WzFdIl0sWzUsMywieiIsMl0sWzEsNSwiXFxhbHBoYSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDUsIlxcYmV0YSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs1LDYsIlxcY29rZXJcXGJldGEiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbNiw3LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
     {Z[1]} \& {C[1]} \& C \& {C[-1]} \\
     \& B \& Z \& H \& 0
@@ -266,21 +267,24 @@
     \arrow["z"', from=2-3, to=1-3]
     \arrow["\alpha"{description}, dashed, from=1-2, to=2-3]
     \arrow["\beta"', dotted, from=2-2, to=2-3]
-    \arrow[dotted, from=2-3, to=2-4]
+    \arrow["\coker\beta"', dotted, from=2-3, to=2-4]
     \arrow[dotted, from=2-4, to=2-5]
     \end{tikzcd}\]
-    Так как $d[-1] \cdot d = 0$, то можно пропуститься через ядро: $\exists! \alpha: z \cdot \alpha = d$.
+    \provehere[Построение $H$ в терминах универсальных свойств]{
+        Так как $d[-1] \cdot d = 0$, то можно пропуститься через ядро: $\exists! \alpha: z \cdot \alpha = d$.
 
-    Далее, $z \cdot \alpha \cdot z[1] = d \cdot z[1] = 0$, а так как $z$ --- моно, то $\alpha \cdot z = 0$.
+    Далее, $z \cdot \alpha \cdot z[1] = d \cdot z[1] = 0$, а так как $z$ --- моно, то $\alpha \cdot z[1] = 0$.
     Значит, можно пропуститься через коядро, то есть $\exists ! \beta: \beta b = \alpha$.
     Далее $H$ определяется, как коядро $\beta$.
+    }
     \corollary{
         В комплексах $Z, B, H$ нулевые дифференциалы.
         \provehere{
-            \comment{Казалось бы, мы доказали только для $Z$.}
+            Из диаграммы следует, что в комплексе $Z$ нулевые дифференциалы.
+            $B$ состоит из подмодулей в $Z$, $H$ --- из фактормодулей, понятно, что там дифференциалы тоже нулевые.
         }
     }
-    \examples[Геометрический пример]{
+    \examples[Гомологии окружности]{
         \item Рассмотрим окружность, как симплициальное множество:
         \begin{tikzpicture}[baseline=-4]
             \draw(0,0) circle[radius=0.5];
@@ -304,26 +308,29 @@
               \arrow[from=1-1, to=1-2]
         \end{tikzcd}\]
 
-    Определим $d_1$, как <<конец минус начало>>: $d_1(x) = b - a, d_1(y) = a - b$.
+    Определим $d_1$, как <<конец минус начало>>: $\all{d_1(x) = b - a,\\ d_1(y) = a - b}$.
 
-    Теперь $Z_0 = C_0, B_1 = 0, Z_1 = \Z(x + y), B_0 = \Z(b - a)$. Теперь $H_1 = Z_1/B_1 = \Z(x + y) \cong \Z$, и $H_0 = (\Z a + \Z b)/\Z(b - a) \cong \Z$
+    Теперь $\all{Z_0 = C_0 \\ Z_1 = \Z(x + y)} \all{B_0 = \Z(b - a) \\ B_1 = 0}$ и $\all{H_0 = Z_0 / B_0 = (\Z a + \Z b)/\Z(b - a) &\cong \Z \\ H_1 = Z_1/B_1 = \Z(x + y) &\cong \Z}$.
     \item Теперь триангулируем окружность по-другому:
         \begin{tikzpicture}[baseline=-4]
             \draw(0,0) circle[radius=0.5];
             \fill (-0.25,0.433) circle (1pt) node[left] {$a$};
             \fill (-0.25,-0.433) circle (1pt) node[left] {$c$};
             \fill (0.5,0) circle (1pt) node[right] {$b$};
-            \node[above,right] at (0.25, 0.433) {$x$};
-            \node[below,right] at (0.24, -0.433) {$y$};
+            \node[above,right] at (0.3, 0.5) {$x$};
+            \node[below,right] at (0.3, -0.5) {$y$};
             \node[left] at (-0.5, 0) {$z$};
-        \end{tikzpicture} % todo стрелочки по касательной
-    $d_1(x) = b - a, d_1(y) = c - b, d_1(z) = a - c$.
+            \draw[->] (-0.5, -0.05) -- (-0.5, 0.05);
+            \draw[->] (0.3, 0.4) -- (0.4, 0.3);
+            \draw[->] (0.4, -0.3) -- (0.3, -0.4);
+        \end{tikzpicture}
+    $\all{d_1(x) = b - a,\\ d_1(y) = c - b,\\ d_1(z) =  a - c}$.
 
-    Теперь $H_1 = Z_1 = \Z(x + y + z) \cong \Z$, и $B_0 = \Z(b + a)$, $B_0 = \Z(b - a) + \Z(c - b)$, и $H_0 = (\Z a + \Z b + \Z c)/ B_0 \cong \Z$.
+    Теперь $\all{Z_0 = C_0 \\ Z_1 = \Z(x + y + z)}$, $\all{B_0 = \Z(b - a) + \Z(c - b) \\ B_1 = 0}$ и $\all{H_0  &\cong \Z \\ H_1 = \Z(x + y + z)/0 &\cong \Z}$.
     }
-    Ответ получился тот же самый, и это не случайно --- есть такая теорема, что сингулярные/симплициальные гомологии (они равны для клеточных пространств) не зависят от триангуляции.
+    Ответ получился тот же самый, и это не случайно --- есть теорема, что сингулярные/симплициальные гомологии (они равны для клеточных пространств) не зависят от триангуляции.
     \exercise{
-    Триангулировать сферу, и вычислить гомологии.
+    Триангулировать сферу, и вычислить гомологии. Дифференциал от треугольника $ABC$ (ориентация --- порядок вершин --- важна) определяют, как его обход вдоль периметра: $AB + BC + CA$.
     }
     Рассмотрим точную последовательность комплексов
     % https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiQSciXSxbMiwwLCJBIl0sWzMsMCwiQScnIl0sWzQsMCwiMCJdLFszLDRdLFsyLDNdLFsxLDJdLFswLDFdXQ==
@@ -371,7 +378,10 @@
         \end{tikzcd}\]
     Положим $\delta([z]) \coloneqq [i^{-1}(d(\pi^{-1}(z)))]$, где $\pi^{-1}(z)$ --- произвольный прообраз (он есть, так как $\pi$ сюръективно).
 
-            \comment{Дальше надо проверить, что определение корректно, и последовательность точна, но я не хочу это техать, доказательства не будет.}
+            \comment{
+                Дальше надо проверить, что определение корректно, и последовательность точна.
+            Это типичный диаграммный поиск, который невозможно записывать, и его несложно воспроизвести самостоятельно.
+            }
     }
     }
 \end{document}
