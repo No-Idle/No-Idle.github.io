@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 FEB 2024 22:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 FEB 2024 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1242,6 +1242,15 @@ LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textbullet' on input line 78.
 
+
+Overfull \hbox (2.66545pt too wide) in paragraph at lines 113--113
+[]\T2A/faq/m/n/10 Не сле-ду-ет ожи-дать ад-ди-тив-ность. Так, $\OMS/cmsy/m/n/10
+ 9\OML/cmm/m/it/10 ^^NJ\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x; h[]\OT1/cmr/m/n/10 
+]\OML/cmm/m/it/10 ; ^^NJ\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x; h[]\OT1/cmr/m/n/10
+ ]$ \T2A/faq/m/n/10 не вле-чјт су-ще-ство-ва-ние $\OML/cmm/m/it/10 ^^NJ\OT1/cmr
+/m/n/10 [\OML/cmm/m/it/10 x; h[] \OT1/cmr/m/n/10 +
+ []
+
 [3] [4]
 Overfull \hbox (20.9244pt too wide) in paragraph at lines 155--155
 []\T2A/faq/m/n/10 Модуль раз-но-сти ар-гу-мен-тов не пре-вос-хо-дит $\OML/cmm/m
@@ -1302,7 +1311,7 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.pdf (
-6 pages, 183201 bytes).
+6 pages, 183204 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams
