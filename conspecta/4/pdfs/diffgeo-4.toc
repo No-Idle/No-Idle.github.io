@@ -2,3 +2,9 @@
 \contentsline {chapter}{\numberline {1}Риманова геометрия}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Гладкие многообразия}{2}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Гладкие отображения}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Касательное пространство}{5}{subsection.1.1.2}%
+\contentsline {subsubsection}{Координаты касательного вектора}{5}{section*.2}%
+\contentsline {subsubsection}{Преобразование координатного представления в зависимости от карты}{5}{section*.3}%
+\contentsline {subsection}{\numberline {1.1.3}Структура векторного пространства на $T_p M$}{6}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Касательное расслоение}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Дифференциал гладкого отображения}{6}{subsection.1.2.1}%

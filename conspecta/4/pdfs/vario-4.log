@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 FEB 2024 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  20 FEB 2024 22:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1252,7 +1252,7 @@ Overfull \hbox (2.66545pt too wide) in paragraph at lines 113--113
  []
 
 [3] [4]
-Overfull \hbox (20.9244pt too wide) in paragraph at lines 155--155
+Overfull \hbox (20.9244pt too wide) in paragraph at lines 156--156
 []\T2A/faq/m/n/10 ћодуль раз-но-сти ар-гу-мен-тов не пре-вос-хо-дит $\OML/cmm/m
 /it/10 ^^\[]\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 h\OMS/cmsy/m/n/10 k[]$\T2A/faq/m
 /n/10 . ќт-сю-да $\OMS/cmsy/m/n/10 kr[]\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 ([] ) 
@@ -1263,7 +1263,7 @@ Overfull \hbox (20.9244pt too wide) in paragraph at lines 155--155
  []
 
 
-Overfull \hbox (3.10071pt too wide) in paragraph at lines 164--167
+Overfull \hbox (3.10071pt too wide) in paragraph at lines 165--168
 []\T2A/faq/m/n/10 ¬ведЉм $\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x
 \OT1/cmr/m/n/10 ) [][]= [](\OMS/cmsy/m/n/10 r[]\OML/cmm/m/it/10 L\OT1/cmr/m/n/1
 0 )(\OML/cmm/m/it/10 t; u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\O
@@ -1273,7 +1273,7 @@ ML/cmm/m/it/10 t$\T2A/faq/m/n/10 . “о-гда $\OML/cmm/m/it/10 ^^NJ\OT1/cmr/m/n/10
  []
 
 
-Overfull \hbox (15.27771pt too wide) in paragraph at lines 164--167
+Overfull \hbox (15.27771pt too wide) in paragraph at lines 165--168
 \T2A/faq/m/n/10 »н-те-ги-ру€ по ча-ст€м, по-лу-чим (по-сколь-ку $\OML/cmm/m/it/
 10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 ) = 0$\T2A/faq/m/n/10 ) 
 $[] \OT1/cmr/m/n/10 + [][][]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it
@@ -1311,7 +1311,7 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.pdf (
-6 pages, 183204 bytes).
+6 pages, 183263 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams

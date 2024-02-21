@@ -145,7 +145,8 @@
 
             Сперва разберёмся с первым слагаемым. Покажем, что \[\underbrace{\int\limits_{a}^{b}\angles{(\nabla_u L)(t, u(t) + \tau_* h(t), \dot{u}(t) + \tau_* \dot{h}(t)), h(t)}\d t}_{I} \underset{\tau \to 0}\Map \underbrace{\int\limits_{a}^{b}\angles{(\nabla_{u} L)(t, u(t), \dot{u}(t)), h(t)}\d t}_{\II}\]
 
-            Модуль разности аргументов не превосходит $\tau_* \|h\|_{X}$. Отсюда $\|\nabla_u L(\dots) - \nabla_u L(\dots)\|_{\R^n} \le \omega_{L\big|_K}(\tau_* \| h\|_X)$, здесь $K \coloneqq [a, b] \times \overline{B_{\|u\| + \|h\|}} \times \overline{B_{\|u\| + \|h\|}}$. %Здесь, видимо, $\tau_* \le 1$, чтобы задать именно такой компакт.
+            Модуль разности аргументов не превосходит $\tau_* \|h\|_{X}$.
+            Отсюда $\|\nabla_u L(\dots) - \nabla_u L(\dots)\|_{\R^n} \le \omega_{L\big|_K}(\tau_* \| h\|_X)$, здесь $K \coloneqq [a, b] \times \overline{B_{\|u\| + \|h\|}} \times \overline{B_{\|u\| + \|h\|}}$ (мы считаем, что $\tau \le 1$, откуда $\tau_* \le 1$).
 
             Значит, $|(I) - (\II)| \le \int\limits_{a}^{b}\omega_{L\big|_K}(\tau_* \|h\|)\d t \le (b - a)\omega_{L\big|_K}(\tau \|h\|)\d t \underset{\tau \to 0}\Map 0$.
 
@@ -175,7 +176,7 @@
 
     \note{
         В случае общего положения уравнение Эйлера --- Лагранжа --- дифференциальное второго порядка, что соответствует $u \in C^2$: при вычислении $\frac{\d}{\d t}(\nabla_{\dot{u}} L)(t, u(t), \dot{u}(t))$ появится в общем случае вторая производная $u$.
-        Это, на самом деле, довольно общая ситуация: экстремаль <<регулярнее>>, чем произвольный элемент своего пространства.
+        Такая ситуация, на самом деле, довольно общая: экстремаль <<регулярнее>>, чем произвольный элемент своего пространства.
     }
     \subsection{Случай свободных концов}
     Теперь рассмотрим совсем произвольную $h \in C^1$, и получим уравнение на вариацию \[0 = \delta J[u, h] = \angles{R(b), h(b)} + \int\limits_{a}^{b}\angles{C, \dot{h}(t)}\d t = \angles{R(b), h(b)} + \angles{C, h(b)} - \angles{C, h(a)}\]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  21 FEB 2024 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1263,18 +1263,31 @@ Overfull \hbox (10.10057pt too wide) in paragraph at lines 74--74
 
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 78.
-[3] [4] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/diffgeo-4.aux)
+[3] [4] [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 219.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 219.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 219.
+
+[6] [7] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/diffgeo-4.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `diffgeo-4.out' has not changed.
-(rerunfilecheck)             Checksum: 1E2D7AF225B5F4C9B9344FF7599976CA;614.
+(rerunfilecheck)             Checksum: 129A4327071C3F124595E35965E9DE27;1802.
  ) 
 Here is how much of TeX's memory you used:
- 29355 strings out of 479648
- 557743 string characters out of 5886115
- 834774 words of memory out of 5000000
- 46752 multiletter control sequences out of 15000+600000
+ 29381 strings out of 479648
+ 558143 string characters out of 5886115
+ 834858 words of memory out of 5000000
+ 46759 multiletter control sequences out of 15000+600000
  505484 words of font info for 91 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,529b,1055s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1285,18 +1298,21 @@ b></usr/share/texmf/fonts/type1/public/pscyr/antiq7.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/diffgeo-4.pdf
- (5 pages, 153170 bytes).
+ (8 pages, 200814 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
