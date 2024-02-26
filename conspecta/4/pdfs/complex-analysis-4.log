@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 12:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1337,15 +1337,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 369.
 
-[9]
-Overfull \hbox (26.8983pt too wide) detected at line 438
-[] \OT1/cmr/m/n/10 = [] \U/msa/m/n/10 6 [] [] [] [][] \OMS/cmsy/m/n/10 ^^A [][]
- []  \OML/cmm/m/it/10 t \U/msa/m/n/10 6 \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ^^A
- []
+[9] [10]
+Overfull \hbox (29.12064pt too wide) detected at line 438
+[] \OT1/cmr/m/n/10 = [] [] [] [][] \OMS/cmsy/m/n/10 ^^A [][] []  \OML/cmm/m/it/
+10 t \U/msa/m/n/10 6 \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ^^A []
  []
 
-[10] [11]
-(/home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analysis-4.aux)
+[11] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analysis-4.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1355,7 +1353,7 @@ Package rerunfilecheck Info: File `complex-analysis-4.out' has not changed.
 Here is how much of TeX's memory you used:
  29407 strings out of 479648
  558270 string characters out of 5886115
- 840175 words of memory out of 5000000
+ 837175 words of memory out of 5000000
  46771 multiletter control sequences out of 15000+600000
  505075 words of font info for 98 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1377,7 +1375,7 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analy
-sis-4.pdf (12 pages, 233648 bytes).
+sis-4.pdf (12 pages, 233684 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams

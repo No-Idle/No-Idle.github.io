@@ -324,9 +324,9 @@
     }
     }
     Пусть $\Phi = \sum\limits_{j = 1}^{m}f_j(x)\d x$ --- непрерывная дифференциальная форма в области $G \subset \R^n$.
-    \definition[Форма $\Phi$ точна]{Существует первообразная $F$ в $G: \d F = G$. }
+    \definition[Форма $\Phi$ точна]{Существует первообразная $F$ в $G: \d F = \Phi$. }
     \definition[Форма $\Phi$ замкнута]{ Форма $\Phi$ локально точна ($\forall x_0 \in G: \exists U \ni x_0$: $\Phi\big|_U$ точна). }
-    Позднее мы определим $\d z$, и покажем, что $\frac{\d z}{z}$ --- замкнутая форма на $\C \sm \{0\}$
+    Понятно, что замкнутая форма точна, но точность из замкнутости не следует: чуть позднее мы определим $\d z$, и покажем, что $\frac{\d z}{z}$ --- замкнутая, но не точная форма на $\C \sm \{0\}$
     \theorem{
     Пусть $\Phi$ --- дифференциальная форма в области $G \subset \R^n$.
         Следующие условия эквивалентны:
@@ -390,7 +390,7 @@
     \[\der{F}{\overline{z}} = \frac{1}{2}\left(\der{u}{x} + i\der{v}{x} + i\left(\der{u}{y} + i\der{v}{y}\right)\right) = \left(\der{u}{x} - \der{v}{y}\right) + i\left(\der{v}{x} + \der{u}{y}\right)\]
     В правой части равенства получились выражения из уравнений Коши --- Римана.
     \fact{
-    Вещественные функции $u, v$ удовлетворяют уравнениям Коши --- Римана $\iff \der{u + iv}{\overline{z}} \equiv 0$.
+    Вещественные функции $u, v$ удовлетворяют уравнениям Коши --- Римана $\iff \der{(u + iv)}{\overline{z}} \equiv 0$.
     }
     \fact{
     $F$ голоморфна $\iff \d F = \der{F}{z}\d z$.
@@ -414,15 +414,15 @@
         Пусть $G = \C \sm \{0\}, g: G \map \C, g: z \mapsto \frac{1}{z}$.
 
     По теореме Коши у $g$ имеется локальная первообразная --- комплексный логарифм --- но глобально определить не получится.
-        Пусть $\Gamma = \partial \mathbb{T}$ --- комплексная окружность, ориентируем её против часовой стрелки, а именно, рассмотрим стандартный путь $\alpha: [0, 2\pi] \map \C,\: \alpha: \phi \mapsto e^{i\phi}$.
+        Пусть $\Gamma = \partial \mathbb{T}$ --- комплексная окружность, ориентируем её против часовой стрелки, а именно, рассмотрим стандартный обход окружности $\alpha: [0, 2\pi] \map \C,\: \alpha: \phi \mapsto e^{i\phi}$.
     Теперь убедимся, что форма не точна:
-    \[\int\limits_{\alpha}\phi = \int\limits_{\alpha}\frac{\d z}{z} = \int\limits_{0}^{2\pi}\frac{\left(e^{it}\right)'}{e^{it}}\d t = 2\pi i \ne 0\]
+    \[\int\limits_{\alpha}\phi = \int\limits_{\alpha}\frac{\d z}{z} = \int\limits_{0}^{2\pi}\frac{\left(e^{it}\right)'}{e^{it}}\d t =\int\limits_{0}^{2\pi}\d t = 2\pi i \ne 0\]
     }
     Для будущих применений также определим ориентированную против часовой стрелки границу $B_r(z_0)$, это путь $\beta(t) = z_0 + r e^{i t}$ для $t \in [0, 2\pi]$.
 
     \example{
     Пусть $z_0, w \in \C, r \in \R_{> 0}$, $|z_0 - w| \ne r$, пусть путь $\gamma$ обходит границу $B_r(z_0)$ против часовой стрелки.
-        Тогда (посчитаем чуть позже).
+        Тогда (посчитаем чуть позже):
     \[\int\limits_{\gamma}\frac{\d z}{z - w} = \all{0,&|z - w_0|> r \\ 2\pi i,&|z - w_0| < r}\]
 
     }
@@ -433,7 +433,7 @@
     \provehere{
     Считаем, что $\gamma$ --- гладкий путь, иначе нужно разбить на кусочки гладкости.
 
-    \[\abs{\int\limits_{\gamma}\Phi} = \abs{\sum\limits_{j = 1}^{n}f_j\left(\gamma(t)\right)\gamma_j'(t)\d t} \le \int\limits_{a}^{b} \underset{\text{КБШ}}\le \int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|f_j(\gamma(t))^2\right)^{\nicefrac{1}{2}} \cdot \left(\sum\limits_{j = 1}^{n}\gamma_j'(t)^2\right)^{\nicefrac{1}{2}}\d t \le A \cdot \underbrace{\int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}\gamma_j'(t)^2\right)^{\nicefrac{1}{2}}\d t}_{l(\gamma)}\]
+    \[\abs{\int\limits_{\gamma}\Phi} = \abs{\int\limits_{a}^{b}\sum\limits_{j = 1}^{n}f_j\left(\gamma(t)\right)\gamma_j'(t)\d t} \underset{\text{КБШ}}\le \int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|f_j(\gamma(t))|^2\right)^{\nicefrac{1}{2}} \cdot \left(\sum\limits_{j = 1}^{n}|\gamma_j'(t)|^2\right)^{\nicefrac{1}{2}}\d t \le A \cdot \underbrace{\int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|\gamma_j'(t)|^2\right)^{\nicefrac{1}{2}}\d t}_{l(\gamma)}\]
     }
     }
 \end{document}
