@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1370,9 +1370,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1264.
 
 
-Overfull \hbox (9.49263pt too wide) in paragraph at lines 1274--1276
-[]\T2A/faq/m/n/10 »нтегральна€ тео-ре-ма ћуавра-Ћапласа го-во-рит, что $\U/msb/
-m/n/10 P [] [] [] [] \OML/cmm/m/it/10 e[] []  x$\T2A/faq/m/n/10 .
+Overfull \hbox (20.01263pt too wide) in paragraph at lines 1274--1276
+[]\T2A/faq/m/n/10 »нтегральна€ тео-ре-ма ћу-ав-ра --- Ћа-пла-са го-во-рит, что 
+$\U/msb/m/n/10 P [] [] [] [] \OML/cmm/m/it/10 e[] []  x$\T2A/faq/m/n/10 .
  []
 
 [29] [30] [31]
@@ -1385,13 +1385,13 @@ Overfull \hbox (37.73955pt too wide) detected at line 1405
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `probability-theory-2.out' has not changed.
-(rerunfilecheck)             Checksum: 8456DE56C8988920BAE1B8BF00F4191E;10225.
+(rerunfilecheck)             Checksum: 51EC105D72ADD0BAD268929B80A68BAF;10282.
  ) 
 Here is how much of TeX's memory you used:
- 30338 strings out of 479648
- 576325 string characters out of 5886115
- 850782 words of memory out of 5000000
- 47568 multiletter control sequences out of 15000+600000
+ 30336 strings out of 479648
+ 576314 string characters out of 5886115
+ 849766 words of memory out of 5000000
+ 47566 multiletter control sequences out of 15000+600000
  507354 words of font info for 109 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,20n,103p,1216b,1126s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1414,7 +1414,7 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/probability-theory-2.pdf (37 pages, 407783 bytes).
+Output written on pdfs/probability-theory-2.pdf (37 pages, 407804 bytes).
 PDF statistics:
  660 PDF objects out of 1000 (max. 8388607)
  557 compressed objects within 6 object streams

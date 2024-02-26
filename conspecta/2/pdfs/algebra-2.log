@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 19:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1079,11 +1079,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box71
 )
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.aux
+(pdfs/algebra-2.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `algebra-2.aux'.
@@ -1190,8 +1189,7 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.out)
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.out)
+(pdfs/algebra-2.out) (pdfs/algebra-2.out)
 \@outlinefile=\write4
 \openout4 = `algebra-2.out'.
 
@@ -1222,8 +1220,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 12.
-
-(/home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.toc
+ (pdfs/algebra-2.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1278,7 +1275,15 @@ Overfull \hbox (39.15166pt too wide) in paragraph at lines 352--352
 олб-ца-ми, то по-лу-чит-ся столбцово-эшелонированная
  []
 
-[11] [12] [13] [14] [15] [16]
+[11] [12]
+Overfull \hbox (3.94469pt too wide) in paragraph at lines 405--405
+[]\T2A/faq/bx/n/10 Теорема 1.4.7 \T2A/faq/m/n/10 (Кро-не-кер --- Ка-пел-ли)\T2A
+/faq/bx/n/10 . []\T2A/faq/m/n/10 От-вет на этот во-прос из-ве-стен: ко-гда $\OM
+L/cmm/m/it/10 u \OMS/cmsy/m/n/10 2 h\OML/cmm/m/it/10 a[]; [] ; a[]\OMS/cmsy/m/n
+/10 i  ([])
+ []
+
+[13] [14] [15] [16]
 Overfull \hbox (18.38081pt too wide) detected at line 612
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [] \OML/cmm/m/it/10 x[
 ] \OMS/cmsy/m/n/10 ^^A [] ^^A \OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 ^^A [] ^^A 
@@ -1351,13 +1356,7 @@ Overfull \hbox (1.94089pt too wide) in paragraph at lines 1490--1490
 ие пол-но-стью опре-де-ля-ет-ся сво-и-ми зна-че-ни-я-ми на какой-
  []
 
-[33]
-Overfull \hbox (16.04599pt too wide) in paragraph at lines 1520--1520
-[]\T2A/faq/bx/n/12 Дифференцирование коль-ца мно-го-чле-нов, тео-ре-ма Лейбница
--Бернулли 
- []
-
-[34]
+[33] [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1593.
@@ -1396,7 +1395,13 @@ mm/m/it/10 ^^^ \OT1/cmr/m/n/10 = []$\T2A/faq/m/n/10 . В стан-дарт-ном ба-зи-се:
  
  []
 
-[40] [41] [42] [43] [44]
+[40] [41]
+Overfull \hbox (4.80615pt too wide) in paragraph at lines 1892--1892
+[]\T2A/faq/m/n/10 Здесь бу-дем рас-смат-ри-вать $\OML/cmm/m/it/10 x$ \T2A/faq/m
+/n/10 как
+ []
+
+[42] [43] [44]
 Overfull \hbox (27.90578pt too wide) in paragraph at lines 2052--2052
 []\T2A/faq/m/n/10 Рассмотрим $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/i
 t/10 v[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; ^^^\OT1/cmr/m/n/10 (\OML/cmm/m
@@ -1432,26 +1437,7 @@ m/it/10 ; ^^^[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 )\OML/cmm/m
 mm/m/it/10 ; [] $\T2A/faq/m/n/10 ,
  []
 
-[45] [46]
-Overfull \hbox (9.86436pt too wide) in paragraph at lines 2156--2156
-[]\T2A/faq/m/it/10 Интересный факт \T2A/faq/m/n/10 (Ад-ди-тив-ное раз-ло-же-ние
- Жор-дана--Шевал-ле)\T2A/faq/m/it/10 . []$\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x 
-\OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; K\OT1
-/cmr/m/n/10 ) : \OMS/cmsy/m/n/10 9\OT1/cmr/m/n/10 !\OML/cmm/m/it/10 x[]; x[] \O
-MS/cmsy/m/n/10 2 \OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; K\OT1/c
-mr/m/n/10 )$\T2A/faq/m/n/10 ,
- []
-
-
-Overfull \hbox (6.40324pt too wide) in paragraph at lines 2167--2167
-[]\T2A/faq/m/it/10 Интересный факт \T2A/faq/m/n/10 (Муль-ти-пли-ка-тив-ное раз-
-ло-же-ние Жор-дана--Шевал-ле)\T2A/faq/m/it/10 . []$\OMS/cmsy/m/n/10 8\OML/cmm/m
-/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 GL\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
-0 n; K\OT1/cmr/m/n/10 ) : \OMS/cmsy/m/n/10 9\OT1/cmr/m/n/10 !\OML/cmm/m/it/10 x
-[]; x[] \OMS/cmsy/m/n/10 2
- []
-
-[47]
+[45] [46] [47]
 Overfull \hbox (13.31451pt too wide) in paragraph at lines 2177--2180
 []\T2A/faq/m/n/10 Это на-зы-ва-ет-ся \T2A/faq/m/it/10 ком-плек-си-фи-ка-ция $\O
 ML/cmm/m/it/10 V$\T2A/faq/m/n/10 . Ве-ще-ствен-ный ба-зис ком-плек-си-фи-ка-ции
@@ -1648,12 +1634,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3698.
 
 [79]
-Overfull \hbox (28.06845pt too wide) in paragraph at lines 3765--3765
-[]\T2A/faq/bx/n/10 Теорема 6.3.6 \T2A/faq/m/n/10 (Си-лов--Фро-бе-ни-ус, $\OML/c
-mm/m/it/10 F[]$ \T2A/faq/m/n/10 (Anzahlsatz))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/
-10 Для лю-бо-го $\OML/cmm/m/it/10 l \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N[] \OT1/c
-mr/m/n/10 : \OML/cmm/m/it/10 p[] \OMS/cmsy/m/n/10 j j\OML/cmm/m/it/10 G\OMS/cms
-y/m/n/10 j ) [] ^^Q
+Overfull \hbox (38.58846pt too wide) in paragraph at lines 3765--3765
+[]\T2A/faq/bx/n/10 Теорема 6.3.6 \T2A/faq/m/n/10 (Си-лов --- Фро-бе-ни-ус, $\OM
+L/cmm/m/it/10 F[]$ \T2A/faq/m/n/10 (Anzahlsatz))\T2A/faq/bx/n/10 . []\T2A/faq/m
+/n/10 Для лю-бо-го $\OML/cmm/m/it/10 l \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 N[] \OT
+1/cmr/m/n/10 : \OML/cmm/m/it/10 p[] \OMS/cmsy/m/n/10 j j\OML/cmm/m/it/10 G\OMS/
+cmsy/m/n/10 j ) [] ^^Q
  []
 
 
@@ -1688,7 +1674,7 @@ Overfull \hbox (10.63454pt too wide) in paragraph at lines 4235--4235
 .
  []
 
-[89] [90] (/home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.aux)
+[89] [90] (pdfs/algebra-2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1696,12 +1682,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `algebra-2.out' has not changed.
-(rerunfilecheck)             Checksum: 9CE9AE2B986B02C339BF584F4F442DFB;42883.
+(rerunfilecheck)             Checksum: 6FC319825C6B8E4F375B4B7F50D69BD2;42940.
  ) 
 Here is how much of TeX's memory you used:
  31672 strings out of 479648
- 607502 string characters out of 5886115
- 861560 words of memory out of 5000000
+ 606943 string characters out of 5886115
+ 861564 words of memory out of 5000000
  48406 multiletter control sequences out of 15000+600000
  510202 words of font info for 108 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1729,8 +1715,7 @@ onts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/
 stmary10.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/2/pdfs/algebra-2.pdf
- (91 pages, 686527 bytes).
+Output written on pdfs/algebra-2.pdf (91 pages, 687063 bytes).
 PDF statistics:
  1797 PDF objects out of 2073 (max. 8388607)
  1640 compressed objects within 17 object streams

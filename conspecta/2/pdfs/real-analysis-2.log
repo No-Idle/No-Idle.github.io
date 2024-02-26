@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1227,7 +1227,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.49 ...іРЅСѓС‚С‹Рµ С„СѓРЅРєС†РёРё}{58}{chapter.3}
+l.49 ...іРЅСѓС‚С‹Рµ С„СѓРЅРєС†РёРё}{59}{chapter.3}
                                                   % [1
 
 ])
@@ -1563,13 +1563,7 @@ L/cmm/m/it/10 x$\T2A/faq/m/n/10 .
 
 [39
 
-] [40]
-Overfull \hbox (16.0091pt too wide) in paragraph at lines 1811--1811
-[]\T2A/faq/bx/n/12 Частичные сум-мы гар-мо-ни-че-ско-го ря-да и по-сто-ян-ная Э
-йлера-Маскерони 
- []
-
-[41]
+] [40] [41]
 Overfull \hbox (52.23071pt too wide) detected at line 1833
 []
  []
@@ -1610,14 +1604,6 @@ Overfull \hbox (2.62376pt too wide) in paragraph at lines 2363--2373
 t/10 \OT1/cmr/m/n/10 ;  [] \OML/cmm/m/it/10 ^^L[] \OT1/cmr/m/n/10 = \OML/cmm/m
 /it/10 ^^L$\T2A/faq/m/n/10 , быть мо-жет, схо-дя-щих-ся услов-но. Рас-смот-рим 
 се-мей-ство $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 []^^L[]\OMS/cmsy/m/n/10 g[]$
- []
-
-
-Overfull \hbox (15.81544pt too wide) in paragraph at lines 2378--2379
-[]\T2A/faq/m/n/10 Вспомним тео-ре-му Стокса-Зайделя: $\OMS/cmsy/m/n/10 f\OML/cm
-m/m/it/10 f[]\OMS/cmsy/m/n/10 g$ \T2A/faq/m/n/10 --- по-сле-до-ва-тель-ность не
-пре-рыв-ных функ-ций, $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 : \
-OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) []
  []
 
 [53] [54]
@@ -1678,20 +1664,17 @@ Overfull \hbox (5.70139pt too wide) in paragraph at lines 2706--2706
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `real-analysis-2.out' has not changed.
-(rerunfilecheck)             Checksum: AD82B51757DF17CAA04600CCF1A0F2E2;13340.
+(rerunfilecheck)             Checksum: F5A47C6FE1F1F3828A2765BBD2A20866;13359.
  ) 
 Here is how much of TeX's memory you used:
- 29848 strings out of 479648
- 565295 string characters out of 5886115
- 843506 words of memory out of 5000000
- 46954 multiletter control sequences out of 15000+600000
+ 29846 strings out of 479648
+ 565284 string characters out of 5886115
+ 843493 words of memory out of 5000000
+ 46952 multiletter control sequences out of 15000+600000
  505484 words of font info for 91 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,16n,103p,736b,1105s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,16n,103p,744b,1105s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc} </home/leonid/.texlive2021/t
 exmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1713,7 +1696,7 @@ s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/real-analysis-2.pdf (66 pages, 567763 bytes).
+Output written on pdfs/real-analysis-2.pdf (66 pages, 567906 bytes).
 PDF statistics:
  931 PDF objects out of 1000 (max. 8388607)
  804 compressed objects within 9 object streams

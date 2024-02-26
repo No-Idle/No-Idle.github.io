@@ -19,13 +19,13 @@
 \contentsline {section}{\numberline {1.5}Производящие функции}{14}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Производящие функции и моменты}{15}{subsection.1.5.1}%
 \contentsline {section}{\numberline {1.6}Ветвящиеся процессы}{16}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Процесс Гальтона-Ватсона}{16}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.1}Процесс Гальтона --- Ватсона}{16}{subsection.1.6.1}%
 \contentsline {subsubsection}{Задача о выживании и вырождении ветвящегося процесса}{16}{section*.6}%
 \contentsline {subsection}{\numberline {1.6.2}Некоторые другие виды процессов}{17}{subsection.1.6.2}%
-\contentsline {subsubsection}{Процессы Беллмана-Харриса}{17}{section*.7}%
+\contentsline {subsubsection}{Процессы Беллмана --- Харриса}{17}{section*.7}%
 \contentsline {subsubsection}{Многотиповые процессы}{17}{section*.8}%
 \contentsline {subsubsection}{Процессы с иммиграцией}{17}{section*.9}%
-\contentsline {section}{\numberline {1.7}Предельные теоремы Муавра-Лапласа}{17}{section.1.7}%
+\contentsline {section}{\numberline {1.7}Предельные теоремы Муавра --- Лапласа}{17}{section.1.7}%
 \contentsline {subsection}{\numberline {1.7.1}Локальная}{17}{subsection.1.7.1}%
 \contentsline {subsection}{\numberline {1.7.2}Интегральная}{18}{subsection.1.7.2}%
 \contentsline {section}{\numberline {1.8}Цепи Маркова}{20}{section.1.8}%
@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {1.9.3}Задача о разорении игрока}{32}{subsection.1.9.3}%
 \contentsline {subsection}{\numberline {1.9.4}Матожидание времени разорения}{33}{subsection.1.9.4}%
 \contentsline {section}{\numberline {1.10}Случайные графы}{33}{section.1.10}%
-\contentsline {subsection}{\numberline {1.10.1}Граф Эрдёша-Реньи}{34}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.1}Граф Эрдёша --- Реньи}{34}{subsection.1.10.1}%
 \contentsline {subsection}{\numberline {1.10.2}power law for degrees (степенной закон для степеней (вершин))}{34}{subsection.1.10.2}%
 \contentsline {subsection}{\numberline {1.10.3}Дерево преимущественного присоединения}{34}{subsection.1.10.3}%
 \contentsline {subsubsection}{Поведение степеней вершин}{34}{section*.12}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 19:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1083,11 +1083,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box71
 )
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux
+(pdfs/algebra-3.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `algebra-3.aux'.
@@ -1194,8 +1193,7 @@ LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
 
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.out)
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.out)
+(pdfs/algebra-3.out) (pdfs/algebra-3.out)
 \@outlinefile=\write4
 \openout4 = `algebra-3.out'.
 
@@ -1232,8 +1230,7 @@ l.41     \tableofcontents
                           [1]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 41.
-
-(/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.toc
+ (pdfs/algebra-3.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
  [2
@@ -1464,12 +1461,12 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 LaTeX Font Info:    Font shape `U/BOONDOX-scr/m/n' will be
 (Font)              scaled to size 5.0pt on input line 565.
  [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (1.53629pt too wide) in paragraph at lines 953--953
-[]\T2A/faq/bx/n/10 Следствие 1.11.1 \T2A/faq/m/n/10 (Тео-ре-ма Бине--Коши)\T2A/
-faq/bx/n/10 . []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 R$ \T2A/faq/m/it/10 --
-- ком-му-та-тив-ное коль-цо, $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \OML/cmm/m/
-it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; n; R\OT1/cmr/m/n/10 )\OML/cmm/m/it/
-10 ; C \OMS/cmsy/m/n/10 2
+Overfull \hbox (12.05629pt too wide) in paragraph at lines 953--953
+[]\T2A/faq/bx/n/10 Следствие 1.11.1 \T2A/faq/m/n/10 (Тео-ре-ма Бине --- Ко-ши)\
+T2A/faq/bx/n/10 . []\T2A/faq/m/it/10 Пусть $\OML/cmm/m/it/10 R$ \T2A/faq/m/it/1
+0 --- ком-му-та-тив-ное коль-цо, $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 \OML/cm
+m/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m; n; R\OT1/cmr/m/n/10 )\OML/cmm/m
+/it/10 ; C \OMS/cmsy/m/n/10 2
  []
 
 [22]
@@ -1759,7 +1756,7 @@ Overfull \hbox (2.76083pt too wide) in paragraph at lines 4875--4875
 валайзером
  []
 
-[93] [94] (/home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.aux)
+[93] [94] (pdfs/algebra-3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1768,7 +1765,7 @@ Package rerunfilecheck Info: File `algebra-3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  35416 strings out of 479648
- 704582 string characters out of 5886115
+ 704023 string characters out of 5886115
  945678 words of memory out of 5000000
  52351 multiletter control sequences out of 15000+600000
  509854 words of font info for 106 fonts, out of 8000000 for 9000
@@ -1798,8 +1795,7 @@ symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb
 >
-Output written on /home/leonid/No-Idle.github.io/conspecta/3/pdfs/algebra-3.pdf
- (95 pages, 767177 bytes).
+Output written on pdfs/algebra-3.pdf (95 pages, 767168 bytes).
 PDF statistics:
  1455 PDF objects out of 1728 (max. 8388607)
  1296 compressed objects within 13 object streams

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 19:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1079,11 +1079,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box71
 )
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/algebra-1.aux
+(pdfs/algebra-1.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `algebra-1.aux'.
@@ -1190,8 +1189,7 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/algebra-1.out)
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/algebra-1.out)
+(pdfs/algebra-1.out) (pdfs/algebra-1.out)
 \@outlinefile=\write4
 \openout4 = `algebra-1.out'.
 
@@ -1222,8 +1220,7 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <24.88> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 13.
-
-(/home/leonid/No-Idle.github.io/conspecta/1/pdfs/algebra-1.toc
+ (pdfs/algebra-1.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -1841,7 +1838,7 @@ Overfull \hbox (13.35815pt too wide) in paragraph at lines 4590--4590
 ч-ные зна-че-ния? $[]$. 
  []
 
-[91] [92] (/home/leonid/No-Idle.github.io/conspecta/1/pdfs/algebra-1.aux)
+[91] [92] (pdfs/algebra-1.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1850,7 +1847,7 @@ Package rerunfilecheck Info: File `algebra-1.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  30314 strings out of 479648
- 572971 string characters out of 5886115
+ 572412 string characters out of 5886115
  848921 words of memory out of 5000000
  47050 multiletter control sequences out of 15000+600000
  510202 words of font info for 108 fonts, out of 8000000 for 9000
@@ -1880,8 +1877,7 @@ ls/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.p
 fb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/1/pdfs/algebra-1.pdf
- (93 pages, 691409 bytes).
+Output written on pdfs/algebra-1.pdf (93 pages, 691429 bytes).
 PDF statistics:
  1794 PDF objects out of 2073 (max. 8388607)
  1626 compressed objects within 17 object streams

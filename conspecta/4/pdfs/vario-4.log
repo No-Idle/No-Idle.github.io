@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  20 FEB 2024 22:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1078,11 +1078,10 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box71
 )
-(/home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.aux
+(pdfs/vario-4.aux
 LaTeX Font Info:    Trying to load font information for T2A+faq on input line 2
 2.
-
-(/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
+ (/usr/share/texmf/tex/latex/pscyr/t2afaq.fd
 File: t2afaq.fd 2004/09/23 Fontinst v1.914 font definitions for T2A/faq.
 ))
 \openout1 = `vario-4.aux'.
@@ -1189,8 +1188,7 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(/home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.out)
-(/home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.out)
+(pdfs/vario-4.out) (pdfs/vario-4.out)
 \@outlinefile=\write4
 \openout4 = `vario-4.out'.
 
@@ -1219,15 +1217,14 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <14.4> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 12.
-
-(/home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.toc
+ (pdfs/vario-4.toc
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <10> not available
 (Font)              Font shape `T2A/faq/bx/n' tried instead on input line 2.
 )
 \tf@toc=\write5
 \openout5 = `vario-4.toc'.
 
- [1
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T2A/faq/b/n' in size <12> not available
@@ -1280,7 +1277,7 @@ $[] \OT1/cmr/m/n/10 + [][][]\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 t\OT1/cmr/m/n/10 )[] []  \OML/cmm/m/it/10 t$ 
  []
 
-[5] [6] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.aux)
+[5] [6] (pdfs/vario-4.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1289,8 +1286,8 @@ Package rerunfilecheck Info: File `vario-4.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  29284 strings out of 479648
- 555792 string characters out of 5886115
- 834310 words of memory out of 5000000
+ 555233 string characters out of 5886115
+ 834308 words of memory out of 5000000
  46674 multiletter control sequences out of 15000+600000
  494897 words of font info for 84 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
@@ -1310,8 +1307,7 @@ r7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/vario-4.pdf (
-6 pages, 183263 bytes).
+Output written on pdfs/vario-4.pdf (6 pages, 183264 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams

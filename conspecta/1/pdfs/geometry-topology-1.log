@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1241,7 +1241,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.60 ...СЃС‚СЂР°РЅСЃС‚РІР°}{42}{subsection.2.13.2}
+l.60 ...СЃС‚СЂР°РЅСЃС‚РІР°}{43}{subsection.2.13.2}
                                                   % [1
 
 ])
@@ -1434,6 +1434,13 @@ Missing character: There is no ф in font cmr7!
 Missing character: There is no о in font cmr7!
 Missing character: There is no в in font cmr7!
 Missing character: There is no о in font cmr7!
+
+Overfull \hbox (0.271pt too wide) in paragraph at lines 2014--2014
+[]\T2A/faq/bx/n/10 Определение 2.13.1 \T2A/faq/m/n/10 ($\OML/cmm/m/it/10 m$\T2A
+/faq/m/n/10 -мерное мно-го-об-ра-зие)\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 Ха-у-
+сдор-фо-во то-по-ло-ги-че-ское про-стран-ство со счјт-
+ []
+
 [39] [40] [41] [42] [43]
 Overfull \hbox (10.63365pt too wide) in paragraph at lines 2256--2256
 []\T2A/faq/bx/n/10 Определение 2.13.17 \T2A/faq/m/n/10 (Эй-ле-ро-ва ха-рак-те-р
@@ -1512,17 +1519,14 @@ $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; [] ; p[]\OMS/cmsy/m/n/10 g 2
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `geometry-topology-1.out' has not changed.
 (rerunfilecheck)             Checksum: 5B35988D3B6535F0E3E476487071008E;14213.
  ) 
 Here is how much of TeX's memory you used:
- 29949 strings out of 479648
- 564237 string characters out of 5886115
- 846666 words of memory out of 5000000
- 46913 multiletter control sequences out of 15000+600000
+ 29947 strings out of 479648
+ 564226 string characters out of 5886115
+ 845650 words of memory out of 5000000
+ 46911 multiletter control sequences out of 15000+600000
  506799 words of font info for 97 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,27n,103p,707b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1544,7 +1548,7 @@ live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on pdfs/geometry-topology-1.pdf (57 pages, 453629 bytes).
+Output written on pdfs/geometry-topology-1.pdf (57 pages, 453441 bytes).
 PDF statistics:
  1067 PDF objects out of 1200 (max. 8388607)
  961 compressed objects within 10 object streams

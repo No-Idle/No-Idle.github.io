@@ -30,7 +30,7 @@
 \contentsline {chapter}{\numberline {2}Несобственные интегралы и компания}{39}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Одна из ситуаций}{39}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Сравнение рядов и интегралов}{40}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Частичные суммы гармонического ряда и постоянная Эйлера-Маскерони}{41}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.1}Частичные суммы гармонического ряда и постоянная Эйлера --- Маскерони}{41}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Формула Стирлинга}{41}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Суммируемые семейства}{42}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Применения}{45}{subsection.2.3.1}%

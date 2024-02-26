@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 FEB 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1227,7 +1227,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ...‚СЂР°РµРєС‚РѕСЂРёСЏ}{46}{subsection.5.1.2}
+l.44 ...‚СЂР°РµРєС‚РѕСЂРёСЏ}{47}{subsection.5.1.2}
                                                   % [1
 
 ])
@@ -1343,8 +1343,16 @@ aq/m/n/10 с рас-сто-я-ни-ем $\OML/cmm/m/it/10 ^^Z\OT1/cmr/m/n/10 (\OML/cmm/m/it
 [25]
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 9
 15.
- (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [26] [27]
-[28] [29]
+ (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [26]
+Overfull \hbox (12.89857pt too wide) in paragraph at lines 983--983
+[]\T2A/faq/bx/n/10 Теорема 2.6.1 \T2A/faq/m/n/10 (Лаппо--Дани-лев-ский)\T2A/faq
+/bx/n/10 . []\T2A/faq/m/n/10 Пусть су-ще-ству-ет $\OML/cmm/m/it/10 t[] \OMS/cms
+y/m/n/10 2 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; b\OT1/cmr/m/n/10 ) : \OML/cmm/m
+/it/10 A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^
+^A [] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A
+ []
+
+[27] [28] [29]
 Overfull \hbox (19.8176pt too wide) in paragraph at lines 1124--1124
 []\T2A/faq/bx/n/10 Теорема 2.9.1 \T2A/faq/m/n/10 (Фор-му-ла Остро-град-ско-го -
 -- Ли-увил-ля (фор-му-ла Яко-би))\T2A/faq/bx/n/10 . []\T2A/faq/m/n/10 То-гда $[
@@ -1447,17 +1455,14 @@ Missing character: There is no ; in font nullfont!
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `diffdyn-3.out' has not changed.
 (rerunfilecheck)             Checksum: F675163D86D9065F2A4198C5D66AF36F;14869.
  ) 
 Here is how much of TeX's memory you used:
- 30773 strings out of 479648
- 584182 string characters out of 5886115
- 959063 words of memory out of 5000000
- 47976 multiletter control sequences out of 15000+600000
+ 30771 strings out of 479648
+ 584171 string characters out of 5886115
+ 959047 words of memory out of 5000000
+ 47974 multiletter control sequences out of 15000+600000
  507063 words of font info for 98 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,15n,103p,737b,862s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1482,7 +1487,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/boondox/zxxrw8a.pfb>
-Output written on pdfs/diffdyn-3.pdf (52 pages, 492648 bytes).
+Output written on pdfs/diffdyn-3.pdf (52 pages, 492663 bytes).
 PDF statistics:
  739 PDF objects out of 1000 (max. 8388607)
  634 compressed objects within 7 object streams

@@ -12,7 +12,7 @@
 \contentsline {subsubsection}{Тензорный и скелетный ранги}{11}{section*.2}%
 \contentsline {subsubsection}{Строчный и столбцовый ранги}{11}{section*.3}%
 \contentsline {subsection}{\numberline {1.4.3}Системы линейных уравнений}{12}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Векторная запись системы линейных уравнений. Теорема Кронекера-Капелли}{13}{subsection.1.4.4}%
+\contentsline {subsection}{\numberline {1.4.4}Векторная запись системы линейных уравнений. Теорема Кронекера --- Капелли}{13}{subsection.1.4.4}%
 \contentsline {subsection}{\numberline {1.4.5}Решение систем линейных уравнений методом Гаусса}{13}{subsection.1.4.5}%
 \contentsline {subsection}{\numberline {1.4.6}Определитель по Вейерштрассу}{14}{subsection.1.4.6}%
 \contentsline {subsection}{\numberline {1.4.7}Знак перестановки. Определение через декремент}{14}{subsection.1.4.7}%
@@ -49,7 +49,7 @@
 \contentsline {subsection}{\numberline {2.9.2}Теорема Гаусса}{32}{subsection.2.9.2}%
 \contentsline {section}{\numberline {2.10}Дифференцирование алгебр}{33}{section.2.10}%
 \contentsline {subsection}{\numberline {2.10.1}Операции над дифференцированиями}{34}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Дифференцирование кольца многочленов, теорема Лейбница-Бернулли}{34}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.2}Дифференцирование кольца многочленов, теорема Лейбница --- Бернулли}{34}{subsection.2.10.2}%
 \contentsline {section}{\numberline {2.11}Алгебраические и трансцендентные элементы; минимальный многочлен}{35}{section.2.11}%
 \contentsline {subsection}{\numberline {2.11.1}Что можно сказать, если $A$ --- область целостности?}{35}{subsection.2.11.1}%
 \contentsline {chapter}{\numberline {3}Канонические формы линейных операторов}{37}{chapter.3}%
@@ -69,7 +69,7 @@
 \contentsline {section}{\numberline {3.8}Теорема о жордановой форме}{44}{section.3.8}%
 \contentsline {subsection}{\numberline {3.8.1}Жорданов базис нильпотентного оператора}{45}{subsection.3.8.1}%
 \contentsline {section}{\numberline {3.9}Сепарабельные многочлены, совершенные поля}{46}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Разложение Жордана-Шевалле}{47}{section.3.10}%
+\contentsline {section}{\numberline {3.10}Разложение Жордана --- Шевалле}{47}{section.3.10}%
 \contentsline {section}{\numberline {3.11}Вещественные жордановы формы}{48}{section.3.11}%
 \contentsline {section}{\numberline {3.12}Циклические подпространства, фробениусовы клетки}{48}{section.3.12}%
 \contentsline {chapter}{\numberline {4}Классификация модулей над PID}{50}{chapter.4}%
