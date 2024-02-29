@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 FEB 2024 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  29 FEB 2024 21:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1351,10 +1351,10 @@ Package rerunfilecheck Info: File `complex-analysis-4.out' has not changed.
 (rerunfilecheck)             Checksum: 87E1E1CADC358C6E22F2524417290CBE;3244.
  ) 
 Here is how much of TeX's memory you used:
- 29407 strings out of 479648
- 558270 string characters out of 5886115
- 837175 words of memory out of 5000000
- 46771 multiletter control sequences out of 15000+600000
+ 29409 strings out of 479648
+ 558277 string characters out of 5886115
+ 837189 words of memory out of 5000000
+ 46773 multiletter control sequences out of 15000+600000
  505075 words of font info for 98 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
  99i,13n,103p,589b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1375,7 +1375,7 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analy
-sis-4.pdf (12 pages, 233687 bytes).
+sis-4.pdf (12 pages, 233748 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams

@@ -231,4 +231,144 @@
         }
     }
     Заметим, что у нас по-прежнему два условия (теперь уже данные в самой задаче) и уравнение второго порядка, значит, по-прежнему, данных для решения задачи как раз столько, что стоит надеяться на получение решения.
+    \newlection{29 февраля 2023 г.}
+    Распишем чуть подробнее уравнение Эйлера --- Лагранжа, пусть для определённости $d = 1$.
+    \[\frac{\d}{\d t}\der{L}{\dot{u}} = \frac{\partial^2 L}{\partial t \partial \dot{u}} + \frac{\partial^2 L}{\partial u \partial \dot{u}}\dot{u} + \frac{\partial^2 L}{\partial \dot{u}^2}\ddot{u}\label{partial}\tag{$*$}\]
+    Общая теорема говорит, что $\nabla_{\dot{u}}L$ имеет $C^1$ гладкость, однако совсем не утверждается, что при разложении~\eqref{partial} каждое слагаемое будет гладким, или даже просто будет существовать.
+    И правда, такого и не наблюдается.
+    \counterexample{
+    Рассмотрим функционал $J[u] = \int\limits_{-1}^{1}u^2 (\dot{u} - 2x)^2 \d x$, где $X = \defset{u \in C^1[-1, 1]}{\arr{c}{u(-1) = 0\\u(1) = 1}}$
+    и функцию $u \in X, u(t) = \all{0,& x\in [-1, 0] \\ x^2,& x \in [0, 1]}$. $u$ --- экстремаль, например, потому что это глобальный минимум.
+    При этом $u \notin C^2$, хотя $\der{L}{\dot{u}} = 2u^2(\dot{u} - 2x) \equiv 0$ --- бесконечно гладкая.
+    }
+    Что нужно потребовать, чтобы все слагаемые~\eqref{partial} существовали?
+
+    В примере сам лагранжиан $L(x, u, \dot{u}) = u^2(\dot{u} - 2x^2)$ --- бесконечно гладкий.
+    Но $\ddot{u}$ можно выразить из~\eqref{partial} только если $\frac{\partial^2}{\partial \dot{u}^2}L \ne 0$.
+
+    Следующее предложение формулируется в случае, когда $L$ задан на $[a, b] \times \R^d \times \R^d$; в общем случае сужения $L$ на некоторое подмножество принципиально ничего не поменяется.
+    \proposal{
+    Пусть $L \in C^2(\Omega)$, где $\Omega = [a, b] \times \R^d \times \R^d$, пусть $\det \d^2_v L \ne 0$ везде в $\Omega$.
+
+    Пусть $u$ --- локальный экстремум функционала $J$. Утверждается, что $u \in C^2[a, b]$.
+    \provehere{
+    \comment{На лекции, по-видимому, было другое определение $\xi$, с ним ничего не сходится, но в конспекте лектора --- как ниже.}
+
+        Введём функцию \begin{align*}\xi: [a, b] \times \R^d &\map \R^d\\ (t, v) &\mapsto (\nabla_{\dot{u}}L)(t, u(t), \dot{u}(t)) - (\nabla_{\dot{u}}L)(t, u(t), v)\end{align*}
+
+    Согласно посылке теоремы, $\d_v \xi \ne 0$ для всех $t, v$.
+
+    По теореме о неявной функции $\forall t_0 \in (a, b): \exists \delta > 0: \defset{(t, v)}{\xi(t, v) = 0, |t - t_0| < \delta}$ --- график некоторой функции $v \in C^1\left((t_0 - \delta, t_0 + \delta) \map \R^d\right)$.
+    Но $v \equiv \dot{u}\big|_{(t_0 - \delta, t_0 + \delta)}$. Значит, $u \in C^2(a, b)$.
+
+    Случай концов ($t_0 = a, b$)--- упражнение.
+    }
+    }
+    \section{Условные экстремумы}
+    \emph{Согласно полу-исторической, полулегендарной справке, некогда Дидона прибыла на берег некоего африканского государства, и потребовала, на основании своего высокого происхождения, выделить ей столько земли, сколько можно опоясать ремешком из шкуры одного быка\ldots}
+
+    Напоминание конечномерного случая:
+    Пусть $\Omega \subset \R^d$ --- область, $f, g \in C^1(\Omega)$, $\mathcal{M} = \defset{x \in \Omega}{g(x) = 0}$.
+
+    Заинтересуемся экстремумумами сужения $f\big|_{\mathcal{M}}$.
+    Построим кривую $x(t)$, условие $g(x(t)) = 0 \then f(x(t))$ --- тоже локальный экстремум.
+    $\frac{\d}{\d t}\Big|_{t = 0}f(x(t)) = \angles{(\nabla f)(x_0), \dot{x}(t)}$.
+
+    Поскольку кривая любая, то $\nabla f \perp T_{x_0}\mathcal{M}$. В общем случае такой вектор очень легко найти: $g(x(t)) = 0 \then \angles{(\nabla g)(x_0), \dot{x}} = 0$
+
+    Иными словами $\exists \lambda: \grad(f - \lambda g) = 0$. Ищем критические точки $f - \lambda g$, выделяем те, которые в $\mathcal{M}$.
+    С обнулениями градиента разбираемся отдельно. Нам помогло, что коразмерность $\mathcal{M}$ равна $1$.
+
+    Пускай $X$ --- нормированное замкнутое пространство, $G \in C^1(X)$ --- задающий условие функционал.
+    Иными словами,
+    \bullets{
+    \item $\forall x \in X: \exists G'(x) \in X^*: |G(x + s) - G(x) - G'(x)s| = o(\|s\|)$ --- сильная дифференциуремость в точке $x$.
+    \item $G': X \map X^*$ непрерывно.
+    }
+    \lemma{
+    Пусть $x_0 \in \mathcal{M} = \defset{x \in X}{G(x) =  0}$.
+    Пусть $G'(x_0) \ne 0$.
+
+    Тогда $\forall h \in \Ker G'(x_0): \exists x: (\delta,\delta) \map \mathcal{M}, x \in C^1: x(0) = x_0, \dot{x}(0) = h$.
+    \provehere{
+        Фиксируем $\xi \notin \Ker G'(x_0)$. Рассмотрим функцию $G[x_0 + t\xi + \tau h] \eqqcolon r(t, \tau)$. Это $C^1\left(\left[-\eps, \eps\right] \times [-\eps, \eps]\right)$.
+
+        $r(0, 0) = 0$, $\der{t}{t}(0, 0) = G'[x_0]\xi \ne 0$.
+        Применяя теорему о неявной функции, получаем $\exists \delta > 0: \defset{(t, \tau)}{\tau \in (-\delta, \delta), r(t, \tau) = 0}$ --- график $C^1$ функции $t = t(\tau), t: (\delta, \delta) \map \R$.
+
+        $x: \tau \mapsto x_0 + t(\tau)\xi + \tau h$ --- искомая кривая.
+    \numbers{
+    \item По построению $x: (\delta, \delta) \map \mathcal{M}$ --- класса $C^1$.
+    \item $\dot{x}(0) = \dot{t}(0)\xi + h$, с другой стороны, дифференцируя тождество $G(x(t)) = 0$, получаем $G'[x(0)] \cdot \dot{x}(0) = 0$
+    Отсюда $\dot{x}(0) \in \Ker G'[x_0]$. Значит, $\dot{t}(0) = 0$ (так как $\xi \notin \Ker G'[x_0]$).
+        Тем самым, $\dot{t}(0) = h$
+    }
+    }
+    }
+    Пускай $F \in C^1(X), x_0 \in \mathcal{M}$ --- точка локального экстремума сужения $F\big|_{\mathcal{M}}$.
+
+    Рассмотрим только что построенную $x(\tau)$.
+    Должно быть $\frac{\d}{\d \tau}\Big|_{\tau = 0}F(x(\tau)) = 0$.
+    С другой стороны, она же $F'(x_0)\cdot h$.
+
+    Значит, $\Ker G'[x_0] \subset \Ker F'[x_0]$, и $\exists \lambda \in \R: (F'(x_0) - \lambda G'(x_0)) = 0$ --- и $F'$, и $G'$ обнуляются на пространстве коразмерности 1.
+    Формальнее $\exists \eta \notin \Ker G'(x_0), \forall h \in X: h = \underbrace{(h - \frac{G'(x_0)h}{G'(x_0)\eta}\eta)}_{\in \Ker G'[x_0]} + \frac{G'(x_0)h}{G'(x_0)\eta}\eta$.
+    Значит, $(F' - \lambda G')(h) = F'(x_0) \eta - \lambda G'(x_0)\eta$.
+    Подойдёт $\lambda = \frac{F'(x_0)\eta}{G'(x_0)\eta}$
+
+    Получилась теорема:
+    \theorem{
+    Пускай $F, G \in C^1(X)$, пускай $x_0$ --- точка локального экстремума $F$ на $\mathcal{M} = \defset{x \in X}{G[x] = 0}$, пусть $G'[x_0] \ne 0$.
+
+    Тогда $\exists \lambda \in \R: \forall h \in X: \delta(F - \lambda G)[x_0, h] = 0$ (отметим, что так как $F, G \in C^1$, то $\exists \delta (F - \lambda G)$.)
+    }
+    \exercise{Задача с фиксированными концами}
+    \subsection{Случай нескольких условий}
+    Имеется $F, G_1, \dots, G)n \in C^1(X), \mathcal{M} = \defset{x \in X}{G_1[x] = \dots = G_n[x] = 0}$.
+
+    Образуем линейный оператор $\mathbb{G}'(x_0) = \vect{G'_1(x_0) \\ \vdots \\ G'_n(x_0)}: X \map \R^n$ ($\mathbb{G}'(x_0)h = \vect{G'_1(x_0)h \\ \vdots \\ G'_n(x_0)h}$)
+
+    \theorem{
+    Пусть $x_0$ --- точка локального экстремума $F$ на $\mathcal{M}$, пусть $\Ran \mathbb{G}'(x_0) = \R^n$ (экви $\sum c_j G'j(x_0) = 0 \then \forall j: c_j = 0$).
+
+    Тогда $\exists \lambda_1, \dots, \lambda_n \in \R: \forall h \in X: \delta(F - \sum \lambda_j G_j)[x_0, h] = 0$
+    \provehere{
+    \indentlemma{
+        В тех же предположениях невырожденности $\Ran \mathbb{G}'(x) = \R^n$ Пусть $\forall j: h \in \Ker G_j'(x_0)$.
+        Тогда $\exists x: (-\delta, \delta) \map \mathcal{M}, x \in C^1, x(0) = x_0, \dot{x}(0) = h$.
+    }{
+        тоже теорема о неявной функции.
+    }
+    Полностью аналогично скалярному случаю.
+    }
+    }
+    \note{
+    Применить скалярную теорему к $G[x] = \sum G_i^2[x]$ не получится, так как $G'[x] = 0$ везде на $\mathcal{M}$.
+    }
+    \exercise{Задача с фиксированными концами}
+
+    Пускай $L, r_1, \dots, r_n \in C^1([a, b]\times\R^d \times \R^d)$, $J[u] = \int\limits_{a}^{b}L(t, u(t), \dot{u}(t))\d t, R_j[u] = \int\limits_{a}^{b}r_j(t, u(t), \dot{u}(t))\d t$.
+
+    Пускай $u_0$ --- точка локального экстремума $J\big|_{\bigcap R_j}$.
+    Пускай $\R(u_0) = \vect{R_1'(u_0) \\ \vdots \\ R_n'(u_0)}$ имеет полный ранг: $\Ran \R(x_0) = \R^n$.
+
+    Тогда
+    \numbers{
+        \item $\exists \lambda_1, \dots, \lambda_n: \nabla_{\dot{u}}(L - \sum \lambda_j r_j)(t, u_0(t), \dot{u}_0(t)) \in C^1[a, b]$.
+    \item Выполнено уравнение Э --- Л: $\frac{\d}{\d t}\nabla_{\dot{u}}(L - \sum \lambda_j R_j) = \nabla_u (L - \sum \lambda_j R_j)$
+    \item $\nabla_{\dot{u}}(L - \sum \lambda_j r_j)\Big|_{t = a, t = b} = 0$.
+    }
+    \provehere{
+    Вытекает из доказательства первой теоремы (там использовалось только то, что вариация обращается в нуль, а не то, что $u_0$ --- экстремаль) и только что доказанного.
+    }
+    \example{
+    Пускай $\Omega \subset \R^3$ --- ограниченная односвязная, граница --- класса $C^1$. $X = C(\partial \Omega)$.
+
+    Заведём $U[\sigma] = \iint_{\partial \Omega \:\partial\Omega}\frac{\sigma(x)\sigma(y)\d S(x)\d S(y)}{|x - y|}$.
+
+    $U$ непрерывен на $X$: $\xi: y \mapsto \int_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
+    \[U[\sigma + s] - U[\sigma] = 2\iint_{\partial \Omega \:\partial\Omega}\frac{s(x)\sigma(y)}{|x - y|}\d S(x)\d S(y) + \bigO(\|s\|^2_C)\]
+
+    Значит, $s \mapsto \int\limits_{\partial\Omega}s(x)\xi(x)\d x$ непрерывен, откуда $U$ --- даже функционал класса $C^1(X)$.
+    }
 \end{document}

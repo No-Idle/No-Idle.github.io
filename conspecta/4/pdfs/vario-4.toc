@@ -7,3 +7,5 @@
 \contentsline {subsection}{\numberline {2.3}Уравнение Эйлера --- Лагранжа}{5}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Случай свободных концов}{5}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Случай фиксированных концов}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Условные экстремумы}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Случай нескольких условий}{8}{subsection.3.1}%
