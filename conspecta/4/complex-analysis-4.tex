@@ -512,11 +512,11 @@
         То, что мы увидим сейчас, является первым заходом на \emph{формулу Гаусса --- Остроградского}.
         Функция $h$ непрерывна, и можно записать на неё интеграл Лебега: $\int\limits_{P}h(x, y)\d x \d y$.
         Теперь применяя теорему Фубини, раскладываем интеграл в сумму повторных:
-        \comment{Проверить знаки}
-        \multline{\int\limits_{\gamma_1^-}f(\_, d)\d y + \int\limits_{\gamma_3^-}f(\_, c)\d y = \int\limits_{a}^{b}\left[f(x, d) - f(x, c)\right]\d y = \int\limits_{a}^{b}\left(\int\limits_{c}^{d}\der{f}{x}\d x\right)\d y
+        \multline{\int\limits_{\gamma_3^-}f(\_, d)\d x + \int\limits_{\gamma_1^-}f(\_, c)\d x = \int\limits_{a}^{b}\left[f(x, d) - f(x, c)\right]\d x = \int\limits_{a}^{b}\left(\int\limits_{c}^{d}\der{f}{y}\d y\right)\d x
             =\\= \int\limits_{P}h(x, y)\d x \d y =\\=
             \int\limits_{c}^{d}\left(\int\limits_{a}^{b}\der{g}{x}\d x\right)\d y = \int\limits_{c}^{d}\left[g(b, y) - g(a, y)\right]\d y = \int\limits_{\gamma_2}g(b, \_)\d y + \int\limits_{\gamma_4}g(a, \_)\d y}
-    \item[$\when$] Теперь приведём аналогичное доказательство индукцией по $n$.
+        Итого, $\int\limits_{\gamma_3^-}f(\_, d)\d x + \int\limits_{\gamma_1^-}f(\_, c)\d x = \int\limits_{\gamma_2}g(b, \_)\d y + \int\limits_{\gamma_4}g(a, \_)\d y$, откуда действительно $\int\limits_{\gamma}\Phi = 0$.
+    \item[$\when$] Теперь приведём альтернативное доказательство индукцией по $n$.
 
     \underline{База:} Случай $n = 1$ тривиален: теорема Ньютона --- Лейбница говорит, что у непрерывной функции есть первообразная.
 
