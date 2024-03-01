@@ -207,7 +207,7 @@
     \lemma{
         Пусть $G$ --- область в $\R^n$, тогда любые две её точки можно соединить ломаной (кусочно-линейным путём).
     \provehere{
-        Выберем $x_0 \in G$, положим $U = \defset{y \in G}{\text{существует ломаная с началом в $x_0$ и концом в $y$}}$.
+        Выберем $x_0 \in G$, положим $U = \defset{y \in G}{\text{существует ломаная в $G$ с началом в $x_0$ и концом в $y$}}$.
 
         Покажем, что $U$ открыто.
         Пусть $y \in U$, тогда найдётся шарик $B_\eps(y) \subset G$, и $B_\eps(y) \subset U$ --- можно добавить одно звено к ломаной $x_0 \rightsquigarrow y$.
@@ -228,7 +228,7 @@
         Следующие условия эквивалентны.
         \numbers{
         \item У $\Phi$ есть первообразная $F$, то есть функция $F \in C^1(G): \d F = \Phi$ (иными словами, $\forall j: \der{}{x_j}F = f_j$).
-        \item Для всех кусочно-гладких $\gamma$ с фиксированными началом и концом $\gamma(a) = \gamma_a, \gamma(b) = \gamma_b$: $\int\limits_{\gamma}\Phi$ не зависит от $\gamma$ (а только от начала и конца).
+        \item Для всех кусочно-гладких путей $\gamma$ с фиксированными началом и концом $\gamma(a) = \gamma_a, \gamma(b) = \gamma_b$: $\int\limits_{\gamma}\Phi$ не зависит от $\gamma$ (а только от начала и конца).
         \item Для любой кусочно-гладкой петли (то есть замкнутого пути) $\gamma$ в $G$:  $\int\limits_{\gamma}\Phi = 0$.
         }
 %        такова, что $\forall x, y \in G: \exists c \in \C: \forall$ кусочно-гладкого пути $\gamma$ с началом в $x$ и концом в $y$: $\int\limits_{\gamma}U = c$.
@@ -251,13 +251,13 @@
 
             При малых $t$: отрезок между $x$ и $x + t e_j$ лежит внутри $G$.
             Пусть $\gamma_1$ --- путь, соединяющий $x_0$ и $x$, $l$ --- отрезок от $x$ до $x + t e_j$.
-        \[\frac{F (x + te_j) - F(x)}{t} = \frac{1}{t}\left(\int\limits_{\gamma_1 \oplus l}\Phi - \int\limits_{\gamma_1}\Phi\right) = \frac{1}{t}\int\limits_{l}\Phi = \int\limits_{0}^{t}f_j(x + \tau e_j)\d \tau \underset{t \to 0}\Map f_j(x)\qedhere\]
+        \[\frac{F (x + te_j) - F(x)}{t} = \frac{1}{t}\left(\int\limits_{\gamma_1 \oplus l}\Phi - \int\limits_{\gamma_1}\Phi\right) = \frac{1}{t}\int\limits_{l}\Phi = \frac1t \int\limits_{0}^{t}f_j(x + \tau e_j)\d \tau \underset{t \to 0}\Map f_j(x)\qedhere\]
         }
     }
     \definition[Прямоугольник на плоскости]{
     Множество вида $[a, b] \times [c, d] \subset \R^2$.
     }
-    Область $G$ на плоскости будем называть \emph{удобной}, если $\exists x_0 \in G: \forall y \in G: \exists$ прямоугольник $P \ni x, y$.
+    Область $G$ на плоскости будем называть \emph{удобной}, если $\exists x_0 \in G: \forall y \in G: \exists$ прямоугольник $P \subset G$, содержащий точки $x$ и $y$.
     \examples[Удобные области]{
     \item $\Int Q$, если $Q$ --- прямоугольник. В качестве центра $x_0$ подойдёт любая точка.
     \item $B_r(x_0) = \defset{x \in \R^2}{|x - x_0| < r}$. В качестве центра $x_0$ стоит взять центр, иначе не получится:
@@ -272,7 +272,7 @@
     \end{tikzpicture}\]
     }
     \definition[Ориентированная граница прямоугольника $P$]{
-    Петля $\gamma$, обходящий границу $P = [a, b] \times [c, d]$ против часовой стрелки, то есть вот так:
+    Петля $\gamma$, обходящая границу $P = [a, b] \times [c, d]$ против часовой стрелки, то есть вот так:
     \[\begin{tikzpicture}
           \draw (0,0) node[below left] {$(a, c)$};
           \draw (0,1) node[above left] {$(a, d)$};
@@ -293,7 +293,7 @@
     }
     Для прямоугольника $P$ будем обозначать за $\partial P$ в зависимости от контекста либо границу $P$, как топологического подмножества $\R^2$, либо путь, обходящий границу $P$ против часовой стрелки.
     \corollary[Дополнение к~(\cref{integral-along-path})]{
-        Если $G$ --- удобная область на плоскости то к трём эквивалентным условиям~(\cref{integral-along-path}) можно добавить
+        Если $G$ --- удобная область на плоскости, то к трём эквивалентным условиям~(\cref{integral-along-path}) можно добавить
     \numbers{
     \item[4.] $\forall P \subset G: \int\limits_{\partial P}\Phi = 0$.
     }
@@ -315,15 +315,15 @@
               \draw[<-] (1.6,1) -- (0, 1);
               \draw[<-] (0,1) -- (0, 0);
         \end{tikzpicture}\]
-    Далее, чтобы проверить $\der{}{x_1}F = f_1$ и $\der{}{x_2} = f_2$, воспользуемся подходящим представлением: пусть орт выглядит так:
+    Далее, чтобы проверить $\der{}{x_1}F = f_1$ и $\der{}{x_2}F = f_2$, воспользуемся подходящим представлением: пусть орт выглядит так: % "орт" --- это один, что тут имеется ввиду? "пусть орты расположены так"?
         \[\begin{tikzpicture}[scale=1]
             \draw[->](0,0) -- (0,1) node [below left] {$x_1$};
             \draw[->](0,0) -- (1,0) node [below left] {$x_2$};
         \end{tikzpicture}\]
-        тогда для проверки $\der{}{x_1}F = f_1$ удобно воспользоваться определением $F$ через $\delta_1$, для проверки $\der{}{x_2}F = f_2$ --- определением через $\delta_2$.
+        тогда для проверки $\der{}{x_1}F = f_1$ удобно воспользоваться определением $F$ через $\delta_1$, для проверки $\der{}{x_2}F = f_2$ --- определением через $\delta_2$. Далее повторяем рассуждение из (\cref{integral-along-path}).
     }
     }
-    Пусть $\Phi = \sum\limits_{j = 1}^{m}f_j(x)\d x$ --- непрерывная дифференциальная форма в области $G \subset \R^n$.
+    Пусть $\Phi = \sum\limits_{j = 1}^{n}f_j(x)\d x_j$ --- непрерывная дифференциальная форма в области $G \subset \R^n$.
     \definition[Форма $\Phi$ точна]{Существует первообразная $F$ в $G: \d F = \Phi$. }
     \definition[Форма $\Phi$ замкнута]{ Форма $\Phi$ локально точна ($\forall x_0 \in G: \exists U \ni x_0$: $\Phi\big|_U$ точна). }
     Понятно, что точная форма замкнута, но точность из замкнутости не следует: чуть позднее мы определим $\d z$, и покажем, что $\frac{\d z}{z}$ --- замкнутая, но не точная форма на $\C \sm \{0\}$
@@ -336,8 +336,8 @@
     }
     Если $n = 2$, то дополнительно появляются ещё два условия:
     \numbers{
-    \item $\forall z \in G: \exists \underset{\ni z}{V_z} \subset G: \forall P \subset V: \int\limits_{\partial P}\Phi = 0$.
-    \item $\forall P \subset G: \int\limits_{\partial P}\Phi = 0$.
+    \item[3.] $\forall z \in G: \exists \underset{\ni z}{V_z} \subset G: \forall P \subset V_z: \int\limits_{\partial P}\Phi = 0$.
+    \item[4.] $\forall P \subset G: \int\limits_{\partial P}\Phi = 0$.
     }
     \provehere{
     Докажем, что $(3) \then (4)$, остальное уже доказано выше.
@@ -383,11 +383,11 @@
     \definition[$\der{F}{\overline{z}}$]{
     Коэффициент, стоящий перед $\d \overline{z}$, то есть $\frac{1}{2}\left(\der{F}{x} + i \der{F}{y}\right)$.
     }
-    Иначе говоря, мы ввели операторы $\der{}{z} \bydef \frac{1}{2}\left(\der{}{x} - i\der{}{y}\right)$ и $\der{}{\overline{z}} \bydef \frac{1}{2}\left(\der{F}{x} + i \der{F}{y}\right)$ так, что \[\d F = \der{}{z}F\d z + \der{}{\overline{z}}F\d\overline{z}\]
+    Иначе говоря, мы ввели операторы $\der{}{z} \bydef \frac{1}{2}\left(\der{}{x} - i\der{}{y}\right)$ и $\der{}{\overline{z}} \bydef \frac{1}{2}\left(\der{}{x} + i \der{}{y}\right)$ так, что \[\d F = \der{}{z}F\d z + \der{}{\overline{z}}F\d\overline{z}\]
     \subsection{Связь с голоморфными функциями}
     Пусть $F = u + iv$, где $u, v: \R^2 \map \R$.
     Запишем
-    \[\der{F}{\overline{z}} = \frac{1}{2}\left(\der{u}{x} + i\der{v}{x} + i\left(\der{u}{y} + i\der{v}{y}\right)\right) = \left(\der{u}{x} - \der{v}{y}\right) + i\left(\der{v}{x} + \der{u}{y}\right)\]
+    \[\der{F}{\overline{z}} = \frac{1}{2}\left(\der{u}{x} + i\der{v}{x} + i\left(\der{u}{y} + i\der{v}{y}\right)\right) = \frac12\left(\left(\der{u}{x} - \der{v}{y}\right) + i\left(\der{v}{x} + \der{u}{y}\right)\right)\]
     В правой части равенства получились выражения из уравнений Коши --- Римана.
     \fact{
     Вещественные функции $u, v$ удовлетворяют уравнениям Коши --- Римана $\iff \der{(u + iv)}{\overline{z}} \equiv 0$.
@@ -401,7 +401,7 @@
     }
     В основном нас будут интересовать дифференциальные формы вида $\phi(z)\d z$, где $\phi$ --- произвольная функция.
 
-    Выясним, когда у формы $\phi(z)\d z = \phi(z)\d x + \phi(z)\d y$ имеется первообразная, то есть функция $g: \der{g}{x} = \phi, \der{g}{y} = i\phi$.
+    Выясним, когда у формы $\phi(z)\d z = \phi(z)\d x + i\phi(z)\d y$ имеется первообразная, то есть функция $g: \der{g}{x} = \phi, \der{g}{y} = i\phi$.
     Заметим, что $\der{g}{z} = \frac{1}{2}(\phi - i(i\phi)) = \phi$ и $\der{g}{\overline{z}} = \frac{1}{2}(\phi + i(i\phi)) = 0$.
     \statement{
     Форма $\phi\d z$ имеет первообразную $g \iff g$ голоморфна, и $g' = \phi$.
@@ -437,9 +437,9 @@
     Грубой силой этот интеграл посчитать непросто, так как $w$ находится где угодно --- внутри или снаружи круга --- а интеграл, оказывается, зависит только от этих двух альтернатив.
     }
     \theorem[Основная оценка интеграла вдоль пути]{
-        Пускай $\Phi$ --- непрерывная дифференциальная форма в области $G \subset \R^n$, а $\gamma: [a, b] \map G$ --- кусочно-гладкий путь, $K \coloneqq \Image(\gamma) \subset G$.
+        Пускай $\Phi = \sum\limits_{j=1}^n f_j\d x_j$ --- непрерывная дифференциальная форма в области $G \subset \R^n$, а $\gamma: [a, b] \map G$ --- кусочно-гладкий путь, $K \coloneqq \Image(\gamma) \subset G$.
 
-    Тогда $\abs{\int\limits_{\gamma}\Phi} \le \underbrace{\sup\limits_{x \in K}\left(\sum\limits_{j = 1}^{n}|\phi_j(x)|^2\right)^{\nicefrac{1}{2}}}_{\eqqcolon A}\cdot l(\gamma)$.
+    Тогда $\abs{\int\limits_{\gamma}\Phi} \le \underbrace{\sup\limits_{x \in K}\left(\sum\limits_{j = 1}^{n}|f_j(x)|^2\right)^{\nicefrac{1}{2}}}_{\eqqcolon A}\cdot l(\gamma)$.
     \provehere{
     Считаем, что $\gamma$ --- гладкий путь, иначе нужно разбить на кусочки гладкости.
     \[\abs{\int\limits_{\gamma}\Phi} = \abs{\int\limits_{a}^{b}\sum\limits_{j = 1}^{n}f_j\left(\gamma(t)\right)\gamma_j'(t)\d t} \underset{\text{КБШ}}\le \int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|f_j(\gamma(t))|^2\right)^{\nicefrac{1}{2}} \cdot \left(\sum\limits_{j = 1}^{n}|\gamma_j'(t)|^2\right)^{\nicefrac{1}{2}}\d t \le A \cdot \underbrace{\int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|\gamma_j'(t)|^2\right)^{\nicefrac{1}{2}}\d t}_{l(\gamma)}\]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  1 MAR 2024 12:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  1 MAR 2024 13:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1270,7 +1270,7 @@ LaTeX Font Warning: Font shape `TS1/faq/m/n' undefined
 (Font)              for symbol `textbullet' on input line 107.
 
 [3] [4] [5]
-Overfull \hbox (44.99605pt too wide) in paragraph at lines 219--219
+Overfull \hbox (64.83853pt too wide) in paragraph at lines 219--219
 []\T2A/faq/m/n/10 Выберем $\OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/i
 t/10 G$\T2A/faq/m/n/10 , по-ло-жим $\OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = []$\T2
 A/faq/m/n/10 . 
@@ -1352,8 +1352,8 @@ Package rerunfilecheck Info: File `complex-analysis-4.out' has not changed.
 (rerunfilecheck)             Checksum: 87E1E1CADC358C6E22F2524417290CBE;3244.
  ) 
 Here is how much of TeX's memory you used:
- 29454 strings out of 479648
- 559159 string characters out of 5886115
+ 29452 strings out of 479648
+ 559147 string characters out of 5886115
  840341 words of memory out of 5000000
  46808 multiletter control sequences out of 15000+600000
  505075 words of font info for 98 fonts, out of 8000000 for 9000
@@ -1377,10 +1377,10 @@ live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analy
-sis-4.pdf (16 pages, 272640 bytes).
+sis-4.pdf (16 pages, 272504 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 68 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
