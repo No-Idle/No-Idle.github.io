@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  29 FEB 2024 21:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  1 MAR 2024 12:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1338,12 +1338,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 369.
 
 [9] [10]
-Overfull \hbox (29.12064pt too wide) detected at line 438
+Overfull \hbox (29.12064pt too wide) detected at line 447
 [] \OT1/cmr/m/n/10 = [] [] [] [][] \OMS/cmsy/m/n/10 ^^A [][] []  \OML/cmm/m/it/
 10 t \U/msa/m/n/10 6 \OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ^^A []
  []
 
-[11] (/home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analysis-4.aux)
+[11] [12] [13] [14] [15]
+(/home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analysis-4.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1351,13 +1352,13 @@ Package rerunfilecheck Info: File `complex-analysis-4.out' has not changed.
 (rerunfilecheck)             Checksum: 87E1E1CADC358C6E22F2524417290CBE;3244.
  ) 
 Here is how much of TeX's memory you used:
- 29409 strings out of 479648
- 558277 string characters out of 5886115
- 837189 words of memory out of 5000000
- 46773 multiletter control sequences out of 15000+600000
+ 29454 strings out of 479648
+ 559159 string characters out of 5886115
+ 840341 words of memory out of 5000000
+ 46808 multiletter control sequences out of 15000+600000
  505075 words of font info for 98 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 99i,13n,103p,589b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,14n,103p,589b,871s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/leonid/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk>{/usr/share/texmf/fonts/enc/dvips/pscyr/t2a.enc}</usr/share/texmf/fonts/typ
 e1/public/pscyr/antiq5.pfb></usr/share/texmf/fonts/type1/public/pscyr/antiq6.pf
@@ -1373,12 +1374,13 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on /home/leonid/No-Idle.github.io/conspecta/4/pdfs/complex-analy
-sis-4.pdf (12 pages, 233748 bytes).
+sis-4.pdf (16 pages, 272640 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
+ 291 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
