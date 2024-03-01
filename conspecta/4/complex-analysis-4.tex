@@ -3,7 +3,7 @@
 \usepackage{../mathstemplate}
 
 \date{IV семестр, весна 2024 г.}
-\title{Комплексный анализ. Неофициальный конспект}
+\title{Математический анализ. Неофициальный конспект}
 \author{Лектор: Сергей Витальевич Кисляков \\ Конспектировал Леонид Данилевич}
 
 \begin{document}
@@ -23,7 +23,7 @@
     \definition[$f$ аналитична в $G$] {
     $\forall z_0 \in G: \exists c_j \in \C$: \[f(z) = \sum\limits_{j = 0}^{\infty}c_j(z - z_0)^j\tag{$*$}\label{analytic}\] где ряд сходится не только при $z = z_0$.
     }
-    \theorem{
+    \theorem{\label{analytic-is-holomorphic}
     $f$ аналитична в $G \iff f$ голоморфна во всех точках $G$.
     \provetwhen{
         Доказали во втором семестре, несложно.
@@ -185,8 +185,8 @@
 
     Тем самым, можно определить сумму путей для несоприкасающихся отрезков: для двух путей $\gamma_1: [a, b] \map G, \gamma_2: [c, d] \map G$ (при условии $\gamma_{1}(b) = \gamma_2(c)$) можно один их отрезков-прообразов линейным возрастающим преобразованием перевести в отрезок, соприкасающийся со вторым (например, $t \mapsto t + (b - c)$).
 
-    Также есть понятие обратного пути $\gamma_{-1}(t) = \gamma(a + b - t)$.
-    Для любой формы $U$: \[\int\limits_{\gamma \oplus \gamma_{-1}}U = \int\limits_{\gamma}U + \int\limits_{\gamma_{-1}}U = \int\limits_{\gamma}U - \int\limits_{\gamma}U = 0\]
+    Также есть понятие обратного пути $\gamma^-(t) = \gamma(a + b - t)$.
+    Для любой формы $U$: \[\int\limits_{\gamma \oplus \gamma^-}U = \int\limits_{\gamma}U + \int\limits_{\gamma^-}U = \int\limits_{\gamma}U - \int\limits_{\gamma}U = 0\]
     \section{Условия существования первообразной у дифференциальной формы}
     \theorem{
     Если у дифференциальной формы $U$ в открытом множестве $G \subset \R^n$ имеется первообразная $F$, то для всякого кусочно-гладкого пути $\gamma: [a, b] \map G$
@@ -207,7 +207,7 @@
     \lemma{
         Пусть $G$ --- область в $\R^n$, тогда любые две её точки можно соединить ломаной (кусочно-линейным путём).
     \provehere{
-        Выберем $x_0 \in G$, положим $U = \defset{y \in \R^n}{\text{существует ломаная в $G$ с началом в $x_0$ и концом в $y$}}$.
+        Выберем $x_0 \in G$, положим $U = \defset{y \in G}{\text{существует ломаная в $G$ с началом в $x_0$ и концом в $y$}}$.
 
         Покажем, что $U$ открыто.
         Пусть $y \in U$, тогда найдётся шарик $B_\eps(y) \subset G$, и $B_\eps(y) \subset U$ --- можно добавить одно звено к ломаной $x_0 \rightsquigarrow y$.
@@ -421,10 +421,20 @@
     Для будущих применений также определим ориентированную против часовой стрелки границу $B_r(z_0)$, это путь $\beta(t) = z_0 + r e^{i t}$ для $t \in [0, 2\pi]$.
 
     \example{
-    Пусть $z_0, w \in \C, r \in \R_{> 0}$, $|z_0 - w| \ne r$, пусть путь $\gamma$ обходит границу $B_r(z_0)$ против часовой стрелки.
-        Тогда (посчитаем чуть позже):
-    \[\int\limits_{\gamma}\frac{\d z}{z - w} = \all{0,&|z_0 - w|> r \\ 2\pi i,&|z_0 - w| < r}\]
-
+    Пусть $z_0, w \in \C, r \in \R_{> 0}$, $|w - z_0| \ne r$, пусть путь $\gamma$ обходит границу $B_r(z_0)$ против часовой стрелки:
+        \[\begin{tikzpicture}[scale=0.7]
+              \draw (0, 0) circle [radius=1.5];
+              \fill (0, 0) circle (1pt) node[left] {$z_0$};
+              \fill (1, 0.2) circle(1pt) node[left] {$w$};
+              \draw[->] (1.5,-0.05) -- (1.5,0.05);
+              \draw[->] (-1.5,0.05) -- (-1.5,-0.05);
+              \draw[->] (0.05,1.5) -- (-0.05,1.5);
+              \draw[->] (-0.05,-1.5) -- (0.05,-1.5);
+              \node[below right] at (1,-0.8) {$\gamma$};
+            \end{tikzpicture}\]
+        Тогда, оказывается, (посчитаем чуть позже):
+    \[\int\limits_{\gamma}\frac{\d z}{z - w} = \all{0,&|z - w| > r \\ 2\pi i,&|z - w| < r}\tag{$\circ$}\label{circle-integral}\]
+    Грубой силой этот интеграл посчитать непросто, так как $w$ находится где угодно --- внутри или снаружи круга --- а интеграл, оказывается, зависит только от этих двух альтернатив.
     }
     \theorem[Основная оценка интеграла вдоль пути]{
         Пускай $\Phi = \sum\limits_{j=1}^n f_j\d x_j$ --- непрерывная дифференциальная форма в области $G \subset \R^n$, а $\gamma: [a, b] \map G$ --- кусочно-гладкий путь, $K \coloneqq \Image(\gamma) \subset G$.
@@ -432,8 +442,219 @@
     Тогда $\abs{\int\limits_{\gamma}\Phi} \le \underbrace{\sup\limits_{x \in K}\left(\sum\limits_{j = 1}^{n}|f_j(x)|^2\right)^{\nicefrac{1}{2}}}_{\eqqcolon A}\cdot l(\gamma)$.
     \provehere{
     Считаем, что $\gamma$ --- гладкий путь, иначе нужно разбить на кусочки гладкости.
-
     \[\abs{\int\limits_{\gamma}\Phi} = \abs{\int\limits_{a}^{b}\sum\limits_{j = 1}^{n}f_j\left(\gamma(t)\right)\gamma_j'(t)\d t} \underset{\text{КБШ}}\le \int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|f_j(\gamma(t))|^2\right)^{\nicefrac{1}{2}} \cdot \left(\sum\limits_{j = 1}^{n}|\gamma_j'(t)|^2\right)^{\nicefrac{1}{2}}\d t \le A \cdot \underbrace{\int\limits_{a}^{b}\left(\sum\limits_{j = 1}^{n}|\gamma_j'(t)|^2\right)^{\nicefrac{1}{2}}\d t}_{l(\gamma)}\]
+    }
+    }
+    \newlection{1 марта 2024 г.}
+    Рассмотрим дифференциальную форму $\Phi = F(z)\d z$, где $F$ --- непрерывная функция в $G \subset \C$.
+    Пусть $\gamma: [a, b] \map G$ --- плоский путь.
+
+    Расписав $\Phi(z) = F(z)\d x + i F(z)\d y$, и применяя основную оценку интеграла вдоль пути, получаем
+    \[\abs{\int\limits_{\gamma}\Phi} \le \max\limits_{z \in K}\sqrt{|F(z)|^2 + |F(z)|^2} \cdot l(\gamma) = \sqrt{2}\max\limits_{z \in K}|F(z)| \cdot l(\gamma)\]
+    Эта оценка вызывает некоторую неудовлетворённость: кажется, что $\sqrt{2}$ здесь лишний.
+    И это действительно правда: можно расписать интеграл аккуратнее.
+
+    Пусть $\gamma = \gamma_1 + i\gamma_2$, тогда по определению
+    \[\int\limits_{\gamma}\Phi = \int\limits_{a}^{b}F(\gamma(t))\cdot \gamma_1'(t) + i F(\gamma(t))\cdot \gamma_2'(t)\d t = \int\limits_{a}^{b}F(\gamma(t)) \cdot \gamma'(t)\d t\]
+    Таким образом, интеграл от комплексной формы вдоль пути имеет более простое представление, и оно легко поддаётся более плотной оценке:
+    \[\abs{\int\limits_{\gamma}\Phi} \le \int\limits_{a}^{b}|F(\gamma(t))| \cdot |\gamma'(t)|\d t \le \max\limits_{z \in K}|F(z)| \underbrace{\int\limits_{a}^{b}|\gamma'(t)|\d t}_{l(\gamma)}\]
+
+    Посчитаем анонсированный на предыдущей лекции интеграл~\eqref{circle-integral}.
+    Пусть $z_0, w \in \C$, $r > 0$.
+    \bullets{
+        \item Сначала рассмотрим случай $|w - z_0| < r$.
+        Заметим, что согласно основной оценке интеграла, если коэффициенты равномерно стремятся к какому-то значению, и интегралы ограничены, то предельный интеграл тоже сходится.
+
+        Запись ниже $\int\limits_{|z - z_0| = r}$, и вообще все аналогичные записи, которые встретятся в дальнейшем, по умолчанию означают, что граница соответствующего множества (в данном случае --- круга) обходится стандартным образом, то есть против часовой стрелки.
+        \multline{\int\limits_{|z - z_0| = r}\frac{\d z}{z - z_0 - (w - z_0)} = \int\limits_{|z - z_0| = r}\frac{1}{z - z_0}\frac{1}{1 - \frac{w - z_0}{z - z_0}}\d z =\\= \int\limits_{|z - z_0| = r}\frac{1}{z - z_0}\left(1 + \frac{w - z_0}{z - z_0} + \left(\frac{w - z_0}{z - z_0}\right)^2 + \dots\right)\d z \circlesign{=}}
+        На слагаемые из ряда имеется равномерная по $z$ оценка: $\abs{\frac{w - z_0}{z - z_0}} \le \frac{|w - z_0|}{r} < 1$, и по теореме Вейерштрасса функциональный ряд сходится.
+        Значит, сумму можно вынести из под интеграла
+        \[\circlesign{=}\int\limits_{|z - z_0| = r}\frac{1}{z - z_0}\d z + \sum\limits_{j = 1}^{\infty}\int\limits_{|z - z_0| = r}\frac{(w - z_0)^j}{(z - z_0)^{j+1}}\d z \circlesign{=}\]
+        Первое слагаемое мы умеем брать, а у каждого слагаемого из остальной суммы имеется первообразная: $\frac{1}{(z - z_0)^{j+1}} = -\frac{1}{j}\left(\frac{1}{(z - z_0)^{j}}\right)'$
+        \[\circlesign{=}\int\limits_{|z - z_0| = r}\frac{1}{z - z_0}\d z = \int\limits_{0}^{2\pi}\frac{r i e^{it}}{e e^{it}}\d t = 2 \pi i\]
+    \item Теперь разберёмся со случаем $|w - z_0| > r$.
+        \[\int\limits_{|z - z_0| = r}\frac{\d z}{z - z_0 - (w - z_0)} = -\frac{1}{w - z_0}\int\limits_{|z - z_0| = r}\frac{\d z}{1 - \frac{z - z_0}{w - z_0}} = -\frac{1}{w - z_0}\sum\limits_{j = 0}^{\infty}\frac{(z - z_0)^j}{(w - z_0)^j}\d z\]
+    Аналогично предыдущему случаю, ряд сходится абсолютно, поэтому сумму опять можно вынести из под интеграла, и в данном случае всё ещё проще: каждое слагаемое имеет первообразную, там нет отрицательных степеней $z$, поэтому вся сумма обращается в нуль.
+    }
+    Пусть $\Phi = f_1 \d x_1 + \dots + f_n \d x_n$ --- непрерывная дифференциальная форма в некоторой области $G \subset \R^n$.
+    \theorem{
+    Если все функции $f_j \in C^1$, то следующие условия эквивалентны:
+    \bullets{
+    \item $\Phi$ замкнута.
+    \item $\forall 1 \le i, j \le n: \der{f_i}{x_j} = \der{f_j}{x_i}$ --- <<накрест взятые производные производные равны>>.
+    }
+    \provenumbers{
+    \item[$\then$] Выберем $x \in G$, так как форма замкнута, то $\exists U \ni x: \Phi$ имеет первообразную $F: U \map \R$.
+    Тем самым, $f_i = \der{F}{x_i}$, и так как $f_i \in C^1$, то действительно $\der{f_j}{x_i} = \frac{\partial^2F}{\partial x_i \partial x_j} = \frac{\partial^2F}{\partial x_j \partial x_i} = \der{f_i}{x_j}$.
+    \item[$\when$] Сначала приведём доказательство случая $n = 2$.
+        В таком случае $\Phi = f\d x + g \d y$.
+
+        Согласно посылке, $h \coloneqq \der{f}{y} = \der{g}{x}$.
+        Кстати, равенство слева равносильно одному из эквивалентных уравнений Коши --- Римана.
+
+        Рассмотрим произвольный $P = [a, b] \times [c, d] \subset G$, и докажем, что $\int\limits_{\partial P}\Phi = 0$.
+        \[\begin{tikzpicture}
+              \draw (0,0) node[below left] {$(a, c)$};
+              \draw (0,1) node[above left] {$(a, d)$};
+              \draw (1.6,0) node[below right] {$(b, c)$};
+              \draw (1.6,1) node[above right] {$(b, d)$};
+
+              \node at (0.8,0) [below] {$\gamma_1$};
+              \node at (1.6,0.5) [right] {$\gamma_2$};
+              \node at (0.8,1) [above] {$\gamma_3$};
+              \node at (0,0.5) [left] {$\gamma_4$};
+
+              \draw[->] (0,0) -- (1.6, 0);
+              \draw[->] (1.6,0) -- (1.6, 1);
+              \draw[->] (1.6,1) -- (0, 1);
+              \draw[->] (0,1) -- (0, 0);
+        \end{tikzpicture}\]
+        То, что мы увидим сейчас, является первым заходом на \emph{формулу Гаусса --- Остроградского}.
+        Функция $h$ непрерывна, и можно записать на неё интеграл Лебега: $\int\limits_{P}h(x, y)\d x \d y$.
+        Теперь применяя теорему Фубини, раскладываем интеграл в сумму повторных:
+        \multline{\int\limits_{\gamma_3^-}f(\_, d)\d x + \int\limits_{\gamma_1^-}f(\_, c)\d x = \int\limits_{a}^{b}\left[f(x, d) - f(x, c)\right]\d x = \int\limits_{a}^{b}\left(\int\limits_{c}^{d}\der{f}{y}\d y\right)\d x
+            =\\= \int\limits_{P}h(x, y)\d x \d y =\\=
+            \int\limits_{c}^{d}\left(\int\limits_{a}^{b}\der{g}{x}\d x\right)\d y = \int\limits_{c}^{d}\left[g(b, y) - g(a, y)\right]\d y = \int\limits_{\gamma_2}g(b, \_)\d y + \int\limits_{\gamma_4}g(a, \_)\d y}
+        Итого, $\int\limits_{\gamma_3^-}f(\_, d)\d x + \int\limits_{\gamma_1^-}f(\_, c)\d x = \int\limits_{\gamma_2}g(b, \_)\d y + \int\limits_{\gamma_4}g(a, \_)\d y$, откуда действительно $\int\limits_{\gamma}\Phi = 0$.
+    \item[$\when$] Теперь приведём альтернативное доказательство индукцией по $n$.
+
+    \underline{База:} Случай $n = 1$ тривиален: теорема Ньютона --- Лейбница говорит, что у непрерывной функции есть первообразная.
+
+    \underline{Переход:} Пусть $n > 1$, и для $n - 1$ теорема доказана.
+    Рассмотрим $a \in G$, и возьмём прямоугольный параллелепипед со сторонами, параллельными осям координат $P \ni a$.
+        Докажем, что на $P$ у $\Phi$ есть первообразная.
+
+    Построим $g(x_1, \dots, x_n) = \int\limits_{a_1}^{x_1}f_1(t, x_2, \dots, x_n)\d t$. Обозначим $\phi_j \coloneqq \der{g}{x_j}$.
+        Заметим, что $\phi_1 = \der{g}{x_1} = f_1$.
+
+    Теперь рассмотрим форму $\Psi(x_1, \dots, x_n) = \phi_1 \d x_1 + \dots + \phi_n \d x_n$.
+        Эта форма имеет первообразную $g$ на параллелепипеде $P$.
+
+    Теперь посмотрим на $\Phi - \Psi \eqqcolon h_1 \d x_1 + \dots + h_n \d x_n$.
+        По построению $h_1 = 0$.
+        По условию накрест взятые частные производные равны и $\Phi$, и они равны и $\Psi$, так как у неё есть первообразная.
+    Значит, это же верно и для разности, в частности, $\der{h_i}{x_1} = \der{h_1}{x_i} = 0$.
+        Иными словами, $\forall i: h_i$ не зависит от $x_1$.
+
+    А раз так, то на $\Phi - \Psi$ можно смотреть, как на форму $(n-1)$-й переменной, и применить индукционное предположение.
+
+    \note{
+        Тут есть некоторый обман: производные $\der{\phi_i}{x_j}$ могут просто не существовать.
+
+        Попробуем обойти его так: пусть $\beta \in C^\infty$, с компактным носителем.
+        Выберем аппроксимативную единицу $\beta_t(x) = \frac{1}{t^n}\beta(\frac{x}{t})$.
+
+        Назначим $f_k^{(t)} = f_k * \beta_t$, $f_k^{(t)} \underset{t \to 0}\rightrightarrows f_k$.
+
+        Далее у формы $\Phi^{(t)}$ коэффициенты $h_k^{(t)}$ не зависят от $x_1$. А раз они стремятся к $h_k$, то и они не зависят от $x_1$.
+        \comment{
+        Это было произнесено устно, я наверняка что-то не так записал.
+        }
+    }
+    }
+    }
+    \theorem[Коши]{
+    Пусть $F$ --- голоморфная функция в открытом множестве $G \subset \C$ Тогда дифференциальная форма $F(z)\d z$ замкнута, то есть $\exists G: G'(z) = F(z)$.
+        \note{
+        Теорема совсем проста, если заранее предположить, что $F'(z)$ непрерывна (а так в итоге и должно получиться, так как $F$ --- аналитична~(\cref{analytic-is-holomorphic})).
+        В таком случае имеется следующее более простое доказательство.
+        \provehere{
+            % Надо проверить второе уранвение Коши --- Римана: $\forall z \in \C: \der{F}{y}(z) = i \der{F}{x}(z)$ (первое выполнено, так как накрест-взятые частные производные равны).
+            $\forall z \in \C: \der{F}{y}(z) = i \der{F}{x}(z)$
+        пусть $F(z) = u(x, y) + i v(x, y)$.
+        \[\der{u}{y} + \der{v}{y} \underset{?}= i\left(\der{u}{x} + \der{v}{x}\right)\]
+        то есть $\der{u}{y} = -\der{v}{x}$ и $\der{v}{y} = \der{u}{x}$.
+        \comment{Я вообще не понял, что произошло.}
+        }
+        }
+        Теперь докажем теорему Коши вне предположения непрерывности производной.
+    \provehere{
+    Докажем от противного: пусть форма $F(z)\d z$ не замкнута, $\exists P_0 \subset G: \alpha = \int\limits_{\partial P_0}F(z)\d z \ne 0$.
+
+    Будем потихонечку делить этот прямоугольник на четыре равные части: пусть $P_0 = Q_1 \cup Q_2 \cup Q_3 \cup Q_4$.
+        \[\begin{tikzpicture}
+              \draw[->,color=gray] (0,0) -- (3.2, 0);
+              \draw[->,color=gray] (3.2,0) -- (3.2, 2);
+              \draw[->,color=gray] (3.2,2) -- (0, 2);
+              \draw[->,color=gray] (0,2) -- (0, 0);
+              \draw[color=gray] (0,1) -- (3.2,1);
+              \draw[color=gray] (1.6,0) -- (1.6,2);
+              \foreach \x/\y/\i in {0/0/1,1.6/0/2,0/1/3,1.6/1/4} {
+                  \draw[->] ({\x+0.1},{\y+0.1}) -- ({\x+1.5}, {\y+0.1});
+                  \draw[->] ({\x+1.5},{\y+0.1}) -- ({\x+1.5}, {\y+0.9});
+                  \draw[->] ({\x+1.5},{\y+0.9}) -- ({\x+0.1}, {\y+0.9});
+                  \draw[->] ({\x+0.1},{\y+0.9}) -- ({\x+0.1}, {\y+0.1});
+                  \node at ({\x + 0.8}, {\y + 0.5}) {$Q_{\i}$};
+              }
+        \end{tikzpicture}\]
+    Интеграл по границе по крайней мере одного из $Q_i$ хотя бы $\frac{\alpha}{4}$.
+        Назовём этот прямоугольник $P_1$, и продолжим процесс.
+        Получим систему вложенных замкнутых прямоугольников $P_0 \supset P_1 \supset \dots$, таких, что $\abs{\int\limits_{\partial P_k}F(z)\d z} \ge \frac{|\alpha|}{4^k}$.
+        При этом $l(\partial P_k) = 2^{-k}l(\partial P_0)$, и $\diam (P_k) = 2^{-k} \diam(P_0)$.
+
+    Имеется ровно одна точка $z_0$ в пересечении $\bigcap\limits_{k \ge 0}P_k$.
+        Воспользуемся условием того, что $F$ голоморфна в точке $z_0$: $F(z) = F(z_0) + F'(z_0)(z - z_0) + \underbrace{\psi(z)}_{o(|z - z_0|)}$
+
+    Зафиксируем $\eps > 0$. $\exists \delta > 0: |z - z_0| < \delta \then |\psi(z)| \le \eps|z - z_0|$.
+        Пусть $k$ настолько велико, что $\diam P_k < \delta$.
+    \[\int\limits_{\partial P_k}F(z)\d z = \int\limits_{\partial P_k}[F(z_0) + F'(z_0)(z -z_0)]\d z + \int\limits_{\partial P_k}\psi(z)\d z\]
+    Первый интеграл обнуляется, так как это линейная функция по $z$, у неё есть первообразная.
+        Оценивая второй интеграл, получаем \[\frac{|\alpha|}{4^k} \le \abs{\int\limits_{\partial P_k}\psi(z)\d z} \le \eps\diam P_k \cdot l(\partial P_0) = 2^{-k}\eps\diam P_0 \cdot 2^{-k}l(\partial P_0) = 4^{-k}\eps \cdot \diam P_0 \cdot l(\partial P_0)\]
+    Выбирая довольно маленький $\eps$, получаем, что $|\alpha|$ меньше любого положительного числа.
+    }
+    }
+    \theorem[Об устранимой особенности замкнутой дифференциальной формы]{
+        Пускай $\Phi = f \d x + g\d y$ --- непрерывная дифференциальная форма в области $G \subset \C$.
+
+        Если $z_0 \in G$, и $\Phi$ замкнута в $G \sm \{z_0\}$, то $\Phi$ замкнута в $G$.
+        \provehere{
+            Докажем, что $\forall P \subset G: \int\limits_{\partial P}\Phi = 0$.
+            Рассмотрим случаи.
+        \bullets{
+            \item Если $z_0 \notin P$, то интеграл нуль по условию.
+            \item Если $z_0 \in \Int P$, то данный случай сводится к следующему: разобьём прямоугольник на два так, чтобы $z_0$ оказалось на границе:
+            \[\begin{tikzpicture}[scale=1.5]
+                  \draw[->,color=gray] (0,0) -- (2.6, 0);
+                  \draw[->,color=gray] (2.6,0) -- (2.6, 1);
+                  \draw[->,color=gray] (2.6,1) -- (0, 1);
+                  \draw[->,color=gray] (0,1) -- (0, 0);
+                  \draw[color=gray] (1.6,0) -- (1.6,1);
+                  \fill (1.6,0.7) circle (1pt) node[below] {$z_0$};
+                  \foreach \x/\w in {0/1.6, 1.6/1} {
+                      \draw[->] ({\x+0.1},{0.1}) -- ({\x+\w-0.1}, {0.1});
+                      \draw[->] ({\x+\w-0.1},{0.1}) -- ({\x+\w-0.1}, {0.9});
+                      \draw[->] ({\x+\w-0.1},{0.9}) -- ({\x+0.1}, {0.9});
+                      \draw[->] ({\x+0.1},{0.9}) -- ({\x+0.1}, {0.1});
+                  }
+            \end{tikzpicture}\]
+            \item Если $z_0 \in \partial P$, то отступим на $\eps$, интеграл по границе $P_\eps$ будет нулём: $\int\limits_{\partial P_\eps}\Phi = 0$.
+
+        Заметим, что $\int\limits_{\partial P_\eps}\Phi \underset{\eps \to 0}\Map \int\limits_{\partial P}\Phi$, так как коэффициенты дифференциальной формы равномерно непрерывны в некоторой окрестности $P$.
+            Значит, $\int\limits_{\partial P}\Phi = 0$.
+        }
+        }
+    }
+    \theorem[Малая интегральная форма Коши]{
+    Пусть $f$ --- голоморфна в области $G$, $B = B(z_0, r)$ --- круг, $\overline{B} \subset G$. Тогда $\forall z \in B$:
+    \[f(z) = \frac{1}{2\pi i}\int\limits_{\partial B}\frac{f(\zeta)}{\zeta - z}\d \zeta\]
+    \provehere{
+    Докажем для некоего фиксированного $z \in B$.
+
+        Рассмотрим функцию $g(\zeta) = \frac{f(z) - f(\zeta)}{z - \zeta}$.
+        $g$ голоморфна в области $G \sm \{z\}$. Тем самым, $g(\zeta)\d \zeta$ --- замкнутая форма в $G \sm \{z\}$, а по теореме об устранимой особенности $g(\zeta)\d \zeta$ замкнута в $G$ (доопределим по непрерывности $g(z) \coloneqq f'(z)$).
+
+        Но так как круг --- удобная область, то у $g$ имеется первообразная в некотором круге $B(z_0, r(1 + \eps))$ (где $\eps > 0$ настолько мал, что $B(z_0, r(1 + \eps)) \subset G$),
+
+        Тем самым, $\int\limits_{|z - z_0| = r}\frac{f(z) - f(\zeta)}{z - \zeta}\d \zeta = 0$, откуда \[\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta = \frac{f(z)}{\zeta - z}\d \zeta = f(z)\int\limits_{|z - z_0| = r}\frac{1}{\zeta - z}\d \zeta = 2\pi i \cdot f(z)\]
+    }
+    }
+    \corollary[Теорема Коши]{
+    Если функция голоморфна в области $G \subset \C$, то $\forall z_0 \in G$ функция $f$ раскладывается в некоторый степенной ряд $f(z) = \sum\limits_{n = 0}^{\infty}c_n(z - z_0)^n$, причём радиус сходимости хотя бы $\dist(z_0, \partial G)$.
+    \provehere{
+        Пусть $r \in (0, \dist(z_0, \partial G))$.
+        Рассмотрим $B = B_r(z_0)$. Так как $B \subset G$, то
+    \multline{f(z) = \frac{1}{2\pi i}\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta = \frac{1}{2\pi i}\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0) + (z_0 - z)}\d \zeta =\\= \frac{1}{2\pi i}\int\limits_{|z - z_0| = r}\frac{1}{z - z_0}\cdot \frac{1}{1 - \frac{z - z_0}{\zeta - z_0}}f(\zeta)\d\zeta = \frac{1}{2\pi i}\sum\limits_{j = 0}^{\infty}(z - z_0)^{j + 1}\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0)^{j+1}}\d \zeta}
+    Таким образом, мы получили степенной ряд, и так как коэффициенты степенного ряда, раз определены, не зависят от радиуса круга, то радиус сходимости данного ряда хотя бы $\dist(z_0, \partial G)$.
     }
     }
 \end{document}
