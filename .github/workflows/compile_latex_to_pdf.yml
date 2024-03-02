@@ -17,7 +17,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install LaTeX
-        run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended
+        run: |
+            sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended
+            dpkg -i tex-pscyr_0.4d~beta9-1_all.deb
 
       - name: Config git
         run: |
