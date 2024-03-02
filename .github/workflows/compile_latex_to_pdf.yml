@@ -35,7 +35,7 @@ jobs:
             pdflatex -output-directory=pdf $file
             filename=$(basename "$file" .tex)
             new_file="pdf/$filename.pdf"
-            git add "$base_dir/$new_file"
+            git add "$new_file"
           fi
          done
          
