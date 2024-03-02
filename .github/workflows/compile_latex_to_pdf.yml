@@ -29,6 +29,7 @@ jobs:
          
       - name: Find and compile LaTeX files
         run: |
+         git log --graph --abbrev-commit --decorate  --first-parent Cat8ra-ACP-2
          for file in $(git diff --name-only origin/Cat8ra-ACP-2~1 origin/Cat8ra-ACP-2); do
           if [[ $file == *.tex ]]; then
             echo "$file"
