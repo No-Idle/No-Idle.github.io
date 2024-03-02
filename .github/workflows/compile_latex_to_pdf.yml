@@ -21,7 +21,11 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          
+      
+      - name: Pull latest changes from the remote repository
+        run: |
+         git pull --ff-only origin main
+         
       - name: Find and compile LaTeX files
         run: |
          for file in $(git diff --name-only HEAD~1); do
@@ -36,9 +40,8 @@ jobs:
           fi
          done
          
-      - name: Pull latest changes from the remote repository
+      - name: Commit changes
         run: |
-         git pull --ff-only origin main
          git commit -m "add auto-compile pdf"
 
       - name: Push changes
