@@ -25,7 +25,6 @@ jobs:
       - name: Pull latest changes from the remote repository
         run: |
          git fetch origin
-         git pull --ff-only origin Cat8ra-ACP-2
          git checkout Cat8ra-ACP-2
          
       - name: Find and compile LaTeX files
