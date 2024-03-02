@@ -38,7 +38,7 @@ jobs:
          
       - name: Pull latest changes from the remote repository
         run: |
-         git pull origin main
+         git pull --ff-only origin main
          git commit -m "add auto-compile pdf"
 
       - name: Push changes
