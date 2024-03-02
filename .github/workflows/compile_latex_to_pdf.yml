@@ -2,7 +2,7 @@ name: Compile LaTeX PDF
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "Cat8ra-ACP-2" ]
   pull_request:
     branches: [ "main" ]
 
@@ -28,7 +28,7 @@ jobs:
          
       - name: Find and compile LaTeX files
         run: |
-         for file in $(git diff --name-only HEAD~1); do
+         for file in $(git diff --name-only HEAD~1 HEAD); do
           if [[ $file == *.tex ]]; then
             echo "$file"
             base_dir=$(dirname $file)
