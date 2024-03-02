@@ -29,7 +29,7 @@ jobs:
          
       - name: Find and compile LaTeX files
         run: |
-         for file in $(git diff --name-only HEAD~1 HEAD); do
+         for file in $(git diff --name-only Cat8ra-ACP-2~1 Cat8ra-ACP-2); do
           if [[ $file == *.tex ]]; then
             echo "$file"
             base_dir=$(dirname $file)
