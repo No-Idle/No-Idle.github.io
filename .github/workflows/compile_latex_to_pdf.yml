@@ -47,7 +47,7 @@ jobs:
          done
          
       - name: Commit changes
-        run: git commit -m "add auto-compile pdf"
+        run: git commit --allow-empty -m "add auto-compile pdf"
       
          
       - name: Push changes
