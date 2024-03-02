@@ -27,6 +27,9 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
           
+      - name: Pull latest changes from the remote repository
+        run: git pull --ff-only origin ${{ github.ref_name }}
+          
       - name: Find and compile LaTeX files
         run: |
          for file in $(git diff --name-only HEAD~1 HEAD); do
@@ -36,16 +39,17 @@ jobs:
             cd $base_dir
             mkdir -p pdf
             filename=$(basename "$file" .tex)
-            pdflatex -output-directory=pdf $filename.tex
+            pdflatex -output-directory=pdfs $filename.tex
+            pdflatex -output-directory=pdfs $filename.tex
             new_file="pdf/$filename.pdf"
             git add "$new_file"
           fi
          done
          
-      - name: Pull latest changes from the remote repository
-        run: |
-         git pull --ff-only origin ${{ github.ref_name }}
-         git commit -m "add auto-compile pdf"
+      - name: Commit changes
+        run: git commit -m "add auto-compile pdf"
+      
+         
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
