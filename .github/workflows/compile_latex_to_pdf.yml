@@ -12,7 +12,9 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install LaTeX
         run: sudo apt-get install texlive texlive-latex-extra texlive-fonts-recommended
@@ -24,7 +26,7 @@ jobs:
           
       - name: Find and compile LaTeX files
         run: |
-         for file in $(git diff --name-only HEAD~1); do
+         for file in $(git diff --name-only HEAD~1 HEAD); do
           if [[ $file == *.tex ]]; then
             echo "$file"
             base_dir=$(dirname $file)
@@ -38,9 +40,8 @@ jobs:
          
       - name: Pull latest changes from the remote repository
         run: |
-         git pull --ff-only origin main
+         git pull --ff-only origin ${{ github.ref_name }}
          git commit -m "add auto-compile pdf"
-
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
