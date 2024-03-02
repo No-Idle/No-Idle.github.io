@@ -48,7 +48,7 @@ jobs:
          
       - name: Commit changes
         run: |
-          git commit -m "add auto-compile pdf" || exit 42
+          git commit -m "add auto-compile pdf" || exit 0
          
       - name: Push changes
         uses: ad-m/github-push-action@master
