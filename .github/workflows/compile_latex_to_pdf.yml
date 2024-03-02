@@ -32,8 +32,8 @@ jobs:
             base_dir=$(dirname $file)
             cd $base_dir
             mkdir -p pdf
-            pdflatex -output-directory=pdf $file
             filename=$(basename "$file" .tex)
+            pdflatex -output-directory=pdf $filename.tex
             new_file="pdf/$filename.pdf"
             git add "$new_file"
           fi
