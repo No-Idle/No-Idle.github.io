@@ -1,4 +1,4 @@
-rname: Compile LaTeX PDF
+name: Compile LaTeX PDF
 
 on:
   push:
