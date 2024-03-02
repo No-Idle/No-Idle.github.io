@@ -1,4 +1,4 @@
-name: Compile LaTeX PDF
+rname: Compile LaTeX PDF
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
             pdflatex -output-directory=pdf $file
             filename=$(basename "$file" .tex)
             new_file="pdf/$filename.pdf"
-            git add "$new_file"
+            git add "$base_dir/$new_file"
           fi
          done
          
