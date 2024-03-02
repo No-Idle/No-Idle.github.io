@@ -2,7 +2,7 @@ name: Compile LaTeX PDF
 
 on:
   push:
-    branches: [ "main", "Cat8ra-auto-compile-patch" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
