@@ -30,10 +30,11 @@ jobs:
           if [[ $file == *.tex ]]; then
             echo "$file"
             base_dir=$(dirname $file)
-            mkdir -p $base_dir/pdf
-            pdflatex -output-directory=$base_dir/pdf $file
+            cd $base_dir
+            mkdir -p pdf
+            pdflatex -output-directory=pdf $file
             filename=$(basename "$file" .tex)
-            new_file="folder/pdf/$filename.pdf"
+            new_file="pdf/$filename.pdf"
             git add "$new_file"
           fi
          done
