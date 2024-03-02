@@ -47,7 +47,11 @@ jobs:
          done
          
       - name: Commit changes
-        run: git commit -m "add auto-compile pdf" || exit 0
+        run: |
+          if [ -n "$(git diff --cached --exit-code)" ]; then
+            exit 0
+          fi  
+          git commit -m "add auto-compile pdf"
          
       - name: Push changes
         uses: ad-m/github-push-action@master
