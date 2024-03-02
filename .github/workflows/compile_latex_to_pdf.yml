@@ -47,6 +47,6 @@ jobs:
          git pull --ff-only origin ${{ github.ref_name }}
          git commit -m "add auto-compile pdf"
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
