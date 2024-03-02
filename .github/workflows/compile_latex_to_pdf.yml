@@ -24,7 +24,7 @@ jobs:
           
       - name: Find and compile LaTeX files
         run: |
-         for file in $(git diff --name-only main HEAD); do
+         for file in $(git diff --name-only HEAD~1); do
           if [[ $file == *.tex ]]; then
             echo "$file"
             base_dir=$(dirname $file)
