@@ -384,4 +384,244 @@
             }
     }
     }
+    \newlection{4 марта 2023 г.}
+    //todo
+    \lemma[О змее]{
+    % https://q.uiver.app/#q=WzAsMTQsWzEsMSwiQSciXSxbMiwxLCJBIl0sWzMsMSwiQScnIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMSwyLCJCJyJdLFsyLDIsIkIiXSxbMywyLCJCJyciXSxbMSwwLCJcXEtlciBcXHBoaSciXSxbMiwwLCJcXEtlciBcXHBoaSJdLFszLDAsIlxcS2VyIFxccGhpJyciXSxbMSwzLCJcXENvS2VyIFxccGhpJyJdLFsyLDMsIlxcQ29LZXIgXFxwaGkiXSxbMywzLCJcXENvS2VyXFxwaGknJyJdLFsyLDcsIlxccGhpJyciXSxbMSw2LCJcXHBoaSJdLFswLDUsIlxccGhpIl0sWzQsNV0sWzUsNl0sWzYsN10sWzAsMV0sWzEsMl0sWzIsM10sWzgsMCwiXFxrZXIgXFxwaGknIiwxXSxbOSwxLCJcXGtlciBcXHBoaSIsMV0sWzEwLDIsIlxca2VyIFxccGhpJyciLDFdLFs1LDExLCJcXGNva2VyIFxccGhpJyIsMV0sWzYsMTIsIlxcY29rZXIgXFxwaGkiLDFdLFs3LDEzLCJcXGNva2VyIFxccGhpJyciLDFdLFs4LDksIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEwLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMiwxMywiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {\Ker \phi'} \& {\Ker \phi} \& {\Ker \phi''} \\
+              \& {A'} \& A \& {A''} \& 0 \\
+              0 \& {B'} \& B \& {B''} \\
+              \& {\CoKer \phi'} \& {\CoKer \phi} \& {\CoKer\phi''}
+              \arrow["{\phi''}", from=2-4, to=3-4]
+              \arrow["\phi", from=2-3, to=3-3, ""{coordinate, near start, name=Z}]
+              \arrow["\phi", from=2-2, to=3-2]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+              \arrow[dll, "\delta", dashed, rounded corners, to path={ -- ([xshift=10ex]\tikztostart.east) |- (Z) \tikztonodes -| ([xshift=-10ex]\tikztotarget.west)-- (\tikztotarget)},from=1-4,to=4-2]
+              \arrow["{\ker \phi'}"{description}, from=1-2, to=2-2]
+              \arrow["{\ker \phi}"{description}, from=1-3, to=2-3]
+              \arrow["{\ker \phi''}"{description}, from=1-4, to=2-4]
+              \arrow["{\coker \phi'}"{description}, from=3-2, to=4-2]
+              \arrow["{\coker \phi}"{description}, from=3-3, to=4-3]
+              \arrow["{\coker \phi''}"{description}, from=3-4, to=4-4]
+              \arrow[dashed, from=1-2, to=1-3]
+              \arrow[dashed, from=1-3, to=1-4]
+              \arrow[dashed, from=4-2, to=4-3]
+              \arrow[dashed, from=4-3, to=4-4]
+        \end{tikzcd}\]
+    }
+    \lemma{
+    Пусть $\cat F$ --- аддитивный функтор. Следующие условия эквивалентны:
+    \numbers{
+    \item $\cat F$ точен справа
+    \item $\cat F$ сохраняет коядра.
+    \item $\cat F$ сохраняет конечные копределы.
+    }
+    }
+    % https://q.uiver.app/#q=WzAsNSxbMSwwLCJBIl0sWzIsMCwiQSJdLFszLDAsIjAiXSxbNCwwLCIwIl0sWzAsMCwiMCJdLFswLDEsIlxcaWQiXSxbMSwyXSxbMiwzXSxbNCwwXV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          0 \& A \& A \& 0 \& 0
+          \arrow["\id", from=1-2, to=1-3]
+          \arrow[from=1-3, to=1-4]
+          \arrow[from=1-4, to=1-5]
+          \arrow[from=1-1, to=1-2]
+    \end{tikzcd}\]
+    переходит в
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBGKEEpIl0sWzEsMCwiXFxjYXQgRihBKSJdLFsyLDAsIlxcY2F0IEYoMCkiXSxbMywwLCIwIl0sWzAsMSwiXFxpZCJdLFsxLDJdLFsyLDNdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {\cat F(A)} \& {\cat F(A)} \& {\cat F(0)} \& 0
+    \arrow["\id", from=1-1, to=1-2]
+    \arrow[from=1-2, to=1-3]
+    \arrow[from=1-3, to=1-4]
+    \end{tikzcd}\]
+    поэтому точный функтор сохраняет нуль.
+
+    \corollary{
+    Левый сопряжённый сохраняет копределы $\then$ он точен справа.
+    }
+    Копредел (который является левым сопряжнным к диагональному $\Delta$) сохраняет копределы, значит, точен справа.
+    Другими словами, копределы коммутируют.
+
+    К сожалению, в лемме о змее это не помогает в доказательстве того, что последовательность точна в члене $\Ker \phi$, так как нет точной последовательности $0 \map A' \map A \map A'' \map 0$.
+
+    Точная последовательность
+    % https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiQyciXSxbMiwwLCJDIl0sWzMsMCwiQycnIl0sWzQsMCwiMCJdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          0 \& {C'} \& C \& {C''} \& 0
+          \arrow[from=1-1, to=1-2]
+          \arrow[from=1-2, to=1-3]
+          \arrow[from=1-3, to=1-4]
+          \arrow[from=1-4, to=1-5]
+    \end{tikzcd}\]
+    отображается коядром и ядром в
+    % https://q.uiver.app/#q=WzAsOCxbMSwwLCJDX24nL0JfbiciXSxbMiwwLCJDX24vQl9uIl0sWzMsMCwiQ19uJycvQl9uJyciXSxbNCwwLCIwIl0sWzAsMSwiMCJdLFsxLDEsIlpfe24tMX0nIl0sWzIsMSwiWl97bi0xfSJdLFszLDEsIlpfe24tMX0nJyJdLFswLDFdLFsxLDJdLFsyLDNdLFs0LDVdLFs1LDZdLFs2LDddLFswLDVdLFsxLDZdLFsyLDddXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \& {C_n'/B_n'} \& {C_n/B_n} \& {C_n''/B_n''} \& 0 \\
+          0 \& {Z_{n-1}'} \& {Z_{n-1}} \& {Z_{n-1}''}
+          \arrow[from=1-2, to=1-3]
+          \arrow[from=1-3, to=1-4]
+          \arrow[from=1-4, to=1-5]
+          \arrow[from=2-1, to=2-2]
+          \arrow[from=2-2, to=2-3]
+          \arrow[from=2-3, to=2-4]
+          \arrow[from=1-2, to=2-2]
+          \arrow[from=1-3, to=2-3]
+          \arrow[from=1-4, to=2-4]
+    \end{tikzcd}\]
+    \newlection{11 марта 2023 г.}
+
+    \fact{
+    Если точный справа функтор сохраняет мономорфизмы, то функтор точен.
+        Двойственно, точный слева функтор, сохраняющий эпиморфизмы, точен.
+    \provehere{
+    Условия в точности означают, что короткая точная последовательность отображается в короткую точную последовательность.
+    }
+    }
+    Пусть имеются комплексы $X_\bullet$ и $X'_\bullet$, и между ними морфизмы $f, g$.
+    \definition[Морфизмы $f$ и $g$ гомотопны]{
+        Существует семейство морфизмов $s_k: X_{k-1} \map Y_k$, таких, что $f_{n} - g_{n} = d'_{n}s_{n+1} + s_{n}d_{n-1}$.
+        При этом диаграмма ниже \textbf{не обязана} быть коммутативной.
+        % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiWF9uIl0sWzIsMCwiWF97bi0xfSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJYXzAiXSxbMSwxLCJYJ19uIl0sWzIsMSwiWCdfe24tMX0iXSxbMywxLCJcXGNkb3RzIl0sWzQsMSwiWCdfMCJdLFswLDEsIlgnX3tuKzF9Il0sWzAsMCwiWF97bisxfSJdLFswLDQsImZfbiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzAsNCwiZ19uIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJvZmZzZXQiOi0xfV0sWzEsNSwiZl97bi0xfSIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzEsNSwiZ197bi0xfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotMX1dLFszLDcsImZfMCIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzMsNywiZ18wIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJvZmZzZXQiOi0xfV0sWzAsMSwiZF97bi0xfSJdLFsxLDIsImRfe24tMn0iXSxbMiwzLCJkXzAiXSxbNiw3LCJkJ18wIiwyXSxbNSw2LCJkJ197bi0yfSIsMl0sWzQsNSwiZCdfe24tMX0iLDJdLFs4LDQsImQnX3tufSIsMl0sWzksOCwiZl97bisxfSIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzksOCwiZ197bisxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotMX1dLFs5LDAsImRfe259Il0sWzgsMCwic197bisxfSIsMyx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDEsInNfbiIsMyx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDIsInNfe24tMX0iLDMseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwzLCJzXzEiLDMseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {X_{n+1}} \& {X_n} \& {X_{n-1}} \& \cdots \& {X_0} \\
+        {X'_{n+1}} \& {X'_n} \& {X'_{n-1}} \& \cdots \& {X'_0}
+        \arrow["{f_n}"'{pos=0.8}, shift right, from=1-2, to=2-2]
+        \arrow["{g_n}"{pos=0.2}, shift left, from=1-2, to=2-2]
+        \arrow["{f_{n-1}}"'{pos=0.8}, shift right, from=1-3, to=2-3]
+        \arrow["{g_{n-1}}"{pos=0.2}, shift left, from=1-3, to=2-3]
+        \arrow["{f_0}"'{pos=0.8}, shift right, from=1-5, to=2-5]
+        \arrow["{g_0}"{pos=0.2}, shift left, from=1-5, to=2-5]
+        \arrow["{d_{n-1}}", from=1-2, to=1-3]
+        \arrow["{d_{n-2}}", from=1-3, to=1-4]
+        \arrow["{d_0}", from=1-4, to=1-5]
+        \arrow["{d'_0}"', from=2-4, to=2-5]
+        \arrow["{d'_{n-2}}"', from=2-3, to=2-4]
+        \arrow["{d'_{n-1}}"', from=2-2, to=2-3]
+        \arrow["{d'_{n}}"', from=2-1, to=2-2]
+        \arrow["{f_{n+1}}"'{pos=0.8}, shift right, from=1-1, to=2-1]
+        \arrow["{g_{n+1}}"{pos=0.2}, shift left, from=1-1, to=2-1]
+        \arrow["{d_{n}}", from=1-1, to=1-2]
+        \arrow["{s_{n+1}}"{marking, allow upside down}, dotted, tail reversed, no head, from=2-1, to=1-2]
+        \arrow["{s_n}"{marking, allow upside down}, dotted, tail reversed, no head, from=2-2, to=1-3]
+        \arrow["{s_{n-1}}"{marking, allow upside down}, dotted, tail reversed, no head, from=2-3, to=1-4]
+        \arrow["{s_1}"{marking, allow upside down}, dotted, tail reversed, no head, from=2-4, to=1-5]
+        \end{tikzcd}\]
+        Пишут $f \simeq g$.
+    }
+    \theorem{\label{homotopy-preserves-h}
+    Если два морфизма комплексов $f, g: X \map X'$ гомотопны, то $H(f) = H(g)$.
+    \provehere{
+        Рассмотрим $\overline{x} \in H_n(X)$.
+        У него имеется прообраз $x \in Z_n$.
+
+        Заметим, что $H(f_n - g_n)(\overline{x}) = \overline{(f_n - g_n)(x)} = \overline{d'_n(s_{n+1}(x))} + \overline{s_n(d_{n-1}(x))}$.
+        Первое слагаемое равно нулю, так ак $d'_n(\cdots) \in B_n(X')$, а второе --- так как $x \in \Ker d_{n-1}$.
+    }
+    }
+    \note{
+    Если $\cat F: \cat A \map \cat A$ --- функтор, и $f \simeq g$ --- морфизмы комплексов с объектами из $\cat A$, то (допуская вольность речи можно писать $\cat F(f)$): $\cat F(f) \simeq \cat F(g)$.
+    }
+    \fact{
+    Быть гомотопными --- отношение эквивалентности.
+    \provehere{
+    Рефлексивность: $\forall n: s_n = 0$.
+    Симметричность: $s_n \coloneqq -s_n$.
+    Транзитивность: \[\all{f_n - g_n = d'_n s_{n+1} + s_n d_{n-1} \\ g_n - h_n =d'_n r_{n+1} + r_n d_{n-1}} \then f_n - h_n = d'_n(s_{n+1} + r_{n+1}) + (s_n + r_n)d_{n-1}\]
+    }
+    }
+    \definition[Два комплекса $X$ и $X'$ гомотопически эквивалентны]{
+    Существуют морфизмы комплексов $f: X \map X'$ и $g: X' \map X$, такие, что $f g \simeq \id_{X'}$ и $g f \simeq \id_{X}$.
+    Данные морфизмы $f$ и $g$ называют \emph{гомотопическими эквивалентностями}.
+    }
+    \corollary{
+    Если $X$ и $X'$ гомотопически эквивалентны, то $H(X) \cong H(X')$.
+    }
+    \definition[Квазиизоморфизм $f: X \map X'$]{
+    Морфизм $f$, такой, что $H(f)$ --- изоморфизм.
+    }
+    \corollary{
+    Гомотопическая эквивалентность --- квазиизоморфизм.
+    }
+    \definition[Комплекс $X$ ацикличен]{
+    $X$ точен, то есть $H(X) = 0$.
+    }
+    \definition[Комплекс $X$ стягиваем]{
+    $\id_X \simeq 0_X$.
+    }
+    \note{
+    Из~(\cref{homotopy-preserves-h}) следует, что стягиваемый комплекс ацикличен.
+    }
+    Обратное, вообще говоря, неверно.
+    Стягиваемый комплекс сохраняется под действием функторов, а ацикличный --- может и не сохраниться.
+    \section{Резольвенты}
+%    \subsection{Идея}
+%    Пусть имеется точный комплекс $\cdots \map P_2 \map P_1 \map P_0 \map M \map 0$, где $P_i$ --- свободные модули.
+%
+%    Применяя $\cat F$, получим комплекс $\cdots \map \cat F(P_1) \map \cat F(P_0) \map \cat F(M) \map 0$.
+%    Определим $L_n\cat F(M) \bydef H_n(X)$.
+%    \comment{Я не понял.}
+%    \ok
+    Пусть $\cat A$ --- абелева категория, $P \in \cat A$.
+    \definition[Объект $P$ проективен]{
+    $\forall \phi: A \map B$: $\phi$ --- эпи $\then \forall \psi: P \map B$: $\exists {\theta: P \map A}$, причём диаграмма коммутирует.
+    При этом $\theta$ должно найтись какое-то, не факт, что оно единственно.
+                    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJBIl0sWzEsMSwiQiJdLFsyLDEsIjAiXSxbMSwwLCJQIl0sWzAsMSwiXFxmb3JhbGwgXFxwaGkiXSxbMSwyXSxbMywxLCJcXGZvcmFsbCBcXHBzaSJdLFszLDAsIlxcZXhpc3RzIFxcdGhldGEiLDJdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& P \\
+              A \& B \& 0
+              \arrow["{\forall \phi}", from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow["{\forall \psi}", from=1-2, to=2-2]
+              \arrow["{\exists \theta}"', from=1-2, to=2-1]
+        \end{tikzcd}\]
+    }
+    \fact{
+    В $\cat{Set}$ все множества --- проективные объекты.
+    }
+    \theorem{
+    Пусть $\cat A = \Lmod{R}$.
+    Модуль $P$ проективен $\iff$ $P$ является прямым слагаемым свободного модуля.
+    \provenumbers{
+    \item Свободный модуль проективен: пусть $\{p_\alpha\}$ --- базис $P$. Определим $\theta(p_\alpha) = \psi(\phi^{-1}(p_\alpha))$, где прообраз выбран произвольно, и продолжим по линейности.
+    \item Прямое слагаемое проективного модуля проективно.
+    Пусть имеется вложение $M \map M \oplus N$, где $M \oplus N$ --- проективен.
+    % https://q.uiver.app/#q=WzAsNSxbMSwwLCJNIl0sWzIsMCwiTVxcb3BsdXMgTiJdLFsxLDEsIkIiXSxbMCwxLCJBIl0sWzIsMSwiMCJdLFszLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDRdLFswLDFdLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsIiIsMCx7ImN1cnZlIjo0fV0sWzAsMiwiXFxwc2kiXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& M \& {M\oplus N} \\
+              A \& B \& 0
+              \arrow[two heads, from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=1-2, to=1-3]
+              \arrow[dashed, from=1-3, to=2-2]
+              \arrow[curve={height=36pt}, from=1-3, to=2-1]
+              \arrow["\psi", from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Определим $M \oplus N \map B, (m, n) \mapsto \psi(m)$.
+    Так как $M \oplus N$ проективен, то найдётся $M \oplus N \map A$, и композиция подходит.
+    \item Пусть $P$ проективен. Возьмём свободный модуль $F$, сюръективно накрывающий $P$.
+    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJQIl0sWzEsMSwiUCJdLFswLDEsIkYiXSxbMiwxLCJcXHBpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiXFxpZCIsMl0sWzAsMiwiXFxleGlzdHMiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& P \\
+              F \& P
+              \arrow["\pi", two heads, from=2-1, to=2-2]
+              \arrow["\id"', from=1-2, to=2-2]
+              \arrow["\exists"', dashed, from=1-2, to=2-1]
+        \end{tikzcd}\]
+    Так как модуль проективен, то найдётся пунктирная стрелка. Значит, $F \cong P \oplus \Ker \pi$.
+    \comment{Доказательство данного факта мной опущено.}
+    }
+    }
+    \examples{
+        \item Пусть $R = \Z/6\Z$. Тогда $\Z/6\Z$ является $R$-модулем, но $\Z/6\Z \cong \Z/2\Z \oplus \Z/3\Z$, значит, модули $\Z/2\Z$, $\Z/3\Z$, $\Z/6\Z$ все проективны.
+        \item Можно предъявить проективный модуль, исходя из топологического факта о том, что шар нельзя причесать.
+    }
+    \definition[Проективная резольвента модуля $M$]{
+        Ацикличный комплекс вида\\ $\cdots \map P_n \map P_{n-1} \map \cdots \map P_0 \map M \map 0$, где $P_i$ --- проективные модули.
+    }
+    Оказывается, любые две проективные резольвенты гомотопически эквивалентны.
 \end{document}
