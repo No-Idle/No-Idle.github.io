@@ -19,7 +19,7 @@
     $\exists \lim\limits_{z \to z_0}\frac{f(z) - f(z_0)}{z - z_0} \bydef f'(z_0)$.
     }
     Во втором семестре мы проверяли, что $f = u + iv$ (где $u, v: G \map \R$) голоморфна в $z_0 \iff f$ дифференцируема в вещественном смысле, и выполняются уравнения Коши --- Римана:
-    \[\der{u}{x} = \der{v}{y} \qquad \der{u}{y} = -\der{v}{x}\]
+    \encircle{\der{u}{x} = \der{v}{y} \qquad \der{u}{y} = -\der{v}{x}}
     \definition[$f$ аналитична в $G$] {
     $\forall z_0 \in G: \exists c_j \in \C$: \[f(z) = \sum\limits_{j = 0}^{\infty}c_j(z - z_0)^j\tag{$*$}\label{analytic}\] где ряд сходится не только при $z = z_0$.
     }
@@ -406,7 +406,7 @@
     \statement{
     Форма $\phi\d z$ имеет первообразную $g \iff g$ голоморфна, и $g' = \phi$.
     }
-    \theorem[Коши]{
+    \theorem[Коши]{\label{cauchey-theorem}
     Если $g: G \map \C$ --- голоморфная функция (область $G \subset \C$), то форма $g(z)\d z$ замкнута.
     \provehere{Потом.}
     }
@@ -637,7 +637,7 @@
         }
         }
     }
-    \theorem[Малая интегральная формула Коши]{
+    \theorem[Малая интегральная формула Коши]{\label{integral-form}
     Пусть $f$ --- голоморфна в области $G$, $B = B(z_0, r)$ --- круг, $\overline{B} \subset G$. Тогда $\forall z \in B$:
     \[f(z) = \frac{1}{2\pi i}\int\limits_{\partial B}\frac{f(\zeta)}{\zeta - z}\d \zeta\]
     \provehere{
@@ -648,23 +648,205 @@
 
         Но так как круг --- удобная область, то у $g$ имеется первообразная в некотором круге $B(z_0, r(1 + \eps))$ (где $\eps > 0$ настолько мал, что $B(z_0, r(1 + \eps)) \subset G$),
 
-        Тем самым, $\int\limits_{|z - z_0| = r}\frac{f(z) - f(\zeta)}{z - \zeta}\d \zeta = 0$, откуда \[\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta = \int\limits_{|z - z_0| = r}\frac{f(z)}{\zeta - z}\d \zeta = f(z)\cdot\int\limits_{|z - z_0| = r}\frac{1}{\zeta - z}\d \zeta = 2\pi i \cdot f(z)\]
+        Тем самым, $\int\limits_{|\zeta - z_0| = r}\frac{f(z) - f(\zeta)}{z - \zeta}\d \zeta = 0$, откуда \[\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta = \int\limits_{|\zeta - z_0| = r}\frac{f(z)}{\zeta - z}\d \zeta = f(z)\cdot\int\limits_{|\zeta - z_0| = r}\frac{1}{\zeta - z}\d \zeta = 2\pi i \cdot f(z)\]
     }
     }
-    \corollary[Теорема Коши]{
+    \corollary[Теорема Коши]{\label{holomorphic-then-analytic}
     Если функция голоморфна в области $G \subset \C$, то $\forall z_0 \in G$ функция $f$ (в некоторой окрестности) раскладывается в некоторый степенной ряд $f(z) = \sum\limits_{n = 0}^{\infty}c_n(z - z_0)^n$, причём радиус сходимости хотя бы $\dist(z_0, \partial G)$.
     \provehere{
         Пусть $r \in (0, \dist(z_0, \partial G))$.
         Рассмотрим $B = B_r(z_0)$. Так как $B \subset G$, то для точки $z \in B$ получаем
     \multline{f(z) = 
-    	\frac{1}{2\pi i}\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta = 
-    	\frac{1}{2\pi i}\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0) - (z - z_0)}\d \zeta =
+    	\frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta =
+    	\frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0) - (z - z_0)}\d \zeta =
     	\\
-    	= \frac{1}{2\pi i}\int\limits_{|z - z_0| = r}\frac{1}{\zeta - z_0}\cdot \frac{1}{1 - \frac{z - z_0}{\zeta - z_0}}f(\zeta)\d\zeta =
-    	\frac{1}{2\pi i}\sum\limits_{j = 0}^{\infty}(z - z_0)^{j}\int\limits_{|z - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0)^{j+1}}\d \zeta}
-        Сходимость имеется по тем же причинам, что и при доказательстве~\eqref{circle-integral}.
+    	= \frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{1}{\zeta - z_0}\cdot \frac{1}{1 - \frac{z - z_0}{\zeta - z_0}}f(\zeta)\d\zeta =
+    	\frac{1}{2\pi i}\sum\limits_{j = 0}^{\infty}(z - z_0)^{j}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0)^{j+1}}\d \zeta}
+        Абсолютная равномерная сходимость в круге радиус $r$ при $r < \dist(z_0, \partial G)$ имеется по тем же причинам, что и при доказательстве~\eqref{circle-integral}.
 
-    Таким образом, мы получили степенной ряд, и так как коэффициенты степенного ряда, раз определены, не зависят от радиуса круга, то радиус сходимости данного ряда хотя бы $\dist(z_0, \partial G)$.
+        Таким образом, мы получили степенной ряд, и так как коэффициенты степенного ряда, раз определены, не зависят от радиуса круга ($c_j = \frac{f^{(j)}(z_0)}{j!}$), то радиус сходимости данного ряда хотя бы $\dist(z_0, \partial G)$.
+    }
+    }
+    \newlection{12 марта 2024 г.}
+    \note{
+        Интегральную форму Коши можно спокойно дифференцировать: так,
+    \[\frac{\d}{\d z}f(z) = \frac{\d}{\d z}\left(\frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d\zeta\right) = \frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0)^2}\d\zeta\]
+    В общем случае
+        \[\frac{\d^k}{\d z^k}f(z) = \frac{\d^k}{\d z^k}\left(\frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d\zeta\right) = \frac{k!}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0)^{k+1}}\d\zeta\]
+    }
+    \definition[Целая (entire) функция]{
+        Голоморфная функция, заданная в $\C$.
+    }
+    Выберем $z_0 = 0$.
+    Согласно~(\cref{holomorphic-then-analytic}), получаем $f(z) = \sum\limits_{j = 0}^{\infty}c_j$, где $c_j = \frac{1}{2\pi i}\int\limits_{|\zeta| = r}\frac{f(\zeta)}{\zeta^{j+1}}\d\zeta$, причём имеется абсолютная сходимость везде в $\C$.
+    \theorem{
+    Если $f$ целая, и $|f(z)| = \bigO(z^N)$ при $|z| \underset{z \to \infty}\Map \infty$, то $f$ --- многочлен степени не более $N$.
+    \provehere{
+        Из определения $\bigO: \exists C, a \in \R: |f(z)| \le C|z|^n$ при $|z| > a$.
+
+        Выберем $r > a$, и оценим: $|c_j| = \abs{\frac{1}{2\pi i}\int\limits_{0}^{2\pi}\frac{f\left(r e^{i\theta}\right)}{re^{i\theta}}i e^{i\theta}\d\theta} \le \frac{1}{2\pi}\int\limits_{0}^{2\pi}\frac{C r^N}{r^j}\d\theta = \frac{C r^N}{r^j}$.
+        Получается, при $j > N: |c_j|$ меньше любого наперёд заданного положительного числа.
+    }
+    }
+    \corollary[Теорема Лиувилля]{
+        Ограниченная целая функция постоянна.
+    }
+    \corollary[Основная теорема алгебры]{
+        $\forall p \in \C[z]: \deg p > 0 \then \exists z_0 \in \C: p(z_0) = 0$.
+    \provehere{
+        Пусть $p(z) = \sum\limits_{j = 0}^{N}c_j z^j$, где $N > 0$ и $c_N \ne 0$.
+
+    Пойдём от противного: пусть $\forall z \in \C: p(z) \ne 0$.
+
+    Рассмотрим $f(z) \coloneqq \frac{1}{p(z)}$.
+        \bullets{
+            \item С одной стороны, это целая функция: $\frac{\d}{\d z}f(z) = -\frac{p'(z)}{p(z)^2}$.
+
+        \item С другой стороны, $f$ ограничена:
+        оценим $|p(z)| \ge |z^N|\left(|c_N| - \sum\limits_{j = 0}^{N - 1}\frac{|c_j|}{|z|^{N-j}}\right)$, откуда для достаточно больших $|z|: |p(z)| \ge \frac{|c_N|}{2}|z|^N$.
+
+        Тем самым, $p(z) \underset{|z| \to \infty}\Map \infty$, то есть $f(z) \underset{|z| \to \infty}\Map 0$.
+            А при малых $|z|: f$ ограничена, как непрерывная функция на компакте.
+        \item Тем самым, по теореме Лиувилля, $f \equiv \const$, то есть $p \equiv \const$. Противоречие, мы предполагали $\deg p > 0$.\qedhere
+        }
+    }
+    }
+    \theorem[Теорема о среднем]{
+    Пусть $z_0 \in G, f: G \map \C$ голоморфна в $G$.
+        Выберем $r < \dist(z_0, \partial G)$.
+        Тогда \encircle{f(z_0) = \frac{1}{2\pi}\int\limits_{0}^{2\pi}f(z_0 + r e^{it})\d t}
+        \provehere{
+            Посчитаем $f(z_0)$ по интегральной формуле:
+            \[f(z_0) = \frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{\zeta - z_0}\d\zeta = \frac{1}{2\pi i}\int\limits_{0}^{2\pi}\frac{f(z_0 + r e^{it})i r e^{it}}{r e^{it}}\d t = \frac{1}{2\pi}\int\limits_{0}^{2\pi}f(z_0 + r e^{it})\d t\]
+        }
+    }
+    Это действительно среднее в обычном смысле: $f$ проинтегрирована по окружности по мере Лебега, и интеграл поделили на меру окружности.
+    \theorem[Принцип максимума модуля]{
+        Пусть $f: G \map \C$ --- непостоянная голоморфная функция. Тогда $|f|: z \mapsto |f(z)|$ не может достигать наибольшего значения при $z \in G$.
+        \provehere{
+            Пойдём от противного: пусть $\exists z_0 \in G: \forall z \in G: |f(z)| \le |f(z_0)|$.
+            Выберем $r > 0: B(z_0, r) \subset G$, и докажем, что $|f|$ постоянна в $B(z_0, r)$.
+            Пусть $\rho < r$, по теореме о среднем $|f(z_0)| = \frac{1}{2\pi}\abs{\int\limits_{0}^{2\pi}f(z_0 + \rho e^{it})\d t} \le \frac{1}{2\pi}\int\limits_{0}^{2\pi}\underbrace{|f(z_0 + \rho e^{it})|}_{\le |f(z_0)|}\d t$, причём равенство достигается только если $\forall t \in [0, 2\pi]: |f(z_0 + \rho e^{it})| = |f(z_0)|$ (если $\exists t_0 \in (0, 2\pi): |f(z_0 + \rho e^{it_0}| < |f(z_0)|)$, то по непрерывности $\exists \eps > 0: \forall t \in (t_0 - \eps, t_0 + \eps): |f(z_0 + \rho e^{it}| < |f(z_0)| - \eps$, то есть на промежутке $(t_0 - \eps, t_0 + \eps)$ интеграл строго меньше требуемого значения).
+            \indentlemma{
+                Пусть $f: G \map \C$ голоморфна, и $\exists z_0 \in G: f'(z_0) \ne 0$. Тогда $\exists U \ni z_0: f(z_0) \in \Int f(U)$.
+            }{
+                Теорема об обратной функции.
+            }
+            Тем самым, $\forall z \in B(z_0, r): f'(z) = 0$ (так как $|f(z)|$ --- максимум).
+
+        Далее применяем теорему единственности, доказанную во II семестре: $f$ и константа, равная $|f(z_0)|$ совпадают на множестве с предельной точкой, значит, они совпадают везде в $G$.
+        }
+    }
+    \corollary{
+    Пусть $G$ --- ограниченная область, $f: \overline{G} \map \C$ голоморфна в $G$. Тогда $\forall z \in G: |f(z)| \le \max\limits_{\zeta \in \partial G}|f(\zeta)|$.
+    \provehere{
+    $f$ достигает своё наибольшее значение на компакте $\overline{G}$, но согласно принципу максимума, это значение достигается не внутри $G$.
+    }
+    }
+    \section{Гармонические функции}
+    Запишем теорему о среднем для $f: G \map \C$:
+    \[f(z_0) = \int\limits_{1}{2\pi}(f(z_0) + r e^{it})\d t\]
+    Пусть $f = u + iv$, где $u, v$ --- вещественные функции в $G$.
+    Теорема о среднем говорит, что
+    \[u(z_0) = \int\limits_{1}{2\pi}(u(z_0) + r e^{it})\d t \qquad v(z_0) = \int\limits_{1}{2\pi}(v(z_0) + r e^{it})\d t\]
+    Так как $f$ аналитична, то в вещественном смысле $u, v \in C^{\infty}(G)$.
+
+    Запишем уравнения Коши --- Римана:
+    \[\der{u}{x} = \der{v}{y} \quad \der{u}{y} = -\der{v}{x}\]
+    Дифференцируя второй раз, получаем \[\all{\frac{\partial^2 u}{\partial x^2} = \frac{\partial^2 v}{\partial x \partial y} \\ \frac{\partial^2 u}{\partial y^2} = -\frac{\partial^2 v}{\partial x \partial y}}\]
+    Это так называемое \emph{уравнение Лапласа}: $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$.
+
+    Обобщим.
+    Пусть $G \subset \R^n$ --- область, пусть $f \in C^2(G)$.
+    \definition[$f$ --- гармоническая функция в $G$]{
+        $\frac{\partial^2u}{\partial x_1^2} + \cdots + \frac{\partial^2u}{\partial x_n^2} = 0$.
+    }
+    Оператор $\Delta = \frac{\partial^2}{\partial x_1^2} + \cdots + \frac{\partial^2}{\partial x_n^2}$ называется \emph{оператором Лапласа}, и понятно, что гармонические функции --- в точности такие $u$, что $\Delta u = 0$.
+    \statement{
+    Если $u \in C^2(G)$, где область $G \subset \R^2$, то локально существует голоморфная $f: u = \Re f$.
+        Иными словами, $\forall z_0 \in G: \exists U \ni z_0, \exists$ аналитическая $f: U \map \C: u = \Re f$.
+    \provehere{
+        Пусть $\phi \coloneqq \der{u}{x}, \psi \coloneqq -\der{u}{y}$. Тогда $\der{\phi}{x} - \der{\psi}{y} = 0$, то есть $\der{\phi}{x} = \der{\psi}{y}$ везде в $G$.
+
+    Раз накрест-взятые частные производные совпадают, то дифференциальная форма $\phi \d x + \psi \d y$ замкнута, значит, локально имеется первообразная.
+    \comment{Что-то я немного выпал, а что дальше?}
+    }
+    }
+    \theorem[Морера]{
+        Пусть $f: (G \subset \C) \map \C$ непрерывна.
+        Следующие условия эквивалентны.
+        \numbers{
+        \item $f$ голоморфна в $G$.
+        \item $f$ аналитична в $G$.
+        \item Дифференциальная форма $f(z)\d z$ замкнута.
+        }
+    \provehere{
+        $(1) \iff (2)$ уже доказано:~(\cref{analytic-is-holomorphic}) и~(\cref{holomorphic-then-analytic}).
+
+    $(1) \then (3)$ доказано тоже:~(\cref{cauchey-theorem}).
+
+    Докажем $(3) \then (2)$.
+        Пусть $F$ --- первообразная формы $f(z)\d z$ в круге $B(z_0, r) \subset G$.
+        $F$ голоморфна в $B(z_0, r)$, и $\forall z \in D: F'(z) = f(z)$.
+
+    Значит, $F$ раскладывается в степенной ряд $F(z) = \sum\limits_{j = 0}^{\infty}a_j (z - z_0)^j$. Отсюда ${f(z) = \sum\limits_{j = 1}^{\infty}j a_j (z - z_0)^{j - 1}}$.
+    }}
+    \section{Первообразная от замкнутой формы вдоль пути}
+    \subsection{Наводящие предположения}
+    Пусть $f\d x + g\d y$ --- непрерывная дифференциальная форма в $G$, предположим, что она точная: имеется первообразная $F$.
+
+    Пусть $\gamma: [a, b] \map G$ --- кусочно-гладкий путь.
+    Ранее было получено, что $\int\limits_{\gamma}f \d x + g \d y = F(\gamma(b)) - F(\gamma(a))$.
+
+    Давайте обобщим интеграл вдоль пути: пусть $\gamma: [a, b] \map G$ --- произвольный непрерывный путь.
+    Положим по определению $\int\limits_{\gamma}f \d x + g \d y \bydef F(\gamma(b)) - F(\gamma(a))$.
+
+    Теперь пусть $f\d x + g\d y$ всего лишь замкнута.
+    Выберем $a = t_0 < t_1 < \cdots < t_k = b$ так, что $\forall j: \gamma([t_j, t_{j+1}])$ лежит в области $G_j$, в которой у формы $f\d x + g\d y$ есть первообразная $F_j$.
+    Попробуем определить
+    \[\int\limits_{\gamma\big|_{[t_j, t_{j+1}]}}f \d x + g \d y \bydef F_j(\gamma(t_{j + 1})) - F_j(\gamma(t_j))\]
+    и
+    \[\int\limits_{\gamma}f \d x + g \d y \bydef \sum\limits_{j = 0}^{k - 1}F_j(\gamma(t_{j + 1})) - F_j(\gamma(t_j))\]
+    Проблема в том, чтобы доказать, что определение корректно --- не зависит от выбора разбиения $a = t_0 < \dots < t_k = b$.
+    \subsection{Требуемые свойства}
+    Пусть $\Phi = f \d x + g \d y$ --- замкнутая форма в области $G \subset \C$, и $\gamma: [a, b] \map G$ --- путь.
+
+    \definition[Первообразная формы $\Phi$ вдоль пути $\gamma$]{
+    Функция $v: [a, b] \map G$ со следующими свойствами:
+    \numbers{
+    \item $\forall t \in [a, b]: \exists U \ni \gamma(t), \eps > 0$ и найдётся первообразная $F$ для $\Phi$ на $U$, такая, что \[\forall \tau \in (t - \eps, t + \eps): v(\tau) = F(\gamma(\tau))\]
+    }
+    }
+    \fact{
+    Функция $v$, если существует, непрерывна на $[a, b]$.
+    \provehere{
+        Непрерывность в какой-то конкретной точке следует из непрерывности композиции $F \circ \gamma$.
+    }
+    }
+    \theorem{
+    Первообразная замкнутой дифференциальной формы вдоль пути $\gamma$ всегда существует, и любые ве отличаются на константу.
+    \provehere{
+    Сначала докажем существование. Для всех $t \in [a, b]$ выберем окрестность $U_t \coloneqq B(\gamma(t), r_t)$, где $r_t$ настолько мал, что в $U_t$ есть первообразная.
+
+    Семейство $\{U_t\}_{t \in [a, b]}$ образуют открытое покрытие $\gamma([a, b])$.
+        По лемме Лебега $\exists \eps > 0: \forall t \in [a, b]: B(\gamma(t), \eps)$ содержится в каком-то $U_{t'}$.
+        Применяя теорему Кантора о рановерной непрерывности, получаем существование разбиения $a = t_0 < \dots < t_k = b$, такое, что $\gamma([t_j, t_{j + 1}])$ лежит в одном из $U_t$.
+
+        Произвольно выберем $v(a)$.
+        Построим $v\big|_{[t_j, t_{j+1}]}$ индукцией по $j$.
+
+        \underline{База:} Пусть $\gamma([t_0, t_1]) \subset U_0$, и имеется первообразная $F_0$ на $U_0$. Определим $v(\tau) = F_0(\gamma(\tau))$ при $\tau \in [t_0, t_1]$.
+
+        \underline{Переход:} Пусть $\gamma([t_j, t_{j+1}]) \subset U_j, F_j$ --- первообразная $\Phi$ на $U_j$.
+        Найдётся такое $\delta > 0: \gamma([t_j - \delta, t_{j+1}]) \subset U_j$, значит, $U_j \cap U_{j-1} \ne \o$.
+        Это пересечение связно, на нём имеются две первообразные, $F_{j-1}$ и $F_j$.
+
+        Добавим константу к $F_j$ так, чтобы $F_j \equiv F_{j-1}$ при $t \in [t_j - \delta, t_j]$, и определим $v(\tau) = F_j(\gamma(\tau))$ при $\tau \in [t_j, t_{j+1}]$.
+        Окрестность $U_j$ захватывает отрезок $[t_j - \delta, t_{j+1}]$, значит, для точек во внутренности выполнено условие из определения первообразной.
+
+        Докажем единственность: рассмотрим точку $t \in [a, b]$. Найдутся два круга $U, V \ni \gamma(t)$, и первообразные $F, H$ формы $\Phi$ в этих окрестностях, такие, что $u(\tau) = F(\gamma(\tau))$ и $v(\tau) = H(\gamma(\tau))$ при $\tau$, достаточно близких к $t$.
+
+    Тем самым, $u - v$ локально постоянна, но локально постоянная функция на связном множестве --- константа (прообраз любого элемента из образа открыто-замкнут).
     }
     }
 \end{document}
