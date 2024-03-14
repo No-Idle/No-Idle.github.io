@@ -252,8 +252,6 @@
 
     Пусть $u$ --- локальный экстремум функционала $J$. Утверждается, что $u \in C^2[a, b]$.
     \provehere{
-    \comment{На лекции, по-видимому, было другое определение $\xi$, с ним ничего не сходится, но в конспекте лектора --- как ниже.}
-
         Введём функцию \begin{align*}\xi: [a, b] \times \R^d &\map \R^d\\ (t, v) &\mapsto (\nabla_{\dot{u}}L)(t, u(t), \dot{u}(t)) - (\nabla_{\dot{u}}L)(t, u(t), v)\end{align*}
 
     Согласно посылке теоремы, $\d_v \xi \ne 0$ для всех $t, v$.
@@ -364,11 +362,147 @@
     \example{
     Пускай $\Omega \subset \R^3$ --- ограниченная односвязная, граница --- класса $C^1$. $X = C(\partial \Omega)$.
 
-    Заведём $U[\sigma] = \iint_{\partial \Omega \:\partial\Omega}\frac{\sigma(x)\sigma(y)\d S(x)\d S(y)}{|x - y|}$.
+    Заведём $J[\sigma] = \iint_{\partial \Omega \:\partial\Omega}\frac{\sigma(x)\sigma(y)\d S(x)\d S(y)}{|x - y|}$.
 
-    $U$ непрерывен на $X$: $\xi: y \mapsto \int_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
-    \[U[\sigma + s] - U[\sigma] = 2\iint_{\partial \Omega \:\partial\Omega}\frac{s(x)\sigma(y)}{|x - y|}\d S(x)\d S(y) + \bigO(\|s\|^2_C)\]
+    $J$ непрерывен на $X$: $\xi: y \mapsto \int_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
+    \[J[\sigma + s] - J[\sigma] = 2\iint_{\partial \Omega \:\partial\Omega}\frac{s(x)\sigma(y)}{|x - y|}\d S(x)\d S(y) + \bigO(\|s\|^2_C)\]
 
-    Значит, $s \mapsto \int\limits_{\partial\Omega}s(x)\xi(x)\d x$ непрерывен, откуда $U$ --- даже функционал класса $C^1(X)$.
+    Значит, $s \mapsto \int\limits_{\partial\Omega}s(x)\xi(x)\d x$ непрерывен, откуда $J$ --- даже функционал класса $C^1(X)$.
+    }
+    \newlection{14 марта 2023 г.}
+    Заинтересуемся экстремумами с постоянным значением $G[\sigma] = \int\limits_{\partial \Omega}\sigma(x)\d x$.
+    Это типа заряды на поверхности, минимизирующие энергию системы --- физический принцип говорит, что конечное положение экстрмально.
+
+    $J, G \in C^1(X)$.
+
+    Пусть $\sigma$ --- экстремаль $J\big|_{\sigma \in X}{G(\sigma) = Q}$.
+
+    Тогда $\delta (J - \lambda G)[\sigma, h] = 0 \forall h \in X$.
+
+    Посчитаем \[\delta (J - \lambda G)[\sigma, h] = ()[\sigma + h] - ()[\sigma] = 2\int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{\sigma(x)h(y)}{|x - y|}\d S(x)\d S(y) - \lambda \int\limits_{\partial \Omega} h(y)\d S(y) + \int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{h(x)h(y)}{|x - y|}\d S(x)\d S(y)\]
+    Третье слагаемое $\bigO(\|h\|^2_X)$: $\iint\frac{1}{|x - y|}$ сходится.
+    Заметим, что остальная часть --- линейный функционал от $h$, где коэффициент непрерывен от $\sigma$.
+    Это в точности значит, что $J \in C^1$.
+    \[J[\sigma + h] -J[\sigma] = l(h) + o(\|h\|)\text{, где }l_\sigma: h \mapsto \int \frac{\sigma(x)h(y)}{|x - y|}\d S(y) = \int \xi(y)h(y)\d S(y)\]
+    Напишем
+    \[\delta(J - \lambda G)[\sigma, h] = 2\int h(y)\d S(y)\left(2\int \frac{\sigma(x)\d S(x)}{|x - y|} - \lambda\right) = 0 \forall h \]
+    По <<нулевой лемме Дюбуа-Реймона, выражение в скобочках должен быть всегда нулём>>
+
+    Получили
+    \encircle{\lambda = 2\int \frac{\sigma(x)\d S(x)}{|x - y|}}
+Экстремаль $\sigma$ ищется, как решение <<интегрального уранвения>>: $K: f \mapsto \int \frac{f(x)\d S(x)}{|x - y|}$ --- ограниченный непрерывный интегральный оператор.
+    Таким образом, $\sigma$ --- решение $K \sigma = \frac{\lambda}{2}\1$.
+
+    Иными словами, потенциал, создаваемый распределением заряда на самой поверхности постоянен.
+    Такая постановка задачи не очень естественна --- бывают точечные заряды, что ещё?
+    Естественнее было бы рассматривать задачи вида $\sigma$ --- борелевская мера на $\partial \Omega$, $J[\sigma] = \int\frac{\d\sigma(x)\d \sigma(y)}{|x - y|}$.
+        Тут уже уместно задавать вопросы о существовании интеграла, сходимости, и прочем, мы не будем это выяснять по причине нехватки аппарата.
+% Вот если бы вы выбрали курс по потенциалам, \textbf{А вы не выбрали!}, то там бы вам рассказали об этом подробнее
+    \section{Функционалы на кривых}
+    Фиксируем две точки, надо, чтобы длина была максимальна.
+
+    В зависимости от расположения параметра, ответ может не реализовываться, как график функции.
+    С другой стороны, хотим независимость от параметризации, потому что зачем
+
+    \definition[Кривая $\gamma \in C$]{Непрерывное отображение $\gamma: [a, b] \map \R^n$}
+    \definition[Параметризованная кривая]{$\gamma'(x) \ne 0\forall x \in [a, b]$}.
+    \definition[Кривая $\gamma \in C^j$]{Кривая $\gamma \in C^j$}
+    Пусть $\gamma_1: [a_1, b_1] \map \R^n, \gamma_2: [a_2, b_2] \map \R^n$.
+    \definition[Эквивалентность кривых]{$\exists \kappa \in C^j([a_1, b_1] \map [a_2, b_2])$ --- диффеоморфизм, такой, что $\gamma_1 = \gamma_2 \circ \kappa$ и $\kappa'(x) > 0 \forall x$}
+    Ориентированная кривая --- класс эквивалентности относительно данного отношения.
+
+    Класс эквивалентности $\Gamma^j$ --- кривые класса $C^j$.
+    Ещё используют $\Gamma^j[a, b]$.
+
+    Пускай $\Fc \in C(\R^n \times \R^n)$, пусть она однородна порядка $1$ по второму аргументу: $\Fc(\lambda, zw) = \lambda \Fc(z, w) \forall \lambda > 0$.
+    $\gamma: [a_\gamma, b_\gamma] \map \R^d$ --- кривая класса $C^1$.
+
+    $J[\sigma] = \int\limits_{a_\gamma}^{b_\gamma}\Fc[\gamma(t), \dot{\gamma(t)}]\d t$ --- <<квадратные скобки не несут никакого смысла>>.
+
+    \proposal{
+        В этой ситуации $J$ задаёт функционал на $\Gamma^1$.
+    \provehere{
+        Пусть $\gamma_1: [a_1, b_1] \map \R^n, \gamma_2: [a_2, b_2] \map \R^n$ --- два эквивалентных представителя.
+    \multline{J[\gamma_1] = \int \Fc[\gamma_1(t), \dot{\gamma}_1(t)]\d t = \int \Fc [\gamma_2(\kappa(t)), \dot{\kappa}(t) \cdot \dot{\gamma}_2(\kappa(t))]\d t = \\
+    =\int \Fc [\gamma_2(\kappa(t)), \dot{\gamma}_2(\kappa(t))]\dot{\kappa}(t)\d t = \left\|\arr{c}{\tau = \kappa(t) \\ \d \tau = \dot{\kappa}(t)\d t}\right\| = \int \Fc[\gamma_1(\tau), \dot{\gamma}_1(\tau)]\d \tau}
+    }
+    }
+    \examples{
+    \item $\Fc(z, w) = |w|$.
+        Функционал $J$ --- длина кривой
+    \item $\Fc(z, w) = |w|\cdot f(z)$, где, например, $n = 2$, $f(z) = z_2^{\alpha}$ (здесь $z = \vect{z_1\\z_2}$).
+    \bullets{
+        \item При $\alpha = 0$ это предыдущий случай.
+        \item При $\alpha = -1$ это длина в гиперболической плоскости (в модули Пуанкаре --- Лобачевского \comment{их?}).
+        \item При $\alpha = 1$ это координата центра масс, или же площадь поверхности вращения.
+    \item При $\alpha = -\frac{1}{2}$ это время, требуемое шарику, чтобы скатиться по жёлобу данной формы.
+    }
+    }
+    Пусть $L \in C([a, b] \times \R^n \times \R^n)$, $X = C^1[a, b]$, $J[u] = \int\limits_{a}^{b}L(t, u(t), \dot{u}(t))\d t$.
+    Превратим его в функционал на кривой.
+    Заведём $\Fc: \R^{n+1}\times\R^{n+1}, \Fc(z, w) = L(z_1, z_2, \dots, z_{n+1}, \frac{w_2}{|w_1|}, \dots, \frac{w_{n+1}}{|w_1|})|w_1|$.
+    Она имеет требуемую однородность.
+    Типа сопоставим функции $u(t)$ кривую $\gamma_u: t \mapsto (t, u(t))$.
+    % Потолок пробили, но сверху постучали
+
+    Рассмотрим $\tilde{J}[\gamma] \coloneqq \int\Fc(\gamma(t), \dot{\gamma}(t))\d t$ --- если $L$ <<разумная>>, то $\tilde{J}$ --- функционал на кривых.
+    \proposal{
+    $\Fc[\gamma_u] = J[u]$.\provehere{$\dot{\gamma}_u(t) = (1, \dot{u}(t))$.}
+    }
+%    Сформулируем некоторое техническое утверждение, которым будем пользоваться в меньшей общности, и докажем не здесь, но сформулируем сейчас
+    \statement{
+    Пусть $\Fc \in C^2(\R^n \times (\R^n \sm \{0\}))$ (требование непрерывности по совокупности переменных $\Fc \in C(\R^n \times \R^n)$ накладывается всегда в данной теории).
+
+    Пусть $\forall \lambda > 0: \Fc(z, \lambda w) = \lambda\Fc(z, w)$.
+
+    $E\{\gamma\} = (\nabla_{z} \Fc)(\gamma, \dot{\gamma}) - \frac{\d}{\d t}\nabla_w \Fc(\gamma, \dot{\gamma})$, где $J = \int \Fc[\gamma, \dot{\gamma}]\d t$ --- определение осмысленно, так как кривая параметризована, и $\dot{\gamma} \ne 0$, а $\Fc \in C^2(\dots)$.
+    % Пределы не стоят намеренно, так как параметризации могут разниться
+        Пусть $\gamma \in \Gamma^2$, $\gamma: [a, b]\map \R^d$.
+
+        Теперь пусть $s \in C^2[a, b] \times [-\eps, \eps] \map \R^n$, и пусть $s(\_, \tau)$ --- кривая (производная ненулевая).
+        $\frac{\d}{\d \tau}J[s(\_, \tau)] = \int\limits_{a}^{b}E\{s(x, \tau)\}\d x + \angles{(\nabla_{w}\Fc )(s(x, \tau), \der{s}{x}(x, \tau)), \der{s}{\tau}}\Big|_{a}^{b}$
+    \provehere{Упражнение.
+    }
+    }
+    \lemma{
+        Пусть $\gamma_1 \sim \gamma_2$ --- представители кривой $\gamma \in \Gamma^2$ ($\gamma_1 = \gamma_2 \circ \kappa$).
+        Тогда $E\{\gamma_1\} = \kappa' E\{\gamma_2\}$. Подробнее $(E\{\gamma_1\})(x) = \kappa'(x)\left(E\{\gamma_2\}\right)(\kappa(x))$.
+        \provehere{
+            \[E\{\gamma_1\}(x) = (\nabla_z) \Fc (\underbrace{\gamma_1(x)}_{\kappa'(x)\gamma_2'(\kappa(x))}, \dot{\gamma}_1(x)) - \frac{\d}{\d x}(\nabla_w \Fc)(\gamma_1(x), \dot{\gamma}_1(x)) = \kappa'(x)(\nabla_z \Fc)\left[\gamma_2(\kappa(x)), \gamma_2'(\kappa(x))\right] - \frac{\d}{\d x}(\dots)\]
+            Дифференцируя $\Fc(z, \lambda w) = \lambda \Fc(z, w)$, получаем $\lambda(\nabla_w \Fc)(z, \lambda w) = \lambda (\nabla_w\Fc)(z, w)$
+            \[(\dots)-\frac{\d}{\d s}\Big|_{s = \kappa(x)}(\nabla_w\Fc)(\gamma_2(s), \gamma_2'(s)) = \kappa'(x)\cdot (E\{\gamma_2\})(\kappa(x))\]
+        }
+    }
+    \corollary{
+    $E\{\gamma_1\} \equiv 0 \iff E\{\gamma_2\} \equiv 0$ при $\gamma_1 \sim \gamma_2$.
+    }
+    Заведём метрику на $\Gamma^2$, чтобы определить экстремумы
+
+    $\xi, \nu: [a, b] \map \R^d$ --- представители $\gamma_\xi, \gamma_\nu \in \Gamma^2$.
+
+    Пусть $|\dot{\xi}| \equiv c_\xi, |\dot{\nu}| \equiv c_\nu$
+
+    Положим $\|\gamma_\xi - \gamma_\nu\| = \|\xi - \nu\|_{C^2[0, 1]}$.
+    \exercise{
+    Проверить, что это метрика на $\Gamma^2$.
+    }
+    С метрикой также пришли всевозможные локальные, глобальные, строгие, нестрогие, минмимумы и максимумы.
+    \theorem{
+    Пусть $\gamma$ --- локальный максимум $\Gamma^2$, $\Fc \in C^2(\R^n \times (\R^n \sm \{0\})), \Fc(z, \lambda w) = \lambda \Fc(z, w), \lambda > 0$.
+
+    Пусть $\gamma_a, \gamma_b \in \R^n, \mathcal{D} = \defset{\gamma \in \Gamma^2}{\gamma(a_\gamma) = \gamma_a, \gamma(b_\gamma) = \gamma_b}$.
+    Тогда $E\{\gamma\} = 0$.
+    \provehere{
+    $\gamma + \tau h, h(a_\gamma) = h(b_\gamma) = 0$, $h: [a_\gamma, b_\gamma] \map \R^d, h \in C^2$
+
+    Существует $\frac{\d}{\d \tau}J[\gamma + \tau h] = 0$, так как $\dot{\gamma}(s) \ne 0$, значит, $\|\dot{\gamma}(s)\| \ne 0$, и при достаточно малых $\tau: \min\|\dot{\gamma} + \tau \dot{h}\| > \eps$.
+        Значит, при подстановке мы попадём в область, где $\Fc \in C^2$.
+
+    Раз $\gamma$ --- экстремум, то производная равна нулю.
+
+    $J[\gamma + \tau h] - J[\gamma] = \tau\int\angles{(\nabla_z\Fc)(\gamma, \dot{\gamma}), h} + \angles{(\nabla_w\Fc)(\gamma, \dot{\gamma}), h'}\d t + \bigO(\tau^2)$
+
+    Интегируя по частям, получаем $\int\limits_{a}^{b}\angles{E\{\gamma\}, h}\d t + 0 + \bigO(\tau^2)$. Применяя <<нулевую лемму Дюбуа-Реймона>>, получаем $E\{\gamma\} = 0$.
+    }
     }
 \end{document}
