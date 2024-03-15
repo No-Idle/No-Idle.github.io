@@ -255,6 +255,7 @@
         Введём функцию \begin{align*}\xi: [a, b] \times \R^d &\map \R^d\\ (t, v) &\mapsto (\nabla_{\dot{u}}L)(t, u(t), \dot{u}(t)) - (\nabla_{\dot{u}}L)(t, u(t), v)\end{align*}
 
     Согласно посылке теоремы, $\d_v \xi \ne 0$ для всех $t, v$.
+        Так как $u$ --- экстремум, то $\xi \in C^1$.
 
     По теореме о неявной функции $\forall t_0 \in (a, b): \exists \delta > 0: \defset{(t, v)}{\xi(t, v) = 0, |t - t_0| < \delta}$ --- график некоторой функции $v \in C^1\left((t_0 - \delta, t_0 + \delta) \map \R^d\right)$.
     Но $v \equiv \dot{u}\big|_{(t_0 - \delta, t_0 + \delta)}$. Значит, $u \in C^2(a, b)$.
@@ -268,23 +269,29 @@
     Напоминание конечномерного случая:
     Пусть $\Omega \subset \R^d$ --- область, $f, g \in C^1(\Omega)$, $\mathcal{M} = \defset{x \in \Omega}{g(x) = 0}$.
 
-    Заинтересуемся экстремумумами сужения $f\big|_{\mathcal{M}}$.
-    Построим кривую $x(t)$, условие $g(x(t)) = 0 \then f(x(t))$ --- тоже локальный экстремум.
-    $\frac{\d}{\d t}\Big|_{t = 0}f(x(t)) = \angles{(\nabla f)(x_0), \dot{x}(t)}$.
+    Заинтересуемся экстремумами сужения $f\big|_{\mathcal{M}}$.
+    Пусть $x_0 \in \Omega$ -- экстремум.
+    Построим кривую ${x:(-\eps,\eps)\map \Omega}$ так, что $x(0) = x_0$.
+    Условие $g(x(t)) \equiv 0$ влечёт, что $f(x(t)$ имеет локальный экстремум в нуле.
+    Другими словами, $\frac{\d}{\d t}\Big|_{t = 0}f(x(t)) = \angles{(\nabla f)(x_0), \dot{x}(t)} = 0$.
 
-    Поскольку кривая любая, то $\nabla f \perp T_{x_0}\mathcal{M}$. В общем случае такой вектор очень легко найти: $g(x(t)) = 0 \then \angles{(\nabla g)(x_0), \dot{x}} = 0$
+    Поскольку кривую можно выбрать с любым вектором скорости, то $(\nabla f)(x_0) \perp T_{x_0}\mathcal{M}$.
+    Если $(\nabla g)(x_0) \ne 0$ в $x_0$, то $T_{x_0}\mathcal{M}$ --- пространство коразмерности $1$.
+    Найдём какой-нибудь вектор, перпендикулярный $\mathcal{M}$.
+    Это как раз градиент: $g(x(t)) = 0 \then \angles{(\nabla g)(x_0), \dot{x}} = 0$.
 
-    Иными словами $\exists \lambda: \grad(f - \lambda g) = 0$. Ищем критические точки $f - \lambda g$, выделяем те, которые в $\mathcal{M}$.
-    С обнулениями градиента разбираемся отдельно. Нам помогло, что коразмерность $\mathcal{M}$ равна $1$.
-
+    Иными словами $\exists \lambda\in\R: \nabla(f - \lambda g) = 0$.
+    Далее для поиска экстремумов ищут критические точки $f - \lambda g$, выделяют те, которые в $\mathcal{M}$, а с обнулениями градиента $g$ разбираемся отдельно.
+\ok
     Пускай $X$ --- нормированное замкнутое пространство, $G \in C^1(X)$ --- задающий условие функционал.
     Иными словами,
     \bullets{
     \item $\forall x \in X: \exists G'(x) \in X^*: |G(x + s) - G(x) - G'(x)s| = o(\|s\|)$ --- сильная дифференциуремость в точке $x$.
     \item $G': X \map X^*$ непрерывно.
     }
+    Для применения метода множителей Лагранжа нам понадобится лемма, что в направлении всякого вектора из $\Ker G'(x_0)$ можно пустить путь.
     \lemma{
-    Пусть $x_0 \in \mathcal{M} = \defset{x \in X}{G(x) =  0}$.
+    Пусть $x_0 \in \mathcal{M} \coloneqq \defset{x \in X}{G(x) =  0}$.
     Пусть $G'(x_0) \ne 0$.
 
     Тогда $\forall h \in \Ker G'(x_0): \exists x: (\delta,\delta) \map \mathcal{M}, x \in C^1: x(0) = x_0, \dot{x}(0) = h$.
@@ -386,7 +393,7 @@
     \[J[\sigma + h] -J[\sigma] = l(h) + o(\|h\|)\text{, где }l_\sigma: h \mapsto \int \frac{\sigma(x)h(y)}{|x - y|}\d S(y) = \int \xi(y)h(y)\d S(y)\]
     Напишем
     \[\delta(J - \lambda G)[\sigma, h] = 2\int h(y)\d S(y)\left(2\int \frac{\sigma(x)\d S(x)}{|x - y|} - \lambda\right) = 0 \forall h \]
-    По <<нулевой лемме Дюбуа-Реймона, выражение в скобочках должен быть всегда нулём>>
+    По <<нулевой лемме Дюбуа-Реймона>>, выражение в скобочках должен быть всегда нулём.
 
     Получили
     \encircle{\lambda = 2\int \frac{\sigma(x)\d S(x)}{|x - y|}}

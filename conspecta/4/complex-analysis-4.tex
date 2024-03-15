@@ -1031,10 +1031,10 @@
     }
     Сходимость степенная, имеется признак Вейерштрасса, можно поменять местами сумму и интеграл, поэтому все преобразования законны.
 
-    При замене $k = -j - 1$, второе выражение преобразуется в форму
-    \[f(z) = \sum\limits_{j = -1}^{-\infty}(z - z_0)^j \int\limits_{\gamma_r}\frac{f(\zeta)}{(\zeta - z_0)^{j+1}}\d\zeta\]
+    При замене $j = -k - 1$, второе выражение преобразуется в форму
+    \[-\sum\limits_{j = -1}^{-\infty}\int\limits_{\gamma_r}\frac{f(\zeta)}{(\zeta - z_0)^{j+1}}\d\zeta\cdot (z - z_0)^j\]
     Теперь можно заметить, что интегралы вдоль $\gamma_r$ и $\gamma_R$ равны, так как особенностей у интегралов --- слагаемых в ряде --- в кольце нет. Окончательно получаем
-    \encircle{f(z) = \sum\limits_{j \in \Z}c_j (z - z_0)^j\text{, где }c_j = \int\limits_{|z - z_0| = \rho}\frac{f(\zeta)}{(\zeta - z_0)^{j + 1}}\d\zeta\text{ для любого $\rho \in (r_-, r_+)$}\qedhere}
+    \encircle{f(z) = \sum\limits_{j \in \Z}c_j (z - z_0)^j\text{, где }c_j = \int\limits_{|z - z_0| = \rho}\frac{f(\zeta)}{(\zeta - z_0)^{j + 1}}\d\zeta\text{ для любого $\rho \in (r_-, r_+)$}}
     }
     }
 \end{document}
