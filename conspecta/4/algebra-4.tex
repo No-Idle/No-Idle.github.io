@@ -332,16 +332,10 @@
     \exercise{
     Триангулировать сферу, и вычислить гомологии. Дифференциал от треугольника $ABC$ (ориентация --- порядок вершин --- важна) определяют, как его обход вдоль периметра: $AB + BC + CA$.
     }
-    Рассмотрим точную последовательность комплексов
-    % https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiQSciXSxbMiwwLCJBIl0sWzMsMCwiQScnIl0sWzQsMCwiMCJdLFszLDRdLFsyLDNdLFsxLDJdLFswLDFdXQ==
-    \[\begin{tikzcd}[ampersand replacement=\&]
-          0 \& {A'} \& A \& {A''} \& 0
-          \arrow[from=1-4, to=1-5]
-          \arrow[from=1-3, to=1-4]
-          \arrow[from=1-2, to=1-3]
-          \arrow[from=1-1, to=1-2]
-    \end{tikzcd}\]
-    \theorem{
+
+    \theorem[Длинная точная последовательность гомологий]{
+        Пусть имеется точная последовательность комплексов $0 \map A' \map A \map A'' \map 0$.
+
         Существует длинная точная последовательность гомологических групп
     % https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiSCciXSxbMiwwLCJIIl0sWzMsMCwiSCcnIl0sWzQsMCwiSCdbLTFdIl0sWzUsMCwiSFstMV0iXSxbNiwwLCJcXGNkb3RzIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzQsNV0sWzUsNl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -380,111 +374,186 @@
 
             \comment{
                 Дальше надо проверить, что определение корректно, и последовательность точна.
-            Это типичный диаграммный поиск, который невозможно записывать, и его несложно воспроизвести самостоятельно.
+                Это типичный диаграммный поиск, который невозможно записывать, и его несложно воспроизвести самостоятельно.
             }
     }
     }
     \newlection{4 марта 2023 г.}
-    //todo
+    Теперь приведём другое доказательство существования длинной точной последовательности гомологий, опирающееся на лемму о змее.
     \lemma[О змее]{
-    % https://q.uiver.app/#q=WzAsMTQsWzEsMSwiQSciXSxbMiwxLCJBIl0sWzMsMSwiQScnIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMSwyLCJCJyJdLFsyLDIsIkIiXSxbMywyLCJCJyciXSxbMSwwLCJcXEtlciBcXHBoaSciXSxbMiwwLCJcXEtlciBcXHBoaSJdLFszLDAsIlxcS2VyIFxccGhpJyciXSxbMSwzLCJcXENvS2VyIFxccGhpJyJdLFsyLDMsIlxcQ29LZXIgXFxwaGkiXSxbMywzLCJcXENvS2VyXFxwaGknJyJdLFsyLDcsIlxccGhpJyciXSxbMSw2LCJcXHBoaSJdLFswLDUsIlxccGhpIl0sWzQsNV0sWzUsNl0sWzYsN10sWzAsMV0sWzEsMl0sWzIsM10sWzgsMCwiXFxrZXIgXFxwaGknIiwxXSxbOSwxLCJcXGtlciBcXHBoaSIsMV0sWzEwLDIsIlxca2VyIFxccGhpJyciLDFdLFs1LDExLCJcXGNva2VyIFxccGhpJyIsMV0sWzYsMTIsIlxcY29rZXIgXFxwaGkiLDFdLFs3LDEzLCJcXGNva2VyIFxccGhpJyciLDFdLFs4LDksIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEwLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMiwxMywiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+    Пусть даны два комплекса $A' \map A \map A'' \map 0$ и $0 \map B' \map B \map B''$, и морфизм между ними.
+    Тогда имеется длинная точная последовательность из пунктирных стрелок.
+
+        Короткие стрелки получены из действия соответственных функторов (ядра и коядра), а связующий гомоморфизм определён $\delta$ определён в доказательстве, и естественен (функториален).
+    % https://q.uiver.app/#q=WzAsMTQsWzEsMSwiQSciXSxbMiwxLCJBIl0sWzMsMSwiQScnIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMSwyLCJCJyJdLFsyLDIsIkIiXSxbMywyLCJCJyciXSxbMSwwLCJcXEtlciBcXHBoaSciXSxbMiwwLCJcXEtlciBcXHBoaSJdLFszLDAsIlxcS2VyIFxccGhpJyciXSxbMSwzLCJcXENvS2VyIFxccGhpJyJdLFsyLDMsIlxcQ29LZXIgXFxwaGkiXSxbMywzLCJcXENvS2VyXFxwaGknJyJdLFsyLDcsIlxccGhpJyciXSxbMSw2LCJcXHBoaSJdLFswLDUsIlxccGhpIl0sWzQsNV0sWzUsNl0sWzYsN10sWzAsMV0sWzEsMl0sWzIsM10sWzgsMCwiXFxrZXIgXFxwaGknIl0sWzksMSwiXFxrZXIgXFxwaGkiXSxbMTAsMiwiXFxrZXIgXFxwaGknJyJdLFs1LDExLCJcXGNva2VyIFxccGhpJyJdLFs2LDEyLCJcXGNva2VyIFxccGhpIl0sWzcsMTMsIlxcY29rZXIgXFxwaGknJyJdLFs4LDksIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDEwLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMTEsMTIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMiwxMywiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \& {\Ker \phi'} \& {\Ker \phi} \& {\Ker \phi''} \\
+          \& {A'} \& A \& {A''} \& 0 \\
+          0 \& {B'} \& B \& {B''} \\
+          \& {\CoKer \phi'} \& {\CoKer \phi} \& {\CoKer\phi''}
+          \arrow["{\phi''}", from=2-4, to=3-4]
+          \arrow["\phi", from=2-3, to=3-3, ""{coordinate, near start, name=Z}]
+          \arrow["\phi", from=2-2, to=3-2]
+          \arrow[from=3-1, to=3-2]
+          \arrow[from=3-2, to=3-3]
+          \arrow[from=3-3, to=3-4]
+          \arrow[from=2-2, to=2-3]
+          \arrow[from=2-3, to=2-4]
+          \arrow[from=2-4, to=2-5]
+          \arrow["{\ker \phi'}", from=1-2, to=2-2]
+          \arrow["{\ker \phi}", from=1-3, to=2-3]
+          \arrow[dll, "\delta", dashed, rounded corners, to path={ -- ([xshift=10ex]\tikztostart.east) |- (Z) \tikztonodes -| ([xshift=-10ex]\tikztotarget.west)-- (\tikztotarget)},from=1-4,to=4-2]
+          \arrow["{\ker \phi''}", from=1-4, to=2-4]
+          \arrow["{\coker \phi'}", from=3-2, to=4-2]
+          \arrow["{\coker \phi}", from=3-3, to=4-3]
+          \arrow["{\coker \phi''}", from=3-4, to=4-4]
+          \arrow[dashed, from=1-2, to=1-3]
+          \arrow[dashed, from=1-3, to=1-4]
+          \arrow[dashed, from=4-2, to=4-3]
+          \arrow[dashed, from=4-3, to=4-4]
+    \end{tikzcd}\]
+    \provehere{
+    Диаграммный поиск.
+    }
+    }
+
+    \theorem[Длинная точная последовательность гомологий на бис]{
+    Пусть имеется точная последовательность комплексов $0 \map A' \map A \map A'' \map 0$.
+
+        Существует длинная точная последовательность гомологических групп
+    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiSCciXSxbMiwwLCJIIl0sWzMsMCwiSCcnIl0sWzQsMCwiSCdbLTFdIl0sWzUsMCwiSFstMV0iXSxbNiwwLCJcXGNkb3RzIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzQsNV0sWzUsNl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
-              \& {\Ker \phi'} \& {\Ker \phi} \& {\Ker \phi''} \\
-              \& {A'} \& A \& {A''} \& 0 \\
-              0 \& {B'} \& B \& {B''} \\
-              \& {\CoKer \phi'} \& {\CoKer \phi} \& {\CoKer\phi''}
-              \arrow["{\phi''}", from=2-4, to=3-4]
-              \arrow["\phi", from=2-3, to=3-3, ""{coordinate, near start, name=Z}]
-              \arrow["\phi", from=2-2, to=3-2]
-              \arrow[from=3-1, to=3-2]
-              \arrow[from=3-2, to=3-3]
-              \arrow[from=3-3, to=3-4]
+              \cdots \& {H'} \& H \& {H''} \& {H'[-1]} \& {H[-1]} \& \cdots
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+              \arrow[from=1-4, to=1-5]
+              \arrow[from=1-5, to=1-6]
+              \arrow[from=1-6, to=1-7]
+        \end{tikzcd}\]
+        где связующий морфизм $\delta$ будет построен в доказательстве.
+
+        Более того, это всё функториально.
+    \provehere{
+    Длинная точная последовательность комплексов означает наличие следующей коммутативной диаграммы (где строки точны, и столбцы --- комплексы)
+    % https://q.uiver.app/#q=WzAsMTYsWzEsMSwiQV9uJyJdLFsyLDEsIkFfbiJdLFszLDEsIkFfbicnIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMSwyLCJBX3tuLTF9JyJdLFsyLDIsIkFfe24tMX0iXSxbMywyLCJBJydfe24tMX0iXSxbMCwxLCIwIl0sWzQsMiwiMCJdLFsxLDAsIlxcdmRvdHMiXSxbMiwwLCJcXHZkb3RzIl0sWzMsMCwiXFx2ZG90cyJdLFsxLDMsIlxcdmRvdHMiXSxbMiwzLCJcXHZkb3RzIl0sWzMsMywiXFx2ZG90cyJdLFswLDFdLFsxLDJdLFsyLDNdLFs0LDVdLFs1LDZdLFs2LDddLFswLDUsImQnX24iXSxbMSw2LCJkX24iXSxbMiw3LCJkJydfbiJdLFs4LDBdLFs3LDldLFsxMCwwXSxbMTEsMV0sWzEyLDJdLFs1LDEzXSxbNiwxNF0sWzcsMTVdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& \vdots \& \vdots \& \vdots \\
+              0 \& {A_n'} \& {A_n} \& {A_n''} \& 0 \\
+              0 \& {A_{n-1}'} \& {A_{n-1}} \& {A''_{n-1}} \& 0 \\
+              \& \vdots \& \vdots \& \vdots
               \arrow[from=2-2, to=2-3]
               \arrow[from=2-3, to=2-4]
               \arrow[from=2-4, to=2-5]
-              \arrow[dll, "\delta", dashed, rounded corners, to path={ -- ([xshift=10ex]\tikztostart.east) |- (Z) \tikztonodes -| ([xshift=-10ex]\tikztotarget.west)-- (\tikztotarget)},from=1-4,to=4-2]
-              \arrow["{\ker \phi'}"{description}, from=1-2, to=2-2]
-              \arrow["{\ker \phi}"{description}, from=1-3, to=2-3]
-              \arrow["{\ker \phi''}"{description}, from=1-4, to=2-4]
-              \arrow["{\coker \phi'}"{description}, from=3-2, to=4-2]
-              \arrow["{\coker \phi}"{description}, from=3-3, to=4-3]
-              \arrow["{\coker \phi''}"{description}, from=3-4, to=4-4]
-              \arrow[dashed, from=1-2, to=1-3]
-              \arrow[dashed, from=1-3, to=1-4]
-              \arrow[dashed, from=4-2, to=4-3]
-              \arrow[dashed, from=4-3, to=4-4]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow["{d'_n}", from=2-2, to=3-2]
+              \arrow["{d_n}", from=2-3, to=3-3]
+              \arrow["{d''_n}", from=2-4, to=3-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=3-4, to=3-5]
+              \arrow[from=1-2, to=2-2]
+              \arrow[from=1-3, to=2-3]
+              \arrow[from=1-4, to=2-4]
+              \arrow[from=3-2, to=4-2]
+              \arrow[from=3-3, to=4-3]
+              \arrow[from=3-4, to=4-4]
         \end{tikzcd}\]
+    Пусть циклы, границы и гомологии в комплексе $A$ обозначаются $Z_\bullet, B_\bullet, H_\bullet$ соответственно, в $A'$ --- $Z_\bullet', B_\bullet', H_\bullet'$, , в $A'$ --- $Z_\bullet'', B_\bullet'', H_\bullet''$.
+        Из коммутативности диаграммы $B'_n$ вправо уходит в $B_n$, а $B_n$, в свою очередь --- в $B_n''$.
+
+        Чтобы воспользоваться леммой о змее, построим следующую диаграмму, взяв коядро верхней строки, ядро --- нижней, и дорисовав сверху --- ядра вертикальных стрелок, снизу --- коядра.
+% https://q.uiver.app/#q=WzAsMTQsWzEsMSwiQSdfbi9CJ19uIl0sWzIsMSwiQV9uL0JfbiJdLFszLDEsIkFfbicnL0JfbicnIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMSwyLCJaX3tuLTF9JyJdLFsyLDIsIlpfe24tMX0iXSxbMywyLCJaJydfe24tMX0iXSxbMSwwLCJIX24nIl0sWzIsMCwiSF9uIl0sWzMsMCwiSCcnX24iXSxbMSwzLCJIX3tuLTF9JyJdLFsyLDMsIkhfe24tMX0iXSxbMywzLCJIX3tuLTF9JyciXSxbMCwxXSxbMSwyXSxbMiwzXSxbNCw1XSxbNSw2XSxbNiw3XSxbMCw1LCJcXG92ZXJsaW5le2R9J19uIl0sWzEsNiwiXFxvdmVybGluZXtkfV9uIl0sWzIsNywiXFxvdmVybGluZXtkfScnX24iXSxbOCwwXSxbOSwxXSxbMTAsMl0sWzUsMTFdLFs2LDEyXSxbNywxM11d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {H_n'} \& {H_n} \& {H''_n} \\
+              \& {A'_n/B'_n} \& {A_n/B_n} \& {A_n''/B_n''} \& 0 \\
+              0 \& {Z_{n-1}'} \& {Z_{n-1}} \& {Z''_{n-1}} \\
+              \& {H_{n-1}'} \& {H_{n-1}} \& {H_{n-1}''}
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow["{\overline{d}'_n}", from=2-2, to=3-2]
+              \arrow["{\overline{d}_n}", from=2-3, to=3-3]
+              \arrow["{\overline{d}''_n}", from=2-4, to=3-4]
+              \arrow[from=1-2, to=2-2]
+              \arrow[from=1-3, to=2-3]
+              \arrow[from=1-4, to=2-4]
+              \arrow[from=3-2, to=4-2]
+              \arrow[from=3-3, to=4-3]
+              \arrow[from=3-4, to=4-4]
+        \end{tikzcd}\]
+        Обоснуем, каким образом получилась такая диаграмма.
+        По определению $d_n(B_n) = \{0\}$, поэтому $A_n \overset{d_n}\Map A_{n-1}$ пропускается через фактор, и получается отображение $\tilde{d}_n: A_n/B_n \map A_{n-1}$.
+        Так как $A$ --- комплекс, то $\tilde{d}_n(A_n/B_n) \subset Z_{n-1}$, можно сузить codomain, получая $\overline{d}_n$.
+        По определению $H_n = Z_n/B_n$, поэтому действительно $H_n = \Ker(d_n)$.
+        В свою очередь, $H_{n-1} = Z_{n-1}/B_{n-1}$, и это действительно $\CoKer(d_n)$.
+
+        Отображение $A_n \map A_n''$ было эпиморфизмом, после взятия коядра эпиморфизмом оно и осталось.
+        Двойственно, $A'_{n-1} \map A_{n-1}$ было мономорфизмом, мономорфизмом оно и осталось.
+
+        Применяя лемму о змее, получаем утверждение теоремы.
+    }
+    }
+    \section{Функторы между абелевыми категориями}
+    Пусть $\cat A, \cat B$ --- абелевы категории.
+    \definition[Аддитивный функтор $\cat F: \cat A \map \cat B$]{
+    Такой функтор, что $\forall \alpha, \beta \in \Mor(\cat A): \cat F(\alpha + \beta) = \cat F(\alpha) + \cat F(\beta)$ всегда, когда определено.
+    }
+    Рассмотрим произвольную короткую точную последовательность $0 \map A' \map A \map A'' \map 0$ в $\cat A$.
+    Подействовав на неё функтором $\cat F$, мы получим последовательность $0 \map \cat F(A') \map \cat F(A) \map \cat F(A'') \map 0$.
+    Точность, вообще говоря, пропадёт, но если $\cat F$ сохраняет точность в каком-то члене для всех таких коротких точных последовательностей, то функтор $\cat F$ имеет соответствующее название:
+    \numbers{
+    \item Если всегда имеется точность в члене $\cat F(A)$, то $\cat F$ --- \emph{полуточный функтор}.
+    \item Если всегда имеется точность в членах $\cat F(A')$ и $\cat F(A)$, то $\cat F$ --- \emph{точный слева функтор}.
+    \item Если всегда имеется точность в членах $\cat F(A)$ и $\cat F(A'')$, то $\cat F$ --- \emph{точный справа функтор}.
+    \item Если всякая короткая точная последовательность переходит в короткую точную последовательность, то $\cat F$ --- \emph{точный функтор}.
     }
     \lemma{
     Пусть $\cat F$ --- аддитивный функтор. Следующие условия эквивалентны:
     \numbers{
-    \item $\cat F$ точен справа
-    \item $\cat F$ сохраняет коядра.
+    \item $\cat F$ точен справа.
+    \item $\cat F$ сохраняет нуль и коядра: $\cat F(0) = 0, \cat F(\coker(\phi)) = \coker(\cat F(\phi))$.
     \item $\cat F$ сохраняет конечные копределы.
     }
-    }
-    % https://q.uiver.app/#q=WzAsNSxbMSwwLCJBIl0sWzIsMCwiQSJdLFszLDAsIjAiXSxbNCwwLCIwIl0sWzAsMCwiMCJdLFswLDEsIlxcaWQiXSxbMSwyXSxbMiwzXSxbNCwwXV0=
-    \[\begin{tikzcd}[ampersand replacement=\&]
-          0 \& A \& A \& 0 \& 0
-          \arrow["\id", from=1-2, to=1-3]
-          \arrow[from=1-3, to=1-4]
-          \arrow[from=1-4, to=1-5]
-          \arrow[from=1-1, to=1-2]
-    \end{tikzcd}\]
-    переходит в
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBGKEEpIl0sWzEsMCwiXFxjYXQgRihBKSJdLFsyLDAsIlxcY2F0IEYoMCkiXSxbMywwLCIwIl0sWzAsMSwiXFxpZCJdLFsxLDJdLFsyLDNdXQ==
-    \[\begin{tikzcd}[ampersand replacement=\&]
-    {\cat F(A)} \& {\cat F(A)} \& {\cat F(0)} \& 0
-    \arrow["\id", from=1-1, to=1-2]
-    \arrow[from=1-2, to=1-3]
-    \arrow[from=1-3, to=1-4]
-    \end{tikzcd}\]
-    поэтому точный функтор сохраняет нуль.
+    \provebullets{
+        \item[$(3)\then(2)$] Коядро --- конечный копредел, поэтому очевидно.
+        \item[$(2)\then(3)$] В свою очередь, копроизведение в абелевой категории --- бипроизведение, а это <<внутренний объект>>, поэтому всякий аддитивный функтор сохраняет его.
+    \item[$(2)\then(1)$] Короткая точная последовательность $A' \overset{\phi}\map A \overset{\psi}\map A'' \map 0$ характеризуется свойствами $\psi = \coker \phi, 0 = \coker \psi$.
+    \item[$(1) \then (2)$] Рассмотрим произвольный $\phi: A' \map A$.
+        У него есть эпи-моно разложение $\phi = \mu\eps$ ($\mu$ --- моно, $\eps$ --- эпи), и $\coker(\mu\eps) = \coker(\mu)$, так как $\eps$ --- эпиморфизм.
+    Значит, без потери общности $\phi$ --- мономорфизм.
 
-    \corollary{
-    Левый сопряжённый сохраняет копределы $\then$ он точен справа.
+        Тогда последовательность $0 \map A' \overset{\phi}\map A \overset{\coker \phi}\map \CoKer\phi \map 0$ точна, и так как $\cat F$ --- точен справа, то $\cat F(\coker \phi) = \coker(\cat F(\phi))$.
+
+    Также точный справа функтор сохраняет нуль: $0 \map A \overset{\id}\map A \map 0 \map 0$ переходит в $\cat F(A) \overset{\id}\map \cat F(A) \map \cat F(0) \map 0$.
     }
-    Копредел (который является левым сопряжнным к диагональному $\Delta$) сохраняет копределы, значит, точен справа.
+    }
+    \corollary{
+    Левый сопряжённый функтор точен справа.
+    \provehere{Он сохраняет копределы.}
+    }
+    Копредел (который является левым сопряжённым к диагональному $\Delta$) сохраняет копределы, значит, точен справа.
     Другими словами, копределы коммутируют.
 
     К сожалению, в лемме о змее это не помогает в доказательстве того, что последовательность точна в члене $\Ker \phi$, так как нет точной последовательности $0 \map A' \map A \map A'' \map 0$.
 
-    Точная последовательность
-    % https://q.uiver.app/#q=WzAsNSxbMCwwLCIwIl0sWzEsMCwiQyciXSxbMiwwLCJDIl0sWzMsMCwiQycnIl0sWzQsMCwiMCJdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdXQ==
-    \[\begin{tikzcd}[ampersand replacement=\&]
-          0 \& {C'} \& C \& {C''} \& 0
-          \arrow[from=1-1, to=1-2]
-          \arrow[from=1-2, to=1-3]
-          \arrow[from=1-3, to=1-4]
-          \arrow[from=1-4, to=1-5]
-    \end{tikzcd}\]
-    отображается коядром и ядром в
-    % https://q.uiver.app/#q=WzAsOCxbMSwwLCJDX24nL0JfbiciXSxbMiwwLCJDX24vQl9uIl0sWzMsMCwiQ19uJycvQl9uJyciXSxbNCwwLCIwIl0sWzAsMSwiMCJdLFsxLDEsIlpfe24tMX0nIl0sWzIsMSwiWl97bi0xfSJdLFszLDEsIlpfe24tMX0nJyJdLFswLDFdLFsxLDJdLFsyLDNdLFs0LDVdLFs1LDZdLFs2LDddLFswLDVdLFsxLDZdLFsyLDddXQ==
-    \[\begin{tikzcd}[ampersand replacement=\&]
-          \& {C_n'/B_n'} \& {C_n/B_n} \& {C_n''/B_n''} \& 0 \\
-          0 \& {Z_{n-1}'} \& {Z_{n-1}} \& {Z_{n-1}''}
-          \arrow[from=1-2, to=1-3]
-          \arrow[from=1-3, to=1-4]
-          \arrow[from=1-4, to=1-5]
-          \arrow[from=2-1, to=2-2]
-          \arrow[from=2-2, to=2-3]
-          \arrow[from=2-3, to=2-4]
-          \arrow[from=1-2, to=2-2]
-          \arrow[from=1-3, to=2-3]
-          \arrow[from=1-4, to=2-4]
-    \end{tikzcd}\]
+    При доказательстве существования длинной точной последовательности гомологий на бис, мы использовали, что коядро точно справа, ядро --- точно слева.
     \newlection{11 марта 2023 г.}
 
     \fact{
     Если точный справа функтор сохраняет мономорфизмы, то функтор точен.
         Двойственно, точный слева функтор, сохраняющий эпиморфизмы, точен.
     \provehere{
-    Условия в точности означают, что короткая точная последовательность отображается в короткую точную последовательность.
+    Условия как раз означают, что короткая точная последовательность отображается в короткую точную последовательность.
     }
     }
     Пусть имеются комплексы $X_\bullet$ и $X'_\bullet$, и между ними морфизмы $f, g$.
     \definition[Морфизмы $f$ и $g$ гомотопны]{
-        Существует семейство морфизмов $s_k: X_{k-1} \map Y_k$, таких, что $f_{n} - g_{n} = d'_{n}s_{n+1} + s_{n}d_{n-1}$.
+        Существует семейство морфизмов $s_k: X_{k-1} \map X'_k$, таких, что $f_{n} - g_{n} = d'_{n}s_{n+1} + s_{n}d_{n-1}$.
         При этом диаграмма ниже \textbf{не обязана} быть коммутативной.
         % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiWF9uIl0sWzIsMCwiWF97bi0xfSJdLFszLDAsIlxcY2RvdHMiXSxbNCwwLCJYXzAiXSxbMSwxLCJYJ19uIl0sWzIsMSwiWCdfe24tMX0iXSxbMywxLCJcXGNkb3RzIl0sWzQsMSwiWCdfMCJdLFswLDEsIlgnX3tuKzF9Il0sWzAsMCwiWF97bisxfSJdLFswLDQsImZfbiIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzAsNCwiZ19uIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJvZmZzZXQiOi0xfV0sWzEsNSwiZl97bi0xfSIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzEsNSwiZ197bi0xfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotMX1dLFszLDcsImZfMCIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzMsNywiZ18wIiwwLHsibGFiZWxfcG9zaXRpb24iOjIwLCJvZmZzZXQiOi0xfV0sWzAsMSwiZF97bi0xfSJdLFsxLDIsImRfe24tMn0iXSxbMiwzLCJkXzAiXSxbNiw3LCJkJ18wIiwyXSxbNSw2LCJkJ197bi0yfSIsMl0sWzQsNSwiZCdfe24tMX0iLDJdLFs4LDQsImQnX3tufSIsMl0sWzksOCwiZl97bisxfSIsMix7ImxhYmVsX3Bvc2l0aW9uIjo4MCwib2Zmc2V0IjoxfV0sWzksOCwiZ197bisxfSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjoyMCwib2Zmc2V0IjotMX1dLFs5LDAsImRfe259Il0sWzgsMCwic197bisxfSIsMyx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDEsInNfbiIsMyx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDIsInNfe24tMX0iLDMseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNiwzLCJzXzEiLDMseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifSwiYm9keSI6eyJuYW1lIjoiZG90dGVkIn0sImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -513,38 +582,41 @@
         \end{tikzcd}\]
         Пишут $f \simeq g$.
     }
+    \comment{А почему это то же самое, что и гомотопность в топологии?}
     \theorem{\label{homotopy-preserves-h}
-    Если два морфизма комплексов $f, g: X \map X'$ гомотопны, то $H(f) = H(g)$.
+    Если два морфизма комплексов $f, g: X \map X'$ гомотопны, то $H(f) = H(g)$ (гомологии являются функтором, и действуют не только на комплексах, но и на морфизмах между ними).
     \provehere{
+        Докажем, что $H(f - g) = 0$.
+
         Рассмотрим $\overline{x} \in H_n(X)$.
         У него имеется прообраз $x \in Z_n$.
 
         Заметим, что $H(f_n - g_n)(\overline{x}) = \overline{(f_n - g_n)(x)} = \overline{d'_n(s_{n+1}(x))} + \overline{s_n(d_{n-1}(x))}$.
-        Первое слагаемое равно нулю, так ак $d'_n(\cdots) \in B_n(X')$, а второе --- так как $x \in \Ker d_{n-1}$.
+        Первое слагаемое равно нулю, так как $d'_n(\cdots) \in B_n(X')$, а второе --- так как $x \in \Ker d_{n-1}$.
     }
     }
     \note{
-    Если $\cat F: \cat A \map \cat A$ --- функтор, и $f \simeq g$ --- морфизмы комплексов с объектами из $\cat A$, то (допуская вольность речи можно писать $\cat F(f)$): $\cat F(f) \simeq \cat F(g)$.
+    Если $\cat F: \cat A \map \cat A$ --- аддитивный функтор, и $f \simeq g$ --- морфизмы комплексов с объектами из $\cat A$, то (допуская вольность речи можно писать $\cat F(f)$) $\cat F(f) \simeq \cat F(g)$.
     }
     \fact{
     Быть гомотопными --- отношение эквивалентности.
     \provehere{
     Рефлексивность: $\forall n: s_n = 0$.
     Симметричность: $s_n \coloneqq -s_n$.
-    Транзитивность: \[\all{f_n - g_n = d'_n s_{n+1} + s_n d_{n-1} \\ g_n - h_n =d'_n r_{n+1} + r_n d_{n-1}} \then f_n - h_n = d'_n(s_{n+1} + r_{n+1}) + (s_n + r_n)d_{n-1}\]
+    Транзитивность: \[\all{f_n - g_n = d'_n s_{n+1} + s_n d_{n-1} \\ g_n - h_n =d'_n r_{n+1} + r_n d_{n-1}} \then f_n - h_n = d'_n(s_{n+1} + r_{n+1}) + (s_n + r_n)d_{n-1}\qedhere\]
     }
     }
     \definition[Два комплекса $X$ и $X'$ гомотопически эквивалентны]{
     Существуют морфизмы комплексов $f: X \map X'$ и $g: X' \map X$, такие, что $f g \simeq \id_{X'}$ и $g f \simeq \id_{X}$.
     Данные морфизмы $f$ и $g$ называют \emph{гомотопическими эквивалентностями}.
     }
-    \corollary{
+    \fact{
     Если $X$ и $X'$ гомотопически эквивалентны, то $H(X) \cong H(X')$.
     }
     \definition[Квазиизоморфизм $f: X \map X'$]{
     Морфизм $f$, такой, что $H(f)$ --- изоморфизм.
     }
-    \corollary{
+    \fact{
     Гомотопическая эквивалентность --- квазиизоморфизм.
     }
     \definition[Комплекс $X$ ацикличен]{
@@ -589,7 +661,7 @@
     \provenumbers{
     \item Свободный модуль проективен: пусть $\{p_\alpha\}$ --- базис $P$. Определим $\theta(p_\alpha) = \psi(\phi^{-1}(p_\alpha))$, где прообраз выбран произвольно, и продолжим по линейности.
     \item Прямое слагаемое проективного модуля проективно.
-    Пусть имеется вложение $M \map M \oplus N$, где $M \oplus N$ --- проективен.
+    Рассмотрим каноническое вложение $M \hookrightarrow M \oplus N$, где $M \oplus N$ --- проективен.
     % https://q.uiver.app/#q=WzAsNSxbMSwwLCJNIl0sWzIsMCwiTVxcb3BsdXMgTiJdLFsxLDEsIkIiXSxbMCwxLCJBIl0sWzIsMSwiMCJdLFszLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDRdLFswLDFdLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsIiIsMCx7ImN1cnZlIjo0fV0sWzAsMiwiXFxwc2kiXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& M \& {M\oplus N} \\
@@ -602,8 +674,8 @@
               \arrow["\psi", from=1-2, to=2-2]
         \end{tikzcd}\]
     Определим $M \oplus N \map B, (m, n) \mapsto \psi(m)$.
-    Так как $M \oplus N$ проективен, то найдётся $M \oplus N \map A$, и композиция подходит.
-    \item Пусть $P$ проективен. Возьмём свободный модуль $F$, сюръективно накрывающий $P$.
+    Так как $M \oplus N$ проективен, то найдётся $M \oplus N \map A$, и композиция $M \map M \oplus N \map A$ подходит в качестве морфизма, который должен найтись из определения проективного модуля.
+    \item Пусть $P$ проективен. Возьмём свободный модуль $F$, сюръективно накрывающий $P$ (например, подойдёт свободный модуль на всех элементах $P$, но на практике, конечно, удобно брать модуль поменьше).
     % https://q.uiver.app/#q=WzAsMyxbMSwwLCJQIl0sWzEsMSwiUCJdLFswLDEsIkYiXSxbMiwxLCJcXHBpIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMSwiXFxpZCIsMl0sWzAsMiwiXFxleGlzdHMiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& P \\
@@ -623,5 +695,357 @@
     \definition[Проективная резольвента модуля $M$]{
         Ацикличный комплекс вида\\ $\cdots \map P_n \map P_{n-1} \map \cdots \map P_0 \map M \map 0$, где $P_i$ --- проективные модули.
     }
-    Оказывается, любые две проективные резольвенты гомотопически эквивалентны.
+    В будущем докажем, что любые две проективные резольвенты гомотопически эквивалентны.
+    \newlection{18 марта 2024 г.}
+    \section{Резольвенты. Левый производный функтор}
+    Зафиксируем некоторый аддитивный функтор $\cat F: \cat A \map \cat B$.
+    Пусть у объекта $A \in \cat A$ имеется проективная резольвента, которую я выделил стрелками $\rightsquigarrow$ .
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiMCJdLFsyLDEsIkEiXSxbMywxLCIwIl0sWzEsMSwiMCJdLFswLDEsIlxcY2RvdHMiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In19fV0sWzIsM10sWzIsNCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XSxbNCw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFs2LDRdLFs3LDZdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \cdots \& {P_1} \& {P_0} \& 0 \\
+          \cdots \& 0 \& A \& 0
+          \arrow[squiggly, from=1-1, to=1-2]
+          \arrow[squiggly, from=1-2, to=1-3]
+          \arrow[from=1-3, to=1-4]
+          \arrow[squiggly, from=1-3, to=2-3]
+          \arrow[squiggly, from=2-3, to=2-4]
+          \arrow[from=2-2, to=2-3]
+          \arrow[from=2-1, to=2-2]
+    \end{tikzcd}\]
+    Иными словами, проективная резольвента --- это некоторый морфизм комплексов $P$ и $A_\bullet$.
+    Под комплексом $A_\bullet$ подразумевается такой комплекс, в котором в нулевой градуировке сидит $A$, а в остальных --- нули (следовательно, все дифференциалы --- тоже нули).
+
+    Применим $\cat F$ к верхней строчке. \comment{Предположим, что $\cat F(0) = 0$?}
+    Тогда получится комплекс вида
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiXFxjYXQgRihQXzEpIl0sWzIsMCwiXFxjYXQgRihQXzApIl0sWzMsMCwiMCJdLFswLDFdLFsxLDJdLFsyLDNdXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \cdots \& {\cat F(P_1)} \& {\cat F(P_0)} \& 0
+          \arrow[from=1-1, to=1-2]
+          \arrow[from=1-2, to=1-3]
+          \arrow[from=1-3, to=1-4]
+    \end{tikzcd}\]
+    Чуть ниже мы определим $L_n \cat F(A) \coloneqq H_n \cat F(P)$ --- левый производный функтор, измеряющий неточность $\cat F$ --- но пока, например, неясна корректность (независимость от резольвенты) такого определения.
+    \theorem{
+    Пусть $P_i$ проективные, сверху комплекс (и ноль в верхней строчке вообще-то неважен), снизу --- точный комплекс.
+    % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiQSJdLFs0LDAsIjAiXSxbNCwxLCIwIl0sWzMsMSwiQiJdLFsyLDEsIlFfMCJdLFsxLDEsIlFfMSJdLFswLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzgsMF0sWzksN10sWzAsNywiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwiZiIsMV0sWzAsMV0sWzEsMl0sWzIsM10sWzUsNF0sWzYsNV0sWzcsNl1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {P_1} \& {P_0} \& A \& 0 \\
+              \cdots \& {Q_1} \& {Q_0} \& B \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=2-1, to=2-2]
+              \arrow[dashed, from=1-2, to=2-2]
+              \arrow[dashed, from=1-3, to=2-3]
+              \arrow["f"{description}, from=1-4, to=2-4]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+              \arrow[from=1-4, to=1-5]
+              \arrow[from=2-4, to=2-5]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-2, to=2-3]
+        \end{tikzcd}\]
+    Тогда найдутся пунктирные стрелки, и они определены с точностью до гомотопии.
+    \provebullets{
+    \item\bullets{\item Сначала построим $f_i: P_i \map Q_i$.
+
+    $Q_0 \map B$ сюръективно, значит, найдётся $f_0$, такое, что квадрат коммутативен.
+
+    \item Далее по индукции: пусть построены $f_0, \dots, f_{n}$.
+% https://q.uiver.app/#q=WzAsNixbMCwwLCJQX3tuKzF9Il0sWzEsMCwiUF9uIl0sWzIsMCwiUF97bi0xfSJdLFswLDEsIlFfe24rMX0iXSxbMSwxLCJRX24iXSxbMiwxLCJRX3tuLTF9Il0sWzIsNSwiZl97bi0xfSJdLFsxLDQsImZfbiJdLFswLDMsImZfe24rMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxXSxbMSwyXSxbMyw0XSxbNCw1LCJkXlFfe24tMX0iXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {P_{n+1}} \& {P_n} \& {P_{n-1}} \\
+        {Q_{n+1}} \& {Q_n} \& {Q_{n-1}}
+        \arrow["{f_{n-1}}", from=1-3, to=2-3]
+        \arrow["{f_n}", from=1-2, to=2-2]
+        \arrow["{f_{n+1}}", dashed, from=1-1, to=2-1]
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=2-1, to=2-2]
+        \arrow["{d^Q_{n-1}}", from=2-2, to=2-3]
+        \end{tikzcd}\]
+    Хочется заполучить стрелку $P_{n+1} \map Q_{n+1}$, воспользовавшись проективностью $P_{n+1}$.
+        Для этого надо найти сюръективное $Q_{n+1} \map \:?$.
+        Так как внизу --- точная последовательность, то $Q_{n+1} \map \Ker (d^Q_{n-1})$ подойдёт: оно сюръективно, так как $P_{n+1} \map P_{n-1}$ нулевой, а квадрат $\begin{tikzcd}[ampersand replacement=\&]
+        {P_n} \& {P_{n-1}} \\
+        {Q_n} \& {Q_{n-1}}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=2-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=1-1, to=2-1]
+        \end{tikzcd}$ коммутативен.
+        Тем самым, по определению проективного модуля $\exists f_{n+1}$.
+    }
+    \item\bullets{
+        \item Теперь пусть имеются два морфизма комплексов, продолжающих $f$, $f_i$ и $g_i$.
+    % https://q.uiver.app/#q=WzAsOSxbMSwwLCJQXzEiXSxbMiwwLCJQXzAiXSxbMywwLCJBIl0sWzEsMSwiUV8xIl0sWzIsMSwiUV8wIl0sWzMsMSwiQiJdLFswLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzQsMSwiMCJdLFswLDFdLFsxLDJdLFs2LDBdLFs3LDNdLFswLDMsImdfMSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo0MCwib2Zmc2V0IjotMX1dLFswLDMsImZfMSIsMix7Im9mZnNldCI6MX1dLFsxLDQsImdfMCIsMCx7Im9mZnNldCI6LTF9XSxbMSw0LCJmXzAiLDIseyJvZmZzZXQiOjF9XSxbMiw1LCJmIiwxXSxbMyw0XSxbNCw1XSxbNSw4XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {P_1} \& {P_0} \& A \\
+              \cdots \& {Q_1} \& {Q_0} \& B \& 0
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=2-1, to=2-2]
+              \arrow["{g_1}"{pos=0.4}, shift left, from=1-2, to=2-2]
+              \arrow["{f_1}"', shift right, from=1-2, to=2-2]
+              \arrow["{g_0}", shift left, from=1-3, to=2-3]
+              \arrow["{f_0}"', shift right, from=1-3, to=2-3]
+              \arrow["f"{description}, from=1-4, to=2-4]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    Распишем разность: пусть $h_i \coloneqq f_i - g_i$.
+        Понятно, что $A \map Q_0$ надо взять нулевым.
+    % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiQSJdLFsxLDEsIlFfMSJdLFsyLDEsIlFfMCJdLFszLDEsIkIiXSxbMCwwLCJcXGNkb3RzIl0sWzAsMSwiXFxjZG90cyJdLFs0LDEsIjAiXSxbNCwwLCIwIl0sWzAsMV0sWzEsMl0sWzYsMF0sWzcsM10sWzIsNSwiMCIsMV0sWzMsNF0sWzQsNSwiZF97LTF9XlEiXSxbNSw4XSxbMCwzLCJoXzEiLDFdLFsxLDQsImhfMCIsMV0sWzIsNCwiMCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsInNfMCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDUsIjAiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {P_1} \& {P_0} \& A \& 0 \\
+              \cdots \& {Q_1} \& {Q_0} \& B \& 0
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=2-1, to=2-2]
+              \arrow["0"{description}, from=1-4, to=2-4]
+              \arrow[from=2-2, to=2-3]
+              \arrow["{d_{-1}^Q}", from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+              \arrow["{h_1}"{description}, from=1-2, to=2-2]
+              \arrow["{h_0}"{description}, from=1-3, to=2-3]
+              \arrow["0"{description}, dashed, from=1-4, to=2-3]
+              \arrow["{s_0}"{description}, dashed, from=1-3, to=2-2]
+              \arrow["0"{description}, dashed, from=1-5, to=2-4]
+              \arrow[from=1-4, to=1-5]
+        \end{tikzcd}\]
+    $s_0$ строится по основному свойству проективного модуля $P_0$: ведь $h_0(P_0) \subset \Ker (d_{-1}^Q) = \Image d_0^Q$
+
+    \item Далее индукция. Пусть построены $s_{0}, \dots, s_{n-1}$, строим $s_n$.
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {P_n} \& {P_{n-1}} \& {P_{n-2}} \\
+              {Q_{n+1}} \& {Q_n} \& {Q_{n-1}}
+              \arrow["{s_{n}}"{marking, allow upside down, yshift=1ex}, dashed, tail reversed, no head, from=2-1, to=1-2]
+              \arrow["{d_n^Q}", from=2-1, to=2-2]
+              \arrow["{d_{n-1}^Q}", from=2-2, to=2-3]
+              \arrow["{h_n}"{description}, from=1-2, to=2-2]
+              \arrow["{d_{n-1}^P}", from=1-2, to=1-3]
+              \arrow["{s_{n-1}}"{marking, allow upside down, yshift=1ex}, tail reversed, no head, from=2-2, to=1-3]
+              \arrow["{h_{n-1}}"{description}, from=1-3, to=2-3]
+              \arrow["{d_{n-2}^P}", from=1-3, to=1-4]
+              \arrow["{s_{n-2}}"{marking, allow upside down, yshift=1ex}, tail reversed, no head, from=2-3, to=1-4]
+        \end{tikzcd}\]
+    Хочется, чтобы выполнялось $h_n = d_n^Q s_n + s_{n-1} d_{n-1}^P$, эквивалентно $d_n^Q s_n = h_n - s_{n-1} d_{n-1}^P$.
+
+        Надо проверить, что образ правой части лежит в $\Image(d_n^Q)$, то есть $\Ker(d_{n-1}^Q)$.
+    Применим $d_{n-1}^Q$.
+        Получим \[d_{n-1}^Q h_n - d_{n-1}^Q s_{n-1} d_{n-1}^P = h_{n-1}d_{n-1}^P - (h_{n-1} - s_{n-2}d_{n-2}^P)d_{n-1}^P = 0\]
+    Тем самым, $s_n$ действительно найдётся согласно свойству проективного модуля.
+    }}
+    }
+    \corollary{
+    Любые две проективные резольвенты одного и того же объекта гомотопически эквивалентны.
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJQIl0sWzAsMSwiUSJdLFsxLDEsIkEiXSxbMSwwLCJBIl0sWzIsMCwiUCJdLFsyLDEsIlAiXSxbMywxLCJBIl0sWzMsMCwiQSJdLFswLDEsImYiLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiZyIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCJcXGlkIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzAsM10sWzEsMl0sWzcsNiwiXFxpZCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs1LDZdLFs0LDddLFs0LDUsImZnIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwLCJvZmZzZXQiOi0yfV0sWzQsNSwiXFxpZCIsMix7Im9mZnNldCI6Mn1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              P \& A_\bullet \& P \& A_{\bullet} \\
+              Q \& A_\bullet \& P \& A_{\bullet}
+              \arrow["f", shift left=2, from=1-1, to=2-1]
+              \arrow["g", shift left=2, from=2-1, to=1-1]
+              \arrow["\id", tail reversed, from=1-2, to=2-2]
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=2-1, to=2-2]
+              \arrow["\id", tail reversed, from=1-4, to=2-4]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=1-3, to=1-4]
+              \arrow["fg"{pos=0.4}, shift left=2, from=1-3, to=2-3]
+              \arrow["\id"', shift right=2, from=1-3, to=2-3]
+        \end{tikzcd}\]
+    Строим по только что доказанной теореме $f, g$, по теореме $fg \simeq \id_Q$ и $gf \simeq \id_Q$.
+    }
+    Таким образом, определение левого производного функтора $L_n$ корректно.
+    \comment{Возможно, надо требовать, чтобы $\cat F$ сохранял нуль, я не знаю.}
+
+    С некоторой точки зрения <<правильно>> рассматривать категорию комплексов с точностью до гомотопической эквивалентности, назовём её $\cat{HoComp}(\cat A)$: там объекты --- $\Obj \cat A$, а группа морфизмов  $\Mor_{\cat{HoComp}(\cat A)}(P, Q) = \Mor(\cat{Comp}(\cat A))/\text{Ho}(P, Q)$, где $Ho(P, Q)$ --- группа морфизмов, гомотопных $0$.
+    \examples[Что такое $L_0$ от точного справа функтора]{
+        \item Предположим, что $\cat F$ точен справа.
+        Тогда
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNhdCBGKFBfMSkiXSxbMSwwLCJcXGNhdCBGKFBfMCkiXSxbMiwwLCJcXGNhdCBGKEEpIl0sWzMsMCwiMCJdLFswLDFdLFsxLDJdLFsyLDNdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\cat F(P_1)}
+              \& {\cat F(P_0)} \& {\cat F(A)} \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+        \end{tikzcd}\]
+        точна. $L_0\cat F(A) = H_0(\cat F(P)) = \CoKer(\cat F(P_1) \map \cat F(P_0))$.
+        Если функтор точен справа, то $\CoKer(\cat F(P_1) \map \cat F(P_0)) = \cat F(A)$.
+
+        Тем самым, $L_0 \cat F = \cat F$.
+        \item
+        Обратно, если $L_0 \cat F = \cat F$, то $\cat F$ сохраняет коядра, значит, точен справа.
+        (По-хорошему, надо ещё проверить, что $L_0 \cat F$ действует на морфизмах так же, но это банально).
+    }
+    \corollary{
+        Если $P_A, P_B$ --- проективные резольвенты $A, B$ соответственно, и $f: A \map B$, то $\exists \tilde{f}: P_A \map P_B$, делающий диаграмму коммутативной. Он определён однозначно с точностью до гомотопии.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJQX0EiXSxbMSwwLCJBIl0sWzAsMSwiUF9CIl0sWzEsMSwiQiJdLFswLDIsIlxcdGlsZGV7Zn0iLDJdLFsxLDMsImYiLDJdLFsyLDNdLFswLDFdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {P_A} \& A_{\bullet} \\
+        {P_B} \& B_{\bullet}
+        \arrow["{\tilde{f}}"', from=1-1, to=2-1]
+        \arrow["f"', from=1-2, to=2-2]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=1-1, to=1-2]
+        \end{tikzcd}\]
+        Здесь $A_\bullet$ --- комплекс, где $A$ сосредоточен в нулевом члене.
+    }
+    Таким образом, морфизму $f$ объектов из $\cat A$ сопоставляется морфизм резольвент $\tilde{f}$, а он, в свою очередь, индуцирует морфизм гомологий $H_n(P_A) \map H_n(P_B)$.
+    Значит, конструкция $L$ функториальна.
+    \subsection{Длинная точная последовательность левых производных функторов}
+    Зафиксируем некоторый функтор $\cat F$.
+    Далее мы исследуем $L_n \cat F$, для упрощения записи будем писать $L_n \coloneqq L_n \cat F$.
+
+    Пусть имеется короткая точная последовательность $0 \map A \map B \map C \map 0$ в $\cat A$.
+    Построим длинную точную последовательность производных функторов. \comment{Это так говорится? Скорее всё-таки их значений на $A, B, C$}
+    \[\cdots \map L_1(A) \map L_1(B) \map L_1(C) \map L_0(A) \map L_0(B) \map L_0(C) \map \cdots\]
+    Для получения такой штуки было бы неплохо заполучить точную последовательность резольвент $P_A \map P_B \map P_C$, причём не абы какую, а сохраняющую свою точность под действием любого аддитивного функтора.
+    Оказывается, это сделать несложно, и в этом нам поможет лемма о подкове.
+    \lemma[О подкове]{
+    Пусть $P$ --- проективный модуль, все строки и столбцы (состоящие из чёрных сплошных стрелок) точны.
+    % https://q.uiver.app/#q=WzAsMTEsWzAsMSwiMCJdLFsxLDEsIkEiXSxbMiwxLCJCIl0sWzMsMSwiQyJdLFs0LDEsIjAiXSxbMSwwLCJRIl0sWzMsMCwiUCJdLFsxLDIsIjAiXSxbMywyLCIwIl0sWzIsMCwiUSBcXG9wbHVzIFAiXSxbMiwyLCIwIl0sWzEsN10sWzUsMV0sWzYsM10sWzMsOF0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzUsOSwiaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDYsIlxccGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwyLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& Q \& {\textcolor{darkgreen}{Q \oplus P}} \& P \\
+              0 \& A \& B \& C \& 0 \\
+              \& 0 \& 0 \& 0
+              \arrow[from=2-2, to=3-2]
+              \arrow[from=1-2, to=2-2]
+              \arrow[from=1-4, to=2-4]
+              \arrow[from=2-4, to=3-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+              \arrow["i", dashed, from=1-2, to=1-3,darkgreen]
+              \arrow["\pi", dashed, from=1-3, to=1-4,darkgreen]
+              \arrow[dashed, from=1-3, to=2-3,darkgreen]
+              \arrow[dashed, from=2-3, to=3-3,darkgreen]
+        \end{tikzcd}\]
+    Утверждается, что диаграмму можно достроить до коммутативной, добавив зелёные пунктирные стрелки.
+        Новые строки и столбцы также станут точны.
+    \provehere{
+        Так как $P$ --- проективен, а $g$ --- эпи, то найдётся сечение $s$ такое, что $gs = h_C$.
+% https://q.uiver.app/#q=WzAsMTEsWzAsMSwiMCJdLFsxLDEsIkEiXSxbMiwxLCJCIl0sWzMsMSwiQyJdLFs0LDEsIjAiXSxbMSwwLCJRIl0sWzMsMCwiUCJdLFsxLDIsIjAiXSxbMywyLCIwIl0sWzIsMCwiUSBcXG9wbHVzIFAiXSxbMiwyLCIwIl0sWzEsN10sWzUsMSwiaF9BIiwyXSxbNiwzLCJoX0MiLDJdLFszLDhdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsOSwiaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDYsIlxccGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOSwyLCJoX0IiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiwxMCwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsMiwicyIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& Q \& {Q \oplus P} \& P \\
+              0 \& A \& B \& C \& 0 \\
+              \& 0 \& 0 \& 0
+              \arrow[from=2-2, to=3-2]
+              \arrow["{h_A}"', from=1-2, to=2-2]
+              \arrow["{h_C}"', from=1-4, to=2-4]
+              \arrow[from=2-4, to=3-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f", from=2-2, to=2-3]
+              \arrow["g", from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+              \arrow["i", dashed, from=1-2, to=1-3]
+              \arrow["\pi", dashed, from=1-3, to=1-4]
+              \arrow["{h_B}"', dashed, from=1-3, to=2-3]
+              \arrow[dashed, from=2-3, to=3-3]
+              \arrow["s"{description}, dotted, from=1-4, to=2-3,red]
+        \end{tikzcd}\]
+    Определим стрелку $h_B$ исходя из того, что квадраты должны в итоге получиться коммутативными.
+        Из коммутативности левого квадрата $h_B(u, 0) = f(h_A(u))$.
+    Из коммутативности правого треугольника $h_B(0, v) = h_C(v) = gs(v)$.
+        Тем самым, подойдёт $h_B(u, v) \coloneqq f(h_A(u)) + s(v)$.
+
+    При таком определении правый квадрат будет коммутативен: $g(s(v)) = h_C(\pi(u, v)) \overset{\text{?}}{=} g(h_B(u, v)) = g(s(v))$, так как $gf = 0$.
+
+    Также несложно убедиться, что построенный морфизм $h_B$ --- эпи (\comment{видимо, диаграммный поиск}).
+    }
+    }
+    \theorem{\label{cool-resolvent}
+    Для короткой точной последовательности $0 \map A \map B \map C \map 0$ существует точная последовательность резольвент $0 \map P_A \map P_B \map P_C \map 0$, точность которой сохраняется под действием любого аддитивного функтора.
+    \provehere{
+    Возьмём произвольные резольвенты $P_A, P_C$.
+        Резольвенту $P_B$ будем строить пошагово, по индукции.
+        $(P_B)_0 \coloneqq (P_A)_0 \oplus (P_C)_0$ строится прямым применением леммы о подкове.
+
+        Далее необходимо провести индукционный переход.
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {(P_A)_{n+1}} \& \textcolor{darkgreen}{(P_A)_{n+1} \oplus (P_C)_{n+1}} \& {(P_C)_{n+1}} \\
+              0 \& {\Ker(d_{n-1}^A)} \& {\Ker(d_{n-1}^B)} \& {\Ker(d_{n-1}^C)} \& {\textcolor{red}{0}} \\
+              0 \& {(P_A)_n} \& {(P_B)_n} \& {(P_C)_n} \& 0 \\
+              0 \& {\Ker(d_{n-2}^A)} \& {\Ker(d^B_{n-2})} \& {\Ker(d_{n-2}^C)} \& 0
+              \arrow[from=2-4, to=2-5]
+              \arrow[from=3-4, to=3-5]
+              \arrow[from=4-4, to=4-5]
+              \arrow[from=4-1, to=4-2]
+              \arrow[from=4-2, to=4-3]
+              \arrow[from=4-3, to=4-4]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[two heads, from=1-2, to=2-2]
+              \arrow[hook, from=2-2, to=3-2]
+              \arrow["{d_{n-1}^A}", from=3-2, to=4-2]
+              \arrow[two heads, from=1-4, to=2-4]
+              \arrow[hook, from=2-4, to=3-4]
+              \arrow["{d_{n-1}^C}", from=3-4, to=4-4]
+              \arrow[hook, from=2-3, to=3-3]
+              \arrow["{d_{n-1}^B}", from=3-3, to=4-3]
+              \arrow["i", dashed, from=1-2, to=1-3,darkgreen]
+              \arrow["\pi", dashed, from=1-3, to=1-4,darkgreen]
+              \arrow["d_n^B", dashed, from=1-3, to=2-3,darkgreen]
+        \end{tikzcd}\]
+        Вычленим некоторый кусочек диаграммы, и попробуем применить лемму о подкове для получения $d_n^B$.
+    Для этого необходимо потребовать от стрелки $\Ker(d_{n-1}^B) \map \Ker(d_{n-1}^C)$, чтобы она была эпиморфизмом.
+
+    Докажем последнее по индукции: короткая последовательность ядер $0 \map \Ker(d_{n}^A) \map \Ker(d_{n}^B) \map \Ker(d_n^C) \map 0$ точна (так как ядро точно слева, то точность в остальных членах не вызывает сомнений, надо лишь проверить эпиморфность).
+    В качестве базы здесь удобно применить лемму о змее:
+    % https://q.uiver.app/#q=WzAsMTgsWzEsMiwiQSJdLFswLDIsIjAiXSxbMiwyLCJCIl0sWzMsMiwiQyJdLFs0LDIsIjAiXSxbMCwxLCIwIl0sWzEsMSwiUF9BIl0sWzIsMSwiUF9CIl0sWzMsMSwiUF9DIl0sWzQsMSwiMCJdLFswLDAsIjAiXSxbMSwwLCJcXEtlcihkX3stMX1eQSkiXSxbMiwwLCJcXEtlcihkX3stMX1eQikiXSxbMywwLCJcXEtlcihkX3stMX1eQykiXSxbNCwwLCIwIl0sWzEsMywiMCJdLFsyLDMsIjAiXSxbMywzLCIwIl0sWzAsMTVdLFsyLDE2XSxbMywxN10sWzEsMF0sWzAsMl0sWzIsM10sWzMsNF0sWzUsNl0sWzYsN10sWzcsOF0sWzgsOV0sWzExLDYsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsMCwiZF97LTF9XkEiXSxbMTIsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNywyLCJkX3stMX1eQiJdLFsxMyw4LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs4LDMsImRfey0xfV5DIl0sWzEwLDExXSxbMTEsMTJdLFsxMiwxM10sWzEzLDE0XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& {\Ker(d_{-1}^A)} \& {\Ker(d_{-1}^B)} \& {\Ker(d_{-1}^C)} \\
+              0 \& {P_A} \& {P_B} \& {P_C} \& 0 \\
+              0 \& A \& B \& C \& 0 \\
+              \& \textcolor{blue}{0} \& 0 \& 0
+              \arrow[from=3-2, to=4-2]
+              \arrow[from=3-3, to=4-3]
+              \arrow[from=3-4, to=4-4]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow[from=3-4, to=3-5]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+              \arrow[hook, from=1-2, to=2-2]
+              \arrow["{d_{-1}^A}", from=2-2, to=3-2,""{coordinate, near start, name=Z}]
+              \arrow[dll, dashed, blue, rounded corners, to path={ -- ([xshift=10ex]\tikztostart.east) |- (Z) \tikztonodes -| ([xshift=-12ex]\tikztotarget.west)-- (\tikztotarget)},from=1-4,to=4-2]
+              \arrow[hook, from=1-3, to=2-3]
+              \arrow["{d_{-1}^B}", from=2-3, to=3-3]
+              \arrow[hook, from=1-4, to=2-4]
+              \arrow["{d_{-1}^C}", from=2-4, to=3-4]
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+        \end{tikzcd}\]
+    \comment{А индукционный переход я не знаю, ну, можно просто убедиться, использовав определение $d_{n}^B$ из леммы о подковы.}
+
+    Тем самым, так как прямая сумма проективных проективна, то $(P_A)_{n+1} \oplus (P_C)_{n+1} \twoheadrightarrow \Ker d_{n-1}^B$, и определение резольвенты $B$ по индукции корректно.
+
+    Точность $0 \map P_A \map P_B \map P_C$ под действием всякого аддитивного функтора, конечно, сохраняется, так как $(P_B)_n = (P_A)_n \oplus (P_C)_n$, а аддитивные функторы сохраняют бипроизведение.
+    }
+    }
+    \corollary[Длинная точная последовательность производных функторов]{
+    Для короткой точной последовательности $0 \map A \map B \map C \map 0$ имеет место длинная точная последовательность
+        \[\cdots \map L_1(A) \map L_1(B) \map L_1(C) \map L_0(A) \map L_0(B) \map L_0(C) \map \cdots\]
+    \provehere{
+        Из~(\cref{cool-resolvent}) найдётся точная последовательность проективных резольвент $0 \map P_A \map P_B \map P_C \map 0$.
+    Применяя $\cat F$, получаем точную последовательность $0 \map \cat F(P_A) \map \cat F(P_B) \map \cat F(P_C) \map 0$.
+
+    Возьмём у $\cat F(P_A), \cat F(P_B), \cat F(P_C)$ гомологии.
+        Составленная из них длинная точная гомологическая последовательность как раз и сконструирует искомую длинную точную последовательность левых производных функторов.
+    }
+    }
+    \note{
+    Если $\cat F$ точен справа, то длинная точная последовательность производных функторов обрывается эпиморфизмом: $L_0(B) \map L_0(C) \map 0$.
+    }
 \end{document}

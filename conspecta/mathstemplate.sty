@@ -31,6 +31,7 @@
 \RequirePackage{cleveref}
 \RequirePackage{trimclip}
 \RequirePackage{centernot}
+\RequirePackage{xcolor}
 \RequirePackage[scr=boondox]{mathalpha}
 
 %======================= quiver.sty ======================
@@ -72,6 +73,9 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 % TikZ arrow styles.
 \tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
 %======================= end of quiver.sty ======================
+
+\definecolor{lightgray}{RGB}{192,192,192}
+\definecolor{darkgreen}{RGB}{0,192,0}
 
 \DeclareMathAlphabet{\mathmybb}{U}{bbold}{m}{n}
 \newcommand{\1}{\mathmybb{1}}
