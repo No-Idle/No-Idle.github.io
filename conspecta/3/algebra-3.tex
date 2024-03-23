@@ -608,7 +608,7 @@
         \[A = \bigoplus\limits_{n \in N}A_n\]
         причём умножение удовлетворяет свойствам $A_n \cdot A_m \le A_{n + m}$.
     }
-    Напоминание: как множество $\bigoplus\limits_{n \in N}A_n = \defset{\{a_n\}_{n \in N}}{\text{почти все $a_n$ нули}}$.
+    Напоминание: как множество $\bigoplus\limits_{n \in N}A_n = \defset{\sum\limits_{n \in N}a_n}{\text{почти все $a_n$ нули}}$.
     \definition[Однородный элемент $x \in A$]{
         Элемент $x \in \bigcup\limits_{n \in N}A_n$.
     }
@@ -638,7 +638,7 @@
 
             \note{Если $I$ конечно порождён, то можно выбрать объединение $s_a$ для всех образующих $I$, тогда найдётся и конечная система однородных образующих.}
             \item[$(3) \then (2)$] Рассмотрим $\forall a \in I$.
-            Из условия на порождение получаем $a = \mu_1 x_1 \lambda_1 + \dots + \mu_n x_n \lambda_n$, где $x_i \in I$ --- однородные, $\mu_i, \lambda_i \in R$.
+            Из условия на порождение получаем $a = \mu_1 x_1 \lambda_1 + \dots + \mu_n x_n \lambda_n$, где $x_i \in I$ --- однородные, $\mu_i, \lambda_i \in A$.
             Каждый из $\mu_i, \lambda_i$ является конечной суммой однородных компонент, а произведение однородных однородно.
             \item[$(1) \then (4)$] Положим $I_n \coloneqq A_n \cap I$. Для всяких модулей верно, что $A/I = \frac{\bigoplus A_n}{\bigoplus I_n} = \bigoplus \frac{A_n}{I_n}$.
             Проекция отображает $a \in A_n$ в $a + I_n$, действительно она уважает градуировку.

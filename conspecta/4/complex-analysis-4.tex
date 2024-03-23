@@ -683,9 +683,9 @@
     \theorem{
     Если $f$ целая, и $|f(z)| = \bigO(z^N)$ при $|z| \underset{z \to \infty}\Map \infty$, то $f$ --- многочлен степени не более $N$.
     \provehere{
-        Из определения $\bigO: \exists C, a \in \R: |f(z)| \le C|z|^n$ при $|z| > a$.
+        Из определения $\bigO: \exists C, a \in \R: |f(z)| \le C|z|^N$ при $|z| > a$.
 
-        Выберем $r > a$, и оценим: $|c_j| = \abs{\frac{1}{2\pi i}\int\limits_{0}^{2\pi}\frac{f\left(r e^{i\theta}\right)}{re^{i\theta}}i e^{i\theta}\d\theta} \le \frac{1}{2\pi}\int\limits_{0}^{2\pi}\frac{C r^N}{r^j}\d\theta = \frac{C r^N}{r^j}$.
+        Выберем $r > a$, и оценим: $|c_j| = \abs{\frac{1}{2\pi i}\int\limits_{0}^{2\pi}\frac{f\left(r e^{i\theta}\right)}{(re^{i\theta})^{j+1}}i re^{i\theta}\d\theta} \le \frac{1}{2\pi}\int\limits_{0}^{2\pi}\frac{C r^N}{r^j}\d\theta = \frac{C r^N}{r^j}$.
         Получается, при $j > N: |c_j|$ меньше любого наперёд заданного положительного числа.
     }
     }
