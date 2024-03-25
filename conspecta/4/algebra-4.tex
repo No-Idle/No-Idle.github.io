@@ -684,8 +684,8 @@
               \arrow["\id"', from=1-2, to=2-2]
               \arrow["\exists"', dashed, from=1-2, to=2-1]
         \end{tikzcd}\]
-    Так как модуль проективен, то найдётся пунктирная стрелка. Значит, $F \cong P \oplus \Ker \pi$.
-    \comment{Доказательство данного факта мной опущено.}
+    Так как модуль проективен, то найдётся пунктирная стрелка. Значит, $F \cong P \oplus \Ker \pi$
+        ($\forall f \in F: \pi^{-1}(f) = P(f) + \Ker \pi$).
     }
     }
     \examples{
@@ -696,9 +696,14 @@
         Ацикличный комплекс вида\\ $\cdots \map P_n \map P_{n-1} \map \cdots \map P_0 \map M \map 0$, где $P_i$ --- проективные модули.
     }
     В будущем докажем, что любые две проективные резольвенты гомотопически эквивалентны.
+
+    \definition[В категории $\cat A$ достаточно много проективных объектов]{
+        $\forall A \in \cat A$ найдётся проективный объект $P \in \cat A$ вместе с эпиморфизмом $P \twoheadrightarrow A$.
+    }
+    Если в нашей категории $\cat A$ достаточно много проективных объектов, то у всякого модуля $M$ найдётся резольвента --- надо просто подряд накрывать возникающие ядра.
     \newlection{18 марта 2024 г.}
     \section{Резольвенты. Левый производный функтор}
-    Зафиксируем некоторый аддитивный функтор $\cat F: \cat A \map \cat B$.
+    Зафиксируем некоторый аддитивный функтор $\cat F: \cat A \map \cat B$, который обычно будет точен справа.
     Пусть у объекта $A \in \cat A$ имеется проективная резольвента, которую я выделил стрелками $\rightsquigarrow$ .
     % https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiMCJdLFsyLDEsIkEiXSxbMywxLCIwIl0sWzEsMSwiMCJdLFswLDEsIlxcY2RvdHMiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In19fV0sWzIsM10sWzIsNCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XSxbNCw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFs2LDRdLFs3LDZdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -715,7 +720,8 @@
     Иными словами, проективная резольвента --- это некоторый морфизм комплексов $P$ и $A_\bullet$.
     Под комплексом $A_\bullet$ подразумевается такой комплекс, в котором в нулевой градуировке сидит $A$, а в остальных --- нули (следовательно, все дифференциалы --- тоже нули).
 
-    Применим $\cat F$ к верхней строчке. \comment{Предположим, что $\cat F(0) = 0$?}
+    Раз $\cat F$ точен справа, то он сохраняет нуль.
+    Применим $\cat F$ к верхней строчке.
     Тогда получится комплекс вида
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiXFxjYXQgRihQXzEpIl0sWzIsMCwiXFxjYXQgRihQXzApIl0sWzMsMCwiMCJdLFswLDFdLFsxLDJdLFsyLDNdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
@@ -858,7 +864,7 @@
     Строим по только что доказанной теореме $f, g$, по теореме $fg \simeq \id_Q$ и $gf \simeq \id_Q$.
     }
     Таким образом, определение левого производного функтора $L_n$ корректно.
-    \comment{Возможно, надо требовать, чтобы $\cat F$ сохранял нуль, я не знаю.}
+%    \comment{Возможно, надо требовать, чтобы $\cat F$ сохранял нуль, я не знаю.}
 
     С некоторой точки зрения <<правильно>> рассматривать категорию комплексов с точностью до гомотопической эквивалентности, назовём её $\cat{HoComp}(\cat A)$: там объекты --- $\Obj \cat A$, а группа морфизмов  $\Mor_{\cat{HoComp}(\cat A)}(P, Q) = \Mor(\cat{Comp}(\cat A))/\text{Ho}(P, Q)$, где $Ho(P, Q)$ --- группа морфизмов, гомотопных $0$.
     \examples[Что такое $L_0$ от точного справа функтора]{
@@ -1048,4 +1054,168 @@
     \note{
     Если $\cat F$ точен справа, то длинная точная последовательность производных функторов обрывается эпиморфизмом: $L_0(B) \map L_0(C) \map 0$.
     }
+    \newlection{25 марта 2024 г.}
+%    \example{В качестве $\cat F$ можно, например, рассмотреть функтор $\_ \otimes M$ для фиксированного модуля.}
+    Рассмотрим формальное обобщение производных функторов.
+
+    Пусть имеется семейство $\{\cat F_i\}_{i\in \N}$ функторов $\cat F_i: \cat A \map \cat A'$.
+
+    \definition[(Левая) связанная последовательность функторов]{
+        Такая последовательность функторов $\{\cat F_i\}_{i \in \N}$, что для любой точной последовательности $0 \map A \map B \map C \map 0$ существует функториальная длинная точная последовательность
+    \[\cdots \map \cat F_1(A) \map \cat F_1(B) \map \cat F_1(C) \map \cat F_0(A) \map \cat F_0(B) \map \cat F_0(C)\]
+    }
+    \example{Последовательность $\{L_i \cat F\}_{i \in \N}$ --- связанная последовательность функторов.}
+    Заметим, что $\forall i > 0: L_i \cat F(P) = 0$, если $P$ проективен.
+    Это очевидным образом следует из существования резольвенты $0 \map P \map P \map 0$.
+    Если $\cat F$ точен справа (а мы это предполагаем), то он сохраняет ноль.
+    Тогда $L_n \cat F$ --- гомологии $\cdots \map 0 \map 0 \map \cat F(P) \map 0$, которые в нулевом члене --- $\cat F(P)$, а в остальных --- нулевые.
+
+    Оказывается, этого условия достаточно, чтобы определить связанную последовательность по нулевому элементу:
+    \theorem{
+    Пусть $\{\cat F_i\}, \{\cat G_i\}$ --- две связанные последовательности функторов, такие, что имеется естественный изоморфизм $\cat F_0 \cong \cat G_0$, и для любого проективного $P$: $\forall i > 0: \cat F_i(P) = \cat G_i(P) = 0$.
+
+    Также предположим, что в $\cat A$ достаточно много проективных объектов.
+
+    Тогда $\forall i: \cat F_i \cong \cat G_i$ --- естественный изоморфизм.
+    \provehere{
+    Пусть $A \in \cat A$. Накроем $A$ проективным, возьмём ядро, получим точную последовательность
+    \[0 \map M \map P \map A \map 0\]
+    Так как последовательности функторов --- связаны --- то имеется длинная точная последовательность:
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCIwID0gXFxjYXQgRl8xKFApIl0sWzEsMCwiXFxjYXQgRl8xKEEpIl0sWzIsMCwiXFxjYXQgRl8wKE0pIl0sWzMsMCwiXFxjYXQgRl8wKFApIl0sWzMsMSwiXFxjYXQgR18wKFApIl0sWzIsMSwiXFxjYXQgR18wKE0pIl0sWzEsMSwiXFxjYXQgR18xKEEpIl0sWzAsMSwiMCA9IFxcY2F0IEdfMShQKSJdLFswLDFdLFsxLDJdLFsyLDNdLFs3LDZdLFs2LDVdLFs1LDRdLFsyLDUsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFszLDQsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDYsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {0 = \cat F_1(P)} \& {\cat F_1(A)} \& {\cat F_0(M)} \& {\cat F_0(P)} \\
+        {0 = \cat G_1(P)} \& {\cat G_1(A)} \& {\cat G_0(M)} \& {\cat G_0(P)}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=2-3, to=2-4]
+        \arrow[tail reversed, from=1-3, to=2-3]
+        \arrow[tail reversed, from=1-4, to=2-4]
+        \arrow[dashed, tail reversed, from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Значит, имеется естественный изоморфизм ядер, $\cat F_1(A) \cong \cat G_1(A)$, тем самым, $\cat F_1 \cong \cat G_1$ (естественность --- упражнение).
+
+    Теперь займёмся индукционным переходом:
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCIwID0gXFxjYXQgRl9pKFApIl0sWzEsMCwiXFxjYXQgRl9pKEEpIl0sWzIsMCwiXFxjYXQgRl97aS0xfShNKSJdLFszLDAsIlxcY2F0IEZfe2ktMX0oUCk9MCJdLFszLDEsIlxcY2F0IEdfe2ktMX0oUCk9MCJdLFsyLDEsIlxcY2F0IEdfe2ktMX0oTSkiXSxbMSwxLCJcXGNhdCBHX2koQSkiXSxbMCwxLCIwID0gXFxjYXQgR19pKFApIl0sWzAsMV0sWzEsMl0sWzIsM10sWzcsNl0sWzYsNV0sWzUsNF0sWzIsNSwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzEsNiwiIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {0 = \cat F_i(P)} \& {\cat F_i(A)} \& {\cat F_{i-1}(M)} \& {\cat F_{i-1}(P)=0} \\
+        {0 = \cat G_i(P)} \& {\cat G_i(A)} \& {\cat G_{i-1}(M)} \& {\cat G_{i-1}(P)=0}
+        \arrow[from=1-1, to=1-2]
+        \arrow[from=1-2, to=1-3]
+        \arrow[from=1-3, to=1-4]
+        \arrow[from=2-1, to=2-2]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=2-3, to=2-4]
+        \arrow[tail reversed, from=1-3, to=2-3]
+        \arrow[dashed, tail reversed, from=1-2, to=2-2]
+        \end{tikzcd}\]
+        Зажав $\cat F_i(A)$ и $\cat F_{i-1}(M)$ между двумя нулями, мы доказали, что все четыре ненулевых объекта изоморфны (естестенность, опять же, доказывается несложно).
+    }
+    }
+    \corollary{
+        Пусть $\cat F$ точен справа (например $\cat F = \_ \otimes M$, где $M$ --- фиксированный модуль).
+        Пусть $\cat F_0 \cong \cat F$, где $\{\cat F_i\}$ --- связанная последовательность функторов, такая, что для любого проективного $P: \cat F(P) = 0$.
+
+    По-прежнему предполагаем, что в $\cat A$ достаточно много проективных объектов.
+
+    Тогда $\forall i \in \N: \cat F_i \cong L_i \cat F$.
+    }
+    \section{Производные функторы для $\otimes$}
+    Пусть $R$ --- необязательно коммутативное кольцо с единицей, $M \in \modR{R}, N \in \Lmod{R}$, напомним, что тогда $M \otimes_R N \in \cat{Ab}$.
+
+    Изучим производные функторов тензорного произведения (функтор тензорного произведения точен справа, так как он --- левый сопряжённый к $\Hom$).
+    Обозначим $\LTor_i(M, \_) \bydef L_i(M \otimes \_)$, $\RTor_i(\_, N) \bydef L_i(\_ \otimes N)$.
+
+    \examples{
+        \item Изучим $\Tor(M, R/aR)$, где $R$ --- коммутативная область целостности.
+    Для $R/aR$ несложно написать проективную резольвенту: $0 \map R \overset{a}{\Map} R \map R/aR \map 0$ ($a(m) = am$).
+
+    Тензорно домножая на $M$, мы получаем $0 \map M \overset{m \otimes r \mapsto m \otimes ar}\Map M \map M\otimes R/aR \map 0$.
+    Так как кольцо коммутативное, то тензорное произведение --- $\modR{R}$, поэтому $m \otimes r \mapsto m \otimes ar$ --- тоже просто отображение умножения на $a$.
+
+    Так как естественно $M \otimes R/aR \cong M/aM \otimes R \cong M/aM$, то гомологии в среднем члене --- нуль, а в левом члене --- $a$-\emph{кручение} в $M$, то есть $\defset{x \in M}{ax = 0}$.
+    }
+
+    \theorem{
+    Имеет место естественный изоморфизм: $\forall i: \LTor_i \cong \RTor_i$.
+    \provehere[Идея доказательства]{
+    % https://q.uiver.app/#q=WzAsMTksWzEsMSwiUF8xXFxvdGltZXMgUV8xIl0sWzIsMSwiUF8wXFxvdGltZXMgUV8xIl0sWzMsMSwiTSBcXG90aW1lcyBRXzEiXSxbMSwyLCJQXzFcXG90aW1lcyBRXzAiXSxbMiwyLCJQXzBcXG90aW1lcyBRXzAiXSxbMywyLCJNXFxvdGltZXMgUV8wIl0sWzEsMywiUF8xXFxvdGltZXMgTiJdLFsyLDMsIlBfMFxcb3RpbWVzIE4iXSxbMywzLCJNIFxcb3RpbWVzIE4iXSxbNCwxLCIwIl0sWzQsMiwiMCJdLFsxLDQsIjAiXSxbMiw0LCIwIl0sWzAsMywiXFxjZG90cyJdLFszLDAsIlxcdmRvdHMiXSxbMiwwLCJcXHZkb3RzIl0sWzEsMCwiXFx2ZG90cyJdLFswLDEsIlxcY2RvdHMiXSxbMCwyLCJcXGNkb3RzIl0sWzIsOV0sWzUsMTBdLFs2LDExXSxbNywxMl0sWzEzLDZdLFs2LDddLFs3LDhdLFsxNywwXSxbMCwxXSxbMSwyXSxbMTgsM10sWzMsNF0sWzQsNV0sWzE2LDBdLFswLDNdLFszLDZdLFsxNSwxXSxbMSw0LCIgICAgIl0sWzQsN10sWzIsNV0sWzUsOF0sWzE0LDJdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& \vdots \& \vdots \& \vdots \\
+              \cdots \& {P_1\otimes Q_1} \& {P_0\otimes Q_1} \& {M \otimes Q_1} \& 0 \\
+              \cdots \& {P_1\otimes Q_0} \& {P_0\otimes Q_0} \& {M\otimes Q_0} \& 0 \\
+              \cdots \& {P_1\otimes N} \& {P_0\otimes N} \& {M \otimes N} \\
+              \& 0 \& 0
+              \arrow[from=2-4, to=2-5]
+              \arrow[from=3-4, to=3-5]
+              \arrow[from=4-2, to=5-2]
+              \arrow[from=4-3, to=5-3]
+              \arrow[from=4-1, to=4-2]
+              \arrow[from=4-2, to=4-3]
+              \arrow[from=4-3, to=4-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-3, to=3-4]
+              \arrow[from=1-2, to=2-2]
+              \arrow[from=2-2, to=3-2]
+              \arrow[from=3-2, to=4-2]
+              \arrow[from=1-3, to=2-3]
+              \arrow["{    }", from=2-3, to=3-3]
+              \arrow[from=3-3, to=4-3]
+              \arrow[from=2-4, to=3-4]
+              \arrow[from=3-4, to=4-4]
+              \arrow[from=1-4, to=2-4]
+        \end{tikzcd}\]
+    Домножение на свободный объект --- точный справа функтор --- из дистрибутивности тензорного произведения.
+    Домножение на проективный объект --- точный справа функтор --- опять же из дистрибутивности.
+
+    Все строки точны, кроме нижней, и все столбцы точны, кроме правого, в которых мы и хотим посчитать гомологии, и доказать, что они равны.
+
+        Заведём тотальный комплекс $\text{Tot}(M, N)_n \coloneqq \bigoplus_{i = 0}^{n}P_i \otimes Q_{n-i}$, и теперь надо определить дифференциал $D$.
+    Необходимо, чтобы выполнялось требование $D^2 = 0$, поэтому абы какой не подойдёт.
+
+    Пусть $d_p: P \map P_{p-1}$, $d_q: Q_q \map Q_{q-1}$ --- дифференциалы резольвент, определим
+    \begin{align*}D_{p,q}: P_p \otimes Q_q &\map \text{Tot}(M, N)_{p+q-1}\\(x \otimes y) &\mapsto d_p(x) \otimes y + (-1)^p x \otimes d_q(y)\end{align*}
+    Теперь полный дифференциал $D_{n} = \bigoplus\limits_{p + q = n}D_{p,q}: \text{Tot}(M, N)_{p+q} \map \text{Tot}_{p+q-1}$.
+    \exercise{$D_{n-1} \cdot D_n = 0$.}
+    Осталось показать, что гомологии нижней строки, как и гомологии правого столбца, совпадают с гомологиями тотального комплекса.
+    }
+    }
+    \section{Производные функторы для $\Hom$}
+    Теперь разберёмся с функторами $\Hom$ --- эти функторы являются правыми сопряжёнными к $\otimes$, поэтому точны слева.
+
+    Конкретнее, имеются ковариантный $\Hom(M, \_)$, и контравариантный $\Hom(\_, N)$.
+
+    Для изучения точных слева функторов будем строить последовательность правых сопряжённых функторов.
+    \definition[Инъективный модуль $Q$]{
+    Такой модуль $Q$, что для любой инъекции $A \rightarrowtail B$, и для любого морфизма $A \map Q$, существует морфизм $B \map Q$ такой, что диаграмма коммутативна:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIlEiXSxbMCwyXSxbMCwxLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiXFxleGlzdHMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          A \& B \\
+          Q
+          \arrow[from=1-1, to=2-1]
+          \arrow[tail, from=1-1, to=1-2]
+          \arrow["\exists", dashed, from=1-2, to=2-1]
+    \end{tikzcd}\]
+    }
+    \intfact{
+    Инъективный модуль --- делимый модуль, то есть $\forall r \in R, q \in M: \exists x \in M: rx = q$.
+    }
+    В категории, где \emph{достаточно много инъективных объектов}, двойственно проективной, строится инъективная резольвента, в которой коядро предыдущего морфизма вкладывается \comment{?} в следующий инъективный модуль:
+    \[0 \map N \map Q_0 \map Q_1 \map Q_2 \map \cdots\]
+    Далее аналогично определяются правые производные функторы, в частности, имеется комплекс
+    \[0 \map \Hom(M, Q_0) \map \Hom(M, Q_1) \map \cdots\]
+    Гомологии такого комплекса обозначают $\Ext^i(M, N)$.
+
+    Построив проективную резольвенту для $M$: $\cdots \map P_2 \map P_1 \map P_0 \map M \map 0$.
+    Применяя к этой последовательности контравариантный $\Hom$, получаем $0 \map \Hom(P_0, N) \map \Hom(P_1, N) \map \cdots$
+    Гомологии этого комплекса обозначают $\Ext^i(M, N)$ (это уже другой $\Ext$, но они, как и $\Tor$, естественно изоморфны, доказательство абсолютно аналогично)
+
+    Название $\Ext$ происходит от extensions, элементы $\Ext^1$ находятся в биекции с классами коротких точных последовательностей $0 \map M \map ? \map N \map 0$.
+    Для функторов $\Ext$ более высокой степени надо брать более длинные последовательности некоторого вида.
 \end{document}
