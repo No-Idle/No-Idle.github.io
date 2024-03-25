@@ -24,7 +24,7 @@ jobs:
             tlmgr init-usertree
             
       - name: Install boondox            
-        run: sudo tlmgr install boondox
+        run: tlmgr install boondox
 
       - name: Config git
         run: |
