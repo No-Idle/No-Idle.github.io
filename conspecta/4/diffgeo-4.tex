@@ -624,25 +624,25 @@
     }
     }
     \section{Касательный вектор как дифференцирование}
-    Пусть $M$ --- гладкое многообразие. $\mathcal{F}(M)$ --- множество гладких функций, $\mathscr{X}(M)$ --- множество гладких векторных полей.
+    Пусть $M$ --- гладкое многообразие. $\mathscr{F}(M)$ --- множество гладких функций, $\mathscr{X}(M)$ --- множество гладких векторных полей.
 
-    Естественным образом, $\mathcal{F}(M)$ и $\mathscr{X}(M)$ образуют векторные пространства над $\R$.
-    При этом, на $\mathscr{X}(M)$ также есть поточечное умножение, и $\mathcal{F}(M)$ таким образом формируют ассоциативную, коммутативную $\R$-алгебру.
-    При этом $\mathscr{X}(M)$ также является модулем над $\mathcal{F}(M)$. \comment{Видимо, относительно поточечного умножения}.
+    Естественным образом, $\mathscr{F}(M)$ и $\mathscr{X}(M)$ образуют векторные пространства над $\R$.
+    При этом, на $\mathscr{X}(M)$ также есть поточечное умножение, и $\mathscr{F}(M)$ таким образом формируют ассоциативную, коммутативную $\R$-алгебру.
+    При этом $\mathscr{X}(M)$ также является модулем над $\mathscr{F}(M)$. \comment{Видимо, относительно поточечного умножения}.
 
     Как известно из курса алгебры, дифференциальный оператор $D$ на $\R$-алгебре $A$ --- это такой линейный оператор $D: A \map A$, что выполнено правило Лейбница: $D(f \cdot g) = D(f) \cdot g + f \cdot D(g)$.
     Все дифференцирования образуют $\R$-линейной пространство $\Der(A)$.
 
-    Для алгебры $\mathcal{F}(M)$ всякий $X \in \mathscr{X}(M)$ индуцирует дифференцирование $D_X$:
+    Для алгебры $\mathscr{F}(M)$ всякий $X \in \mathscr{X}(M)$ индуцирует дифференцирование $D_X$:
     \[(D_X(f))(x) = \d_x f(X_x)\]
     Правило Лейбница выполнено, так как оно имеет место при дифференцировании произведения.
     \theorem{
-    Выше определённое отображение $\mathscr{X}(M) \map \Der(\mathcal{F}(M))$ является изоморфизмом.
+    Выше определённое отображение $\mathscr{X}(M) \map \Der(\mathscr{F}(M))$ является изоморфизмом.
     \provehere{
      \indentlemma{
          Зафиксируем $p \in M$.
 
-        Пусть $\overline{D}: \mathcal{F}(M) \map \R$ --- $\R$-линейное отображение, такое, что $\overline{D}(f \cdot g) = \overline{D}(f) \cdot g(p) + f(p) \cdot \overline{D}(g)$.
+        Пусть $\overline{D}: \mathscr{F}(M) \map \R$ --- $\R$-линейное отображение, такое, что $\overline{D}(f \cdot g) = \overline{D}(f) \cdot g(p) + f(p) \cdot \overline{D}(g)$.
 
     \numbers{
         \item Тогда $\exists ! v \in T_p M: \overline{D} = D_v \bydef [f \mapsto \d_pf(v)]$.
@@ -669,7 +669,109 @@
         }
      $\overline{D}(f(0) + \sum\limits_{i}x_i \cdot g_i(x)) = \sum\limits_{i}\overline{D}(x_i \cdot g_i) = \sum\limits_{i}\overline{D}(x_i) \cdot g + x_i \cdot \overline{D}(g)$...
         }
-    Отсюда следует сюръективность $\mathscr{X}(M) \map \Der(\mathcal{F}(M))$ --- по $D$ определяем $X(D)$, и проверяем, что получился (гладкий) элемент $\mathscr{X}(M)$.
+    Отсюда следует сюръективность $\mathscr{X}(M) \map \Der(\mathscr{F}(M))$ --- по $D$ определяем $X(D)$, и проверяем, что получился (гладкий) элемент $\mathscr{X}(M)$.
+    }
+    }
+    \newlection{27 марта 2024 г.}
+    \section{Скобка Ли векторных полей}
+    Пусть $M$ --- гладкое многообразие, $X, Y \in \mathscr{X}(M)$.
+    \definition[Скобка Ли векторных полей]{
+        Отображение $[\_, \_]: \mathscr{X}(M) \times \mathscr{X} \map \mathscr{X}$, которое двум полям $X, Y$ сопоставляет векторное поле, соответствующее дифференцированию
+        \[X(Y(f)) - Y(X(f))\]
+    Иными словами, $[X, Y]f = X(Y(f)) - Y(X(f))$.
+    }
+    Проверим, что это действительно дифференцирование.
+    Линейность очевидна;\ правило Лейбница:
+    \multline{X(Y(f)) \cdot g + Y(f) \cdot X(g) + X(f) \cdot Y(g) + f \cdot X(Y(g)) - Y(X(f)) \cdot g - X(f) \cdot Y(g) - Y(f) \cdot Y(X(g)) - f \cdot Y(X(g)) =\\= X(Y(f) \cdot g + f \cdot Y(g)) - Y(X(f) \cdot g + f \cdot X(g)) = X(Y(f \cdot g)) - Y(X(f \cdot g))= [X, Y](f \cdot g) \overset{?}=\\\overset{?}= ([X, Y]f) \cdot g + f \cdot ([X, Y]g) = (X(Y(f)) - Y(X(f))) \cdot g + f \cdot (X(Y(g)) - Y(X(g)))}
+    \subsection{Выражение для скобки Ли в координатах}
+    Пусть $X, Y$ --- два гладких векторных поля, $\phi: U \map \Omega$ --- карта.
+
+    Введём $\tilde{x}_i \coloneqq x_i \circ \phi$, запишем
+    \[[X, Y]_i = D_{[X, Y]}(\tilde{x}_i) =D_{[X_\phi, Y_\phi]}(x_i) = [X_\phi, Y_\phi]_i = X_\phi Y_\phi(x_i) - Y_\phi X_\phi(x_i) \]
+    \subsection{Пространство $\mathscr{X}(M)$ вместе со скобкой Ли образует алгебру Якоби}
+    Чтобы проверить, что $\mathscr{X}(M)$ образует алгебру Ли, убедимся, что выполнены три аксиомы алгебр Ли:
+    \numbers{
+    \item Линейность по обеим аргументам: $\forall \alpha_i, \beta_j \in \R, X, Y \in \mathscr{X}(M)$: \gather{[\alpha_1 X_1 + \alpha_2 X_2, Y] = \alpha_1[X_1, Y] + \alpha_2[X_2, Y] \\ [X, \beta_1 Y_1 + \beta_2 Y_2] = \beta_1[X, Y_1] + \beta_2[X, Y_2]}
+    \item Кососимметричность: $[X, Y] = -[Y, X]$, или же (эквивалентно) антисимметричность ${[X, X] = 0}$.
+    \item Тождество Якоби $[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0$.
+    }
+    \subsection{Специфичные свойства скобки Ли векторных полей}
+    Пусть $f, g \in \mathscr{F}(M)$.
+    \properties[Скобка Ли]{
+    \item $[fX, Y] = f \cdot [X, Y] - Y(f) \cdot X$.
+        \provehere{
+        \[[f\cdot X, Y](h) = (f\cdot X)(Y(h)) - Y((f\cdot X)(h)) =(f\cdot X)(Y(h)) - Y(f \cdot X(h))\circlesign{=}\]
+        Так как $(f\cdot X)(\cdots)$ --- это производные по направлению, то это равно $f \cdot X(\cdots)$.
+        \[\circlesign{=}f \cdot (X(Y(h))) - Y(f) \cdot X(h) - f \cdot Y(X(h))\qedhere\]
+        }
+    \item $[X, gY] = g \cdot [X, Y] + X(g) \cdot Y$.
+        \provehere{
+        Ради разнообразия, выведем из первого и кососимметричности
+        \[[X, g\cdot Y] = -[g\cdot Y, X] = -(g \cdot [Y, X] - X(g) \cdot Y) = g \cdot [X, Y] + X(g) \cdot Y\qedhere\]
+        }
+    \item $[f\cdot X, gY] = f\cdot g\cdot[X, Y] + f\cdot X(g) \cdot Y - g(Y(f)) \cdot X$.
+    \provehere{
+    \[[f\cdot X, g\cdot Y] = g \cdot [f\cdot X, Y] + (f \cdot X)(g) \cdot Y = g \cdot (f \cdot [X, Y] - Y(f) \cdot X) + (f \cdot X)(g) \cdot Y\qedhere\]
+    }
+    }
+    \definition[Группа Ли]{
+    Гладкое многообразие, являющееся топологической группой; умножение $G \times G \map G$ и взятие обратного $G \map G$ --- гладкие отображения.
+    }
+    \example[Группы Ли]{
+    Различные линейные группы: $GL(n, \R), SL(n, \R), O(n, \R), \dots$
+    }
+    Всякий элемент $g \in G$ действует на группе левыми и правыми трансляциями: $L_g: x \mapsto gx, R_g: x \mapsto xg$.
+    \definition[Левоинвариантное векторное поле $X$]{
+        Такое поле, что $\d L_g(X) = X$.
+    }
+    Выбрав ортонормированный базис $(x_1, \dots, x_n) \in T_1(G)$ ($1 \in G$ --- единица в группе), и распространим $x_1, \dots, x_n$ до левоинвариантых векторных полей $X_1, \dots, X_n$ соответствующим дифференциалом $L_g$ (действие транзитивно, поэтому, $X_1, \dots, X_n$ определены всюду).
+    Это будут векторные поля, отвечающие за ортонормированные базисы во всех точках группы.
+
+    Можно определить левоинвариантную метрику: для $\tilde{X}, \tilde{Y} \in T_g(G): \langle\tilde{X}, \tilde{Y}\rangle = \angles{\d_1 L_g(X), \d_1 L_g(Y)}$.
+    \section{Тензоры на многообразии}
+    Пусть $V$ --- векторное пространство.
+    \definition[Тензор типа $(k, m)$]{
+    Тензор $\underbrace{(V^* \otimes \cdots \otimes V^*)}_{k} \otimes \underbrace{(V \otimes \cdots \otimes V)}_{m}$
+    }
+    Мы будем рассматривать только тензоры типа $(k, 0)$ и $(k, 1)$, что, как известно, можно рассматривать, как полилинейные отображения
+    \[\underbrace{V \times \dots \times V}_{k} \map \R \text{\quadи\quad}\underbrace{V \times \dots \times V}_{k} \map V\text{\quad соответственно}\]
+    \definition[Тензор (тензорное поле) на $M$ типа $(k, 0)$]{
+    Семейство $\{F_x\}_{x \in M}$ тензоров валентности $(k, 0)$ вместе со следующим условием гладкости:
+    \[\forall X_1, \dots, X_k \in \mathscr{X}(M): F(X_1, \dots, X_k) \in \mathscr{F}(M)\]
+    }
+    \example[Тензор тпа $(n, 0)$]{
+    \item Риманова метрика на $n$-мерном многообразии.
+    }
+    \counterexample[Не тензор]{
+    \item Символ Кристоффеля $\Gamma_{i,j}^{k}$ не является записью какого-то тензора в координатах:
+    отображение $F(X, Y) = \nabla_X Y$ не $\mathscr{F}(M)$-линейно: $\nabla_X(f \cdot Y) = X \cdot f + f \cdot \nabla_X(Y)$.
+    }
+    \definition[Тензор (тензорное поле) на $M$ типа $(k, 1)$]{
+    Семейство $\{F_x\}_{x \in M}$ тензоров валентности $(k, 1)$ вместе со следующим условием гладкости:
+    \[\forall X_1, \dots, X_k \in \mathscr{X}(M): F(X_1, \dots, X_k) \in \mathscr{X}(M)\]
+    }
+    Таким образом, тензорному полю на $M$ сопоставляется $\R$-полилинейное (и даже $\mathscr{F}(M)$-полилинейное)
+    \[F: \mathscr{X}(M) \times \dots \times \mathscr{X}(M) \map \any{\mathscr{F}(M) \\ \mathscr{X}(M)}\]
+    \theorem{
+    Если $F: \mathscr{X}(M) \times \dots \times \mathscr{X}(M) \map \any{\mathscr{F}(M) \\ \mathscr{X}(M)}$ является $\mathscr{F}(M)$-полилинейным, то $F$ является гладким тензорным полем.
+    \provenumbers{
+        \item Докажем локально случай $k = 1$.
+
+    Проверим локальность.
+        Рассмотрим $p \in U$.
+        Пусть $X\big|_{U} = Y\big|_U$. $(F(X))(p) = (F(Y))(p)$. Пусть $h$ --- гладкий спуск с единицы, $h\big|_{U'} \equiv 1, h\big|_{M \sm U} \equiv 0$, где $p \in U' \subset U$.
+
+    Теперь $h \cdot F(Y) = h \cdot F(X) = F(hX) = F(hY)$.
+    \item Достаточно доказать для $X \in \mathscr{X}(M)$, что значение $(F(X))(p)$ зависит только от $X_p$.
+    Доказав, мы построим семейство, отвечающее $F$.
+
+    Зафиксируем карту $(U, \phi)$. Выберем базис $e_1, \dots, e_n$, ему отвечают координатные векторные поля $E_i$.
+    Согласно $\mathscr{F}(M)$-линейности все раскладывается в сумму $X_i \cdot F_i$.
+
+        (Распространим координатное векторное поле, используя гладкий спуск с единицы: $\tilde{E}_i\big|_U \equiv 0$ в дополнении карты).
+    Из локальности
+    \[F(X) = F(X_1 \tilde{E}_1 + \cdots + X_n \cdot \tilde{E}_n)\]
+    \item Случай $k \ne 1$ сводится к предыдущему последовательным примнением.
     }
     }
 \end{document}

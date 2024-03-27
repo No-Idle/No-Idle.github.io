@@ -28,6 +28,7 @@ jobs:
           tlmgr update --self
           tlmgr update --all 
           tlmgr install boondox
+          
 
       - name: Config git
         run: |
