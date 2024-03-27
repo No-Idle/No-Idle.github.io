@@ -33,10 +33,12 @@ jobs:
           
       - name: Find and compile LaTeX files
         run: |
+         current_dir=$(pwd)
          for file in $(git diff --name-only HEAD~1 HEAD); do
           if [[ $file == *.tex ]]; then
             echo "$file"
             base_dir=$(dirname $file)
+            cd "$current_dir"
             cd $base_dir
             mkdir -p pdf
             filename=$(basename "$file" .tex)
