@@ -509,7 +509,126 @@
 
     $J[\gamma + \tau h] - J[\gamma] = \tau\int\angles{(\nabla_z\Fc)(\gamma, \dot{\gamma}), h} + \angles{(\nabla_w\Fc)(\gamma, \dot{\gamma}), h'}\d t + \bigO(\tau^2)$
 
-    Интегируя по частям, получаем $\int\limits_{a}^{b}\angles{E\{\gamma\}, h}\d t + 0 + \bigO(\tau^2)$. Применяя <<нулевую лемму Дюбуа-Реймона>>, получаем $E\{\gamma\} = 0$.
+    Интегрируя по частям, получаем $\int\limits_{a}^{b}\angles{E\{\gamma\}, h}\d t + 0 + \bigO(\tau^2)$.
+        Применяя <<нулевую лемму Дюбуа-Реймона>>, получаем $E\{\gamma\} = 0$.
     }
     }
+    \newlection{28 марта 2024 г.}
+    \section{Условия трансверсальности. Задача Лагранжа}
+    Пусть $J$ --- функционал на кривой, концы которой должны находиться на двух заданных многообразиях $M_1, M_2 \subset \R^n$.
+    Считаем, что $J[\gamma], M_1, M_2 \in C^1$.
+    Рассматриваем функционал на пространство $X = \defset{\gamma \in \Gamma^2}{\gamma(a_\gamma) \in M_1, \gamma(b_\gamma)\in M_2}$.
+
+    $J[\gamma] = \int\mathcal{F}[\gamma, \dot{\gamma}]\d t$, где $\mathcal{F} \in C^2(\R^n \times (\R^n \sm \{0\})) \cap C(\R^n \times \R^n)$.
+
+    Пусть $\gamma_0$ --- локальный экстремум $J$ на $X$.
+    Тогда $\gamma_0$ --- экстремум на $\defset{\gamma \in X}{\gamma(a_\gamma) = \gamma_0(a_{\gamma_0}), \gamma(b_\gamma) = \gamma_0(b_{\gamma_0})}$, следовательно, $E\{\gamma_0\} = 0$.
+
+    Изучим граничные условия.
+    Теперь кривая вида $\gamma + \tau h$ не лежит в $X$, поэтому просто изучить вариацию не получится.
+
+    Попробуем подвигать один из концов кривой так, чтобы он оставался на многообразии, и через некоторое расстояние подвинутая кривая сливалась с изначальной.
+
+    $a \coloneqq a_{\gamma_0}, b \coloneqq b_{\gamma_0}$.
+
+    Пусть $r: (-\eps, \eps) \map M_1, r \in C^2, r(0) = \gamma_0(a)$.
+    Пусть $\delta > 0$ мало, $c \in \R$ --- какое-то.
+    Рассмотрим $s(t, \tau) = \all{\gamma_0(t) + r(\tau) - \gamma_0(a), & t \in [a, a + \delta) \\ \gamma_0(t),& t \in [b - c, b]}$
+    Потребуем $s(t, 0) = \gamma_0(t)$, $s \in C^2([a, b] \times (-\eps, \eps)$, $s(t, \_) \in X$.
+    Также потребуем, чтобы $\forall t, \tau: \der{s}{t} \ne 0$, чтобы кривая была регулярной.
+
+    \example{$s(t, \tau) = \gamma_0(t) + (\text{правая половина шапочки от $a$ до $a + \delta$, которая $0$ правее $b$}) \cdot (r(\tau) - r(0))$.}
+
+    $J[s(\_, \tau)]$ имеет локальной минимум при $\tau = 0$.
+    Положим $f(\tau) = J[s(\_, \tau)]$, и посчитаем $f'(\tau)$.
+    \[f(\tau) - f(0) = \int\angles{\nabla_u \mathcal{F}, s - \gamma_0} + \angles{\nabla_{\dot{u}}\mathcal{F}, \dot{s} - \dot{\gamma}_0} + \bigO(\|s(\_, \tau) - \gamma_0\|_{\Gamma^2})\]
+    Далее считаем, что всё перепараметризовано так, что все кривые определены на $[0, 1]$, \comment{так что ли}.
+    \[f(\tau) - f(0) = \int\angles{\nabla_u \mathcal{F}, s - \gamma_0} + \angles{\nabla_{\dot{u}}\mathcal{F}, \dot{s} - \dot{\gamma}_0} + \bigO(\|s(\_, \tau) - \gamma_0\|_{C^2})\]
+    Также считаем, что $\|s(\_, \tau)\|$ \comment{что?}
+    \[\tau\int\angles{\nabla_u\mathcal{F}, \der{s}{\tau}(\_, 0)} + \angles{\nabla_{\dot{u}}\mathcal{F}, \der{s}{\tau}(\_, 0)} + \bigO(\tau^2) = \tau\int\angles{E\{\gamma_0\} + \der{s}{\tau}(\_, 0)} + s(t, \tau) = \gamma_0(t) - \angles{(\nabla_{\dot{u}}\mathcal{F}(\gamma_0)(a), \der{s}{\tau}(a, 0))} + \bigO(\tau^2)\]
+    Точку $b$ опускаем, так как $\der{s}{\tau}(b, 0) = 0$ по построению.
+
+    Итак,
+    \[f'(\tau) = 0 \then \angles{\nabla_{\dot{u}}\mathcal{F}(\gamma_0(a)), \der{r}{\tau}(0)}\]
+    Так как $r$ --- любая кривая, то $(\nabla_{\dot{u}}\mathcal{F})(\gamma_0)(a) \perp T_{\gamma_0(a)}M$.
+
+    Аналогично со вторым концом.
+
+    Запишем всё это в теорему:
+    \theorem{
+    Пускай $J$ --- функционал на кривой ($\mathcal{F} \in C(\R^n \times \R^n) \cap C^2(\R^n \times (\R^n \sm \{0\}))$), $M_1, M_2 \subset \R^n$ --- многообразия класса $C^1$, пусть $\gamma_0$ --- локальный экстремум $J$ на $X$.
+
+    Тогда
+    \numbers{
+    \item $E\{\gamma_0\} = 0$.
+    \item $\all{(\nabla_{\dot{u}}\mathcal{F})(\gamma_0)(a) \perp T_{\gamma_0(a)}M_1 \\ (\nabla_{\dot{u}}\mathcal{F})(\gamma_0)(b) \perp T_{\gamma_0(b)}M_2}$ --- условия трансверсальности.
+
+    }
+    }
+    \examples{
+    \item $\mathcal{F}(z, w) = |w|$.
+    Минимум этого функционала --- расстояние от $M_1$ до $M_2$.
+
+        Условия из теоремы означают, что $\dot{\gamma}_0(a) \perp T_{\gamma(a)}M_1, \dot{\gamma}_0(b) \perp T_{\gamma(b)}M_1$, то есть...
+    $\nabla_u\Fc = \frac{w}{|w|}\then\frac{\d}{\d t}(\frac{\dot{\gamma}_0}{|\dot{\gamma}_0|}) = 0$.
+        Экстремаль --- отрезок, соединяющий два многообразия, и перпендикулярный обоим многообразиям.
+    \item $\mathcal{F}(z, w) = g(z)|w|$. $z = \vect{z_1 \\ z_2}$; мы видели, что тут масса полезностей при разных $g$.
+    $\nabla_{w}\Fc = g(z)\frac{w}{|w|}$. В этом случае условия трансверсальности тоже сводятся к условиям ортогональности $\dot{\gamma}(a) \perp M_1, \dot{\gamma}(b) \perp M_1$.
+    }
+    Рассмотрим частный случай: $n = 2, J[y] = \int\limits_{a_y}^{b_y} L(x, y(x), y'(x))\d x$, $L$ --- гладкая (везде, где нужно) на $\R^3$, $\phi, \psi \in C^2$ таковы, что $y(a_y) = \phi(a_y), y(b_y) = \psi(b_y)$.
+    Пусть $y \in C^2$.
+    Таким образом, многообразия --- графики функций, и концы $y$ лежат на этих графиках.
+
+    Сведёмся к уже доказанной теореме.
+    Подберём $\Fc(z, w) \in C(\R^2 \times \R^2)$ так, что $\Fc(z, w) = L\left(z_1, z_2, \frac{w_2}{|w_1|}\right)|w_1|$. Если $y$ --- экстремаль для $J$, то $(x, y(x))$ --- экстремаль для $\Fc$.
+
+    $M_1 = \defset{(x, \phi(x))}{x \in \R}, M_2 = \defset{(x, \psi(x))}{x \in \R}$.
+
+    Пусть $w_1 > 0$ (на интересующей нас кривой $w_1 \equiv 1$).
+    Условия трансверсальности: \[\Fc = \left(L\left(z_1, z_2, \frac{w_2}{w_1}\right) - \frac{w_2 w_1}{w_1^2}\der{L}{\dot{u}}\left(z_1, z_2, \frac{w_2}{w_1}\right) \\ \der{L}{\dot{u}}\left(z_1, z_2, \frac{w_2}{w_1}\right)\right)\]
+    $\gamma(t) = (t, y(t))$, $\dot{\gamma}(t) = (1, \dot{y}(t))$.
+    Тем самым, $(\nabla_w\Fc)(\gamma)(a) \perp \vect{1 \\ \dot{\phi}(a)}$ и $(\nabla_w\Fc)(\gamma)(b) \perp \vect{1 \\ \dot{\psi}(b)}$.
+
+    Распишем это через скалярное произведение: $(L - \dot{y}\der{L}{\dot{y}})(a) \cdot 1 + \der{L}{\dot{y}}\dot{\phi}(a) = 0$.
+    Аналогично со вторым концом, это часто записывают в виде
+    \[\all{L(a, y(a), \dot{y}(a)) + \der{L}{\dot{y}}(\dot{\phi}(a) - \dot{y}(a)) = 0 \\ L(b, y(b), \dot{y}(b)) + \der{L}{\dot{y}}(\dot{\psi}(b) - \dot{y}(b)) = 0}\]
+%    Теперь --- фокусы
+
+    Продемонстрируем элементарный вывод этого факта
+%    \begin{tikzpicture}
+%        \draw[->] (-1, 0) -- (4, 0) node[right] {$x$};
+%        \draw[->] (0, -1) -- (0, 3) node[above] {$y$};
+%        \fill (1, 0) node[below]{$x_0$};
+%        \fill (1.5, 0) node[below]{$x_0 + \delta x_0$};
+%        \fill (3, 0) node[below]{$x_1$};
+%        \fill (3.5, 0) node[below]{$x_1 + \delta x_1$};
+%
+%    \end{tikzpicture}
+    \multline{J[\tilde{y}] - J[y] = \int\limits_{x_0 + \delta x_0}^{x_1 + \delta x_1}L(x, \tilde{y}, \dot{\tilde{y}}) - \int\limits_{x_0}^{x_1}L(x, y, \dot{y}) = \int\limits_{x_0}^{x_1}(L(\tilde.) - L()) - \int\limits_{x_0}^{x_0 + \delta x_0}L(\tilde.)  + \int\limits_{x_1}^{x_1 + \delta x_1}L(\tilde.) = \\=
+    \int\limits_{x_0}^{x_1}\left(\der{L}{y} - \frac{\d}{\d x}\der{L}{\dot{y}}\right)h \d x + L(x_1, y(x_1), \dot{y}(x_1))\delta x_1 - L(x_0, y(x_0), \dot{y}(x_0))\delta x_0 +\\+ \bigO(\|h\|^2_C) + o(\delta x_1) + o(\delta x_2) + \der{L}{?}h\big|_{x_0}^{x_1}\circlesign{=}}
+    Рассматривая финитные $h$, получаем, что первый член $\left(\der{L}{y} - \frac{\d}{\d x}\der{L}{\dot{y}}\right) = 0$.
+
+    $h(x_0) = \delta y_0 - \dot{y}(x_0)\delta x_0 + o(\delta x_0) + o(\|h\|)$ --- уравнение касательной.
+    \[\circlesign{=}L(x_1, y(x_1), \dot{y}(x_1))\delta x_1 - L(x_0, y(x_0), \dot{y}(x_0))\delta x_0 + \der{L}{\dot{y}}(x_1)[\delta y_1 - \dot{y}(x_1)\delta x_1] - \der{L}{\dot{y}}[x_0, y(x_0), \dot{y}(x_0)] \cdot [\delta y_0 - \dot{y}(x_0)\delta x_0]\circlesign{=}\]
+    С точностью до некоторых малых поправок, $\delta y_1 = \dot{\psi}(x_1)\delta x_1$ и $\delta y_0 = \dot{\phi}(x_0)\delta x_0$.
+    \[\circlesign{=}\delta  x_1\left(L + \der{L}{\dot{y}}(x_1, y(x_1), \dot{y}(x_1))(-\dot{y}(x_1) + \dot{\psi}(x_1))\right) + \delta x_0 \cdot (\cdots)\]
+    Ура, вроде вывели.
+    \section{Инвариантность уравнения Эйлера --- Лагранжа}
+    <<Если сделать замену переменной в уравнении Эйлера --- Лагранжа, то решение будет решением задачи, в которой так же заменили переменные>>
+
+    Пусть $T: \R^n \map \R^n$ --- диффеоморфизм, $J[\gamma] = \int\Fc(\gamma, \dot{\gamma})\d t, \Fc(z, \lambda w) = \lambda\Fc(z, w), \lambda > 0$ \comment{(это и раньше требовалось, надо дописать)}.
+
+    Пусть $\gamma$ --- ориентированная кривая, $T \circ \gamma$ --- также ориентированная кривая.
+    $J_T[\gamma] \coloneqq J[T \circ \gamma]$, то есть $J_T[\gamma] = \int \Fc[T(\gamma(t)), T'(\gamma(t)) \cdot \dot{\gamma}(t)]\d t$.
+
+    \[J_T[\gamma] = \int\Fc_T[\gamma, \dot{\gamma}]\]
+    Функция $\Fc_T(z, w) = \Fc[T(z), T'(z)w]$ имеет ту же однородность.
+    Пусть $E_T$ --- $E$, построенная по $\Fc_T$.
+
+    Пусть задача --- с фиксированными концами.
+    Согласно когда-то проделанной выкладке: $\delta J_T[\gamma, h] = \int\angles{E_T\{\gamma\}, h}\d t$.
+    \multline{
+        J_T[\gamma + h] - J_T[\gamma] = J[T(\gamma) + T'(\gamma)h + r] - J_T[\gamma] = \int\angles{\der{\Fc}{\gamma}, T'(0)h + r} + \left(\der{\Fc}{\dot{\gamma}}(T'(\gamma)h + r)'\right) + o(\|h\|_{C^1}) =\\=
+    \int\angles{\der{\Fc}{\gamma}, T'(\gamma) h} - \left(\frac{\d}{\d t}\der{F}{\dot{\gamma}}, T'(\gamma)h\right) = \angles{T'(\gamma)^t E\{T(\gamma)\}, h} + o(\|h\|_{C^1})}
+    Итак, $E_T\{\gamma\} = T'(\gamma) E(T(\gamma))$ --- заявленная инвариантность.
 \end{document}
