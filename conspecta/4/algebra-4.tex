@@ -1129,7 +1129,7 @@
     Обозначим $\LTor_i(M, \_) \bydef L_i(M \otimes \_)$, $\RTor_i(\_, N) \bydef L_i(\_ \otimes N)$.
 
     \examples{
-        \item Изучим $\Tor(M, R/aR)$, где $R$ --- коммутативная область целостности.
+        \item Изучим $\Tor_1(M, R/aR)$, где $R$ --- коммутативная область целостности.
     Для $R/aR$ несложно написать проективную резольвенту: $0 \map R \overset{a}{\Map} R \map R/aR \map 0$ ($a(m) = am$).
 
     Тензорно домножая на $M$, мы получаем $0 \map M \overset{m \otimes r \mapsto m \otimes ar}\Map M \map M\otimes R/aR \map 0$.
@@ -1222,5 +1222,139 @@
     В качестве среднего члена всегда подойдёт $M \oplus N$, но, может быть, и ещё что-то, и за это отвечает $\Ext$.
 
     Для функторов $\Ext$ более высокой степени надо брать более длинные последовательности.
+    \newlection{1 апреля 2024 г.}
+    Пусть $M, N \in \modR{R}$.
+    \definition[Расширение $N$ при помощи $M$]{
+        Точная последовательность $0 \map M \map X \map N \map 0$.
+    }
+    Морфизм расширений $0 \map M \map X \map N \map 0$ и $0 \map M \map X' \map N \map 0$ --- такая стрелка $X \map X'$, что два получившихся треугольника коммутативны.
+    \theorem{
+    $\Ext^1(M, N)$ естественно изоморфен множеству классов изоморфизмов расширений $N$ при помощи $M$.
+    \provehere{
+    Рассмотрим расширение $0 \map M \map X \map N \map 0$.
+        Запишем длинную точную последовательность для $\Ext^1(\_, N)$ и данной короткой точной последовательности.
+    % https://q.uiver.app/#q=WzAsNSxbMywwLCJcXEhvbShOLCBNKSJdLFsyLDAsIlxcSG9tKFgsIE0pIl0sWzEsMCwiXFxIb20oTSwgTSkiXSxbMCwwLCJcXEV4dF4xKE4sIE0pIl0sWzQsMCwiMCJdLFsyLDNdLFsxLDJdLFswLDFdLFs0LDBdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Ext^1(N, M)} \& {\Hom(M, M)} \& {\Hom(X, M)} \& {\Hom(N, M)} \& 0
+        \arrow[from=1-2, to=1-1]
+        \arrow[from=1-3, to=1-2]
+        \arrow[from=1-4, to=1-3]
+        \arrow[from=1-5, to=1-4]
+        \end{tikzcd}\]
+    Теперь построим $x \in \Ext^1(N, M) \cong \Ext^1(M, N)$, как образ $\id \in \Hom(M, M)$.
 
+    Теперь построим стрелку обратно: накроем $N$ проективным объектом: $0 \map A \map P \map N \map 0$.
+    % https://q.uiver.app/#q=WzAsNSxbNCwwLCJcXEhvbShOLCBNKSJdLFszLDAsIlxcSG9tKFAsIE0pIl0sWzIsMCwiXFxIb20oQSwgTSkiXSxbMSwwLCJcXEV4dF4xKE4sIE0pIl0sWzAsMCwiMCA9IFxcRXh0XjEoUCwgTSkiXSxbMCwxXSxbMSwyXSxbMiwzXSxbMyw0XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {0 = \Ext^1(P, M)} \& {\Ext^1(N, M)} \& {\Hom(A, M)} \& {\Hom(P, M)} \& {\Hom(N, M)}
+        \arrow[from=1-5, to=1-4]
+        \arrow[from=1-4, to=1-3]
+        \arrow[from=1-3, to=1-2]
+        \arrow[from=1-2, to=1-1]
+        \end{tikzcd}\]
+    Так как домножение на проективный модуль --- точный функтор, то $\Ext^1(P, M) = 0$.
+    Теперь пусть $X$ --- пушаут диаграммы $M \overset{\beta}\leftarrow A \rightarrow P$.
+        Следующая диаграмма будет коммутативна:
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkEiXSxbMiwwLCJQIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbNCwxLCIwIl0sWzMsMSwiTiJdLFsyLDEsIlgiXSxbMSwxLCJNIl0sWzAsMSwiMCJdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdLFszLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsN10sWzEsOCwiXFxiZXRhIl0sWzksOF0sWzgsN10sWzcsNl0sWzYsNV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& A \& P \& N \& 0 \\
+              0 \& M \& X \& N \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-3, to=1-4]
+              \arrow[from=1-4, to=1-5]
+              \arrow[Rightarrow, no head, from=1-4, to=2-4]
+              \arrow[from=1-3, to=2-3]
+              \arrow["\beta", from=1-2, to=2-2]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    Далее можно проверить, что в одну сторону эти отображения взаимно обратны:
+    % https://q.uiver.app/#q=WzAsOSxbNCwwLCJcXEhvbShOLCBNKSJdLFszLDAsIlxcSG9tKFAsIE0pIl0sWzIsMCwiXFxIb20oQSwgTSkiXSxbMSwwLCJcXEV4dF4xKE4sIE0pIl0sWzAsMCwiMCA9IFxcRXh0XjEoUCwgTSkiXSxbNCwxLCJcXEhvbShOLCBNKSJdLFszLDEsIlxcSG9tKFgsIE0pIl0sWzIsMSwiXFxIb20oTSwgTSkiXSxbMSwxLCJcXEV4dF4xKE4sIE0pIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzgsMywiPyIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNl0sWzYsN10sWzcsOF0sWzAsNSwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywyXSxbNiwxXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {0 = \Ext^1(P, M)} \& {\Ext^1(N, M)} \& {\Hom(A, M)} \& {\Hom(P, M)} \& {\Hom(N, M)} \\
+        \& {\Ext^1(N, M)} \& {\Hom(M, M)} \& {\Hom(X, M)} \& {\Hom(N, M)}
+        \arrow[from=1-5, to=1-4]
+        \arrow[from=1-4, to=1-3]
+        \arrow[from=1-3, to=1-2]
+        \arrow[from=1-2, to=1-1]
+        \arrow["{?}", Rightarrow, no head, from=2-2, to=1-2]
+        \arrow[from=2-5, to=2-4]
+        \arrow[from=2-4, to=2-3]
+        \arrow[from=2-3, to=2-2]
+        \arrow[Rightarrow, no head, from=1-5, to=2-5]
+        \arrow[from=2-3, to=1-3]
+        \arrow[from=2-4, to=1-4]
+        \end{tikzcd}\]
+    $\id \in \Hom(M, M)$ уходит вверх при $\_ \cdot \beta$ в $\beta$, далее влево --- в $x$ по определению $x$.
+        Если же отправить $\id$ вправо, то он тоже уйдёт в $x$. \comment{Почему?} И надо ещё проверить, что $? = \id$.
+    }
+    }
+    \comment{Далее идёт отступление про то, что быть определённым с точностью изоморфизма, и быть определённым --- разные вещи, и я не справился это записать.}
+
+    Если же хочется изучить всё кручение $M$, то оказывается, $\Tor_1(M, F/R) = \defset{x \in M}{\exists a \in R \sm \{0\}: ax = 0}$ (здесь $F/R$ --- фактор $R$-модулей).
+    Здесь используется, что $F/R = \varinjlim R/aR$, значит, $\Tor_1(F/R, M) = \varinjlim \Tor_1(R/aR, M)$.
+    \section{Гомологии и когомологии групп}
+    Пусть $G$ --- группа, $A$ --- абелева группа, на которой действует $G$.
+    Иными словами, $A$ --- $\Z[G]$-модуль.
+
+    Рассматриваем $\Z$, либо как кольцо, либо как $\Z[G]$-модуль с тривиальным действием $G$.
+
+    Определим гомологии $H_n(G, A) \bydef \Tor_n^{\Z[G]}(\Z, A)$ (верхний индекс $\Z[G]$ указывает, что мы работаем в категории $\Z[G]$-модулей).
+    Также определим когомологии $H^n(G, A) \bydef \Ext_{\Z[G]}^n(\Z, A)$.
+
+    Запишем проективную резольвенту по первому аргументу.
+    \bullets{
+        \item Пусть $P_n$ --- свободный $\Z$-модуль с базисом $\defset{(g_0, \dots, g_n)}{g_i \in G}$.
+        По совместительству $P_n$ --- свободный $\Z[G]$-модуль с базисом $\defset{(1, g_1, \dots, g_n)}{g_i \in G}$ и действием $g \cdot (g_0, \dots, g_n) = (gg_0, \dots, gg_n)$.
+
+        \item Теперь определим гомоморфизмы.
+    % https://q.uiver.app/#q=WzAsMyxbMiwwLCJcXFoiXSxbMSwwLCJQXzAgPSBcXFpbR10iXSxbMCwwLCJcXGNkb3RzIl0sWzEsMF0sWzIsMV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \cdots \& {P_0 = \Z[G]} \& \Z
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-1, to=1-2]
+        \end{tikzcd}\]
+        Граничные гомоморфизмы определены так: $d_n(g_0, \dots, g_n) = \sum\limits_{i = 0}^{n}(-1)^{i}(g_0, \dots, \hat{g}_i, \dots, g_n)$.
+        Несложно проверить, что $d_{n-1}\cdot d_n = 0$.
+    }
+    \bullets{
+        \item Посчитаем нулевые гомологии и когомологии группы $G$.
+        $H_0(G, A) = \Z \otimes_{\Z[G]} A$.
+
+        $\Z = \Z[G]/I_G$, где $I_G = \Ker(\phi)$, здесь $\phi: \Z[G] \map \Z$ --- $\Z$-линейный гомоморфизм аугментации, определённый на базисе $g \mapsto 1$.
+        Иными словами, $I_G = \angles{g - 1\middle| g \in G} = \defset{\sum\limits_{g \in G}\alpha_h \cdot g}{\sum\limits_{g \in G}\alpha_g = 0}$, все суммы финитные.
+
+        Тем самым, $H_0(G, A) = \Z \otimes_{\Z[G]} A \cong A/(I_G A)$ --- \emph{коинварианты}. $I_G A = \angles{ga - a\middle| g \in G, a \in A}$.
+
+        \item Теперь посчитаем когомологии.
+        $H^0(G, A) = \Hom_{\Z[G]}(\Z, A)$.
+        Всякому гомоморфизму $\varphi \in \Hom_{\Z[G]}(\Z, A)$ можно $\phi(1)$.
+        Из $G$-линейности $\forall g \in G: \phi(1) = \phi(g \cdot 1) = g \cdot \phi(1)$, значит, $\phi(1) \in A^G \bydef \defset{a \in A}{\forall g \in G: ga = a}$ --- \emph{инварианты}.
+        Значит, нулевые когомологии --- инварианты.
+
+        \item $H_1(G, \Z) = G^{\ab} \bydef G/[G, G]$.
+        \item $H^1(G, A) = \Der(G, A)$ --- множество скрещённых гомоморфизмов.
+
+        Скрещенный гомоморфизм --- это такое отображение $\phi: G \map A$, которое обладает свойством $\phi(gh) = g \cdot \phi(h) + \phi(g)$.
+    \item $H_2(G, \Z) = ?$
+    Предположим, что имеется точная последовательность групп $0 \map R \map F \map G \map 1$, то есть $G \cong F/R$.
+
+    Тогда $H_2(G, \Z) = \frac{R \cap [F, F]}{[R, F]}$.
+
+    Если $[G, G] = G$ ($G$ совершенна), то существует универсальное центральное расширение $\pi: S \twoheadrightarrow G$, то есть $\Ker(\pi) \in C(S)$, и
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJTIl0sWzEsMCwiRyJdLFsxLDEsIkgiXSxbMCwyLCJcXGV4aXN0cyEiLDJdLFsyLDEsIlxcZm9yYWxsIFxcdGV4dHsg0YbQtdC90YLRgNCw0LvRjNC90L7Qs9C+INGA0LDRgdGI0LjRgNC10L3QuNGPfSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDEsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              S \& G \\
+              \& H
+              \arrow["{\exists!}"', from=1-1, to=2-2]
+              \arrow["{\forall \text{ центрального расширения}}"', dashed, from=2-2, to=1-2]
+              \arrow[two heads, from=1-1, to=1-2]
+        \end{tikzcd}\]
+    В этом случае $H_2(G, \Z) = \Ker\pi$. Например, в случае $G = SL_n(F): S = \St_n(F)$ --- \emph{группа Стейнберга}.
+    Ядро $\St_n(F) \twoheadrightarrow SL_n(F)$ --- это $K_{2,n}(F) = H_2(G, \Z)$.
+        Для $n \ge 5$ от поля ничего не зависит.
+    }
 \end{document}
