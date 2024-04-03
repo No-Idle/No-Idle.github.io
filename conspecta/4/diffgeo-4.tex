@@ -1,6 +1,8 @@
 \documentclass[a4paper]{report}
 
 \usepackage{../mathstemplate}
+\usepackage{wasysym}
+\usepackage{mathstemplate}
 
 \date{IV семестр, весна 2024 г.}
 \title{Дифференицальная геометрия. Неофициальный конспект}
@@ -662,10 +664,12 @@
          Отсюда следует единственность и 2.
 
         Теперь докажем существование. Зафиксируем карту. $v_i \coloneqq D(\tilde{x}_i)$.
-        \indentlemma[Лемма Адамара]{
+        \indentlemma[Адамар]{
             Пусть $f \in C^{\infty}(\R^n)$. Тогда $\exists g_1, \dots, g_n$ --- гладкие, такие, что $f(x) - f(0) = \sum\limits_{i}g_i(x) \cdot x_i$.
         }{
-            Потом.
+            Положим $g_i(x) \coloneqq \int\limits_{0}^{1}\der{f}{x_i}(tx)\d t$.
+            Проверим, что всё работает:
+        \[f(x) - f(0) = \int\limits_{0}^{1}\frac{\d f(tx)}{\d t}\d t =  \int\limits_{0}^{1}\sum\limits_{i = 1}^{n}\der{f}{x_i}(tx)\cdot x_i \d t = \sum\limits_{i = 1}^{n}g_i(t)\cdot x_i\]
         }
      $\overline{D}(f(0) + \sum\limits_{i}x_i \cdot g_i(x)) = \sum\limits_{i}\overline{D}(x_i \cdot g_i) = \sum\limits_{i}\overline{D}(x_i) \cdot g + x_i \cdot \overline{D}(g)$...
         }
@@ -682,7 +686,7 @@
     }
     Проверим, что это действительно дифференцирование.
     Линейность очевидна;\ правило Лейбница:
-    \multline{X(Y(f)) \cdot g + Y(f) \cdot X(g) + X(f) \cdot Y(g) + f \cdot X(Y(g)) - Y(X(f)) \cdot g - X(f) \cdot Y(g) - Y(f) \cdot Y(X(g)) - f \cdot Y(X(g)) =\\= X(Y(f) \cdot g + f \cdot Y(g)) - Y(X(f) \cdot g + f \cdot X(g)) = X(Y(f \cdot g)) - Y(X(f \cdot g))= [X, Y](f \cdot g) \overset{?}=\\\overset{?}= ([X, Y]f) \cdot g + f \cdot ([X, Y]g) = (X(Y(f)) - Y(X(f))) \cdot g + f \cdot (X(Y(g)) - Y(X(g)))}
+    \multline{X(Y(f)) \cdot g + \cancel{Y(f) \cdot X(g)} + \bcancel{X(f) \cdot Y(g)} + f \cdot X(Y(g)) - Y(X(f)) \cdot g - \bcancel{X(f) \cdot Y(g)} - \cancel{Y(f) \cdot X(g)} - f \cdot Y(X(g)) =\\= X(Y(f) \cdot g + f \cdot Y(g)) - Y(X(f) \cdot g + f \cdot X(g)) = X(Y(f \cdot g)) - Y(X(f \cdot g))= [X, Y](f \cdot g) \overset{?}=\\\overset{?}= ([X, Y]f) \cdot g + f \cdot ([X, Y]g) = (X(Y(f)) - Y(X(f))) \cdot g + f \cdot (X(Y(g)) - Y(X(g)))}
     \subsection{Выражение для скобки Ли в координатах}
     Пусть $X, Y$ --- два гладких векторных поля, $\phi: U \map \Omega$ --- карта.
 
@@ -704,12 +708,12 @@
         Так как $(f\cdot X)(\cdots)$ --- это производные по направлению, то это равно $f \cdot X(\cdots)$.
         \[\circlesign{=}f \cdot (X(Y(h))) - Y(f) \cdot X(h) - f \cdot Y(X(h))\qedhere\]
         }
-    \item $[X, gY] = g \cdot [X, Y] + X(g) \cdot Y$.
+    \item $[X, g\cdot Y] = g \cdot [X, Y] + X(g) \cdot Y$.
         \provehere{
         Ради разнообразия, выведем из первого и кососимметричности
         \[[X, g\cdot Y] = -[g\cdot Y, X] = -(g \cdot [Y, X] - X(g) \cdot Y) = g \cdot [X, Y] + X(g) \cdot Y\qedhere\]
         }
-    \item $[f\cdot X, gY] = f\cdot g\cdot[X, Y] + f\cdot X(g) \cdot Y - g(Y(f)) \cdot X$.
+    \item $[f\cdot X, g \cdot Y] = f\cdot g\cdot[X, Y] + f\cdot X(g) \cdot Y - g(Y(f)) \cdot X$.
     \provehere{
     \[[f\cdot X, g\cdot Y] = g \cdot [f\cdot X, Y] + (f \cdot X)(g) \cdot Y = g \cdot (f \cdot [X, Y] - Y(f) \cdot X) + (f \cdot X)(g) \cdot Y\qedhere\]
     }
@@ -771,7 +775,134 @@
         (Распространим координатное векторное поле, используя гладкий спуск с единицы: $\tilde{E}_i\big|_U \equiv 0$ в дополнении карты).
     Из локальности
     \[F(X) = F(X_1 \tilde{E}_1 + \cdots + X_n \cdot \tilde{E}_n)\]
-    \item Случай $k \ne 1$ сводится к предыдущему последовательным примнением.
+    \item Случай $k \ne 1$ сводится к предыдущему последовательным применением.
     }
     }
+    \newlection{3 апреля 2024 г.}
+    Пусть $E_i, E_j$ --- координатные поля.
+    Имеется такой факт, что $[E_i, E_j] = 0$.
+    \provehere{$[X, Y]^{\phi} = (Y^\phi)'_{X^\phi} - (X^\phi)'_{Y_\phi} = 0$. }
+    Вообще, скобка Ли --- мера некоммутативности векторных полей, что мы докажем позже.
+    \subsection{Поведение скобки Ли при отображениях}
+    Пусть $M, N$ --- гладкие многообразия, $X \in \mathscr{X}(M), Y \in \mathscr{X}(M)$, $F: M \map N$ -- гладкое.
+    \definition[$F$ переводит $X$ в $Y$]{
+    $\forall p \in M: \d_p F(X_p) = Y_p$.
+    }
+    Вообще говоря, если дано отображение $F: M \map N$, и векторное поле $X \in \mathscr{X}(M)$, то не всегда найдётся $Y \in \mathscr{X}(N)$ такой, что $X$ переходит в $Y$ (например, $F(p) = F(q)$, и $\d_p F(X_p) \ne \d_p F(X_q)$), а если и найдётся, то может быть не единственно, если $F$ не сюръективно.
+
+    Пусть $F: M \map N$ переводит $X \in \mathscr{X}(M)$ в $Y \in \mathscr{X}(N)$.
+    \lemma{\label{action-suffices}
+    $F$ переводит $X$ в $Y$ $\iff$ $\forall$ гладкого $f: Y \map \R: (Y(f) \circ F)(p) = X(f \circ F)(p)$.
+    \provetwhen{
+        $X(f \circ F)(p) = \d_p (f \circ F)(X) = (\d_p f \circ \d F)(X) = \d_p f(Y) = (Yf)(F(p))$.
+    }{
+        Выберем локально $f \coloneqq x_i$ --- координатная функция.
+        $Y_i(F(p)) = ((Y x_i) \circ F)(p) = X(x_i \circ F)(p) = \d(x_i \circ F)(X) = \d x_i \circ \d F(X) = (\d F(X))_i$.
+        Тем самым, совпали $i$-е координаты полей, значит, сами поля совпали.
+    }
+    }
+    \theorem{
+    Пусть $F: N \map M$ гладкое, $X_1, X_2 \in \mathscr{X}(M), Y_1, Y_2 \in \mathscr{X}(N)$.
+        Если $F(X_1) = Y_1$ и $F(X_2) = Y_2$, то $F([X_1, X_2]) = [Y_1, Y_2]$.
+    \provehere{
+        Пусть $f: N \map \R$ --- произвольная гладкая.
+    Проверим, что $F([X_1, X_2])$ и $Y_1, Y_2]$ одинаково действуют на $f$:
+    \[[Y_1, Y_2](f) = Y_1(Y_2(f)) - Y_2(Y_1(f)) = Y_1(X_2(f \circ F)) - Y_2(X_1(f \circ F)) = [X_1, X_2](f \circ F)\]
+    Согласно~(\cref{action-suffices}), имеет место равенство.
+    }
+    }
+    \corollary{
+        Пусть $M$ --- гладкое многообразие, $N \subset M$ --- гладкое подмногообразие.
+
+        Если $X, Y \in \mathscr{X}(N)$ касательны к $N$, то и $[X, Y]$ --- касательно к $N$.
+    \provehere{Рассмотреть $F = \text{in}$. }
+    }
+    \section{Аффинные связности}
+    Пусть $M$ --- гладкое многообразие
+    \definition[Аффинная связность]{
+    Отображение \begin{align*}\mathscr{X}(M) \times \mathscr{X}(M) &\map \mathscr{X}(M) \\ V, W &\mapsto \nabla_V W\end{align*} со следующими свойствами:
+    \numbers{
+    \item $\R$-билинейность.
+    \item $\mathscr{F}(M)$-линейность по первому аргументу: $\nabla_{f \cdot V}W = f \cdot \nabla_V W$.
+    \item Правило Лейбница по второму аргументу: $\nabla_V(f \cdot W) = V (f)\cdot W + f \cdot \nabla_V W$.
+    }
+    }
+    \examples{
+    \item Обычное дифференцирование: на $\R^n$ заданы векторные поля.
+    \item Ковариантная производная на поверхности $\Sigma^2 \subset \R^3$
+    \item Покоординатное дифференцирование в карте.% $U \subset \R^n$.
+    }
+%    Аффинные связности образуют векторное пространство над $\R$. ??
+    \theorem[О пространстве связностей]{
+        Пусть $M$ --- гладкое многообразие, $\nabla, \tilde{\nabla}$ --- две аффинные связности.
+    \numbers{
+    \item $\nabla - \tilde{\nabla}$ --- тензор типа $(2, 1)$.
+    \item Если $T$ --- тензор типа $(2, 1), \nabla$ --- связность, то $T + \nabla$ --- связность.
+    }
+    \provebullets{
+        \item Достаточно проверить $\mathscr{F}(M)$-линейность по второму аргументу:
+    \[\nabla_V(f \cdot W) - \tilde{\nabla}_V(f \cdot W) = \cancel{V(f) \cdot W} + f \cdot \nabla_V W - \cancel{V(f) \cdot W} - f \cdot \tilde{\nabla}_V W\]
+    \item Достаточно проверить правило Лейбница:
+    \[(\nabla + T)_V(f \cdot W) = f(V) \cdot W + f \cdot \nabla_V W + T(V, f \cdot W) = f(V) \cdot W + f \cdot (\nabla + T)_V(W)\]
+    }
+    }
+    \proposal[Локальность аффинной связности]{
+    Пусть $\nabla$ --- аффинная связность. $\forall V, W \in \mathscr{X}(M): \nabla_V(W)$ зависит только от $V_p$ и $W$ в окрестности $p$.
+    \provehere{
+        При фиксированном втором аргументе $\nabla_{\_}(W)$ --- тензор типа $(1, 1)$, значит, зависит только от $V_p$.
+
+        Пусть имеются два поля $W_1, W_2$, совпадающие в окрестности $U_p \ni p$. Пусть $h$ --- гладкий спуск с единицы в окрестности $p$, $h\big|_{U_p^\complement} \equiv 0$.
+    \[h \cdot (\nabla_V W_2) + \underbrace{(W_2(h) \cdot V)_p}_{0} = \nabla_{V}(h \cdot W_2) = \nabla_V(h \cdot W_1) = h \cdot (\nabla_V W_1) + \underbrace{(W_1(h) \cdot V)_p}_{0}\]
+    }
+    }
+    \corollary{
+    Для аффинной связности $\nabla$ и открытого $U \subset M$ имеет смысл говорить о сужении $\nabla\big|_U$.
+    }
+    Рассмотрим карту $\phi: (U \subset M) \map \R^n$.
+    Пусть $\nabla$ -- аффинная связность на $M$, а $\nabla^\phi$ --- покоординатное дифференцирование в карте.
+    Тогда $\nabla - \nabla^{\phi}$ --- некоторый тензор $\Gamma$ типа $(2, 1)$.
+
+    Пусть $E_1, \dots, E_n$ --- координатные векторные поля.
+    Тогда $\Gamma(E_i, E_j) = \Gamma_{i,j}$
+    \definition[Символы Кристоффеля]{
+    $\Gamma_{i,j} = \Gamma(E_i, E_j)$.
+    }
+    В отличие от сивмолов Кристоффеля прошлого семестра, эти отвечают координатам тензора, и имеют смысл не на всём многообразии, а только в данной карте.
+    \subsection{Симметричная связность}
+    \definition[$\nabla$ --- симметричная связность]{Такая аффинная связность $\nabla$, что $\forall X, Y \in \mathscr{X}(M): \nabla_X Y - \nabla_Y X = [X, Y]$.}
+    \statement{
+    $T \coloneqq \nabla_X Y - \nabla_Y X - [X, Y]$ --- тензор типа $(2, 1)$.
+    \provehere{
+    Выражение антисимметрично ($\nabla_X X - \nabla_X X - [X, X] = 0$) и $\R$-билинейно.
+        Проверим $\mathscr{F}(M)$-билинейность по второму аргументу:
+    \multline{\nabla_X (f \cdot Y) - \nabla_{f \cdot Y} X - [X, f \cdot Y] = \cancel{X (f) \cdot Y}+ f \cdot \nabla_X Y - f \cdot \nabla_Y X - (f \cdot [X, Y] + \cancel{X(f) \cdot Y}) =\\= f \cdot (\nabla_X Y - \nabla_Y X - [X, Y])}
+    }
+    Этот тензор $T$ называется \emph{тензор кручения}.
+    \corollary{
+    Проверку того, что связность симметрично, достаточно осуществлять на координатных полях.
+    Для координатных полей $\nabla_{E_i}E_j - [E_i, E_j]= \Gamma_{i,j}$.
+        Тем самым, связность симметрична $\iff$ символы Кристоффеля равны нулю.
+    }
+    }
+    Пусть $(M, \angles{\_, \_})$ --- многообразие с римановой метрикой.
+    \definition[Риманова связность $\nabla$]{
+    Аффинная связность $\nabla$, согласованная с римановой метрикой: $X\angles{Y, Z} = \angles{\nabla_X Y, Z} + \angles{Y, \nabla_X Z}$.
+    }
+    \statement{
+        $S \coloneqq X\angles{Y, Z} - \angles{\nabla_X Y, Z} - \angles{Y, \nabla_X Z}$ --- тензор типа $(3, 0)$.
+        \provehere{
+            $\R$-полилинейность по всем аргументам и $\mathscr{F}(M)$-линейность по первому очевидны.
+
+        По второму и третьему аргументам симметрично, проверим билинейность по второму:
+        \multline{X\angles{f \cdot Y, Z} - \angles{\nabla_X (f \cdot Y), Z} - \angles{f \cdot Y, \nabla_X Z} =\\= \cancel{X(f) \cdot \angles{Y, Z}} + f \cdot X\angles{Y, Z} - \cancel{\angles{X(f) \cdot Y, Z}} - \angles f {\nabla_X(Y), Z} - f \cdot \angles{Y, \nabla_{X}Z}}
+        }
+    }\corollary{Можно проверять римановость связности только на координатных полях.}
+    \definition[Связность Леви --- Чивиты]{
+        Симметричная риманова связность.
+    }
+    \theorem[Основная теорема римановой геометрии]{
+        Пусть $(M, \angles{\_,\_})$ --- риманово многообразие.
+        Тогда существует и единственна связность Леви --- Чивиты $\nabla$.
+    }
+    Ковариантное дифференцирование из прошлого семестра --- эта самая связность.
 \end{document}
