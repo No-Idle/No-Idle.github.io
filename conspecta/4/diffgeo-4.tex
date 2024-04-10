@@ -864,7 +864,7 @@
 
     Пусть $E_1, \dots, E_n$ --- координатные векторные поля.
     Тогда $\Gamma(E_i, E_j) = \Gamma_{i,j}$
-    \definition[Символы Кристоффеля]{
+    \definition[Символы Кристоффеля]{\label{cristo-1}
     $\Gamma_{i,j} = \Gamma(E_i, E_j)$.
     }
     В отличие от сивмолов Кристоффеля прошлого семестра, эти отвечают координатам тензора, и имеют смысл не на всём многообразии, а только в данной карте.
@@ -896,13 +896,160 @@
         По второму и третьему аргументам симметрично, проверим билинейность по второму:
         \multline{X\angles{f \cdot Y, Z} - \angles{\nabla_X (f \cdot Y), Z} - \angles{f \cdot Y, \nabla_X Z} =\\= \cancel{X(f) \cdot \angles{Y, Z}} + f \cdot X\angles{Y, Z} - \cancel{\angles{X(f) \cdot Y, Z}} - \angles f {\nabla_X(Y), Z} - f \cdot \angles{Y, \nabla_{X}Z}}
         }
-    }\corollary{Можно проверять римановость связности только на координатных полях.}
-    \definition[Связность Леви --- Чивиты]{
+    }
+    \corollary{Можно проверять римановость связности только на координатных полях.}
+    \definition[Связность Леви-Чивиты]{
         Симметричная риманова связность.
     }
+    \newlection{10 апреля 2024 г.}
+    \subsection{Символы Кристоффеля}
+    Дадим второе определение, и поймём, что оно совпадает с первым.
+    \definition[Символы Кристоффеля в карте]{
+    $\Gamma_{i,j} = \nabla_{E_i}E_j$.
+    }
+    Опять же, символы первого рода $\Gamma_{i,j;k} = \angles{\Gamma_{i,j}, E_k}$, и символы второго рода $\Gamma_{i,j} = \sum\limits_{k}\Gamma_{i,j}^{k}E_k$.
+
+    Это совпадает с~(\cref{cristo-1}), так как $\Gamma^{\phi}(E_i, E_j) = \nabla_{E_i}E_j - \underbrace{\nabla^{\phi}_{E_i}E_j}_{0}$.
+    \fact{
+    \provehere{
+        $\angles{\Gamma_{i,j}^k, E_l} = \Gamma_{i,j}^{k} \cdot g_{k,l}$
+    Пусть $(g_{n,m})_{n,m}$ --- матрица Грама, $(g'_{n,m}) = (g_{n,m})^{-1}$ --- обратная матрица, тогда так как $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$, то $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} =(g'_{n,m}) \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$.
+
+    Тем самым, одни символы гладкие тогда и только тогда, когда гладкие --- другие.
+    }
+    }
+    \subsection{Единственность связности Леви-Чивиты}
+
     \theorem[Основная теорема римановой геометрии]{
         Пусть $(M, \angles{\_,\_})$ --- риманово многообразие.
-        Тогда существует и единственна связность Леви --- Чивиты $\nabla$.
+        Тогда существует и единственна связность Леви-Чивиты $\nabla$.
+    \provehere{
+%    Сначала докажем единственность: пусть $(U, \phi)$ --- карта, тогда $E_k(\angles{E_i, E_j}) = \angles{\nabla_{E_k}E_i, E_j} + \angles{E_i, \angles_{E_k}E_j}$ согласно римановости.
+%
+    Перепишем: $(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}$.
+    Переставляя индексы циклически, получаем уравнения $\all{(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}}$
+    Так как символы симметричны, то есть $\Gamma_{i,j}^{k} = \Gamma_{j,i}^{k}$, то
+    \[\Gamma_{i,j;k} = \frac{(g_{i,k})'_{x_j} + (g_{i,k})'_{x_i} - (g_{i,j})'_{x_k}}{2}\label{gamma-equals-what}\tag{$*$}\]
+    Используя разложение $\nabla = \nabla^{\phi} + \Gamma^{\phi}$, получаем единственность в каждой карте, значит, и глобальная единственность.
+
+%    Теперь докажем существование.
+%        Зафиксируем карту, и воспользуемся~\eqref{gamma-equals-what}.
+%        Положим $\nabla \coloneqq \nabla^{\phi} + \Gamma^{\phi}$
+%        Симметричность $\nabla$ очевидна (проверяем на базисных векторах).
+%        По модулю симметричности, римановость в точности значит~\eqref{gamma-equals-what}.
+
+    Доказали существование связности Леви-Чивиты в карте, согласованность следует из единственности (пересечение карт --- карта).
+    }
     }
     Ковариантное дифференцирование из прошлого семестра --- эта самая связность.
+    \section{Ковариантная производная вдоль пути}
+    Пусть $\gamma: [a, b] \map M$ --- гладкая (необязательно регулярная) кривая на гладком многообразии $M$.
+    \definition[Гладкое векторное поле вдоль пути $\gamma$]{
+        Гладкое отображение $V: [a, b] \map TM$, такое, что $\forall t \in [a, b]: V(t) \in T_{\gamma(t)}M$.
+    }
+    Пусть $M$ --- гладкое многообразие, $\nabla$ --- связность, $\gamma$ --- гладкая кривая, $V$ --- векторное поле вдоль $\gamma$.
+    \definition[Ковариантная производная $V$ вдоль $\gamma$]{
+    Отображение $V \mapsto \frac{\nabla}{\d t}V$ со следующими свойствами:
+    \numbers{
+    \item $\frac{\nabla}{\d t}(V + W) = \frac{\nabla}{\d t}V + \frac{\nabla}{\d t}W$
+    \item $\frac{\nabla}{\d t}(f \cdot V) = f' \cdot V + f \cdot \frac{\nabla}{\d t}V$.
+    \item Если $\exists \tilde{V}$ --- векторное поле на $M$, такое, что $\tilde{V}(\gamma(t)) = V(t)$, то $\frac{\nabla}{\d t}V = \nabla_{\gamma'}\tilde{V}$.
+    }
+    }
+    Выглядит, как ковариантная производная (по теореме о выпрямлении всё можно сделать), но если $\gamma' = 0$, то там по-другому.
+    \theorem{
+    Ковариантная производная вдоль пути существует и единственна.
+    \provehere{
+    Сначала докажем единственность.
+    Разложим покоординатно: $V(t) = \sum\limits_{i}V_i(t) \cdot E_i(\gamma(t))$.
+    \[\frac{\nabla}{\d t}V = \frac{\nabla}{\d t}\left(\sum\limits_{i}V_i(t) \cdot E_i(\gamma(t))\right) = \sum\limits_{i}\frac{\d v_i}{\d t} \cdot E_i + \sum\limits_{i}V_i \cdot \frac{\nabla}{\d t}E_i\]
+    Обозначим $\gamma'(t) = \sum\limits_{i}\alpha_{i}(t) \cdot E_i(\gamma(t))$. Так как координатное векторное поле вдоль пути отвечает обычному координатному векторному полю, то
+    \[V_i \cdot \frac{\nabla}{\d t}E_i = V_i \cdot \alpha_{j} \Gamma_{i,j}\]
+
+    Этого достаточно для единственности, распишем подробнее, чтобы показать существование
+    \[\frac{\nabla}{\d t}V = \sum\limits_{i}V_i' \cdot E_i + \sum\limits_{i,j,k}V_j \alpha_{k}\Gamma_{j,k}^{i} E_i\label{nabla-equals-what}\tag{$**$}\]
+
+        Существование, опять же, получается из единственности и соответствующей формулы: покроем носитель открытыми множествами $W_i$, таких, что $\forall W_i: \exists (U, \phi): U \supset W_i$.
+        Далее несложно проверить, что определение при помощи формулы~\eqref{nabla-equals-what} даёт корректно определённую ковариантную производную вдоль пути.
+        На пересечениях всё согласовано из единственности.
+    }
+    }
+    \section{Геодезические в римановых многообразиях}
+    Далее везде на гладком многообразии $M$ определён гладкий метрический тензор, и $\nabla$ --- связность Леви-Чивиты.
+
+    Пусть $\gamma: [a, b] \map M$ --- гладкая кривая.
+    \definition[$\gamma$ --- геодезическая]{
+    Такая кривая $\gamma$, что ковариантная производная её вектора скорости вдоль неё самой нулевая: $\frac{\nabla}{\d t}\gamma' = 0$.
+    }
+    Пусть кривая натурально параметризована: $|\gamma'| \equiv 1$.
+    Тогда кривизна $K_\gamma = \abs{\frac{\nabla}{\d t}\gamma'}$.
+    \statement{
+    Кривая геодезическая $\iff K_\gamma \equiv 0$.
+    }
+    \properties{
+    \item Если $\gamma$ --- геодезическая, то $|\gamma'| = \const$: $\frac{\d}{\d t}\angles{\gamma', \gamma'} = \angles{\frac{\d}{\d t}\gamma', \gamma'} + \angles{\gamma', \frac{\d}{\d t}\gamma'} = 0$ (докажем позже, что так можно).
+    \item Если $\gamma$ --- геодезическая, то $\tilde{\gamma}(t) \coloneqq \gamma(at + b)$ --- тоже.
+    \provehere{
+    $\tilde{\gamma}' = a \cdot \gamma'$, откуда $\frac{\nabla_{\tilde{\gamma}}}{\d t}\tilde{\gamma}' = a^2 \frac{\nabla_{\gamma}{\d t}}\gamma' = 0$.
+    }
+    }
+    \subsection{Уравнение геодезической}
+    Пусть в карте $\tilde{\gamma} = \phi \circ \gamma = (a_1(t), \dots, a_n(t))$, тогда $\tilde{\gamma}'(t) = (a_1'(t), \cdots, a_n'(t))$.
+    Запишем~\eqref{nabla-equals-what}:\[\tilde{\gamma}'' = \sum\limits_{i}a_i'' \cdot E_i + \sum\limits_{i,j}a_i a_j \cdot \Gamma_{i,j}^{k} \cdot E_k\]
+    Фиксируя $E_k$, получаем $n$ уравнений, проиндексированных при помощи $k$: $a_k'' + \sum\limits_{i,j}a_i a_j \Gamma_{i,j}^{k}$.
+
+    \theorem{
+        Пусть $(M, \angles{\_,\_})$ --- гладкое риманово многообразие, $\nabla$ --- связность Леви-Чивиты, $p \in M, v \in T_p M$.
+
+        Тогда $\exists \eps > 0, \gamma: (-\eps, \eps) \map M$ --- такая геодезическая. что $\gamma(0) = p, \gamma'(0) = v$.
+    \provehere{
+    Решаем систему дифференциальных уравнений второго порядка.
+    }
+    }
+    \subsection{Параллельный перенос вдоль пути}
+    Пусть $\gamma: [a, b] \map M$ --- гладкая кривая, $V$ --- гладкое векторное поле вдоль $\gamma$.
+    \definition[$V$ паралелльно влоль $\gamma$]{
+    $\frac{\nabla}{\d t}V \equiv 0$.
+    }
+    В частности, вектор скорости геодезической параллелен вдоль неё.
+    \theorem{Пусть $p \in M, v_0 \in T_pM$. $\gamma(0) = p, \gamma'(0) = p$.
+        Утверждается, что $\exists ! V(t)$ --- векторное поле вдоль $\gamma$, параллельное вдоль $\gamma$, такое, что $V(0) = v_0$.
+    \provehere{
+    Опять запишем~\eqref{nabla-equals-what}
+    $\frac{\nabla}{\d t}V = 0 = \sum\limits_{i}V_i' \cdot E_i + \sum\limits_{i,j,k}V_j a_k \Gamma_{j,k}^{i} \cdot E_i$.
+    Получили $n$ уравнений первого порядка с необходимым количеством начальных данных.
+        Значит, $\exists!$ решение на всей области определения.
+    }
+    }
+    \definition[Параллельный перенос вектора $v_0$ вдоль $\gamma$ в точку $\gamma(t_*)$]{
+    Значение векторного поля вдоль $\gamma$, параллельного $\gamma$, в точке $t_*$.
+    }
+    Обозначим за $P_{t_1}^{t_2}: T_{\gamma(t_1)}M \map T_{\gamma(t_2)}M$ отображение переноса вектора.
+    \note{
+    Параллельный перенос --- линейное отображение, так как свойство быть параллеьным вдоль пути сохраняется при взятии линейных комбинаций.
+    }
+    \properties{
+    \item Пусть $X, Y$ --- векторные поля, параллельные вдоль $\gamma$. Тогда $\angles{X(t), Y(t)} = \const$.
+    \[0 = \frac{\d}{\d t}\angles{X(t), Y(t)} = \angles{\frac{\nabla}{\d t}X, Y} + \angles{X, \frac{\nabla Y}{\d t}}\]
+    }
+    \corollary{
+    Вдоль пути наблюдается изоморфизм векторных пространств $T_p M$ и $T_q M$.
+    }
+    \proposal{
+    Пусть $t_0 \in [a, b]$
+        Тогда $\frac{\nabla}{\d t}X = \frac{\d}{\d t}(P^{t_0}_{t}X(t))$
+    \provehere{
+    Выберем базис $(B_i)_{i}$ и разнесём его параллельными переносами.
+    Получили на всей кривой базис из параллельных векторных полей.
+
+    Запишем $X = \sum\limits_{i}X_i B_i$. Тогда
+    \[\frac{\nabla X}{\d t} = \sum\limits_{i}x_i' \cdot B_i + \sum\limits_{i}x_i \cdot \underbrace{\frac{\nabla}{\d t}B_i}_{0}\]
+    }
+    }
+    Зафиксируем $p \in M, v \in T_p M$.
+    \definition[Экспоненциальное отображение]{
+    Частично определённое отображение $\exp: (\subset T_p M) \map M$, такое, что $\exp(v)$ --- это $\gamma(1)$, где $\gamma$ --- геодезическая с начальными данными $\gamma(0) = p, \gamma'(0) = v$. $\exp(v)$ определено если и только если геодезическая с такими параметрами определена в $1$.
+    }
+    Также определяют  $\exp: (\subset TM) \map M$, определённое поточечно.
+    $\exp$ --- гладкое отображение, однозначно определённое на некотором открытом подмножестве $TM$.
 \end{document}
