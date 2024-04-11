@@ -631,4 +631,98 @@
         J_T[\gamma + h] - J_T[\gamma] = J[T(\gamma) + T'(\gamma)h + r] - J_T[\gamma] = \int\angles{\der{\Fc}{\gamma}, T'(0)h + r} + \left(\der{\Fc}{\dot{\gamma}}(T'(\gamma)h + r)'\right) + o(\|h\|_{C^1}) =\\=
     \int\angles{\der{\Fc}{\gamma}, T'(\gamma) h} - \left(\frac{\d}{\d t}\der{F}{\dot{\gamma}}, T'(\gamma)h\right) = \angles{T'(\gamma)^t E\{T(\gamma)\}, h} + o(\|h\|_{C^1})}
     Итак, $E_T\{\gamma\} = T'(\gamma) E(T(\gamma))$ --- заявленная инвариантность.
+    \newlection{11 апреля 2024 г.}
+    \section{Прямые методы вариационного исчисления}
+    У уравнения Эйлера --- Лагранжа есть некоторые недостатки --- так, выявление характера экстремума является отдельной, зачастую весьма сложной, задачей.
+
+    Здесь пойдёт речь о методах, пытающихся построить точки максимума или минимума непосредственно.
+    Платой за такое удобство будет общность.
+
+    Здесь всё будет одномерно и скалярно: пусть $p \in C^1[a, b],  q\in C[a, b]$.
+    Рассмотрим задачу с фиксированными концами для функционала $J[u] = \int\limits_{a}^{b}(p u'^2 + qu^2)\d x$, где $X \coloneqq \defset{u \in C^1[a, b]}{u(a) = u(b) = 0, \int\limits_{a}^{b}u^2 = 1}$.
+    Последнее условие --- нормировочное, если бы его не было, то всегда (ввиду однородности по $u$) инфимумом $J$ был бы либо $0$, либо $-\infty$.
+
+    В рамках ранее рассмотренной теории это является задачей на условный экстремум (при $G[u] = \int\limits_{a}^{b}u^2 = 1$).
+    Уравнение Эйлера --- Лагранжа для $J - \lambda G$ получится
+    \[2 (p u')' + qu = \lambda u\tag{$*$}\label{sturm}\]
+    Из общей теории (и $C^1$-гладкости $p$) следует, что Для экстремума $u$: $p u' \in C^1$, то есть $u \in C^2$ вне окрестности тех точек, где $p$ обращается в $0$.
+    Потребуем, чтобы этих точек не было: $\forall x \in [a, b]: p(x) > 0$.
+
+    Задача поиска минимума уравнения~\eqref{sturm} при условиях $\all{\alpha_a u(a) + \beta_a u'(a) = 0 \\ \alpha_b u(b) + \beta_b u'(b) = 0} \left(\text{считается, что }\all{\alpha^2_u + \beta^2_a \ne 0\\ \alpha^2_b + \beta^2_b \ne 0}\right)$ называется задачей Штурма --- Лиувилля.
+
+    Положим $\lambda_J \coloneqq \inf\limits_{X}J$.
+    \numbers{
+    \item $\lambda_J \ge \min\limits_{x \in [a, b]}q(x)$
+    \item Из однородности $\forall u \in C^1[a, b], u(a) = u(b) = 0 \then J[u] \ge \lambda_J \int\limits_{a}^{b}u^2 \d x$.
+    }
+    Пускай $u_n \in X$ --- минимизирующая последовательность, такая, что $J[u_n] \searrow \lambda_J$.
+    Мы докажем, что из соображений компактности можно выбрать равномерно сходящуюся подпоследовательность, и что предел обладает свойствами, которые от него ожидаются.
+
+    Итак, имеется последовательность $u_n \in X$, такая, что $\int\limits_{a}^{b}p u_n'^2 + qu_n^2 \underset{n \to \infty}\Map \lambda_J$.
+    Оценим $J[f] \ge \underbrace{\min\limits_{[a, b]}p}_{> 0} \cdot \int\limits_{a}^{b}f'^2 - \max\limits_{[a, b]}q \cdot \underbrace{\int\limits_{a}^{b}f^2}_{1}$.
+    Из ограниченности $J[u_n]$ получаем, что $\sup\limits_{n}\int\limits_{a}^{b}u_n' < \infty$.
+
+    Отсюда сразу следует равностепенная непрерывность: $|u_n(x) - u_n(x')| = \abs{\int\limits_{x}^{x'}u'^2_n} \le \sqrt{|x - x'|} \cdot \left(\int\limits_{x}^{x'}u'^2\right)^{\nicefrac{1}{2}}$.
+    Эта же оценка показывает равномерную ограниченность: принимая $x = b$, получаем $|u_n(x)| \le \sqrt{b - a} \cdot C$.
+
+    Тем самым, $\{u_n\}$ лежит в компакте внутри $C$, откуда имеется сходящаяся подпоследовательность;
+    без потери общности, эта последовательность совпадает с исходной: $\exists u = \lim\limits_{n \to \infty}u_n$, где предел берётся в $C[a, b]$.
+
+    Эта предельная $u$ --- кандидат на минимизирующую функцию.
+    Но пока $u$ даже в интеграл не подставить: про гладкость ничего не известно.
+    Тем не менее, конечно, $\int\limits_{a}^{b}u^2 = 1$.
+
+    \theorem{
+        Так построенное $u \in C^2$ (в том числе $u \in X$), выполнено $-(pu')' + qu = \lambda_J u$, и $J[u] = \lambda_J$.
+    \provehere{
+    Сначала докажем в слабом смысле: убедимся, что \[\forall h \in C^2[a, b]: h(a) = h(b) = 0 \then \int\limits_{a}^{b}(-(ph')' + qh)u = \lambda_J \int\limits_{a}^{b}h u\tag{$**$}\label{eq3456}\]
+        если бы можно было проинтегрировать по частям.
+
+    $J[u_n + \eps h] = \underbrace{\int\limits_{a}^{b} p u_n'^2 + qu_n^2}_{J[u_n]} + 2\eps\int\limits_{a}^{b}(pu h h' + qu_h h) + \eps^2 J[h]$.
+    Интегрируя по частям, получаем $-2\eps\int\limits_{a}^{b}u_n (-(ph')' + qh)$, внеинтегральные члены обнулились.
+
+    Здесь, хотя совсем необязательно $u_n + \eps h \in X$, так как нормировка не выполнены, мы подставили в $J$ на $X_0$, заданный той же формулой.
+
+    $J[\lambda_n + \eps h] \ge \lambda_J \int\limits_{a}^{b}(u_n + \eps h)^2 = \lambda_J + 2\eps\lambda_J \int\limits_{a}^{b} u_n h + \eps^2 \lambda_J \int\limits_{a}^{b}h^2$.
+    Переходя к пределу в неравенствах, и сокращая $\lambda_J$, получаем
+    \[2\eps\int\limits_{a}^{b}u(-(p u')' + qh) + \eps^2 J[h] \ge 2\eps \lambda_J\int\limits_{a}^{b} u h + \eps^2 \int\limits_{a}^{b}h^2\]
+    Так как можно выбирать $\eps$ разных знаков, то~\eqref{eq3456} выполнено.
+
+    Выберем $h(x) \coloneqq \int\limits_{a}^{x}\frac{1}{p(t)} \left(\int\limits_{a}^{t}\xi(s)\d s + C\right)\d t$, где $C$ выбрана так, что $h(b) = 0$, где $\xi = -(ph')'$.
+    А именно, $C = \int\limits_{a}^{b}\frac{\d t}{p(t)}\int\limits_{a}^{t}\xi / \int\limits_{a}^{b}\frac{1}{p}$
+
+    По построению $h \in C^2, h(a) = h(b) = 0$.
+    \multline{
+        0 = \int\limits_{a}^{b}\xi u - \int\limits_{a}^{b}(q(x) - \lambda_J)\int\limits_{a}^{x}\frac{1}{p(t)}\left(\int\limits_{a}^{t}\xi(s)\d s + C\right)\d t = \int\limits_{a}^{b}\xi a - \int\limits_{a}^{b}\xi(s)\d s \int\limits_{s}^{b}\frac{\d t}{p(t)}\int\limits_{t}^{b}(q(x) - \lambda_J)\d x +\\+ \frac{1}{\int\limits_{a}^{b}\frac{1}{p}}\int\limits_{a}^{b}\xi(s)\int\limits_{s}^{b}\frac{\d t}{p(t)}\int\limits_{a}^{b}(q(x) - \lambda)\int\limits_{a}^{x}\frac{1}{p}
+    }
+    \comment{Выкладки 100\% неправильные, так что дальше не переписываю}
+    Итак, $0 = \int\limits_{a}^{b}\xi(s)\left[\cdots\right]$, откуда по лемме Дюбуа-Реймона выражение в скобках равно нулю везде, $u \in C^1$.
+
+    Значит, $u$ можно продифференцировать, получим $u' = ...$, откуда $u \in C^2$.
+    Тем самым, $(p(s) u'(s))' = q(s) - \lambda_J$, значит, $u \in X$, $J[u] = \int\limits_{a}^{b}p u'^2 + qu^2$.
+        Интегрируя по частям, получаем ровно $\lambda_J \int\limits_{a}^{b}u^2$.
+    }
+    }
+    \corollary{
+    $u$ --- нестрогий локальный минимум. причём если $J[u] = \lambda_J = J[\tilde{u}] \then u = \pm \tilde{u}$.
+    Это следует из того, что $u$ --- решение соответствующего диффура, то есть лежит в одномерном $\R$-пространстве.
+
+    Пусть $u_n$ --- минимизирующая последовательность.
+        Выберем $c \in [a, b]$ так, что $|u|(c) \ne 0$ (между прочим, конечный перебор). ($|u|$ находим, как предел $|u_n|$)
+
+    Подправим $u_n$ так, что $u_n(c) \ge 0$. Теперь $u_n \Map u$.
+    }
+    \ok
+    Пусть $u \in X$ --- минимизирующая $J[u] = \lambda_J \eqqcolon \lambda_1$.
+
+    Пусть $X^{(1)} = \defset{f \in X}{\int\limits_0^1{fu} = 0}$
+    Обозначим $\lambda_2 \coloneqq \inf\limits_{X^{(1)}}J$.
+    Ясно, что $\lambda_2 \ge \lambda_1$.
+
+    Рассуждая аналогично, построим $u_2 \in C[a, b]: \int\limits_{a}^{b}u_2^2 = 1, u_2(a) = u_2(b) = 0, \int\limits_{a}^{b}u_2 u = 0$.
+    Аналогично, $\forall h \in C^2: h(a) = h(b) = 0, \int\limits_{a}^{b}hu = 0 \then \lambda_2 \int\limits_{a}^{b}uh = \int\limits_{a}^{b}u_2 (-(ph')' + qh)$.
+    Отсюда следует, что $u_2 \in C^2[a, b]$.
+
+    \comment{////}
+    Ну, там, короче, я что-то пропустил, но мы получили, что $\lambda_2 > \lambda_1$.
 \end{document}
