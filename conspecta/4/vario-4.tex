@@ -193,7 +193,7 @@
     Итак, помимо уравнения Эйлера --- Лагранжа, мы получили два условия (но в разных точках) на уравнение второго порядка, можно надеяться, что хватит, чтобы найти решения (но это совсем не факт --- так, может существовать одно решение, а может их вовсе не быть, или быть бесконечно много).
 
     Подытожим в теорему.
-    \theorem[Задача со свободными концами]{
+    \theorem[Задача со свободными концами]{\label{free-ends}
         Пусть $L \in C^1([a, b] \times \R^n \times \R^n)$, пусть $X = C^1[a, b]$, пусть $u$ --- локальный экстремум $J$.
 
         Тогда
@@ -267,7 +267,7 @@
     \emph{Согласно полу-исторической, полулегендарной справке, некогда Дидона прибыла на берег некоего африканского государства, и потребовала, на основании своего высокого происхождения, выделить ей столько земли, сколько можно опоясать ремешком из шкуры одного быка\ldots}
 
     Напоминание конечномерного случая:
-    Пусть $\Omega \subset \R^d$ --- область, $f, g \in C^1(\Omega)$, $\mathcal{M} = \defset{x \in \Omega}{g(x) = 0}$.
+    пусть $\Omega \subset \R^d$ --- область, $f, g \in C^1(\Omega)$, $\mathcal{M} = \defset{x \in \Omega}{g(x) = 0}$.
 
     Заинтересуемся экстремумами сужения $f\big|_{\mathcal{M}}$.
     Пусть $x_0 \in \Omega$ -- экстремум.
@@ -281,60 +281,60 @@
     Это как раз градиент: $g(x(t)) = 0 \then \angles{(\nabla g)(x_0), \dot{x}} = 0$.
 
     Иными словами $\exists \lambda\in\R: \nabla(f - \lambda g) = 0$.
-    Далее для поиска экстремумов ищут критические точки $f - \lambda g$, выделяют те, которые в $\mathcal{M}$, а с обнулениями градиента $g$ разбираемся отдельно.
+    Далее для поиска экстремумов ищут критические точки $f - \lambda g$, выделяют те, которые в $\mathcal{M}$, а с обнулениями градиента $g$ разбираются отдельно.
 \ok
     Пускай $X$ --- нормированное замкнутое пространство, $G \in C^1(X)$ --- задающий условие функционал.
-    Иными словами,
+    Расшифруем условие $G \in C^1(X)$:
     \bullets{
-    \item $\forall x \in X: \exists G'(x) \in X^*: |G(x + s) - G(x) - G'(x)s| = o(\|s\|)$ --- сильная дифференциуремость в точке $x$.
+    \item $\forall x \in X: \exists G'(x) \in X^*: |G(x + s) - G(x) - G'(x)s| = o(\|s\|)$ --- \emph{сильная дифференцируемость} в точке $x$.
     \item $G': X \map X^*$ непрерывно.
     }
-    Для применения метода множителей Лагранжа нам понадобится лемма, что в направлении всякого вектора из $\Ker G'(x_0)$ можно пустить путь.
-    \lemma{
-    Пусть $x_0 \in \mathcal{M} \coloneqq \defset{x \in X}{G(x) =  0}$.
+    Для применения метода множителей Лагранжа нам понадобится лемма, что в направлении всякого вектора из $\Ker G'(x_0)$ можно пустить путь, аналогичная конечномерному случаю.
+    \lemma{\label{path-with-given-vector}
+    Пусть $x_0 \in \mathcal{M} \coloneqq \defset{x \in X}{G(x) = 0}$.
     Пусть $G'(x_0) \ne 0$.
 
-    Тогда $\forall h \in \Ker G'(x_0): \exists x: (\delta,\delta) \map \mathcal{M}, x \in C^1: x(0) = x_0, \dot{x}(0) = h$.
+    Тогда $\forall h \in \Ker G'(x_0): \exists x \in C^1((\delta,\delta) \map \mathcal{M}): x(0) = x_0, \dot{x}(0) = h$.
     \provehere{
-        Фиксируем $\xi \notin \Ker G'(x_0)$. Рассмотрим функцию $G[x_0 + t\xi + \tau h] \eqqcolon r(t, \tau)$. Это $C^1\left(\left[-\eps, \eps\right] \times [-\eps, \eps]\right)$.
+        Зафиксируем произвольный $\xi \notin \Ker G'(x_0)$. Определим $r(t, \tau) \coloneqq G[x_0 + t\xi + \tau h]$. Ясно, что $r \in C^1\left(\left[-\eps, \eps\right] \times [-\eps, \eps]\right)$.
 
-        $r(0, 0) = 0$, $\der{t}{t}(0, 0) = G'[x_0]\xi \ne 0$.
-        Применяя теорему о неявной функции, получаем $\exists \delta > 0: \defset{(t, \tau)}{\tau \in (-\delta, \delta), r(t, \tau) = 0}$ --- график $C^1$ функции $t = t(\tau), t: (\delta, \delta) \map \R$.
+        $r(0, 0) = 0$, $\der{r}{t}(0, 0) = G'[x_0]\xi \ne 0$.
+        Применяя теорему о неявной функции, получаем $\exists \delta > 0: \defset{(t, \tau)}{\tau \in (-\delta, \delta), r(t, \tau) = 0}$ --- график $C^1$ функции $t = t(\tau)$, где $t: (\delta, \delta) \map \R$.
 
-        $x: \tau \mapsto x_0 + t(\tau)\xi + \tau h$ --- искомая кривая.
+        Проверим, что $x: \tau \mapsto x_0 + t(\tau)\xi + \tau h$ --- искомая кривая:
     \numbers{
-    \item По построению $x: (\delta, \delta) \map \mathcal{M}$ --- класса $C^1$.
-    \item $\dot{x}(0) = \dot{t}(0)\xi + h$, с другой стороны, дифференцируя тождество $G(x(t)) = 0$, получаем $G'[x(0)] \cdot \dot{x}(0) = 0$
-    Отсюда $\dot{x}(0) \in \Ker G'[x_0]$. Значит, $\dot{t}(0) = 0$ (так как $\xi \notin \Ker G'[x_0]$).
-        Тем самым, $\dot{t}(0) = h$
+    \item По построению $x: (-\delta, \delta) \map \mathcal{M}$ --- класса $C^1$.
+    \item Дифференцируя тождество $G[x(t)] = 0$, получаем $G'[x(0)] \cdot \dot{x}(0) = 0$, значит, $\dot{x}(0) \in \Ker G'[x_0]$.
+        С другой стороны, $\dot{x}(0) = \dot{t}(0)\xi + h$, откуда $\dot{t}(0) = 0$ (ведь $\xi \notin \Ker G'[x_0]$).
+        Тем самым, $\dot{x}(0) = h$.
     }
     }
     }
     Пускай $F \in C^1(X), x_0 \in \mathcal{M}$ --- точка локального экстремума сужения $F\big|_{\mathcal{M}}$.
 
-    Рассмотрим только что построенную $x(\tau)$.
-    Должно быть $\frac{\d}{\d \tau}\Big|_{\tau = 0}F(x(\tau)) = 0$.
-    С другой стороны, она же $F'(x_0)\cdot h$.
+    Рассмотрим только что построенную кривую $x(\tau)$.
+    Так как $x_0$ --- экстремаль, то в частности должно быть $\frac{\d}{\d \tau}\Big|_{\tau = 0}F(x(\tau)) = 0$.
+    С другой стороны, это равно $F'(x_0)\cdot h$.
 
-    Значит, $\Ker G'[x_0] \subset \Ker F'[x_0]$, и $\exists \lambda \in \R: (F'(x_0) - \lambda G'(x_0)) = 0$ --- и $F'$, и $G'$ обнуляются на пространстве коразмерности 1.
-    Формальнее $\exists \eta \notin \Ker G'(x_0), \forall h \in X: h = \underbrace{(h - \frac{G'(x_0)h}{G'(x_0)\eta}\eta)}_{\in \Ker G'[x_0]} + \frac{G'(x_0)h}{G'(x_0)\eta}\eta$.
+    Значит, $\Ker G'[x_0] \subset \Ker F'[x_0]$, причём $\exists \lambda \in \R: (F'(x_0) - \lambda G'(x_0)) = 0$ --- и $F'$, и $G'$ обнуляются на пространстве коразмерности $1$.
+    Формальнее $\exists \eta \notin \Ker G'(x_0), \forall h \in X: h = \underbrace{\left(h - \frac{G'(x_0)h}{G'(x_0)\eta}\eta\right)}_{\in \Ker G'[x_0]} + \frac{G'(x_0)h}{G'(x_0)\eta}\eta$.
     Значит, $(F' - \lambda G')(h) = F'(x_0) \eta - \lambda G'(x_0)\eta$.
-    Подойдёт $\lambda = \frac{F'(x_0)\eta}{G'(x_0)\eta}$
+    Подойдёт $\lambda = \frac{F'(x_0)\eta}{G'(x_0)\eta}$.
 
     Получилась теорема:
-    \theorem{
-    Пускай $F, G \in C^1(X)$, пускай $x_0$ --- точка локального экстремума $F$ на $\mathcal{M} = \defset{x \in X}{G[x] = 0}$, пусть $G'[x_0] \ne 0$.
+    \theorem{\label{lagrangian-multipliers}
+    Пускай $F, G \in C^1(X)$, пускай $x_0$ --- точка локального экстремума $F$ на $\mathcal{M} \coloneqq \defset{x \in X}{G[x] = 0}$, пусть $G'[x_0] \ne 0$.
 
     Тогда $\exists \lambda \in \R: \forall h \in X: \delta(F - \lambda G)[x_0, h] = 0$ (отметим, что так как $F, G \in C^1$, то $\exists \delta (F - \lambda G)$.)
     }
     \exercise{Задача с фиксированными концами}
     \subsection{Случай нескольких условий}
-    Имеется $F, G_1, \dots, G)n \in C^1(X), \mathcal{M} = \defset{x \in X}{G_1[x] = \dots = G_n[x] = 0}$.
+    Даны $F, G_1, \dots, G_n \in C^1(X), \mathcal{M} = \defset{x \in X}{G_1[x] = \dots = G_n[x] = 0}$.
 
-    Образуем линейный оператор $\mathbb{G}'(x_0) = \vect{G'_1(x_0) \\ \vdots \\ G'_n(x_0)}: X \map \R^n$ ($\mathbb{G}'(x_0)h = \vect{G'_1(x_0)h \\ \vdots \\ G'_n(x_0)h}$)
+    Образуем линейный оператор $\mathbb{G}'(x_0) = \vect{G'_1(x_0) \\ \vdots \\ G'_n(x_0)}: X \map \R^n$ по правилу $\mathbb{G}'(x_0)h = \vect{G'_1(x_0)h \\ \vdots \\ G'_n(x_0)h}$.
 
-    \theorem{
-    Пусть $x_0$ --- точка локального экстремума $F$ на $\mathcal{M}$, пусть $\Ran \mathbb{G}'(x_0) = \R^n$ (экви $\sum c_j G'j(x_0) = 0 \then \forall j: c_j = 0$).
+    \theorem{\label{different-boundaries}
+    Пусть $x_0$ --- точка локального экстремума $F$ на $\mathcal{M}$, пусть $\Ran \mathbb{G}'(x_0) = \R^n$ (иными словами $\sum\limits_{j=1}^{n} c_j G'_j(x_0) = 0 \then \forall j: c_j = 0$).
 
     Тогда $\exists \lambda_1, \dots, \lambda_n \in \R: \forall h \in X: \delta(F - \sum \lambda_j G_j)[x_0, h] = 0$
     \provehere{
@@ -342,96 +342,92 @@
         В тех же предположениях невырожденности $\Ran \mathbb{G}'(x) = \R^n$ Пусть $\forall j: h \in \Ker G_j'(x_0)$.
         Тогда $\exists x: (-\delta, \delta) \map \mathcal{M}, x \in C^1, x(0) = x_0, \dot{x}(0) = h$.
     }{
-        тоже теорема о неявной функции.
+        Аналогично~(\cref{path-with-given-vector}), тоже теорема о неявной функции.
     }
-    Полностью аналогично скалярному случаю.
+    Полностью аналогично скалярному случаю $n = 1$.
     }
     }
     \note{
-    Применить скалярную теорему к $G[x] = \sum G_i^2[x]$ не получится, так как $G'[x] = 0$ везде на $\mathcal{M}$.
+    Можно попробовать применить скалярную теорему с $n = 1$ к функционалу $G[x] = \sum\limits_{i=1}^{n} G_i^2[x]$.
+        Однако это ничего не даст, так как $G'[x] = 0$ везде на $\mathcal{M}$.
     }
-    \exercise{Задача с фиксированными концами}
+    \exercise{Доказать аналогичное утверждение для задачи с фиксированными концами.}
+    Теперь применим~(\cref{different-boundaries}) к случаю интегральных функционалов.
 
-    Пускай $L, r_1, \dots, r_n \in C^1([a, b]\times\R^d \times \R^d)$, $J[u] = \int\limits_{a}^{b}L(t, u(t), \dot{u}(t))\d t, R_j[u] = \int\limits_{a}^{b}r_j(t, u(t), \dot{u}(t))\d t$.
+    Пускай $L, r_1, \dots, r_n \in C^1([a, b]\times\R^d \times \R^d)$, $J[u] \coloneqq \int\limits_{a}^{b}L(t, u(t), \dot{u}(t))\d t, R_j[u] \coloneqq \int\limits_{a}^{b}r_j(t, u(t), \dot{u}(t))\d t$.
 
-    Пускай $u_0$ --- точка локального экстремума $J\big|_{\bigcap R_j}$.
-    Пускай $\R(u_0) = \vect{R_1'(u_0) \\ \vdots \\ R_n'(u_0)}$ имеет полный ранг: $\Ran \R(x_0) = \R^n$.
+    Пусть $u_0$ --- точка локального экстремума $J\big|_{\bigcap R_j}$; оператор $\R(u_0) \coloneqq \vect{R_1'(u_0) \\ \vdots \\ R_n'(u_0)}$ имеет полный ранг.
 
     Тогда
     \numbers{
         \item $\exists \lambda_1, \dots, \lambda_n: \nabla_{\dot{u}}(L - \sum \lambda_j r_j)(t, u_0(t), \dot{u}_0(t)) \in C^1[a, b]$.
-    \item Выполнено уравнение Э --- Л: $\frac{\d}{\d t}\nabla_{\dot{u}}(L - \sum \lambda_j R_j) = \nabla_u (L - \sum \lambda_j R_j)$
-    \item $\nabla_{\dot{u}}(L - \sum \lambda_j r_j)\Big|_{t = a, t = b} = 0$.
+    \item Выполнено уравнение Эйлера --- Лагранжа: $\frac{\d}{\d t}\nabla_{\dot{u}}(L - \sum \lambda_j R_j) = \nabla_u (L - \sum \lambda_j R_j)$
+    \item $\nabla_{\dot{u}}(L - \sum \lambda_j r_j)\Big|_{t = a} = \nabla_{\dot{u}}(L - \sum \lambda_j r_j)\Big|_{t = b} = 0$.
     }
     \provehere{
-    Вытекает из доказательства первой теоремы (там использовалось только то, что вариация обращается в нуль, а не то, что $u_0$ --- экстремаль) и только что доказанного.
+    Вытекает из доказательства~(\cref{free-ends}) (там использовалось только то, что вариация обращается в нуль, а не то, что $u_0$ --- экстремаль) и~(\cref{lagrangian-multipliers}).
     }
     \example{
-    Пускай $\Omega \subset \R^3$ --- ограниченная односвязная, граница --- класса $C^1$. $X = C(\partial \Omega)$.
+    Пускай $\Omega \subset \R^3$ --- ограниченная односвязная область, граница которой --- поверхность класса $C^1$.
+        Введём пространство функций $X = C(\partial \Omega)$.
 
-    Заведём $J[\sigma] = \iint_{\partial \Omega \:\partial\Omega}\frac{\sigma(x)\sigma(y)\d S(x)\d S(y)}{|x - y|}$.
+    Заведём $J[\sigma] = \iint\limits_{\partial \Omega \:\partial\Omega}\frac{\sigma(x)\sigma(y)\d S(x)\d S(y)}{|x - y|}$.
 
-    $J$ непрерывен на $X$: $\xi: y \mapsto \int_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
-    \[J[\sigma + s] - J[\sigma] = 2\iint_{\partial \Omega \:\partial\Omega}\frac{s(x)\sigma(y)}{|x - y|}\d S(x)\d S(y) + \bigO(\|s\|^2_C)\]
+    $J$ непрерывен на $X$: $\xi: y \mapsto \int\limits_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
+    \[J[\sigma + s] - J[\sigma] = 2\iint\limits_{\partial \Omega \:\partial\Omega}\frac{s(x)\sigma(y)}{|x - y|}\d S(x)\d S(y) + \bigO(\|s\|^2_C)\]
 
     Значит, $s \mapsto \int\limits_{\partial\Omega}s(x)\xi(x)\d x$ непрерывен, откуда $J$ --- даже функционал класса $C^1(X)$.
     }
     \newlection{14 марта 2023 г.}
     Заинтересуемся экстремумами с постоянным значением $G[\sigma] = \int\limits_{\partial \Omega}\sigma(x)\d x$.
-    Это типа заряды на поверхности, минимизирующие энергию системы --- физический принцип говорит, что конечное положение экстрмально.
+    Решение будет отвечать распределению зарядов на поверхности, минимизирующее энергию системы --- физический принцип говорит, что конечное положение экстремально.
 
-    $J, G \in C^1(X)$.
+    Уже проверили, что $J, G \in C^1(X)$.
 
     Пусть $\sigma$ --- экстремаль $J\big|_{\sigma \in X}{G(\sigma) = Q}$.
-
-    Тогда $\delta (J - \lambda G)[\sigma, h] = 0 \forall h \in X$.
-
-    Посчитаем \[\delta (J - \lambda G)[\sigma, h] = ()[\sigma + h] - ()[\sigma] = 2\int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{\sigma(x)h(y)}{|x - y|}\d S(x)\d S(y) - \lambda \int\limits_{\partial \Omega} h(y)\d S(y) + \int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{h(x)h(y)}{|x - y|}\d S(x)\d S(y)\]
+    Тогда $\forall h \in X$: $\delta (J - \lambda G)[\sigma, h] = 0$.
+    Посчитаем \multline{\delta (J - \lambda G)[\sigma, h] = \delta (J - \lambda G)[\sigma + h] - \delta (J - \lambda G)[\sigma] =\\= 2\int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{\sigma(x)h(y)}{|x - y|}\d S(x)\d S(y) - \lambda \int\limits_{\partial \Omega} h(y)\d S(y) + \int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{h(x)h(y)}{|x - y|}\d S(x)\d S(y)}
     Третье слагаемое $\bigO(\|h\|^2_X)$: $\iint\frac{1}{|x - y|}$ сходится.
     Заметим, что остальная часть --- линейный функционал от $h$, где коэффициент непрерывен от $\sigma$.
     Это в точности значит, что $J \in C^1$.
-    \[J[\sigma + h] -J[\sigma] = l(h) + o(\|h\|)\text{, где }l_\sigma: h \mapsto \int \frac{\sigma(x)h(y)}{|x - y|}\d S(y) = \int \xi(y)h(y)\d S(y)\]
-    Напишем
-    \[\delta(J - \lambda G)[\sigma, h] = 2\int h(y)\d S(y)\left(2\int \frac{\sigma(x)\d S(x)}{|x - y|} - \lambda\right) = 0 \forall h \]
+    \[J[\sigma + h] -J[\sigma] = l_\sigma(h) + o(\|h\|)\text{, где }l_\sigma: h \mapsto \int \frac{\sigma(x)h(y)}{|x - y|}\d S(y) = \int \xi(y)h(y)\d S(y)\]
+    Запишем условие экстремальности:
+    \[\forall h: \delta(J - \lambda G)[\sigma, h] = 2\int h(y)\d S(y)\left(2\int \frac{\sigma(x)\d S(x)}{|x - y|} - \lambda\right) = 0\]
     По <<нулевой лемме Дюбуа-Реймона>>, выражение в скобочках должен быть всегда нулём.
 
     Получили
     \encircle{\lambda = 2\int \frac{\sigma(x)\d S(x)}{|x - y|}}
-Экстремаль $\sigma$ ищется, как решение <<интегрального уранвения>>: $K: f \mapsto \int \frac{f(x)\d S(x)}{|x - y|}$ --- ограниченный непрерывный интегральный оператор.
+Экстремаль $\sigma$ ищется, как решение <<интегрального уравнения>>: $K: f \mapsto \int \frac{f(x)\d S(x)}{|x - y|}$, это ограниченный непрерывный интегральный оператор.
     Таким образом, $\sigma$ --- решение $K \sigma = \frac{\lambda}{2}\1$.
 
     Иными словами, потенциал, создаваемый распределением заряда на самой поверхности постоянен.
-    Такая постановка задачи не очень естественна --- бывают точечные заряды, что ещё?
+    Такая постановка задачи не очень естественна --- например, бывают точечные заряды.
     Естественнее было бы рассматривать задачи вида $\sigma$ --- борелевская мера на $\partial \Omega$, $J[\sigma] = \int\frac{\d\sigma(x)\d \sigma(y)}{|x - y|}$.
         Тут уже уместно задавать вопросы о существовании интеграла, сходимости, и прочем, мы не будем это выяснять по причине нехватки аппарата.
 % Вот если бы вы выбрали курс по потенциалам, \textbf{А вы не выбрали!}, то там бы вам рассказали об этом подробнее
     \section{Функционалы на кривых}
-    Фиксируем две точки, надо, чтобы длина была максимальна.
-
-    В зависимости от расположения параметра, ответ может не реализовываться, как график функции.
-    С другой стороны, хотим независимость от параметризации, потому что зачем
-
-    \definition[Кривая $\gamma \in C$]{Непрерывное отображение $\gamma: [a, b] \map \R^n$}
-    \definition[Параметризованная кривая]{$\gamma'(x) \ne 0\forall x \in [a, b]$}.
-    \definition[Кривая $\gamma \in C^j$]{Кривая $\gamma \in C^j$}
+    В зависимости от того, как выбрать параметр, ответ --- кривая --- может не реализовываться, как график функции.
+    С другой стороны, хотим независимость от параметризации, потому что зачем.
+    \definition[Кривая $\gamma \in C$]{Непрерывное отображение $\gamma: [a, b] \map \R^n$.}
+    \definition[Параметризованная кривая $\gamma$]{$\forall x \in [a, b]: \gamma'(x) \ne 0$.}
+    \definition[Кривая $\gamma \in C^j$]{Кривая $\gamma \in C^j$.}
     Пусть $\gamma_1: [a_1, b_1] \map \R^n, \gamma_2: [a_2, b_2] \map \R^n$.
-    \definition[Эквивалентность кривых]{$\exists \kappa \in C^j([a_1, b_1] \map [a_2, b_2])$ --- диффеоморфизм, такой, что $\gamma_1 = \gamma_2 \circ \kappa$ и $\kappa'(x) > 0 \forall x$}
-    Ориентированная кривая --- класс эквивалентности относительно данного отношения.
+    \definition[Эквивалентность кривых $\gamma_1$ и $\gamma_2$]{ Диффеоморфтизм $\kappa \in C^j([a_1, b_1] \map [a_2, b_2])$, такой, что $\gamma_1 = \gamma_2 \circ \kappa$ и $\forall x: \kappa'(x) > 0$.
+    Класс эквивалентности относительно данного отношения зовётся \emph{ориентированная кривая}. }
 
-    Класс эквивалентности $\Gamma^j$ --- кривые класса $C^j$.
+    За $\Gamma^j$ обозначим множество ориентированных кривых, представители которых --- кривые класса $C^j$.
     Ещё используют $\Gamma^j[a, b]$.
 
-    Пускай $\Fc \in C(\R^n \times \R^n)$, пусть она однородна порядка $1$ по второму аргументу: $\Fc(\lambda, zw) = \lambda \Fc(z, w) \forall \lambda > 0$.
-    $\gamma: [a_\gamma, b_\gamma] \map \R^d$ --- кривая класса $C^1$.
-
-    $J[\sigma] = \int\limits_{a_\gamma}^{b_\gamma}\Fc[\gamma(t), \dot{\gamma(t)}]\d t$ --- <<квадратные скобки не несут никакого смысла>>.
+    Пускай $\Fc \in C(\R^n \times \R^n)$, пусть она однородна порядка $1$ по второму аргументу: \[\Fc(\lambda, zw) = \forall \lambda > 0: \lambda \Fc(z, w)\]
+    Пусть $\gamma: [a_\gamma, b_\gamma] \map \R^d$ --- кривая класса $C^1$.
+    Определим $J[\gamma] = \int\limits_{a_\gamma}^{b_\gamma}\Fc[\gamma(t), \dot{\gamma(t)}]\d t$.
 
     \proposal{
         В этой ситуации $J$ задаёт функционал на $\Gamma^1$.
     \provehere{
         Пусть $\gamma_1: [a_1, b_1] \map \R^n, \gamma_2: [a_2, b_2] \map \R^n$ --- два эквивалентных представителя.
     \multline{J[\gamma_1] = \int \Fc[\gamma_1(t), \dot{\gamma}_1(t)]\d t = \int \Fc [\gamma_2(\kappa(t)), \dot{\kappa}(t) \cdot \dot{\gamma}_2(\kappa(t))]\d t = \\
-    =\int \Fc [\gamma_2(\kappa(t)), \dot{\gamma}_2(\kappa(t))]\dot{\kappa}(t)\d t = \left\|\arr{c}{\tau = \kappa(t) \\ \d \tau = \dot{\kappa}(t)\d t}\right\| = \int \Fc[\gamma_1(\tau), \dot{\gamma}_1(\tau)]\d \tau}
+    =\int \Fc [\gamma_2(\kappa(t)), \dot{\gamma}_2(\kappa(t))]\dot{\kappa}(t)\d t = \left\|\arr{c}{\tau = \kappa(t) \\ \d \tau = \dot{\kappa}(t)\d t}\right\| = \int \Fc[\gamma_1(\tau), \dot{\gamma}_1(\tau)]\d \tau\qedhere}
     }
     }
     \examples{
@@ -440,8 +436,8 @@
     \item $\Fc(z, w) = |w|\cdot f(z)$, где, например, $n = 2$, $f(z) = z_2^{\alpha}$ (здесь $z = \vect{z_1\\z_2}$).
     \bullets{
         \item При $\alpha = 0$ это предыдущий случай.
-        \item При $\alpha = -1$ это длина в гиперболической плоскости (в модули Пуанкаре --- Лобачевского \comment{их?}).
-        \item При $\alpha = 1$ это координата центра масс, или же площадь поверхности вращения.
+        \item При $\alpha = -1$ это длина в гиперболической плоскости (в модули Пуанкаре в верхней полуплоскости).
+        \item При $\alpha = 1$ это координата центра масс кривой, а ещё --- площадь поверхности вращения.
     \item При $\alpha = -\frac{1}{2}$ это время, требуемое шарику, чтобы скатиться по жёлобу данной формы.
     }
     }
