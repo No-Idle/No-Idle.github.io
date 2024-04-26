@@ -1741,7 +1741,8 @@
 
     Пронумеруем $N = \{a_0, a_1, a_2, \dots\}$, удобно считать, что $|a_0| \le |a_1| \le \dots$.
     \theorem[Вейерштрасс]{
-        Существует целая функция $f$, мультимножество нулей которой совпадает с данным мультимножеством $N = \{a_0, a_1, \dots\}$, если $|a_0| \le |a_1| \le \dots$.
+        Существует целая функция $f$, мультимножество нулей которой совпадает с данным мультимножеством $N = \{a_0, a_1, \dots\}$.
+        Считаем $|a_0| \le |a_1| \le \dots$.
         Дополнительно предполагается, что $|a_j| \underset{j \to \infty}\Map \infty$.
         \comment{Кажется, это необходимое и достаточное условие того, что у $N$ нет предельных точек}
         \provehere{
@@ -1769,4 +1770,152 @@
             Получатся, данное произведение $\prod\limits_{j \ge 0}u_j(z)$ подходит.
         }
     }
+    \newlection{26 апреля 2024 г.}
+    \subsection{Упрощённый вид множителей Вейерштрасса}
+    Если известно, насколько быстро происходит стремление $|a_j|\underset{j \to \infty}\Map \infty$, то можно утверждать наличие сходимости и при множителях Вейерштрасса более простого вида.
+    \numbers{
+    \item Если $\sum\limits_{n \ge 0}\frac{1}{|a_n|} < \infty$, то никаких премудростей не надо: $\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z}{a_j}\right)$ сходится.
+    \provehere{
+        Зафиксируем $N \in \N$, и рассмотрим компакт $K \coloneqq \bigdefset{z \in \C}{|z| \le \frac{1}{2}a_N}$.
+        Надо доказать, что $\sum\limits_{j \ge N}\log\left(1 - \frac{z}{a_j}\right)$ сходится.
+
+        Под логарифмом стоят выражения вида $1 - t$, где $|t| \le \frac{1}{2}$.
+        Разложим в ряд и оценим: $\log(1 - t) = t + \frac{t^2}{2} + \frac{t^3}{3} + \dots = t\left(1 + \frac{t}{2} + \frac{t^2}{3} + \dots\right) \le t \cdot C$, где $C \coloneqq \sum\limits_{n \ge 1}\frac{\left(\nicefrac12\right)^{n-1}}{n}$.
+        Этой оценки достаточно: $\sum\limits_{j \ge N}\abs{\log\left(1 - \frac{z}{a_j}\right)} \le \sum\limits_{j \ge N}C\abs{\frac{z}{a_j}}$, что сходится равномерно по $z \in K$.
+    }
+    \item Если $\sum\limits_{n \ge 0}\frac{1}{|a_n|^2} < \infty$, то хватит первого члена при разложении логарифма в ряд: $\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z}{a_j}\right)e^{\frac{z}{a_j}}$ сходится.
+        \provehere{
+            Зафиксируем $N \in \N$, и рассмотрим компакт $K \coloneqq \bigdefset{z \in \C}{|z| \le \frac{1}{2}a_N}$.
+            Надо доказать, что $\sum\limits_{j \ge N}\log\left(1 - \frac{z}{a_j}\right)\cdot{\frac{z}{a_j}}$ сходится.
+
+            Разложим в ряд и оценим: $\log(1 - t)t = t^2 + \frac{t^3}{2} + \frac{t^4}{3} + \dots = t^2\left(1 + \frac{t}{2} + \frac{t^2}{3} + \dots\right) \le t^2 \cdot C$, где $C \coloneqq \sum\limits_{n \ge 1}\frac{\left(\nicefrac12\right)^{n-1}}{n}$.
+            Этой оценки достаточно: $\sum\limits_{j \ge N}\abs{\log\left(1 - \frac{z}{a_j}\right)\frac{z}{a_j}} \le \sum\limits_{j \ge N}C\abs{\frac{z}{a_j}}^2$, что сходится равномерно по $z \in K$.
+        }
+    }
+    \note{
+    Понятно, что целая функция с данным мультимножеством нулей не единственна --- можно взять любую другую целую функцию без нулей (скажем, экспоненту), и домножить на неё.
+    }
+    \corollary{
+    Пусть $f: \C \map \C$ --- целая функция с бесконечным числом нулей, и $g$ --- произведение Вейерштрасса по нулям функции $f$ (неважно, общего вида, или с упрощёнными множителями).
+
+    Тогда $\exists$ целая $h: \C \map \C$: $f = g e^h$.
+    \provehere{
+        $\frac{f}{g}$ --- целая функция (там, где у $g$ нули, у $f$ --- нули той же кратности, поэтому все особенности устранимы).
+        По той же причине $\forall z \in \C: \frac{f}{g}(z) \ne 0$.
+        Тем самым, у неё есть ветвь логарифма, выберем какую-то ветвь $h$, она как раз подходит.
+    }
+    }
+    Пусть $G$ --- область, $f$ аналитична в $G$ кроме некоторого множества полюсов.
+    Такая функция называется \emph{мероморфной в $G$}.
+    Так как полюса по определению изолированы, то их не более, чем счётное количество.
+
+    Мероморфную в $\C$ функцию называют мероморфной.
+    \corollary{
+    $f$ мероморфна $\iff \exists$ целые $g_1, g_2: f = \frac{g_1}{g_2}$.
+    \provehere{
+    Рассмотрим функцию $\frac{1}{f}$.
+        Она не равна тождественно нулю.
+
+    Пусть $g$ --- произведение Вейерштрасса по нулям функции $\frac{1}{f}$, $g \cdot f$ --- целая функция.
+    }
+    }
+    \subsection{Разложение синуса в произведение}
+    Разложим синус в произведение, построив произведение Вейерштрасса по его нулям.
+    А где нули синуса?
+    $\sin z = \frac{e^{iz} - e^{-iz}}{2}$.
+    \[\sin z = 0 \iff e^{iz} = e^{-iz} \iff e^{2iz} = 1 \iff z \in \defset{j \cdot \pi}{j \in \Z}\]
+    Как видим, сумма обратных квадратов сходится, поэтому можно записать произведение Вейерштрасса в виде
+    \[z\cdot\prod\limits_{j \in \Z \sm \{0\}}\left(1 - \frac{z}{j \pi}\right)e^{\frac{z}{j\pi}}\]
+    где произведение берётся в порядке возрастания модулей $j$.
+    Иными словами, \[z \cdot \lim\limits_{N \to \infty}\prod\limits_{\substack{j \le N \\ j \ne 0}}\left(1 - \frac{z}{j \pi}\right)e^{\frac{z}{j\pi}} = z \cdot \lim\limits_{N \to \infty}\prod\limits_{j = 1}^{N}\left(1 - \frac{z^2}{j^2 \pi^2}\right) = z \prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2 \pi^2}\right)\]
+    Как мы выяснили, $\exists$ целая $h: \C \map \C: \sin(z) = e^{h(z)} z \prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2 \pi^2}\right)$
+    \fact{
+    $h \equiv 0$ подойдёт (понятно, что если это правда, то $2\pi i k$ для $k \in \Z$ тоже подойдёт).
+    \provehere{
+        \indent{\note[О логарифмической производной]{
+            Пусть $\phi$ --- аналитическая функция, как известно, её логарифмическая производная $\frac{\phi'}{\phi}$.
+            Как видно из записи, она не зависит от того, какая ветвь логарифма где взята.
+
+            Если $\phi = \phi_1 \proddots \phi_k$, то несложно посчитать, что $\frac{\phi'}{\phi} = \frac{\phi_1'}{\phi_1} + \dots + \frac{\phi_n'}{\phi_n}$.
+            Утверждается, что формула сохраняется и для бесконечного произведения.
+
+            Пусть произведение $\prod\limits_{j = 1}^{\infty}\phi_j(z)$ сходится равномерно на любом компакте, не содержащем нулей функций $\phi_j$.
+        Пусть $K$ --- такой компакт, то есть $(\phi_1 \proddots \phi_n)(z) \rightrightarrows \phi(z)$ равномерно.
+            Тогда $(\phi_1 \proddots \phi_N)'(z) \rightrightarrows \phi'(z)$ на этом же компакте, и как следствие, $\frac{\phi_1'(z)}{\phi_1(z)} + \dots + \frac{\phi_N'(z)}{\phi_N(z)} = \frac{(\phi_1\proddots \phi_N)'(z)}{(\phi_1\proddots \phi_N)(z)} \rightrightarrows \frac{\phi'(z)}{\phi(z)}$
+        }
+        }
+        \bullets{
+            \item Возьмём логарифмическую производную обеих частей равенства $\sin(z) = e^{h(z)} \cdot z \cdot \prod\limits_{\substack{|j| \le N, j \ne 0}}\left(1 - \frac{z}{j\pi}\right)$:
+            \[\frac{\cos z}{\sin z} = h'(z) + \frac{1}{z} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N, j \ne 0}}\frac{1}{j\pi}\frac{1}{1 - \frac{z}{j\pi}} = h'(z) + \frac{1}{z} + \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N, j \ne 0}}\frac{1}{z - j\pi}\]
+            Отлично, у нас имеется равномерная сходимость на компактах, продифференцируем ещё раз:
+            \[1-\ctg(z)^2 = h''(z) - \frac{1}{z^2} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N, j \ne 0}}\frac{1}{\left(z - j\pi\right)^2}\]
+            \item Проведём окружность $\Gamma_k$ с центром в нуле, и радиусом $\pi\left(k + \frac{1}{2}\right)$, и докажем, что $h''$ ограничена на $\Gamma_k$ некоторой константой $C$, не зависящей от $k$.
+
+            Понятно $\frac{1}{z^2} \le \frac{4}{\pi^2}$, оценим при $z \in \Gamma_k: \frac{1}{|z - j\pi|^2} \le \frac{1}{(k + \frac{1}{2} - |j|)^2\pi^2}$.
+            \comment{Кажется, это не совсем правда, но может и вообще правда.}
+            Осталось оценить котангенс:
+            \[\ctg(z) = \frac{\cos z}{\sin z} = i \frac{e^{iz} + e^{-iz}}{e^{iz} - e^{-iz}}\]
+        Раскладывая $z = x + iy$, получаем
+            \[|\ctg(z)| = \abs{\frac{e^{-y}e^{ix} + e^y e^{-ix}}{e^{-y}e^{ix} - e^y e^{-ix}}}\]
+            Выберем $\eps < \frac{\pi}{4}$, и оценим котангенс вблизи вещественной оси (периодичность и непрерывность котангенса в круге радиуса $2\eps$), и при $|y| \ge \eps$:
+            \[\abs{\frac{e^{-y}e^{ix} + e^y e^{-ix}}{e^{-y}e^{ix} - e^y e^{-ix}}} \le \frac{e^y + e^{-y}}{|e^{-y} - e^y|} = \frac{e^y + e^{-y}}{e^{|y|} - e^{-|y|}} = \frac{e^{2y} + 1}{e^{2y} - 1} = 1 + \frac{2}{e^{2y} - 1} \le 1 + \frac{2}{e^{2\eps} - 1}\]
+        \item Тем самым, на $\Gamma_k$: $h''$ ограничена $C$, по принципу максимума $h''$ ограничена внутри круга этой же константой, значит, $h''$ вообще ограничена.
+
+            Согласно теореме Лиувилля, $h'' = \const$, тем самым, $h(z) = A + Bz + C z^2$ для некоторых $A,B,C \in \C$.
+        \item Подставим $h(z) =  A + Bz + C z^2$:
+        \[\frac{\cos z}{\sin z} = B + 2Cz + \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N}}\frac{1}{z - j\pi}\]
+        Здесь все слагаемые $2\pi$-периодичны, кроме $2 C z$. Вывод один: $C = 0$
+        \item Теперь подставим $\frac{\sin z}{z} = e^{A + Bz}\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2\pi^2}\right)$.
+            В силу чётности $B = 0$.
+        \item   Обозначим $D \coloneqq e^A$. $\frac{\sin z}{z} = D\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2\pi^2}\right)$.
+        Сопоставляя значения в $0$, получаем $D = 1$.
+        }
+    }
+    }
+    Ура,
+    \encircle{\sin z = z\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2\pi^2}\right)}
+    Попутно мы выяснили, что \encircle{\ctg(z) = \lim\limits_{N \to \infty}\sum\limits_{|j| \le N}\frac{1}{z - j\pi} = \frac{1}{z} + \sum\limits_{j = 1}^{\infty}\frac{2z}{z^2 - j^2\pi^2}}
+    Ещё немного преобразуем:
+    \[\frac{\ctg z - \frac{1}{z}}{2 z} = \sum\limits_{j = 1}^{\infty}\frac{1}{z^2 - j^2\pi^2}\]
+    Подставим $z \to 0$.
+    Слева оказывается $\frac{z \cos z - \sin z}{2 z^2 \sin z} = \frac{z - \frac{z^3}{2} - z + \frac{z^3}{6} + \bigO(z^5)}{2z^3 + \bigO(z^5)} = -\frac{1}{6} + o(1)$, а справа $-\frac{1}{\pi^2}\sum\limits_{j = 1}^{\infty}\frac{1}{j^2}$, образуя знаменитую формулу, выведенную Эйлером
+    \encircle{\sum\limits_{n = 1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}}
+    \subsection{$\Gamma$-функция Эйлера}
+    Хотим обобщить факториал в комплексной плоскости.
+
+    Построим аналитическую функцию $f$ в некоторой области $G$ (где $G$ хочется побольше), такую, что
+    \numbers{
+    \item $z \in G \then z + 1 \in G$.
+    \item $f(z + 1) = z f(z)$ --- эта формула почему-то слегка отличается от той, что у факториала.
+    \item $1 \in G$ и $f(1) = 1$.
+    }
+    Для удовлетворяющей таким условиям функции $f$ можно заметить, что $\forall n \in \N: f(n) = (n + 1)!$.
+
+    Дополнительно потребуем $\forall z \in G: f(z) \ne 0$, например, чтобы можно было спокойно писать $z = \frac{f(z + 1)}{f(z)}$.
+
+    К сожалению, не всё возможно в этой жизни.
+    Заведомо $0 \notin G$: если $0 \in G$, то $f(1) = f(0 + 1) = 0 \cdot f(0) = 0$.
+    Далее первое условие влечёт, что $-1, -2, -3 \notin G$.
+
+    Положим $G \coloneqq \C \sm \{0, -1, -2, \dots\}$, и построим в этой области функцию с указанными свойствами, имеющую простые полюса в выколотых точках.
+    Она не единственна, но сейчас мы увидим наиболее естественный кандидат.
+
+    Пусть $f$ --- такая.
+    Положим $g \coloneqq \frac{1}{f}$ --- целая функция с простыми нулями в $\{0, -1, -2, \dots\}$.
+    Построим $g$, используя множители Вейерштрасса ($h$ --- какая-то целая):
+    \[g(z) = z e^{h(z)} \prod\limits_{n = 1}^{\infty}\left(1 + \frac{z}{n}\right)e^{-\frac{z}{n}}\]
+    Теперь удовлетворим функциональное уравнение: $g(z + 1) = \frac{g(z)}{z}$.
+    \begin{align*}g(z) &= z e^{h(z)}\lim\limits_{N \to \infty}\prod\limits_{n = 1}^{N}\frac{n + z}{n}e^{-\frac{z}{n}}\\
+    g(z + 1) &= (z + 1)e^{h(z + 1)}\lim\limits_{N \to \infty}\prod\limits_{n = 1}^{N}\frac{1 + n + z}{n}e^{-\frac{z}{n} - \frac{1}{n}}\\
+    \frac{g(z + 1)}{g(z)} &= \frac{z + 1}{z}e^{h(z + 1) - h(z)}\lim\limits_{N \to \infty}\frac{N + 1 + z}{1 + z}e^{-1 - \frac{1}{2} - \frac{1}{3} - \dots - \frac{1}{N} + \log N}e^{-\log N}\end{align*}
+    Как доказывалось во II семестре, $1 + \frac{1}{2} + \dots + \frac{1}{N} - \log N \underset{N \to \infty}\Map \gamma$ --- \emph{постоянная Эйлера --- Маскерони}.
+    Итак, от функции $h$ хочется свойства
+    \[\frac{1}{z} = \frac{1}{z}e^{h(z + 1) - h(z)}e^{-\gamma}\]
+    Самым простым решением будет взять линейную функцию $h(z) = \gamma z$.
+    Получили
+    \[g(z) = z e^{\gamma z}\prod\limits_{n = 1}^{\infty}\left(1 + \frac{z}{n}\right)e^{-\frac{z}{n}}\]
+    Проверим, что $g(1) = 1$:
+    \multline{g(1) = e^{\gamma}\prod\limits_{n = 1}^{\infty}\left(1 + \frac{1}{n}\right)e^{-\frac{1}{n}} = e^{\gamma}\lim\limits_{N \to \infty}\frac{2 \cdot 3 \proddots (N + 1)}{N!}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N}} = \\
+    =e^{\gamma}\lim\limits_{N \to \infty}\frac{2 \cdot 3 \proddots (N + 1)}{N! \cdot N}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N} + \log N} = 1}
+    Чудесным образом ничего подкручивать не пришлось.
 \end{document}
