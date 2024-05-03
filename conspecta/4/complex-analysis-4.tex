@@ -1841,7 +1841,7 @@
 
             Пусть произведение $\prod\limits_{j = 1}^{\infty}\phi_j(z)$ сходится равномерно на любом компакте, не содержащем нулей функций $\phi_j$.
         Пусть $K$ --- такой компакт, то есть $(\phi_1 \proddots \phi_n)(z) \rightrightarrows \phi(z)$ равномерно.
-            Тогда $(\phi_1 \proddots \phi_N)'(z) \rightrightarrows \phi'(z)$ на этом же компакте \comment{почему? в общем случае это неверно же}, и как следствие, $\frac{\phi_1'(z)}{\phi_1(z)} + \dots + \frac{\phi_N'(z)}{\phi_N(z)} = \frac{(\phi_1\proddots \phi_N)'(z)}{(\phi_1\proddots \phi_N)(z)} \rightrightarrows \frac{\phi'(z)}{\phi(z)}$
+            Тогда $(\phi_1 \proddots \phi_N)'(z) \rightrightarrows \phi'(z)$ на этом же компакте, и как следствие, $\frac{\phi_1'(z)}{\phi_1(z)} + \dots + \frac{\phi_N'(z)}{\phi_N(z)} = \frac{(\phi_1\proddots \phi_N)'(z)}{(\phi_1\proddots \phi_N)(z)} \rightrightarrows \frac{\phi'(z)}{\phi(z)}$
         }
         }
         \bullets{
@@ -1881,6 +1881,7 @@
     Слева оказывается $\frac{z \cos z - \sin z}{2 z^2 \sin z} = \frac{z - \frac{z^3}{2} - z + \frac{z^3}{6} + \bigO(z^5)}{2z^3 + \bigO(z^5)} = -\frac{1}{6} + o(1)$, а справа $-\frac{1}{\pi^2}\sum\limits_{j = 1}^{\infty}\frac{1}{j^2}$, образуя знаменитую формулу, выведенную Эйлером
     \encircle{\sum\limits_{n = 1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}}
     \subsection{$\Gamma$-функция Эйлера}
+    \label{gamma}
     Хотим обобщить факториал в комплексной плоскости.
 
     Построим аналитическую функцию $f$ в некоторой области $G$ (где $G$ хочется побольше), такую, что
@@ -1918,4 +1919,118 @@
     \multline{g(1) = e^{\gamma}\prod\limits_{n = 1}^{\infty}\left(1 + \frac{1}{n}\right)e^{-\frac{1}{n}} = e^{\gamma}\lim\limits_{N \to \infty}\frac{2 \cdot 3 \proddots (N + 1)}{N!}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N}} = \\
     =e^{\gamma}\lim\limits_{N \to \infty}\frac{2 \cdot 3 \proddots (N + 1)}{N! \cdot N}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N} + \log N} = 1}
     Чудесным образом ничего подкручивать не пришлось.
+    \newlection{3 мая 2024 г.}
+    Итак, определили
+    \[\Gamma(z) \bydef \frac{1}{z}e^{-\gamma z} \frac{1}{\prod\limits_{n = 1}^{\infty}\left(1 + \frac{z}{n}\right)e^{-\frac{z}{n}}}\tag{$*$}\label{gamma-def}\]
+    \note{
+    Пусть $\phi$ --- целая функция с периодом $1$. Тогда $\Gamma \cdot \phi$ тоже подходит, как функция, удовлетворяющая трём условиям из~(\cref{gamma})
+    }
+    Немного преобразовав выражение для гамма-функции, можно получить следующее:
+    \[\Gamma(z) = e^{-\gamma z}\frac{1}{z}\lim\limits_{N \to \infty}\frac{N!}{(1 + z)\proddots (N + z)}e^{z\left(1 + \dots + \frac{1}{N}\right)} = \lim\limits_{N \to \infty}\frac{N! \cdot e^{z \log N}}{z\cdot  (1 + z)\proddots (N + z)}\]
+    Также имеется так называемая \emph{формула дополнения}:
+    \[\Gamma(z)\Gamma(-z) = -\frac{1}{z^2}\frac{1}{\prod\limits_{n = 1}^{\infty}\left(1 - \frac{z^2}{n^2}\right)} = -\frac{1}{z}\frac{\pi}{\sin \left(\pi z\right)}\]
+    Часто её записывают немного в другом виде, домножив на $z$, и воспользовавшись функциональным уравнением: $\Gamma(z)\Gamma(1 - z) = \frac{\pi}{\sin \left(\pi z\right)}$.
+    Кстати, отсюда видно, чему равен <<факториал>> от половинки: $\Gamma\left(\frac{1}{2}\right)^2 = \pi$.
+
+    Определим $g(z) \coloneqq \frac{1}{\Gamma(z)}$, это целая функция с нулями в целых неположительных точках.
+    Значит, у $g$ имеется непрерывная ветвь логарифма в $\C \sm (-\infty; 0]$.
+    Одна из них равна
+    \[\log g(z) = \log z + \gamma z + \sum\limits_{n = 1}^{\infty}\left(\log\left(1 + \frac{z}{n}\right) - \frac{z}{n}\right)\]
+    Про эту ветвь даже можно утверждать, что она главная, так как у неё, как и у гамма-функции, значения на вещественной оси вещественные.
+    Дифференцируя $\log g(z)$, получаем
+    \[\left(\log(g(z))\right)' = \frac{1}{z} + \gamma + \sum\limits_{n = 1}^{\infty}\left(\frac{\frac{1}{n}}{1 + \frac{z}{n}} - \frac{1}{n}\right) = \frac{1}{z} + \gamma + \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z} - \frac{1}{n}\right)\]
+    Таким образом, $\left(\log \Gamma(z)\right)' = -\frac{1}{z} - \gamma - \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z} - \frac{1}{n}\right)$, и
+    \[\left(\log \Gamma(z)\right)'' = \frac{1}{z^2} + \sum\limits_{n = 1}^{\infty}\frac{1}{(n + z)^2} = \sum\limits_{n = 0}^{\infty}\frac{1}{(n + z)^2}\tag{$\star$}\label{gamma-prime-twice}\]
+    \corollary{На $\R_{> 0}$: $\log \Gamma(z)$ есть выпуклая функция. }
+    \theorem{\label{gamma-uniqueness}
+    Пусть $\phi$ --- непрерывная положительная функция на $\R_{> 0}$, $\phi(1) = 1$, и $\phi$ удовлетворяет функциональному уравнению: $\forall x \in \R_{> 0}: x\phi(x) = \phi(x + 1)$.
+    Если $\log\phi$ выпукла, то $\forall x > 0: \phi(x) = \Gamma(x)$.
+    \provehere{
+        В целых точках $\phi(n) = (n + 1)!$, и достаточно доказать, что $\phi(x) = \Gamma(x)$ при всех $x \in (0, 1)$, функциональное уравнение влечёт равенство в остальных точках.
+
+        Определим $g(x) \coloneqq \log \phi(x)$, тогда функциональное уравнение переписывается в виде $g(x + 1) - g(x) = \log x$.
+    Из выпуклости $\forall n \in \N, n > 1, \forall x \in (0, 1)$:
+    \[\underbrace{\frac{g(n - 1) - g(n)}{(n - 1) - n}}_{\log(n - 1)} \le \frac{g(n + x) - g(n)}{(n + x) - n} \le \underbrace{\frac{g(n + 1) - g(n)}{(n + 1) - n}}_{\log (n)}\]
+    Преобразуем средний член неравенства:
+    \[g(x + n) - g(n) = \sum\limits_{k = 0}^{n - 1}\biggl(g(x + k + 1) - g(x + k)\biggr) + g(x) - g(n) = \sum\limits_{k = 0}^{n - 1}\log(x + k) + g(x) - \log\left(\left(n - 1\right)!\right)\]
+    Выражая $g(x)$, получаем
+    \[x\log(n - 1) - \sum\limits_{k = 0}^{n - 1}\log(x + k) + \log(\left(n - 1\right)!) < g(x) < x\log(n) - \sum\limits_{k = 0}^{n - 1}\log(x + k) + \log(\left(n - 1\right)!)\]
+    Разность между левой и правой частями $x\log(n - 1) - x\log(n) \underset{n \to \infty}\Map 0$.
+        Понятно, что $g(x) = \log\Gamma(x)$ подходит, так как удовлетворяет посылке теоремы, и так как разность между пределами стремится к нулю, то в пересечении всего одна точка.
+        Тем самым, $g(x)$ определена однозначно.
+    }
+    }
+    \subsection{Эйлеров интеграл}
+    Определим
+    \[\Psi(z) = \int\limits_{0}^{\infty}e^{-t}t^{z - 1}\d t,\quad z \in \C\]
+    Когда $\Psi$ определена, а интеграл сходится?
+    Разложим $z = x + iy$, где $x, y \in \R$.
+    Теперь $\Psi(z) = \int\limits_{0}^{\infty}e^{-t}e^{x - 1}t^{iy}\d t$.
+    На $+\infty$ экспонента мажорирует остальные члены, в нуле имеется особенность, и интеграл суммируем, если $x > 0$.
+
+    Тем самым, $\Psi(z)$ определена при $\Re z > 0$.
+
+    \theorem{
+        $\Psi(z) = \Gamma(z)$ при $z > 0$.
+    \provebullets{
+    \item Ясно, что $\Psi(z) > 0$ при $z \in \R_{> 0}$.
+        \item $\Psi$ аналитична при $\Re z > 0$, так как можно продифференцировать под знаком интеграла: производная суммируема.
+
+        \item $\Psi(1) = \int\limits_{0}^{\infty}e^{-t}\d t = \left(-e^{-t}\right)\big|_{0}^{\infty} = 1$.
+    \item Убедимся, интегрируя по частям, что $x\Psi(x) = \Psi(x + 1)$
+    \[\Psi(z + 1) = \int\limits_{0}^{\infty}e^{-t}t^{x}\d t = -\int\limits_{0}^{\infty}t^x \d (e^{-t})\d t = -\left(t^x e^{-t}\right)\big|_{0}^{\infty} + \int\limits_{0}^{\infty}x t^{x - 1}e^{-t}\d t = x \Psi(x)\]
+    \item Убедимся, что $\log \Psi$ выпукла на вещественной оси: $\forall x, y \in \R_{> 0}, \forall \alpha, \beta \in [0, 1], \alpha + \beta = 1$:
+    \multline{\log\Psi(\alpha x + \beta y) \le \alpha \log \Psi(x) + \beta \Psi(y) \\ \Psi(\alpha x + \beta y) \le \Psi(x)^\alpha \Psi(y)^\beta \\ \int\limits_{0}^{\infty}t^{\alpha x + \beta y - 1}e^{-t}\d t = \int\limits_{0}^{\infty}(t^{x - 1})^\alpha \cdot (t^{y - 1})^\beta e^{-t}\d t}
+    что верно по неравенству Гёльдера.
+    \item Согласно теореме единственности~(\cref{gamma-uniqueness}), $\Psi(z) = \Gamma(z)$ при $\Re z > 0$.
+    }
+    }
+    В частности,
+    \[\sqrt{\pi} = \int\limits_{0}^{\infty}e^{-t}t^{-\frac{1}{2}}\d t = \left\|\arr{c}{t = x^2 \\ \d t = 2x \d x}\right\| = 2\int\limits_{0}^{\infty}e^{-x^2}\d x = \int\limits_{-\infty}^{\infty}e^{-x^2}\d x\]
+    \subsection{Формула Стирлинга}
+    На первом курсе мы доказали, что $\exists c \in \R: n! \sim c \sqrt{n}n^n e^{-n}$.
+    Так как гамма-функция определена со сдвигом, то будем преобразовывать выражение для $(n - 1)!$:
+    \multline{(n - 1)! \sim c\sqrt{n - 1}(n - 1)^{n - 1}e^{-n + 1} = c e \frac{1}{\sqrt{n - 1}}(n - 1)^{n}e^{-n} =\\= c e \frac{1}{\sqrt{n}}\sqrt{\frac{n}{n - 1}}\left(1 - \frac{1}{n}\right)^n n^n e^{-n} \sim c \frac{1}{\sqrt{n}}n^n e^{-n}}
+    \theorem{
+    Пусть $\phi > 0$.
+        Для $\defset{z \in \C}{\arg z \in (-\pi + \phi, \pi - \phi)}$, то есть из области без угла:
+        \[\arr{ccc}{\begin{tikzpicture}[baseline=(current bounding box.center)]
+               \fill[lightblue] (0, 0) circle (0.8);
+               \fill[white] (-1,0.5) -- (0,0) -- (-1,-0.5) -- cycle;
+               \draw[->] (-1, 0) -- (1, 0) node[above] {\(\Re\)};
+               \draw[->] (0, -1) -- (0, 1) node[right] {\(\Im\)};
+               \draw[red]\leftarc{0}{0}{-0.4}{0}{-0.4}{-0.2} node[left] {$\phi$};
+        \end{tikzpicture}&\qquad&\log(\Gamma(z)) = \log \sqrt{2\pi} + \log\frac{1}{z^{\frac{1}{2}}} - z + z \log z + \bigO\left(\frac{1}{|z|}\right)}\]
+    Здесь логарифм и корень определены в $\C \sm [0, +\infty)$, вещественные на вещественной оси.
+    Потенцируя, получаем $\Gamma(z) \sim \sqrt{2\pi}\frac{1}{z^{\frac{1}{2}}}e^{-z}e^{z \log z}$
+    \provehere{
+        Будем использовать~\eqref{gamma-prime-twice}. Положим $\phi(t) \coloneqq \frac{1}{(t + z)^2}$, и приблизим $\sum\limits_{n = 1}^{\infty}\phi(n)$ интегралом.
+        Оценим, что при замене погрешность не очень большая:
+    \[\phi(n) - \int\limits_{n - \frac{1}{2}}^{n + \frac{1}{2}}\phi(t)\d t = \int\limits_{n - \frac{1}{2}}^{n + \frac{1}{2}}(\phi(n) - \phi(t))\d t = \int\limits_{0}^{\frac{1}{2}}(2\phi(n) - \phi(n + t) - \phi(n - t))\d t\]
+    Тем самым, $\phi(n) = \int\limits_{n - \frac{1}{2}}^{n + \frac{1}{2}}\phi(t)\d t + \int\limits_{0}^{\frac{1}{2}}(2\phi(n) - \phi(n + t) - \phi(n - t))\d t$, и согласно~\eqref{gamma-prime-twice}:
+    \[\left(\log \Gamma(z)\right)'' = \frac{1}{z^2} + \underbrace{\sum\limits_{n = 1}^{\infty}\int\limits_{n - \frac{1}{2}}^{n + \frac{1}{2}}\frac{1}{(t + z)^2}\d t}_{\int\limits_{\nicefrac{1}{2}}^{\infty}\frac{1}{(t + z)^2}\d t = \frac{1}{\nicefrac{1}{2} + z}} + \sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\left(\frac{2}{(n + z)^2} - \frac{1}{(n + z + t)^2} - \frac{1}{(n + z - t)^2}\right)\d t\]
+    Дважды почленно возьмём первообразную обеих частей, пока не заботясь вопросами сходимости:
+    \gather{\left(\log \Gamma(z)\right)' \overset{?}= A - \frac{1}{z} + \log\left(z + \frac{1}{2}\right) + \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z + t} + \frac{1}{n + z - t} - \frac{2}{n + 1}\right) \\
+    \log( \Gamma(z)) \overset{?}= B + Az - \log z + \log\left(z + \frac{1}{2}\right)\left(z + \frac{1}{2}\right) - z + \sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\frac{(n + z)^2 - t^2}{(n + z)^2}\d t}
+    Так как $z$ бегает в области без угла, то $|n + z| \ge n\sin(\phi)$.
+        Таким образом, $\log\left(1 - \frac{t^2}{(n + z)^2}\right)$ оценивается сверху конкретным числом, и ряд $\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)$ сходится абсолютно и равномерно.
+        В частности, сходится равномерно на компактах, значит, его можно дважды продифференцировать почленно, получится $(\log \Gamma (z))''$.
+        Вопросы сходимости решены, $\overset{?}=$ можно заменить на $=$.
+    Оценим остаток:
+    \[\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)\d t \le C_1 \sum\limits_{n = 1}^{\infty}\frac{1}{(n + |z|)^2} \le C_2\frac{1}{|z|}\]
+        Заметим, что $\log\left(z + \frac{1}{2}\right) - \log\left(z\right) = \log\left(1 + \frac{1}{2z}\right) = \frac{1}{2z}+ \bigO(\frac{1}{|z|^2})$, и преобразуем
+    \[\left(z + \frac{1}{2}\right)\log\left(z + \frac{1}{2}\right) = \frac{1}{2} + z \log z + \frac{1}{2}\log z + \bigO\left(\frac{1}{|z|}\right)\]
+    Тем самым,
+    \[\log(\Gamma(z)) = B + Az - \frac{1}{2}\log z + z \log z + \bigO\left(\frac{1}{|z|}\right)\]
+    Осталось выяснить, чему равны константы $A$ и $B$.
+    Так как мы знаем для натуральных $n$, что $\Gamma(n) = (n - 1)! \sim c e^{-n}\frac{1}{\sqrt{n}}n^n$ при $n \to \infty$, то $A = -1$.
+
+    Теперь запишем формулу дополнения $\Gamma(z) \Gamma(-z) = -\frac{\pi}{z \sin \left(\pi z\right)}$.
+        Так как $\Gamma$ вещественна на вещественной оси, или из интегральной формулы, видно, что $\Gamma(z) = \overline{\Gamma\left(\overline{z}\right)}$.
+        Тем самым, при $y \in \R$:
+    \[|\Gamma(iy)|^2 = -\frac{\pi}{i y \sin\left(\pi i y\right)} = -\frac{2\pi }{y\left(e^{-y \pi} - e^{y\pi}\right)} \sim \frac{2\pi}{y e^{y\pi}}\]
+    С другой стороны, $\Gamma(iy) \sim e^{B}e^{-iy}e^{-\frac{1}{2}\left(\log y + \frac{\pi}{2}i\right)}e^{iy\left(\log y + \frac{\pi}{2}i\right)}$, откуда $|\Gamma(iy)| = e^B \frac{1}{\sqrt{y}}e^{-\frac{\pi}{2}y}$.
+        Тем самым, $e^{2B} = 2\pi$, и так как $B \in \R$, то $B = \log\sqrt{2\pi}$
+    }
+    }
 \end{document}
