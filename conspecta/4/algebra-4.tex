@@ -1745,7 +1745,7 @@
     \corollary{
     Для расширения Галуа: $|\Gal(E/F)| = [E : F]$.
     }
-    \theorem[Лемма Артина]{
+    \theorem[Лемма Артина]{\label{lemma-artin}
         Пусть $E$ --- поле, и $G \le \Aut(E)$, $|G| < \infty$. Обозначим $F \coloneqq E^G \bydef \defset{\alpha \in E}{\forall g \in G: g\alpha = \alpha}$.
 
         Тогда $[E : F] = |G|$.
@@ -1764,4 +1764,136 @@
         Вычитая решения, получаем противоречие.
     }
     }
+    \newlection{6 мая 2024 г.}
+    \corollary{
+    Для любой группы $G \le \Aut(E)$: $\Aut(E/E^G) = G$.
+    \provehere{
+    Очевидно, $G \le \Aut(E/E^G)$. По лемме Артина $|G| = [E : E^G] \ge |\Aut(E/E^G)| \ge |G|$, и равенство достигается только при $G = \Aut(E/E^G)$
+    }
+    }
+    \theorem[Характеризация расширений Галуа]{\label{galois-extension}
+    Пусть $E/F$ --- расширение полей. Следующие условия эквивалентны:
+    \numbers{
+    \item $E/F$ --- расширение Галуа.
+    \item $E$ --- поле разложения некоторого сепарабельного $f \in F[t]$.
+    \item $F = E^{\Aut(E/F)}$ и $[E:F] < \infty$.
+    \item Для некоторой $G \le \Aut(E)$: $F = E^G$.
+    }
+    \provebullets{
+    \item[$(1) \then (2)$] Аналогично доказательству~(\cref{harvesting-corollary}).
+        Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
+    Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
+
+    $f$ сепарабелен, как произведение взаимно простых сепарабельных многочленов, $E$ порождено корнями $f$, и так как $E/F$ нормально, то $f$ разложим на линейные множители в $E$.
+    Тем самым, $E = F_f$.
+    \item[$(2)\then(3)$] Согласно~(\cref{harvesting-corollary}), $|\Aut(E/F)| = [E : F]$.
+        Ясно, что $F \subset \tilde{F} \coloneqq E^{\Aut(E/F)}$.
+        С другой стороны, по лемме Артина, $[E : \tilde{F}] = |\Aut(E/F)|$, откуда $[\tilde{F} : F] = 1$.
+    \item[$(3) \then (4)$] Согласно~(\cref{harvesting}), $[E : F] < \infty \then |\Aut(E/F)| < \infty$, тем самым, $G \coloneqq \Aut(E/F)$ подойдёт.
+    \item[$(4)\then(1)$] По лемме Артина, $[E : F] = |G|$, тем самым, расширение конечно.
+    Пусть $f \in F[t]$ --- неприводимый, имеющий корень $\alpha \in E$.
+        Рассмотрим орбиту $\alpha$ под действием $G$: $G\alpha = \{\alpha_1, \dots, \alpha_m\}$.
+        Пусть $h(t) \coloneqq (t - \alpha_1) \proddots (t - \alpha_m) \in E[t]$.
+        Раскрыв скобки (по теореме Виета) \[h(t) = t^m - s_1(\alpha_1,\dots,\alpha_m)+s_2(\alpha_1, \dots,\alpha_m)+\dots+(-1)^m s_m(\alpha_1, \dots, \alpha_m)\]где $s_k(\alpha_1, \dots, \alpha_m)$ --- $k$-й основной симметрический многочлен, то есть сумма всевозможных произведений вида $\alpha_{i_1} \proddots \alpha_{i_k}$ по всем кортежам $1 \le i_1 < \dots < i_k \le m$.
+
+        Таким образом, $\forall g \in G: \exists \sigma \in S_m: g(\alpha_i) = \alpha_{\sigma(i)}$. $g$ переставляет $\alpha_i$, тем самым, коэффициенты $h$ лежат в $E^G = F$, иными словами, $h \in F[t]$.
+        Но раз $h$ раскладывается на различные линейные множители в $E[t]$, то минимальный многочлен $\alpha$ (который делит $h$) тоже раскладывается на различные линейные множители в $E[t]$.
+        Так как $\alpha \in E$ был произвольным, то $E/F$ по определению сепарабельно и нормально.
+    }
+    }
+    \subsection{О сепарабельных расширениях}
+    \corollary{\label{sepa}
+        Расширение, порождённое конечным числом сепарабельных элементов, вкладывается в расширение Галуа (и, следовательно, сепарабельно).
+        \provehere{
+            Аналогично доказательству~(\cref{harvesting-corollary}).
+            Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
+            Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
+
+            $f$ сепарабелен, можно устроить вложение $E \hookrightarrow F_f$ (оно есть, например, согласно~(\cref{harvesting-corollary})), а $F_f$ --- расширение Галуа согласно~(\cref{galois-extension}).
+        }
+    }
+    \corollary{
+    Пусть $K/F$ --- расширение полей.
+        Множество элементов $K$, сепарабельных над $F$, образует поле.
+    \provehere{
+    $\forall \alpha, \beta \in K: F[\alpha, \beta]$ сепарабельно~(\cref{sepa}), значит, $\alpha + \beta, \alpha\beta$ и даже $\frac{\alpha}{\beta}$ (при $\beta \ne 0$) тоже сепарабельны.
+    }
+    }
+    Это поле называется \emph{сепарабельным замыканием} $F$ в $K$.
+    Если опускают $K$, то подразумевается сепарабельное замыкание в $\sep{F} \subset \alg{F}$.
+    \definition[Чисто несепарабельное расширение $K/E$]{
+    $\forall \alpha \in K \sm E$: $\alpha$ не сепарабелен над $E$.
+    }
+    \corollary{
+    Любое алгебраическое расширение $K/F$ раскладывается в башню сепарабельного расширения $E/F$ и чисто несепарабельного $K/E$.
+    \provehere{
+        Выберем за $E$ сепарабельное замыкание $F$ в $K$.
+        Дальше упражнение.
+    }
+    }
+
+    \corollary{
+        Пусть имеется башня расширений $E/K/F$, и $E/F$ --- расширение Галуа.
+        Тогда $E/K$ --- расширение Галуа.
+        \provehere{
+            Раз $E/F$ --- расширение Галуа, то $\exists f \in F[t]: E = F_f$, где $f$ сепарабелен.
+            Тогда $E = K_f$, значит, $E/K$ --- действительно расширение Галуа.
+        }
+    }
+    \section{Соответствие Галуа}
+    Теперь у нас всё готово, чтобы установить соответствие Галуа.
+
+    $E/F$ --- расширение Галуа, $G \coloneqq \Gal(E/F) = \Aut(E/F)$.
+    Пусть $\mathcal{F} \coloneqq \defset{K \le E}{F \le K \le E}$, и $\mathcal{G} \coloneqq \{H \le G\}$.
+    Тогда имеется биекция $\mathcal{F} \leftrightarrow \mathcal{G}$: подполю $K \in \mathcal{F}$ сопоставляется $\Gal(E/K) \le G$.
+    Обратно, подгруппе $H \in \mathcal{G}$ сопоставляется подполе $E^H$.
+    \theorem[Соответствие Галуа]{
+    Указанные выше отображения $\mathcal{F} \leftrightarrow \mathcal{G}$ --- взаимно обратные биекции, удовлетворяющие следующим свойствам:
+    \bullets{
+    \item Монотонность по включению: $H \le H' \le G \then E^{H'} \le E^H$.
+    \item При $H \le H' \le G: |H : H'| = [E^H : E^{H'}]$.
+    \item $\forall \sigma \in G: \sigma\left(E^H\right) = E^{\sigma H \sigma^{-1}}$.
+    \item $E^H/F$ --- расширение Галуа $\iff H \normeq G$.
+        В этом случае $\Gal(E^H / F) \cong G/H$.
+    }
+    \provebullets{
+        \item $\Gal(E/E^H) = H$ --- следствие из леммы Артина.
+    \item $E^{\Gal(E/K)} = K$ согласно~(\cref{galois-extension}).
+        Согласно ей же, $E/K$ --- расширение Галуа.
+    \item По теореме Лагранжа $|H' : H| = \frac{|G : H'|}{|G:H|} = \frac{\left[E:E^H\right]}{\left[E : E^{H'}\right]} = \left[E^{H'} : E^H\right]$.
+    \item $\forall h \in H: \sigma h \sigma^{-1}(\sigma(\alpha)) = \sigma h(\alpha) = \sigma(\alpha) \then \sigma(E^H) \le E^{\sigma H \sigma^{-1}}$.
+    Обратное включение получается заменой $\tilde{H} \coloneqq \sigma H \sigma^{-1}$ и $\tilde{\sigma} \coloneqq \sigma^{-1}$.
+    \item To be continued
+    }
+    }
+    Теперь можно нарисовать некоторые картинки:
+    \begin{figure}[!ht]
+    \begin{minipage}{0.5\textwidth}
+    % https://q.uiver.app/#q=WzAsNCxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ezJ9XSJdLFsyLDEsIlxcUVtcXHNxcnR7M31dIl0sWzEsMCwiXFxRW1xcc3FydHsyfSxcXHNxcnR7M31dIl0sWzMsMSwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIkNfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwwLCJDXzIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIkNfMlxcb3BsdXMgQ18yIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          \& {\Q[\sqrt{2},\sqrt{3}]} \\
+          {\Q[\sqrt{2}]} \&\& {\Q[\sqrt{3}]} \\
+          \& \Q
+          \arrow["{C_2}"', no head, from=1-2, to=2-1]
+          \arrow["{C_2}", no head, from=1-2, to=2-3]
+          \arrow["{C_2}"', no head, from=2-1, to=3-2]
+          \arrow["{C_2}"', no head, from=3-2, to=2-3]
+          \arrow["{C_2\oplus C_2}"{description}, no head, from=1-2, to=3-2]
+    \end{tikzcd}\]
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXFFbeF0vKHheMyAtIDIpIl0sWzIsMSwiXFxRW1xcc3FydFszXXsyfV0iXSxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ey0zfV0iXSxbMCwxLCJDXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMiwiXFx0ZXh0e9C90LUg0JPQsNC70YPQsH0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDMsIkNfMyIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwyLCJTXzMiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {\Q[x]/(x^3 - 2)} \\
+              {\Q[\sqrt{-3}]} \&\& {\Q[\sqrt[3]{2}]} \\
+              \& \Q
+              \arrow["{C_2}", no head, from=1-2, to=2-3]
+              \arrow["{\text{не Галуа}}", no head, from=2-3, to=3-2]
+              \arrow["{C_2}"', no head, from=2-1, to=3-2]
+              \arrow["{C_3}"', no head, from=1-2, to=2-1]
+              \arrow["{S_3}"{description}, no head, from=1-2, to=3-2]
+        \end{tikzcd}\]
+        \end{minipage}
+    \end{figure}
+
 \end{document}
