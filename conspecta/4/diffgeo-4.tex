@@ -1231,7 +1231,12 @@
     \definition[Секционная кривизна]{
     $K_\sigma(u, v) \bydef \frac{\angles{R(u, v)v, u}}{|u \wedge v|^2}$, где $u \wedge v$ --- смешанное произведение, то есть $|u \wedge v| = \left|\arr{cc}{u_1 & u_2 \\ v_1 & v_2}\right|$, если $u = \vect{u_1 \\ u_2}$ и $v = \vect{v_1 \\ v_2}$ в некотором \textbf{ортонормированном базисе}.
     }
-    Чуть позже мы докажем, что секционная кривизна $K_\sigma$ не зависит от выбора базиса $(u, v)$.
+    \lemma{Докажем, что секционная кривизна $K_\sigma$ не зависит от выбора базиса $(u, v)$.
+    \provehere{
+        Рассмотрим $R(u, v)$, как линейный оператор $T_p M \map T_p M$.
+        Воспользуемся линейностью и кососимметричностью...% у меня есть фотография
+    }
+    }
     Можно вспомнить выражение для гауссовой кривизны из предыдущего семестра
     \[K = \frac{\angles{\nabla_X \nabla_Y Y - \nabla_Y \nabla_X Y, X}}{\det I}\]
     в котором не было скобки Ли, но для координатных полей скобка Ли равна нулю, так что аналогия получается полная.
@@ -1247,18 +1252,124 @@
     Для проверки кососимметричности билинейной формы $Z, W \mapsto \angles{R(X, Y)Z, W}$ достаточно проверить, что $\angles{R(X, Y)Z, Z} = 0$.
     Запишем
     \[X\angles{Z, Z} = 2\angles{\nabla_X Z, Z} \quad \then \quad YX\angles{Z, Z} = 2(\angles{\nabla_Y \nabla_X Z, Z} + \angles{\nabla_X Z, \nabla_Y Z})\]
-    ...
+    \[[X, Y]\angles{Z,Z} = 2\angles{\nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z, Z} = 2\angles{\nabla_{[X, Y]}Z, Z}\]
+    Должно сойтись
     }
     }
     \section{Полугеодезические координаты}
-    Пусть $M^2$ --- двумерное многообразие, $X, Y \in \mathscr{F}(M)$, причём $|X| = 1$ и $X \perp Y$.
+    Пусть $M^2$ --- двумерное многообразие, $X, Y \in \mathscr{F}(M)$ --- координаты, причём $|X| = 1$ и $X \perp Y$.
     Метрический тензор в этом базисе имеет вид $\vect{1 & 0 \\ 0 & G}$, где $G = \angles{Y,Y}$.
     \example[Полугеодезические координаты]{Сферические координаты}
     \problem{
     Общий вид полугеодезических координат --- эквидистанты от некоторой гладкой регулярной кривой.
     }
+    \newlection{8 мая 20224 г.}
+    \theorem{
+    Первая координатная линия --- геодезическая: $\nabla_X X = 0$, причём $\nabla_X Y = \nabla_Y X = \frac{G'_X}{2 G}Y$.
+    \provenumbers{
+    \item $\nabla_X Y = \nabla_Y X$, так как для координатных векторных полей $[X, Y] = 0 = \nabla_X Y - \nabla_Y X$.
+    \item $0 = X\angles{X, X} = 2\angles{\nabla_X X, X}$
+    \item $0 = Y\angles{Y, Y} = 2\angles{\nabla_Y Y, Y}$
+    \item $0 = X\angles{X, Y} = \angles{\nabla_X X, Y} + \angles{X, \nabla_X Y}$.
+    \item Так как $X$ и $Y$ --- базис, то $\nabla_X X \perp X, Y \then \nabla_X X = 0$.
+    \item $\angles{Y, Y} = G \then G'_X = 2\angles{\nabla_X Y, Y}$. Из (3) получаем $\angles{\nabla_X Y, X} = 0 \then \nabla_X Y \parallel Y$.
+        Тем самым, $\nabla_X Y = \frac{\angles{\nabla_X Y, Y} \cdot Y}{\angles{Y,Y}} = \frac{G'_X}{2G}Y$.
+    }
+    }
+    \theorem[О выражении секционной кривизны в полугеодезических координатах]{
+    В полугеодезических координатах $K = -\frac{\sqrt{G}''_{X,X}}{\sqrt{G}} = -\frac{|Y|''_{X,X}}{|Y|}$.
+    \provehere{
+        Посчитаем по определению гауссову кривизну $K = K_{X \wedge Y} = -\frac{\angles{R(X,Y)X, Y}}{|X\wedge Y|^2}$.
+    Во-первых, $|X \wedge Y|^2 = G$.
+        Далее скобка Ли отсутствует, так как поля координатные:
+        \multline{R(X, Y)X = \nabla_X \nabla_Y X - \nabla_Y \underbrace{\nabla_X X}_{0} = \nabla_X\left(\frac{G'_X}{2 G}Y\right) =\\= \frac{1}{2}\left(\frac{G''_{X,X} G - G_X'^2}{G} \cdot Y + \frac{G'_X}{2G}\nabla_X Y\right) = \frac{1}{2}\left(\frac{2 G_{X,X}'' G - G_X'^2}{2 G^2}\right)Y}
+    Сравним с выражением $\frac{\sqrt{f}''}{\sqrt{f}} = \frac{1}{2}\left(\frac{f''}{f} - \frac{(f')^2}{2 f^2}\right)$
+    }
+    }
     \statement{
-    Первая координатная линия --- геодезическая: $\nabla_X X = 0$.
-    \provehere{}
+        $K(\H^2) = -1$.
+    \provehere{
+        Возьмём модель в верхней полуплоскости.
+        Введём полугеодезические координаты, запараметризовав $r(u, v) = (v, e^u)$.
+        Это действительно полугеодезические координаты: $X = r'_u = (0, e^u), Y = r'_v = (1, 0)$, и $X \perp Y, |X|^2_{\H^2} = \frac{e^{2u}}{e^{2u}} = 1$.
+
+        Посчитаем $G = |Y|^2_{\H^2} = \frac{1}{e^{2u}}$. Воспользуемся формулой: $K = -\frac{\frac{\d^2}{\d u^2}(e^{-u})}{e^{-u}} = -1$.
+    }
+    }
+    Итак, $K(S^2) = 1, K(\H^2) = -1$.
+    Немного порисовав, видим, что кривизна показывает, сходятся или расходятся геодезические.
+    \section{Формула Гаусса --- Боне}
+    \subsection{Ориентация}
+    Пусть $V$ --- $n$-мерное пространство над $\R$, и $\mathcal{B}(V)$ --- множество всевозможных базисов.
+    Напомним следующие определения:
+    \definition[$B_1, B_2 \in \mathcal{B}(V)$ одинаково ориентированы]{
+    $\det(B_1 \rightsquigarrow B_2) > 0$.
+    }
+    \definition[$B_1, B_2 \in \mathcal{B}(V)$ против. ориентированы]{
+    $\det(B_1 \rightsquigarrow B_2) < 0$.
+    }
+    \definition[Ориентация $V$]{Отображение $\tau: \mathcal{B}(V) \map \{-1, 1\}$, такое, что $\tau(B_1) \cdot \tau(B_2) = \sign(\det(B_1 \rightsquigarrow B_2))$.
+    }
+    Пусть $M^n$ --- гладкое многообразие.
+    Обозначим за $\mathcal{B}(TM) = \bigcup\limits_{x \in M}\mathcal{B}(T_x M)$ все базисы во всех касательных пространствах.
+    Введём на нём топологию подмножества, индуцированную с $\underbrace{T M \times \dots \times T_M}_{n}$.
+    \definition[Ориентация $M$]{
+        Непрерывное отображение $\tau: \mathcal{B}(TM) \map \{-1, 1\}$, такое, что $\forall x \in M: \tau\big|_{T_x M}$ --- ориентация на $T_x M$.
+        Если ориентация существует, то многообразие \emph{ориентируемо}.
+    }
+    \subsection{Вращение векторного поля вдоль кривой. Поворот кривой}
+    Пусть $(M^2, \angles{\_,\_})$ --- двумерное риманово многообразие, и $\gamma: [a, b] \map M$ --- кусочно-гладкая кривая, $W$ --- векторное поле вдоль $\gamma$.
+    \definition[$W$ --- кусочно-гладкое и кусочно-непрерывное]{
+    $\exists a = t_1 \le \dots \le t_n = b: W\big|_{[t_i, t_{i+1}]}$ --- гладкое.
+        Данное разбиение может никак не соотноситься с разбиением кусочной гладкости для самой кривой $\gamma$.
+    }
+    При этом для точки $t_i$ из разбиения гладкости для $W$ обозначим $W_- \coloneqq \lim\limits_{\eps \to 0_-}W(t_i + \eps), W_+ \coloneqq \lim\limits_{\eps \to 0_+}W(t_i + \eps)$. По техническим причинам потребуем $W_- \ne -W_+$.
+    Пусть $M^2$ ориентировано, то есть имеются понятия лево, право, по часовой стрелке, против часовой стрелки.
+    Пусть в $t_i$ имеется излом векторного поля $W$, обозначим за $\theta_i$ ориентированный угол между $W_-$  и $W_+$: $\theta_i = \all{\angle(W_-, W_+), & W_- \map W_+ \text{ поворачивается против часовой стрелки}\\ -\angle(W_-, W_+),&\text{иначе}}$.
+    Теперь $W$ --- кусочно гладкое векторное поле вдоль $\gamma$, $|W| = 1$.
+    Пусть $\tilde{W}$ --- такое, что $(W, \tilde{W})$ --- ортонормированный положительно ориентированный базис.
+    \definition[Вращение векторного поля $W$ вдоль $\gamma$]{
+        $\rot_{\gamma}W = \int\limits_{a}^{b}\angles{\frac{\nabla}{\d t}W, \tilde{W}}\d t + \theta_1 + \dots + \theta_n$.
+    }
+    Пусть $\gamma$ --- кусочно-гладкая, $|\gamma'| = 1, W = \gamma'$.
+    Тогда $m \coloneqq \tilde{W}$ --- ориентированная нормаль к $\gamma$.
+    \definition[Геодезическая кривизна]{
+    $K_\gamma = \angles{\frac{\nabla \gamma'}{\d t}, m}$.
+    Ещё её называют \emph{кривизной кривой со знаком}.
+    }
+    \definition[Полная кривизна $\gamma$ со знаком]{
+        $\psi(\gamma) = \rot_{\gamma}\gamma'$.
+        Ещё говорят \emph{поворот кривой}.
+    }
+
+    \theorem{
+    Пусть $\gamma: [0, L] \map M$ --- кусочно-гладкая петля, $\gamma'(0) = \gamma'(L)$, $W$ --- кусочно-непрерывное кусочно-гладкое векторное поле вдоль $\gamma$ (и тоже $W(0) = W(L)$).
+
+    Тогда параллельный перенос $P_0^L: T_{\gamma(0)}M \map T_{\gamma(L)}M$ --- поворот на угол $\rot_{\gamma}W$.
+    \provehere{
+    Пусть $E$ --- векторное поле вдоль $\gamma$, параллельное вдоль $\gamma$, такое, что $E(0) = W(0)$.
+
+        Сопоставим $E \rightsquigarrow \tilde{E}$ и $W \rightsquigarrow \tilde{W}$. $\all{W = \cos \alpha E + \sin \alpha \tilde{E} \\ \tilde{W} = -\sin \alpha E + \cos \alpha \tilde{E}}$
+    Можно выбрать $\alpha$ (единственным образом с точностью до глобального сдвига на $2\pi k$) так, что это --- кусочно-непрерывный аргумент с разрывами в точках излома $< \pi$.
+
+    $\frac{\nabla W}{\d t} = -\sin \alpha \cdot\alpha' E + \cos \alpha\cdot\alpha' \tilde{E}$, откуда $\angles{\frac{\nabla W}{\d t}, \tilde{W}} = \alpha'$.
+
+    Сначала пусть $W$ --- гладкое.
+        $\rot_{\gamma}W = \int\limits_{0}^{L}\angles{\frac{\nabla W}{\d t}, \tilde{W}}\d t = \int\limits_{0}^{L}\alpha' = \alpha(L) - \alpha(0) = \alpha(L)$.
+        В общем более-менее всё.
+
+        Теперь если есть изломы $W$ в точках $t_i$, то
+    \[\rot_{\gamma}W = \sum\limits_{i = 1}^{s}\int\limits_{t_i}^{t_{{i+1}}}\angles{\frac{\nabla W}{\d t}, \tilde{W}}\d t + \theta_i = \sum\limits_{i = 1}^{s}(\alpha(t_{i+1})_- - \alpha(t_i)_+) + (\alpha(t_{i+1})_+ - \alpha(t_{i+1})_-)\]
+    и всё сокращается
+    }
+    }
+    \corollary{
+    Если $W_1$, $W_2$ --- как в условии теоремы, то $\rot_{\gamma}W_1 = \rot_{\gamma}W_2$.
+    }
+    \theorem[Формула Гаусса --- Боне]{
+        Пусть $M$ ориентирована, $\Delta \subset M$ --- диск, и $\partial\Delta$ --- граница $\Delta$, причём $\Delta$ --- слева при обходе вдоль границы.
+        Тогда $\psi(\partial \Delta) + \iint\limits_{\Delta}K = 2\pi$.
+
+        Теперь если диски $\Delta_1, \dots, \Delta_k$ замостили какую-то открытую область $\Delta$, то $\psi(\gamma_1) + \dots + \psi(\gamma_k) + \iint\limits_{\Delta}K = 2\pi \chi(\Delta)$.
     }
 \end{document}
