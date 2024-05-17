@@ -2033,4 +2033,126 @@
         Тем самым, $e^{2B} = 2\pi$, и так как $B \in \R$, то $B = \log\sqrt{2\pi}$
     }
     }
+    \newlection{10 мая 2024 г.}
+    todo
+    % $\gamma: [a, b] \map \R^2, \gamma(a) = A, \gamma(b) = B$
+%    $\phi$ --- направляющая функция: $\forall t_0 \in [a, b]: \phi(\tau) = f_{t_0}(\tau) при всех $\tau$, достаточно близких к $t_0$.
+    \newlection{17 мая 2024 г.}
+    Почему продолжение вдоль пути можно заменить продолжением вдоль цепочки областей?
+
+    Функция $t \mapsto r(B_t)$ непрерывна, и всегда положительна, значит, $s \coloneqq \min\limits_{t \in [a, b]}r(B_t) > 0$.
+    Выберем $\delta > 0$, и поделим отрезок точками $a = t_0 < t_1 < \dots < t_n = b$ таким образом, что $\osc\limits_{[t_j, t_{j+1}]} \bydef \sup\defset{|\gamma(x) - \gamma(y)|}{ x, y \in [t_j, t_{j+1}] }< \delta$.
+    Пусть $\delta$ настолько мало, что $|\gamma(u) - \gamma(v)| < \delta \then |r(u) - r(v)| < \frac{s}{10}$.
+
+    Тогда цепочка кругов $B_0, \dots, B_n$ с центрами в $\gamma(t_j)$ такова, что $B_j \cap B_{j+1} \ne \o$.
+    Понятно, что продолжения вдоль пути $\gamma$, и вдоль цепочки кругов $B_0, \dots, B_n$ совпадают.
+    \theorem[Продолжение вдоль пути единственно]{
+        Пусть $D_t$ --- элементы аналитических функций, образующие аналитическое продолжение вдоль $\gamma$ с направляющей функцией $\phi$.
+    Аналогично $\tilde{D}_t$ --- элементы вдоль $\gamma$ с функцией $\tilde{\phi}$.
+
+    Если $D_a = \tilde{D}_a$, то $\forall t \in [a, b]: D_t = \tilde{D}_t$ и $\phi(t) = \coloneqq{\phi}(t)$.
+    \provehere{
+        Покажем, что $\forall t \in [a, b]: \phi(t) = \tilde{\phi}(t)$.
+        Так как $(B_a, f_a) = D_a = \tilde{D}_a = (\tilde{B}(a), \tilde{f}_a)$, то при $\tau$, достаточно близких к $a$: $\phi(\tau) =  f_a(\gamma(\tau)) = \tilde{f}_a(\gamma(\tau)) = \tilde{f}_a(\gamma(\tau))$, то есть в некоторой окрестности $a$: $\phi = \tilde{\phi}$.
+
+        Пусть $\eta = \sup\defset{\tau_0 \in [a, b]}{\forall \tau \in [a, \tau_0): \phi(\tau) = \tilde{\phi}(\tau)}$.
+        Покажем, что $\eta = b$ от противного.
+    Рассмотрим элементы $D_\eta = (B_\eta, f_\eta)$ и $\tilde{D}_\eta = (\tilde{B}_\eta, \tilde{f}_\eta)$.
+    При достаточно близких $\tau < \eta$: $\phi(\tau) = \tilde{\phi}(\tau)$.
+        Это множество --- кусочек отрезка, имеющий предельную точку --- значит, $f_\eta = \tilde{f}_\eta$, и $\phi = \tilde{\phi}$ в некоторой окрестности $\eta$.
+        Тем самым, $\eta$ не супремум.
+    }
+    }
+    Пусть $D = (B, f)$ --- элемент аналитической функции в точке $\zeta$.
+    \definition[$z_0 \in \C$ --- точка ветвления для полной аналитической функции, порождённой элементом $D$]{
+        Такая точка $z_0 \in \C$, что $\exists \gamma: [a, b] \map \C$ --- путь с началом и концом в $\zeta$, такой, что $\Ind_{z_0}\gamma \ne 0$, и имеется аналитическое продолжение элемента $D$ вдоль $\gamma$ в элемент $\tilde{D} \ne D$.
+    }
+    \section{Рациональные и полиномиальные приближения}
+    Будем приближать функцию рациональными функциями, то есть элементами $\C(t)$.
+    Нам будет достаточно правильных дробей, то есть частных многочленов $\frac{p}{q}$, где $\deg p < \deg q$.
+    Используя разложение на простейшие дроби, можно показать, что любая функция раскладывается в сумму дробей вида $\frac{C_j}{(z - z_j)^k}$.
+    Однако для приближений достаточно таких дробей, в которых степень знаменателя равна $1$, так как можно немножко пошевелить множители в знаменателе, сделав их различными.
+    \definition[Рациональная дробь]{
+    Рациональная функция $\sum\limits_{j = 1}^{N}\frac{C_j}{z - z_j}$.
+    }
+    \theorem[Рунге]{
+        Пусть $K$ --- компакт на плоскости, $f$ аналитична в окрестности $K$.
+        Тогда она приближается рациональными дробями: $\forall \eps > 0: \exists R(z) = \sum\limits_{j = 1}^{N}\frac{C_j}{z - z_j}$ --- рациональная дробь, такая, что все $z_j \notin K$, и $\sup\limits_{z \in K}|f(z) - R(z)| \le \eps$.
+
+        Если $\C \sm K$ связно, то $\forall \eps > 0: \exists p \in \C[z]$ --- многочлен, точно так же приближающий $f: \sup\limits_{z \in K}|f(z) - p(z)| \le \eps$.
+    \provehere{
+        Напомним, что для дифференцируемой функции $g: \R^2 \map \C$ определены частные производные $\der{}{\overline{z}}g = \frac{1}{2}\left(\der{g}{x} + i\der{g}{y}\right)$ и $\der{}{z}g = \frac{1}{2}\left(\der{g}{x} - i \der{g}{y}\right)$.
+
+        \indentlemma[Формула Помпейю, формула Грина, Коши --- Грина\dots]{
+            Пусть $\phi \in \mathcal{D}(\C)$ --- бесконечно дифференцируемая (в вещественном смысле) функция с компактным носителем.
+            Тогда $\forall z \in \C$:
+            \[\phi(z) = \frac{1}{\pi}\int\limits_{\C}\frac{\der{\phi}{\overline{z}}(\zeta)}{z - \zeta}\d\lambda_2(\zeta)\]
+        }{
+            Например, если $\phi$ --- целая, то так как она из $\mathcal{D}(\C)$, то по теореме Лиувилля она нуль, и интеграл тоже берётся от нуля.
+
+            Зафиксируем $z \in \C$.
+            Пусть $R > 0$ настолько велико, что $\supp \phi \subset B(z, R)$.
+            Введём полярные координаты с центром в $z$: $\zeta - z = \rho e^{i\theta}$, где $\theta \in [0, 2\pi]$, $\rho \in [0, \infty]$.
+            (Имеется некоторая неоднозначность, но она на множестве меры нуль, что не вносит никакого вклада).
+        Пусть $F(\rho, \theta) = \phi(\zeta) = \phi(z + \rho e^{i\theta})$.
+        \[\der{F}{\overline{z}} = F'_\rho \cdot \der{\rho}{\overline{\zeta}} + F'_\theta \cdot \der{\theta}{\overline{\zeta}}\]
+        Выразим $\overline{\zeta} - \overline{z} = \rho e^{-i\theta}$, откуда $\rho^2 = (\zeta - z)(\overline{\zeta} - \overline{z})$, и $\rho^{2i\theta} = \frac{\zeta - z}{\overline{\zeta} - \overline{z}}$.
+        Дифференцируя по $\overline{\zeta}$, получаем \[2i e^{2i\theta}\der{\theta}{\overline{\zeta}} = \der{}{\overline{\zeta}}\left((\zeta - z) \cdot \frac{1}{\overline{\zeta} - z}\right) = (\zeta - z)\der{}{\overline{\zeta}}\frac{1}{\overline{\zeta} - \overline{z}} = -\frac{(\zeta - z)}{(\overline{\zeta} - \overline{z})^2}\]
+        Деля $\der{\theta}{\overline{\zeta}} = \frac{1}{2}i e^{-2i\theta} \frac{\zeta - z}{(\overline{\zeta} - \overline{z})^2} = \frac{1}{2}i e^{-2i \theta} \frac{\zeta - z}{\rho^2 e^{-2i \theta}}$.
+        Так как $2\rho \der{\rho}{\overline{\zeta}} = \rho e^{i\theta}$, то $\der{\rho}{\overline{\zeta}} = \frac{e^{i\theta}}{2}$.
+
+        Теперь осталось записать интеграл:
+        \multline{\phi(z) = \frac{1}{\pi}\int\limits_{\C}\frac{\overline{\partial}\phi(z)}{z - \zeta}\d\lambda_2(\zeta) = \dots\text{видимо, если взять интеграл, то сойдётся}}
+
+%        Рассмотрим интеграл $I = \int\limits_{S}\frac{1}{|z - \zeta|^a}\d\lambda_2(\zeta)$, где $a \in (0, 2), S \subset \C$ --- компакт.
+%        Произведём полярную замену $\zeta = z + r e^{i \theta}$.
+%        Теперь
+%        \[I = \int\limits_{0}^{2\pi}\int\limits_{e_\theta}r^{-a}r\d r\d \theta = \int\limits_{0}^{2\pi}\int\limits_{e_\theta} r^{1 - a}\d r\d\theta \le 2\pi (\diam S)^{2 - a}\]
+%        \[\abs{\int\limits_{S}\frac{1}{z - \zeta} \cdot 1 \cdot \d\lambda_2(\zeta)} \le \abs{\int\limits_{S}\frac{1}{|z - \zeta|^{\nicefrac{3}{2}}}}^{\nicefrac{2}{3}} \cdot |S|^{\nicefrac{1}{3}} \le \const |S|^{\nicefrac{1}{3}} \cdot (\diam S)^{\frac{1}{2}}\]
+        }
+
+
+    Теперь докажем теорему Рунге по модулю формулы.
+
+    $f$ аналитична в окрестности $K$, то есть на открытом $U \supset K$.
+    $\exists$ компактное $V \subset U: K \subset \Int V$.
+    Введём функцию $h: V \cup (\C \sm U) \map \C$, такую, что $h\big|_{V} = f, h\big|_{\C \sm U} \equiv 0$, и продолжим её по теореме Титце --- Урысона до некоторой непрерывной функции $g: \C \map \C$.
+    Подправим $g$ до дифференцируемой: $g_1 \coloneqq g * \alpha_t$, где $\alpha_t$ --- стандартная аппроксимативная единица, построенная по $\alpha \in \mathcal{D}(\C)$.
+
+    При достаточно малом $t$: $g_1$ аналитична в окрестности $K$: можно продифференцировать $\int h(w - z)\alpha_t(z)\d z$ по $w$ под знаком интеграла.
+    Выберем $\eps > 0$, и будем считать, что $\sup\limits_{K}|f - g_1| < \eps$.
+
+    Запишем формулу \[g_1(z) = \frac{1}{\pi}\int\limits_{\C}\frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta}\d\lambda_2(\zeta)\]
+    Подынтегральное выражение --- не нуль на некотором компактном множестве $S$, отделённом от $K$ некоторым расстоянием $d$.
+
+    Пусть $S = \bigsqcup\limits_{j = 1}^{N}$, где $\diam S_j < \eps$, и выберем произвольно $\zeta_j \in S_j$, дальше положим $\lambda_j = \frac{1}{\pi}\int\limits_{S_j}\der{g_1}{\overline{z}}(\zeta)\d\lambda_2(\zeta)$.
+    Утверждается, что $\sum\limits_{j = 1}^{N}\frac{\lambda_j}{z - \zeta_j}$ хорошо приближает $g_1$ на $K$.
+
+    $\abs{g_1(z) - \sum\limits_{j = 1}^{N}\frac{\lambda_j}{z - \zeta_j}} = \abs{\frac{1}{\pi}\sum\limits_{j = 1}^{N}\int\limits_{S_j}\left[\frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta} - \frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta_j}\right]\d\lambda_2(\zeta)} \le C \sum\limits_{j = 1}^{N}\int\limits_{S_j}\overline{\partial} g_1(\zeta) \cdot \frac{|\zeta - \zeta_j|}{|z - \zeta|\cdot|z - \zeta_j|}\lambda_2(\zeta) \le C'\sum\limits_{j = 1}^{N}|S_j|\frac{\eps}{d^2} = C' |S| \frac{\eps}{d^2}$
+    $d$ фиксировано. Выбирая достаточно малый $\eps$, получаем достаточно хорошее приближение.
+    }
+    }
+\lemma[Теорема Титце --- Урысона]{
+$X$ нормально. Замкнутое $Y \subset X$, всякая функция $f: Y \map \R$ продолжается до непрерывной $\tilde{f}: X \map \R$.
+\provehere{
+Можно считать, что $-1 \le f \le 1$ всюду ($|f| \le 1$).
+%
+%Пусть $F_1 \coloneqq \defset{x \in X}{f(x) \ge \frac{1}{3}}$ и $F_{-1} \coloneqq \defset{x \in X}{f(x) \le -\frac{1}{3}}$.
+%По теореме Урысона, $\exists g: X \map \R$ --- непрерывная функция, такая, что $g(x) = \all{\frac{1}{3},&x \in F_1 \\ -\frac{1}{3, & x \in F_{-1}}}$, и всюду $-\frac{1}{3} \le g \le \frac{1}{3}$.
+%
+%Рассмотрим $f - g$ на $Y$. На $F_1 \cap Y$ значения лежат в $\left[0, \frac{2}{3}\right]$, на $F_2 \cap Y$ значения лежат в $\left[-\frac{2}{3}, 0\right]$, а на $Y \sm (F_1 \cup F_2)$ --- по неравенству треугольника значения лежат в $\left[-\frac{2}{3}, \frac{2}{3}\right]$.
+%Тем самым, $\sup\limits_{t \in Y}|f(t) - g(t)| \le \frac{2}{3}$. С другой стороны, $\sup\limits_{t \in X}|g(t)| \le \frac{1}{3}$.
+%
+%Обозначим $g_1 \coloneqq g$, и начнём итерироваться. Сначала найдётся $g_2$, такая, что $|f(t) - g_1(t) - g_2(t)| \le \left(\frac{2}{3}\right)^2$ на $Y$, и $|g_2(t)| \le \frac{2}{3} \cdot \frac{1}{3}$ на $X$.
+%
+%По индукции получим последовательность $g_j: |g_j(t)| \le \frac{2}{3} \cdot \left(\frac{1}{3}\right)^{j - 1}$ и $|f(t) - g_1(t) - \dots - g_j(t)| \le \left(\frac{2}{3}\right)^j$.
+%
+Теперь видно, что $g(t) = \sum\limits_{j \ge 1}g_j(t)$ подойдёт --- ряд сходится равномерно, и $|g(t)| \le \frac{2}{3} \sum\limits_{k \ge 0}\left(\frac{1}{3}\right)^k = 1$.
+}
+}
+\fact[Формула Коши --- Грина]{
+Имеется область $G$ с гладкой границей --- набором путей $\Gamma = \{\gamma_j\}$, таких, что при обходе область остаётся слева.
+
+Пусть  $\phi$ --- гладкая функция в окрестности $G$. Тогда $\forall z \in G: f(z) = \frac{1}{2\pi i}\int\limits_{\Gamma}\frac{f(\zeta)}{\zeta - z}\d\zeta + \frac{1}{\pi}\int\limits_{G}\frac{\overline{\partial} f(\zeta)}{z - \zeta}\d\lambda_2(\zeta)$
+}
 \end{document}
