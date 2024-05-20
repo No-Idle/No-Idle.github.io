@@ -19,7 +19,7 @@
     Рассмотрим конечномерную ситуацию.
     Пусть имеется $f: M \map \R$, где $M$ --- какое-то многообразие.
 
-    При поиске экстремумов формируеются следующие направления:
+    При поиске экстремумов формируются следующие направления:
     \numbers{
         \item Необходимое условие: $(\grad f)(x) = 0$.
         \item Достаточное: форма $(D^2 f)(x)$ знакоопределён ($> < 0$).
@@ -264,7 +264,7 @@
     }
     }
     \section{Условные экстремумы}
-    \emph{Согласно полу-исторической, полулегендарной справке, некогда Дидона прибыла на берег некоего африканского государства, и потребовала, на основании своего высокого происхождения, выделить ей столько земли, сколько можно опоясать ремешком из шкуры одного быка\ldots}
+    \emph{Согласно полуисторической, полулегендарной справке, некогда Дидона прибыла на берег некоего африканского государства, и потребовала, на основании своего высокого происхождения, выделить ей столько земли, сколько можно опоясать ремешком из шкуры одного быка\ldots}
 
     Напоминание конечномерного случая:
     пусть $\Omega \subset \R^d$ --- область, $f, g \in C^1(\Omega)$, $\mathcal{M} = \defset{x \in \Omega}{g(x) = 0}$.
@@ -272,7 +272,7 @@
     Заинтересуемся экстремумами сужения $f\big|_{\mathcal{M}}$.
     Пусть $x_0 \in \Omega$ -- экстремум.
     Построим кривую ${x:(-\eps,\eps)\map \Omega}$ так, что $x(0) = x_0$.
-    Условие $g(x(t)) \equiv 0$ влечёт, что $f(x(t)$ имеет локальный экстремум в нуле.
+    Условие $g(x(t)) \equiv 0$ влечёт, что $f(x(t))$ имеет локальный экстремум в нуле.
     Другими словами, $\frac{\d}{\d t}\Big|_{t = 0}f(x(t)) = \angles{(\nabla f)(x_0), \dot{x}(t)} = 0$.
 
     Поскольку кривую можно выбрать с любым вектором скорости, то $(\nabla f)(x_0) \perp T_{x_0}\mathcal{M}$.
@@ -280,7 +280,7 @@
     Найдём какой-нибудь вектор, перпендикулярный $\mathcal{M}$.
     Это как раз градиент: $g(x(t)) = 0 \then \angles{(\nabla g)(x_0), \dot{x}} = 0$.
 
-    Иными словами $\exists \lambda\in\R: \nabla(f - \lambda g) = 0$.
+    Иными словами $\exists \lambda\in\R: \nabla(f - \lambda g)(x_0) = 0$.
     Далее для поиска экстремумов ищут критические точки $f - \lambda g$, выделяют те, которые в $\mathcal{M}$, а с обнулениями градиента $g$ разбираются отдельно.
 \ok
     Пускай $X$ --- нормированное замкнутое пространство, $G \in C^1(X)$ --- задающий условие функционал.
@@ -294,17 +294,17 @@
     Пусть $x_0 \in \mathcal{M} \coloneqq \defset{x \in X}{G(x) = 0}$.
     Пусть $G'(x_0) \ne 0$.
 
-    Тогда $\forall h \in \Ker G'(x_0): \exists x \in C^1((\delta,\delta) \map \mathcal{M}): x(0) = x_0, \dot{x}(0) = h$.
+    Тогда $\forall h \in \Ker G'(x_0): \exists x \in C^1((-\delta,\delta) \map \mathcal{M}): x(0) = x_0, \dot{x}(0) = h$.
     \provehere{
         Зафиксируем произвольный $\xi \notin \Ker G'(x_0)$. Определим $r(t, \tau) \coloneqq G[x_0 + t\xi + \tau h]$. Ясно, что $r \in C^1\left(\left[-\eps, \eps\right] \times [-\eps, \eps]\right)$.
 
         $r(0, 0) = 0$, $\der{r}{t}(0, 0) = G'[x_0]\xi \ne 0$.
-        Применяя теорему о неявной функции, получаем $\exists \delta > 0: \defset{(t, \tau)}{\tau \in (-\delta, \delta), r(t, \tau) = 0}$ --- график $C^1$ функции $t = t(\tau)$, где $t: (\delta, \delta) \map \R$.
+        Применяя теорему о неявной функции, получаем $\exists \delta > 0: \defset{(t, \tau)}{\tau \in (-\delta, \delta), r(t, \tau) = 0}$ --- график $C^1$ функции $t = t(\tau)$, где $t: (-\delta, \delta) \map \R$.
 
         Проверим, что $x: \tau \mapsto x_0 + t(\tau)\xi + \tau h$ --- искомая кривая:
     \numbers{
     \item По построению $x: (-\delta, \delta) \map \mathcal{M}$ --- класса $C^1$.
-    \item Дифференцируя тождество $G[x(t)] = 0$, получаем $G'[x(0)] \cdot \dot{x}(0) = 0$, значит, $\dot{x}(0) \in \Ker G'[x_0]$.
+    \item Дифференцируя тождество $G[x(t)] = 0$ в точке $t = 0$, получаем $G'[x(0)] \cdot \dot{x}(0) = 0$, значит, $\dot{x}(0) \in \Ker G'[x_0]$.
         С другой стороны, $\dot{x}(0) = \dot{t}(0)\xi + h$, откуда $\dot{t}(0) = 0$ (ведь $\xi \notin \Ker G'[x_0]$).
         Тем самым, $\dot{x}(0) = h$.
     }
@@ -317,8 +317,8 @@
     С другой стороны, это равно $F'(x_0)\cdot h$.
 
     Значит, $\Ker G'[x_0] \subset \Ker F'[x_0]$, причём $\exists \lambda \in \R: (F'(x_0) - \lambda G'(x_0)) = 0$ --- и $F'$, и $G'$ обнуляются на пространстве коразмерности $1$.
-    Формальнее $\exists \eta \notin \Ker G'(x_0), \forall h \in X: h = \underbrace{\left(h - \frac{G'(x_0)h}{G'(x_0)\eta}\eta\right)}_{\in \Ker G'[x_0]} + \frac{G'(x_0)h}{G'(x_0)\eta}\eta$.
-    Значит, $(F' - \lambda G')(h) = F'(x_0) \eta - \lambda G'(x_0)\eta$.
+    Формальнее, $\exists \eta \notin \Ker G'(x_0), \forall h \in X: h = \underbrace{\left(h - \frac{G'(x_0)h}{G'(x_0)\eta}\eta\right)}_{\in \Ker G'[x_0]} + \frac{G'(x_0)h}{G'(x_0)\eta}\eta$.
+    Значит, $(F'(x_0) - \lambda G'(x_0))(h) = (const)(F'(x_0) \eta - \lambda G'(x_0)\eta)$.
     Подойдёт $\lambda = \frac{F'(x_0)\eta}{G'(x_0)\eta}$.
 
     Получилась теорема:
@@ -334,7 +334,7 @@
     Образуем линейный оператор $\mathbb{G}'(x_0) = \vect{G'_1(x_0) \\ \vdots \\ G'_n(x_0)}: X \map \R^n$ по правилу $\mathbb{G}'(x_0)h = \vect{G'_1(x_0)h \\ \vdots \\ G'_n(x_0)h}$.
 
     \theorem{\label{different-boundaries}
-    Пусть $x_0$ --- точка локального экстремума $F$ на $\mathcal{M}$, пусть $\Ran \mathbb{G}'(x_0) = \R^n$ (иными словами $\sum\limits_{j=1}^{n} c_j G'_j(x_0) = 0 \then \forall j: c_j = 0$).
+    Пусть $x_0$ --- точка локального экстремума $F$ на $\mathcal{M}$, пусть $\Ran \mathbb{G}'(x_0) = \R^n$ (иными словами $\sum\limits_{j=1}^{n} c_j G'_j(x_0) = 0 \then \forall j: c_j = 0$). ($\Ran$ (от англ. range) --- образ.)
 
     Тогда $\exists \lambda_1, \dots, \lambda_n \in \R: \forall h \in X: \delta(F - \sum \lambda_j G_j)[x_0, h] = 0$
     \provehere{
@@ -356,7 +356,7 @@
 
     Пускай $L, r_1, \dots, r_n \in C^1([a, b]\times\R^d \times \R^d)$, $J[u] \coloneqq \int\limits_{a}^{b}L(t, u(t), \dot{u}(t))\d t, R_j[u] \coloneqq \int\limits_{a}^{b}r_j(t, u(t), \dot{u}(t))\d t$.
 
-    Пусть $u_0$ --- точка локального экстремума $J\big|_{\bigcap R_j}$; оператор $\R(u_0) \coloneqq \vect{R_1'(u_0) \\ \vdots \\ R_n'(u_0)}$ имеет полный ранг.
+    Пусть $u_0$ --- точка локального экстремума $J\big|_{\bigcap \Ker R_j}$; оператор $\R(u_0) \coloneqq \vect{R_1'(u_0) \\ \vdots \\ R_n'(u_0)}$ имеет полный ранг.
 
     Тогда
     \numbers{
@@ -370,13 +370,14 @@
     \example{
     Пускай $\Omega \subset \R^3$ --- ограниченная односвязная область, граница которой --- поверхность класса $C^1$.
         Введём пространство функций $X = C(\partial \Omega)$.
+    %односвязная?
 
     Заведём $J[\sigma] = \iint\limits_{\partial \Omega \:\partial\Omega}\frac{\sigma(x)\sigma(y)\d S(x)\d S(y)}{|x - y|}$.
 
-    $J$ непрерывен на $X$: $\xi: y \mapsto \int\limits_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
+    $J$ непрерывен на $X$, поскольку $\xi: y \mapsto \int\limits_{\partial \Omega}\frac{\sigma(x)}{|x - y|}\d S(x)$ непрерывно.
     \[J[\sigma + s] - J[\sigma] = 2\iint\limits_{\partial \Omega \:\partial\Omega}\frac{s(x)\sigma(y)}{|x - y|}\d S(x)\d S(y) + \bigO(\|s\|^2_C)\]
 
-    Значит, $s \mapsto \int\limits_{\partial\Omega}s(x)\xi(x)\d x$ непрерывен, откуда $J$ --- даже функционал класса $C^1(X)$.
+    Также $s \mapsto \int\limits_{\partial\Omega}s(x)\xi(x)\d x$ непрерывен, откуда $J$ --- даже функционал класса $C^1(X)$.
     }
     \newlection{14 марта 2023 г.}
     Заинтересуемся экстремумами с постоянным значением $G[\sigma] = \int\limits_{\partial \Omega}\sigma(x)\d x$.
@@ -384,20 +385,20 @@
 
     Уже проверили, что $J, G \in C^1(X)$.
 
-    Пусть $\sigma$ --- экстремаль $J\big|_{\sigma \in X}{G(\sigma) = Q}$.
+    Пусть $\sigma$ --- экстремаль $J\big|_{\{\sigma \in X|G(\sigma) = Q\}}$.
     Тогда $\forall h \in X$: $\delta (J - \lambda G)[\sigma, h] = 0$.
-    Посчитаем \multline{\delta (J - \lambda G)[\sigma, h] = \delta (J - \lambda G)[\sigma + h] - \delta (J - \lambda G)[\sigma] =\\= 2\int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{\sigma(x)h(y)}{|x - y|}\d S(x)\d S(y) - \lambda \int\limits_{\partial \Omega} h(y)\d S(y) + \int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{h(x)h(y)}{|x - y|}\d S(x)\d S(y)}
+    Посчитаем \multline{\delta (J - \lambda G)[\sigma, h] = (J - \lambda G)[\sigma + h] - (J - \lambda G)[\sigma] =\\= 2\int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{\sigma(x)h(y)}{|x - y|}\d S(x)\d S(y) - \lambda \int\limits_{\partial \Omega} h(y)\d S(y) + \int\limits_{\partial \Omega}\int\limits_{\partial \Omega}\frac{h(x)h(y)}{|x - y|}\d S(x)\d S(y)}
     Третье слагаемое $\bigO(\|h\|^2_X)$: $\iint\frac{1}{|x - y|}$ сходится.
     Заметим, что остальная часть --- линейный функционал от $h$, где коэффициент непрерывен от $\sigma$.
     Это в точности значит, что $J \in C^1$.
-    \[J[\sigma + h] -J[\sigma] = l_\sigma(h) + o(\|h\|)\text{, где }l_\sigma: h \mapsto \int \frac{\sigma(x)h(y)}{|x - y|}\d S(y) = \int \xi(y)h(y)\d S(y)\]
+    \[J[\sigma + h] -J[\sigma] = l_\sigma(h) + o(\|h\|)\text{, где }l_\sigma: h \mapsto \iint\limits_{\partial \Omega\times\partial \Omega} \frac{\sigma(x)h(y)}{|x - y|}\d S(y) = \int\limits_{\partial \Omega} \xi(y)h(y)\d S(y)\]
     Запишем условие экстремальности:
     \[\forall h: \delta(J - \lambda G)[\sigma, h] = 2\int h(y)\d S(y)\left(2\int \frac{\sigma(x)\d S(x)}{|x - y|} - \lambda\right) = 0\]
     По <<нулевой лемме Дюбуа-Реймона>>, выражение в скобочках должен быть всегда нулём.
 
     Получили
     \encircle{\lambda = 2\int \frac{\sigma(x)\d S(x)}{|x - y|}}
-Экстремаль $\sigma$ ищется, как решение <<интегрального уравнения>>: $K: f \mapsto \int \frac{f(x)\d S(x)}{|x - y|}$, это ограниченный непрерывный интегральный оператор.
+Экстремаль $\sigma$ ищется, как решение <<интегрального уравнения>>: заведём $K: f \mapsto \int \frac{f(x)\d S(x)}{|x - y|}$, это ограниченный непрерывный интегральный оператор.
     Таким образом, $\sigma$ --- решение $K \sigma = \frac{\lambda}{2}\1$.
 
     Иными словами, потенциал, создаваемый распределением заряда на самой поверхности постоянен.
@@ -410,7 +411,7 @@
     С другой стороны, хотим независимость от параметризации, потому что зачем.
     \definition[Кривая $\gamma \in C$]{Непрерывное отображение $\gamma: [a, b] \map \R^n$.}
     \definition[Параметризованная кривая $\gamma$]{$\forall x \in [a, b]: \gamma'(x) \ne 0$.}
-    \definition[Кривая $\gamma \in C^j$]{Кривая $\gamma \in C^j$.}
+    \definition[Кривая $\gamma$ класса $C^j$]{Кривая $\gamma \in C^j$.}
     Пусть $\gamma_1: [a_1, b_1] \map \R^n, \gamma_2: [a_2, b_2] \map \R^n$.
     \definition[Эквивалентность кривых $\gamma_1$ и $\gamma_2$]{ Диффеоморфизм $\kappa \in C^j([a_1, b_1] \map [a_2, b_2])$, такой, что $\gamma_1 = \gamma_2 \circ \kappa$ и $\forall x: \kappa'(x) > 0$.
     Класс эквивалентности относительно данного отношения зовётся \emph{ориентированная кривая}. }
@@ -418,39 +419,40 @@
     За $\Gamma^j$ обозначим множество ориентированных кривых, представители которых --- кривые класса $C^j$.
     Ещё используют $\Gamma^j[a, b]$.
 
-    Пускай $\Fc \in C(\R^n \times \R^n)$, пусть она однородна порядка $1$ по второму аргументу: \[\Fc(\lambda, zw) = \forall \lambda > 0: \lambda \Fc(z, w)\]
+    Пускай $\Fc \in C(\R^n \times \R^n)$, пусть она однородная порядка $1$ по второму аргументу: \[\forall \lambda > 0: \Fc(z, \lambda w) = \lambda \Fc(z, w)\]
     Пусть $\gamma: [a_\gamma, b_\gamma] \map \R^d$ --- кривая класса $C^1$.
     Определим $J[\gamma] = \int\limits_{a_\gamma}^{b_\gamma}\Fc[\gamma(t), \dot{\gamma(t)}]\d t$.
 
     \proposal{
         В этой ситуации $J$ задаёт функционал на $\Gamma^1$.
     \provehere{
-        Пусть $\gamma_1: [a_1, b_1] \map \R^n, \gamma_2: [a_2, b_2] \map \R^n$ --- два эквивалентных представителя.
-    \multline{J[\gamma_1] = \int \Fc[\gamma_1(t), \dot{\gamma}_1(t)]\d t = \int \Fc [\gamma_2(\kappa(t)), \dot{\kappa}(t) \cdot \dot{\gamma}_2(\kappa(t))]\d t = \\
-    =\int \Fc [\gamma_2(\kappa(t)), \dot{\gamma}_2(\kappa(t))]\dot{\kappa}(t)\d t = \left\|\arr{c}{\tau = \kappa(t) \\ \d \tau = \dot{\kappa}(t)\d t}\right\| = \int \Fc[\gamma_1(\tau), \dot{\gamma}_1(\tau)]\d \tau\qedhere}
+        Пусть $\gamma_1: [a_1, b_1] \map \R^d, \gamma_2: [a_2, b_2] \map \R^d$ --- два эквивалентных представителя.
+        
+    \multline{J[\gamma_1] = \int\limits_{a_1}^{b_1} \Fc[\gamma_1(t), \dot{\gamma}_1(t)]\d t = \int\limits_{a_1}^{b_1} \Fc [\gamma_2(\kappa(t)), \dot{\kappa}(t) \cdot \dot{\gamma}_2(\kappa(t))]\d t = \\
+    =\int\limits_{a_1}^{b_1} \Fc [\gamma_2(\kappa(t)), \dot{\gamma}_2(\kappa(t))]\dot{\kappa}(t)\d t = \left\|\arr{c}{\tau = \kappa(t) \\ \d \tau = \dot{\kappa}(t)\d t}\right\| = \int\limits_{a_2}^{b_2} \Fc[\gamma_2(\tau), \dot{\gamma}_2(\tau)]\d \tau\qedhere}
     }
     }
     \examples{
     \item $\Fc(z, w) = |w|$.
         Функционал $J$ --- длина кривой
-    \item $\Fc(z, w) = |w|\cdot f(z)$, где, например, $n = 2$, $f(z) = z_2^{\alpha}$ (здесь $z = \vect{z_1\\z_2}$).
+    \item $\Fc(z, w) = |w|\cdot f(z)$, где, например, $n = 2$ (плоскость), $f(z) = z_2^{\alpha}$ (здесь $z = \vect{z_1\\z_2}$).
     \bullets{
         \item При $\alpha = 0$ это предыдущий случай.
         \item При $\alpha = -1$ это длина в гиперболической плоскости (в модули Пуанкаре в верхней полуплоскости).
         \item При $\alpha = 1$ это координата центра масс кривой, а ещё --- площадь поверхности вращения.
-    \item При $\alpha = -\frac{1}{2}$ это время, требуемое шарику, чтобы скатиться по жёлобу данной формы.
+    \item При $\alpha = -\frac{1}{2}$ это время, требуемое шариком, чтобы скатиться по жёлобу данной формы.
     }
     }
     Пусть $L \in C([a, b] \times \R^n \times \R^n)$, $X = C^1[a, b]$, $J[u] = \int\limits_{a}^{b}L(t, u(t), \dot{u}(t))\d t$.
     Превратим его в функционал на кривой.
     Заведём $\Fc: \R^{n+1}\times\R^{n+1}, \Fc(z, w) = L(z_1, z_2, \dots, z_{n+1}, \frac{w_2}{|w_1|}, \dots, \frac{w_{n+1}}{|w_1|})|w_1|$.
-    Она имеет требуемую однородность.
+    Он имеет требуемую однородность.
     Типа сопоставим функции $u(t)$ кривую $\gamma_u: t \mapsto (t, u(t))$.
     % Потолок пробили, но сверху постучали
 
     Рассмотрим $\tilde{J}[\gamma] \coloneqq \int\Fc(\gamma(t), \dot{\gamma}(t))\d t$ --- если $L$ <<разумная>>, то $\tilde{J}$ --- функционал на кривых.
     \proposal{
-    $\Fc[\gamma_u] = J[u]$.\provehere{$\dot{\gamma}_u(t) = (1, \dot{u}(t))$.}
+    $\tilde{J}[\gamma_u] = J[u]$.\provehere{$\dot{\gamma}_u(t) = (1, \dot{u}(t))$.}
     }
 %    Сформулируем некоторое техническое утверждение, которым будем пользоваться в меньшей общности, и докажем не здесь, но сформулируем сейчас
     \statement{
@@ -458,7 +460,7 @@
 
     Пусть $\forall \lambda > 0: \Fc(z, \lambda w) = \lambda\Fc(z, w)$.
 
-    $E\{\gamma\} = (\nabla_{z} \Fc)(\gamma, \dot{\gamma}) - \frac{\d}{\d t}\nabla_w \Fc(\gamma, \dot{\gamma})$, где $J = \int \Fc[\gamma, \dot{\gamma}]\d t$ --- определение осмысленно, так как кривая параметризована, и $\dot{\gamma} \ne 0$, а $\Fc \in C^2(\dots)$.
+    $J = \int \Fc[\gamma, \dot{\gamma}]\d t$, $E\{\gamma\} = (\nabla_{z} \Fc)(\gamma, \dot{\gamma}) - \frac{\d}{\d t}\nabla_w \Fc(\gamma, \dot{\gamma})$ --- определение осмысленно, так как кривая параметризована, и $\dot{\gamma} \ne 0$, а $\Fc \in C^2(\dots)$.
     % Пределы не стоят намеренно, так как параметризации могут разниться
         Пусть $\gamma \in \Gamma^2$, $\gamma: [a, b]\map \R^d$.
 
@@ -469,11 +471,11 @@
     }
     \lemma{
         Пусть $\gamma_1 \sim \gamma_2$ --- представители кривой $\gamma \in \Gamma^2$ ($\gamma_1 = \gamma_2 \circ \kappa$).
-        Тогда $E\{\gamma_1\} = \kappa' E\{\gamma_2\}$. Подробнее $(E\{\gamma_1\})(x) = \kappa'(x)\left(E\{\gamma_2\}\right)(\kappa(x))$.
+        Тогда $E\{\gamma_1\} = \kappa' E\{\gamma_2\}$. Подробнее, $(E\{\gamma_1\})(x) = \kappa'(x)\left(E\{\gamma_2\}\right)(\kappa(x))$.
         \provehere{
-            \[E\{\gamma_1\}(x) = (\nabla_z) \Fc (\underbrace{\gamma_1(x)}_{\kappa'(x)\gamma_2'(\kappa(x))}, \dot{\gamma}_1(x)) - \frac{\d}{\d x}(\nabla_w \Fc)(\gamma_1(x), \dot{\gamma}_1(x)) = \kappa'(x)(\nabla_z \Fc)\left[\gamma_2(\kappa(x)), \gamma_2'(\kappa(x))\right] - \frac{\d}{\d x}(\dots)\]
+            \[E\{\gamma_1\}(x) = (\nabla_z \Fc) (\gamma_1(x), \underbrace{\dot{\gamma}_1(x)}_{\kappa'(x)\gamma_2'(\kappa(x))}) - \frac{\d}{\d x}(\nabla_w \Fc)(\gamma_1(x), \dot{\gamma}_1(x)) = \kappa'(x)(\nabla_z \Fc)\left(\gamma_2(\kappa(x)), \gamma_2'(\kappa(x))\right) - \frac{\d}{\d x}(\dots)\]
             Дифференцируя $\Fc(z, \lambda w) = \lambda \Fc(z, w)$, получаем $\lambda(\nabla_w \Fc)(z, \lambda w) = \lambda (\nabla_w\Fc)(z, w)$
-            \[(\dots)-\frac{\d}{\d s}\Big|_{s = \kappa(x)}(\nabla_w\Fc)(\gamma_2(s), \gamma_2'(s)) = \kappa'(x)\cdot (E\{\gamma_2\})(\kappa(x))\]
+            \[(\dots)-\kappa'(x)\frac{\d}{\d s}\Big|_{s = \kappa(x)}(\nabla_w\Fc)(\gamma_2(s), \gamma_2'(s)) = \kappa'(x)\cdot (E\{\gamma_2\})(\kappa(x))\]
         }
     }
     \corollary{
@@ -489,21 +491,22 @@
     \exercise{
     Проверить, что это метрика на $\Gamma^2$.
     }
-    С метрикой также пришли всевозможные локальные, глобальные, строгие, нестрогие, минмимумы и максимумы.
+    С метрикой также пришли всевозможные локальные, глобальные, строгие, нестрогие, минимумы и максимумы.
     \theorem{
-    Пусть $\gamma$ --- локальный максимум $\Gamma^2$, $\Fc \in C^2(\R^n \times (\R^n \sm \{0\})), \Fc(z, \lambda w) = \lambda \Fc(z, w), \lambda > 0$.
+    Пусть $\gamma \in \Gamma^2$ --- локальный максимум $J$, $\Fc \in C^2(\R^n \times (\R^n \sm \{0\})), \Fc(z, \lambda w) = \lambda \Fc(z, w), \lambda > 0$.
 
-    Пусть $\gamma_a, \gamma_b \in \R^n, \mathcal{D} = \defset{\gamma \in \Gamma^2}{\gamma(a_\gamma) = \gamma_a, \gamma(b_\gamma) = \gamma_b}$.
+    Пусть $\gamma_a, \gamma_b \in \R^n, \mathcal{D} = \defset{\gamma \in \Gamma^2}{\gamma(a_\gamma) = \gamma_a, \gamma(b_\gamma) = \gamma_b}$ ($J$ задаётся на пространстве $\mathcal{D}$).
+    
     Тогда $E\{\gamma\} = 0$.
     \provehere{
     $\gamma + \tau h, h(a_\gamma) = h(b_\gamma) = 0$, $h: [a_\gamma, b_\gamma] \map \R^d, h \in C^2$
 
-    Существует $\frac{\d}{\d \tau}J[\gamma + \tau h] = 0$, так как $\dot{\gamma}(s) \ne 0$, значит, $\|\dot{\gamma}(s)\| \ne 0$, и при достаточно малых $\tau: \min\|\dot{\gamma} + \tau \dot{h}\| > \eps$.
+    Существует $\frac{\d}{\d \tau}\big|_{\tau = 0}J[\gamma + \tau h] = 0$, так как $\dot{\gamma}(s) \ne 0$, значит, $\|\dot{\gamma}(s)\| \ne 0$, и при достаточно малых $\tau: \min\|\dot{\gamma} + \tau \dot{h}\| > \eps$.
         Значит, при подстановке мы попадём в область, где $\Fc \in C^2$.
 
     Раз $\gamma$ --- экстремум, то производная равна нулю.
 
-    $J[\gamma + \tau h] - J[\gamma] = \tau\int\angles{(\nabla_z\Fc)(\gamma, \dot{\gamma}), h} + \angles{(\nabla_w\Fc)(\gamma, \dot{\gamma}), h'}\d t + \bigO(\tau^2)$
+    $J[\gamma + \tau h] - J[\gamma] = \tau\int\left[t\angles{(\nabla_z\Fc)(\gamma, \dot{\gamma}), h} + \angles{(\nabla_w\Fc)(\gamma, \dot{\gamma}), h'}\right]\d t + \bigO(\tau^2)$
 
     Интегрируя по частям, получаем $\int\limits_{a}^{b}\angles{E\{\gamma\}, h}\d t + 0 + \bigO(\tau^2)$.
         Применяя <<нулевую лемму Дюбуа-Реймона>>, получаем $E\{\gamma\} = 0$.
@@ -513,7 +516,7 @@
     \section{Условия трансверсальности. Задача Лагранжа}
     Пусть $J$ --- функционал на кривой, концы которой должны находиться на двух заданных многообразиях $M_1, M_2 \subset \R^n$.
     Считаем, что $J[\gamma], M_1, M_2 \in C^1$.
-    Рассматриваем функционал на пространство $X = \defset{\gamma \in \Gamma^2}{\gamma(a_\gamma) \in M_1, \gamma(b_\gamma)\in M_2}$.
+    Рассматриваем функционал на пространстве $X = \defset{\gamma \in \Gamma^2}{\gamma(a_\gamma) \in M_1, \gamma(b_\gamma)\in M_2}$.
 
     $J[\gamma] = \int\mathcal{F}[\gamma, \dot{\gamma}]\d t$, где $\mathcal{F} \in C^2(\R^n \times (\R^n \sm \{0\})) \cap C(\R^n \times \R^n)$.
 
@@ -521,7 +524,7 @@
     Тогда $\gamma_0$ --- экстремум на $\defset{\gamma \in X}{\gamma(a_\gamma) = \gamma_0(a_{\gamma_0}), \gamma(b_\gamma) = \gamma_0(b_{\gamma_0})}$, следовательно, $E\{\gamma_0\} = 0$.
 
     Изучим граничные условия.
-    Теперь кривая вида $\gamma + \tau h$ не лежит в $X$, поэтому просто изучить вариацию не получится.
+    Теперь кривая вида $\gamma_0 + \tau h$ не лежит в $X$, поэтому просто изучить вариацию не получится.
 
     Попробуем подвигать один из концов кривой так, чтобы он оставался на многообразии, и через некоторое расстояние подвинутая кривая сливалась с изначальной.
 
@@ -530,23 +533,27 @@
     Пусть $r: (-\eps, \eps) \map M_1, r \in C^2, r(0) = \gamma_0(a)$.
     Пусть $\delta > 0$ мало, $c \in \R$ --- какое-то.
     Рассмотрим $s(t, \tau) = \all{\gamma_0(t) + r(\tau) - \gamma_0(a), & t \in [a, a + \delta) \\ \gamma_0(t),& t \in [b - c, b]}$
-    Потребуем $s(t, 0) = \gamma_0(t)$, $s \in C^2([a, b] \times (-\eps, \eps)$, $s(t, \_) \in X$.
+    Потребуем $s(t, 0) = \gamma_0(t)$, $s \in C^2([a, b] \times (-\eps, \eps))$, $s(t, \_) \in X$.
     Также потребуем, чтобы $\forall t, \tau: \der{s}{t} \ne 0$, чтобы кривая была регулярной.
 
     \example{$s(t, \tau) = \gamma_0(t) + (\text{правая половина шапочки от $a$ до $a + \delta$, которая $0$ правее $b$}) \cdot (r(\tau) - r(0))$.}
 
-    $J[s(\_, \tau)]$ имеет локальной минимум при $\tau = 0$.
+    $J[s(\_, \tau)]$ имеет локальный максимум/минимум при $\tau = 0$.
     Положим $f(\tau) = J[s(\_, \tau)]$, и посчитаем $f'(\tau)$.
     \[f(\tau) - f(0) = \int\angles{\nabla_u \mathcal{F}, s - \gamma_0} + \angles{\nabla_{\dot{u}}\mathcal{F}, \dot{s} - \dot{\gamma}_0} + \bigO(\|s(\_, \tau) - \gamma_0\|_{\Gamma^2})\]
-    Далее считаем, что всё перепараметризовано так, что все кривые определены на $[0, 1]$, \comment{так что ли}.
-    \[f(\tau) - f(0) = \int\angles{\nabla_u \mathcal{F}, s - \gamma_0} + \angles{\nabla_{\dot{u}}\mathcal{F}, \dot{s} - \dot{\gamma}_0} + \bigO(\|s(\_, \tau) - \gamma_0\|_{C^2})\]
-    Также считаем, что $\|s(\_, \tau)\|$ \comment{что?}
-    \[\tau\int\angles{\nabla_u\mathcal{F}, \der{s}{\tau}(\_, 0)} + \angles{\nabla_{\dot{u}}\mathcal{F}, \der{s}{\tau}(\_, 0)} + \bigO(\tau^2) = \tau\int\angles{E\{\gamma_0\} + \der{s}{\tau}(\_, 0)} + s(t, \tau) = \gamma_0(t) - \angles{(\nabla_{\dot{u}}\mathcal{F}(\gamma_0)(a), \der{s}{\tau}(a, 0))} + \bigO(\tau^2)\]
-    Точку $b$ опускаем, так как $\der{s}{\tau}(b, 0) = 0$ по построению.
+    Далее считаем, что всё перепараметризовано так, что все кривые определены на $[0, 1]$, \comment{так что ли}. %Да, вполне
+    
+    $\der{s}{t} \neq 0$, равномерно отделена от нуля, $\Fc \in C^2(\dots)$, воспользуемся Тейлором для $C^2$-гладких функций:
+    
+    \[f(\tau) - f(0) = \int\angles{\nabla_u \mathcal{F}, s - \gamma_0} + \angles{\nabla_{\dot{u}}\mathcal{F}, \dot{s} - \dot{\gamma}_0} + \bigO(\|s(\_, \tau) - \gamma_0\|^2_{C^2})\]
+    Также считаем, что $\|s(\_, \tau)\|$ \comment{что?} %Тут, видимо, как раз \|\der{s}{t}\| отделена от нуля
+    \[\tau\int\left[\angles{\nabla_u\mathcal{F}, \der{s}{\tau}(\_, 0)} + \angles{\nabla_{\dot{u}}\mathcal{F}, \der{\dot s}{\tau}(\_, 0)}\right]\d \tau + \bigO(\tau^2) = \tau\left[\int\angles{E\{\gamma_0\}, \der{s}{\tau}(\_, 0)}\d \tau - \angles{\nabla_{\dot u} \Fc, \der{s}{\tau}(a, 0)}\right]  + \bigO(\tau^2) =\]
+    \[= - \tau\angles{\nabla_{\dot{u}}\mathcal{F}(\gamma_0)(a), \der{s}{\tau}(a, 0)} + \bigO(\tau^2)\]
+    Сначала интегрирование по частям во втором слагаемом, потом точку $b$ опускаем, так как $\der{s}{\tau}(b, 0) = 0$ по построению.
 
     Итак,
-    \[f'(\tau) = 0 \then \angles{\nabla_{\dot{u}}\mathcal{F}(\gamma_0(a)), \der{r}{\tau}(0)}\]
-    Так как $r$ --- любая кривая, то $(\nabla_{\dot{u}}\mathcal{F})(\gamma_0)(a) \perp T_{\gamma_0(a)}M$.
+    \[f'(0) = 0 \then \angles{\nabla_{\dot{u}}\mathcal{F}(\gamma_0)(a), \der{r}{\tau}(0)} = 0\]
+    Так как $r$ --- любая кривая через $\gamma_0(a)$, то $(\nabla_{\dot{u}}\mathcal{F})(\gamma_0)(a) \perp T_{\gamma_0(a)}M$.
 
     Аналогично со вторым концом.
 
@@ -565,32 +572,32 @@
     \item $\mathcal{F}(z, w) = |w|$.
     Минимум этого функционала --- расстояние от $M_1$ до $M_2$.
 
-        Условия из теоремы означают, что $\dot{\gamma}_0(a) \perp T_{\gamma(a)}M_1, \dot{\gamma}_0(b) \perp T_{\gamma(b)}M_1$, то есть...
-    $\nabla_u\Fc = \frac{w}{|w|}\then\frac{\d}{\d t}(\frac{\dot{\gamma}_0}{|\dot{\gamma}_0|}) = 0$.
+        Условия из теоремы означают, что $\dot{\gamma}_0(a) \perp T_{\gamma(a)}M_1, \dot{\gamma}_0(b) \perp T_{\gamma(b)}M_2$, а также
+    $\nabla_w\Fc = \frac{w}{|w|}\then\frac{\d}{\d t}(\frac{\dot{\gamma}_0}{|\dot{\gamma}_0|}) = 0$ (уравнение Э-Л).
         Экстремаль --- отрезок, соединяющий два многообразия, и перпендикулярный обоим многообразиям.
     \item $\mathcal{F}(z, w) = g(z)|w|$. $z = \vect{z_1 \\ z_2}$; мы видели, что тут масса полезностей при разных $g$.
-    $\nabla_{w}\Fc = g(z)\frac{w}{|w|}$. В этом случае условия трансверсальности тоже сводятся к условиям ортогональности $\dot{\gamma}(a) \perp M_1, \dot{\gamma}(b) \perp M_1$.
+    $\nabla_{w}\Fc = g(z)\frac{w}{|w|}$. В этом случае условия трансверсальности тоже сводятся к условиям ортогональности $\dot{\gamma_0}(a) \perp M_1, \dot{\gamma_0}(b) \perp M_2$.
     }
-    Рассмотрим частный случай: $n = 2, J[y] = \int\limits_{a_y}^{b_y} L(x, y(x), y'(x))\d x$, $L$ --- гладкая (везде, где нужно) на $\R^3$, $\phi, \psi \in C^2$ таковы, что $y(a_y) = \phi(a_y), y(b_y) = \psi(b_y)$.
+    Рассмотрим частный случай: $n = 2, J[y] = \int\limits_{a_y}^{b_y} L(x, y(x), y'(x))\d x$, $L$ --- гладкая (везде, где нужно) на $\R^3$; $\phi, \psi \in C^2$ таковы, что $y(a_y) = \phi(a_y), y(b_y) = \psi(b_y)$.
     Пусть $y \in C^2$.
     Таким образом, многообразия --- графики функций, и концы $y$ лежат на этих графиках.
 
     Сведёмся к уже доказанной теореме.
-    Подберём $\Fc(z, w) \in C(\R^2 \times \R^2)$ так, что $\Fc(z, w) = L\left(z_1, z_2, \frac{w_2}{|w_1|}\right)|w_1|$. Если $y$ --- экстремаль для $J$, то $(x, y(x))$ --- экстремаль для $\Fc$.
+    Подберём $\Fc(z, w) \in C(\R^2 \times \R^2)$ так, что $\Fc(z, w) = L\left(z_1, z_2, \frac{w_2}{|w_1|}\right)|w_1|$. %Если $y$ --- экстремаль для $J$, то $(x, y(x))$ --- экстремаль для $\Fc$.
 
     $M_1 = \defset{(x, \phi(x))}{x \in \R}, M_2 = \defset{(x, \psi(x))}{x \in \R}$.
 
     Пусть $w_1 > 0$ (на интересующей нас кривой $w_1 \equiv 1$).
-    Условия трансверсальности: \[\Fc = \left(L\left(z_1, z_2, \frac{w_2}{w_1}\right) - \frac{w_2 w_1}{w_1^2}\der{L}{\dot{u}}\left(z_1, z_2, \frac{w_2}{w_1}\right) \\ \der{L}{\dot{u}}\left(z_1, z_2, \frac{w_2}{w_1}\right)\right)\]
+    Условия трансверсальности: \[\nabla_w\Fc = \left(L\left(z_1, z_2, \frac{w_2}{w_1}\right) - \frac{w_2 w_1}{w_1^2}\der{L}{\dot{u}}\left(z_1, z_2, \frac{w_2}{w_1}\right) , \der{L}{\dot{u}}\left(z_1, z_2, \frac{w_2}{w_1}\right)\right)\]
     $\gamma(t) = (t, y(t))$, $\dot{\gamma}(t) = (1, \dot{y}(t))$.
     Тем самым, $(\nabla_w\Fc)(\gamma)(a) \perp \vect{1 \\ \dot{\phi}(a)}$ и $(\nabla_w\Fc)(\gamma)(b) \perp \vect{1 \\ \dot{\psi}(b)}$.
 
-    Распишем это через скалярное произведение: $(L - \dot{y}\der{L}{\dot{y}})(a) \cdot 1 + \der{L}{\dot{y}}\dot{\phi}(a) = 0$.
-    Аналогично со вторым концом, это часто записывают в виде
-    \[\all{L(a, y(a), \dot{y}(a)) + \der{L}{\dot{y}}(\dot{\phi}(a) - \dot{y}(a)) = 0 \\ L(b, y(b), \dot{y}(b)) + \der{L}{\dot{y}}(\dot{\psi}(b) - \dot{y}(b)) = 0}\]
+    Распишем это через скалярное произведение: $(L - \dot{y}\der{L}{\dot{y}})(a) \cdot 1 + \der{L}{\dot{y}}\dot{\phi}(a) = 0$,
+    аналогично со вторым концом. Это часто записывают в виде
+    \[\all{L + \der{L}{\dot{y}}(\dot{\phi}(a) - \dot{y}(a)) = 0 \\ L + \der{L}{\dot{y}}(\dot{\psi}(b) - \dot{y}(b)) = 0}\] % если захочешь вернуть аргументы у L, то тогда напиши и у \der{L}{\dot y}
 %    Теперь --- фокусы
 
-    Продемонстрируем элементарный вывод этого факта
+    Продемонстрируем элементарный вывод этого факта ($\tilde y = y + h$)
 %    \begin{tikzpicture}
 %        \draw[->] (-1, 0) -- (4, 0) node[right] {$x$};
 %        \draw[->] (0, -1) -- (0, 3) node[above] {$y$};
@@ -600,33 +607,38 @@
 %        \fill (3.5, 0) node[below]{$x_1 + \delta x_1$};
 %
 %    \end{tikzpicture}
-    \multline{J[\tilde{y}] - J[y] = \int\limits_{x_0 + \delta x_0}^{x_1 + \delta x_1}L(x, \tilde{y}, \dot{\tilde{y}}) - \int\limits_{x_0}^{x_1}L(x, y, \dot{y}) = \int\limits_{x_0}^{x_1}(L(\tilde.) - L()) - \int\limits_{x_0}^{x_0 + \delta x_0}L(\tilde.)  + \int\limits_{x_1}^{x_1 + \delta x_1}L(\tilde.) = \\=
-    \int\limits_{x_0}^{x_1}\left(\der{L}{y} - \frac{\d}{\d x}\der{L}{\dot{y}}\right)h \d x + L(x_1, y(x_1), \dot{y}(x_1))\delta x_1 - L(x_0, y(x_0), \dot{y}(x_0))\delta x_0 +\\+ \bigO(\|h\|^2_C) + o(\delta x_1) + o(\delta x_2) + \der{L}{?}h\big|_{x_0}^{x_1}\circlesign{=}}
-    Рассматривая финитные $h$, получаем, что первый член $\left(\der{L}{y} - \frac{\d}{\d x}\der{L}{\dot{y}}\right) = 0$.
+    \multline{J[\tilde{y}] - J[y] = \int\limits_{x_0 + \delta x_0}^{x_1 + \delta x_1}L(x, \tilde{y}, \dot{\tilde{y}}) - \int\limits_{x_0}^{x_1}L(x, y, \dot{y}) = \int\limits_{x_0}^{x_1}(L(\tilde\dots) - L(\dots)) - \int\limits_{x_0}^{x_0 + \delta x_0}L(\tilde\dots)  + \int\limits_{x_1}^{x_1 + \delta x_1}L(\tilde\dots) = \\=
+    \int\limits_{x_0}^{x_1}\left(\der{L}{y} - \frac{\d}{\d x}\der{L}{\dot{y}}\right)h \d x + L(x_1, y(x_1), \dot{y}(x_1))\delta x_1 - L(x_0, y(x_0), \dot{y}(x_0))\delta x_0 +\\+ \bigO(\|h\|^2_{C^1}) + o(\delta x_1) + o(\delta x_2) + \der{L}{\dot y}h\big|_{x_0}^{x_1}\circlesign{=}}
+    Рассматривая финитные $h$, получаем, что первый член $\left(\der{L}{y} - \frac{\d}{\d x}\der{L}{\dot{y}}\right) = 0$ (уравнение Э-Л).
 
     $h(x_0) = \delta y_0 - \dot{y}(x_0)\delta x_0 + o(\delta x_0) + o(\|h\|)$ --- уравнение касательной.
-    \[\circlesign{=}L(x_1, y(x_1), \dot{y}(x_1))\delta x_1 - L(x_0, y(x_0), \dot{y}(x_0))\delta x_0 + \der{L}{\dot{y}}(x_1)[\delta y_1 - \dot{y}(x_1)\delta x_1] - \der{L}{\dot{y}}[x_0, y(x_0), \dot{y}(x_0)] \cdot [\delta y_0 - \dot{y}(x_0)\delta x_0]\circlesign{=}\]
+    \[\circlesign{=}L(x_1, y(x_1), \dot{y}(x_1))\delta x_1 - L(x_0, y(x_0), \dot{y}(x_0))\delta x_0 + \der{L}{\dot{y}}(x_1, \dots)[\delta y_1 - \dot{y}(x_1)\delta x_1] - \der{L}{\dot{y}}(x_0,\dots) \cdot [\delta y_0 - \dot{y}(x_0)\delta x_0]\circlesign{=}\]
     С точностью до некоторых малых поправок, $\delta y_1 = \dot{\psi}(x_1)\delta x_1$ и $\delta y_0 = \dot{\phi}(x_0)\delta x_0$.
     \[\circlesign{=}\delta  x_1\left(L + \der{L}{\dot{y}}(x_1, y(x_1), \dot{y}(x_1))(-\dot{y}(x_1) + \dot{\psi}(x_1))\right) + \delta x_0 \cdot (\cdots)\]
+    
+    Обнуляя $\delta x_0$ и $\delta x_1$ по очереди, получаем то, что стоит в скобках.
+    
     Ура, вроде вывели.
     \section{Инвариантность уравнения Эйлера --- Лагранжа}
     <<Если сделать замену переменной в уравнении Эйлера --- Лагранжа, то решение будет решением задачи, в которой так же заменили переменные>>
 
-    Пусть $T: \R^n \map \R^n$ --- диффеоморфизм, $J[\gamma] = \int\Fc(\gamma, \dot{\gamma})\d t, \Fc(z, \lambda w) = \lambda\Fc(z, w), \lambda > 0$ \comment{(это и раньше требовалось, надо дописать)}.
+    Пусть $T: \R^n \map \R^n$ --- диффеоморфизм, $J[\gamma] = \int\Fc(\gamma, \dot{\gamma})\d t, \Fc(z, \lambda w) = \lambda\Fc(z, w), \lambda > 0$ \comment{(это и раньше требовалось, надо дописать)}. % что именно дописать? \lambda > 0?
 
     Пусть $\gamma$ --- ориентированная кривая, $T \circ \gamma$ --- также ориентированная кривая.
     $J_T[\gamma] \coloneqq J[T \circ \gamma]$, то есть $J_T[\gamma] = \int \Fc[T(\gamma(t)), T'(\gamma(t)) \cdot \dot{\gamma}(t)]\d t$.
 
-    \[J_T[\gamma] = \int\Fc_T[\gamma, \dot{\gamma}]\]
+    \[J_T[\gamma] = \int\Fc_T[\gamma, \dot{\gamma}]\d t\]
     Функция $\Fc_T(z, w) = \Fc[T(z), T'(z)w]$ имеет ту же однородность.
-    Пусть $E_T$ --- $E$, построенная по $\Fc_T$.
+    Пусть $E_T$ --- функция $E$, построенная по $\Fc_T$.
 
     Пусть задача --- с фиксированными концами.
-    Согласно когда-то проделанной выкладке: $\delta J_T[\gamma, h] = \int\angles{E_T\{\gamma\}, h}\d t$.
+    Согласно когда-то проделанной выкладке: $\delta J_T[\gamma, h] = \int\angles{E_T\{\gamma\}, h}\d t$. % не особо искал, но о-малое по идее должно быть
     \multline{
-        J_T[\gamma + h] - J_T[\gamma] = J[T(\gamma) + T'(\gamma)h + r] - J_T[\gamma] = \int\angles{\der{\Fc}{\gamma}, T'(0)h + r} + \left(\der{\Fc}{\dot{\gamma}}(T'(\gamma)h + r)'\right) + o(\|h\|_{C^1}) =\\=
-    \int\angles{\der{\Fc}{\gamma}, T'(\gamma) h} - \left(\frac{\d}{\d t}\der{F}{\dot{\gamma}}, T'(\gamma)h\right) = \angles{T'(\gamma)^t E\{T(\gamma)\}, h} + o(\|h\|_{C^1})}
-    Итак, $E_T\{\gamma\} = T'(\gamma) E(T(\gamma))$ --- заявленная инвариантность.
+        J_T[\gamma + h] - J_T[\gamma] = J[T(\gamma) + T'(\gamma)h + r] - J_T[\gamma] = \int\left[\angles{\der{\Fc}{\gamma}, T'(\gamma)h + r} + \angles{\der{\Fc}{\dot{\gamma}}, (T'(\gamma)h + r)'}\right]\d t + o(\|h\|_{C^1}) =\\=
+    \int\left[\angles{\der{\Fc}{\gamma}, T'(\gamma) h} - \angles{\frac{\d}{\d t}\der{F}{\dot{\gamma}}, T'(\gamma)h}\right] \d t + o(\|h\|_{C^1}) = \int \angles{T'(\gamma)^t E\{T(\gamma)\}, h} + o(\|h\|_{C^1})}
+    Итак, $E_T\{\gamma\} = T'(\gamma)^t E(T(\gamma))$ --- заявленная инвариантность. 
+    
+    В частности, $E_T\{\gamma\} = 0 \Leftrightarrow E\{T(\gamma)\} = 0$.
     \newlection{11 апреля 2024 г.}
     \section{Прямые методы вариационного исчисления}
     \subsection{Поиск решения задачи Штурма --- Лиувилля}
