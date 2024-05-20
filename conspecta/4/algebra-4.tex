@@ -1777,7 +1777,7 @@
     \item $E/F$ --- расширение Галуа.
     \item $E$ --- поле разложения некоторого сепарабельного $f \in F[t]$.
     \item $F = E^{\Aut(E/F)}$ и $[E:F] < \infty$.
-    \item Для некоторой $G \le \Aut(E)$: $F = E^G$.
+    \item Для некоторой конечной $G \le \Aut(E)$: $F = E^G$.
     }
     \provebullets{
     \item[$(1) \then (2)$] Аналогично доказательству~(\cref{harvesting-corollary}).
@@ -1863,7 +1863,20 @@
     \item По теореме Лагранжа $|H' : H| = \frac{|G : H'|}{|G:H|} = \frac{\left[E:E^H\right]}{\left[E : E^{H'}\right]} = \left[E^{H'} : E^H\right]$.
     \item $\forall h \in H: \sigma h \sigma^{-1}(\sigma(\alpha)) = \sigma h(\alpha) = \sigma(\alpha) \then \sigma(E^H) \le E^{\sigma H \sigma^{-1}}$.
     Обратное включение получается заменой $\tilde{H} \coloneqq \sigma H \sigma^{-1}$ и $\tilde{\sigma} \coloneqq \sigma^{-1}$.
-    \item To be continued
+    \item $H \normeq G \iff \forall \sigma \in G: \sigma H \sigma^{-1} = H \iff \forall \sigma \in G: \sigma(E^H) = E^H$.
+        Рассмотрим гомоморфизм $\theta: G \map \Aut(E^H / F), \sigma \mapsto \sigma\big|_{E^H}$.
+        Очевидно, $\Ker(\theta) = H$. Покажем, что $\theta$ сюръективно.
+        Пусть $\eta \in \Aut(E^H / F)$, покажем, что $\eta \in \Image(\theta)$.
+
+    Расширение $E/F$ нормально, значит, $\exists f \in F[t]: E = F_f$.
+    Тогда и подавно $(E^H)_f = E$.
+    Так как $E = (E^H)_f \cong \eta(E^H)_f$, то по теореме о количестве вложений $\exists$ хотя бы одно вложение $E \map E$ над $\eta$.
+    Тем самым, $\Aut(E^H / F) \cong G/H$.
+    Теперь заметим, что $F = E^G = (E^H)^{G/H} \then E^H / F$ --- расширение Галуа, и $\Gal(E^H/F) \cong G/H$.
+
+    Обратно: пусть $E^H / F$ нормально, $\alpha \in E^H$ --- корень некоторого многочлена $f \in F[t]$.
+    Тогда $\forall \sigma \in G: \sigma(\alpha)$ --- корень $f$, то есть $\sigma(E^H) = E^H$.
+    С другой стороны, $\sigma(E^H) = E^{\sigma H \sigma^{-1}}$, и так как соответствие Галуа биективно, то $\forall \sigma \in G: \sigma H \sigma^{-1} = H$, то есть $H \normeq G$.
     }
     }
     Теперь можно нарисовать некоторые картинки:
@@ -1895,5 +1908,113 @@
         \end{tikzcd}\]
         \end{minipage}
     \end{figure}
+    \newlection{20 мая 2024 г.}
+    \definition[Решётка]{
+    Частично упорядоченное множество, в котором есть все конечные инфимумы (наибольший элемент, меньший данных) и супремумы (наименьший элемент, больший данных).
+    }
+    Соответствие Галуа устанавливает антиизоморфизм решёток подгрупп и подполей, где порядок индуцирован с включения.
 
+    Для $K$ и $L$ --- подполей большого поля $E$ --- наименьшее поле, содержащее $K$ и $L$, обозначают $K \cdot L$.
+    \proposal{\label{prop}
+    Пусть $E/F$ --- расширение Галуа, $G \coloneqq \Gal(E/F)$.
+        Выберем подгруппы $P, Q \le G$, и соответствующие им поля $K \coloneqq E^P, L \coloneqq E^Q$, и рассмотрим следующую башню полей (поле выше --- расширение поля ниже):
+    % https://q.uiver.app/#q=WzAsNixbMSwwLCJFIl0sWzEsMSwiS1xcY2RvdCBMID0gRV57UCBcXGNhcCBRfSJdLFswLDIsIksgPSBFXlAiXSxbMiwyLCJMID0gRV5RIl0sWzEsMywiSyBcXGNhcCBMID0gRV57XFxhbmdsZXN7UCBcXGN1cCBRfX0iXSxbMSw0LCJGIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&,column sep=tiny,row sep=small]
+              \& E \\
+              \& {K\cdot L = E^{P \cap Q}} \\
+              {K = E^P} \&\& {L = E^Q} \\
+              \& {K \cap L = E^{\angles{P \cup Q}}} \\
+              \& F
+              \arrow[no head, from=1-2, to=2-2]
+              \arrow[no head, from=2-2, to=3-1]
+              \arrow[no head, from=2-2, to=3-3]
+              \arrow[no head, from=3-1, to=4-2]
+              \arrow[no head, from=3-3, to=4-2]
+              \arrow[no head, from=4-2, to=5-2]
+        \end{tikzcd}\]
+    Если $K/(K\cap L)$ нормально, то и $(K \cdot L)/L$ нормально, причём $\Gal(K \cdot L / L) \cong \Gal(K/ K \cap L)$.
+    \provehere{
+    Так как $K/K \cap L$ нормально, то $P \normeq \angles{P \cup Q}$.
+        Тем самым, $\angles{P \cup Q} = PQ$, и $P \cap Q \normeq Q$, откуда из соответствия Галуа $K \cdot L/L$ нормально.
+
+        Согласно теореме Нётер об изоморфизме \[\Gal(KL/L) \cong \frac{Q}{Q \cap P} \cong \frac{P Q}{P} \cong \Gal(K / K \cap L)\qedhere\]
+    }
+    }
+    Пусть $f \in F[t]$.
+    \definition[Группа Галуа многочлена $f$]{
+    $\Gal(f/F) \bydef \Gal(F_f / F)$.
+    Если поле $F$ не указано, то логично в качестве него брать наименьшее поле, содержащее коэффициенты многочлена.
+    В характеристике нуль $F = \Q(\text{коэффициенты многочлена $f$})$.
+    }
+    Пусть имеется расширение $E/F$, и $f \in F[t] \subset E[t]$.
+    Из определения видно, что $E_f = E \cdot F_f$ --- $F_f$ содержит все корни $f$, а $E_f$ порождено ими над $E$.
+
+    Таким образом, имеет место башня полей
+    % https://q.uiver.app/#q=WzAsNSxbMSwwLCJFX2YiXSxbMCwxLCJGX2YiXSxbMiwxLCJFIl0sWzEsMiwiRSBcXGNhcCBGX2YiXSxbMSwzLCJGIl0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&,column sep=tiny,row sep=small]
+          \& {E_f} \\
+          {F_f} \&\& E \\
+          \& {E \cap F_f} \\
+          \& F
+          \arrow[no head, from=1-2, to=2-1]
+          \arrow[no head, from=1-2, to=2-3]
+          \arrow[no head, from=2-1, to=3-2]
+          \arrow[no head, from=2-3, to=3-2]
+          \arrow[no head, from=3-2, to=4-2]
+    \end{tikzcd}\]
+    Согласно~(\cref{prop}), $\Gal(E_f / E) \cong \Gal(F_f / F_f \cap E) \le \Gal(F_f / F)$.
+
+    \definition[Разрешимая группа $G$]{
+    Такая группа $G$, что существует субнормальный ряд с абелевыми факторами $1 = G_0 \normeq G_1 \dots \normeq G_n = G$ (факторы ряда --- факторгруппы $G_{i+1}/G_i$).
+    }
+    \lemma{
+    Группа разрешима $\iff$ существует нормальный ряд с абелевыми факторами, то есть ряд $1 = G_0 \normeq G_1 \dots \normeq G_n$, где все $G_i \normeq G$.
+    \provewthen{
+    Очевидно.
+    }{
+        Можно построить ряд по алгоритму $G_{i - 1} \coloneqq [G_i, G_i]$.
+    }
+    }
+    \definition[Композиционный ряд]{
+        Неуплотняемый субнормальный ряд без повторений.
+        Неуплотняемость означает, что любой фактор --- простая (без нормальных подгрупп) группа.
+    }
+    В самом деле, если $H \normeq G_{i+1} / G_i$, то $\pi_{G_i}^{-1}(H)$ можно вставить в ряд между $G_i$ и $G_{i+1}$.
+    \lemma{
+    Любые два композиционных ряда эквивалентны.
+    Любые два субнормальных ряда обладают эквивалентными уплотнениями.
+    Факторы композиционного ряда изоморфны циклическим группам простого порядка.
+    }
+    \lemma{\label{lemma}
+    Пусть $|G| = p^n$.
+        Тогда $\exists H \le G: |G : H| = p$.
+    \provehere{
+    Пусть $n \ge 1$.
+        Центр $C \le G$ $p$-группы нетривиален, значит, $\pi_C(G) = G/C$ имеет порядок строго меньше $p^n$.
+        По индукции в ней есть подгруппа $\tilde{H} \le G/C$ индекса $p$, тогда $|G : \pi_C^{-1}(H)| = p$.
+    }
+    }
+    \theorem[FTHA]{
+    $\C = \R\left[\sqrt{-3}\right]$ алгебраически замкнуто.
+        \provehere{
+            Рассмотрим конечное расширение $E/\C$, тогда расширение $E/\R$ тоже конечно.
+            Вложим его в нормальное расширение $E' / \C$.
+
+        $G \coloneqq \Gal(E'/\R)$, пусть $|G| = 2^k \cdot m$, где $m$ нечётно.
+        Пусть $P$ --- силовская $2$-подгруппа в $G$: $|G : P| = m$.
+        Так как $[E' : \R] = 2^k \cdot m$ и $[E' : E'^P] = |P| = 2^k$, то $[E'^P : \R] = m$.
+
+            Рассмотрим $\alpha \in E'^P$, пусть $f \in \R[t]$ --- минимальный многочлен $\alpha$.
+        Тогда $\left[\R[\alpha] : \R\right] = \deg f \divs m$, откуда $\deg f$ нечётна.
+        Но $f$ неприводим над $\R$, а он нечётной степени.
+            Используя соображения непрерывности и полноты $\R$, получаем, что $\deg f = 1$, то есть $\alpha \in \R$.
+            Тем самым, $E'^P = \R$, соответствие Галуа говорит, что $P = G$.
+
+            $\Gal(E'/\C) \le \Gal(E'/\R)$, откуда $\Gal(E'/\C)$ --- тоже $2$-группа.
+        Согласно~(\cref{lemma}), найдётся $H \le \Gal(E'/\C)$ индекса $2$.
+
+        Тогда $[E'^H : \C] = 2$, но у $\C$ нет расширений степени $2$ --- любой квадратный многочлен над $\C$ разложим в $\C$ на линейные множители.
+        Тем самым, $\Gal(E'/\C)$ тривиальна, откуда $E' = \C$, и у $\C$ нет никаких конечных расширений.
+        }
+    }
 \end{document}
