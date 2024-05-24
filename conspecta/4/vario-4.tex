@@ -652,7 +652,7 @@
     Согласно~(\cref{vario-formula}) после интегрирования по частям получаем: $\delta J_T[\gamma, h] = \int\angles{E_T\{\gamma\}, h}\d t + o(\|h\|)$.
     Пусть $T(\gamma + h) = T(\gamma) + T'(\gamma)h + r$, где $\|r\|_{C^1}$ конечно же мала (порядка $\|h\|_{C^1}$).
     \multline{
-        J_T[\gamma + h] - J_T[\gamma] = J[T(\gamma) + T'(\gamma)h + \gamma] - J[T(\gamma)] =\\= \int\left[\angles{\der{\Fc}{\gamma}, T'(\gamma)h + r} + \angles{\der{\Fc}{\dot{\gamma}}, (T'(\gamma)h + r)'}\right]\d t + o(\|h\|_{C^1}) =\\=
+        J_T[\gamma + h] - J_T[\gamma] = J[T(\gamma) + T'(\gamma)h + r] - J[T(\gamma)] =\\= \int\left[\angles{\der{\Fc}{\gamma}, T'(\gamma)h + r} + \angles{\der{\Fc}{\dot{\gamma}}, (T'(\gamma)h + r)'}\right]\d t + o(\|h\|_{C^1}) =\\=
     \int\left[\angles{\der{\Fc}{\gamma}, T'(\gamma) h} - \angles{\frac{\d}{\d t}\der{F}{\dot{\gamma}}, T'(\gamma)h}\right] \d t + o(\|h\|_{C^1}) = \int \angles{T'(\gamma)^t E\{T(\gamma)\}, h} + o(\|h\|_{C^1})}
     Итак, $E_T\{\gamma\} = T'(\gamma)^t E\{T(\gamma)\}$ --- заявленная инвариантность уравнения Эйлера --- Лагранжа.
     
