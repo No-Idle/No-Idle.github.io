@@ -33,6 +33,7 @@ jobs:
           
       - name: Find and compile LaTeX files
         run: |
+         current_dir=$(pwd)
          for file in $(find . -type f -name "*.tex"); do
             echo "$file"
             base_dir=$(dirname $file)
@@ -43,6 +44,7 @@ jobs:
             pdflatex -output-directory=pdfs $filename.tex
             new_file="pdfs/$filename.pdf"
             git add "$new_file"
+            cd $current_dir
          done
          
       - name: Commit changes
