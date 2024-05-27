@@ -739,12 +739,12 @@
     
     \[0 = \int\limits_a^b \xi(s)\left[u(s) - \int\limits_s^b \frac{1}{p(t)}\int\limits_t^b(q(x) - \lambda_J)u(x)\d x\d t + K \int\limits_{s}^b \frac{\d t}{p(t)}\right]\d s\]
     
-    Итак, $0 = \int\limits_{a}^{b}\xi(s)\left[\cdots\right]\d s$, откуда <<по нулевой лемме Дюбуа-Реймона>> выражение в скобках равно нулю везде: $u(s) = \int\limits_s^b \frac{1}{p(t)}\int\limits_t^b(q(x) - \lambda_J)\d x\d t - K \int\limits_{s}^b \frac{\d t}{p(t)}$, в частности сразу $u \in C^1$.
+    Итак, $0 = \int\limits_{a}^{b}\xi(s)\left[\cdots\right]\d s$, откуда <<по нулевой лемме Дюбуа-Реймона>> выражение в скобках равно нулю везде: $u(s) = \int\limits_s^b \frac{1}{p(t)}\int\limits_t^b(q(x) - \lambda_J)u(x)\d x\d t - K \int\limits_{s}^b \frac{\d t}{p(t)}$, в частности сразу $u \in C^1$.
     
 
     Значит, $u$ можно продифференцировать, получим \[u'(s) = -\frac1{p(s)}\int\limits_s^b(q(x) - \lambda_J)u(x)\d x + \frac{K}{p(s)},\] откуда $u \in C^2$.
     Тем самым, $(p(s) u'(s))' = (q(s) - \lambda_J)u(s)$, значит, $u \in X$, $J[u] = \int\limits_{a}^{b}p u'^2 + qu^2$.
-        Интегрируя по частям, получаем ровно $\int\limits_{a}^{b}((-p u')' + q)u^2\d x = \lambda_J \int\limits_{a}^{b}u^2 = \lambda_J$.
+        Интегрируя по частям, получаем ровно $\int\limits_{a}^{b}((-p u')' + qu)u\d x = \lambda_J \int\limits_{a}^{b}u^2 = \lambda_J$.
     }
     }
     Из данной теоремы получаются следующие выводы:
