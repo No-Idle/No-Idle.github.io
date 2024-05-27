@@ -469,7 +469,8 @@
         % Пределы не стоят намеренно, так как параметризации могут разниться
 
         Теперь пусть $s \in C^2\left([a, b] \times [-\eps, \eps] \map \R^n\right)$, и пусть $s(\_, \tau)$ --- параметризованная кривая.
-        Тогда $\frac{\d}{\d \tau}J[s(\_, \tau)] = \int\limits_{a}^{b}E\{s(x, \tau)\}\d x + \angles{(\nabla_{w}\Fc )(s(x, \tau), \der{s}{x}(x, \tau)), \der{s}{\tau}}\Big|_{x = a}^{x = b}$
+        Тогда $\frac{\d}{\d \tau}J[s(\_, \tau)] = \int\limits_{a}^{b}\angles{E\{s(x, \tau)\}, \der{s}{\tau}(x, \tau)}\d x + \angles{(\nabla_{w}\Fc )(s(x, \tau), \der{s}{x}(x, \tau)), \der{s}{\tau}(x, \tau)}\Big|_{x = a}^{x = b}$.
+    \comment{Наверно, так.}
     \provehere{
         Упражнение.
     }
