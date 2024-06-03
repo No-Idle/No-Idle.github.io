@@ -758,16 +758,16 @@
     Это так называемое \emph{уравнение Лапласа}: $\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0$.
 
     Обобщим.
-    Пусть $G \subset \R^n$ --- область, пусть $f \in C^2(G)$.
+    Пусть $G \subset \R^n$ --- область, пусть $f: G \map \R$, $f \in C^2(G)$.
     \definition[$f$ --- гармоническая функция в $G$]{
         $\frac{\partial^2u}{\partial x_1^2} + \cdots + \frac{\partial^2u}{\partial x_n^2} = 0$.
     }
     Оператор $\Delta = \frac{\partial^2}{\partial x_1^2} + \cdots + \frac{\partial^2}{\partial x_n^2}$ называется \emph{оператором Лапласа}, и понятно, что гармонические функции --- в точности такие $u$, что $\Delta u = 0$.
     \statement{
-    Если $u \in C^2(G)$, где область $G \subset \R^2$, то локально существует голоморфная $f: u = \Re f$.
+    Если $u: G \map \R, u \in C^2(G)$, где область $G \subset \R^2$, то локально существует голоморфная $f: u = \Re f$.
         Иными словами, $\forall z_0 \in G: \exists U \ni z_0, \exists$ аналитическая $f: U \map \C: u = \Re f$.
     \provehere{
-        Пусть $\phi \coloneqq \der{u}{x}, \psi \coloneqq -\der{u}{y}$. Тогда $\der{\phi}{x} - \der{\psi}{y} = 0$, то есть $\der{\phi}{x} = \der{\psi}{y}$ везде в $G$.
+        Положим $\phi \coloneqq \der{u}{x}, \psi \coloneqq -\der{u}{y}$. Тогда $\der{\phi}{x} - \der{\psi}{y} = 0$, то есть $\der{\phi}{x} = \der{\psi}{y}$ везде в $G$.
 
     Раз накрест-взятые частные производные совпадают, то дифференциальная форма $\phi \d x + \psi \d y$ замкнута, значит, локально имеется первообразная.
 
