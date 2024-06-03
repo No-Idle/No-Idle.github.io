@@ -1176,6 +1176,9 @@
     \item Рассмотрим область, ограниченную синими линиями с двумя дырками.
         В ней система из красных путей правильная, так как можно разложить их в сумму двух зелёных стягиваемых путей:
     \[\begin{tikzpicture}
+        \fill[light] plot [smooth cycle, tension=1] coordinates {(0,0) (4,0) (4,3) (0,3)};
+        \fill[white] plot [smooth cycle, tension=1] coordinates {(0.5,1) (1.5,1) (1.5,2)};
+        \fill[white] plot [smooth cycle, tension=1] coordinates {(2.5,2) (3.5,1) (3.5,2)};
         \draw[blue, thick] plot [smooth cycle, tension=1] coordinates {(0,0) (4,0) (4,3) (0,3)};
         \draw[blue, thick] plot [smooth cycle, tension=1] coordinates {(0.5,1) (1.5,1) (1.5,2)};
         \draw[blue, thick] plot [smooth cycle, tension=1] coordinates {(2.5,2) (3.5,1) (3.5,2)};
@@ -1185,12 +1188,18 @@
         \draw[red,->] (0.95, 2.4) -- (1.05, 2.4);
         \draw[red,->] (3.05, 2.6) -- (3.15, 2.6);
         \draw[red,<-] (1.95, 3.1) -- (2.05, 3.1);
-%        \draw[darkgreen,domain=5:175] plot ({2 + 2.4 * cos(\x)}, {1.6 + 1.4 * sin(\x)});
-%        \draw[darkgreen,domain=185:355] plot ({2 + 2.4 * cos(\x)}, {1.6 + 1.4 * sin(\x)});
-%        \draw[darkgreen,domain=5:175] plot ({1 + cos(\x)}, {1.5 + sin(\x)});
-%        \draw[darkgreen,domain=185:355] plot ({1 + cos(\x)}, {1.5 + sin(\x)});
-%        \draw[darkgreen,domain=5:175] plot ({3.1 + cos(\x)}, {1.7 + sin(\x)});
-%        \draw[darkgreen,domain=185:355] plot ({3.1 + cos(\x)}, {1.7 + sin(\x)});
+        \draw[darkgreen,domain=5:175] plot ({2 + 2.4 * cos(\x)}, {1.6 + 1.4 * sin(\x)});
+        \draw[darkgreen,domain=185:355] plot ({2 + 2.4 * cos(\x)}, {1.6 + 1.4 * sin(\x)});
+        \draw[darkgreen,domain=10:175] plot ({1 + cos(\x)}, {1.5 + sin(\x)});
+        \draw[darkgreen,domain=180:365] plot ({1 + cos(\x)}, {1.5 + sin(\x)});
+        \draw[darkgreen,domain=0:180] plot ({3.1 + cos(\x)}, {1.7 + sin(\x)});
+        \draw[darkgreen,domain=190:355] plot ({3.1 + cos(\x)}, {1.7 + sin(\x)});
+          \draw[darkgreen] ({1 + cos(10)}, {1.5 + sin(10)}) -- ({3.1 + cos(180)}, {1.7 + sin(180)});
+          \draw[darkgreen] ({1 + cos(365)}, {1.5 + sin(365)}) -- ({3.1 + cos(190)}, {1.7 + sin(190)});
+          \draw[darkgreen] ({1 + cos(175)}, {1.5 + sin(175)}) -- ({2 + 2.4 * cos(175)}, {1.6 + 1.4 * sin(175)});
+          \draw[darkgreen] ({1 + cos(180)}, {1.5 + sin(180)}) -- ({2 + 2.4 * cos(185)}, {1.6 + 1.4 * sin(185)});
+          \draw[darkgreen] ({3.1 + cos(0)}, {1.7 + sin(0)}) -- ({2 + 2.4 * cos(5)}, {1.6 + 1.4 * sin(175)});
+          \draw[darkgreen] ({3.1 + cos(355)}, {1.7 + sin(355)}) -- ({2 + 2.4 * cos(355)}, {1.6 + 1.4 * sin(355)});
     \end{tikzpicture}\]
     }
     Пусть $\gamma$ --- петля в $\C$, $z_0 \notin \Image(\gamma)$.
