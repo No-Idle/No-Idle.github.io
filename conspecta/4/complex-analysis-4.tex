@@ -1943,13 +1943,13 @@
             Рассмотрим бесконечное произведение $\prod\limits_{j = 0}^{\infty}u_j(z)$, где $u_j$ --- аналитические функции.
             Будем говорить, что данное \emph{произведение сходится}, если $\forall$ компакта $K \subset G: \exists M \in \N: \forall j \ge M, z \in K: u_j(z) \ne 0$, и произведение $\prod\limits_{j > N}u_j(z)$ сходится на $K$ равномерно.
         
-            Определим \emph{множители Вейерштрасса}: \[u_j(z) \coloneqq \left(1 - \frac{z}{a_j}\right) \cdot \exp\left(-\left(\frac{z}{a_j} + \frac{1}{2}\left(\frac{z}{a_j}\right)^2 + \dots + \frac{1}{j - 1}\left(\frac{z}{a_{j-1}}\right)^{j-1}\right)\right)\]
-            Показатель экспоненты подогнан так, чтобы при взятии логарифма много чего сократилось (а $\log(1 - w) = w + \frac{w^2}{2} + \frac{w^3}{3} + \dots$ при $|w| < 1$, например, потому что этот ряд совпадает с рядом для вещественного логарифма на $\R_{> 0}$, и имеется теорема единственности)
+            Определим \emph{множители Вейерштрасса}: \[u_j(z) \coloneqq \left(1 - \frac{z}{a_j}\right) \cdot \exp\left(\frac{z}{a_j} + \frac{1}{2}\left(\frac{z}{a_j}\right)^2 + \dots + \frac{1}{j - 1}\left(\frac{z}{a_{j-1}}\right)^{j-1}\right)\]
+            Показатель экспоненты подогнан так, чтобы при взятии логарифма много чего сократилось (а $\log(1 - w) = -w - \frac{w^2}{2} - \frac{w^3}{3} - \dots$ при $|w| < 1$, например, потому что этот ряд совпадает с рядом для вещественного логарифма на $\R_{> 0}$, и имеется теорема единственности)
 
             Осталось показать, что произведение $\prod\limits_{j = 0}^{\infty}u_j(z)$ сходится равномерно на компактах, и её нули --- в точности $a_j$ с учётом кратности.
 
             Определим компакт $K \coloneqq \defset{z \in \C}{|z| \le \frac{|a_N|}{2}}$, и покажем, что $\prod\limits_{j > N}u_j(z)$ сходится равномерно на $K$.
-            \[u_j(z) = \exp\left(\log\left(1 - \frac{z}{a_j}\right) - \frac{z}{a_j} - \dots - \frac{1}{j - 1}\left(\frac{z}{a_j}\right)^{j - 1}\right) = \exp\left(\sum\limits_{s \ge j}\frac{1}{s}\left(\frac{z}{a_j}\right)^s\right)\]
+            \[u_j(z) = \exp\left(\log\left(1 - \frac{z}{a_j}\right) + \frac{z}{a_j} + \dots + \frac{1}{j - 1}\left(\frac{z}{a_j}\right)^{j - 1}\right) = \exp\left(-\sum\limits_{s \ge j}\frac{1}{s}\left(\frac{z}{a_j}\right)^s\right)\]
             При этом $\log\left(1 - \frac{z}{a_j}\right)$ определён, так как $|z| < |a_j|$. Оценим
             \[\abs{\sum\limits_{s \ge j}\frac{1}{s}\left(\frac{z}{a_j}\right)^s} \le \abs{\sum\limits_{s \ge j}\left(\frac{z}{a_j}\right)^s}\le \abs{\sum\limits_{s \ge j}\left|\frac{a_N}{2a_j}\right|^s} \le \left(\frac{1}{2}\right)^j\]
 
