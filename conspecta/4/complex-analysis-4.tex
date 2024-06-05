@@ -1968,7 +1968,7 @@
         Надо доказать, что $\sum\limits_{j \ge N}\log\left(1 - \frac{z}{a_j}\right)$ сходится.
 
         Под логарифмом стоят выражения вида $1 - t$, где $|t| \le \frac{1}{2}$.
-        Разложим в ряд и оценим: $\log(1 - t) = t + \frac{t^2}{2} + \frac{t^3}{3} + \dots = t\left(1 + \frac{t}{2} + \frac{t^2}{3} + \dots\right) \le t \cdot C$, где $C \coloneqq \sum\limits_{n \ge 1}\frac{\left(\nicefrac12\right)^{n-1}}{n}$.
+        Разложим в ряд и оценим: $\abs{\log(1 - t)} = \abs{t + \frac{t^2}{2} + \frac{t^3}{3} + \dots} = \abs{t\left(1 + \frac{t}{2} + \frac{t^2}{3} + \dots\right)} \le \abs{t} \cdot C$, где $C \coloneqq \sum\limits_{n \ge 1}\frac{\left(\nicefrac12\right)^{n-1}}{n}$.
         Этой оценки достаточно: $\sum\limits_{j \ge N}\abs{\log\left(1 - \frac{z}{a_j}\right)} \le \sum\limits_{j \ge N}C\abs{\frac{z}{a_j}}$, что сходится равномерно по $z \in K$.
     }
     \item Если $\sum\limits_{n \ge 0}\frac{1}{|a_n|^2} < \infty$, то хватит первого члена при разложении логарифма в ряд: $\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z}{a_j}\right)e^{\frac{z}{a_j}}$ сходится.
