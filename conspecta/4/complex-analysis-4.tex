@@ -2015,7 +2015,7 @@
     Как видим, сумма обратных квадратов сходится, поэтому можно записать произведение Вейерштрасса в виде
     \[z\cdot\prod\limits_{j \in \Z \sm \{0\}}\left(1 - \frac{z}{j \pi}\right)e^{\frac{z}{j\pi}}\]
     где произведение берётся в порядке возрастания модулей $j$.
-    Иными словами, \[z \cdot \lim\limits_{N \to \infty}\prod\limits_{\substack{j \le N \\ j \ne 0}}\left(1 - \frac{z}{j \pi}\right)e^{\frac{z}{j\pi}} = z \cdot \lim\limits_{N \to \infty}\prod\limits_{j = 1}^{N}\left(1 - \frac{z^2}{j^2 \pi^2}\right) = z \prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2 \pi^2}\right)\]
+    Иными словами, \[z \cdot \lim\limits_{N \to \infty}\prod\limits_{\substack{|j| \le N \\ j \ne 0}}\left(1 - \frac{z}{j \pi}\right)e^{\frac{z}{j\pi}} = z \cdot \lim\limits_{N \to \infty}\prod\limits_{j = 1}^{N}\left(1 - \frac{z^2}{j^2 \pi^2}\right) = z \prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2 \pi^2}\right)\]
     Как мы выяснили, $\exists$ целая $h: \C \map \C: \sin(z) = e^{h(z)} z \prod\limits_{j = 1}^{\infty}\left(1 - \frac{z^2}{j^2 \pi^2}\right)$
     \fact{
     $h \equiv 0$ подойдёт (понятно, что если это правда, то $2\pi i k$ для $k \in \Z$ тоже подойдёт).
