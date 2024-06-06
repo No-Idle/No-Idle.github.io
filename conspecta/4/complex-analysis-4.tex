@@ -1041,7 +1041,7 @@
     }
     }
     \newlection{22 марта 2024 г.}
-    Ряд Лорана $g(z) = \sum\limits_{j \in \Z}c_jz^j$ принято раскладывать на две части --- \emph{регулярную} $\sum\limits_{j \ge 0}c_j (z - z_0)^j$ и \emph{главную} $\sum\limits_{j < 0} c_j (z - z_0)^j$.
+    Ряд Лорана $g(z) = \sum\limits_{j \in \Z}c_j(z - z_0)^j$ принято раскладывать на две части --- \emph{регулярную} $\sum\limits_{j \ge 0}c_j (z - z_0)^j$ и \emph{главную} $\sum\limits_{j < 0} c_j (z - z_0)^j$.
 
     Если ряд Лорана изучать в маленькой окрестности $z_0$, то главная часть асимптотически больше.
     Регулярная же сходится на всей комплексной плоскости. %сомнительное утверждение
@@ -1439,6 +1439,8 @@
     }
     Пусть теперь $\gamma$ --- петля.
     Тогда $\Re(u(b) - u(a)) = 0$, и вообще, $u(b) - u(a) = 2\pi i k$ для некоторого $k \in \Z$.
+    
+    Тем самым, $\frac1{2\pi i}\int\limits_{\gamma} \frac{f'(z)}{f(z)}\d z$ есть целое число. В частности, $f(z) = z - z_0$, $\Ind_{z_0} \gamma \in \Z$. Индекс петли есть целое число.
     \newlection{5 апреля 2024 г.}
     \section{Принцип аргумента и теорема Руше}
     Пусть $\gamma: [a, b] \map \C$ --- простой замкнутый путь, $\gamma(a) = \gamma(b)$.
@@ -1932,7 +1934,7 @@
         Существует целая функция $f$, мультимножество нулей которой совпадает с данным мультимножеством $N = \{a_0, a_1, \dots\}$.
         Считаем $|a_0| \le |a_1| \le \dots$.
         Дополнительно предполагается, что $|a_j| \underset{j \to \infty}\Map \infty$.
-        \comment{Кажется, это необходимое и достаточное условие того, что у $N$ нет предельных точек}
+        \comment{Кажется, это необходимое и достаточное условие того, что у $N$ нет предельных точек} %вроде да
         \provehere{
             Если бы нулей было конечное количество, то многочлен $(z - a_0) \proddots (z - a_N)$ подошёл бы, но нулей, увы, бесконечно.
             Предположим, что $0 \notin N$ (это не ограничивает общность: выкинем $0$ из $N$, построим $f$, потом домножим на нужную степень $z^k$), и заметим, что произведение $\left(1 - \frac{z}{a_0}\right) \proddots \left(1 - \frac{z}{a_N}\right)$ тоже решает задачу в случае конечного $N$.
@@ -1974,9 +1976,9 @@
     \item Если $\sum\limits_{n \ge 0}\frac{1}{|a_n|^2} < \infty$, то хватит первого члена при разложении логарифма в ряд: $\prod\limits_{j = 1}^{\infty}\left(1 - \frac{z}{a_j}\right)e^{\frac{z}{a_j}}$ сходится.
         \provehere{
             Зафиксируем $N \in \N$, и рассмотрим компакт $K \coloneqq \bigdefset{z \in \C}{|z| \le \frac{1}{2}a_N}$.
-            Надо доказать, что $\sum\limits_{j \ge N}\log\left(1 - \frac{z}{a_j}\right)\cdot{\frac{z}{a_j}}$ сходится.
+            Надо доказать, что $\sum\limits_{j \ge N}\log\left(1 - \frac{z}{a_j}\right)+{\frac{z}{a_j}}$ сходится.
 
-            Разложим в ряд и оценим: $\log(1 - t)t = t^2 + \frac{t^3}{2} + \frac{t^4}{3} + \dots = t^2\left(1 + \frac{t}{2} + \frac{t^2}{3} + \dots\right) \le t^2 \cdot C$, где $C \coloneqq \sum\limits_{n \ge 1}\frac{\left(\nicefrac12\right)^{n-1}}{n}$.
+            Разложим в ряд и оценим: $|\log(1 - t)+t| = \left|\frac{t^2}2 + \frac{t^3}{3} + \frac{t^4}{4} + \dots \right| = t^2\left|\frac12 + \frac{t}{3} + \frac{t^2}{4} + \dots\right| \le t^2 \cdot C$, где $C \coloneqq \sum\limits_{n \ge 0}\frac{\left(\nicefrac12\right)^{n}}{n + 2}$.
             Этой оценки достаточно: $\sum\limits_{j \ge N}\abs{\log\left(1 - \frac{z}{a_j}\right)\frac{z}{a_j}} \le \sum\limits_{j \ge N}C\abs{\frac{z}{a_j}}^2$, что сходится равномерно по $z \in K$.
         }
     }
@@ -2004,7 +2006,7 @@
     Рассмотрим функцию $\frac{1}{f}$.
         Она не равна тождественно нулю.
 
-    Пусть $g$ --- произведение Вейерштрасса по нулям функции $\frac{1}{f}$, $g \cdot f$ --- целая функция.
+    Пусть $g_2 \coloneqq g$ --- произведение Вейерштрасса по нулям функции $\frac{1}{f}$, $g_1 \coloneqq g \cdot f$ --- целая функция.
     }
     }
     \subsection{Разложение синуса в произведение}
@@ -2033,20 +2035,20 @@
         }
         }
         \bullets{
-            \item Возьмём логарифмическую производную обеих частей равенства $\sin(z) = e^{h(z)} \cdot z \cdot \prod\limits_{\substack{|j| \le N, j \ne 0}}\left(1 - \frac{z}{j\pi}\right)$:
-            \[\frac{\cos z}{\sin z} = h'(z) + \frac{1}{z} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N, j \ne 0}}\frac{1}{j\pi}\frac{1}{1 - \frac{z}{j\pi}} = h'(z) + \frac{1}{z} + \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N, j \ne 0}}\frac{1}{z - j\pi}\]
+            \item Возьмём логарифмическую производную обеих частей равенства $\sin(z) = e^{h(z)} \cdot z \cdot \lim\limits_{N \to \infty}\prod\limits_{\substack{|j| \le N\\ j \ne 0}}\left(1 - \frac{z}{j\pi}\right)$:
+            \[\frac{\cos z}{\sin z} = h'(z) + \frac{1}{z} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N\\ j \ne 0}}\frac{1}{j\pi}\frac{1}{1 - \frac{z}{j\pi}} = h'(z) + \frac{1}{z} + \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N\\ j \ne 0}}\frac{1}{z - j\pi}\]
             Отлично, у нас имеется равномерная сходимость на компактах, продифференцируем ещё раз:
-            \[1-\ctg(z)^2 = h''(z) - \frac{1}{z^2} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N, j \ne 0}}\frac{1}{\left(z - j\pi\right)^2}\]
+            \[1-\ctg(z)^2 = h''(z) - \frac{1}{z^2} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N\\ j \ne 0}}\frac{1}{\left(z - j\pi\right)^2}\]
             \item Проведём окружность $\Gamma_k$ с центром в нуле, и радиусом $\pi\left(k + \frac{1}{2}\right)$, и докажем, что $h''$ ограничена на $\Gamma_k$ некоторой константой $C$, не зависящей от $k$.
 
-            Понятно $\frac{1}{z^2} \le \frac{4}{\pi^2}$, оценим при $z \in \Gamma_k: \frac{1}{|z - j\pi|^2} \le \frac{1}{(k + \frac{1}{2} - |j|)^2\pi^2}$.
-            \comment{Кажется, это не совсем правда, но может и вообще правда.}
+            Понятно $\frac{1}{|z|^2} \le \frac{4}{\pi^2}$, оценим при $z \in \Gamma_k: \frac{1}{|z - j\pi|^2} \le \frac{1}{(k + \frac{1}{2} - |j|)^2\pi^2}$.
+            \comment{Кажется, это не совсем правда, но может и вообще правда.} %Вроде ок
             Осталось оценить котангенс:
             \[\ctg(z) = \frac{\cos z}{\sin z} = i \frac{e^{iz} + e^{-iz}}{e^{iz} - e^{-iz}}\]
         Раскладывая $z = x + iy$, получаем
             \[|\ctg(z)| = \abs{\frac{e^{-y}e^{ix} + e^y e^{-ix}}{e^{-y}e^{ix} - e^y e^{-ix}}}\]
-            Выберем $\eps < \frac{\pi}{4}$, и оценим котангенс вблизи вещественной оси (периодичность и непрерывность котангенса в круге радиуса $2\eps$), и при $|y| \ge \eps$:
-            \[\abs{\frac{e^{-y}e^{ix} + e^y e^{-ix}}{e^{-y}e^{ix} - e^y e^{-ix}}} \le \frac{e^y + e^{-y}}{|e^{-y} - e^y|} = \frac{e^y + e^{-y}}{e^{|y|} - e^{-|y|}} = \frac{e^{2y} + 1}{e^{2y} - 1} = 1 + \frac{2}{e^{2y} - 1} \le 1 + \frac{2}{e^{2\eps} - 1}\]
+            Выберем $\eps < \frac{\pi}{4}$, и оценим котангенс вблизи вещественной оси (периодичность и непрерывность котангенса в круге радиуса $2\eps$, там он ограничен), и при $|y| \ge \eps$:
+            \[\abs{\frac{e^{-y}e^{ix} + e^y e^{-ix}}{e^{-y}e^{ix} - e^y e^{-ix}}} \le \frac{e^y + e^{-y}}{|e^{-y} - e^y|} = \frac{e^y + e^{-y}}{e^{|y|} - e^{-|y|}} = \frac{e^{2|y|} + 1}{e^{2|y|} - 1} = 1 + \frac{2}{e^{2|y|} - 1} \le 1 + \frac{2}{e^{2\eps} - 1}\]
         \item Тем самым, на $\Gamma_k$: $h''$ ограничена $C$, по принципу максимума $h''$ ограничена внутри круга этой же константой, значит, $h''$ вообще ограничена.
 
             Согласно теореме Лиувилля, $h'' = \const$, тем самым, $h(z) = A + Bz + C z^2$ для некоторых $A,B,C \in \C$.
@@ -2084,7 +2086,7 @@
 
     К сожалению, не всё возможно в этой жизни.
     Заведомо $0 \notin G$: если $0 \in G$, то $f(1) = f(0 + 1) = 0 \cdot f(0) = 0$.
-    Далее первое условие влечёт, что $-1, -2, -3 \notin G$.
+    Далее первое условие влечёт, что $-1, -2, -3, \dots \notin G$.
 
     Положим $G \coloneqq \C \sm \{0, -1, -2, \dots\}$, и построим в этой области функцию с указанными свойствами, имеющую простые полюса в выколотых точках.
     Она не единственна, но сейчас мы увидим наиболее естественный кандидат.
@@ -2099,26 +2101,28 @@
     \frac{g(z + 1)}{g(z)} &= \frac{z + 1}{z}e^{h(z + 1) - h(z)}\lim\limits_{N \to \infty}\frac{N + 1 + z}{1 + z}e^{-1 - \frac{1}{2} - \frac{1}{3} - \dots - \frac{1}{N} + \log N}e^{-\log N}\end{align*}
     Как доказывалось во II семестре, $1 + \frac{1}{2} + \dots + \frac{1}{N} - \log N \underset{N \to \infty}\Map \gamma$ --- \emph{постоянная Эйлера --- Маскерони}.
     Итак, от функции $h$ хочется свойства
+    $$\frac 1z = \frac{z + 1}{z} e^{h(z + 1) - h(z)} \lim\limits_{N \to \infty} \frac{N + 1 + z}{N(1 + z)} e^{-\gamma}$$
     \[\frac{1}{z} = \frac{1}{z}e^{h(z + 1) - h(z)}e^{-\gamma}\]
     Самым простым решением будет взять линейную функцию $h(z) = \gamma z$.
     Получили
     \[g(z) = z e^{\gamma z}\prod\limits_{n = 1}^{\infty}\left(1 + \frac{z}{n}\right)e^{-\frac{z}{n}}\]
     Проверим, что $g(1) = 1$:
     \multline{g(1) = e^{\gamma}\prod\limits_{n = 1}^{\infty}\left(1 + \frac{1}{n}\right)e^{-\frac{1}{n}} = e^{\gamma}\lim\limits_{N \to \infty}\frac{2 \cdot 3 \proddots (N + 1)}{N!}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N}} = \\
-    =e^{\gamma}\lim\limits_{N \to \infty}\frac{2 \cdot 3 \proddots (N + 1)}{N! \cdot N}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N} + \log N} = 1}
+     =e^{\gamma}\lim\limits_{N \to \infty}\frac{(N + 1)!}{N! \cdot N}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N} + \log N}  = e^{\gamma}\lim\limits_{N \to \infty}\frac{N + 1}{N}e^{-1 - \frac{1}{2} - \dots - \frac{1}{N} + \log N} = 1}
     Чудесным образом ничего подкручивать не пришлось.
     \newlection{3 мая 2024 г.}
     Итак, определили
     \[\Gamma(z) \bydef \frac{1}{z}e^{-\gamma z} \frac{1}{\prod\limits_{n = 1}^{\infty}\left(1 + \frac{z}{n}\right)e^{-\frac{z}{n}}}\tag{$*$}\label{gamma-def}\]
     \note{
-    Пусть $\phi$ --- целая функция с периодом $1$. Тогда $\Gamma \cdot \phi$ тоже подходит, как функция, удовлетворяющая трём условиям из~(\cref{gamma})
+    Пусть $\phi$ --- целая функция с периодом $1$ и $\phi(1) = 1$. Тогда $\Gamma \cdot \phi$ тоже подходит, как функция, удовлетворяющая трём условиям из~(\cref{gamma}), однако, при некотором дополнительном условии мы можем получить <<единственность>> (см. \cref{gamma-uniqueness}).
     }
     Немного преобразовав выражение для гамма-функции, можно получить следующее:
     \[\Gamma(z) = e^{-\gamma z}\frac{1}{z}\lim\limits_{N \to \infty}\frac{N!}{(1 + z)\proddots (N + z)}e^{z\left(1 + \dots + \frac{1}{N}\right)} = \lim\limits_{N \to \infty}\frac{N! \cdot e^{z \log N}}{z\cdot  (1 + z)\proddots (N + z)}\]
+    $$\Gamma(z) = \lim\limits_{N \to \infty}\frac{N! \cdot N^z}{z(1 + z)\dots (N + z)}$$
     Также имеется так называемая \emph{формула дополнения}:
     \[\Gamma(z)\Gamma(-z) = -\frac{1}{z^2}\frac{1}{\prod\limits_{n = 1}^{\infty}\left(1 - \frac{z^2}{n^2}\right)} = -\frac{1}{z}\frac{\pi}{\sin \left(\pi z\right)}\]
     Часто её записывают немного в другом виде, домножив на $z$, и воспользовавшись функциональным уравнением: $\Gamma(z)\Gamma(1 - z) = \frac{\pi}{\sin \left(\pi z\right)}$.
-    Кстати, отсюда видно, чему равен <<факториал>> от половинки: $\Gamma\left(\frac{1}{2}\right)^2 = \pi$.
+    Кстати, отсюда видно, чему равен <<факториал>> от трёх вторых: $\Gamma\left(\frac{1}{2}\right)^2 = \pi$.
 
     Определим $g(z) \coloneqq \frac{1}{\Gamma(z)}$, это целая функция с нулями в целых неположительных точках.
     Значит, у $g$ имеется непрерывная ветвь логарифма в $\C \sm (-\infty; 0]$.
@@ -2126,7 +2130,7 @@
     \[\log g(z) = \log z + \gamma z + \sum\limits_{n = 1}^{\infty}\left(\log\left(1 + \frac{z}{n}\right) - \frac{z}{n}\right)\]
     Про эту ветвь даже можно утверждать, что она главная, так как у неё, как и у гамма-функции, значения на вещественной оси вещественные.
     Дифференцируя $\log g(z)$, получаем
-    \[\left(\log(g(z))\right)' = \frac{1}{z} + \gamma + \sum\limits_{n = 1}^{\infty}\left(\frac{\frac{1}{n}}{1 + \frac{z}{n}} - \frac{1}{n}\right) = \frac{1}{z} + \gamma + \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z} - \frac{1}{n}\right)\]
+    \[\left(\log g(z)\right)' = \frac{1}{z} + \gamma + \sum\limits_{n = 1}^{\infty}\left(\frac{\frac{1}{n}}{1 + \frac{z}{n}} - \frac{1}{n}\right) = \frac{1}{z} + \gamma + \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z} - \frac{1}{n}\right)\]
     Таким образом, $\left(\log \Gamma(z)\right)' = -\frac{1}{z} - \gamma - \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z} - \frac{1}{n}\right)$, и
     \[\left(\log \Gamma(z)\right)'' = \frac{1}{z^2} + \sum\limits_{n = 1}^{\infty}\frac{1}{(n + z)^2} = \sum\limits_{n = 0}^{\infty}\frac{1}{(n + z)^2}\tag{$\star$}\label{gamma-prime-twice}\]
     \corollary{На $\R_{> 0}$: $\log \Gamma(z)$ есть выпуклая функция. }
@@ -2142,7 +2146,7 @@
     Преобразуем средний член неравенства:
     \[g(x + n) - g(n) = \sum\limits_{k = 0}^{n - 1}\biggl(g(x + k + 1) - g(x + k)\biggr) + g(x) - g(n) = \sum\limits_{k = 0}^{n - 1}\log(x + k) + g(x) - \log\left(\left(n - 1\right)!\right)\]
     Выражая $g(x)$, получаем
-    \[x\log(n - 1) - \sum\limits_{k = 0}^{n - 1}\log(x + k) + \log(\left(n - 1\right)!) < g(x) < x\log(n) - \sum\limits_{k = 0}^{n - 1}\log(x + k) + \log(\left(n - 1\right)!)\]
+    \[x\log(n - 1) - \sum\limits_{k = 0}^{n - 1}\log(x + k) + \log(\left(n - 1\right)!) \le g(x) \le x\log(n) - \sum\limits_{k = 0}^{n - 1}\log(x + k) + \log(\left(n - 1\right)!)\]
     Разность между левой и правой частями $x\log(n - 1) - x\log(n) \underset{n \to \infty}\Map 0$.
         Понятно, что $g(x) = \log\Gamma(x)$ подходит, так как удовлетворяет посылке теоремы, и так как разность между пределами стремится к нулю, то в пересечении всего одна точка.
         Тем самым, $g(x)$ определена однозначно.
@@ -2153,7 +2157,7 @@
     \[\Psi(z) = \int\limits_{0}^{\infty}e^{-t}t^{z - 1}\d t,\quad z \in \C\]
     Когда $\Psi$ определена, а интеграл сходится?
     Разложим $z = x + iy$, где $x, y \in \R$.
-    Теперь $\Psi(z) = \int\limits_{0}^{\infty}e^{-t}e^{x - 1}t^{iy}\d t$.
+    Теперь $\Psi(z) = \int\limits_{0}^{\infty}e^{-t}t^{x - 1}t^{iy}\d t$.
     На $+\infty$ экспонента мажорирует остальные члены, в нуле имеется особенность, и интеграл суммируем, если $x > 0$.
 
     Тем самым, $\Psi(z)$ определена при $\Re z > 0$.
@@ -2166,14 +2170,14 @@
 
         \item $\Psi(1) = \int\limits_{0}^{\infty}e^{-t}\d t = \left(-e^{-t}\right)\big|_{0}^{\infty} = 1$.
     \item Убедимся, интегрируя по частям, что $x\Psi(x) = \Psi(x + 1)$
-    \[\Psi(z + 1) = \int\limits_{0}^{\infty}e^{-t}t^{x}\d t = -\int\limits_{0}^{\infty}t^x \d (e^{-t})\d t = -\left(t^x e^{-t}\right)\big|_{0}^{\infty} + \int\limits_{0}^{\infty}x t^{x - 1}e^{-t}\d t = x \Psi(x)\]
+    \[\Psi(z + 1) = \int\limits_{0}^{\infty}e^{-t}t^{x}\d t = -\int\limits_{0}^{\infty}t^x \d\, (e^{-t})= -\left(t^x e^{-t}\right)\big|_{0}^{\infty} + \int\limits_{0}^{\infty}x t^{x - 1}e^{-t}\d t = x \Psi(x)\]
     \item Убедимся, что $\log \Psi$ выпукла на вещественной оси: $\forall x, y \in \R_{> 0}, \forall \alpha, \beta \in [0, 1], \alpha + \beta = 1$:
     \multline{\log\Psi(\alpha x + \beta y) \le \alpha \log \Psi(x) + \beta \Psi(y) \\ \Psi(\alpha x + \beta y) \le \Psi(x)^\alpha \Psi(y)^\beta \\ \int\limits_{0}^{\infty}t^{\alpha x + \beta y - 1}e^{-t}\d t = \int\limits_{0}^{\infty}(t^{x - 1})^\alpha \cdot (t^{y - 1})^\beta e^{-t}\d t}
     что верно по неравенству Гёльдера.
     \item Согласно теореме единственности~(\cref{gamma-uniqueness}), $\Psi(z) = \Gamma(z)$ при $\Re z > 0$.
     }
     }
-    В частности,
+    В частности, получаем интеграл Гаусса:
     \[\sqrt{\pi} = \int\limits_{0}^{\infty}e^{-t}t^{-\frac{1}{2}}\d t = \left\|\arr{c}{t = x^2 \\ \d t = 2x \d x}\right\| = 2\int\limits_{0}^{\infty}e^{-x^2}\d x = \int\limits_{-\infty}^{\infty}e^{-x^2}\d x\]
     \subsection{Формула Стирлинга}
     На первом курсе мы доказали, что $\exists c \in \R: n! \sim c \sqrt{n}n^n e^{-n}$.
@@ -2189,7 +2193,7 @@
                \draw[->] (0, -1) -- (0, 1) node[right] {\(\Im\)};
                \draw[red]\leftarc{0}{0}{-0.4}{0}{-0.4}{-0.2} node[left] {$\phi$};
         \end{tikzpicture}&\qquad&\log(\Gamma(z)) = \log \sqrt{2\pi} + \log\frac{1}{z^{\frac{1}{2}}} - z + z \log z + \bigO\left(\frac{1}{|z|}\right)}\]
-    Здесь логарифм и корень определены в $\C \sm [0, +\infty)$, вещественные на вещественной оси.
+    Здесь логарифм и корень определены в $\C \sm (-\infty, 0]$, вещественные на вещественной оси.
     Потенцируя, получаем $\Gamma(z) \sim \sqrt{2\pi}\frac{1}{z^{\frac{1}{2}}}e^{-z}e^{z \log z}$
     \provehere{
         Будем использовать~\eqref{gamma-prime-twice}. Положим $\phi(t) \coloneqq \frac{1}{(t + z)^2}$, и приблизим $\sum\limits_{n = 1}^{\infty}\phi(n)$ интегралом.
@@ -2198,14 +2202,14 @@
     Тем самым, $\phi(n) = \int\limits_{n - \frac{1}{2}}^{n + \frac{1}{2}}\phi(t)\d t + \int\limits_{0}^{\frac{1}{2}}(2\phi(n) - \phi(n + t) - \phi(n - t))\d t$, и согласно~\eqref{gamma-prime-twice}:
     \[\left(\log \Gamma(z)\right)'' = \frac{1}{z^2} + \underbrace{\sum\limits_{n = 1}^{\infty}\int\limits_{n - \frac{1}{2}}^{n + \frac{1}{2}}\frac{1}{(t + z)^2}\d t}_{\int\limits_{\nicefrac{1}{2}}^{\infty}\frac{1}{(t + z)^2}\d t = \frac{1}{\nicefrac{1}{2} + z}} + \sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\left(\frac{2}{(n + z)^2} - \frac{1}{(n + z + t)^2} - \frac{1}{(n + z - t)^2}\right)\d t\]
     Дважды почленно возьмём первообразную обеих частей, пока не заботясь вопросами сходимости:
-    \gather{\left(\log \Gamma(z)\right)' \overset{?}= A - \frac{1}{z} + \log\left(z + \frac{1}{2}\right) + \sum\limits_{n = 1}^{\infty}\left(\frac{1}{n + z + t} + \frac{1}{n + z - t} - \frac{2}{n + 1}\right) \\
+    \gather{\left(\log \Gamma(z)\right)' \overset{?}= A - \frac{1}{z} + \log\left(z + \frac{1}{2}\right) + \sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac12}\left(\frac{1}{n + z + t} + \frac{1}{n + z - t} - \frac{2}{n + z}\right) \d t \\
     \log( \Gamma(z)) \overset{?}= B + Az - \log z + \log\left(z + \frac{1}{2}\right)\left(z + \frac{1}{2}\right) - z + \sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\frac{(n + z)^2 - t^2}{(n + z)^2}\d t}
     Так как $z$ бегает в области без угла, то $|n + z| \ge n\sin(\phi)$.
-        Таким образом, $\log\left(1 - \frac{t^2}{(n + z)^2}\right)$ оценивается сверху конкретным числом, и ряд $\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)$ сходится абсолютно и равномерно.
+        Таким образом, $\log\left(1 - \frac{t^2}{(n + z)^2}\right)$ оценивается сверху, и ряд $\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)$ сходится абсолютно и равномерно.
         В частности, сходится равномерно на компактах, значит, его можно дважды продифференцировать почленно, получится $(\log \Gamma (z))''$.
         Вопросы сходимости решены, $\overset{?}=$ можно заменить на $=$.
     Оценим остаток:
-    \[\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)\d t \le C_1 \sum\limits_{n = 1}^{\infty}\frac{1}{(n + |z|)^2} \le C_2\frac{1}{|z|}\]
+    \[\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)\d t \le C_1 \sum\limits_{n = 1}^{\infty}\frac{1}{(n + |z|)^2} \le C_2 \int\limits_1^\infty \frac{\d s}{(s + |z|)^2} \le C_3\frac{1}{|z|}\]
         Заметим, что $\log\left(z + \frac{1}{2}\right) - \log\left(z\right) = \log\left(1 + \frac{1}{2z}\right) = \frac{1}{2z}+ \bigO(\frac{1}{|z|^2})$, и преобразуем
     \[\left(z + \frac{1}{2}\right)\log\left(z + \frac{1}{2}\right) = \frac{1}{2} + z \log z + \frac{1}{2}\log z + \bigO\left(\frac{1}{|z|}\right)\]
     Тем самым,
@@ -2229,9 +2233,9 @@
     \examples{
         \item Ряд $1 + z + z^2 + \dots$ сходится в единичном круге $\D$, но на самом деле сумма равна $\frac{1}{1 - z}$, и эта функция аналитична в множестве $\hat{\C} \sm \{1\}$.
         \item На предыдущей лекции мы поняли, что $\Gamma(z) = \int\limits_0^{\infty}e^{-t}t^{z - 1}\d t$, где интеграл сходится при $\Re z > 0$.
-        А про саму $\Gamma$ мы знаем, что она определена в $\C \sm \defset{-n}{n \in \N}$.
+        А про саму $\Gamma$ мы знаем, что она определена в $\C \sm \defset{-n}{n \in \N_0}$.
     \item Про $\zeta$-функцию Римана $\zeta(s) = \sum\limits_{n = 1}^{\infty}\frac{1}{n^s}$ легко показать, что ряд сходится при $\Re s > 1$.
-    Тем не менее, её тоже можно продолжить почти на всю комплексную плоскость.
+    Тем не менее, её тоже можно продолжить почти на всю комплексную плоскость ($\C \sm \{1\}$).
     }
     Пусть $G_1, G_2 \subset \C$ --- области.
     Пусть $f_1: G_1 \map \C$ аналитична, и предположим, что $G_1 \cap G_2$ непусто.
@@ -2246,6 +2250,9 @@
         \draw (-0.5, -0.5) circle (0.65) node {$G_3$};
         \draw (0.5, -0.5) circle (0.65) node {$G_4$};
     \end{tikzpicture}\]
+
+    Также может не наблюдаться связности пересечения $G_1 \cap G_2$.
+    
     Несложно придумать функцию, которая не продолжается за пределы данной области (скажем, круга $\D$).
     \theorem[Адамар, <<естественная граница аналитичности>>]{
         Нельзя продолжить $f(z) = \sum\limits_{n = 1}^{\infty}z^{n!}$ ни в какую область $G$, такую, что $G \sm \overline{\D}$ непусто.
@@ -2256,11 +2263,11 @@
               \draw (0.8, 0.8) circle (0.4) node{$G$};
               \draw[red,thick,smooth,domain={sqrt(0.19)}:0.9] plot ({\x}, {sqrt(1 - \x*\x)});
         \end{tikzpicture}\]
-        Значит, на выделенной дуге $f$ должна быть непрерывна, и для любой $\zeta$ на дуге должен существовать предел $\lim\limits_{r \to 1_{-0}}f(r\zeta)$.
+        Значит, на выделенной дуге (какой-то дуге из пересечения) $f$ должна быть непрерывна, и для любой $\zeta$ на дуге должен существовать предел $\lim\limits_{r \to 1-0}f(r\zeta)$.
         Запишем $\zeta = e^{2\pi i\theta}$, и выберем такое $\zeta$, чуть подвинув в случае надобности, что $\theta \in \Q$.
             Пусть $\theta = \frac{k}{l}$, где $k \in \Z, l \in \N$.
-            Теперь \[f(r\zeta) = \sum\limits_{n = 0}^{\infty}r^{n!}e^{2\pi i \theta n!} = \sum\limits_{n = 0}^{l}r^{n!}e^{2\pi i \theta n!} + \sum\limits_{n = l + 1}^{\infty}r^{n!}e^{2\pi i \frac{k}{l}n!} = \sum\limits_{n = 0}^{l}r^{n!}e^{2\pi i \theta n!} + \sum\limits_{n = 1}^{\infty}r^{n!}\]
-        Так как $r^{n!} \underset{n \to \infty}\Map 1$, то сумма расходится.
+            Теперь \[f(r\zeta) = \sum\limits_{n = 0}^{\infty}r^{n!}e^{2\pi i \theta n!} = \sum\limits_{n = 0}^{l}r^{n!}e^{2\pi i \theta n!} + \sum\limits_{n = l + 1}^{\infty}r^{n!}e^{2\pi i \frac{k}{l}n!} = \sum\limits_{n = 0}^{l}r^{n!}e^{2\pi i \theta n!} + \sum\limits_{n = l + 1}^{\infty}r^{n!}\]
+        Так как $r^{n!} \underset{r \to 1-0}\Map 1$, то сумма расходится.
         Тут, кстати, можно применить теорему Леви: $\sum\limits_{n = l + 1}^{\infty}r^{n!}$ --- интеграл от $r^{n!}$ по $n \in \N$ и считающей мере --- сходится к сумме единиц $\sum\limits_{n = l + 1}^{\infty}1$ при $r \to \infty$.
         Впрочем, и без неё всё видно.
         }
@@ -2321,9 +2328,9 @@
     \numbers{
 \item Переразложение в степенной ряд.
 
-Пусть $z_0 \in G$, $f: G \map \C$ аналитична.
-        Тогда можно переразложить $f$ в ряд точке $z_0$, и может так получиться, что радиус сходимости будет больше, чем $\dist(z_0, \partial G)$, то есть получится существенное продолжение $f$.
-        Скажем, если $1 + z + z^2 + \dots = \frac{1}{1 - z}$ переразложить в ряд в $z_0 = -\frac{1}{2}$, то радиус сходимости будет уже $\frac{3}{2}$.
+Пусть $z_0, z_1 \in G$, $f: G \map \C$ аналитична.
+        Тогда можно переразложить $f$ в ряд точке $z_1$, и может так получиться, что радиус сходимости будет больше, чем $\dist(z_0, \partial G)$, то есть получится существенное продолжение $f$.
+        Скажем, если $1 + z + z^2 + \dots = \frac{1}{1 - z}$ ($z_0 = 0$) переразложить в ряд в $z_1 = -\frac{1}{2}$, то радиус сходимости будет уже $\frac{3}{2}$.
     \item Продолжение вдоль цепочки областей.
 
     Пусть $G_1, \dots, G_n$ --- области, $G_j \cap G_{j+1}$ непусты и связны, и заданы $f_1, \dots, f_n$, где $f_j: G_j \map \C$ аналитична.
@@ -2442,7 +2449,7 @@
         Пусть $D_t$ --- элементы аналитических функций, образующие аналитическое продолжение вдоль $\gamma$ с направляющей функцией $\phi$.
     Аналогично $\tilde{D}_t$ --- элементы вдоль $\gamma$ с функцией $\tilde{\phi}$.
 
-    Если $D_a = \tilde{D}_a$, то $\forall t \in [a, b]: D_t = \tilde{D}_t$ и $\phi(t) = \coloneqq{\phi}(t)$.
+    Если $D_a = \tilde{D}_a$, то $\forall t \in [a, b]: D_t = \tilde{D}_t$ и $\phi(t) \equiv \tilde{\phi}(t)$.
     \provehere{
         Покажем, что $\forall t \in [a, b]: \phi(t) = \tilde{\phi}(t)$.
         Так как $(B_a, f_a) = D_a = \tilde{D}_a = (\tilde{B}(a), \tilde{f}_a)$, то при $\tau$, достаточно близких к $a$: $\phi(\tau) =  f_a(\gamma(\tau)) = \tilde{f}_a(\gamma(\tau)) = \tilde{f}_a(\gamma(\tau))$, то есть в некоторой окрестности $a$: $\phi = \tilde{\phi}$.
@@ -2473,7 +2480,7 @@
 
         Если $\C \sm K$ связно, то $\forall \eps > 0: \exists p \in \C[z]$ --- многочлен, точно так же приближающий $f: \sup\limits_{z \in K}|f(z) - p(z)| \le \eps$.
     \provehere{
-        Напомним, что для дифференцируемой функции $g: \R^2 \map \C$ определены частные производные $\der{}{\overline{z}}g = \frac{1}{2}\left(\der{g}{x} + i\der{g}{y}\right)$ и $\der{}{z}g = \frac{1}{2}\left(\der{g}{x} - i \der{g}{y}\right)$.
+        Напомним, что для дифференцируемой функции $g: \R^2 \map \C$ определены операторы $\der{}{z}$ и $\der{}{\overline{z}}$: $\der{}{\overline{z}}g = \frac{1}{2}\left(\der{g}{x} + i\der{g}{y}\right)$ и $\der{}{z}g = \frac{1}{2}\left(\der{g}{x} - i \der{g}{y}\right)$.
 
         \indentlemma[Формула Помпейю, формула Грина, Коши --- Грина\dots]{
             Пусть $\phi \in \mathcal{D}(\C)$ --- бесконечно дифференцируемая (в вещественном смысле) функция с компактным носителем.
@@ -2488,7 +2495,7 @@
             (Имеется некоторая неоднозначность, но она на множестве меры нуль, что не вносит никакого вклада).
         Пусть $F(\rho, \theta) = \phi(\zeta) = \phi(z + \rho e^{i\theta})$.
         \[\der{F}{\overline{z}} = F'_\rho \cdot \der{\rho}{\overline{\zeta}} + F'_\theta \cdot \der{\theta}{\overline{\zeta}}\]
-        Выразим $\overline{\zeta} - \overline{z} = \rho e^{-i\theta}$, откуда $\rho^2 = (\zeta - z)(\overline{\zeta} - \overline{z})$, и $\rho^{2i\theta} = \frac{\zeta - z}{\overline{\zeta} - \overline{z}}$.
+        Выразим $\overline{\zeta} - \overline{z} = \rho e^{-i\theta}$, откуда $\rho^2 = (\zeta - z)(\overline{\zeta} - \overline{z})$, и $e^{2i\theta} = \frac{\zeta - z}{\overline{\zeta} - \overline{z}}$.
         Дифференцируя по $\overline{\zeta}$, получаем \[2i e^{2i\theta}\der{\theta}{\overline{\zeta}} = \der{}{\overline{\zeta}}\left((\zeta - z) \cdot \frac{1}{\overline{\zeta} - z}\right) = (\zeta - z)\der{}{\overline{\zeta}}\frac{1}{\overline{\zeta} - \overline{z}} = -\frac{(\zeta - z)}{(\overline{\zeta} - \overline{z})^2}\]
         Деля $\der{\theta}{\overline{\zeta}} = \frac{1}{2}i e^{-2i\theta} \frac{\zeta - z}{(\overline{\zeta} - \overline{z})^2} = \frac{1}{2}i e^{-2i \theta} \frac{\zeta - z}{\rho^2 e^{-2i \theta}}$.
         Так как $2\rho \der{\rho}{\overline{\zeta}} = \rho e^{i\theta}$, то $\der{\rho}{\overline{\zeta}} = \frac{e^{i\theta}}{2}$.
@@ -2511,26 +2518,25 @@
     Введём функцию $h: V \cup (\C \sm U) \map \C$, такую, что $h\big|_{V} = f, h\big|_{\C \sm U} \equiv 0$, и продолжим её по теореме Титце --- Урысона до некоторой непрерывной функции $g: \C \map \C$.
     Подправим $g$ до дифференцируемой: $g_1 \coloneqq g * \alpha_t$, где $\alpha_t$ --- стандартная аппроксимативная единица, построенная по $\alpha \in \mathcal{D}(\C)$.
 
-    При достаточно малом $t$: $g_1$ аналитична в окрестности $K$: можно продифференцировать $\int h(w - z)\alpha_t(z)\d z$ по $w$ под знаком интеграла.
+    При достаточно малом $t$: $g_1$ аналитична в окрестности $K$: можно продифференцировать $\int g(w - z)\alpha_t(z)\d z$ по $w$ под знаком интеграла.
     Выберем $\eps > 0$, и будем считать, что $\sup\limits_{K}|f - g_1| < \eps$.
 
     Запишем формулу \[g_1(z) = \frac{1}{\pi}\int\limits_{\C}\frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta}\d\lambda_2(\zeta)\]
-    Подынтегральное выражение --- не нуль на некотором компактном множестве $S$, отделённом от $K$ некоторым расстоянием $d$.
+    Возьмём носитель подынтегрального выражения --- некоторое компактное множество $S$, отделённое от $K$ некоторым расстоянием $d$.
 
-    Пусть $S = \bigsqcup\limits_{j = 1}^{N}$, где $\diam S_j < \eps$, и выберем произвольно $\zeta_j \in S_j$, дальше положим $\lambda_j = \frac{1}{\pi}\int\limits_{S_j}\der{g_1}{\overline{z}}(\zeta)\d\lambda_2(\zeta)$.
+    Пусть $S = \bigsqcup\limits_{j = 1}^{N}S_j$, где $\diam S_j < \eps$, и выберем произвольно $\zeta_j \in S_j$, дальше положим $\lambda_j = \frac{1}{\pi}\int\limits_{S_j}\der{g_1}{\overline{z}}(\zeta)\d\lambda_2(\zeta)$.
     Утверждается, что $\sum\limits_{j = 1}^{N}\frac{\lambda_j}{z - \zeta_j}$ хорошо приближает $g_1$ на $K$.
 
-    $\abs{g_1(z) - \sum\limits_{j = 1}^{N}\frac{\lambda_j}{z - \zeta_j}} = \abs{\frac{1}{\pi}\sum\limits_{j = 1}^{N}\int\limits_{S_j}\left[\frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta} - \frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta_j}\right]\d\lambda_2(\zeta)} \le C \sum\limits_{j = 1}^{N}\int\limits_{S_j}\overline{\partial} g_1(\zeta) \cdot \frac{|\zeta - \zeta_j|}{|z - \zeta|\cdot|z - \zeta_j|}\lambda_2(\zeta) \le C'\sum\limits_{j = 1}^{N}|S_j|\frac{\eps}{d^2} = C' |S| \frac{\eps}{d^2}$
-    $d$ фиксировано. Выбирая достаточно малый $\eps$, получаем достаточно хорошее приближение.
+    $\abs{g_1(z) - \sum\limits_{j = 1}^{N}\frac{\lambda_j}{z - \zeta_j}} = \abs{\frac{1}{\pi}\sum\limits_{j = 1}^{N}\int\limits_{S_j}\left[\frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta} - \frac{\der{g_1}{\overline{z}}(\zeta)}{z - \zeta_j}\right]\d\lambda_2(\zeta)} \le C \sum\limits_{j = 1}^{N}\int\limits_{S_j}|\der{g_1}{\overline{z}}(\zeta)| \cdot \frac{|\zeta - \zeta_j|}{|z - \zeta|\cdot|z - \zeta_j|}\lambda_2(\zeta) \le C'\sum\limits_{j = 1}^{N}|S_j|\frac{\eps}{d^2} = C' |S| \frac{\eps}{d^2}$, при этом $d$ фиксировано. Выбирая достаточно малый $\eps$, получаем достаточно хорошее приближение.
     }
     }
     \lemma[Теорема Титце --- Урысона]{
-    Пусть $X$ --- нормальное топологическое пространство, замкнутое $Y \subset X$. Всякая ограниченная непрерывная функция $f: Y \map \R$ продолжается до непрерывной $\tilde{f}: X \map \R$.
+    Пусть $X$ --- нормальное топологическое пространство, замкнутое $Y \subset X$. Всякая ограниченная непрерывная функция $f: Y \map \R$ продолжается до непрерывной ограниченной (можно той же константой) $\tilde{f}: X \map \R$. (При этом можно заменить $\R$ на $\C$, разбив функцию на вещественную и мнимую части, и, применив теорему для них отдельно, склеить их обратно.)
     \provehere{
     Можно считать, что $-1 \le f \le 1$ всюду ($|f| \le 1$).
 
     Пусть $F_1 \coloneqq \defset{x \in Y}{f(x) \ge \frac{1}{3}}$ и $F_{-1} \coloneqq \defset{x \in Y}{f(x) \le -\frac{1}{3}}$.
-    По теореме Урысона, $\exists g: X \map \R$ --- непрерывная функция, такая, что $g(x) = \all{\frac{1}{3},&x \in F_1 \\ -\frac{1}{3}, & x \in F_{-1}}$, и всюду $-\frac{1}{3} \le g \le \frac{1}{3}$.
+    По лемме Урысона, $\exists g: X \map \R$ --- непрерывная функция, такая, что $g(x) = \all{\frac{1}{3},&x \in F_1 \\ -\frac{1}{3}, & x \in F_{-1}}$, и всюду $-\frac{1}{3} \le g \le \frac{1}{3}$.
 
     Рассмотрим $f - g$ на $Y$. На $F_1$ значения лежат в $\left[0, \frac{2}{3}\right]$, на $F_2$ значения лежат в $\left[-\frac{2}{3}, 0\right]$, а на $Y \sm (F_1 \cup F_2)$ --- по неравенству треугольника значения лежат в $\left[-\frac{2}{3}, \frac{2}{3}\right]$.
     Тем самым, $\sup\limits_{t \in Y}|f(t) - g(t)| \le \frac{2}{3}$. С другой стороны, $\sup\limits_{t \in X}|g(t)| \le \frac{1}{3}$.
