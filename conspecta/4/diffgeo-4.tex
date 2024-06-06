@@ -167,7 +167,7 @@
     }
     \subsection{Касательное пространство}
     Пусть $M$ --- гладкое многообразие, $p \in M$.
-    Пусть $\alpha, \beta: (\eps, +\eps) \map M$ --- гладкие (естественно, в смысле отображения многообразий) кривые, такие, что $\alpha(0) = p = \beta(0)$.
+    Пусть $\alpha, \beta: (-\eps, +\eps) \map M$ --- гладкие (естественно, в смысле отображения многообразий) кривые, такие, что $\alpha(0) = p = \beta(0)$.
     \definition[$\alpha$ и $\beta$ соприкасаются в $p$]{
         В любой карте $(U, \phi)$ (где $U \ni p$) их производные в нуле совпадают: $(\phi \circ \alpha)'(0) = (\phi \circ \beta)'(0)$.
     }
@@ -996,7 +996,7 @@
     \provehere{$[X, Y]^{\phi} = (Y^\phi)'_{X^\phi} - (X^\phi)'_{Y_\phi} = 0$. }
     Вообще, скобка Ли --- мера некоммутативности векторных полей, что мы докажем позже.
     \subsection{Поведение скобки Ли при отображениях}
-    Пусть $M, N$ --- гладкие многообразия, $X \in \mathscr{X}(M), Y \in \mathscr{X}(M)$, $F: M \map N$ -- гладкое.
+    Пусть $M, N$ --- гладкие многообразия, $X \in \mathscr{X}(M), Y \in \mathscr{X}(N)$, $F: M \map N$ -- гладкое.
     \definition[$F$ переводит $X$ в $Y$]{
     $\forall p \in M: \d_p F(X_p) = Y_p$.
     }
@@ -1004,7 +1004,7 @@
 
     Пусть $F: M \map N$ переводит $X \in \mathscr{X}(M)$ в $Y \in \mathscr{X}(N)$.
     \lemma{\label{action-suffices}
-    $F$ переводит $X$ в $Y$ $\iff$ $\forall$ гладкого $f: Y \map \R: (Y(f) \circ F)(p) = X(f \circ F)(p)$.
+    $F$ переводит $X$ в $Y$ $\iff$ $\forall$ гладкого $f: N \map \R: (Y(f) \circ F)(p) = X(f \circ F)(p)$.
     \provetwhen{
         $X(f \circ F)(p) = \d_p (f \circ F)(X) = (\d_p f \circ \d F)(X) = \d_p f(Y) = (Yf)(F(p))$.
     }{
@@ -1018,7 +1018,7 @@
         Если $F(X_1) = Y_1$ и $F(X_2) = Y_2$, то $F([X_1, X_2]) = [Y_1, Y_2]$.
     \provehere{
         Пусть $f: N \map \R$ --- произвольная гладкая.
-    Проверим, что $F([X_1, X_2])$ и $Y_1, Y_2]$ одинаково действуют на $f$:
+    Проверим, что $F([X_1, X_2])$ и $[Y_1, Y_2]$ одинаково действуют на $f$:
     \[[Y_1, Y_2](f) = Y_1(Y_2(f)) - Y_2(Y_1(f)) = Y_1(X_2(f \circ F)) - Y_2(X_1(f \circ F)) = [X_1, X_2](f \circ F)\]
     Согласно~(\cref{action-suffices}), имеет место равенство.
     }
@@ -1091,9 +1091,9 @@
     }
     Этот тензор $T$ называется \emph{тензор кручения}.
     \corollary{
-    Проверку того, что связность симметрично, достаточно осуществлять на координатных полях.
-    Для координатных полей $\nabla_{E_i}E_j - [E_i, E_j]= \Gamma_{i,j}$.
-        Тем самым, связность симметрична $\iff$ символы Кристоффеля равны нулю.
+    Проверку того, что связность симметрична, достаточно осуществлять на координатных полях.
+    Для координатных полей $\nabla_{E_i}E_j - [E_i, E_j]=\nabla_{E_i}E_j = \Gamma_{i,j}$.
+        Тем самым, связность симметрична $\iff \Gamma_{i,j} = \Gamma_{j,i}$.
     }
     }
     Пусть $(M, \angles{\_, \_})$ --- многообразие с римановой метрикой.
@@ -1106,7 +1106,7 @@
             $\R$-полилинейность по всем аргументам и $\mathscr{F}(M)$-линейность по первому очевидны.
 
         По второму и третьему аргументам симметрично, проверим билинейность по второму:
-        \multline{X\angles{f \cdot Y, Z} - \angles{\nabla_X (f \cdot Y), Z} - \angles{f \cdot Y, \nabla_X Z} =\\= \cancel{X(f) \cdot \angles{Y, Z}} + f \cdot X\angles{Y, Z} - \cancel{\angles{X(f) \cdot Y, Z}} - \angles f {\nabla_X(Y), Z} - f \cdot \angles{Y, \nabla_{X}Z}}
+        \multline{X\angles{f \cdot Y, Z} - \angles{\nabla_X (f \cdot Y), Z} - \angles{f \cdot Y, \nabla_X Z} =\\= \cancel{X(f) \cdot \angles{Y, Z}} + f \cdot X\angles{Y, Z} - \cancel{\angles{X(f) \cdot Y, Z}} - f\angles{  \nabla_X(Y), Z} - f \angles{ Y, \nabla_{X}Z}}
         }
     }
     \corollary{Можно проверять римановость связности только на координатных полях.}
@@ -1125,7 +1125,7 @@
     \fact{
     \provehere{
         $\angles{\Gamma_{i,j}^k, E_l} = \Gamma_{i,j}^{k} \cdot g_{k,l}$
-    Пусть $(g_{n,m})_{n,m}$ --- матрица Грама, $(g'_{n,m}) = (g_{n,m})^{-1}$ --- обратная матрица, тогда так как $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$, то $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} =(g'_{n,m}) \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$.
+    Пусть $(g_{n,m})_{n,m}$ --- матрица Грама, $(g'_{n,m}) = (g_{n,m})^{-1}$ --- обратная матрица, тогда так как $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$, то $\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} =(g'_{n,m}) \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$.
 
     Тем самым, одни символы гладкие тогда и только тогда, когда гладкие --- другие.
     }
@@ -1139,7 +1139,7 @@
 %    Сначала докажем единственность: пусть $(U, \phi)$ --- карта, тогда $E_k(\angles{E_i, E_j}) = \angles{\nabla_{E_k}E_i, E_j} + \angles{E_i, \angles_{E_k}E_j}$ согласно римановости.
 %
     Перепишем: $(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}$.
-    Переставляя индексы циклически, получаем уравнения $\all{(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}}$
+    Переставляя индексы циклически, получаем уравнения $\all{(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\(g_{jk})'_{x_i} = \angles{\Gamma_{i,j}, E_k} + \angles{E_j, \Gamma_{i,k}} = \Gamma_{i,j;k} + \Gamma_{i,k;j}\\(g_{k,i})'_{x_j} = \angles{\Gamma_{j,k}, E_i} + \angles{E_k, \Gamma_{j,i}} = \Gamma_{j,k;i} + \Gamma_{j,i;k}}$
     Так как символы симметричны, то есть $\Gamma_{i,j}^{k} = \Gamma_{j,i}^{k}$, то
     \[\Gamma_{i,j;k} = \frac{(g_{i,k})'_{x_j} + (g_{i,k})'_{x_i} - (g_{i,j})'_{x_k}}{2}\label{gamma-equals-what}\tag{$*$}\]
     Используя разложение $\nabla = \nabla^{\phi} + \Gamma^{\phi}$, получаем единственность в каждой карте, значит, и глобальная единственность.
