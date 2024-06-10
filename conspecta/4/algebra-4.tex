@@ -211,7 +211,8 @@
 
                 Если $\eta \in \Mor_{\Func(\cat C, \cat A)}(\cat F, \cat G)$ (то есть $\eta$ --- естественное преобразование $\cat F \map \cat G$), то $(\Ker \eta)(C) = \Ker (\eta_C)$.
 
-                Аналогично~(\cref{ker-is-functor}), определяется $\ker$. Аналогично с коядрами.
+                $\ker$ определяется аналогично лемме~(\cref{ker-is-functor}).
+                Аналогично с коядрами.
 
                 Далее по-хорошему надо проверить, что выполняются все универсальные свойства, но мы этого делать не будем.
             }
@@ -2157,29 +2158,125 @@
         }
     }
     \newlection{21 мая 2024 г.}
-    todo
-%    \theorem[Дирихле, о линейной независимости характеров]{\label{dirichlet-character}
-%    Пусть $H$ --- группа, $E$ --- поле, и $\sigma_1, \dots, \sigma_n: H \map E^*$ --- различные групповые гомоморфизмы.
-%    Утверждается, что $\sigma_1, \dots, \sigma_n$ линейно независимы над $E$ в пространстве всех функций $H \map E$.
-%    \provehere{
-%    Предположим наличие линейной зависимости: \[\forall h \in H: \sum\limits_{i = 1}^{n}\alpha_i \sigma_i(h) = 0\text{, где }\alpha_i \in E\label{character-dependency}\tag{$\hexagon$}\]
-%    Выберем самую короткую такую (с наименьшим $n$), в ней в частности все $\alpha_i \ne 0$.
-%
-%    Пусть $g \in H$ таков, что $\sigma_n(g) \ne \sigma_{n-1}(g)$.
-%        Запишем \[\all{\sum\limits_{i = 1}^{n}\alpha_i \sigma_i(g)\sigma_i(h) = 0 \\ \sum\limits_{i = 1}^{n}\alpha_i \sigma_n(g)\sigma_i(h) = 0}\]
-%    где первое получено подстановкой $h \leftarrow gh$ в~(\ref{character-dependency}), а второе --- домножением~(\ref{character-dependency}) на $\sigma_n(g)$.
-%    Вычитая, получаем линейную зависимость меньшей длины:
-%        \[\sum\limits_{i = 1}^{n}\alpha_i (\sigma_i(g) - \sigma_n(g))\sigma_i(h) = 0\]
-%    При этом зависимость нетривиальна, так как $\alpha_{n-1}(\sigma_{n-1}(g) - \sigma_n(g)) \ne 0$.
-%    }
-%    }
-%    Часто эту теорему применяют для $H = E^*$, $\sigma_i \in \Gal(E/F)$: пусть $E/F$ --- расширение Галуа, пусть $n \coloneqq [E : F]$, $\{\sigma_1, \dots, \sigma_n\} = \Gal(E/F) \le \End(E/F) \bydef \End_F(E)$.
-%
-%    Тогда $\dim_E(\angles{\Gal_F(E)}) = n$ --- по теореме Дирихле~(\cref{dirichlet-character}) все эндоморфизмы вида $\sum\limits_{i = 1}^{n}\alpha_i \sigma_i$ различны.
-%    С другой стороны, $\dim_F(\End_F(E)) = n^2$, так как $\dim_F(E) = n$, откуда $\angles{\Gal_F(E)} = \End_F(E)$, то есть $\sigma_1, \dots, \sigma_n$ --- $E$-базис пространства $\End_F(E)$.
-%
-%    Расширение называется тем же словом, что и его группа --- так, бывают, абелевы, циклические, разрешимые расширения, и тому подобное.
-%    \lemma{
-%        Расширение Галуа $E/F$ циклическое (то есть $\Gal(E/F) \cong C_n$) $\iff E = F[\alpha]$, где $$
-%    }
+    \theorem[Дирихле, о линейной независимости характеров]{\label{dirichlet-character}
+    Пусть $H$ --- группа, $E$ --- поле, и $\sigma_1, \dots, \sigma_n: H \map E^*$ --- различные групповые гомоморфизмы.
+    Утверждается, что $\sigma_1, \dots, \sigma_n$ линейно независимы над $E$ в пространстве всех функций $H \map E$.
+    \provehere{
+    Предположим наличие линейной зависимости: \[\forall h \in H: \sum\limits_{i = 1}^{n}\alpha_i \sigma_i(h) = 0\text{, где }\alpha_i \in E\label{character-dependency}\tag{$\hexagon$}\]
+    Выберем самую короткую такую (с наименьшим $n$), в ней в частности все $\alpha_i \ne 0$.
+
+    Пусть $g \in H$ таков, что $\sigma_n(g) \ne \sigma_{n-1}(g)$.
+        Запишем \[\all{\sum\limits_{i = 1}^{n}\alpha_i \sigma_i(g)\sigma_i(h) = 0 \\ \sum\limits_{i = 1}^{n}\alpha_i \sigma_n(g)\sigma_i(h) = 0}\]
+    где первое получено подстановкой $h \leftarrow gh$ в~(\ref{character-dependency}), а второе --- домножением~(\ref{character-dependency}) на $\sigma_n(g)$.
+    Вычитая, получаем линейную зависимость меньшей длины:
+        \[\sum\limits_{i = 1}^{n}\alpha_i (\sigma_i(g) - \sigma_n(g))\sigma_i(h) = 0\]
+    При этом зависимость нетривиальна, так как $\alpha_{n-1}(\sigma_{n-1}(g) - \sigma_n(g)) \ne 0$.
+    }
+    }
+    Часто эту теорему применяют для $H = E^*$, $\sigma_i \in \Gal(E/F)$: пусть $E/F$ --- расширение Галуа, пусть $n \coloneqq [E : F]$, $\{\sigma_1, \dots, \sigma_n\} = \Gal(E/F) \le \End(E/F) \bydef \End_F(E)$.
+
+    Тогда $\dim_E(\angles{\Gal_F(E)}) = n$ --- по теореме Дирихле~(\cref{dirichlet-character}) все эндоморфизмы вида $\sum\limits_{i = 1}^{n}\alpha_i \sigma_i$ различны.
+    С другой стороны, $\dim_F(\End_F(E)) = n^2$, так как $\dim_F(E) = n$, откуда $\angles{\Gal_F(E)} = \End_F(E)$, то есть $\sigma_1, \dots, \sigma_n$ --- $E$-базис пространства $\End_F(E)$.
+
+    Расширение называется тем же словом, что и его группа --- так, бывают, \emph{абелевы, циклические, разрешимые} расширения, и тому подобное.
+
+    \definition[$\eps \in F$ --- первообразный корень $n$-й степени из $1$]{$\all{\eps^n = 1 \\ \eps^k \ne 1,&0 < k < n }$.}
+    Если в поле есть первообразный корень степени $n$, то $\chr F \notdivs n$: если $n = pm$, то $0 = \eps^{pm} - 1 = (\eps^m - 1)^p$, откуда $\eps$ --- не первообразный.
+
+    Несложно видеть, что $\eps^k = \eps^m \iff k \equiv m \pmod{n}$, откуда $\eps^0, \eps, \dots, \eps^{n-1}$ --- корни $n$-й степени из единицы, и многочлен $t^n - 1$ раскладывается на линейные множители.
+    Обозначим множество корней этого многочлена $\mu_n(F)$.
+
+    \lemma{\label{cyclic-extension}
+    Пусть $E/F$ --- расширение полей, и в базовом поле $F$ есть первообразный корень степени $n$ из $1$.
+        Следующие условия эквивалентны.
+        \numbers{
+            \item $E = F[\alpha]$, где $\alpha^n \in F$, и $\alpha^k \notin F$ при $0 < k < n$.
+        \item Расширение $E/F$ циклическое расширение Галуа (то есть $\Gal(E/F) \cong C_n$).
+        }
+    \provebullets{
+    \item[$(1) \then (2)$] Многочлен $f(t) = t^n - \alpha^n \in F[t]$ имеет $n$ различных корней $\defset{\alpha \eps^k}{0 \le k < n}$, откуда $E = F_f$ для сепарабельного $f$, то есть $E/F$ --- расширение Галуа.
+    \bullets{
+    \item Устроим отображение $\theta: \Gal(E/F) \map E^*, \sigma \mapsto \frac{\sigma(\alpha)}{\alpha}$. Так как $\left(\frac{\sigma(\alpha)}{\alpha}\right)^n = \frac{\sigma(\alpha)^n}{\alpha^n} = \frac{\sigma(\alpha^n)}{\alpha^n} = \frac{\alpha^n}{\alpha^n} = 1$, то $\Image \theta \subset \mu_n(F)$.
+        \item Проверим, что это гомоморфизм групп.\[\theta(\tau\sigma) = \frac{\tau\sigma(\alpha)}{\alpha} = \frac{\sigma(\tau(\alpha))}{\tau(\alpha)} \cdot \frac{\tau(\alpha)}{\alpha} \circlesign{=}\]
+        Так как $\tau(\alpha)$ --- корень $f$, то $\tau(\alpha) = \eps^m \alpha$ для некоторого $m \in \N$.
+        Сокращая на $\eps^m \in F$, получаем
+        \[\circlesign{=}\frac{\sigma(\alpha)}{\alpha}\cdot\frac{\tau(\alpha)}{\alpha}= \theta(\sigma)\theta(\tau) = \theta(\tau)\theta(\sigma)\]
+    \item Проверим сюръективность. Любая собственная подгруппа $\mu_n$ имеет вид $\mu_k$, где $k \divs n$, и если $\exists k \in \N: \forall \sigma \in \Gal(E/F): \frac{\sigma(\alpha)^k}{\alpha^k} = 1$, то $\forall \sigma \in \Gal(E/F): \sigma(\alpha^k) = \alpha^k$, то есть $\alpha^k \in F$.
+    Получаем, что $k \ge n$.
+    \item С одной стороны, $|\Gal(E/F)| \ge n$ из сюръективности, с другой стороны, $[E : F] \le n$, откуда $|\Gal(E/F)| = [E : F] = n$, и из количественных соображений $\theta$ --- изоморфизм.
+    }
+    \item[$(2)\then(1)$] Пусть $\sigma$ --- образующая группы Галуа ($\Gal(E/F) = \{1, \sigma, \dots, \sigma^{n-1}\}$).
+    По теореме Дирихле~(\cref{dirichlet-character}), $\sum\limits_{k = 0}^{n - 1}\eps^k \sigma^k \ne 0$, тем самым, $\exists \beta \in E: \alpha \coloneqq \sum\limits_{k = 0}^{n - 1}\eps^k \sigma(\beta)^k \ne 0$.
+    \bullets{
+    \item Посчитаем
+    \[\sigma(\alpha) = \sum\limits_{k = 0}^{n - 1}\eps^k\sigma(\beta)^{k + 1} = \sum\limits_{i = 1}^{n}\eps^{i-1}\sigma(\beta)^i = \eps^{-1}\alpha\]
+    Тем самым, $\sigma(\alpha^k) = \sigma(\alpha)^k = (\eps^{-1}\alpha)^k = \eps^{-k}\alpha^k$. В частности, $\alpha^n$ неподвижен под действием $\Gal(E/F)$, и $\alpha^n \in F$.
+    \item Покажем линейную независимость $1, \alpha, \dots, \alpha^{n-1}$ над $F$, из количественных соображений будет следовать, что это базис $E$ над $F$.
+       Пусть $\sum\limits_{k = 0}^{n - 1}\alpha^k x_k = 0$ для неких $x_k \in F$.
+    Применяя $\sigma^j$ к данному равенству, получаем $\sum\limits_{k = 0}^{n - 1}\eps^{-kj}\alpha^k x_k = 0$.
+    При $j = 0, \dots, n - 1$ получаются $n$ линейных уравнений с переменными $\alpha^k x_k$.
+    Матрица коэффициентов системы $(\eps^{-kj})_{j = 0..n-1}^{k = 0..n-1}$ невырождена, так как её определитель --- определитель Вандермонда --- не нуль.\qedhere
+    }
+    }
+    }
+    \lemma{\label{generating-root-extension}
+    Пусть $E \coloneqq F[\eps]$, где $\eps$ --- первообразный корень степени $n$.
+        Тогда $E/F$ --- расширение Галуа, и $\Gal(E/F) \hookrightarrow (\Z/n\Z)^*$ (в частности, расширение $E/F$ абелево).
+    \provehere{
+        Так как $\mu_n = \angles{\eps}$, то $t^n - 1$, раскладывается на линейные множители в $F[\eps]$, то есть $F[\eps] = F_{t^n - 1}$.
+        Всякий элемент $\sigma \in \Gal(E/F)$ однозначно определён значением $\sigma(\eps)$ (так как $E = F[\eps]$), при этом так как преобразование $\sigma$ обратимо, то $\sigma(\eps)$ --- тоже первообразный корень степени $n$ из $1$.
+
+        Устроим $\pi: \Gal(E/F) \hookrightarrow \Z/n\Z$, сопоставляя элементу $\sigma \in \Gal(E/F)$ такой показатель $k \in \Z/n\Z$, что $\sigma(\eps) = \eps^k$.
+        Инъективность $\sigma$ очевидна: $\sigma(\eps) = \tau(\eps) \then \sigma = \tau$.
+        Очевидно, это гомоморфизм моноидов, и так как образ обратимых элементов обратим, то $\pi: \Gal(E/F) \map (\Z/n\Z)^*$ --- гомоморфизм групп.
+    }
+    }
+    \definition[Круговой многочлен степени $n$]{
+        $\Phi_n(t) \bydef \prod\limits_{\eps}(t - \eps)$, где $\eps$ пробегает все первообразные корни степени $n$ из $1$ по одному разу.
+    }
+    Так как любой корень степени $n$ из $1$ --- первообразный степени $k \divs n$, то $\prod\limits_{k \divs n}\Phi_k(t) = \prod\limits_{\eps^n = 1}(t - \eps) = t^n - 1$.
+    \intfact{
+        Для любого поля с первообразным корнем степени $n$ из единицы $\Phi_n \in \Z[t] \le \Q[t]$, и там он неприводим, степени $\phi(n)$ (где $\phi$ --- euler totient function).
+    }
+    Пусть $f \in F[t]$ --- ненулевой многочлен.
+    \definition[Уравнение $f = 0$ разрешимо в радикалах]{
+    Все корни $f$ (лежащие в алгебраическом замыкании $F$) выражаются через элементы $F$ при помощи арифметических операций и извлечений корня.
+    Иными словами, существуют цепочка полей $F = F_0 \hookrightarrow F_1 \hookrightarrow \dots \hookrightarrow F_m$, где в $F_m$ многочлен $f$ раскладывается на линейные множители, и $F_i = F_{i-1}[\alpha_i]$, где $\beta \coloneqq \alpha_i^k \in F_{i-1}$.
+    В таком случае ещё пишут $F_i = F_{i-1}\left[\sqrt[m]{\beta_i}\right]$.
+    }
+    \theorem[Абель --- Руффини]{
+    Пусть $F$ поле, $\chr F = 0$;\ ненулевой $f \in F[t]$. Следующие условия эквивалентны:
+    \numbers{
+    \item Уравнение $f = 0$ разрешимо в радикалах.
+    \item $\Gal(F_f/F)$ разрешима.
+    }
+    \provewthen{
+        Сначала присоединим к $F$ первообразный корень из $1$ достаточно большой степени --- подойдёт первообразный корень $\eps$ степени $(\deg f)!$.
+        Положим $F_1 \coloneqq F[\eps]$.
+        Иными словами, $F_1 \coloneqq F_{t^{(\deg f)!} - 1}$.
+        Это расширение Галуа, так как $\chr F = 0$.
+
+    $\Gal(f/F_1) \le \Gal(f/F)$, поэтому $G \coloneqq \Gal(f/F_1)$ тоже разрешима.
+    По определению у неё существует субнормальный ряд, и \comment{видимо так как $G$ конечна} его можно уплотнить до композиционного $\{1\} = G_m \normeq G_{m-1} \normeq \dots \normeq G_1 = G$. Факторгруппы $G_i / G_{i+1}$ --- простые абелевы группы, то есть циклические, простого порядка.
+    Положим $F_i \coloneqq ((F_1)_f)^{G_i}$.
+
+    Согласно~(\cref{cyclic-extension}), $F_i$ имеет вид $F_{i-1}[\alpha_i]$, что по определению означает разрешимость в радикалах.
+    }{
+        По условию существует башня полей $F \hookrightarrow F_1 \hookrightarrow \dots \hookrightarrow F_m$, где $f$ раскладывается на линейные множители в $F_m$, и $F_i = F_{i-1}[\alpha_i]$, где $\alpha_i^{k_i} \in F_{i-1}$.
+        Для применения~(\cref{cyclic-extension}) недостаёт первообразного корня.
+
+    Добавим его: $F_{m+1} \coloneqq (F_m)_{t^k-1}$, где $k \coloneqq k_1 \proddots k_m$.
+        Далее хотим получить, что $\Gal(f/F)$ разрешима.
+        Понятно, что $F_f \subset F_m$, поэтому достаточно доказать, что $\Aut(F_m/F)$ разрешима, или даже $\Aut(F_{m+1}/F)$ разрешима --- факторгруппа разрешимой группы разрешима.
+        В доказательстве будет использоваться соответствие Галуа, для этого дополним $F_{m+1}/F$ до нормального: пусть $E/F$ нормально, и $F_{m+1} \subset E$ (например, $E$ --- поле разложения минимального многочлена, аннулирующего все элементы $\eps, \alpha_1, \dots, \alpha_m$).
+
+        Пусть $\Gal(E/F) = \{\sigma_1, \dots, \sigma_n\}$.
+        Поле $\tilde{E} = F[\eps, \sigma_i(\alpha_j)] \subset E$ тоже нормально над $F$, так как оно устойчиво под действием $\Gal(E/F)$.
+        А для этого поля есть хорошая цепочка (порождающие присоединяются по одному, все образы $\alpha_{j+1}$ добавляются после всех образов $\alpha_j$):
+        \[F \subset F[\eps] \subset F[\sigma_1(\alpha_1)] \subset F[\sigma_1(\alpha_1), \sigma_2(\alpha_1)] \subset \dots \subset \tilde{E}\]
+        Все промежуточные расширения абелевы (первое вкладывается в $(\Z/n\Z)^*$ согласно~(\cref{generating-root-extension}), остальные циклические согласно~(\cref{cyclic-extension})).
+        Соответствие Галуа говорит, что этой башне полей соответствует субнормальный ряд группы $\Gal(\tilde{E}/F)$ с абелевыми факторами, то есть $\Gal(\tilde{E}/F)$ разрешима.
+        Её факторгруппа $\Gal(F_f/F)$ тоже разрешима.
+    }
+    }
 \end{document}
