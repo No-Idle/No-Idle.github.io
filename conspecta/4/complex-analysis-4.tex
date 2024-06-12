@@ -106,9 +106,9 @@
         Её носитель --- само канторово множество, так как на всех отрезках вне канторова множества $\lambda_C$ равна нулю.
         Она сингулярна относительно стандартной меры Лебега на $\R$, и её измеримые множества разительно отличаются от измеримых множеств меры Лебега.
     }
-    По мере Стилтьеса можно интегрировать: если $v$ является $\lambda_\Phi$ измеримой (в частности, измерима по Борелю и неотрицательна),
+    По мере Стилтьеса можно интегрировать: если $v$ является $\lambda_\Phi$ измеримой, и обладает интегралом (скажем, измерима по Борелю и неотрицательна),
     то определён интеграл $\int\limits_{\angles{a, b}}v \d\lambda_{\Phi}$
-    Иногда пишут просто $\int\limits_{\angles{a, b}}v \d \Phi$.
+    Иногда пишут просто $\int\limits_{\angles{a, b}}v \d \Phi$ --- это \emph{интеграл Лебега --- Стилтьеса}.
     %Так складывается ощущение, что из измеримости следуют и борелевская измеримость, и непрерывность. % ок, заменю "и даже" на "и"
     \ok
     Теперь пусть $I = [a, b]$, и $\Psi: [a, b] \map \R$ --- функция ограниченной вариации.
@@ -377,7 +377,8 @@
     Рассмотрим форму $\Phi: \R^2 \map \C, \Phi(x, y) = \alpha(x, y)\d x + \beta(x, y)\d y$.
     Перепишем её в новом базисе:
     \[\Phi(x, y) = \frac{\alpha(x, y)}{2}(\d z + \d \overline{z}) + \frac{\beta(x, y)}{2i}(\d z - \d\overline{z}) = \frac{\alpha(x, y) - i \beta(x, y)}{2}\d z + \frac{\alpha(x, y) + i \beta(x, y)}{2}\d \overline{z}\]
-    Теперь пусть $\Phi$ --- точная форма, то есть $\Phi = \d F$, и тогда $\alpha(x, y) = \der{}{x}F(x, y)$ и $\beta(x, y) = \der{}{y}F(x, y)$. Теперь
+    Теперь пусть $\Phi$ --- точная форма, то есть $\Phi = \d F$, и тогда $\alpha(x, y) = \der{}{x}F(x, y)$ и $\beta(x, y) = \der{}{y}F(x, y)$.
+    Теперь
     \[\d F = \frac{1}{2}\left(\der{F}{x} - i\der{F}{y}\right)\d z + \frac{1}{2}\left(\der{F}{x} + i \der{F}{y}\right)\d \overline{z}\]
     \definition[$\der{F}{z}$]{
     Коэффициент, стоящий перед $\d z$, то есть $\frac{1}{2}\left(\der{F}{x} - i\der{F}{y}\right)$.
@@ -408,7 +409,7 @@
     \statement{
     Форма $\phi\d z$ имеет первообразную $g \iff g$ голоморфна, и $g' = \phi$.
     }
-    \theorem[Коши]{\label{cauchey-theorem}
+    \theorem[Коши]{\label{cauchy-theorem}
     Если $g: G \map \C$ --- голоморфная функция (область $G \subset \C$), то форма $g(z)\d z$ замкнута (но не факт, что точна).
     \provehere{Потом~(\cref{cauchy-theorem-2}).}
     }
@@ -487,7 +488,7 @@
     }
     \provenumbers{
     \item[$\then$] Выберем $x \in G$, так как форма замкнута, то $\exists U \ni x: \Phi$ имеет первообразную $F: U \map \R$.
-    Тем самым, $f_i = \der{F}{x_i}$, и так как $f_i \in C^1$, то действительно $\der{f_j}{x_i} = \frac{\partial^2F}{\partial x_i \partial x_j} = \frac{\partial^2F}{\partial x_j \partial x_i} = \der{f_i}{x_j}$.
+    Тем самым, $f_i = \der{F}{x_i}$, и так как $f_i \in C^1$, то действительно $\der{f_j}{x_i} = \frac{\partial^2 F}{\partial x_i \partial x_j} = \frac{\partial^2 F}{\partial x_j \partial x_i} = \der{f_i}{x_j}$.
     \item[$\when$] Сначала приведём доказательство случая $n = 2$.
         В таком случае $\Phi = f\d x + g \d y$.
 
@@ -542,7 +543,7 @@
         Тут есть некоторый обман: производные $\der{\phi_i}{x_j}$ могут просто не существовать.
 
         Попробуем обойти его так: пусть $\beta \in C^\infty$, с компактным носителем.
-        Выберем аппроксимативную единицу $\beta_t(x) = \frac{1}{t^n}\beta(\frac{x}{t})$.
+        Выберем аппроксимативную единицу $\beta_t(x) = \frac{1}{t^n}\beta\left(\frac{x}{t}\right)$.
 
         Назначим $f_k^{(t)} = f_k * \beta_t$, $f_k^{(t)} \underset{t \to 0}\rightrightarrows f_k$.
 
@@ -771,7 +772,7 @@
     Обобщим.
     Пусть $G \subset \R^n$ --- область, пусть $f: G \map \R$, $f \in C^2(G)$.
     \definition[$f$ --- гармоническая функция в $G$]{
-        $\frac{\partial^2u}{\partial x_1^2} + \cdots + \frac{\partial^2u}{\partial x_n^2} = 0$.
+        $\frac{\partial^2 u}{\partial x_1^2} + \cdots + \frac{\partial^2 u}{\partial x_n^2} = 0$.
     }
     Оператор $\Delta = \frac{\partial^2}{\partial x_1^2} + \cdots + \frac{\partial^2}{\partial x_n^2}$ называется \emph{оператором Лапласа}, и понятно, что гармонические функции --- в точности такие $u$, что $\Delta u = 0$.
     \statement{
@@ -798,7 +799,7 @@
     \provehere{
         $(1) \iff (2)$ уже доказано:~(\cref{analytic-is-holomorphic}) и~(\cref{holomorphic-then-analytic}).
 
-    $(1) \then (3)$ доказано тоже:~(\cref{cauchey-theorem}).
+    $(1) \then (3)$ доказано тоже:~(\cref{cauchy-theorem}).
 
     Докажем $(3) \then (2)$.
         Пусть $F$ --- первообразная формы $f(z)\d z$ в круге $D\coloneq B(z_0, r) \subset G$.
@@ -1533,7 +1534,8 @@
     \section{Сходимость аналитических функций}
     Пусть $G \subset \C$ --- открытое множество.
     Пускай $\{h_n\}_{n \in \N}$ --- последовательность функций $h_n: G \map \C$.
-    \subsubsection{Равномерная сходимость на компактах}
+
+    \subsection{Равномерная сходимость на компактах}
     Пусть $h: G \map \C$ --- ещё функция.
     Говорят, что \emph{$h_n$ сходятся к $h$ равномерно на компактах} ($h_n \underset{n \to \infty}\Map h$), если $\forall$ компакта $K \subset G$: $h_n\big|_K \rightrightarrows h\big|_K$.
 
@@ -1690,7 +1692,7 @@
     }
     \subsection{Про монтелевые пространства}
     Через $\mathcal{H}(G)$ обозначим пространство всех функций, голоморфных в $G$.
-    На этом пространстве имеется сходимость, которую мы только что изучали, отвечающая некоторой топологии.
+    Сходимость, которую мы только что изучали на этом пространстве, отвечает некоторой топологии.
 
     $\mathcal{H}(G)$ можно превратить в локально выпуклое пространство, в котором топология задаётся полунормами $p_K: f \mapsto \max\limits_{z \in K}|f(z)|$, где $K \subset G$ --- компакты в $G$.
     Несложно видеть, что это как раз топология равномерной сходимости на компактах.
@@ -2058,7 +2060,7 @@
 
             Пусть произведение $\prod\limits_{j = 1}^{\infty}\phi_j(z)$ сходится равномерно на любом компакте, не содержащем нулей функций $\phi_j$.
         Пусть $K$ --- такой компакт, то есть $(\phi_1 \proddots \phi_n)(z) \rightrightarrows \phi(z)$ равномерно.
-            Тогда $(\phi_1 \proddots \phi_N)'(z) \rightrightarrows \phi'(z)$ на этом же компакте, и как следствие, $\frac{\phi_1'(z)}{\phi_1(z)} + \dots + \frac{\phi_N'(z)}{\phi_N(z)} = \frac{(\phi_1\proddots \phi_N)'(z)}{(\phi_1\proddots \phi_N)(z)} \rightrightarrows \frac{\phi'(z)}{\phi(z)}$
+            Тогда $(\phi_1 \proddots \phi_N)'(z) \rightrightarrows \phi'(z)$ на этом же компакте, и как следствие, $\frac{\phi_1'(z)}{\phi_1(z)} + \dots + \frac{\phi_N'(z)}{\phi_N(z)} = \frac{\left(\phi_1\proddots \phi_N\right)'(z)}{\left(\phi_1\proddots \phi_N\right)(z)} \rightrightarrows \frac{\phi'(z)}{\phi(z)}$
         }
         }
         \bullets{
@@ -2068,7 +2070,7 @@
             \[1-\ctg(z)^2 = h''(z) - \frac{1}{z^2} - \lim\limits_{N \to \infty}\sum\limits_{\substack{|j| \le N\\ j \ne 0}}\frac{1}{\left(z - j\pi\right)^2}\]
             \item Проведём окружность $\Gamma_k$ с центром в нуле, и радиусом $\pi\left(k + \frac{1}{2}\right)$, и докажем, что $h''$ ограничена на $\Gamma_k$ некоторой константой $C$, не зависящей от $k$.
 
-            Понятно $\frac{1}{|z|^2} \le \frac{4}{\pi^2}$, оценим при $z \in \Gamma_k: \frac{1}{|z - j\pi|^2} \le \frac{1}{(k + \frac{1}{2} - |j|)^2\pi^2}$:
+            Понятно $\frac{1}{|z|^2} \le \frac{4}{\pi^2}$, оценим при $z \in \Gamma_k: \frac{1}{|z - j\pi|^2} \le \frac{1}{\left(k + \frac{1}{2} - |j|\right)^2\pi^2}$:
             \[\begin{tikzpicture}
                   \draw[] (-3, 0) -- (1, 0);
                   \draw[->] (1.8, 0) -- (3, 0) node[above right] {$\Re$};
@@ -2250,7 +2252,7 @@
         Вопросы сходимости решены, $\overset{?}=$ можно заменить на $=$.
     Оценим остаток:
     \[\sum\limits_{n = 1}^{\infty}\int\limits_{0}^{\frac{1}{2}}\log\left(1 - \frac{t^2}{(n + z)^2}\right)\d t \le C_1 \sum\limits_{n = 1}^{\infty}\frac{1}{(n + |z|)^2} \le C_2 \int\limits_1^\infty \frac{\d s}{(s + |z|)^2} \le C_3\frac{1}{|z|}\]
-        Заметим, что $\log\left(z + \frac{1}{2}\right) - \log\left(z\right) = \log\left(1 + \frac{1}{2z}\right) = \frac{1}{2z}+ \bigO(\frac{1}{|z|^2})$, и преобразуем
+        Заметим, что $\log\left(z + \frac{1}{2}\right) - \log\left(z\right) = \log\left(1 + \frac{1}{2z}\right) = \frac{1}{2z}+ \bigO\left(\frac{1}{|z|^2}\right)$, и преобразуем
     \[\left(z + \frac{1}{2}\right)\log\left(z + \frac{1}{2}\right) = \frac{1}{2} + z \log z + \frac{1}{2}\log z + \bigO\left(\frac{1}{|z|}\right)\]
     Тем самым,
     \[\log(\Gamma(z)) = B + Az - \frac{1}{2}\log z + z \log z + \bigO\left(\frac{1}{|z|}\right)\]
