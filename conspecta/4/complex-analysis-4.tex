@@ -525,7 +525,7 @@
     Рассмотрим $a = (a_1, \dots, a_n) \in G$, и возьмём прямоугольный параллелепипед $P$ со сторонами, параллельными осям координат такой, что $a \in \Int P$.
         Докажем, что на $P$ у $\Phi$ есть первообразная.
 
-    Построим $g(x_1, \dots, x_n) = \int\limits_{a_1}^{x_1}f_1(t, x_2, \dots, x_n)\d t$. Обозначим $\phi_j \coloneqq \der{g}{x_j}$.
+    Построим $g(x_1, \dots, x_n) \coloneqq \int\limits_{a_1}^{x_1}f_1(t, x_2, \dots, x_n)\d t$. Обозначим $\phi_j \coloneqq \der{g}{x_j}$.
         Заметим, что $\phi_1 = \der{g}{x_1} = f_1$.
 
     Теперь рассмотрим форму $\Psi(x_1, \dots, x_n) = \phi_1 \d x_1 + \dots + \phi_n \d x_n$.
@@ -668,7 +668,7 @@
     Если $f$ голоморфна в области $G \subset \C$, то $\forall z_0 \in G$ функция $f$ (в некоторой окрестности) раскладывается в некоторый степенной ряд $f(z) = \sum\limits_{n = 0}^{\infty}c_n(z - z_0)^n$, причём радиус сходимости хотя бы $\dist(z_0, \partial G)$.
     \provehere{
         Пусть $r \in (0, \dist(z_0, \partial G))$.
-        Рассмотрим $B = B_r(z_0)$. Так как $B \subset G$, то для точки $z \in B$ получаем
+        Рассмотрим $B = B_r(z_0)$. Так как $\overline{B} \subset G$, то для точки $z \in B$ получаем
     \multline{f(z) = 
     	\frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{\zeta - z}\d \zeta =
     	\frac{1}{2\pi i}\int\limits_{|\zeta - z_0| = r}\frac{f(\zeta)}{(\zeta - z_0) - (z - z_0)}\d \zeta =
@@ -802,7 +802,7 @@
     $(1) \then (3)$ доказано тоже:~(\cref{cauchy-theorem}).
 
     Докажем $(3) \then (2)$.
-        Пусть $F$ --- первообразная формы $f(z)\d z$ в круге $D\coloneq B(z_0, r) \subset G$.
+        Пусть $F$ --- первообразная формы $f(z)\d z$ в круге $D\coloneqq B(z_0, r) \subset G$.
         $F$ голоморфна в $B(z_0, r)$, и $\forall z \in D: F'(z) = f(z)$.
 
     Значит, $F$ раскладывается в степенной ряд $F(z) = \sum\limits_{j = 0}^{\infty}a_j (z - z_0)^j$. Отсюда ${f(z) = \sum\limits_{j = 1}^{\infty}j a_j (z - z_0)^{j - 1}}$.
@@ -1951,7 +1951,7 @@
     В силу исторических причин, говоря про однолистные отображения, часто добавляют слово <<конформные>>, а сама наука зовётся теорией конформных отображений, хотя, как мы только что видели, однолистность сильнее.
     \section{Целые функции с заданными нулями}
     \definition[Целая функция]{Аналитическая $\C \map \C$.}
-    \subsection{Множители Вейерштрасса общего вида}
+    \subsection{Произведение Вейерштрасса}
     Пусть $f \not\equiv 0$ --- целая, $N \coloneqq \defset{a \in \C}{f(a) = 0}$.
     По теореме единственности $N$ не имеет предельных точек.
     В частности, все нули изолированы, откуда множество нулей не более, чем счётно.
@@ -2551,7 +2551,7 @@
         \multline{\phi(z) = \frac{1}{\pi}\int\limits_{\C}\frac{\der{}{\overline{\zeta}}\phi(\zeta)}{z - \zeta}\d\lambda_2(\zeta) = \frac{1}{\pi}\int\limits_{\C}\frac{F'_{\rho}}{z - \zeta}\der{\rho}{\overline{\zeta}} + \frac{F'_{\theta}}{z - \zeta}\der{\theta}{\overline{\zeta}}\d\lambda_2(\zeta) = \\
         = \frac{1}{\pi}\int\limits_{0}^{2\pi}\int\limits_{0}^{R}F'_{\rho}\frac{e^{i\theta}}{2(z - \zeta)}\rho\d\rho\d\theta + \frac{1}{\pi}\int\limits_{0}^{R}\int\limits_{0}^{2\pi}F'_{\theta} \cdot \frac{i}{2\rho^2}\rho\d\theta\d\rho}
         Второй интеграл обращается в нуль, как интеграл производной по периоду: $\int\limits_0^{2\pi}F'_{\theta}\d\theta = 0$.
-        Первый же обращается в $\frac{1}{\pi}\int\limits_0^{2\pi}\int\limits_0^{R}\frac{F'_{\rho}}{2}\d\rho\d\theta = -\frac{1}{\pi}\int\limits_0^{2\pi}\frac{\phi(z + Re^{i\theta}) - \phi(z)}{2} = \frac{1}{2\pi}\int\limits_0^{2\pi}\phi(z)\d\theta = \phi(z)$.\qedhere
+        Первый же обращается в $-\frac{1}{\pi}\int\limits_0^{2\pi}\int\limits_0^{R}\frac{F'_{\rho}}{2}\d\rho\d\theta = -\frac{1}{\pi}\int\limits_0^{2\pi}\frac{\phi(z + Re^{i\theta}) - \phi(z)}{2} = \frac{1}{2\pi}\int\limits_0^{2\pi}\phi(z)\d\theta = \phi(z)$.\qedhere
 
 %        Рассмотрим интеграл $I = \int\limits_{S}\frac{1}{|z - \zeta|^a}\d\lambda_2(\zeta)$, где $a \in (0, 2), S \subset \C$ --- компакт.
 %        Произведём полярную замену $\zeta = z + r e^{i \theta}$.
