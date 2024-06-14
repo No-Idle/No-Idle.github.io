@@ -168,6 +168,8 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \renewcommand{\multline}[1]{\begin{multline*}#1\end{multline*}}
 \newcommand{\indentlemma}[3][]{\indent{\lemma[#1]{#2\prove[Доказательство леммы]{#3}}}}
 
+\newcommand\cancelwith[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
 \newcommand{\floorfrac}[2]{\floor{\frac{#1}{#2}}}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
