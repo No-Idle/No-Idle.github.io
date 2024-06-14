@@ -814,8 +814,8 @@
               \fill[green] (0, 0) rectangle (2.5, 2.5);
               \draw[->] (-3, 0) -- (3, 0) node[above right] {$x$};
               \draw[->] (0, -1) -- (0, 3) node[above right] {$y$};
+              \draw[blue, very thick] (0, 1) -- (0, 2.5);
               \fill (0, 1) circle (1pt) node [above right] {$(0, 1)$};
-              \draw[blue, thick] (0, 1) -- (0, 2.5);
         \end{tikzpicture}\]
 
         Рассмотрим другой флаг, характеризующийся точкой $p$, и выберем на луче другую точку $q$.
@@ -964,10 +964,11 @@
     и такого выражений:
     \multline{[X, Y](f \cdot g) = X(Y(f \cdot g)) - Y(X(f \cdot g))= X(Y(f) \cdot g + f \cdot Y(g)) - Y(X(f) \cdot g + f \cdot X(g)) =\\ X(Y(f)) \cdot g + \cancelwith[red]{Y(f) \cdot X(g)} + \cancelwith[darkgreen]{X(f) \cdot Y(g)} + f \cdot X(Y(g)) - Y(X(f)) \cdot g - \cancelwith[darkgreen]{X(f) \cdot Y(g)} - \cancelwith[red]{Y(f) \cdot X(g)} - f \cdot Y(X(g)) }
     \subsection{Выражение для скобки Ли в координатах}
+    \label{coordinate-for-lie-bracket}
     Пусть $X, Y$ --- два гладких векторных поля, $\phi: U \map \Omega$ --- карта.
 
-    Введём $\tilde{x}_i \coloneqq x_i \circ \phi$, запишем (где $X_\phi \bydef \d\phi \circ X \circ \phi^{-1}$ --- векторное поле на $\R^n$)
-    \[[X, Y]_i = D_{[X, Y]}(\tilde{x}_i) =D_{[X_\phi, Y_\phi]}(x_i) = [X_\phi, Y_\phi]_i = X_\phi (Y_\phi(x_i)) - Y_\phi (X_\phi(x_i)) = X_{\phi}(Y_i) - Y_{\phi}(X_i) \]
+    Введём $\tilde{x}_i \coloneqq x_i \circ \phi$, запишем (где $X^\phi \bydef \d\phi \circ X \circ \phi^{-1}$ --- векторное поле на $\phi(U) \subset \R^n$)
+    \[[X, Y]_i = D_{[X, Y]}(\tilde{x}_i) =D_{[X^\phi, Y^\phi]}(x_i) = [X^\phi, Y^\phi]_i = X^\phi (Y^\phi(x_i)) - Y^\phi (X^\phi(x_i)) = X^{\phi}(Y_i) - Y^{\phi}(X_i) \]
     \subsection{Пространство $\mathscr{X}(M)$ вместе со скобкой Ли, как алгебра Ли}
     Чтобы проверить, что $\mathscr{X}(M)$ образует алгебру Ли, убедимся, что выполнены три аксиомы алгебр Ли:
     \numbers{
@@ -1036,34 +1037,46 @@
     Семейство $\{F_x\}_{x \in M}$ тензоров валентности $(k, 1)$ вместе со следующим условием гладкости:
     \[\forall X_1, \dots, X_k \in \mathscr{X}(M): F(X_1, \dots, X_k) \in \mathscr{X}(M)\]
     }
-    Таким образом, тензорному полю на $M$ сопоставляется $\R$-полилинейное (и даже $\mathscr{F}(M)$-полилинейное)
+    Таким образом, тензорному полю на $M$ сопоставляется $\R$-полилинейное
     \[F: \mathscr{X}(M) \times \dots \times \mathscr{X}(M) \map \any{\mathscr{F}(M) \\ \mathscr{X}(M)}\]
+    Несложно видеть, что это отображение даже $\mathscr{F}(M)$-полилинейное (проверяется поточечно), но оказывается, что этого требования достаточно для определения тензора.
     \theorem{
-    Если $F: \mathscr{X}(M) \times \dots \times \mathscr{X}(M) \map \any{\mathscr{F}(M) \\ \mathscr{X}(M)}$ является $\mathscr{F}(M)$-полилинейным, то $F$ является гладким тензорным полем.
-    \provenumbers{
-        \item Докажем локально случай $k = 1$.
+    Если отображение $F: \mathscr{X}(M) \times \dots \times \mathscr{X}(M) \map \any{\mathscr{F}(M) \\ \mathscr{X}(M)}$ является $\mathscr{F}(M)$-полилинейным, то $F$ однозначно определяет соответствующее гладкое тензорное поле.
+    \provehere{
+        Сначала докажем случай $k = 1$, то есть $F: \mathscr{X}(M) \map \any{\mathscr{F}(M) \\ \mathscr{X}(M)}$ --- $\mathscr{F}(M)$-линейное отображение.
+        \bullets{
+            \item Чтобы извлечь из $F$ тензор в данной точке, сначала проверим локальность.
 
-    Проверим локальность.
-        Рассмотрим $p \in U$.
-        Пусть $X\big|_{U} = Y\big|_U$. $(F(X))(p) = (F(Y))(p)$. Пусть $h$ --- гладкий спуск с единицы, $h\big|_{U'} \equiv 1, h\big|_{M \sm U} \equiv 0$, где $p \in U' \subset U$.
+            Рассмотрим $p \in U$.
+            Пусть $X, Y \in \mathscr{F}(M)$, причём $X\big|_{U} = Y\big|_U$.
+            Рассмотрим $h$ --- гладкий спуск с единицы в $U$: $h\big|_{U'} \equiv 1, h\big|_{M \sm U} \equiv 0$, где $p \in U' \subset U$. \comment{Вместо $h\big|_{U'} \equiv 1$ достаточно потребовать $h(p) = 1$.}
+            Теперь $h \cdot F(Y) = F(hX) = F(hY) = h \cdot F(Y)$, откуда получаем $F(Y)(p) = F(X)(p)$.
+        \item Достаточно доказать для $X \in \mathscr{X}(M)$, что значение $(F(X))(p)$ зависит только от $X_p$.
+        Доказав, мы построим семейство, отвечающее $F$, и оно будет обладать требуемым условием гладкости, так как $F$ бьёт в $\mathscr{F}(M)$ или $\mathscr{X}(M)$.
 
-    Теперь $h \cdot F(Y) = h \cdot F(X) = F(hX) = F(hY)$.
-    \item Достаточно доказать для $X \in \mathscr{X}(M)$, что значение $(F(X))(p)$ зависит только от $X_p$.
-    Доказав, мы построим семейство, отвечающее $F$.
+            Зафиксируем карту $(U, \phi)$, содержащую точку $p$.
+            Выберем базис $e_1, \dots, e_n$, ему отвечают координатные векторные поля $E_i$.
+            Используя~(\cref{extenstion-of-coordinates}), можно считать, что $E_i$ определены на всём многообразии.
 
-    Зафиксируем карту $(U, \phi)$. Выберем базис $e_1, \dots, e_n$, ему отвечают координатные векторные поля $E_i$.
-    Согласно $\mathscr{F}(M)$-линейности все раскладывается в сумму $X_i \cdot F_i$.
-
-        (Распространим координатное векторное поле, используя гладкий спуск с единицы: $\tilde{E}_i\big|_U \equiv 0$ в дополнении карты).
-    Из локальности
-    \[F(X) = F(X_1 \tilde{E}_1 + \cdots + X_n \cdot \tilde{E}_n)\]
-    \item Случай $k \ne 1$ сводится к предыдущему последовательным применением.
+            Пусть $X \in \mathscr{X}(M)$, разложим его по координатным полям: $X = X_1 E_1 + \dots + X_n E_n$ (равенство выполняется в некоторой окрестности $p$), где $X_i \in \mathscr{F}(M)$.
+            Используя локальность, запишем
+            \[F(X) = F(X_1 E_1 + \dots + X_n E_n) = X_1 F(E_1) + \dots + X_n F(E_n)\]
+            Тем самым, $F(X)(p) = X_1(p) \cdot F(E_1)(p) + \dots + X_n(p) \cdot F_n(E_n)(p)$.
+    }
+    Если $k \ne 1$, то надо доказать сначала локальность ($\forall p \in U: X_1\big|_U = Y_1\big|_U$ $\then$ $F(X_1, Z_2, \dots, Z_n)(p) = F(Y_1, Z_2, \dots, Z_n)(p)$, и по всем остальным аргументам аналогично), а потом то, что $F(X_1, \dots, X_n)(p)$ зависит только от $X_1(p), \dots, X_n(p)$ по очереди по каждому аргументу.
+    Это следует из случая $k = 1$, так как при фиксированных $k - 1$ аргументах $F$ линейно по последнему.
     }
     }
     \newlection{3 апреля 2024 г.}
     Пусть $E_i, E_j$ --- координатные поля.
-    Имеется такой факт, что $[E_i, E_j] = 0$.
-    \provehere{$[X, Y]^{\phi} = (Y^\phi)'_{X^\phi} - (X^\phi)'_{Y_\phi} = 0$. }
+    \fact{
+        $[E_i, E_j] = 0$.
+    \provehere{
+        Запишем выражение для скобки Ли в координатах в карте:~(\cref{coordinate-for-lie-bracket}):
+        \[[X, Y]^{\phi}_i = (Y^\phi_i)'_{X^\phi} - (X^\phi_i)'_{Y_\phi}\]
+    При этом $X^{\phi}_i, Y^{\phi}_i$ --- константы, их производные равны нулю.
+    }
+    }
     Вообще, скобка Ли --- мера некоммутативности векторных полей, что мы докажем позже.
     \subsection{Поведение скобки Ли при отображениях}
     Пусть $M, N$ --- гладкие многообразия, $X \in \mathscr{X}(M), Y \in \mathscr{X}(N)$, $F: M \map N$ -- гладкое.
@@ -1074,34 +1087,38 @@
 
     Пусть $F: M \map N$ переводит $X \in \mathscr{X}(M)$ в $Y \in \mathscr{X}(N)$.
     \lemma{\label{action-suffices}
-    $F$ переводит $X$ в $Y$ $\iff$ $\forall$ гладкого $f: N \map \R: (Y(f) \circ F)(p) = X(f \circ F)(p)$.
+    $F$ переводит $X$ в $Y$ $\iff$ $\forall$ гладкого $f: N \map \R: Y(f) \circ F = X(f \circ F)$.
     \provetwhen{
-        $X(f \circ F)(p) = \d_p (f \circ F)(X) = (\d_p f \circ \d F)(X) = \d_p f(Y) = (Yf)(F(p))$.
+        $X(f \circ F)(p) = \d_p (f \circ F)(X_p) = (\d_{F(p)} f \circ \d_p F)(X_p) = \d_{F(p)} f(Y) = (Y(f))(F(p))$.
     }{
         Выберем локально $f \coloneqq x_i$ --- координатная функция.
-        $Y_i(F(p)) = ((Y x_i) \circ F)(p) = X(x_i \circ F)(p) = \d(x_i \circ F)(X) = \d x_i \circ \d F(X) = (\d F(X))_i$.
-        Тем самым, совпали $i$-е координаты полей, значит, сами поля совпали.
+        \[Y_i(F(p)) = (Y (x_i) \circ F)(p) = X(x_i \circ F)(p) = \d_p(x_i \circ F)(X_p) = (\d_{F(p)} x_i \circ \d_p F)(X_p) = (\d_p F(X))_i\]
+        Совпали $i$-е координаты полей, значит, сами поля совпали.
     }
     }
+    Если $F$ переводит $X$ в $Y$, то будем писать $F(X) = Y$.
     \theorem{
     Пусть $F: N \map M$ гладкое, $X_1, X_2 \in \mathscr{X}(M), Y_1, Y_2 \in \mathscr{X}(N)$.
         Если $F(X_1) = Y_1$ и $F(X_2) = Y_2$, то $F([X_1, X_2]) = [Y_1, Y_2]$.
     \provehere{
         Пусть $f: N \map \R$ --- произвольная гладкая.
     Проверим, что $F([X_1, X_2])$ и $[Y_1, Y_2]$ одинаково действуют на $f$:
-    \[[Y_1, Y_2](f) = Y_1(Y_2(f)) - Y_2(Y_1(f)) = Y_1(X_2(f \circ F)) - Y_2(X_1(f \circ F)) = [X_1, X_2](f \circ F)\]
-    Согласно~(\cref{action-suffices}), имеет место равенство.
+    \multline{
+        [Y_1, Y_2](f) \circ F = Y_1(Y_2(f)) \circ F - Y_2(Y_1(f)) \circ F = X_1(Y_2(f) \circ F) - X_2(Y_1(f) \circ F) =\\
+        = X_1(X_2(f \circ F)) - X_2(X_1(f \circ F)) =  [X_1, X_2](f \circ F)
+    }
+    Конечно, $[F(X_1, X_2)]$ априори даже может быть не определено, но выкладка выше корректна, и согласно~(\cref{action-suffices}), её достаточно для проверки.
     }
     }
     \corollary{
         Пусть $M$ --- гладкое многообразие, $N \subset M$ --- гладкое подмногообразие.
 
         Если $X, Y \in \mathscr{X}(N)$ касательны к $N$, то и $[X, Y]$ --- касательно к $N$.
-    \provehere{Рассмотреть $F = \text{in}$. }
+    \provehere{Рассмотреть $F = \text{in}$ --- вложение $N \hookrightarrow M$. }
     }
     \section{Аффинные связности}
     Пусть $M$ --- гладкое многообразие
-    \definition[Аффинная связность]{
+    \definition[Аффинная связность $\nabla$]{
     Отображение \begin{align*}\mathscr{X}(M) \times \mathscr{X}(M) &\map \mathscr{X}(M) \\ V, W &\mapsto \nabla_V W\end{align*} со следующими свойствами:
     \numbers{
     \item $\R$-билинейность.
@@ -1110,11 +1127,11 @@
     }
     }
     \examples{
-    \item Обычное дифференцирование: на $\R^n$ заданы векторные поля.
+    \item Обычное дифференцирование: на $\R^n$ могут быть заданы векторные поля.
     \item Ковариантная производная на поверхности $\Sigma^2 \subset \R^3$
     \item Покоординатное дифференцирование в карте.% $U \subset \R^n$.
     }
-%    Аффинные связности образуют векторное пространство над $\R$. ??
+%    Несложно видеть из определения, что аффинные связности образуют $\R$-векторное пространство. Нет!!!
     \theorem[О пространстве связностей]{
         Пусть $M$ --- гладкое многообразие, $\nabla, \tilde{\nabla}$ --- две аффинные связности.
     \numbers{
@@ -1125,7 +1142,7 @@
         \item Достаточно проверить $\mathscr{F}(M)$-линейность по второму аргументу:
     \[\nabla_V(f \cdot W) - \tilde{\nabla}_V(f \cdot W) = \cancel{V(f) \cdot W} + f \cdot \nabla_V W - \cancel{V(f) \cdot W} - f \cdot \tilde{\nabla}_V W\]
     \item Достаточно проверить правило Лейбница:
-    \[(\nabla + T)_V(f \cdot W) = f(V) \cdot W + f \cdot \nabla_V W + T(V, f \cdot W) = f(V) \cdot W + f \cdot (\nabla + T)_V(W)\]
+    \[(\nabla + T)_V(f \cdot W) = f(V) \cdot W + f \cdot \nabla_V W + T(V, f \cdot W) = f(V) \cdot W + f \cdot (\nabla + T)_V(W)\qedhere\]
     }
     }
     \proposal[Локальность аффинной связности]{
@@ -1134,7 +1151,7 @@
         При фиксированном втором аргументе $\nabla_{\_}(W)$ --- тензор типа $(1, 1)$, значит, зависит только от $V_p$.
 
         Пусть имеются два поля $W_1, W_2$, совпадающие в окрестности $U_p \ni p$. Пусть $h$ --- гладкий спуск с единицы в окрестности $p$, $h\big|_{U_p^\complement} \equiv 0$.
-    \[h \cdot (\nabla_V W_2) + \underbrace{(W_2(h) \cdot V)_p}_{0} = \nabla_{V}(h \cdot W_2) = \nabla_V(h \cdot W_1) = h \cdot (\nabla_V W_1) + \underbrace{(W_1(h) \cdot V)_p}_{0}\]
+    \[h \cdot (\nabla_V W_2) + \underbrace{(W_2(h) \cdot V)_p}_{0} = \nabla_{V}(h \cdot W_2) = \nabla_V(h \cdot W_1) = h \cdot (\nabla_V W_1) + \underbrace{(W_1(h) \cdot V)_p}_{0}\qedhere\]
     }
     }
     \corollary{
@@ -1145,12 +1162,13 @@
     Тогда $\nabla - \nabla^{\phi}$ --- некоторый тензор $\Gamma$ типа $(2, 1)$.
 
     Пусть $E_1, \dots, E_n$ --- координатные векторные поля.
-    Тогда $\Gamma(E_i, E_j) = \Gamma_{i,j}$
+    Обозначим $\Gamma_{i,j}\coloneqq\Gamma(E_i, E_j)$.
     \definition[Символы Кристоффеля]{\label{cristo-1}
     $\Gamma_{i,j} = \Gamma(E_i, E_j)$.
     }
-    В отличие от сивмолов Кристоффеля прошлого семестра, эти отвечают координатам тензора, и имеют смысл не на всём многообразии, а только в данной карте.
-    \subsection{Симметричная связность}
+    В отличие от символов Кристоффеля прошлого семестра, эти отвечают координатам тензора, и имеют смысл не на всём многообразии, а только в данной карте.
+    \subsection{Специальные связности}
+    \subsubsection{Симметричная связность}
     \definition[$\nabla$ --- симметричная связность]{Такая аффинная связность $\nabla$, что $\forall X, Y \in \mathscr{X}(M): \nabla_X Y - \nabla_Y X = [X, Y]$.}
     \statement{
     $T \coloneqq \nabla_X Y - \nabla_Y X - [X, Y]$ --- тензор типа $(2, 1)$.
@@ -1158,14 +1176,17 @@
     Выражение антисимметрично ($\nabla_X X - \nabla_X X - [X, X] = 0$) и $\R$-билинейно.
         Проверим $\mathscr{F}(M)$-билинейность по второму аргументу:
     \multline{\nabla_X (f \cdot Y) - \nabla_{f \cdot Y} X - [X, f \cdot Y] = \cancel{X (f) \cdot Y}+ f \cdot \nabla_X Y - f \cdot \nabla_Y X - (f \cdot [X, Y] + \cancel{X(f) \cdot Y}) =\\= f \cdot (\nabla_X Y - \nabla_Y X - [X, Y])}
+    Билинейность по первому аргументу следует из антисимметричности.
+    }
     }
     Этот тензор $T$ называется \emph{тензор кручения}.
     \corollary{
     Проверку того, что связность симметрична, достаточно осуществлять на координатных полях.
     Для координатных полей $\nabla_{E_i}E_j - [E_i, E_j]=\nabla_{E_i}E_j = \Gamma_{i,j}$.
+        Более того, $\nabla^{\phi}_{E_i}(E_j) = 0$.
         Тем самым, связность симметрична $\iff \Gamma_{i,j} = \Gamma_{j,i}$.
     }
-    }
+    \subsubsection{Риманова связность}
     Пусть $(M, \angles{\_, \_})$ --- многообразие с римановой метрикой.
     \definition[Риманова связность $\nabla$]{
     Аффинная связность $\nabla$, согласованная с римановой метрикой: $X\angles{Y, Z} = \angles{\nabla_X Y, Z} + \angles{Y, \nabla_X Z}$.
@@ -1175,29 +1196,28 @@
         \provehere{
             $\R$-полилинейность по всем аргументам и $\mathscr{F}(M)$-линейность по первому очевидны.
 
-        По второму и третьему аргументам симметрично, проверим билинейность по второму:
-        \multline{X\angles{f \cdot Y, Z} - \angles{\nabla_X (f \cdot Y), Z} - \angles{f \cdot Y, \nabla_X Z} =\\= \cancel{X(f) \cdot \angles{Y, Z}} + f \cdot X\angles{Y, Z} - \cancel{\angles{X(f) \cdot Y, Z}} - f\angles{  \nabla_X(Y), Z} - f \angles{ Y, \nabla_{X}Z}}
+        По второму и третьему аргументам симметрично, проверим $\mathscr{F}(M)$-линейность по второму:
+        \multline{X\angles{f \cdot Y, Z} - \angles{\nabla_X (f \cdot Y), Z} - \angles{f \cdot Y, \nabla_X Z} =\\= \cancel{X(f) \cdot \angles{Y, Z}} + f \cdot X\angles{Y, Z} - \cancel{\angles{X(f) \cdot Y, Z}} - f\angles{  \nabla_X(Y), Z} - f \angles{ Y, \nabla_{X}Z}\qedhere}
         }
     }
     \corollary{Можно проверять римановость связности только на координатных полях.}
+    \subsubsection{Связность Леви-Чивиты}
     \definition[Связность Леви-Чивиты]{
         Симметричная риманова связность.
     }
     \newlection{10 апреля 2024 г.}
     \subsection{Символы Кристоффеля}
     Дадим второе определение, и поймём, что оно совпадает с первым.
+    У нас зафиксирована аффинная связность $\nabla$, и карта $(U, \phi)$.
     \definition[Символы Кристоффеля в карте]{
     $\Gamma^{\phi}_{i,j} = \nabla_{E_i}E_j$.
     }
-    Опять же, символы первого рода $\Gamma_{i,j;k} = \angles{\Gamma_{i,j}, E_k}$, и символы второго рода $\Gamma_{i,j} = \sum\limits_{k}\Gamma_{i,j}^{k}E_k$.
+    Опять же, символы первого рода $\Gamma_{i,j;k} \bydef \angles{\Gamma_{i,j}, E_k}$, и символы второго рода --- координаты в разложении: $\Gamma_{i,j} = \sum\limits_{k}\Gamma_{i,j}^{k}E_k$.
 
     Это совпадает с~(\cref{cristo-1}), так как $\Gamma^{\phi}(E_i, E_j) = \nabla_{E_i}E_j - \underbrace{\nabla^{\phi}_{E_i}E_j}_{0}$.
-    \fact{
+    \fact{Одни символы Кристоффеля гладкие тогда и только тогда, когда гладкие --- другие.
     \provehere{
-        $\angles{\Gamma_{i,j}^k, E_l} = \Gamma_{i,j}^{k} \cdot g_{k,l}$
-    Пусть $(g_{n,m})_{n,m}$ --- матрица Грама, $(g'_{n,m}) = (g_{n,m})^{-1}$ --- обратная матрица, тогда так как $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$, то $\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} =(g'_{n,m}) \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$.
-
-    Тем самым, одни символы гладкие тогда и только тогда, когда гладкие --- другие.
+    Они варажаются друг через друга и матрицу Грама (координаты метрического тензора): $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$, откуда $\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} =(g_{n,m})^{-1} \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$.
     }
     }
     \subsection{Единственность связности Леви-Чивиты}
