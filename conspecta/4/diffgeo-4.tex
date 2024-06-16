@@ -1220,7 +1220,7 @@
     Они варажаются друг через друга и матрицу Грама (координаты метрического тензора): $(g_{n,m})\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} = \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$, откуда $\vect{\Gamma_{i,j}^1 \\ \vdots \\ \Gamma_{i,j}^{n}} =(g_{n,m})^{-1} \vect{\Gamma_{i,j;1} \\ \vdots \\ \Gamma_{i,j;n}}$.
     }
     }
-    \subsection{Единственность связности Леви-Чивиты}
+    \subsection{Существование и единственность связности Леви-Чивиты}
 
     \theorem[Основная теорема римановой геометрии]{
         Пусть $(M, \angles{\_,\_})$ --- риманово многообразие.
@@ -1228,11 +1228,19 @@
     \provehere{
 %    Сначала докажем единственность: пусть $(U, \phi)$ --- карта, тогда $E_k(\angles{E_i, E_j}) = \angles{\nabla_{E_k}E_i, E_j} + \angles{E_i, \angles_{E_k}E_j}$ согласно римановости.
 %
-    Перепишем: $(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}$.
-    Переставляя индексы циклически, получаем уравнения $\all{(g_{i,j})'_{x_k} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\(g_{jk})'_{x_i} = \angles{\Gamma_{i,j}, E_k} + \angles{E_j, \Gamma_{i,k}} = \Gamma_{i,j;k} + \Gamma_{i,k;j}\\(g_{k,i})'_{x_j} = \angles{\Gamma_{j,k}, E_i} + \angles{E_k, \Gamma_{j,i}} = \Gamma_{j,k;i} + \Gamma_{j,i;k}}$
-    Так как символы симметричны, то есть $\Gamma_{i,j}^{k} = \Gamma_{j,i}^{k}$, то
-    \[\Gamma_{i,j;k} = \frac{(g_{i,k})'_{x_j} + (g_{i,k})'_{x_i} - (g_{i,j})'_{x_k}}{2}\label{gamma-equals-what}\tag{$*$}\]
-    Используя разложение $\nabla = \nabla^{\phi} + \Gamma^{\phi}$, получаем единственность в каждой карте, значит, и глобальная единственность.
+    Зафиксируем карту $(U, \phi)$, в ней имеется $n^2$ гладких функций $g_{i,j}$.
+        В силу римановости связности Леви-Чивиты: \[E_k(g_{i,j}) = E_k\angles{E_i, E_j} = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\]
+    Переставляя индексы циклически, получаем $\all{E_k(g_{i,j}) = \angles{\Gamma_{k,i}, E_j} + \angles{E_i, \Gamma_{k,j}} = \Gamma_{k,i;j} + \Gamma_{k,j;i}\\E_i(g_{jk}) = \angles{\Gamma_{i,j}, E_k} + \angles{E_j, \Gamma_{i,k}} = \Gamma_{i,j;k} + \Gamma_{i,k;j}\\E_j(g_{k,i}) = \angles{\Gamma_{j,k}, E_i} + \angles{E_k, \Gamma_{j,i}} = \Gamma_{j,k;i} + \Gamma_{j,i;k}}$
+    Так как символы симметричны, то есть $\Gamma_{i,j;k} = \Gamma_{j,i;k}$, то
+    \[\Gamma_{i,j;k} = \frac{E_j(g_{i,k}) + E_i(g_{i,k}) - E_k(g_{i,j})}{2}\label{gamma-equals-what}\tag{$*$}\]
+    Это показывает единственность в каждой карте, значит, и глобальную единственность.
+
+    Докажем существование.
+    Зафиксируем карту, и проверим, что выражение через~\eqref{gamma-equals-what} корректно определяет связность Леви-Чивиты формулой $\nabla = \nabla^{\phi} + \Gamma^{\phi}$.
+        Симметричность $\nabla$ очевидна (проверяем на базисных векторах).
+        По модулю симметричности, римановость в точности значит~\eqref{gamma-equals-what} (достаточно проверить на базисных векторах).
+
+        Понятно, что при замене карты на ей согласованную, ковариантная производная не изменится --- она единственная удовлетворяет условиям симметричности и римановости, и эти условия не зависят от координат карты.
 
 %    Теперь докажем существование.
 %        Зафиксируем карту, и воспользуемся~\eqref{gamma-equals-what}.
@@ -1255,24 +1263,27 @@
     \numbers{
     \item $\frac{\nabla}{\d t}(V + W) = \frac{\nabla}{\d t}V + \frac{\nabla}{\d t}W$
     \item $\frac{\nabla}{\d t}(f \cdot V) = f' \cdot V + f \cdot \frac{\nabla}{\d t}V$.
-    \item Если $\exists \tilde{V}$ --- векторное поле на $M$, такое, что $\tilde{V}(\gamma(t)) = V(t)$, то $\frac{\nabla}{\d t}V = \nabla_{\gamma'}\tilde{V}$.
+    \item Если $\exists \tilde{V} \in \mathscr{X}(M)$, такое, что $\tilde{V}(\gamma(t)) = V(t)$, то $\frac{\nabla}{\d t}V = \nabla_{\gamma'}\tilde{V}$.
+    \comment{Что такое $\nabla_{\gamma'}\tilde{V}$? $\gamma'$ --- векторное поле только вдоль $\gamma$ (не задан на всём многообразии).}
     }
     }
-    Выглядит, как ковариантная производная (по теореме о выпрямлении всё можно сделать), но если $\gamma' = 0$, то там по-другому.
+    Определение выглядит, как обычная ковариантная производная (по теореме о выпрямлении данный регулярный путь $\gamma$ можно разрезать на куски, покрытые такими картами, что $\gamma' \upuparrows E_1$, и $\frac{\nabla}{\d t}V = \nabla_{E_1}V$ подойдёт), но если $\gamma' = 0$, то придётся действовать по-другому.
     \theorem{
     Ковариантная производная вдоль пути существует и единственна.
     \provehere{
     Сначала докажем единственность.
     Разложим покоординатно: $V(t) = \sum\limits_{i}V_i(t) \cdot E_i(\gamma(t))$.
-    \[\frac{\nabla}{\d t}V = \frac{\nabla}{\d t}\left(\sum\limits_{i}V_i(t) \cdot E_i(\gamma(t))\right) = \sum\limits_{i}\frac{\d v_i}{\d t} \cdot E_i + \sum\limits_{i}V_i \cdot \frac{\nabla}{\d t}E_i\]
-    Обозначим $\gamma'(t) = \sum\limits_{i}\alpha_{i}(t) \cdot E_i(\gamma(t))$. Так как координатное векторное поле вдоль пути отвечает обычному координатному векторному полю, то
-    \[V_i \cdot \frac{\nabla}{\d t}E_i = V_i \cdot \alpha_{j} \Gamma_{i,j}\]
+    \[\frac{\nabla}{\d t}V = \frac{\nabla}{\d t}\left(\sum\limits_{i}V_i(t) \cdot E_i(\gamma(t))\right) = \sum\limits_{i}V_i' \cdot E_i + \sum\limits_{j}V_j \cdot \frac{\nabla}{\d t}E_j\]
+    Обозначим $\gamma'(t) = \sum\limits_{i}\alpha_{i}(t) \cdot E_i(\gamma(t))$.
+        Так как координатное векторное поле вдоль пути отвечает обычному координатному векторному полю, то \[\frac{\nabla}{\d t}E_j = \nabla_{\gamma'}E_j = \sum\limits_{k}\alpha_k\nabla_{E_k}E_j = \sum\limits_{k}\alpha_k \Gamma_{k,j}\]
+    Отсюда уже видна единственность --- получили выражение для $\frac{\nabla}{\d t}$, не использующее этот символ.
 
-    Этого достаточно для единственности, распишем подробнее, чтобы показать существование
+    Распишем подробнее, чтобы показать существование (из симметричности $\Gamma_{k,j} = \Gamma_{j,k}$):
     \[\frac{\nabla}{\d t}V = \sum\limits_{i}V_i' \cdot E_i + \sum\limits_{i,j,k}V_j \alpha_{k}\Gamma_{j,k}^{i} E_i\label{nabla-equals-what}\tag{$**$}\]
+    Дальше, надо опять проверить, что данная формула задаёт $\frac{\nabla}{\d t}$ в карте корректно.
+        Линейность по $V$ и правило Лейбница очевидны из формулы~(\ref{nabla-equals-what}). \comment{Третье условие --- согласованность с обычной ковариантной производной --- мне менее очевидно, но, видимо, если расписать, то всё тоже получится.}
 
         Существование, опять же, получается из единственности и соответствующей формулы: покроем носитель открытыми множествами $W_i$, таких, что $\forall W_i: \exists (U, \phi): U \supset W_i$.
-        Далее несложно проверить, что определение при помощи формулы~\eqref{nabla-equals-what} даёт корректно определённую ковариантную производную вдоль пути.
         На пересечениях всё согласовано из единственности.
     }
     }
@@ -1284,28 +1295,28 @@
     Такая кривая $\gamma$, что ковариантная производная её вектора скорости вдоль неё самой нулевая: $\frac{\nabla}{\d t}\gamma' = 0$.
     }
     Пусть кривая натурально параметризована: $|\gamma'| \equiv 1$.
-    Тогда кривизна $K_\gamma = \abs{\frac{\nabla}{\d t}\gamma'}$.
+    Тогда кривизна $K_\gamma \bydef \abs{\frac{\nabla}{\d t}\gamma'}$.
     \statement{
     Кривая геодезическая $\iff K_\gamma \equiv 0$.
     }
     \properties{
-    \item Если $\gamma$ --- геодезическая, то $|\gamma'| = \const$: $\frac{\d}{\d t}\angles{\gamma', \gamma'} = \angles{\frac{\d}{\d t}\gamma', \gamma'} + \angles{\gamma', \frac{\d}{\d t}\gamma'} = 0$ (докажем позже, что так можно).
+    \item Если $\gamma$ --- геодезическая, то $|\gamma'| = \const$: $\frac{\d}{\d t}\angles{\gamma', \gamma'} = \angles{\frac{\nabla}{\d t}\gamma', \gamma'} + \angles{\gamma', \frac{\nabla}{\d t}\gamma'} = 0$ (позже докажем, почему имеет место равенство:~(\cref{differentiating-scalar-product}))
     \item Если $\gamma$ --- геодезическая, то $\tilde{\gamma}(t) \coloneqq \gamma(at + b)$ --- тоже.
     \provehere{
-    $\tilde{\gamma}' = a \cdot \gamma'$, откуда $\frac{\nabla_{\tilde{\gamma}}}{\d t}\tilde{\gamma}' = a^2 \frac{\nabla_{\gamma}{\d t}}\gamma' = 0$.
+    $\tilde{\gamma}' = a \cdot \gamma'$, откуда $\frac{\nabla_{\tilde{\gamma}}}{\d t}\tilde{\gamma}' = a^2 \frac{\nabla_{\gamma}}{\d t}\gamma' = 0$.
     }
     }
     \subsection{Уравнение геодезической}
     Пусть в карте $\tilde{\gamma} = \phi \circ \gamma = (a_1(t), \dots, a_n(t))$, тогда $\tilde{\gamma}'(t) = (a_1'(t), \cdots, a_n'(t))$.
-    Запишем~\eqref{nabla-equals-what}:\[\tilde{\gamma}'' = \sum\limits_{i}a_i'' \cdot E_i + \sum\limits_{i,j}a_i a_j \cdot \Gamma_{i,j}^{k} \cdot E_k\]
-    Фиксируя $E_k$, получаем $n$ уравнений, проиндексированных при помощи $k$: $a_k'' + \sum\limits_{i,j}a_i a_j \Gamma_{i,j}^{k}$.
+    Запишем~\eqref{nabla-equals-what}:\[\frac{\nabla}{\d t}\tilde{\gamma}' = \sum\limits_{i}a_i'' \cdot E_i + \sum\limits_{i,j,k}a_i a_j \cdot \Gamma_{i,j}^{k} \cdot E_k\]
+    Фиксируя $E_k$, получаем $n$ уравнений, проиндексированных при помощи $k$: $a_k'' + \sum\limits_{i,j}a_i a_j \Gamma_{i,j}^{k} = 0$.
 
     \theorem{
         Пусть $(M, \angles{\_,\_})$ --- гладкое риманово многообразие, $\nabla$ --- связность Леви-Чивиты, $p \in M, v \in T_p M$.
 
         Тогда $\exists \eps > 0, \gamma: (-\eps, \eps) \map M$ --- такая геодезическая. что $\gamma(0) = p, \gamma'(0) = v$.
     \provehere{
-    Решаем систему дифференциальных уравнений второго порядка.
+    Решаем систему дифференциальных уравнений второго порядка при заданном начальном условии.
     }
     }
     \subsection{Параллельный перенос вдоль пути}
@@ -1314,11 +1325,11 @@
     $\frac{\nabla}{\d t}V \equiv 0$.
     }
     В частности, вектор скорости геодезической параллелен вдоль неё.
-    \theorem{Пусть $p \in M, v_0 \in T_pM$. $\gamma(0) = p, \gamma'(0) = p$.
+    \theorem{Пусть $p \in M, v_0 \in T_pM$. $\gamma(0) = p, \gamma'(0) = v_0$.
         Утверждается, что $\exists ! V(t)$ --- векторное поле вдоль $\gamma$, параллельное вдоль $\gamma$, такое, что $V(0) = v_0$.
     \provehere{
-    Опять запишем~\eqref{nabla-equals-what}
-    $\frac{\nabla}{\d t}V = 0 = \sum\limits_{i}V_i' \cdot E_i + \sum\limits_{i,j,k}V_j a_k \Gamma_{j,k}^{i} \cdot E_i$.
+    Опять запишем~\eqref{nabla-equals-what}:
+    \[0 = \frac{\nabla}{\d t}V = \sum\limits_{i}V_i' \cdot E_i + \sum\limits_{i,j,k}V_j a_k \Gamma_{j,k}^{i} \cdot E_i\]
     Получили $n$ уравнений первого порядка с необходимым количеством начальных данных.
         Значит, $\exists!$ решение на всей области определения.
     }
@@ -1330,43 +1341,45 @@
     \note{
     Параллельный перенос --- линейное отображение, так как свойство быть параллельным вдоль пути сохраняется при взятии линейных комбинаций.
     }
-    \properties{
-    \item Пусть $X, Y$ --- векторные поля, параллельные вдоль $\gamma$. Тогда $\angles{X(t), Y(t)} = \const$.
-    \[0 = \frac{\d}{\d t}\angles{X(t), Y(t)} = \angles{\frac{\nabla}{\d t}X, Y} + \angles{X, \frac{\nabla Y}{\d t}}\]
+    \proposal{Пусть $X, Y$ --- векторные поля, параллельные вдоль $\gamma$.
+    Тогда $\angles{X(t), Y(t)} = \const$.
+    \provehere{Опять воспользуемся пока ещё не доказанным~(\cref{differentiating-scalar-product}):
+        \[0 = \frac{\d}{\d t}\angles{X(t), Y(t)} = \angles{\frac{\nabla}{\d t}X, Y} + \angles{X, \frac{\nabla Y}{\d t}}\qedhere\]
+    }
     }
     \corollary{
     Вдоль пути наблюдается изоморфизм векторных пространств $T_p M$ и $T_q M$.
     }
     \proposal{
     Пусть $t_0 \in [a, b]$
-        Тогда $\frac{\nabla}{\d t}X = \frac{\d}{\d t}(P^{t_0}_{t}X(t))$
+        Тогда $(\frac{\nabla}{\d t}X)(t_0) = \frac{\d}{\d t}\big|_{t = 0}(P^{t_0}_{t}X(t))$
     \provehere{
-    Выберем базис $(B_i)_{i}$ и разнесём его параллельными переносами.
+    Выберем базис $(B_i)_{i}$ в какой-то точке пути, и и разнесём его параллельными переносами.
     Получили на всей кривой базис из параллельных векторных полей.
 
     Запишем $X = \sum\limits_{i}X_i B_i$. Тогда
-    \[\frac{\nabla X}{\d t} = \sum\limits_{i}x_i' \cdot B_i + \sum\limits_{i}x_i \cdot \underbrace{\frac{\nabla}{\d t}B_i}_{0}\]
+    \[\frac{\nabla X}{\d t} = \sum\limits_{i}X_i' \cdot B_i + \sum\limits_{i}X_i \cdot \underbrace{\frac{\nabla}{\d t}B_i}_{0}\qedhere\]
     }
     }
     Зафиксируем $p \in M, v \in T_p M$.
     \definition[Экспоненциальное отображение]{
-    Частично определённое отображение $\exp_p: (\subset T_p M) \map M$, такое, что $\exp_p(v)$ --- это $\gamma(1)$, где $\gamma$ --- геодезическая с начальными данными $\gamma(0) = p, \gamma'(0) = v$.
+    Частично определённое отображение $\exp_p: (\subset T_p M) \map M$, такое, что $\exp_p(v)$ --- это $\gamma_v(1)$, где $\gamma_v$ --- геодезическая с начальными данными $\gamma_v(0) = p, \gamma_v'(0) = v$.
         $\exp_p(v)$ определено если и только если геодезическая с такими параметрами определена в $1$.
     }
     Также определяют  $\exp: (\subset TM) \map M$, определённое поточечно.
     В курсе дифференциальных уравнений доказывались соответствующие теоремы, из которых видно, что $\exp$ --- гладкое отображение, однозначно определённое на некотором открытом подмножестве $TM$.
     \newlection{17 апреля 2024 г.}
-    Докажем утверждение
-    \statement{
+    Докажем утверждение, уже использовавшееся не раз.
+    \statement{\label{differentiating-scalar-product}
     Пусть $\gamma: [0, 1] \map M$ --- кривая на римановом многообразии, $\nabla$ --- связность Леви-Чивиты, $X, Y$ --- гладкие векторные поля вдоль $\gamma$.
         Тогда \[\frac{\d}{\d t}\angles{X, Y} = \angles{\frac{\nabla}{\d t}X, Y} + \angles{X, \frac{\nabla}{\d t}Y}\]
     \provehere{
         Пусть $(U, \phi)$ --- карта, и $E_i$ --- координатные векторные поля.
     Разложим $X = \sum\limits_{i}x_i E_i$ и $Y = \sum\limits_{i}y_j E_j$.
-    Преобразуем левую часть:
-    \[\frac{\d}{\d t}\sum\limits_{i,j}\angles{x_i E_i, y_j E_j} = (x_i, y_j)' \cdot g_{i,j} + x_i y_j \cdot \frac{\d g_{i,j}}{\d t}\text{, где }\frac{\d g_{i,j}}{\d t} = \underbrace{\tilde{\gamma}'_k}_{a_k} \cdot (g_{i,j})'_{x_k} = a_k \cdot \left(\Gamma_{i,k;j} + \Gamma_{j,k;i}\right)\]
+    Преобразуем левую часть ($\tilde{\gamma} = \phi \circ \gamma$):
+    \[\frac{\d}{\d t}\angles{x_i E_i, y_j E_j} = (x_i\cdot y_j)' \cdot g_{i,j} + x_i y_j \cdot \frac{\d g_{i,j}}{\d t}\text{, где }\frac{\d g_{i,j}}{\d t} = \sum\limits_{k}\underbrace{\tilde{\gamma}'_k}_{a_k} \cdot (g_{i,j})'_{x_k} = \sum\limits_{k}a_k \cdot \left(\Gamma_{i,k;j} + \Gamma_{j,k;i}\right)\]
     Теперь преобразуем правую часть, воспользовавшись~\eqref{nabla-equals-what}:
-    \[\sum\limits_{k}\angles{x_i' E_i + \sum\limits_{i,j}a_i x_j \Gamma_{i,j}, y_k E_k} + \sum\limits_{i}\angles{x_i E_i, y'_k E_k + \sum\limits_{j,k}a_j y_k \Gamma_{j,k}}\]
+    \[\angles{\sum\limits_{i}x_i' E_i + \sum\limits_{i,k}a_k x_i \Gamma_{i,k}, \sum\limits_{j}y_j E_j} + \angles{\sum\limits_{i}x_i E_i, \sum\limits_{j}y'_j E_j + \sum\limits_{j,k}a_k y_j \Gamma_{j,k}}\]
     Несложно видеть, что выражения равны.
     }
     }
@@ -1374,12 +1387,12 @@
     Пусть $M^2$ --- риманово многообразие, $\gamma$ --- геодезическая.
     Вектор $\gamma'$ параллелен вдоль $\gamma$.
     Выберем какой-нибудь вектор $v \in T_{\gamma(0)}M, v \perp \gamma'(0)$, и разнесём его вдоль $\gamma$.
-    Из сохранения скалярного произведения мы получим ортонормированный базис вдоль $\gamma$.
+    Повторив так нужное количество раз (выбирая вектор в $T_{\gamma(0)}M$, ортогональный всем предыдущим), мы получим ортонормированный базис вдоль $\gamma$.
 
     \properties[Экспонента]{
     \item Прямо по определению получаем $\exp(t v) = \gamma_v(t)$.
     Тем самым, для фиксированного $v \in TM$: отображение $t \mapsto \exp(t v)$ --- геодезическая с вектором скорости $v$ в нуле.
-    \item $\forall p \in M: \d_p \exp_p = \id$ --- напрямую следует из предыдущего.
+    \item $\forall p \in M: \d_0 \exp_p = \id$ --- напрямую следует из предыдущего (дифференциал берётся в нуле касательного пространства).
     \corollary{
     По теореме об обратной функции $\exp_p$ --- локальный диффеоморфизм окрестностей $0 \in T_p M$ и $p \in M$.
     }
@@ -1390,27 +1403,29 @@
     }
     Бывают различные причины того, что радиус инъективности конечен:
     \bullets{
-    \item В цилиндре геодезические встречаются
-    \item В некомпактном они могут уткнуться в <<край>>
-    \item Геодезические могут сойтись
+    \item В неодносвязном многообразии геодезические встречаются: так, в цилиндре $S^1 \times \R$ со стандартной метрикой две геодезические, пущенные по окружности вращения в противоположных направлениях, встречаются, поэтому $\forall p: \injrad{p} \le \pi$.
+    \item В некомпактном они могут уткнуться в <<край>>: в  открытом круге $D_1$ со стандартной метрикой любая геодезическая, пущенная из нуля, имеет длину не более $1$, поэтому $\injrad{0} \le 1$.
+    \item Геодезические могут сойтись: на сфере $S^2$ со стандартной метрикой (вообще говоря, на любом многообразии с положительной кривизной, но об этом будет речь чуть позже) любые две геодезические, пущенные из одной точки, встречаются в диаметрально противоположной точке сферы, поэтому $\forall p: \injrad{p} \le \pi$.
     }
     \definition[Радиус инъективности многообразия $M$]{
     Число $\injrad(M) = \inf\limits_{p \in M}\injrad(p)$.
     }
-    \theorem{
+    \theorem{\label{injrad-is-locally-positive}
     Радиус инъективности локально отделён от нуля: $\forall p \in M: \exists \eps > 0, U \ni p: \inf\limits_{x \in U}\injrad(x) > \eps$.
     \provehere{
-    Определим $F: TM \map M \times M, \underbrace{v_p}_{\in T_p M} \mapsto (\exp_p v_p, p)$.
-    Изучим его дифференциал в $(x_1, \dots, x_n, \xi_1, \dots, \xi_n)$. $F(0, x) = (x, x)$ и $F(\xi_p, p) = (\xi_p, p)$, откуда
+    Пусть $(U, \phi)$ --- карта, $\phi: U \map \R^n$.
+        $\phi$ задаёт локальный диффеоморфизм между $M$ и $\R^n$, а ещё --- между $TM$ и $\R^{2n}$.
+    Определим $F: TM \map M \times M, \underbrace{v_p}_{\in T_p M},p \mapsto (\exp_p v_p, p)$.
+    Изучим его дифференциал (в смысле отображения $\R^{2n} \map \R^{2n}$) в точке $\xi = (\xi_1, \dots, \xi_n) \in T_pM$, где $p = (x_1, \dots, x_n)$.
+        $F(0, x) = (x, x)$ и $F(\xi_p, p) = (\exp_p\xi_p, p)$, откуда
     \[\der{F}{(x, \xi)} = \vect{E & 0 \\ E & E} \text{ --- невырожден}\]
     Получаем, что $F$ --- локальный диффеоморфизм.
 
     Тем самым, имеется открытое подмножество в $TM$, и в нём есть параллелепипед $V \times W$, где $p \in V \subset M$ и $0 \in W \subset T_pM$.
-    Отсюда получаем, что и требовалось доказать \comment{(но почему-то надо ещё воспользоваться непрерывностью метрического тензора?..)}
-    \comment{Видимо, предполагалось немного другое определение $F$, в карте, чтобы можно было пользоваться теоремой об обратной функции.}
+    Отсюда получаем, что и требовалось доказать.
     }
     }
-    Пусть $D$ --- декартовы координаты в $T_p M$, $P$ --- полярные (отображения $T_p M \map \R^n$).
+    Пусть $D$ --- декартовы координаты в $T_p M$, $P$ --- полярные (координаты --- отображения $T_p M \map \R^n$).
     $U \ni p$ --- окрестность, на которую $\exp_p$ отображается диффеоморфизм.
     \definition[Нормальные геодезические координаты в окрестности $p \in M$]{
     $D \circ \left(\exp_p^{-1}\right)$
@@ -1426,7 +1441,7 @@
     Вариация называется \emph{геодезической}, если все продольные линии $\gamma_\tau$ --- геодезические.
     }
     \definition[Поле вариации $Q$]{
-    Векторы скорости поперечных линий $\delta'$ (можно рассматривать его, как гладкое поле вдоль $\gamma$, заданное по формуле $\delta_t'(0)$, можно --- везде \comment{как что?})
+    Векторы скорости поперечных линий $\delta'$ (можно рассматривать его, как гладкое поле вдоль $\gamma$, заданное по формуле $\delta_t'(0)$, можно --- как семейство гладких полей вдоль $\gamma_\tau$, заданных по формуле $\delta_t'(\tau)$)
     }
     Заметим, что $\der{Q}{t}$ --- векторные поля вдоль соответствующих поперечных линий, и $\der{Q}{\tau}$ --- векторные поля вдоль продольных линий.
     \lemma{
@@ -1435,27 +1450,26 @@
     \provehere{
         Разложим в карте $\phi \circ Q = (x_1(t, \tau), \dots, x_n(t, \tau))$
 
-        Посмотрим на векторы скорости продольных линий $\der{Q}{\d t} = \gamma'_\tau(t) = \sum\limits_{i}\der{x_i}{t}(t, \tau)E_i$.
-    и поперечных $\der{Q}{\tau} = \delta_t'(\tau) = \der{x_j}{\tau}E_j$.
-    Подставляя в~\eqref{nabla-equals-what} ($a_i = \der{x_i}{t}$), получаем
-    \[\sum\limits_{i}\der{}{t}\der{\tau}x_i E_i + \sum\limits_{i,j}\der{x_i}{t} \cdot \der{x_i}{\tau}\Gamma_{i,j}\]
+        Посмотрим на векторы скорости поперечных линий $\der{Q}{\tau} = \delta'_t(\tau) = \sum\limits_{j}\der{x_j}{\tau}(t, \tau)E_j$.
+    Подставим их в~\eqref{nabla-equals-what} ($a_i = \der{x_i}{t}$), получаем
+    \[\frac{\nabla}{\d t}\der{Q}{t} = \sum\limits_{j}\der{}{t}\der{x_j}{\tau} E_j + \sum\limits_{i,j}\der{x_i}{t} \cdot \der{x_j}{\tau}\Gamma_{i,j}\]
     Выражение симметрично относительно $t$ и $\tau$.
     }
     }
-    \theorem[Лемма Гаусса]{
-    $(M, \angles{\_,\_}, \nabla)$ --- многообразие со связностью Леви-Чивиты, $v \in T_p M$ таков, что определена $\exp_p(v)$.
+    \theorem[Лемма Гаусса]{\label{gauss-lemma}
+    $(M, \angles{\_,\_}, \nabla)$ --- риманово многообразие со связностью Леви-Чивиты, $v \in T_p M$ таков, что определена $\exp_p(v)$.
 
     Отождествим $T_p M = T_v T_p M$.
-    $\forall w \in T_p M, w \perp v \then \d_v \exp_p(v) \perp \d_v \exp(w)$.
+    Утверждается, что $\forall w \in T_p M: w \perp v \then \d_v \exp_p(v) \perp \d_v \exp(w)$.
     \provehere{
-        Построим вариацию $V(\tau) = \cos \tau \cdot v + \sin \tau \cdot w$, далее $Q(t, \tau) \coloneqq \exp(t \cdot V(\tau))$.
-        Так как экспонента $\exp_p$ определена в некоторой окрестности $v$, то вариация $Q$ определена в некоторой окрестности $v$.
+        Построим вариацию $V(\tau) \coloneqq \cos \tau \cdot v + \sin \tau \cdot w$, далее $Q(t, \tau) \coloneqq \exp(t \cdot V(\tau))$.
+        Так как экспонента $\exp_p$ определена в некоторой окрестности $v$, то вариация $Q$ определена в некоторой окрестности $(1, 0)$ (где $Q(1, 0) = v$).
 
     Заметим, что $Q$ --- геодезическая вариация.
     Обозначим соответствующие векторные поля $X \coloneqq \der{Q}{t}$ и $Y \coloneqq \der{Q}{\tau}$, $\gamma_0$ --- геодезическая $t \mapsto \exp_p(t v)$.
 
     Продифференцируем $\angles{X, Y}$ вдоль $\gamma_0$:
-    \[\frac{\d}{\d t}\angles{X, Y} = \angles{\frac{\nabla}{\d t} X, Y} + \angles{X, \frac{\nabla}{\d t} Y} = 0 + \angles{X, \frac{\nabla}{\d \tau} X} = \frac{1}{2}\frac{\d}{\d \tau}\underbrace{\angles{X, X}}_{|V|^2}\]
+    \[\frac{\d}{\d t}\angles{X, Y} = \angles{\frac{\nabla}{\d t} X, Y} + \angles{X, \frac{\nabla}{\d t} Y} = 0 + \angles{X, \frac{\nabla}{\d \tau} X} = \frac{1}{2}\frac{\d}{\d \tau}\underbrace{\angles{X, X}}_{|V(\tau)|^2=1} = 0\]
     Тем самым, $\angles{X, Y} = \const$.
         Так как $|Y| \underset{t \to 0}\Map 0$, то $\angles{X, Y} \equiv 0$.
 
@@ -1471,21 +1485,23 @@
     Кусочно-гладкая кривая $\gamma: [c, d] \map M$, реализующая расстояние между точками: $L(\gamma) = \dist(a, b) = \inf\limits_{\tilde{\gamma}}L(\tilde{\gamma})$, где $\gamma, \tilde{\gamma}$ соединяют $a$ и $b$.
     Также кратчайшие называют \emph{отрезками}.
     }
-    \theorem{\label{locally-shortest}
-    Пусть $p \in M, r_0 < \injrad(p), v \in T_p M, |v| = r_0$.
+    \theorem[Геодезические --- локально кратчайшие]{\label{locally-shortest}
+    Пусть $p \in M, v \in T_p M, {|v| \eqqcolon r_0 < \injrad{p}}$.
         Тогда кривая $\gamma_0: t \mapsto \exp_p(t \cdot v)$, определённая на $[0, 1]$ --- единственная (с точность до перепараметризации) кратчайшая между своими концами.
         \provehere{
             Убедимся, что $\forall \gamma: [0, L] \map M: \gamma(0) = p, \gamma(L) = \gamma_0(1) \then L(\gamma) \ge L(\gamma_0)$, и равенство имеет место лишь тогда, когда $\gamma$ --- перепараметризация $\gamma_0$.
 
             В полярных координатах, индуцированных экспонентой, $\gamma_0$ идёт по радиусу, и мы сейчас будем проецировать $\gamma$ на этот же радиус.
 
-            Можно считать, что $\forall t \in (0, L): 0 < |\exp^{-1}(\gamma(0))| < r_0$: удовлетворяя этим границам, мы только уменьшаем длину $\gamma$ (быть может, после этого кривая $\gamma$ будет заканчиваться в другой точке сферы радиуса $r_0$).
+            Итак, пусть $\gamma: [0, L] \map M$ --- кривая.
+            Рассмотрим даже более широкий класс кривых, чем соединяющие $p$ и $\gamma_0(1)$: потребуем только $\gamma(0) = p, \abs{\exp_p^{-1}(\gamma(L))} = r_0$.
+            Можно считать, что $\forall t \in (0, L): 0 < |\exp^{-1}(\gamma(0))| < r_0$: удовлетворяя этим границам, мы только уменьшаем длину $\gamma$ (надо обрезать $\gamma$ после первого пересечения сферы радиуса $r_0$).
 
             Поднимем $\gamma$ до $\tilde{\gamma} \coloneqq \exp_p^{-1}\circ \gamma$, и представим $\tilde{\gamma} = \rho(t) \cdot u(t)$, где $\rho(t) = |\tilde{\gamma}|, u(t) = \frac{\tilde{\gamma}}{|\tilde{\gamma}|}$.
-        Вычислим производную. $\tilde{\gamma}' = \rho' \cdot u + \rho \cdot u'$, и так как $\angles{u, u} = 1$, то $u' \perp u$.
+        Вычислим производную: $\tilde{\gamma}' = \rho' \cdot u + \rho \cdot u'$, и так как $\angles{u, u} = 1$, то $u' \perp u$.
 
-        Так как $\gamma = \exp_p\circ \tilde{\gamma}$, то $\gamma' = \underbrace{\d_{\tilde{\gamma}(t)}\exp(u)}_{v_1} \cdot \rho' + \underbrace{\d_{\tilde{\gamma}(t)}\exp(u')}_{v_2} \cdot \rho$.
-        По лемме Гаусса $v_1 \perp v_2$, откуда $|\gamma'|^2 = (\rho')^2 + \rho^2 \cdot (\d_{\tilde{\gamma}(t)}\exp(u'))^2$.
+        Так как $\gamma = \exp_p\circ \tilde{\gamma}$, то $\gamma'(t) = \underbrace{\d_{\tilde{\gamma}(t)}\exp(u)}_{v_1} \cdot \rho' + \underbrace{\d_{\tilde{\gamma}(t)}\exp(u')}_{v_2} \cdot \rho$.
+            По лемме Гаусса~(\cref{gauss-lemma}) $v_1 \perp v_2$, а дифференциал экспоненты тождественный, откуда $|\gamma'|^2 = (\rho')^2 + \rho^2 \cdot \abs{u'}^2$.
             Тем самым, $|\gamma'| \ge |\rho'|$, и равенство на всей области определения достигается только при $u \equiv \const$. Также понятно, что $\rho$ должен монотонно возрастать, иначе $\int|\rho'|$ будет больше минимума.
         }
     }
@@ -1497,7 +1513,15 @@
     \bullets{
         \item Геодезические --- локально кратчайшие.
     \item $\forall p \in M: \exists U_p: p \in U_p \subset M$: $\forall x, y \in U_p$: между $x$ и $y$ имеется единственная кратчайшая.
-        \provehere{Подойдёт $U_p \coloneqq B_{\frac{\injrad(p)}4}(p): \forall x, y \in U_p: x \in B_{\injrad{y}}(y) \supset B_{\frac{\injrad{p}}2}(y)$}
+        \provehere{
+            Подойдёт $U_p \coloneqq B_{\frac{\injrad(p)}4}(p): \forall x, y \in U_p: x \in B_{\injrad{y}}(y) \supset B_{\frac{\injrad{p}}2}(y)$.
+
+            \comment{
+            По-видимому, здесь используется, что радиус инъективности $2$-липшицев ($y \in B_{\frac{\injrad{p}}{4}} \then \injrad{y} \ge \frac{\injrad{p}}{2}$).
+            Непонятно, откуда это может следовать, наверно, стоит вместо этого воспользоваться тем, что радиус инъективности локально отделён от нуля~(\cref{injrad-is-locally-positive}).
+            В таком случае, если в окрестности $U \ni p$: $\injrad{U} \ge \eps$, то в качестве $U_p$ подойдёт $U \cap B_{\frac{\eps}{2}}(p)$.
+        }
+        }
     \item $\gamma$ --- геодезическая $\iff \gamma$ --- локально кратчайшая.
     \provehere{
         Согласно предыдущему пункту, кратчайшие локально единственны.
@@ -1505,7 +1529,8 @@
     }
     }
     }
-    \section{Тензор кривизны}
+    \section{Кривизна риманового многообразия}
+    \subsection{Тензор кривизны}
     $M$ --- риманово многообразие со связностью Леви-Чивиты $\nabla$.
 
     Пусть $X,Y,Z,W \in \mathscr{X}(M)$.
@@ -1514,30 +1539,25 @@
     \provehere{
         $\R$-полилинейность очевидна из формулы, надо проверить $\mathscr{F}(M)$-полилинейность.
 
-        Пусть $f \in \mathscr{F}(M)$, проверим тензориальность по $Z$:
+        Пусть $f \in \mathscr{F}(M)$, проверим линейность по $Z$:
     \multline{
-        R(X, Y)(f \cdot Z) = \nabla_X(Y(f) \cdot Z + f \cdot \nabla_X Z) - \nabla_Y(X(f)Z + f \cdot \nabla_X Z) - (f \cdot \nabla_{[X, Y]}Z + ([X, Y](f)) \cdot Z) = \\
-    = X(Y(f))\cdot Z + Y(f) \cdot \nabla_X Z + X(f) \cdot \nabla_Y Z + f \cdot \nabla_X \nabla_Y Z -\\- (Y(X(f)) \cdot Z + X(f) \cdot \nabla_Y Z + Y(f)\cdot \nabla_X Z + f\cdot \nabla_{Y}\nabla_X Z) - (f \cdot \nabla_{[X, Y]} + [X, Y])Z
+        R(X, Y)(f \cdot Z) = \nabla_X(Y(f) \cdot Z + f \cdot \nabla_Y Z) - \nabla_Y(X(f)Z + f \cdot \nabla_X Z) - (([X, Y](f)) \cdot Z + f \cdot \nabla_{[X, Y]}Z) = \\
+    = \biggl(\cancelwith[darkgreen]{X(Y(f))\cdot Z} + \cancelwith[red]{Y(f) \cdot \nabla_X Z} + \cancelwith[blue]{X(f) \cdot \nabla_Y Z} + f \cdot \nabla_X \nabla_Y Z\biggr) -\\- \biggl(\cancelwith[darkgreen]{Y(X(f)) \cdot Z} + \cancelwith[blue]{X(f) \cdot \nabla_Y Z} + \cancelwith[red]{Y(f)\cdot \nabla_X Z} + f\cdot \nabla_{Y}\nabla_X Z\biggr) - \biggl(f \cdot \nabla_{[X, Y]} + \cancelwith[darkgreen]{[X, Y](f)}\biggr)Z
     }
-    Теперь убедимся в тензориальности по $Y$:
+    Теперь убедимся в линейности по $Y$:
     \multline{
-    R(X, f \cdot Y)Z = \nabla_X(f \cdot \nabla_YZ) - f \cdot \nabla_Y\nabla_X Z - \nabla_{[X, f \cdot Y]}Z = (X \cdot f) \cdot \nabla_Y Z + f \cdot \nabla_X \nabla_Y Z - f\nabla_Y \nabla_X Z - f \nabla_{[X, Y]}Z - (Xf)\nabla_Y Z
+    R(X, f \cdot Y)Z = \nabla_X(f \cdot \nabla_YZ) - f \cdot \nabla_Y\nabla_X Z - \nabla_{[X, f \cdot Y]}Z =\\= \cancelwith[darkgreen]{X (f) \cdot \nabla_Y Z} + f \cdot \nabla_X \nabla_Y Z - f\nabla_Y \nabla_X Z - f \nabla_{[X, Y]}Z - \cancelwith[darkgreen]{X(f)\cdot\nabla_Y Z}
     }
-    Ура, сошлось. Тензориальность по $X$ следует из кососимметричности по $X$ и $Y$.
+        Линейность по $X$ следует из кососимметричности по $X$ и $Y$.
     }
     }
-    \definition[Тензор кривизны]{$\angles{R(X, Y)Z, W}$.}
+    \definition[Тензор кривизны]{Тензор типа $(4, 0)$, определённый формулой $\angles{R(X, Y)Z, W}$.}
     Теперь пусть $p \in M$, и зафиксирована двумерная плоскость $\sigma \le T_p M$ с базисом $(u, v)$.
-    Преобразование и тензор кривизны --- вещи, с которыми просто работать, а геометрический смысл кривизны заключается в секционной кривизне.
-    \intfact{Тензор криивзны восстанавливается из секционной кривизны.}
+    Преобразование и тензор кривизны --- вещи, с которыми просто работать, а геометрический смысл кривизны заключается в секционной кривизне (определена ниже).
+    \intfact{Тензор кривизны восстанавливается из секционной кривизны.}
     \definition[Секционная кривизна]{
-    $K_\sigma(u, v) \bydef \frac{\angles{R(u, v)v, u}}{|u \wedge v|^2}$, где $u \wedge v$ --- смешанное произведение, то есть $|u \wedge v| = \left|\arr{cc}{u_1 & u_2 \\ v_1 & v_2}\right|$, если $u = \vect{u_1 \\ u_2}$ и $v = \vect{v_1 \\ v_2}$ в некотором \textbf{ортонормированном базисе}.
-    }
-    \lemma{Докажем, что секционная кривизна $K_\sigma$ не зависит от выбора базиса $(u, v)$.
-    \provehere{
-        Рассмотрим $R(u, v)$, как линейный оператор $T_p M \map T_p M$.
-        Воспользуемся линейностью и кососимметричностью...% у меня есть фотография
-    }
+    $K_\sigma(u, v) \bydef \frac{\angles{R(u, v)v, u}}{|u \wedge v|^2}$, где $u \wedge v$ --- смешанное произведение, то есть $|u \wedge v| = \left|\arr{cc}{u_1 & u_2 \\ v_1 & v_2}\right|$, если $u = \vect{u_1 \\ u_2}$ и $v = \vect{v_1 \\ v_2}$ в некотором \textbf{ортонормированном} базисе.
+        По-другому можно сказать, что $|u \wedge v|^2 = |u|^2|v|^2 - \angles{u,v}^2$.
     }
     Можно вспомнить выражение для гауссовой кривизны из предыдущего семестра
     \[K = \frac{\angles{\nabla_X \nabla_Y Y - \nabla_Y \nabla_X Y, X}}{\det I}\]
@@ -1546,20 +1566,36 @@
 
     //геометрический смысл --- сходящиеся и расходящиеся геодезические
 
-    \theorem{
-    \[-\angles{R(Y, X)Z, W} = \angles{R(X, Y)Z, W} = -\angles{R(X, Y)W, Z}\]
-    \provehere{
-    Первое очевидно из определения.
+    \lemma{\label{skew-symmetry}
+        Тензор кривизны антисимметричен по $1$-му и $2$-му аргументам;\ также он антисимметричен по $3$-му и $4$-му аргументам:
+        \provehere{
+            Антисимметричность по $1$-му и $2$-му аргументам очевидна из определения.
 
-    Для проверки кососимметричности билинейной формы $Z, W \mapsto \angles{R(X, Y)Z, W}$ достаточно проверить, что $\angles{R(X, Y)Z, Z} = 0$.
-    Запишем
-    \[X\angles{Z, Z} = 2\angles{\nabla_X Z, Z} \quad \then \quad YX\angles{Z, Z} = 2(\angles{\nabla_Y \nabla_X Z, Z} + \angles{\nabla_X Z, \nabla_Y Z})\]
-    \[[X, Y]\angles{Z,Z} = 2\angles{\nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z, Z} = 2\angles{\nabla_{[X, Y]}Z, Z}\]
-    Должно сойтись
+            Для проверки кососимметричности билинейной формы $Z, W \mapsto \angles{R(X, Y)Z, W}$ достаточно проверить, что $\angles{R(X, Y)Z, Z} = 0$.
+            Запишем
+            \[X\angles{Z, Z} = 2\angles{\nabla_X Z, Z} \quad \then \quad Y(X\angles{Z, Z}) = 2(\angles{\nabla_Y \nabla_X Z, Z} + \angles{\nabla_X Z, \nabla_Y Z})\]
+            \[[X, Y]\angles{Z,Z} = \all{2\angles{\nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z, Z} \\ 2\angles{\nabla_{[X, Y]}Z, Z}}\]
+            Сравнивая два значения для $[X, Y]\angles{Z,Z}$, получаем искомое тождество.
+        }
+    }
+    \theorem[Независимость секционной кривизны от выбора базиса]{
+        Секционная кривизна $K_\sigma$ не зависит от выбора базиса $(u, v)$.
+    \provehere{
+        $R(u, v)$ можно рассматривать, как линейный оператор $T_p M \map T_p M$.
+%        Обозначим $K_{u \wedge v} \coloneqq \frac{\angles{R(u, v)v, u}}{|u|^2|v|^2 - \angles{u, v}^2}$.
+
+        Пусть $\tilde{u}, \tilde{v}$ --- базис плоскости, натянутой на $u$ и $v$, то есть $\vect{\tilde{u} \\ \tilde{v}} = \vect{\alpha & \beta \\ \gamma & \delta}\vect{u \\ v}$, где матрица невырождена.
+        Из линейности и кососимметричности
+    \[R(\tilde{u}, \tilde{v}) = R(\alpha u + \beta v, \gamma u + \delta v) = \alpha \delta R(u, v) + \beta\gamma R(v, u) = \abs{\arr{cc}{\alpha & \beta \\ \gamma & \delta}}R(u, v)\]
+    Далее, согласно~(\cref{skew-symmetry}), $\angles{R(u, v)\tilde{v}, \tilde{u}} = \angles{R(u, v)\gamma u + \delta v, \alpha u + \beta v} = \abs{\arr{cc}{\alpha & \beta \\ \gamma & \delta}}\angles{R(u,v)v,u}$.
+
+    С другой стороны, из определения понятно, что $\abs{\tilde{u} \wedge \tilde{v}} = \abs{\arr{cc}{\alpha & \beta \\ \gamma & \delta}}|u \wedge v|$.
     }
     }
+
     \section{Полугеодезические координаты}
-    Пусть $M^2$ --- двумерное многообразие, $X, Y \in \mathscr{F}(M)$ --- координаты, причём $|X| = 1$ и $X \perp Y$.
+    Пусть $M^2$ --- двумерное многообразие, $X, Y \in \mathscr{F}(M)$ --- координаты (координатные векторные поля).
+    \definition[Полугеодезические координаты]{Такие координаты, что $|X| = 1$ и $X \perp Y$.}
     Метрический тензор в этом базисе имеет вид $\vect{1 & 0 \\ 0 & G}$, где $G = \angles{Y,Y}$.
     \example[Полугеодезические координаты]{Полярные координаты (то есть координаты $(\rho, \phi)$ на $\R^2$).}
     \problem{
@@ -1569,11 +1605,11 @@
     \theorem{
     В полугеодезических координатах первая координатная линия --- геодезическая: $\nabla_X X = 0$, причём $\nabla_X Y = \nabla_Y X = \frac{G'_X}{2 G}Y$.
     \provenumbers{
-    \item $\nabla_X Y = \nabla_Y X$, так как для координатных векторных полей $[X, Y] = 0 = \nabla_X Y - \nabla_Y X$.
-    \item $0 = X\angles{X, X} = 2\angles{\nabla_X X, X}$
-    \item $0 = Y\angles{X, X} = 2\angles{\nabla_Y X, X}$
-    \item $0 = X\angles{X, Y} = \angles{\nabla_X X, Y} + \angles{X, \nabla_X Y}$.
-    \item Так как $X$ и $Y$ --- базис, то $\nabla_X X \perp X, Y \then \nabla_X X = 0$.
+    \item Для координатных векторных полей $[X, Y] = 0 = \nabla_X Y - \nabla_Y X$, так что $\nabla_X Y = \nabla_Y X$.
+    \item $0 = X\angles{X, X} = 2\angles{\nabla_X X, X}$, откуда $\nabla_X X \perp X$.
+    \item $0 = Y\angles{X, X} = 2\angles{\nabla_Y X, X}$, откуда $\nabla_X Y \perp X$.
+    \item $0 = X\angles{X, Y} = \angles{\nabla_X X, Y} + \underbrace{\angles{X, \nabla_X Y}}_{0}$, откуда $\nabla_X X \perp Y$.
+    \item Так как $X$ и $Y$ --- базис, а $\nabla_X X \perp X, Y$, то $\nabla_X X = 0$.
     \item $\angles{Y, Y} = G \then G'_X = 2\angles{\nabla_X Y, Y}$. Из (3) получаем $\angles{\nabla_X Y, X} = 0 \then \nabla_X Y \parallel Y$.
         Тем самым, $\nabla_X Y = \frac{\angles{\nabla_X Y, Y} \cdot Y}{\angles{Y,Y}} = \frac{G'_X}{2G}Y$.
     }
@@ -1584,8 +1620,8 @@
         Посчитаем по определению гауссову кривизну $K = K_{X \wedge Y} = -\frac{\angles{R(X,Y)X, Y}}{|X\wedge Y|^2}$.
     Во-первых, $|X \wedge Y|^2 = G$.
         Далее скобка Ли отсутствует, так как поля координатные:
-        \multline{R(X, Y)X = \nabla_X \nabla_Y X - \nabla_Y \underbrace{\nabla_X X}_{0} = \nabla_X\left(\frac{G'_X}{2 G}Y\right) =\\= \frac{1}{2}\left(\frac{G''_{X,X} G - G_X'^2}{G} \cdot Y + \frac{G'_X}{2G}\nabla_X Y\right) = \frac{1}{2}\left(\frac{2 G_{X,X}'' G - G_X'^2}{2 G^2}\right)Y}
-    Сравним с выражением $\frac{\sqrt{f}''}{\sqrt{f}} = \frac{1}{2}\left(\frac{f''}{f} - \frac{(f')^2}{2 f^2}\right)$
+        \multline{R(X, Y)X = \nabla_X \nabla_Y X - \nabla_Y \underbrace{\nabla_X X}_{0} = \nabla_X\left(\frac{G'_X}{2 G}Y\right) =\\= \frac{1}{2}\left(\frac{G''_{X,X} G - G_X'^2}{G^2} \cdot Y + \frac{G'_X}{G}\nabla_X Y\right) = \frac{1}{2}\left(\frac{G_{X,X}'' G - \frac{1}{2}G_X'^2}{G^2}\right)Y}
+    Сравним с выражением $\frac{\sqrt{f}''}{\sqrt{f}} = \frac{1}{2}\left(\frac{f''}{f} - \frac{(f')^2}{2 f^2}\right)$.
     }
     }
     \statement{
