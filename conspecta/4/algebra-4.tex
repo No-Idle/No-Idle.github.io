@@ -205,6 +205,8 @@
             \indentlemma{
                 Если $\cat C$ --- малая категория, $\cat A$ --- абелева, то $\Func(\cat C, \cat A)$ --- тоже абелева категория.
             }{
+                Морфизмы в данной категории --- естественные преобразования между функторами, и их сложение устроено поточечно: $\forall \eta, \zeta: \cat F \map \cat G, \forall A \in \cat A: (\eta + \zeta)_A = \eta_A + \zeta_A$.
+
                 Нулевой объект --- функтор $\0$, сопоставляющий каждому объекту $0_{\cat A}$, и каждой стрелке --- нуль-стрелку.
 
                 Для двух функторов $\cat F, \cat G$: $(\cat F \oplus \cat G)(C) = \cat F(C) \oplus \cat G(C)$.
@@ -214,7 +216,7 @@
                 $\ker$ определяется аналогично лемме~(\cref{ker-is-functor}).
                 Аналогично с коядрами.
 
-                Далее по-хорошему надо проверить, что выполняются все универсальные свойства, но мы этого делать не будем.
+                Далее по-хорошему надо проверить, что выполняются все универсальные свойства, и что любой мономорфизм нормален, но мы этого делать не будем.
             }
             Ссылаемся на~(\cref{when-ab}).
         % https://q.uiver.app/#q=WzAsMTUsWzEsMCwiQV97bisxfSJdLFsyLDAsIkFfbiJdLFszLDAsIkFfe24tMX0iXSxbMCwwLCJcXGNkb3RzIl0sWzQsMCwiXFxjZG90cyJdLFswLDEsIlxcY2RvdHMiXSxbMSwxLCJCX3tuKzF9Il0sWzIsMSwiQl9uIl0sWzMsMSwiQl97bi0xfSJdLFs0LDEsIlxcY2RvdHMiXSxbMSwyLCJBX3tuKzF9XFxvcGx1cyBCX3tuKzF9Il0sWzIsMiwiQV9uIFxcb3BsdXMgQl9uIl0sWzMsMiwiQV97bi0xfSBcXG9wbHVzIEJfe24tMX0iXSxbMCwyLCJcXGNkb3RzIl0sWzQsMiwiXFxjZG90cyJdLFszLDBdLFswLDEsImReQV9uIl0sWzEsMiwiZF5BX3tuLTF9Il0sWzIsNF0sWzUsNl0sWzYsNywiZF5CX24iXSxbNyw4LCJkXkJfe24tMX0iXSxbOCw5XSxbMTAsMTEsImRee0EgXFxvcGx1cyBCfV9uIl0sWzExLDEyLCJkXntBIFxcb3BsdXMgQn1fe24tMX0iXSxbMTMsMTBdLFsxMiwxNF1d

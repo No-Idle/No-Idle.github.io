@@ -941,8 +941,8 @@
 %         Можно считать, что $\phi(p) = 0$.
 %
 %            Выберем $f \in C^{\infty}(\R^n)$, применим лемму Адамара, получим функции $g_i \in C^{\infty}(\R^n)$, такие, что $f(x) = f(0) + \sum\limits_{i = 1}^{n}g_i(x)x_i$ в окрестности $0$.
-%         Теперь распишем \begin{multline*}\overline{D}\left({f}\right) = \overline{D}\left({f}(0) + \sum\limits_{i=1}^{n}{x}_i \cdot {g}_i\right) = \sum\limits_{i=1}^{n}\overline{D}\left({x}_i \cdot {g}_i\right) =\\= \sum\limits_{i=1}^{n}\overline{D}\left({x}_i\right) \cdot {g}_i + \underbrace{{x}_i}_{=0} \cdot \overline{D}\left({g}\right) = \sum\limits_{i = 1}^{n} v_i \cdot {g}_i\end{multline*}
-%     Так как $ g_i = \der{ f}{ x_i}$, то действительно $\overline{D}({f}) = D_v({f})$.
+%         Теперь распишем \begin{multline*}\overline{D}\left({f}\right) = \overline{D}\left({f}(0) + \sum\limits_{i=1}^{n}{x}_i \cdot {g}_i\right) = \sum\limits_{i=1}^{n}\overline{D}\left({x}_i \cdot {g}_i\right) =\\= \sum\limits_{i=1}^{n}\overline{D}\left({x}_i\right) \cdot {g}_i(0) + \underbrace{{x}_i(0}_{=0} \cdot \overline{D}\left({g}\right) = \sum\limits_{i = 1}^{n} v_i \cdot {g}_i\end{multline*}
+%     Так как $ g_i(0) = \der{ f}{ x_i}$, то действительно $\overline{D}({f}) = D_v({f})$.
 
 
 %%%%      Закомментировано чуть менее формальное, но чуть более понятное, рассуждение
@@ -951,8 +951,8 @@
          Можно считать, что $\phi(p) = 0 \in \R^n$.
          Выберем $\tilde{f} \in \mathscr{F}(M)$, применим к $f \coloneqq \tilde{f} \circ \phi^{-1} \in C^{\infty}(\R^n)$ лемму Адамара, получим функции $g_i \in C^{\infty}(\R^n)$.
          Обозначим $\tilde{g}_i \coloneqq g_i \circ \phi^{-1}$, получили разложение $\tilde{f}(x) = \tilde{f}(p) + \sum\limits_{i = 1}^{n}\tilde{g}_i(x)\tilde{x}_i$.
-         Теперь распишем \begin{multline*}\overline{D}\left(\tilde{f}\right) = \overline{D}\left(\tilde{f}(p) + \sum\limits_{i=1}^{n}\tilde{x}_i \cdot \tilde{g}_i\right) = \sum\limits_{i=1}^{n}\overline{D}\left(\tilde{x}_i \cdot \tilde{g}_i\right) =\\= \sum\limits_{i=1}^{n}\overline{D}\left(\tilde{x}_i\right) \cdot \tilde{g}_i + \underbrace{\tilde{x}_i}_{=0} \cdot \overline{D}\left(\tilde{g}\right) = \sum\limits_{i = 1}^{n} v_i \cdot \tilde{g}_i\end{multline*}
-         Так как $\tilde g_i = \der{\tilde f}{\tilde x_i}$, то действительно $\overline{D}(\tilde{f}) = D_v(\tilde{f})$.
+         Теперь распишем \begin{multline*}\overline{D}\left(\tilde{f}\right) = \overline{D}\left(\tilde{f}(p) + \sum\limits_{i=1}^{n}\tilde{x}_i \cdot \tilde{g}_i\right) = \sum\limits_{i=1}^{n}\overline{D}\left(\tilde{x}_i \cdot \tilde{g}_i\right) =\\= \sum\limits_{i=1}^{n}\overline{D}\left(\tilde{x}_i\right) \cdot \tilde{g}_i(p) + \underbrace{\tilde{x}_i(p)}_{=0} \cdot \overline{D}\left(\tilde{g}\right) = \sum\limits_{i = 1}^{n} v_i \cdot \tilde{g}_i(p)\end{multline*}
+         Так как $\tilde g_i(p) = g_i(0) = \der{f_i}{x_i}(0) = \der{\tilde f}{\tilde x_i}(p)$, то действительно $\overline{D}(\tilde{f}) = D_v(\tilde{f})$.
         }
     Рассмотрим дифференцирование $D \in \Der(\mathscr{F}(M))$.
         Согласно лемме, $\forall p \in M: \exists !v_p \in T_p M$, такой, что отображение $f \mapsto D(f)(p)$ совпадает с $f \mapsto D_{v_p}(f)$.
@@ -1657,7 +1657,7 @@
     \definition[$B_1, B_2 \in \mathcal{B}(V)$ одинаково ориентированы]{
     $\det(B_1 \rightsquigarrow B_2) > 0$.
     }
-    \definition[$B_1, B_2 \in \mathcal{B}(V)$ против. ориентированы]{
+    \definition[$B_1, B_2 \in \mathcal{B}(V)$ противоположно ориентированы]{
     $\det(B_1 \rightsquigarrow B_2) < 0$.
     }
     \definition[Ориентация $V$]{Отображение $\tau: \mathcal{B}(V) \map \{-1, 1\}$, такое, что $\tau(B_1) \cdot \tau(B_2) = \sign(\det(B_1 \rightsquigarrow B_2))$.
