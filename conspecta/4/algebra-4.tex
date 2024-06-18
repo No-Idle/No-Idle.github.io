@@ -23,22 +23,20 @@
     \definition[Предаддитивная категория $\cat{A}$]{
         $\forall A, B \in \cat{A}: \Mor_{\cat{A}}(A, B)$ образует абелеву группу, и везде, где определена, выполнена дистрибутивность: \[\alpha(\beta+\gamma) = \alpha\beta + \alpha\gamma \qquad (\beta + \gamma)\alpha = \beta\alpha + \gamma\alpha\]
     }
-    \definition[Бипроизведение]{ Такая диаграмма, что
-    % https://q.uiver.app/#q=WzAsMyxbMSwwLCJDIl0sWzAsMCwiQSJdLFsyLDAsIkIiXSxbMSwwLCJcXGlvdGFfMSIsMix7Im9mZnNldCI6MX1dLFswLDEsIlxccGlfMSIsMix7Im9mZnNldCI6MX1dLFswLDIsIlxccGlfMiIsMCx7Im9mZnNldCI6LTF9XSxbMiwwLCJcXGlvdGFfMiIsMCx7Im9mZnNldCI6LTF9XV0=
-        \[\begin{tikzcd}[ampersand replacement=\&]
-              A \& C \& B
-              \arrow["{\iota_1}"', shift right, from=1-1, to=1-2]
-              \arrow["{\pi_1}"', shift right, from=1-2, to=1-1]
-              \arrow["{\pi_2}", shift left, from=1-2, to=1-3]
-              \arrow["{\iota_2}", shift left, from=1-3, to=1-2]
-        \end{tikzcd}\]
-        \numbers{
-            \item $\pi_1\iota_1 = \id_A$.
-            \item $\pi_2\iota_2 = \id_B$.
-            \item $ \iota_2 \pi_2+ \iota_1\pi_1  = \id_C$.
-            \item $\pi_2\iota_1 = 0$.
-            \item $\pi_1\iota_2 = 0$.
-        }
+    \definition[Бипроизведение $A, B \in \cat A$]{ Такая диаграмма $\begin{tikzcd}[ampersand replacement=\&]
+                                                                        A \& C \& B
+                                                                        \arrow["{i_1}"', shift right, from=1-1, to=1-2]
+                                                                        \arrow["{\pi_1}"', shift right, from=1-2, to=1-1]
+                                                                        \arrow["{\pi_2}", shift left, from=1-2, to=1-3]
+                                                                        \arrow["{i_2}", shift left, from=1-3, to=1-2]
+    \end{tikzcd}$, что
+    \numbers{
+        \item $\pi_1i_1 = \id_A$.
+        \item $\pi_2i_2 = \id_B$.
+        \item $ i_2 \pi_2+ i_1\pi_1  = \id_C$.
+        \item $\pi_2i_1 = 0$.
+        \item $\pi_1i_2 = 0$.
+    }
     }
     \definition[Аддитивная категория]{
         Предаддитивная категория с финальным объектом и произведениями (любых двух объектов).
@@ -55,6 +53,7 @@
     }
     Пусть $\cat C$ --- категория.
     Вспомним про категорию стрелок $\cat{Arr}\cat{C}$, в которой объекты --- стрелки из $\Mor(\cat C)$, множество морфизмов между $\phi, \psi$ --- это\[\Mor_{\cat{Arr}_{\cat{C}}}(\phi, \psi) = \defset{(\alpha, \beta)}{\alpha: \source(\phi) \map \source(\psi), \beta: \target(\phi) \map \target(\psi), \beta \phi = \psi \alpha}\]
+    то есть множество коммутативных диаграмм следующего вида:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsIlxccGhpIl0sWzIsMywiXFxwc2kiXSxbMCwyLCJcXGFscGhhIl0sWzEsMywiXFxiZXRhIl1d
     \[\begin{tikzcd}[ampersand replacement=\&]
           \bullet \& \bullet \\
@@ -66,11 +65,12 @@
     \end{tikzcd}\]
     Далее будем обозначать за $\ker f$ ядро стрелки, как уравнитель стрелки и нуля, а за $\Ker f \coloneqq \source(\ker f)$ --- объект (в конкретных категориях типа $\modR{R}$ это докатегорное понятие ядра --- подмодуль без стрелки-вложения).
     \lemma{\label{ker-is-functor}
-        $\ker, \coker$ --- функторы $\cat{Arr} \cat A \map \cat{Arr} \cat A$.
+        $\ker, \coker$ --- функторы $\cat{Arr} \cat A \map \cat{Arr} \cat A$ (то есть лемма утверждает, что можно определить действие не только на объектах, но и на морфизмах).
         \provehere{
             Достаточно доказать для ядер, для коядер двойственно.
 
-            Определим действие $\ker$ на морфизмах:
+            Определим действие $\ker$ на морфизмах.
+            Пусть $(\alpha, \beta)$ --- морфизм между $f, f' \in \cat{Arr}\cat A$:
         % https://q.uiver.app/#q=WzAsNixbMSwwLCJBIl0sWzEsMSwiQSciXSxbMiwwLCJCIl0sWzIsMSwiQiciXSxbMCwwLCJcXEtlciBmIl0sWzAsMSwiXFxLZXIgZiciXSxbMCwyLCJmIl0sWzEsMywiZiciXSxbMCwxLCJcXGFscGhhIl0sWzIsMywiXFxiZXRhIl0sWzQsMCwiXFxrZXIgZiJdLFs1LDEsIlxca2VyIGYnIl0sWzQsNSwiXFxleGlzdHMhXFxwaGkiLDAseyJsYWJlbF9wb3NpdGlvbiI6NDAsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
             {\Ker f}
@@ -84,9 +84,9 @@
                   \arrow["{\ker f'}", from=2-1, to=2-2]
                   \arrow["{\exists!\phi}"{pos=0.4}, dashed, from=1-1, to=2-1]
             \end{tikzcd}\]
-            $f \cdot \ker f = 0 \then \beta \cdot f \cdot \ker f = 0 \then f' \cdot \alpha \cdot \ker f = 0$, откуда по универсальному свойству ядра $\exists !\phi: \ker f' \cdot \phi = \alpha \cdot \ker f$.
+            Тогда $f \cdot \ker f = 0$, откуда $\beta \cdot f \cdot \ker f = 0$, а из коммутативности $f' \cdot \alpha \cdot \ker f = 0$.
+            По универсальному свойству ядра $\exists !\phi: \ker f' \cdot \phi = \alpha \cdot \ker f$, положим $\ker(\alpha, \beta) = (\phi, \alpha)$.
 
-            Положим $\ker(\alpha, \beta) = (\phi, \alpha)$.
             Далее несложно проверить, что данное определение сохраняет композицию и $\id$.
         }
     }
@@ -94,6 +94,9 @@
     \intfact[Теорема Фрейда --- Митчелла (Freyd --- Mitchell)] {\label{mitchell}
     Для любой малой абелевой категории $\cat{A}$: $\exists R \in \cat{Ring}$ (необязательно коммутативное кольцо с единицей) и строгий, полный, точный функтор $\cat{A} \map \modR{R}$.
     }
+    Иными словами, всякую абелеву категорию можно себе мыслить, как полную подкатегорию в категории $\modR{R}$ для некоторого кольца $R$.
+    Неформально это означает, что все факты, которые можно доказать для категории модулей, будут верны и для данной абелевой категории.
+    Мы часто будем использовать теорему Фрейда --- Митчелла, чтобы доказать более общий факт про все абелевы категории, используя конкретность категории модулей.
     \proposal{
         Для всякого морфизма $f: A \map B$ найдётся пунктирная стрелка, делающая диаграмму коммутативной.
 % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXEtlciBmIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMywwLCJcXENvS2VyIGYiXSxbMSwxLCJcXENvS2VyIFxca2VyIGYiXSxbMiwxLCJcXEtlciBcXGNva2VyIGYiXSxbMSwyLCJmIl0sWzAsMSwiXFxrZXIgZiJdLFsyLDMsIlxcY29rZXIgZiJdLFsxLDQsIlxcY29rZXJcXGtlciBmIiwyXSxbNSwyLCJcXGtlciBcXGNva2VyIGYiLDJdLFs0LDUsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
@@ -262,7 +265,7 @@
     \end{tikzcd}\]
     Ниже мы по произвольному комплексу $C$ строим новые комплексы.
     \definition[Циклы]{Комплекс $Z = Z(C) \bydef \Ker d[-1]$.}
-    \definition[Границы]{Комплекс $B = B(C) \bydef \Image d[-1]$.}
+    \definition[Границы]{Комплекс $B = B(C) \bydef \Image d$.}
     По определению, образ --- это ядро коядра: $\Image \phi \bydef \Ker(\coker \phi)$.
     В абелевой категории канонически $\Image \phi \cong \CoIm \phi \bydef \CoKer(\ker \phi)$.
 
@@ -347,7 +350,7 @@
         Триангулировать сферу, и вычислить гомологии. Дифференциал от треугольника $ABC$ (ориентация --- порядок вершин --- важна) определяют, как его обход вдоль периметра: $AB + BC + CA$.
     }
 
-    \theorem[Длинная точная последовательность гомологий]{
+    \theorem[Длинная точная последовательность гомологий]{\label{long-homology}
         Пусть имеется точная последовательность комплексов $0 \map A' \map A \map A'' \map 0$.
 
         Существует длинная точная последовательность гомологических групп
@@ -365,36 +368,61 @@
 
         Более того, это всё функториально: если есть другая короткая точная последовательность, и морфизм между ними, то по отношению к ним найдётся естественный морфизм полученных длинных точных последовательностей гомологий.
         \provehere{
-            Сначала строим $\delta$.
-
             Для $z \in Z_n''$, обозначим за $[z]$ класс $z$ в $H_n''$.
-        % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkFfbiciXSxbMiwwLCJBX24iXSxbMywwLCJBX24nJyJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiQV97bi0xfSciXSxbMiwxLCJBX3tuLTF9Il0sWzMsMSwiQScnX3tuLTF9Il0sWzQsMSwiMCJdLFsyLDMsIlxccGkiXSxbMiw3LCJkIl0sWzYsNywiaSJdLFs3LDhdLFs4LDldLFszLDRdLFszLDgsImQnJyJdLFsxLDJdLFsxLDYsImQnIl0sWzAsMV0sWzUsNl1d
+% https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkFfbiciXSxbMiwwLCJBX24iXSxbMywwLCJBX24nJyJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiQV97bi0xfSciXSxbMiwxLCJBX3tuLTF9Il0sWzMsMSwiQScnX3tuLTF9Il0sWzQsMSwiMCJdLFsyLDMsIlxccGlfbiJdLFsyLDcsImRfbiIsMV0sWzYsNywiaV97bi0xfSJdLFs3LDgsIlxccGlfe24tMX0iXSxbOCw5XSxbMyw0XSxbMyw4LCJkX24nJyJdLFsxLDIsImlfbiJdLFsxLDYsImRfbiciLDJdLFswLDFdLFs1LDZdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
                   0 \& {A_n'} \& {A_n} \& {A_n''} \& 0 \\
                   0 \& {A_{n-1}'} \& {A_{n-1}} \& {A''_{n-1}} \& 0
-                  \arrow["\pi", from=1-3, to=1-4]
-                  \arrow["d", from=1-3, to=2-3]
-                  \arrow["i", from=2-2, to=2-3]
-                  \arrow[from=2-3, to=2-4]
-                  \arrow[from=2-4, to=2-5]
-                  \arrow[from=1-4, to=1-5]
-                  \arrow["{d''}", from=1-4, to=2-4]
-                  \arrow[from=1-2, to=1-3]
-                  \arrow["{d'}", from=1-2, to=2-2]
                   \arrow[from=1-1, to=1-2]
+                  \arrow["{i_n}", from=1-2, to=1-3]
+                  \arrow["{d_n'}"', from=1-2, to=2-2]
+                  \arrow["{\pi_n}", from=1-3, to=1-4]
+                  \arrow["{d_n}"{description}, from=1-3, to=2-3]
+                  \arrow[from=1-4, to=1-5]
+                  \arrow["{d_n''}", from=1-4, to=2-4]
                   \arrow[from=2-1, to=2-2]
+                  \arrow["{i_{n-1}}", from=2-2, to=2-3]
+                  \arrow["{\pi_{n-1}}", from=2-3, to=2-4]
+                  \arrow[from=2-4, to=2-5]
             \end{tikzcd}\]
-            Положим $\delta([z]) \coloneqq [i^{-1}(d(\pi^{-1}(z)))]$, где $\pi^{-1}(z)$ --- произвольный прообраз (он есть, так как $\pi$ сюръективно).
+            Рассуждения ниже обычно называют \emph{диаграммный поиск}.
+            \comment{Кажется, это невозможно ни записывать, ни читать, но для полной картины пусть будет.}
 
-            \comment{
-                Дальше надо проверить, что определение корректно, и последовательность точна.
-                Это типичный диаграммный поиск, который невозможно записывать, и его несложно воспроизвести самостоятельно.
+            \bullets{
+                \item Для начала построим $\delta: H_n'' \map H_{n-1}'$.
+                \bullets{
+                    \item Выберем $z \in \Ker(d_n'')$, пусть $y \in \pi_n^{-1}(z)$ --- произвольный прообраз.
+                    $\bar{y} \coloneqq d(y)$ лежит в ядре $\pi_{n-1}$ из коммутативности $\II$.
+                    Из точности средней строки $\exists \bar{x} \in i_{n-1}^{-1}(\bar{y})$, положим $\delta([z]) \coloneqq \left[\bar{x}\right]$ (он единственен, так как $i_{n-1}$ --- моно).
+
+                    \item  Убедимся, что определение не зависит от выбора $y \in \pi_n^{-1}(z)$.
+                    Для этого рассмотрим другой $y' \in \pi_n^{-1}(z)$.
+                    Так как $\pi_n(y - y') = 0$, то из точности верхней строки $\exists x \in i_n^{-1}(y - y')$.
+                    Из коммутативности левого квадрата: $d'_n(x) = i_{n-1}^{-1}(d(y - y')) = i_{n-1}^{-1}(d(y)) - i^{-1}(d(y'))$, то есть $\bar{x}$ определён с точностью до $\Image(d_n')$, а его класс эквивалентности в гомологиях --- однозначно.
+
+                    \item Очевидно, что $\delta$ линеен: его можно задать формулой $i_{n-1}^{-1}(d(\pi_{n}^{-1}(\_)))$, где берётся любой прообраз.
+                    Для всякого $R$-линейного $f: x_1 \in f^{-1}(y_1), x_2 \in f^{-1}(y_2) \then \forall \alpha, \beta \in R: \alpha x_1 + \beta y_1 \in f^{-1}(\alpha x_2 + \beta y_2)$, то есть прообразы можно выбирать линейно.
+                }
+                \item Убедимся, что полученная длинная точная последовательность гомологических групп точна.
+                    Здесь используются определённые при построении $\delta$ элементы $y \in A_n$ и $\bar{y} \in A_{n-1}, \bar{x} \in A_{n-1}'$.
+                \bullets{
+                    \item $\forall z \in A_n'': \delta\left([z]\right) = 0 \iff \bar{y} = 0\iff y \in \Ker(d_n)$.
+                    Отсюда $\delta\left([z]\right) = 0 \iff z \in \pi_n\left(\Ker(d_n)\right)$, что означает точность в члене $H_n''$.
+                    \item С одной стороны, $\forall \bar{x} \in \Ker(d_{n-1}'): i_{n-1}\left(\bar{x}\right) \in \Image(d_n) \then \exists y \in A_n: i_{n-1}(\bar{x}) = d_n(y) \then \bar{x} = \delta\left([\pi_n(y)]\right)$ ($\delta$ определена, так как $\pi_n(y) \in \Ker(d_n'')$ --- из коммутативности $\II$: $d_n''(\pi_n(y)) = \pi_{n-1}\left(\bar{y}\right)$, а из точности средней строки это нуль).
+                    С другой стороны, $\forall z \in \Ker(d_n''):  i_{n-1}(\delta([z])) = d_n(y) \in \Image(d_n)$.
+                    Это означает точность в члене $H_{n-1}'$.
+                \item С одной стороны, $\forall \bar{x} \in \Ker(\d_{n-1}'): \pi_{n-1}(i_{n-1}(\bar{x})) = 0$ из точности средней строки.
+                С другой стороны, $\forall \bar{y} \in \Ker\left(d_{n-1}\right)$: если $\pi_{n-1}(\bar{y}) \in \Image(d_n'')$, то из сюръективности $\pi$: $\exists y \in A_n: d_n''(\pi_n(z)) = \pi_{n-1}(\bar{y})$.
+                Обозначим $\Delta \coloneqq \bar{y} - d_n(y)$, так как $\pi_{n-1}(\Delta) = 0$, то $\Delta \in \Image(i_{n-1})$.
+                Тем самым, $[\bar{y}] = [\Delta]$ лежит в образе $H_{n-1}''$, и последовательность точна в члене $H_n$.
+                }
+            \item Функториальность идёт без доказательства. \qedhere
             }
         }
     }
     \newlection{4 марта 2024 г.}
     Теперь приведём другое доказательство существования длинной точной последовательности гомологий, опирающееся на лемму о змее.
-    \lemma[О змее]{
+    \lemma[О змее]{\label{snake}
         Пусть даны два комплекса $A' \map A \map A'' \map 0$ и $0 \map B' \map B \map B''$, и морфизм между ними.
         Тогда имеется длинная точная последовательность из пунктирных стрелок.
 
@@ -427,11 +455,14 @@
               \arrow[dashed, from=4-3, to=4-4]
         \end{tikzcd}\]
         \provehere{
-            Диаграммный поиск.
-        }
-    }
+            Доказательство очень похоже на доказательство существования длинной точной последовательности гомологий, и их даже можно выводить одно из другого.
 
-    \theorem[Длинная точная последовательность гомологий на бис]{
+            Можно опять сказать, что это диаграммный поиск,  и повторить доказательство, но проще вывести из доказательства~(\cref{long-homology}).
+            Для этого достаточно рассмотреть комплексы $C_\bullet \coloneqq \left[\dots \map 0 \map A \overset{\phi}\map B \map 0 \map \dots\right]$, и соответствующие $C'_\bullet$ и $C''_\bullet$ (где вместо $A$ и $B$ подставлены $A'$ и $B'$ либо $A''$ и $B''$ соответственно).
+            После этого доказательство~(\cref{long-homology}) строит искомую длинную точную последовательность, так как $H(C_\bullet) = \left[\dots \map 0 \map \Ker(\phi) \map \CoKer(\phi) \map 0 \map \dots\right]$.
+            При этом априори лемма о змее чуть сильнее, так как она не использует, что $A' \map A$ --- моно, а $B \map B'$ --- эпи, но можно проследить, что доказательство~(\cref{long-homology}) в нужных членах это тоже не использует.
+        }
+    \theorem[Длинная точная последовательность гомологий на бис]{long-homology-bis}
         Пусть имеется точная последовательность комплексов $0 \map A' \map A \map A'' \map 0$.
 
         Существует длинная точная последовательность гомологических групп
@@ -794,13 +825,13 @@
                 Для этого надо найти сюръективное $Q_{n+1} \map \:?$.
                 Так как внизу --- точная последовательность, то $Q_{n+1} \map \Ker (d^Q_{n-1})$ подойдёт: оно сюръективно, так как $P_{n+1} \map P_{n-1}$ нулевой, а квадрат
                 $\begin{tikzcd}[ampersand replacement=\&]
-                    {P_n}
-                      \& {P_{n-1}} \\
-                      {Q_n} \& {Q_{n-1}}
-                      \arrow[from=1-1, to=1-2]
-                      \arrow[from=1-2, to=2-2]
-                      \arrow[from=2-1, to=2-2]
-                      \arrow[from=1-1, to=2-1]
+                {P_n}
+                     \& {P_{n-1}} \\
+                     {Q_n} \& {Q_{n-1}}
+                     \arrow[from=1-1, to=1-2]
+                     \arrow[from=1-2, to=2-2]
+                     \arrow[from=2-1, to=2-2]
+                     \arrow[from=1-1, to=2-1]
                 \end{tikzcd}$ коммутативен.
                 Тем самым, по определению проективного модуля $\exists f_{n+1}$.
             }
@@ -1400,6 +1431,8 @@
 
     \chapter{Теория Галуа}
     \newlection{15 апреля 2024 г.}
+
+
     \section{Базовые понятия про расширения полей}
     Мы будем изучать расширения полей, и базовое поле будем обозначать $F$ (от английского Field), а расширенное --- $K$ (от немецкого Körper).
     Имеется теоретико-множественное включение $F \subset K$, и включение полей обозначается $K/F$ (это не надо путать с факторкольцом, никаких факторов здесь не берётся, просто общепринятое обозначение).
@@ -1408,26 +1441,26 @@
 
     Для элемента $\alpha \in K$ поле $F(\alpha)$ --- наименьшее подполе в $K$, содержащее $F$ и $\alpha$.
     \lemma[О простых расширениях]{\label{idontknowletitbesimple}
-        Либо $F(\alpha) \cong F(t)$ --- поле дробно-рациональных функций, оно же поле частных $K[t]$, его общий элемент имеет вид $\frac{p}{q}$ ($p \in F[t], q \in F[t]^*$).
+    Либо $F(\alpha) \cong F(t)$ --- поле дробно-рациональных функций, оно же поле частных $K[t]$, его общий элемент имеет вид $\frac{p}{q}$ ($p \in F[t], q \in F[t]^*$).
 
-        Либо $F(\alpha) \cong F[t]/(p)$, где $p \in F[t]$ --- неприводимый.
-        В этом случае $\deg p$ --- степень расширения.
-        \provehere{
-            Рассмотрим гомоморфизм $F$-алгебр $\phi:F[t] \map F(\alpha), t \mapsto \alpha$.
+    Либо $F(\alpha) \cong F[t]/(p)$, где $p \in F[t]$ --- неприводимый.
+    В этом случае $\deg p$ --- степень расширения.
+    \provehere{
+        Рассмотрим гомоморфизм $F$-алгебр $\phi:F[t] \map F(\alpha), t \mapsto \alpha$.
 
-            \bullets{
-                \item Если $\Ker \phi = \{0\}$, то $\Image\phi \cong F[t]$.
-                Тем самым, $F(\alpha) \supset \Image \phi$, а раз $F(\alpha)$ --- поле, то оно содержит и поле частных $Q(\Image \phi) \cong Q(F[t])$.
+        \bullets{
+            \item Если $\Ker \phi = \{0\}$, то $\Image\phi \cong F[t]$.
+            Тем самым, $F(\alpha) \supset \Image \phi$, а раз $F(\alpha)$ --- поле, то оно содержит и поле частных $Q(\Image \phi) \cong Q(F[t])$.
 
-                Так как $F[t]$ --- наименьшее подполе, то $F(\alpha) \cong F(t)$.
+            Так как $F[t]$ --- наименьшее подполе, то $F(\alpha) \cong F(t)$.
 
-                \item Иначе, так как многочлены --- PID --- то $\Ker\phi = p \cdot F[t]$, и $\Image\phi \cong F[t]/(p)$.
-                То, что $p$ неприводим, легко видеть от противного: если $p = rs$, то один из $r, s$ ассоциирован с $p$, иначе в кольце появляются делители нуля.
+            \item Иначе, так как многочлены --- PID --- то $\Ker\phi = p \cdot F[t]$, и $\Image\phi \cong F[t]/(p)$.
+            То, что $p$ неприводим, легко видеть от противного: если $p = rs$, то один из $r, s$ ассоциирован с $p$, иначе в кольце появляются делители нуля.
 
-                Тем самым, раз $p$ неприводим, то $(p)$ --- максимальный идеал, откуда $\Image \phi \cong F[t]/(p)$ --- уже поле.
-                Базисом $F[t]/(p)$ над $K$ является, например, $(1, \overline{t}, \dots, \overline{t}^{\deg(p) - 1})$.
-            }
+            Тем самым, раз $p$ неприводим, то $(p)$ --- максимальный идеал, откуда $\Image \phi \cong F[t]/(p)$ --- уже поле.
+            Базисом $F[t]/(p)$ над $K$ является, например, $(1, \overline{t}, \dots, \overline{t}^{\deg(p) - 1})$.
         }
+    }
     }
     В первом случае $F(\alpha) \cong F(t)$ элемент $\alpha \in K$ называется \emph{трансцендентным}.
 
@@ -1437,16 +1470,16 @@
 
     В случае расширений колец вместо слова алгебраический используют \emph{целый} при дополнительном условии унитальности минимального многочлена.
     \definition[Алгебраическое расширение $K/F$]{
-    Такое расширение, что $\forall \alpha \in K$: $\alpha$ --- алгебраический.
-    Иначе ($\exists \alpha \in K$: $\alpha$ --- трансцендентный) расширение называют трансцендентным.
+        Такое расширение, что $\forall \alpha \in K$: $\alpha$ --- алгебраический.
+        Иначе ($\exists \alpha \in K$: $\alpha$ --- трансцендентный) расширение называют трансцендентным.
     }
     \definition[Конечное расширение $F/K$]{
-    Расширение конечной степени: $[K : F] < \infty$.
+        Расширение конечной степени: $[K : F] < \infty$.
     }
     Конечные и алгебраические расширения тесно связаны между собой, но, конечно, существует бесконечное алгебраическое расширение.
     Например, $\Q\left(\sqrt{p}\middle|p \in \P\right)$ --- имеет бесконечную степень над $\Q$, так как корни из простых чисел линейно независимы над $\Q$ (что ещё надо обосновать).
     \lemma{
-    Пусть имеется композиция расширений $L/K/F$.
+        Пусть имеется композиция расширений $L/K/F$.
         Тогда $[L : F] = [L : K] \cdot [K : F]$.
         \provehere{
             Пусть $(a_\alpha)_{\alpha \in A}$ --- базис $K$ над $F$, и $(b_\beta)_{\beta \in B}$ --- базис $L$ над $K$.
@@ -1457,30 +1490,31 @@
     \theorem{\label{finite-extension}
     Следующие условия равносильны
     \numbers{
-    \item Расширение $K/F$ конечно.
-    \item $K/F$ --- алгебраическое и конечнопорождённое.
-    \item $K = F[\alpha_1, \dots, \alpha_n]$, где все $\alpha_i$ алгебраичны над $F$.
+        \item Расширение $K/F$ конечно.
+        \item $K/F$ --- алгебраическое и конечнопорождённое.
+        \item $K = F[\alpha_1, \dots, \alpha_n]$, где все $\alpha_i$ алгебраичны над $F$.
     }
     \provebullets{
-    \item[$(3) \then (1)$] Индукция по $n$.
+        \item[$(3) \then (1)$] Индукция по $n$.
 
         \underline{База: } $n = 0 \then K = F$.
 
         \underline{Переход: } $F[\alpha_1, \dots, \alpha_n] = F[\alpha_1, \dots, \alpha_{n-1}][\alpha_n]$.
         Так как $\alpha_n$ алгебраично над $F$, то оно алгебраично и над $F[\alpha_1, \dots, \alpha_{n-1}]$ (впрочем, степень трансцендентности при увеличении поля может стать меньше).
-    \item[$(1) \then (2)$]\up\up\indentlemma{
-        Любой элемент конечного расширения $K/F$ алгебраический.
-    }{
-        Рассмотрим $\alpha \in K$.
-        Так как расширение конечно, то $1, \alpha, \alpha^2, \dots$ линейно зависимы.
-        Выбрав линейную зависимость $\beta_0 + \beta_1\alpha + \dots + \beta_d \alpha^d = 0$.
-        Тогда $\beta_0 + \beta_1 t + \dots + \beta_d t^d$ аннулирует $\alpha$, то есть ядро $\phi$ из доказательства~(\cref{idontknowletitbesimple}) ненулевое.
-    }
+        \item[$(1) \then (2)$]\up\up\indentlemma{
+            Любой элемент конечного расширения $K/F$ алгебраический.
+        }{
+            Рассмотрим $\alpha \in K$.
+            Так как расширение конечно, то $1, \alpha, \alpha^2, \dots$ линейно зависимы.
+            Выбрав линейную зависимость $\beta_0 + \beta_1\alpha + \dots + \beta_d \alpha^d = 0$.
+            Тогда $\beta_0 + \beta_1 t + \dots + \beta_d t^d$ аннулирует $\alpha$, то есть ядро $\phi$ из доказательства~(\cref{idontknowletitbesimple}) ненулевое.
+        }
         Пусть $[K : F] = d$, значит, $K$ имеет базис $(\alpha_1, \dots, \alpha_d)$ над $F$.
         Тогда $K$ порождено элементами $\alpha_1, \dots, \alpha_d$ даже просто как векторное пространство, а не как $F$-алгебра
     }
     \item[$(2)\then(3)$] Тавтологично.
     }
+
     \subsection{Алгебраическое замыкание одного поля в другом}
     Пусть имеется расширение полей $K/F$, тогда $\Int_K F \bydef \defset{\alpha \in K}{\alpha\text{ алгебраичен над }F}$ --- целое (алгебраическое) замыкание $F$ в $K$.
 
@@ -1488,84 +1522,85 @@
     \ok
     Пусть $X \subset K$, где по-прежнему $K/F$.
     \definition[$X$ алгебраически независим над $F$]{
-    $\forall f \in F[t_1, \dots, t_m], \forall x_1, \dots, x_m \in X$ (где $x_i$ попарно различны): $f(x_1, \dots, x_m) \ne 0$.
+        $\forall f \in F[t_1, \dots, t_m], \forall x_1, \dots, x_m \in X$ (где $x_i$ попарно различны): $f(x_1, \dots, x_m) \ne 0$.
     }
     Иными словами, отображение из универсальной $F$-алгебры, порождённой элементами $X$ в $F[X]$ (определённое на образующих $x \mapsto x$) имеет нулевое ядро.
 
     \definition[Линейная оболочка $X$ над $F$]{
-    $\angles{X} \bydef \Int_K F(X)$.
+        $\angles{X} \bydef \Int_K F(X)$.
     }
     \definition[$X$ --- (алгебраический) базис расширения $K/F$]{
-    Алгебраически независимое $X$ такое, что $\angles{X} = K$.
+        Алгебраически независимое $X$ такое, что $\angles{X} = K$.
         При этом $|X|$ называется \emph{степенью трансцендентности} $K/F$
     }
     \example{
-    В кольце $F(t)$: $\{t\}$ --- базис трансцендентности.
+        В кольце $F(t)$: $\{t\}$ --- базис трансцендентности.
     }
     Для алгебраического базиса $X$ верны те же аксиомы, что и для базиса векторных полей:
     \numbers{
-    \item todo
-    \item todo
-    \item todo
+        \item todo
+        \item todo
+        \item todo
     }
     \comment{Я не смог найти эти аксиомы, а интересно, может кто-то другой подскажем, как они выглядят? }
     \theorem{
-    Степень трансцендентности не зависит от выбора базиса.
-    \provehere{
-        Аналогично подобному факту из линейной алгебры.
+        Степень трансцендентности не зависит от выбора базиса.
+        \provehere{
+            Аналогично подобному факту из линейной алгебры.
+        }
     }
-    }
+
     \subsection{Поле разложения}
     Пусть $F$ --- поле, $f \in F[t]$.
     \definition[Поле разложения $f$ над $F$]{
-    Поле $F_f/F$, в котором $f$ раскладывается на линейные множители, и вкладывающееся (\textbf{не факт}, что единственным образом) в любое другое поле, обладающее тем же свойством.
+        Поле $F_f/F$, в котором $f$ раскладывается на линейные множители, и вкладывающееся (\textbf{не факт}, что единственным образом) в любое другое поле, обладающее тем же свойством.
     }
     \examples{
-    \item $F = \R, f = t^2 + 1$.
+        \item $F = \R, f = t^2 + 1$.
         В этом случае $F_f \cong \C$.
-    \item $F = \Q, f = t^3 - 2$.
+        \item $F = \Q, f = t^3 - 2$.
         В этом случае $\Q\left(\sqrt[3]{2}\right)$ --- не поле разложения, оно вкладывается в $\R$, а $f$ в $\R$ на линейные множители не раскладывается.
 
-    Надо присоединить ещё какой-то корень $f$, достаточно присоединить какой-то $\sqrt[3]{1}$, отличный от $1$; это то же самое, что присоединить $\sqrt{-3}$.
-    Тем самым, поле разложения $\Q_f \cong \Q\left[\sqrt[3]{2}, \sqrt{-3}\right]$.
+        Надо присоединить ещё какой-то корень $f$, достаточно присоединить какой-то $\sqrt[3]{1}$, отличный от $1$; это то же самое, что присоединить $\sqrt{-3}$.
+        Тем самым, поле разложения $\Q_f \cong \Q\left[\sqrt[3]{2}, \sqrt{-3}\right]$.
     }
     \theorem{\label{splitting-field}
-        Для любого $f \in F[t]$ существует его поле разложения.
+    Для любого $f \in F[t]$ существует его поле разложения.
     \provehere{
         Индукция по $\deg f$.
 
         \underline{База:} $\deg f = 1 \then F_f = F$.
 
-    \underline{Переход:} Пусть $f = p g$, где $p$ --- неприводим.
+        \underline{Переход:} Пусть $f = p g$, где $p$ --- неприводим.
 
-    Пусть $E \coloneqq F[t]/(p)$.
+        Пусть $E \coloneqq F[t]/(p)$.
         В $E$: $\alpha \coloneqq \overline{t} = t + (p)$ --- корень $p$.
 
-    Над $E$: $f(t) = (t - \alpha) \cdot h(t)$ для некоторого $h: \deg h = \deg f - 1$.
-    Положим $F_f \coloneqq E_h$, $E_h$ существует по индукционному предположению.
+        Над $E$: $f(t) = (t - \alpha) \cdot h(t)$ для некоторого $h: \deg h = \deg f - 1$.
+        Положим $F_f \coloneqq E_h$, $E_h$ существует по индукционному предположению.
 
-    Теперь пусть $K/F$ --- другое поле, в котором $f$ раскладывается на линейные множители.
-    Сначала устроим вложение $E \hookrightarrow K$, отправив $\alpha$ в любой корень $p$.
+        Теперь пусть $K/F$ --- другое поле, в котором $f$ раскладывается на линейные множители.
+        Сначала устроим вложение $E \hookrightarrow K$, отправив $\alpha$ в любой корень $p$.
         Такой корень найдётся в $K$, так как $F[t]$ --- UFD.
 
-    При этом $h$ раскладывается в $K$ на линейные множители, по индукции $E_h$ вкладывается в $K$.
+        При этом $h$ раскладывается в $K$ на линейные множители, по индукции $E_h$ вкладывается в $K$.
     }
     }
     Пусть $K/F$ и $L/F$ --- расширения полей. Тогда гомоморфизм $\phi: K \map L$ называется \emph{гомоморфизмом полей над $F$}, если он оставляет $F$ на месте.
     Все гомоморфизмы полей по определению сохраняют $1$, в частности, любой гомоморфизм полей инъективен ($\phi(x) = \phi(y) \iff \phi(xy^{-1}) = \phi(1) \iff xy^{-1} = 1$).
     \theorem{
-    Пусть $K$ --- поле, в котором $f \in F[t]$ раскладывается на линейные множители.
+        Пусть $K$ --- поле, в котором $f \in F[t]$ раскладывается на линейные множители.
         Тогда $K$ --- поле разложения $f \iff K \cong F[\alpha_1, \dots, \alpha_n]$, где $\alpha_i$ --- корни $f$.
-    \provehere{
-        В одну сторону видно, что построенное в~(\cref{splitting-field}) поле разложения действительно порождено корнями $f$.
+        \provehere{
+            В одну сторону видно, что построенное в~(\cref{splitting-field}) поле разложения действительно порождено корнями $f$.
 
-        В другую сторону, можно устроить гомоморфизм $K \map F[\alpha_1, \dots, \alpha_n]$, он сюръективен (в образе лежит $F$, так как гомоморфизм --- над $F$, и в образе лежат корни $\alpha_i$, так как в них отправили корни многочлена $f$) и инъективен (любой гомоморфизм полей инъективен).
-    }
+            В другую сторону, можно устроить гомоморфизм $K \map F[\alpha_1, \dots, \alpha_n]$, он сюръективен (в образе лежит $F$, так как гомоморфизм --- над $F$, и в образе лежат корни $\alpha_i$, так как в них отправили корни многочлена $f$) и инъективен (любой гомоморфизм полей инъективен).
+        }
     }
     \newlection{16 апреля 2024 г.}
     \lemma{\label{leftrightarrow-is-iso}
-        Пусть $K/F$ и $L/F$ --- конечные расширения, и $K \map L, L \map K$ --- гомоморфизмы над $F$.
-        Тогда $K \cong L$ (оба отображения --- изоморфизмы).
+    Пусть $K/F$ и $L/F$ --- конечные расширения, и $K \map L, L \map K$ --- гомоморфизмы над $F$.
+    Тогда $K \cong L$ (оба отображения --- изоморфизмы).
     \provehere{
         Достаточно убедиться, что оба гомоморфизма биективны, а это удобно проверять, рассматривая $K$ и $L$, как векторные пространства над $F$.
         Так как гомоморфизмы полей --- мономорфизмы, то $\dim_F K = \dim_F L$.
@@ -1582,92 +1617,92 @@
     \lemma{Любое конечное поле характеристики $p$ содержит $p^n$ элементов, где $n \in \N$.
     \provehere{Так как $F$ --- векторное пространство над $\Ff_p$, то $F \overset{\Ff_p\text{-}\cat{Vect}}\cong \Ff_p^n$ для некоторого $n \in \N$.}}
     \theorem{
-    Для любого простого $p$ и любого $n \in \N$ существует поле из $p^n$ элементов.
+        Для любого простого $p$ и любого $n \in \N$ существует поле из $p^n$ элементов.
         При этом все такие поля изоморфны (но изоморфизмов может быть несколько).
-    \provebullets{
-    \item Обозначим $q \coloneqq p^n \in \N$.
-        Рассмотрим $f \in \Ff_p[t], f(t) = t^q - t$, и посмотрим на его поле разложения $(\Ff_p)_f$.
-    Так как в $\Ff_p$: $q = 0$, то $f'(t) = qt^{q - 1} - 1 = -1$, что показывает, что у $f$ нет кратных корней.
-    Тем самым, $F \coloneqq (\Ff_p)_f$ содержит по меньшей мере $q$ элементов --- корни $f$.
-    \item Рассмотрим корни $f$ в его поле разложения $X \coloneqq \defset{x \in F}{x^q - x = 0}\subset F$.
-    Заметим, что $X$ замкнуто относительно сложения и умножения: \[\all{x^q = x \\ y^q = y} \then \all{\left(xy\right)^q = xy \\ (x + y)^q = x^q + y^q = x + y}\]
-    Первое следует из коммутативности, второе --- из того, что $p$ делит все биномиальные коэффициенты $\binom{q}{k}$, кроме $\binom{q}{0}$ и $\binom{q}{q}$; $x \mapsto x^p$ --- эндоморфизм Фробениуса из первого семестра, а $x^q = \left({{(x^p)^{\cdot}}^\cdot}\right)^p$.
+        \provebullets{
+            \item Обозначим $q \coloneqq p^n \in \N$.
+            Рассмотрим $f \in \Ff_p[t], f(t) = t^q - t$, и посмотрим на его поле разложения $(\Ff_p)_f$.
+            Так как в $\Ff_p$: $q = 0$, то $f'(t) = qt^{q - 1} - 1 = -1$, что показывает, что у $f$ нет кратных корней.
+            Тем самым, $F \coloneqq (\Ff_p)_f$ содержит по меньшей мере $q$ элементов --- корни $f$.
+            \item Рассмотрим корни $f$ в его поле разложения $X \coloneqq \defset{x \in F}{x^q - x = 0}\subset F$.
+            Заметим, что $X$ замкнуто относительно сложения и умножения: \[\all{x^q = x \\ y^q = y} \then \all{\left(xy\right)^q = xy \\ (x + y)^q = x^q + y^q = x + y}\]
+            Первое следует из коммутативности, второе --- из того, что $p$ делит все биномиальные коэффициенты $\binom{q}{k}$, кроме $\binom{q}{0}$ и $\binom{q}{q}$; $x \mapsto x^p$ --- эндоморфизм Фробениуса из первого семестра, а $x^q = \left({{(x^p)^{\cdot}}^\cdot}\right)^p$.
 
-    Тем самым, $X \le F$ --- подкольцо в $F$.
-        Так как $\forall x \in X: x^{q - 2} = x^{-1}$, то это даже подполе.
-        Более того, так как $1 \in X$, то $X/\Ff_p$ --- тоже расширение полей.
+            Тем самым, $X \le F$ --- подкольцо в $F$.
+            Так как $\forall x \in X: x^{q - 2} = x^{-1}$, то это даже подполе.
+            Более того, так как $1 \in X$, то $X/\Ff_p$ --- тоже расширение полей.
 
-    С другой стороны, $X$ содержит все корни $t^q - t$, а $F$ --- поле разложения $t^q - t$, значит, имеется и гомоморфизм $F \map X$.
-    $X/\Ff_p$ и $F/\Ff_p$ конечны, откуда~(\cref{leftrightarrow-is-iso}) $X = F$.
-    \item Пусть $E$ --- произвольное поле порядка $p^n$. Его характеристика равна $p$, значит, в него вкладывается $\Ff_p$.
-        $|E^*| = q - 1$, значит по теореме Лагранжа (о порядке элемента в группе) $\forall x \in E: x^{q - 1} = 1$.
-    Тем самым, $f$ раскладывается на линейные множители и в $E$, откуда опять же имеется вложение $F \hookrightarrow E$. Но $|F| = |E| = q$, значит, $F \cong E$.
-    }
+            С другой стороны, $X$ содержит все корни $t^q - t$, а $F$ --- поле разложения $t^q - t$, значит, имеется и гомоморфизм $F \map X$.
+            $X/\Ff_p$ и $F/\Ff_p$ конечны, откуда~(\cref{leftrightarrow-is-iso}) $X = F$.
+            \item Пусть $E$ --- произвольное поле порядка $p^n$. Его характеристика равна $p$, значит, в него вкладывается $\Ff_p$.
+            $|E^*| = q - 1$, значит по теореме Лагранжа (о порядке элемента в группе) $\forall x \in E: x^{q - 1} = 1$.
+            Тем самым, $f$ раскладывается на линейные множители и в $E$, откуда опять же имеется вложение $F \hookrightarrow E$. Но $|F| = |E| = q$, значит, $F \cong E$.
+        }
     }
     \lemma{\label{algebraically-closed}
     Пусть $F$ --- поле. Следующие условия эквивалентны:
     \numbers{
         \item $\forall f \in F[t] \sm F: f$ раскладывается на линейные множители в $F$.
         \item $\forall f \in F[t] \sm F: f$ имеет корень в $F$.
-    \item $\forall f \in F[t] \sm F$: ($f$ неприводим $\iff \deg f = 1$).
+        \item $\forall f \in F[t] \sm F$: ($f$ неприводим $\iff \deg f = 1$).
         \item Любое алгебраическое расширение $F$ совпадает с $F$.
         \item Любое конечное расширение $F$ совпадает с $F$.
     }
     \provehere{Тривиально.
     \bullets{
-    \item[$(1) \then (2)$] Тавтологично.
-    \item[$(2) \then (3)$] $\then$ следует из теоремы Безу ($\alpha$ корень $\iff$ $t - \alpha$ --- делитель), $\when$ следует из того, что все многочлены степени $1$ неприводимы.
-    \item[$(3) \then (4)$] Пусть $E/F$ --- алгебраическое расширение, выберем $\theta \in E$, и найдём его минимальный многочлен. Он неприводим $\then \deg f = 1$, то есть $\theta \in F$.
-    \item[$(4) \then (5)$] Тавтологично.
-    \item[$(5) \then (1)$] Рассмотрим $f \in F[t]$. $F_f = F \then$ все корни $f$ лежат в $F$. Так как $f$ неприводим, то $\deg f = 1$.
+        \item[$(1) \then (2)$] Тавтологично.
+        \item[$(2) \then (3)$] $\then$ следует из теоремы Безу ($\alpha$ корень $\iff$ $t - \alpha$ --- делитель), $\when$ следует из того, что все многочлены степени $1$ неприводимы.
+        \item[$(3) \then (4)$] Пусть $E/F$ --- алгебраическое расширение, выберем $\theta \in E$, и найдём его минимальный многочлен. Он неприводим $\then \deg f = 1$, то есть $\theta \in F$.
+        \item[$(4) \then (5)$] Тавтологично.
+        \item[$(5) \then (1)$] Рассмотрим $f \in F[t]$. $F_f = F \then$ все корни $f$ лежат в $F$. Так как $f$ неприводим, то $\deg f = 1$.
     }
     }
     }
     \definition[Алгебраически замкнутое поле]{
-    Поле $F$, удовлетворяющее условиям из предыдущей леммы~(\cref{algebraically-closed}).
+        Поле $F$, удовлетворяющее условиям из предыдущей леммы~(\cref{algebraically-closed}).
     }
     \lemma{\label{closeness-criterion}
     Пусть $K/F$ --- алгебраическое расширение, и любой многочлен из $F[t]$ раскладывается на линейные множители в $K[t]$.
     Тогда $K$ алгебраически замкнуто.
     \provehere{
-    Пусть $f$ -- неприводимый в $K[t]$. Без потери общности $f$ --- унитальный: $f(t) = t^n + \alpha_{n_1}t^{n-1} + \dots + \alpha_0$.
-    Построим поле $E \coloneqq F[\alpha_0, \dots, \alpha_n]$, расширение $E/F$ конечно.
+        Пусть $f$ -- неприводимый в $K[t]$. Без потери общности $f$ --- унитальный: $f(t) = t^n + \alpha_{n_1}t^{n-1} + \dots + \alpha_0$.
+        Построим поле $E \coloneqq F[\alpha_0, \dots, \alpha_n]$, расширение $E/F$ конечно.
 
-    $f$ тем более неприводим в $E$, значит, можно рассмотреть поле $L \coloneqq E[t]/(f)$, расширение $L/E$, а стало быть и $L/F$ тоже конечны.
+        $f$ тем более неприводим в $E$, значит, можно рассмотреть поле $L \coloneqq E[t]/(f)$, расширение $L/E$, а стало быть и $L/F$ тоже конечны.
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJLIl0sWzAsMSwiRSJdLFswLDIsIkYiXSxbMSwwLCJMIl0sWzAsMSwiXFx0ZXh0e9Cw0LvQs9C10LHRgNCw0LjRh9C90L59IiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDIsIlxcdGV4dHvQutC+0L3QtdGH0L3Qvn0iLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMSwiXFx0ZXh0e9C60L7QvdC10YfQvdC+fSIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
         \begin{tikzcd}[ampersand replacement=\&,row sep=tiny]
-              K \& L \\
-              E \\
-              F
-              \arrow["{\text{алгебраично}}"', no head, from=1-1, to=2-1]
-              \arrow["{\text{конечно}}", no head, from=1-2, to=2-1]
-              \arrow["{\text{конечно}}"', no head, from=2-1, to=3-1]
+            K \& L \\
+            E \\
+            F
+            \arrow["{\text{алгебраично}}"', no head, from=1-1, to=2-1]
+            \arrow["{\text{конечно}}", no head, from=1-2, to=2-1]
+            \arrow["{\text{конечно}}"', no head, from=2-1, to=3-1]
         \end{tikzcd}
 
-    $f$ имеет корень в $L$, назовём его $\beta$.
+        $f$ имеет корень в $L$, назовём его $\beta$.
         В силу конечности $\beta$ алгебраично над $F$, то есть $\exists g \in F[t]: g(\beta) = 0$.
         Согласно посылке леммы, $g$ разложим на множители в $K[t]$, значит, имеется вложение $\phi: F_g \hookrightarrow K$ над $E$.
         Но $f(\beta) = 0 \then f(\phi(\beta)) = \phi(f(\beta)) = \phi(0) = 0$, то есть $f$ имеет корень в $K$.
     }
     }
     \intfact{
-    Можно ослабить посылку: если $K/F$ --- алгебраическое расширение, и любой многочлен из $F[t]$ имеет корень в $K$, то $K$ алгебраически замкнуто.
+        Можно ослабить посылку: если $K/F$ --- алгебраическое расширение, и любой многочлен из $F[t]$ имеет корень в $K$, то $K$ алгебраически замкнуто.
     }
     \lemma{\label{closure-is-closed}
     Пусть $L/F$ --- расширение полей, причём $L$ алгебраически замкнуто.
     Тогда $\Int_L F$ тоже алгебраически замкнуто.
     \provehere{
-    Рассмотрим $f \in F[t]$. В $L$ он раскладывается на линейные множители $f(t) = (t - \alpha_1) \proddots (t - \alpha_n)$, где $\alpha_i \in L$.
-    Согласно~(\cref{closuness-criterion}) целого замыкания $\alpha_i \in \Int_L F$.
+        Рассмотрим $f \in F[t]$. В $L$ он раскладывается на линейные множители $f(t) = (t - \alpha_1) \proddots (t - \alpha_n)$, где $\alpha_i \in L$.
+        Согласно~(\cref{closuness-criterion}) целого замыкания $\alpha_i \in \Int_L F$.
     }
     }
     \example{
-    Рассмотрим расширение $\C/\Q$. Целые алгебраические числа $\A \bydef \Int_\C\Q$ --- алгебраически замкнутое подполе в $\C$.
-    Оно не совпадает с $\C$, так как $\C$ континуально, а $\Int_\C\Q$ счётно.
+        Рассмотрим расширение $\C/\Q$. Целые алгебраические числа $\A \bydef \Int_\C\Q$ --- алгебраически замкнутое подполе в $\C$.
+        Оно не совпадает с $\C$, так как $\C$ континуально, а $\Int_\C\Q$ счётно.
     }
     \definition[Алгебраическое замыкание поля $F$]{
-    Алгебраическое расширение $F$, являющееся алгебраически замкнутым полем.
-    Обозначается $\alg{F}$.
+        Алгебраическое расширение $F$, являющееся алгебраически замкнутым полем.
+        Обозначается $\alg{F}$.
     }
 %    Далее следует доказать, что у любого поля имеется алгебраическое замыкание.
 %    Для доказательства существования $\alg{F}$, достаточно доказать существование унитальной $F$-алгебры $R$ (кольца с единицей, содержащего $F$), в которой все многочлены из $F[t]$ имеют корень:
@@ -1676,64 +1711,64 @@
 %    Это кольцо можно строить, например, как $\bigotimes\limits_{f \in F[t]}F_f$, но надо доказать, что это не нуль.
 %    Мы пойдём немного другим путём.
     \theorem{
-    У любого поля $F$ существует алгебраическое замыкание.
-    \provehere{
-    Рассмотрим множество многочленов $F[t]$, как множество индексов, и введём множество переменных $X \coloneqq \defset{x_f}{f \in F[t]}$.
-        Далее рассмотрим кольцо многочленов от этих переменных $F[X]$, и профакторизуем его по идеалу $J \coloneqq (f(x_f)| f \in F[t])$.
-        \indentlemma{
-        Этот идеал не совпадает со всем кольцом: $J \ne F[X]$.
-        }{
-            Пойдём от противного: $J = F[X] \then 1 \in J$, то есть существует конечная линейная комбинация \[g_1 f_1(x_{f_1}) + \dots + f_m f_m(x_{f_m}) = 1\text{, где }f_i, g_i \in F[t]\label{in-ideal}\tag{$\triangle$}\]
-            Корни конечного множества многочленов мы умеем присоединять: введём $f \coloneqq f_1 \proddots f_m$, в $F_f$ у каждого из $f_i$ есть корень, назовём его $\beta_i$.
-            Теперь устроим гомоморфизм $F$-алгебр $\phi: F[X] \map F_f, \all{x_{f_i} \mapsto \beta_i \\ x_g \mapsto 0}$, он определён согласно универсальному свойству кольца многочленов.
+        У любого поля $F$ существует алгебраическое замыкание.
+        \provehere{
+            Рассмотрим множество многочленов $F[t]$, как множество индексов, и введём множество переменных $X \coloneqq \defset{x_f}{f \in F[t]}$.
+            Далее рассмотрим кольцо многочленов от этих переменных $F[X]$, и профакторизуем его по идеалу $J \coloneqq (f(x_f)| f \in F[t])$.
+            \indentlemma{
+                Этот идеал не совпадает со всем кольцом: $J \ne F[X]$.
+            }{
+                Пойдём от противного: $J = F[X] \then 1 \in J$, то есть существует конечная линейная комбинация \[g_1 f_1(x_{f_1}) + \dots + f_m f_m(x_{f_m}) = 1\text{, где }f_i, g_i \in F[t]\label{in-ideal}\tag{$\triangle$}\]
+                Корни конечного множества многочленов мы умеем присоединять: введём $f \coloneqq f_1 \proddots f_m$, в $F_f$ у каждого из $f_i$ есть корень, назовём его $\beta_i$.
+                Теперь устроим гомоморфизм $F$-алгебр $\phi: F[X] \map F_f, \all{x_{f_i} \mapsto \beta_i \\ x_g \mapsto 0}$, он определён согласно универсальному свойству кольца многочленов.
 
-            В образe~(\ref{in-ideal}) обращается в равенство $0 = 1$, но в $F_f$ это, конечно, неверно.
+                В образe~(\ref{in-ideal}) обращается в равенство $0 = 1$, но в $F_f$ это, конечно, неверно.
+            }
+            Раз $J \normeq F[X]$ не совпадает со всем кольцом, то можно взять максимальный идеал $\mathfrak{m}$, содержащий $J$, и не совпадающий со всем кольцом (лемма Цорна).
+            Факторкольцо $E_1 \coloneqq F[X]/\mathfrak{m}$ является полем, в котором образ переменной $x_f$ --- корень многочлена $f$.
+
+            К сожалению, не факт, что $E_1$ алгебраически замкнуто:~(\cref{closeness-criterion}) неприменима, так как неизвестно, алгебраично ли расширение $E_1/F$.
+
+            Обозначим $E_0 \coloneqq F$, и устроим итерации, по $E_i$ получая $E_{i+1}$ согласно вышеописанной процедуре.
+            Для цепочки вложений полей $E_0 \hookrightarrow E_1 \hookrightarrow E_2 \hookrightarrow \dots$ можно рассмотреть объединение с понятно определёнными операциями.
+            Поле $\overline{F} \coloneqq \bigcup\limits_{i = 0}^{\infty}E_i$ уже является алгебраически замкнутым полем (любой многочлен из $\overline{F}[t]$ имеет конечное количество коэффициентов, которые все лежат в каком-то $E_N$, а корень можно найти в $E_{N+1}$).
+
+            Теперь осталось положить $\alg{F} \coloneqq \Int_{\overline{F}}F$, оно алгебраически замкнуто, согласно~(\cref{closure-is-closed}).
         }
-    Раз $J \normeq F[X]$ не совпадает со всем кольцом, то можно взять максимальный идеал $\mathfrak{m}$, содержащий $J$, и не совпадающий со всем кольцом (лемма Цорна).
-    Факторкольцо $E_1 \coloneqq F[X]/\mathfrak{m}$ является полем, в котором образ переменной $x_f$ --- корень многочлена $f$.
-
-    К сожалению, не факт, что $E_1$ алгебраически замкнуто:~(\cref{closeness-criterion}) неприменима, так как неизвестно, алгебраично ли расширение $E_1/F$.
-
-        Обозначим $E_0 \coloneqq F$, и устроим итерации, по $E_i$ получая $E_{i+1}$ согласно вышеописанной процедуре.
-        Для цепочки вложений полей $E_0 \hookrightarrow E_1 \hookrightarrow E_2 \hookrightarrow \dots$ можно рассмотреть объединение с понятно определёнными операциями.
-        Поле $\overline{F} \coloneqq \bigcup\limits_{i = 0}^{\infty}E_i$ уже является алгебраически замкнутым полем (любой многочлен из $\overline{F}[t]$ имеет конечное количество коэффициентов, которые все лежат в каком-то $E_N$, а корень можно найти в $E_{N+1}$).
-
-    Теперь осталось положить $\alg{F} \coloneqq \Int_{\overline{F}}F$, оно алгебраически замкнуто, согласно~(\cref{closure-is-closed}).
-    }
     }
     \newlection{22 апреля 2024 г.}
     \proposal{
         Пусть $E/F$ --- алгебраическое расширение, и $L/F$ --- такое расширение, что $\forall f \in F[t]$: $f$ раскладывается на линейные множители в $L[t]$.
-    Обозначим $K \coloneqq \Int_L F$. Тогда
-    \numbers{
-    \item Существует вложение $\phi: E \hookrightarrow L$ над $F$.
-    \item Для всякого вложения $\phi$: $\phi(E) \subset K$.
-    \item Если $E$ алгебраически замкнуто, то $\phi(E) = K$.
-    }
-    \provenumbers{
-    \item Образуем множество $\mathscr{X} \coloneqq \defset{(\tilde{F}, \phi)}{F \subset \tilde{F} \subset E, \phi: \tilde{F} \hookrightarrow L}$.
-        На $\mathscr{X}$ введём частичный порядок: $(F', \phi') \preceq (F'', \phi'') \iff F' \subset F''$ и $\phi''\big|_{F'} = \phi'$.
+        Обозначим $K \coloneqq \Int_L F$. Тогда
+        \numbers{
+            \item Существует вложение $\phi: E \hookrightarrow L$ над $F$.
+            \item Для всякого вложения $\phi$: $\phi(E) \subset K$.
+            \item Если $E$ алгебраически замкнуто, то $\phi(E) = K$.
+        }
+        \provenumbers{
+            \item Образуем множество $\mathscr{X} \coloneqq \defset{(\tilde{F}, \phi)}{F \subset \tilde{F} \subset E, \phi: \tilde{F} \hookrightarrow L}$.
+            На $\mathscr{X}$ введём частичный порядок: $(F', \phi') \preceq (F'', \phi'') \iff F' \subset F''$ и $\phi''\big|_{F'} = \phi'$.
 
-        $\mathscr{X}$ непусто, так как $(F, F \hookrightarrow L) \in \mathscr{X}$.
+            $\mathscr{X}$ непусто, так как $(F, F \hookrightarrow L) \in \mathscr{X}$.
 
-        Убедимся, что здесь применима лемма Цорна: если $(F_\alpha, \phi_\alpha)_{\alpha \in A}$ --- цепь, то $\tilde{F} \coloneqq \bigcup\limits_{\alpha \in A}F_\alpha$ вместе с $\tilde{\phi}$ --- верхняя грань (где $\tilde{\phi}$ определено так: и $\forall x \in \tilde{F}: \tilde{\phi}(x) \coloneqq \phi_\alpha(x)$ для произвольного $\alpha$, такого, что $x \in F_\alpha$).
+            Убедимся, что здесь применима лемма Цорна: если $(F_\alpha, \phi_\alpha)_{\alpha \in A}$ --- цепь, то $\tilde{F} \coloneqq \bigcup\limits_{\alpha \in A}F_\alpha$ вместе с $\tilde{\phi}$ --- верхняя грань (где $\tilde{\phi}$ определено так: и $\forall x \in \tilde{F}: \tilde{\phi}(x) \coloneqq \phi_\alpha(x)$ для произвольного $\alpha$, такого, что $x \in F_\alpha$).
 
-        Тем самым, имеется максимальный элемент $(\tilde{F}, \tilde{\phi}) \in \mathscr{X}$.
-        Предположим, что $\tilde{F} \ne E$, то есть $\exists \theta \in E \sm \tilde{F}$.
-        Пусть $f \in F[t]$ --- минимальный многочлен $\theta$ в $F$, и $g \in \tilde{F}[t]$ --- минимальный многочлен $\theta$ над $\tilde{F}$.
+            Тем самым, имеется максимальный элемент $(\tilde{F}, \tilde{\phi}) \in \mathscr{X}$.
+            Предположим, что $\tilde{F} \ne E$, то есть $\exists \theta \in E \sm \tilde{F}$.
+            Пусть $f \in F[t]$ --- минимальный многочлен $\theta$ в $F$, и $g \in \tilde{F}[t]$ --- минимальный многочлен $\theta$ над $\tilde{F}$.
 
-        Отождествим $\tilde{F}$ с его образом $\tilde{\phi}(\tilde{F}) \subset L$ ($\phi$ инъективно, как гомоморфизм полей).
+            Отождествим $\tilde{F}$ с его образом $\tilde{\phi}(\tilde{F}) \subset L$ ($\phi$ инъективно, как гомоморфизм полей).
 
-        В $L$ многочлен $f$ раскладывается на линейные множители.
-        Так как $g \divs f$, то $g \in L[t]$ тоже раскладывается на линейные множители, то есть $\exists \alpha \in L: g(\alpha) = 0$.
-        Согласно универсальному свойству простого расширения: $\tilde{F}[\theta] \cong \tilde{F}[t]/(g)$, то есть $\exists!\psi: \tilde{F}[\theta] \map \tilde{F}[\alpha]$ --- гомоморфизм полей над $\tilde{F}$, такой, что $\psi(\theta) = \alpha$.
-    \item Предположим, что $\phi$ существует.
-        Корень $f \in F[t]$ переходит в корень, поэтому $\phi$ сохраняет множество алгебраических элементов, откуда $\phi(E \subset K$.
-    \item Рассмотрим $\beta \in K$, это корень некоторого унитального многочлена $f \in F[t]$.
-    В $E$ многочлен $f$ раскладывается на линейные множители $f(t) = (t - \alpha_1) \proddots (t - \alpha_n)$, где $\alpha_i \in E$.
-        Применяя индуцированный $\phi: E[t] \map L[t]$ к данному разложению, получаем $f(t) = (t - \phi(\alpha_1)) \proddots (t - \phi(\alpha_n))$.
-    Подставляя $\beta$, получаем, нуль. Значит, $\beta = \phi(\alpha_i)$ для некоторого $i$.
-    }
+            В $L$ многочлен $f$ раскладывается на линейные множители.
+            Так как $g \divs f$, то $g \in L[t]$ тоже раскладывается на линейные множители, то есть $\exists \alpha \in L: g(\alpha) = 0$.
+            Согласно универсальному свойству простого расширения: $\tilde{F}[\theta] \cong \tilde{F}[t]/(g)$, то есть $\exists!\psi: \tilde{F}[\theta] \map \tilde{F}[\alpha]$ --- гомоморфизм полей над $\tilde{F}$, такой, что $\psi(\theta) = \alpha$.
+            \item Предположим, что $\phi$ существует.
+            Корень $f \in F[t]$ переходит в корень, поэтому $\phi$ сохраняет множество алгебраических элементов, откуда $\phi(E \subset K$.
+            \item Рассмотрим $\beta \in K$, это корень некоторого унитального многочлена $f \in F[t]$.
+            В $E$ многочлен $f$ раскладывается на линейные множители $f(t) = (t - \alpha_1) \proddots (t - \alpha_n)$, где $\alpha_i \in E$.
+            Применяя индуцированный $\phi: E[t] \map L[t]$ к данному разложению, получаем $f(t) = (t - \phi(\alpha_1)) \proddots (t - \phi(\alpha_n))$.
+            Подставляя $\beta$, получаем, нуль. Значит, $\beta = \phi(\alpha_i)$ для некоторого $i$.
+        }
     }
     \corollary{
         Любое алгебраическое расширение $F$ вкладывается в алгебраическое замыкание $F$.
@@ -1744,10 +1779,11 @@
     \corollary{
         Алгебраическое замыкание единственно с точностью до \textbf{не единственного} изоморфизма.
     }
+
     \subsection{Сепарабельность}
     Пусть $F$ --- поле, $f \in F[t]$.
     \definition[Сепарабельный многочлен $f$]{
-    $f$ не имеет кратных корней в $\alg{F}$.
+        $f$ не имеет кратных корней в $\alg{F}$.
     }
     Так как кратные корни --- это корни $\gcd(f, f')$, то условие сепарабельности эквивалентно условию $\gcd(f, f') = 1$.
 
@@ -1758,54 +1794,54 @@
     \definition[$\alpha \in E$ сепарабелен над $F$]{Минимальный многочлен $\alpha$ сепарабелен.}
     \definition[Расширение $E/F$ сепарабельно]{$\forall \alpha \in E$: $\alpha \in E$ сепарабелен над $F$. }
     \intfact{
-    $F = E^{\Aut(E/F)} \iff E/F$ --- сепарабельное расширение. Здесь $\Aut(E/F)$ --- автоморфизмы $E$, тождественные над $F$, и для $G \subset \Aut(E/F)$: $E^G \bydef \defset{x \in E}{\forall g \in G: g x = x}$ --- множество точек, оставляемых под действием $G$ на месте.
+        $F = E^{\Aut(E/F)} \iff E/F$ --- сепарабельное расширение. Здесь $\Aut(E/F)$ --- автоморфизмы $E$, тождественные над $F$, и для $G \subset \Aut(E/F)$: $E^G \bydef \defset{x \in E}{\forall g \in G: g x = x}$ --- множество точек, оставляемых под действием $G$ на месте.
     }
     \examples[Сепарабельные и несепарабельные расширения]{
-    \item Любое расширение поля характеристики нуль сепарабельно.
-    \item Пусть $F \coloneqq \Ff_p(t^p)$, $E \coloneqq \Ff_p(t)$.
+        \item Любое расширение поля характеристики нуль сепарабельно.
+        \item Пусть $F \coloneqq \Ff_p(t^p)$, $E \coloneqq \Ff_p(t)$.
         Рассмотрим многочлен $x^p - t^p \in F[x]$.
         Он неприводим над $F$, так как даже свободный член неприводим, и видно, что все ассоциированные с $t^p$ --- не корни.
 
-    Но над $E: x^p - t^p = (x - t)^p$, то есть $x^p - t^p \in F[x]$ неприводим и несепарабелен.
-    И действительно, $(x^p - t^p)' = px^{p-1} = 0$.
+        Но над $E: x^p - t^p = (x - t)^p$, то есть $x^p - t^p \in F[x]$ неприводим и несепарабелен.
+        И действительно, $(x^p - t^p)' = px^{p-1} = 0$.
     }
     \definition[Совершенное поле $F$]{
-    Любое алгебраическое расширение $F$ сепарабельно.
+        Любое алгебраическое расширение $F$ сепарабельно.
     }
     \exercise{\label{frob-sep}
     Верно ли, что $F$ совершенно $\iff$ эндоморфизм Фробениуса $\Frob: F \map F, x \mapsto x^p$ сюръективен?
     }
     \examples{
-    \item Если $\chr F = 0$, то $F$ совершенно.
-    \item Если $|F| < \infty$, то $F$ совершенно.
-    \provehere{
-    Рассмотрим $\theta \in \alg{F}$. $|F[\theta]| = q^n$, где $q \coloneqq |F|$.
-        Тогда $\theta^{q^n - 1} = 1$ (теорема Лагранжа для мультипликативной группы $F[\theta]^*$), то есть $\theta$ --- корень $t^{q^n - 1} - 1$.
+        \item Если $\chr F = 0$, то $F$ совершенно.
+        \item Если $|F| < \infty$, то $F$ совершенно.
+        \provehere{
+            Рассмотрим $\theta \in \alg{F}$. $|F[\theta]| = q^n$, где $q \coloneqq |F|$.
+            Тогда $\theta^{q^n - 1} = 1$ (теорема Лагранжа для мультипликативной группы $F[\theta]^*$), то есть $\theta$ --- корень $t^{q^n - 1} - 1$.
 
-        Этот многочлен взаимно прост со своей производной: $\left(t^{q^n - 1} - 1\right)' = (q^n - 1)t^{q^n - 2} = -t^{q^n - 2}$, и $\gcd(-t^{q^n - 2}, t^{q^n - 1} - 1) = 1$.
+            Этот многочлен взаимно прост со своей производной: $\left(t^{q^n - 1} - 1\right)' = (q^n - 1)t^{q^n - 2} = -t^{q^n - 2}$, и $\gcd(-t^{q^n - 2}, t^{q^n - 1} - 1) = 1$.
 
-    Минимальный многочлен $\theta$ делит $t^{q^n-1}-1$, значит, он тоже не имеет кратных корней.
-    }
+            Минимальный многочлен $\theta$ делит $t^{q^n-1}-1$, значит, он тоже не имеет кратных корней.
+        }
     }
     \newlection{29 апреля 2024 г.}
 
     \proposal{
         Пусть $E/F$ --- алгебраическое расширение полей. Следующие условия эквивалентны:
-    \numbers{
-     \item $E/F$ несепарабельно.
-        \item Минимальный многочлен некоторого $\theta \in E$ несепарабелен над $F$.
+        \numbers{
+            \item $E/F$ несепарабельно.
+            \item Минимальный многочлен некоторого $\theta \in E$ несепарабелен над $F$.
 %    \item $\exists f \in F[t]$ --- несепарабельный и неприводимый в $F[t]$, причём $f$ имеет корень в $E$.
-    \item $\exists f \in F[t]$ --- неприводимый в $F[t]$, такой, что $f' = 0$, причём $f$ имеет корень в $E$.
-    \item $\exists f \in F[t]$ --- неприводимый в $F[t]$, такой, что $f$ имеет кратный корень в $E$.
-    \item $\exists f \in F[t]$ --- неприводимый в $F[t]$, такой, что $\exists g \in F[t]: f(t) = g(t^p)$, причём $f$ имеет корень $E$.
-    }
-    \provehere{
-        $(1) \iff (2) \then (3) \iff (4) \then (5)$ очевидно (эквивалентность $(3) \iff (4)$ соблюдена, так как для неприводимого многочлена $f: \gcd(f, f') \ne 1 \iff f' = 0$).
+            \item $\exists f \in F[t]$ --- неприводимый в $F[t]$, такой, что $f' = 0$, причём $f$ имеет корень в $E$.
+            \item $\exists f \in F[t]$ --- неприводимый в $F[t]$, такой, что $f$ имеет кратный корень в $E$.
+            \item $\exists f \in F[t]$ --- неприводимый в $F[t]$, такой, что $\exists g \in F[t]: f(t) = g(t^p)$, причём $f$ имеет корень $E$.
+        }
+        \provehere{
+            $(1) \iff (2) \then (3) \iff (4) \then (5)$ очевидно (эквивалентность $(3) \iff (4)$ соблюдена, так как для неприводимого многочлена $f: \gcd(f, f') \ne 1 \iff f' = 0$).
 
-    Докажем $(5) \then (2)$. Пусть $\theta \in E$ --- корень $f$.
-        Подставим: $f(\theta) = g(\theta^p) = 0$.
-        Получили $(t - \theta^p) \divs g \then (t - \theta)^p = t^p - \theta^p \divs f$.
-    }
+            Докажем $(5) \then (2)$. Пусть $\theta \in E$ --- корень $f$.
+            Подставим: $f(\theta) = g(\theta^p) = 0$.
+            Получили $(t - \theta^p) \divs g \then (t - \theta)^p = t^p - \theta^p \divs f$.
+        }
     }
     На самом деле, данное предложение говорит, что кратность любого корня неприводимого несепарабельного многочлена делится на $p$.
     \exercise{Сепарабельное расширение сепарабельного расширения сепарабельно.}
@@ -1814,16 +1850,16 @@
         Если $E/F$ несепарабельно, то найдётся неприводимый многочлен $f = (\alpha_n t^{pn} + \alpha_{n-1}t^{p(n-1)} + \dots + \alpha_0) \in F[t]$.
         Но так как автоморфизм Фробениуса сюръективен, то $\forall \alpha_j \in F: \exists \beta_j \in F: \beta_j^p = \alpha_j$.
         Получаем
-    \[\alpha_n t^{pn} + \alpha_{n-1}t^{p(n-1)} + \dots + \alpha_0 = (\beta_n t^{pn} + \beta_{n-1}t^{p(n-1)} + \dots + \beta_0)^p\]
-    что противоречит неприводимости $f$.
+        \[\alpha_n t^{pn} + \alpha_{n-1}t^{p(n-1)} + \dots + \alpha_0 = (\beta_n t^{pn} + \beta_{n-1}t^{p(n-1)} + \dots + \beta_0)^p\]
+        что противоречит неприводимости $f$.
     }
     \definition[Расширение $E/F$ нормально]{
-    Любой неприводимый многочлен из $F[t]$, имеющий корень в $E$, раскладывается на линейные множители в $E$
+        Любой неприводимый многочлен из $F[t]$, имеющий корень в $E$, раскладывается на линейные множители в $E$
     }
     \example{
-    $\Q[\sqrt[3]{2}]/\Q$ не нормально, так как $t^3 - 2$ не раскладывается на линейные множители даже в $\R$.
+        $\Q[\sqrt[3]{2}]/\Q$ не нормально, так как $t^3 - 2$ не раскладывается на линейные множители даже в $\R$.
 
-    Любое расширение несложно сделать нормальным, присоединив все корни всех неприводимых многочленов из $F[t]$, имеющих корни в $E$.
+        Любое расширение несложно сделать нормальным, присоединив все корни всех неприводимых многочленов из $F[t]$, имеющих корни в $E$.
     }
     \definition[Расширение Галуа]{Конечное сепарабельное нормальное расширение.}
     Условие конечности иногда отсутствует, но мы другими заниматься не будем.
@@ -1831,13 +1867,13 @@
     \definition[Группа Галуа расширения Галуа $E/F$]{Группа автоморфизмов $E$, тождественных на $F$: $\Gal(E/F) \bydef \Aut(E/F)$.}
     Группа автоморфизмов расширения $E/F$ имеет смысл и не для расширения Галуа, но там не используется запись $\Gal$.
     \theorem{\label{harvesting}
-        Пусть имеются расширения $K/F$ и $E/F$, и $f \in F[t]$.
+    Пусть имеются расширения $K/F$ и $E/F$, и $f \in F[t]$.
     При этом $K$ порождено некоторыми корнями многочлена $f$, а в $E$: $f$ раскладывается на линейные множители.
     Пусть $n$ --- количество вложений $K \hookrightarrow E$ над $F$.
     \numbers{
-    \item $0 < n\le [K:F]$
-    \item Если $f$ сепарабелен, то $n = [K:F]$.
-    \item Если $f$ несепарабелен, свободен от квадратов в $F[t]$, и любой неприводимый в $F[t]$ сомножитель $f$ имеет корень в $K$, то $n < [K:F]$.
+        \item $0 < n\le [K:F]$
+        \item Если $f$ сепарабелен, то $n = [K:F]$.
+        \item Если $f$ несепарабелен, свободен от квадратов в $F[t]$, и любой неприводимый в $F[t]$ сомножитель $f$ имеет корень в $K$, то $n < [K:F]$.
     }
     \provehere{
         Индукция по степени расширения $[K:F]$.
@@ -1861,80 +1897,80 @@
         По индукционному предположению существует $m$ вложений $K \hookrightarrow E$ над $\tilde{F}$, где $m \le [K : \tilde{F}]$.
 
         Так как столько вложений имеется для каждого $\phi$, то $n = km \le [\tilde{F} : F] \cdot [K : \tilde{F}] = [K : F]$.
-    При этом, если $f$ сепарабелен и свободен от квадратов, то несепарабельный $f_1$, имеющий корень в $K$, найдётся, тогда $k < [\tilde{F} : F]$ и $n < [K : F]$.
+        При этом, если $f$ сепарабелен и свободен от квадратов, то несепарабельный $f_1$, имеющий корень в $K$, найдётся, тогда $k < [\tilde{F} : F]$ и $n < [K : F]$.
     }
     }
     \corollary{\label{harvesting-corollary}
-        Пусть $K/F$ и $E/F$ --- конечные расширения.
-        \numbers{
+    Пусть $K/F$ и $E/F$ --- конечные расширения.
+    \numbers{
         \item Количество вложений $K \hookrightarrow E$ над $F$ не превосходит $[K : F]$.
         \item Существует расширение $L/E$: имеется вложение $K \hookrightarrow L$ над $F$.
         \item Если $E/F$ --- расширение Галуа, то количество вложений $K \hookrightarrow E$ над $F$ равно либо $[K : F]$, либо $0$.
-        }
+    }
     \provehere{
-    Пусть $K = F[\alpha_1, \dots, \alpha_n]$, пусть $f_1, \dots, f_n$ --- минимальные многочлены $\alpha_1, \dots, \alpha_n$ соответственно.
+        Пусть $K = F[\alpha_1, \dots, \alpha_n]$, пусть $f_1, \dots, f_n$ --- минимальные многочлены $\alpha_1, \dots, \alpha_n$ соответственно.
 
-    Избавимся от ассоциированных, оставив только уникальные, и положим $f$ равному их произведению.
+        Избавимся от ассоциированных, оставив только уникальные, и положим $f$ равному их произведению.
 
-    Положим $L \coloneqq E_f$.
+        Положим $L \coloneqq E_f$.
         Теперь выполнена посылка~(\cref{harvesting}), откуда количество вложений $K \hookrightarrow L$ над $F$ не $0$, но и не более $[K : F]$.
 
-    Если существует вложение $K \hookrightarrow E$ над $F$, то все $f_i$ имеют корни в $E$ и $K/F$ сепарабельно.
-    Тогда $\alpha_1, \dots, \alpha_n$ сепарабельны над $F$, то есть $f$ сепарабелен над $F$.
-    А из нормальности расширения $E/F$ все $f_i$ раскладываются на линейные множители в $E$.
+        Если существует вложение $K \hookrightarrow E$ над $F$, то все $f_i$ имеют корни в $E$ и $K/F$ сепарабельно.
+        Тогда $\alpha_1, \dots, \alpha_n$ сепарабельны над $F$, то есть $f$ сепарабелен над $F$.
+        А из нормальности расширения $E/F$ все $f_i$ раскладываются на линейные множители в $E$.
         Тем самым, $L = E$, и~(\cref{harvesting}) завершает доказательство.
     }
     }
     \corollary{
-    Для расширения Галуа: $|\Gal(E/F)| = [E : F]$.
+        Для расширения Галуа: $|\Gal(E/F)| = [E : F]$.
     }
     \theorem[Лемма Артина]{\label{lemma-artin}
-        Пусть $E$ --- поле, и $G \le \Aut(E)$, $|G| < \infty$. Обозначим $F \coloneqq E^G \bydef \defset{\alpha \in E}{\forall g \in G: g\alpha = \alpha}$.
+    Пусть $E$ --- поле, и $G \le \Aut(E)$, $|G| < \infty$. Обозначим $F \coloneqq E^G \bydef \defset{\alpha \in E}{\forall g \in G: g\alpha = \alpha}$.
 
-        Тогда $[E : F] = |G|$.
+    Тогда $[E : F] = |G|$.
     \provehere{
         Достаточно доказать, что $[E:F] \le |G|$, обратное неравенство следует из~(\cref{harvesting-corollary}).
 
         Пусть $G = \{\phi_1, \phi_2, \dots, \phi_n\}$, где $\phi_1 = 1_G = \id_E$.
-    Пусть $m > n, \alpha_1, \dots, \alpha_m \in E$, докажем, что $\alpha_1, \dots, \alpha_m$ линейно зависимы над $F$.
+        Пусть $m > n, \alpha_1, \dots, \alpha_m \in E$, докажем, что $\alpha_1, \dots, \alpha_m$ линейно зависимы над $F$.
 
-    Заведём систему линейных уравнений $\left\{\sum\limits_{i = 1}^{m}\phi_j(\alpha_i)x_i = 0\right\}_{j = 1}^{n}$ относительно переменных $x_1, \dots, x_m$.
+        Заведём систему линейных уравнений $\left\{\sum\limits_{i = 1}^{m}\phi_j(\alpha_i)x_i = 0\right\}_{j = 1}^{n}$ относительно переменных $x_1, \dots, x_m$.
         В ней уравнений меньше, чем неизвестных, поэтому по теореме о размерности пересечения имеется ненулевое решение $\beta_1, \dots, \beta_m \in E$.
         Без потери общности $\beta_1 = 1$ (можно все $\beta_i$ поделить на $\beta_1$).
 
-    Пусть в наборе $\beta_1, \dots, \beta_m$ наименьшее количество ненулевых элементов.
-    Если $\exists k: \beta_k \notin F$, то $\exists l: \phi_l(\beta_k) \ne \beta_k$.
+        Пусть в наборе $\beta_1, \dots, \beta_m$ наименьшее количество ненулевых элементов.
+        Если $\exists k: \beta_k \notin F$, то $\exists l: \phi_l(\beta_k) \ne \beta_k$.
         Вычитая решения, получаем противоречие.
     }
     }
     \newlection{6 мая 2024 г.}
     \corollary{
-    Для любой группы $G \le \Aut(E)$: $\Aut(E/E^G) = G$.
-    \provehere{
-    Очевидно, $G \le \Aut(E/E^G)$. По лемме Артина $|G| = [E : E^G] \ge |\Aut(E/E^G)| \ge |G|$, и равенство достигается только при $G = \Aut(E/E^G)$
-    }
+        Для любой группы $G \le \Aut(E)$: $\Aut(E/E^G) = G$.
+        \provehere{
+            Очевидно, $G \le \Aut(E/E^G)$. По лемме Артина $|G| = [E : E^G] \ge |\Aut(E/E^G)| \ge |G|$, и равенство достигается только при $G = \Aut(E/E^G)$
+        }
     }
     \theorem[Характеризация расширений Галуа]{\label{galois-extension}
     Пусть $E/F$ --- расширение полей. Следующие условия эквивалентны:
     \numbers{
-    \item $E/F$ --- расширение Галуа.
-    \item $E$ --- поле разложения некоторого сепарабельного $f \in F[t]$.
-    \item $F = E^{\Aut(E/F)}$ и $[E:F] < \infty$.
-    \item Для некоторой конечной $G \le \Aut(E)$: $F = E^G$.
+        \item $E/F$ --- расширение Галуа.
+        \item $E$ --- поле разложения некоторого сепарабельного $f \in F[t]$.
+        \item $F = E^{\Aut(E/F)}$ и $[E:F] < \infty$.
+        \item Для некоторой конечной $G \le \Aut(E)$: $F = E^G$.
     }
     \provebullets{
-    \item[$(1) \then (2)$] Аналогично доказательству~(\cref{harvesting-corollary}).
+        \item[$(1) \then (2)$] Аналогично доказательству~(\cref{harvesting-corollary}).
         Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
-    Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
+        Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
 
-    $f$ сепарабелен, как произведение взаимно простых сепарабельных многочленов, $E$ порождено корнями $f$, и так как $E/F$ нормально, то $f$ разложим на линейные множители в $E$.
-    Тем самым, $E = F_f$.
-    \item[$(2)\then(3)$] Согласно~(\cref{harvesting-corollary}), $|\Aut(E/F)| = [E : F]$.
+        $f$ сепарабелен, как произведение взаимно простых сепарабельных многочленов, $E$ порождено корнями $f$, и так как $E/F$ нормально, то $f$ разложим на линейные множители в $E$.
+        Тем самым, $E = F_f$.
+        \item[$(2)\then(3)$] Согласно~(\cref{harvesting-corollary}), $|\Aut(E/F)| = [E : F]$.
         Ясно, что $F \subset \tilde{F} \coloneqq E^{\Aut(E/F)}$.
         С другой стороны, по лемме Артина, $[E : \tilde{F}] = |\Aut(E/F)|$, откуда $[\tilde{F} : F] = 1$.
-    \item[$(3) \then (4)$] Согласно~(\cref{harvesting}), $[E : F] < \infty \then |\Aut(E/F)| < \infty$, тем самым, $G \coloneqq \Aut(E/F)$ подойдёт.
-    \item[$(4)\then(1)$] По лемме Артина, $[E : F] = |G|$, тем самым, расширение конечно.
-    Пусть $f \in F[t]$ --- неприводимый, имеющий корень $\alpha \in E$.
+        \item[$(3) \then (4)$] Согласно~(\cref{harvesting}), $[E : F] < \infty \then |\Aut(E/F)| < \infty$, тем самым, $G \coloneqq \Aut(E/F)$ подойдёт.
+        \item[$(4)\then(1)$] По лемме Артина, $[E : F] = |G|$, тем самым, расширение конечно.
+        Пусть $f \in F[t]$ --- неприводимый, имеющий корень $\alpha \in E$.
         Рассмотрим орбиту $\alpha$ под действием $G$: $G\alpha = \{\alpha_1, \dots, \alpha_m\}$.
         Пусть $h(t) \coloneqq (t - \alpha_1) \proddots (t - \alpha_m) \in E[t]$.
         Раскрыв скобки (по теореме Виета) \[h(t) = t^m - s_1(\alpha_1,\dots,\alpha_m)+s_2(\alpha_1, \dots,\alpha_m)+\dots+(-1)^m s_m(\alpha_1, \dots, \alpha_m)\]где $s_k(\alpha_1, \dots, \alpha_m)$ --- $k$-й основной симметрический многочлен, то есть сумма всевозможных произведений вида $\alpha_{i_1} \proddots \alpha_{i_k}$ по всем кортежам $1 \le i_1 < \dots < i_k \le m$.
@@ -1944,35 +1980,36 @@
         Так как $\alpha \in E$ был произвольным, то $E/F$ по определению сепарабельно и нормально.
     }
     }
+
     \subsection{О сепарабельных расширениях}
     \corollary{\label{sepa}
-        Расширение, порождённое конечным числом сепарабельных элементов, вкладывается в расширение Галуа (и, следовательно, сепарабельно).
-        \provehere{
-            Аналогично доказательству~(\cref{harvesting-corollary}).
-            Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
-            Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
+    Расширение, порождённое конечным числом сепарабельных элементов, вкладывается в расширение Галуа (и, следовательно, сепарабельно).
+    \provehere{
+        Аналогично доказательству~(\cref{harvesting-corollary}).
+        Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
+        Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
 
-            $f$ сепарабелен, можно устроить вложение $E \hookrightarrow F_f$ (оно есть, например, согласно~(\cref{harvesting-corollary})), а $F_f$ --- расширение Галуа согласно~(\cref{galois-extension}).
-        }
+        $f$ сепарабелен, можно устроить вложение $E \hookrightarrow F_f$ (оно есть, например, согласно~(\cref{harvesting-corollary})), а $F_f$ --- расширение Галуа согласно~(\cref{galois-extension}).
+    }
     }
     \corollary{
-    Пусть $K/F$ --- расширение полей.
+        Пусть $K/F$ --- расширение полей.
         Множество элементов $K$, сепарабельных над $F$, образует поле.
-    \provehere{
-    $\forall \alpha, \beta \in K: F[\alpha, \beta]$ сепарабельно~(\cref{sepa}), значит, $\alpha + \beta, \alpha\beta$ и даже $\frac{\alpha}{\beta}$ (при $\beta \ne 0$) тоже сепарабельны.
-    }
+        \provehere{
+            $\forall \alpha, \beta \in K: F[\alpha, \beta]$ сепарабельно~(\cref{sepa}), значит, $\alpha + \beta, \alpha\beta$ и даже $\frac{\alpha}{\beta}$ (при $\beta \ne 0$) тоже сепарабельны.
+        }
     }
     Это поле называется \emph{сепарабельным замыканием} $F$ в $K$.
     Если опускают $K$, то подразумевается сепарабельное замыкание в $\sep{F} \subset \alg{F}$.
     \definition[Чисто несепарабельное расширение $K/E$]{
-    $\forall \alpha \in K \sm E$: $\alpha$ не сепарабелен над $E$.
+        $\forall \alpha \in K \sm E$: $\alpha$ не сепарабелен над $E$.
     }
     \corollary{
-    Любое алгебраическое расширение $K/F$ раскладывается в башню сепарабельного расширения $E/F$ и чисто несепарабельного $K/E$.
-    \provehere{
-        Выберем за $E$ сепарабельное замыкание $F$ в $K$.
-        Дальше упражнение.
-    }
+        Любое алгебраическое расширение $K/F$ раскладывается в башню сепарабельного расширения $E/F$ и чисто несепарабельного $K/E$.
+        \provehere{
+            Выберем за $E$ сепарабельное замыкание $F$ в $K$.
+            Дальше упражнение.
+        }
     }
 
     \corollary{
@@ -1983,6 +2020,8 @@
             Тогда $E = K_f$, значит, $E/K$ --- действительно расширение Галуа.
         }
     }
+
+
     \section{Соответствие Галуа}
     Теперь у нас всё готово, чтобы установить соответствие Галуа.
 
@@ -1991,76 +2030,76 @@
     Тогда имеется биекция $\mathcal{F} \leftrightarrow \mathcal{G}$: подполю $K \in \mathcal{F}$ сопоставляется $\Gal(E/K) \le G$.
     Обратно, подгруппе $H \in \mathcal{G}$ сопоставляется подполе $E^H$.
     \theorem[Соответствие Галуа]{
-    Указанные выше отображения $\mathcal{F} \leftrightarrow \mathcal{G}$ --- взаимно обратные биекции, удовлетворяющие следующим свойствам:
-    \bullets{
-    \item Монотонность по включению: $H \le H' \le G \then E^{H'} \le E^H$.
-    \item При $H \le H' \le G: |H : H'| = [E^H : E^{H'}]$.
-    \item $\forall \sigma \in G: \sigma\left(E^H\right) = E^{\sigma H \sigma^{-1}}$.
-    \item $E^H/F$ --- расширение Галуа $\iff H \normeq G$.
-        В этом случае $\Gal(E^H / F) \cong G/H$.
-    }
-    \provebullets{
-        \item $\Gal(E/E^H) = H$ --- следствие из леммы Артина.
-    \item $E^{\Gal(E/K)} = K$ согласно~(\cref{galois-extension}).
-        Согласно ей же, $E/K$ --- расширение Галуа.
-    \item По теореме Лагранжа $|H' : H| = \frac{|G : H'|}{|G:H|} = \frac{\left[E:E^H\right]}{\left[E : E^{H'}\right]} = \left[E^{H'} : E^H\right]$.
-    \item $\forall h \in H: \sigma h \sigma^{-1}(\sigma(\alpha)) = \sigma h(\alpha) = \sigma(\alpha) \then \sigma(E^H) \le E^{\sigma H \sigma^{-1}}$.
-    Обратное включение получается заменой $\tilde{H} \coloneqq \sigma H \sigma^{-1}$ и $\tilde{\sigma} \coloneqq \sigma^{-1}$.
-    \item $H \normeq G \iff \forall \sigma \in G: \sigma H \sigma^{-1} = H \iff \forall \sigma \in G: \sigma(E^H) = E^H$.
-        Рассмотрим гомоморфизм $\theta: G \map \Aut(E^H / F), \sigma \mapsto \sigma\big|_{E^H}$.
-        Очевидно, $\Ker(\theta) = H$. Покажем, что $\theta$ сюръективно.
-        Пусть $\eta \in \Aut(E^H / F)$, покажем, что $\eta \in \Image(\theta)$.
+        Указанные выше отображения $\mathcal{F} \leftrightarrow \mathcal{G}$ --- взаимно обратные биекции, удовлетворяющие следующим свойствам:
+        \bullets{
+            \item Монотонность по включению: $H \le H' \le G \then E^{H'} \le E^H$.
+            \item При $H \le H' \le G: |H : H'| = [E^H : E^{H'}]$.
+            \item $\forall \sigma \in G: \sigma\left(E^H\right) = E^{\sigma H \sigma^{-1}}$.
+            \item $E^H/F$ --- расширение Галуа $\iff H \normeq G$.
+            В этом случае $\Gal(E^H / F) \cong G/H$.
+        }
+        \provebullets{
+            \item $\Gal(E/E^H) = H$ --- следствие из леммы Артина.
+            \item $E^{\Gal(E/K)} = K$ согласно~(\cref{galois-extension}).
+            Согласно ей же, $E/K$ --- расширение Галуа.
+            \item По теореме Лагранжа $|H' : H| = \frac{|G : H'|}{|G:H|} = \frac{\left[E:E^H\right]}{\left[E : E^{H'}\right]} = \left[E^{H'} : E^H\right]$.
+            \item $\forall h \in H: \sigma h \sigma^{-1}(\sigma(\alpha)) = \sigma h(\alpha) = \sigma(\alpha) \then \sigma(E^H) \le E^{\sigma H \sigma^{-1}}$.
+            Обратное включение получается заменой $\tilde{H} \coloneqq \sigma H \sigma^{-1}$ и $\tilde{\sigma} \coloneqq \sigma^{-1}$.
+            \item $H \normeq G \iff \forall \sigma \in G: \sigma H \sigma^{-1} = H \iff \forall \sigma \in G: \sigma(E^H) = E^H$.
+            Рассмотрим гомоморфизм $\theta: G \map \Aut(E^H / F), \sigma \mapsto \sigma\big|_{E^H}$.
+            Очевидно, $\Ker(\theta) = H$. Покажем, что $\theta$ сюръективно.
+            Пусть $\eta \in \Aut(E^H / F)$, покажем, что $\eta \in \Image(\theta)$.
 
-    Расширение $E/F$ нормально, значит, $\exists f \in F[t]: E = F_f$.
-    Тогда и подавно $(E^H)_f = E$.
-    Так как $E = (E^H)_f \cong \eta(E^H)_f$, то по теореме о количестве вложений $\exists$ хотя бы одно вложение $E \map E$ над $\eta$.
-    Тем самым, $\Aut(E^H / F) \cong G/H$.
-    Теперь заметим, что $F = E^G = (E^H)^{G/H} \then E^H / F$ --- расширение Галуа, и $\Gal(E^H/F) \cong G/H$.
+            Расширение $E/F$ нормально, значит, $\exists f \in F[t]: E = F_f$.
+            Тогда и подавно $(E^H)_f = E$.
+            Так как $E = (E^H)_f \cong \eta(E^H)_f$, то по теореме о количестве вложений $\exists$ хотя бы одно вложение $E \map E$ над $\eta$.
+            Тем самым, $\Aut(E^H / F) \cong G/H$.
+            Теперь заметим, что $F = E^G = (E^H)^{G/H} \then E^H / F$ --- расширение Галуа, и $\Gal(E^H/F) \cong G/H$.
 
-    Обратно: пусть $E^H / F$ нормально, $\alpha \in E^H$ --- корень некоторого многочлена $f \in F[t]$.
-    Тогда $\forall \sigma \in G: \sigma(\alpha)$ --- корень $f$, то есть $\sigma(E^H) = E^H$.
-    С другой стороны, $\sigma(E^H) = E^{\sigma H \sigma^{-1}}$, и так как соответствие Галуа биективно, то $\forall \sigma \in G: \sigma H \sigma^{-1} = H$, то есть $H \normeq G$.
-    }
+            Обратно: пусть $E^H / F$ нормально, $\alpha \in E^H$ --- корень некоторого многочлена $f \in F[t]$.
+            Тогда $\forall \sigma \in G: \sigma(\alpha)$ --- корень $f$, то есть $\sigma(E^H) = E^H$.
+            С другой стороны, $\sigma(E^H) = E^{\sigma H \sigma^{-1}}$, и так как соответствие Галуа биективно, то $\forall \sigma \in G: \sigma H \sigma^{-1} = H$, то есть $H \normeq G$.
+        }
     }
     Теперь можно нарисовать некоторые картинки:
     \begin{figure}[!ht]
-    \begin{minipage}{0.5\textwidth}
-    % https://q.uiver.app/#q=WzAsNCxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ezJ9XSJdLFsyLDEsIlxcUVtcXHNxcnR7M31dIl0sWzEsMCwiXFxRW1xcc3FydHsyfSxcXHNxcnR7M31dIl0sWzMsMSwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIkNfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwwLCJDXzIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIkNfMlxcb3BsdXMgQ18yIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
-    \[\begin{tikzcd}[ampersand replacement=\&]
-          \& {\Q[\sqrt{2},\sqrt{3}]} \\
-          {\Q[\sqrt{2}]} \&\& {\Q[\sqrt{3}]} \\
-          \& \Q
-          \arrow["{C_2}"', no head, from=1-2, to=2-1]
-          \arrow["{C_2}", no head, from=1-2, to=2-3]
-          \arrow["{C_2}"', no head, from=2-1, to=3-2]
-          \arrow["{C_2}"', no head, from=3-2, to=2-3]
-          \arrow["{C_2\oplus C_2}"{description}, no head, from=1-2, to=3-2]
-    \end{tikzcd}\]
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
-        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXFFbeF0vKHheMyAtIDIpIl0sWzIsMSwiXFxRW1xcc3FydFszXXsyfV0iXSxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ey0zfV0iXSxbMCwxLCJDXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMiwiXFx0ZXh0e9C90LUg0JPQsNC70YPQsH0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDMsIkNfMyIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwyLCJTXzMiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
-        \[\begin{tikzcd}[ampersand replacement=\&]
-              \& {\Q[x]/(x^3 - 2)} \\
-              {\Q[\sqrt{-3}]} \&\& {\Q[\sqrt[3]{2}]} \\
-              \& \Q
-              \arrow["{C_2}", no head, from=1-2, to=2-3]
-              \arrow["{\text{не Галуа}}", no head, from=2-3, to=3-2]
-              \arrow["{C_2}"', no head, from=2-1, to=3-2]
-              \arrow["{C_3}"', no head, from=1-2, to=2-1]
-              \arrow["{S_3}"{description}, no head, from=1-2, to=3-2]
-        \end{tikzcd}\]
+        \begin{minipage}{0.5\textwidth}
+            % https://q.uiver.app/#q=WzAsNCxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ezJ9XSJdLFsyLDEsIlxcUVtcXHNxcnR7M31dIl0sWzEsMCwiXFxRW1xcc3FydHsyfSxcXHNxcnR7M31dIl0sWzMsMSwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIkNfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwwLCJDXzIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIkNfMlxcb3BsdXMgQ18yIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  \& {\Q[\sqrt{2},\sqrt{3}]} \\
+                  {\Q[\sqrt{2}]} \&\& {\Q[\sqrt{3}]} \\
+                  \& \Q
+                  \arrow["{C_2}"', no head, from=1-2, to=2-1]
+                  \arrow["{C_2}", no head, from=1-2, to=2-3]
+                  \arrow["{C_2}"', no head, from=2-1, to=3-2]
+                  \arrow["{C_2}"', no head, from=3-2, to=2-3]
+                  \arrow["{C_2\oplus C_2}"{description}, no head, from=1-2, to=3-2]
+            \end{tikzcd}\]
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+            % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXFFbeF0vKHheMyAtIDIpIl0sWzIsMSwiXFxRW1xcc3FydFszXXsyfV0iXSxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ey0zfV0iXSxbMCwxLCJDXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMiwiXFx0ZXh0e9C90LUg0JPQsNC70YPQsH0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDMsIkNfMyIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwyLCJTXzMiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  \& {\Q[x]/(x^3 - 2)} \\
+                  {\Q[\sqrt{-3}]} \&\& {\Q[\sqrt[3]{2}]} \\
+                  \& \Q
+                  \arrow["{C_2}", no head, from=1-2, to=2-3]
+                  \arrow["{\text{не Галуа}}", no head, from=2-3, to=3-2]
+                  \arrow["{C_2}"', no head, from=2-1, to=3-2]
+                  \arrow["{C_3}"', no head, from=1-2, to=2-1]
+                  \arrow["{S_3}"{description}, no head, from=1-2, to=3-2]
+            \end{tikzcd}\]
         \end{minipage}
     \end{figure}
     \newlection{20 мая 2024 г.}
     \definition[Решётка]{
-    Частично упорядоченное множество, в котором есть все конечные инфимумы (наибольший элемент, меньший данных) и супремумы (наименьший элемент, больший данных).
+        Частично упорядоченное множество, в котором есть все конечные инфимумы (наибольший элемент, меньший данных) и супремумы (наименьший элемент, больший данных).
     }
     Соответствие Галуа устанавливает антиизоморфизм решёток подгрупп и подполей, где порядок индуцирован с включения.
 
     Для $K$ и $L$ --- подполей большого поля $E$ --- наименьшее поле, содержащее $K$ и $L$, обозначают $K \cdot L$.
     \proposal{\label{prop}
     Пусть $E/F$ --- расширение Галуа, $G \coloneqq \Gal(E/F)$.
-        Выберем подгруппы $P, Q \le G$, и соответствующие им поля $K \coloneqq E^P, L \coloneqq E^Q$, и рассмотрим следующую башню полей (поле выше --- расширение поля ниже):
+    Выберем подгруппы $P, Q \le G$, и соответствующие им поля $K \coloneqq E^P, L \coloneqq E^Q$, и рассмотрим следующую башню полей (поле выше --- расширение поля ниже):
     % https://q.uiver.app/#q=WzAsNixbMSwwLCJFIl0sWzEsMSwiS1xcY2RvdCBMID0gRV57UCBcXGNhcCBRfSJdLFswLDIsIksgPSBFXlAiXSxbMiwyLCJMID0gRV5RIl0sWzEsMywiSyBcXGNhcCBMID0gRV57XFxhbmdsZXN7UCBcXGN1cCBRfX0iXSxbMSw0LCJGIl0sWzAsMSwiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMiw0LCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIiIsMSx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCIiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&,column sep=tiny,row sep=small]
               \& E \\
@@ -2075,19 +2114,19 @@
               \arrow[no head, from=3-3, to=4-2]
               \arrow[no head, from=4-2, to=5-2]
         \end{tikzcd}\]
-    Если $K/(K\cap L)$ нормально, то и $(K \cdot L)/L$ нормально, причём $\Gal(K \cdot L / L) \cong \Gal(K/ K \cap L)$.
-    \provehere{
-    Так как $K/K \cap L$ нормально, то $P \normeq \angles{P \cup Q}$.
-        Тем самым, $\angles{P \cup Q} = PQ$, и $P \cap Q \normeq Q$, откуда из соответствия Галуа $K \cdot L/L$ нормально.
+        Если $K/(K\cap L)$ нормально, то и $(K \cdot L)/L$ нормально, причём $\Gal(K \cdot L / L) \cong \Gal(K/ K \cap L)$.
+        \provehere{
+            Так как $K/K \cap L$ нормально, то $P \normeq \angles{P \cup Q}$.
+            Тем самым, $\angles{P \cup Q} = PQ$, и $P \cap Q \normeq Q$, откуда из соответствия Галуа $K \cdot L/L$ нормально.
 
-        Согласно теореме Нётер об изоморфизме \[\Gal(KL/L) \cong \frac{Q}{Q \cap P} \cong \frac{P Q}{P} \cong \Gal(K / K \cap L)\qedhere\]
-    }
+            Согласно теореме Нётер об изоморфизме \[\Gal(KL/L) \cong \frac{Q}{Q \cap P} \cong \frac{P Q}{P} \cong \Gal(K / K \cap L)\qedhere\]
+        }
     }
     Пусть $f \in F[t]$.
     \definition[Группа Галуа многочлена $f$]{
-    $\Gal(f/F) \bydef \Gal(F_f / F)$.
-    Если поле $F$ не указано, то логично в качестве него брать наименьшее поле, содержащее коэффициенты многочлена.
-    В характеристике нуль $F = \Q(\text{коэффициенты многочлена $f$})$.
+        $\Gal(f/F) \bydef \Gal(F_f / F)$.
+        Если поле $F$ не указано, то логично в качестве него брать наименьшее поле, содержащее коэффициенты многочлена.
+        В характеристике нуль $F = \Q(\text{коэффициенты многочлена $f$})$.
     }
     Пусть имеется расширение $E/F$, и $f \in F[t] \subset E[t]$.
     Из определения видно, что $E_f = E \cdot F_f$ --- $F_f$ содержит все корни $f$, а $E_f$ порождено ими над $E$.
@@ -2108,15 +2147,15 @@
     Согласно~(\cref{prop}), $\Gal(E_f / E) \cong \Gal(F_f / F_f \cap E) \le \Gal(F_f / F)$.
 
     \definition[Разрешимая группа $G$]{
-    Такая группа $G$, что существует субнормальный ряд с абелевыми факторами $1 = G_0 \normeq G_1 \dots \normeq G_n = G$ (факторы ряда --- факторгруппы $G_{i+1}/G_i$).
+        Такая группа $G$, что существует субнормальный ряд с абелевыми факторами $1 = G_0 \normeq G_1 \dots \normeq G_n = G$ (факторы ряда --- факторгруппы $G_{i+1}/G_i$).
     }
     \lemma{
-    Группа разрешима $\iff$ существует нормальный ряд с абелевыми факторами, то есть ряд $1 = G_0 \normeq G_1 \dots \normeq G_n$, где все $G_i \normeq G$.
-    \provewthen{
-    Очевидно.
-    }{
-        Можно построить ряд по алгоритму $G_{i - 1} \coloneqq [G_i, G_i]$.
-    }
+        Группа разрешима $\iff$ существует нормальный ряд с абелевыми факторами, то есть ряд $1 = G_0 \normeq G_1 \dots \normeq G_n$, где все $G_i \normeq G$.
+        \provewthen{
+            Очевидно.
+        }{
+            Можно построить ряд по алгоритму $G_{i - 1} \coloneqq [G_i, G_i]$.
+        }
     }
     \definition[Композиционный ряд]{
         Неуплотняемый субнормальный ряд без повторений.
@@ -2124,40 +2163,40 @@
     }
     В самом деле, если $H \normeq G_{i+1} / G_i$, то $\pi_{G_i}^{-1}(H)$ можно вставить в ряд между $G_i$ и $G_{i+1}$.
     \lemma{
-    Любые два композиционных ряда эквивалентны.
-    Любые два субнормальных ряда обладают эквивалентными уплотнениями.
-    Факторы композиционного ряда изоморфны циклическим группам простого порядка.
+        Любые два композиционных ряда эквивалентны.
+        Любые два субнормальных ряда обладают эквивалентными уплотнениями.
+        Факторы композиционного ряда изоморфны циклическим группам простого порядка.
     }
     \lemma{\label{lemma}
     Пусть $|G| = p^n$.
-        Тогда $\exists H \le G: |G : H| = p$.
+    Тогда $\exists H \le G: |G : H| = p$.
     \provehere{
-    Пусть $n \ge 1$.
+        Пусть $n \ge 1$.
         Центр $C \le G$ $p$-группы нетривиален, значит, $\pi_C(G) = G/C$ имеет порядок строго меньше $p^n$.
         По индукции в ней есть подгруппа $\tilde{H} \le G/C$ индекса $p$, тогда $|G : \pi_C^{-1}(H)| = p$.
     }
     }
     \theorem[FTHA]{
-    $\C = \R\left[\sqrt{-3}\right]$ алгебраически замкнуто.
+        $\C = \R\left[\sqrt{-3}\right]$ алгебраически замкнуто.
         \provehere{
             Рассмотрим конечное расширение $E/\C$, тогда расширение $E/\R$ тоже конечно.
             Вложим его в нормальное расширение $E' / \C$.
 
-        $G \coloneqq \Gal(E'/\R)$, пусть $|G| = 2^k \cdot m$, где $m$ нечётно.
-        Пусть $P$ --- силовская $2$-подгруппа в $G$: $|G : P| = m$.
-        Так как $[E' : \R] = 2^k \cdot m$ и $[E' : E'^P] = |P| = 2^k$, то $[E'^P : \R] = m$.
+            $G \coloneqq \Gal(E'/\R)$, пусть $|G| = 2^k \cdot m$, где $m$ нечётно.
+            Пусть $P$ --- силовская $2$-подгруппа в $G$: $|G : P| = m$.
+            Так как $[E' : \R] = 2^k \cdot m$ и $[E' : E'^P] = |P| = 2^k$, то $[E'^P : \R] = m$.
 
             Рассмотрим $\alpha \in E'^P$, пусть $f \in \R[t]$ --- минимальный многочлен $\alpha$.
-        Тогда $\left[\R[\alpha] : \R\right] = \deg f \divs m$, откуда $\deg f$ нечётна.
-        Но $f$ неприводим над $\R$, а он нечётной степени.
+            Тогда $\left[\R[\alpha] : \R\right] = \deg f \divs m$, откуда $\deg f$ нечётна.
+            Но $f$ неприводим над $\R$, а он нечётной степени.
             Используя соображения непрерывности и полноты $\R$, получаем, что $\deg f = 1$, то есть $\alpha \in \R$.
             Тем самым, $E'^P = \R$, соответствие Галуа говорит, что $P = G$.
 
             $\Gal(E'/\C) \le \Gal(E'/\R)$, откуда $\Gal(E'/\C)$ --- тоже $2$-группа.
-        Согласно~(\cref{lemma}), найдётся $H \le \Gal(E'/\C)$ индекса $2$.
+            Согласно~(\cref{lemma}), найдётся $H \le \Gal(E'/\C)$ индекса $2$.
 
-        Тогда $[E'^H : \C] = 2$, но у $\C$ нет расширений степени $2$ --- любой квадратный многочлен над $\C$ разложим в $\C$ на линейные множители.
-        Тем самым, $\Gal(E'/\C)$ тривиальна, откуда $E' = \C$, и у $\C$ нет никаких конечных расширений.
+            Тогда $[E'^H : \C] = 2$, но у $\C$ нет расширений степени $2$ --- любой квадратный многочлен над $\C$ разложим в $\C$ на линейные множители.
+            Тем самым, $\Gal(E'/\C)$ тривиальна, откуда $E' = \C$, и у $\C$ нет никаких конечных расширений.
         }
     }
     \newlection{21 мая 2024 г.}
@@ -2165,15 +2204,15 @@
     Пусть $H$ --- группа, $E$ --- поле, и $\sigma_1, \dots, \sigma_n: H \map E^*$ --- различные групповые гомоморфизмы.
     Утверждается, что $\sigma_1, \dots, \sigma_n$ линейно независимы над $E$ в пространстве всех функций $H \map E$.
     \provehere{
-    Предположим наличие линейной зависимости: \[\forall h \in H: \sum\limits_{i = 1}^{n}\alpha_i \sigma_i(h) = 0\text{, где }\alpha_i \in E\label{character-dependency}\tag{$\hexagon$}\]
-    Выберем самую короткую такую (с наименьшим $n$), в ней в частности все $\alpha_i \ne 0$.
+        Предположим наличие линейной зависимости: \[\forall h \in H: \sum\limits_{i = 1}^{n}\alpha_i \sigma_i(h) = 0\text{, где }\alpha_i \in E\label{character-dependency}\tag{$\hexagon$}\]
+        Выберем самую короткую такую (с наименьшим $n$), в ней в частности все $\alpha_i \ne 0$.
 
-    Пусть $g \in H$ таков, что $\sigma_n(g) \ne \sigma_{n-1}(g)$.
+        Пусть $g \in H$ таков, что $\sigma_n(g) \ne \sigma_{n-1}(g)$.
         Запишем \[\all{\sum\limits_{i = 1}^{n}\alpha_i \sigma_i(g)\sigma_i(h) = 0 \\ \sum\limits_{i = 1}^{n}\alpha_i \sigma_n(g)\sigma_i(h) = 0}\]
-    где первое получено подстановкой $h \leftarrow gh$ в~(\ref{character-dependency}), а второе --- домножением~(\ref{character-dependency}) на $\sigma_n(g)$.
-    Вычитая, получаем линейную зависимость меньшей длины:
+        где первое получено подстановкой $h \leftarrow gh$ в~(\ref{character-dependency}), а второе --- домножением~(\ref{character-dependency}) на $\sigma_n(g)$.
+        Вычитая, получаем линейную зависимость меньшей длины:
         \[\sum\limits_{i = 1}^{n}\alpha_i (\sigma_i(g) - \sigma_n(g))\sigma_i(h) = 0\]
-    При этом зависимость нетривиальна, так как $\alpha_{n-1}(\sigma_{n-1}(g) - \sigma_n(g)) \ne 0$.
+        При этом зависимость нетривиальна, так как $\alpha_{n-1}(\sigma_{n-1}(g) - \sigma_n(g)) \ne 0$.
     }
     }
     Часто эту теорему применяют для $H = E^*$, $\sigma_i \in \Gal(E/F)$: пусть $E/F$ --- расширение Галуа, пусть $n \coloneqq [E : F]$, $\{\sigma_1, \dots, \sigma_n\} = \Gal(E/F) \le \End(E/F) \bydef \End_F(E)$.
@@ -2191,40 +2230,40 @@
 
     \lemma{\label{cyclic-extension}
     Пусть $E/F$ --- расширение полей, и в базовом поле $F$ есть первообразный корень степени $n$ из $1$.
-        Следующие условия эквивалентны.
-        \numbers{
-            \item $E = F[\alpha]$, где $\alpha^n \in F$, и $\alpha^k \notin F$ при $0 < k < n$.
+    Следующие условия эквивалентны.
+    \numbers{
+        \item $E = F[\alpha]$, где $\alpha^n \in F$, и $\alpha^k \notin F$ при $0 < k < n$.
         \item Расширение $E/F$ циклическое расширение Галуа (то есть $\Gal(E/F) \cong C_n$).
-        }
+    }
     \provebullets{
-    \item[$(1) \then (2)$] Многочлен $f(t) = t^n - \alpha^n \in F[t]$ имеет $n$ различных корней $\defset{\alpha \eps^k}{0 \le k < n}$, откуда $E = F_f$ для сепарабельного $f$, то есть $E/F$ --- расширение Галуа.
-    \bullets{
-    \item Устроим отображение $\theta: \Gal(E/F) \map E^*, \sigma \mapsto \frac{\sigma(\alpha)}{\alpha}$. Так как $\left(\frac{\sigma(\alpha)}{\alpha}\right)^n = \frac{\sigma(\alpha)^n}{\alpha^n} = \frac{\sigma(\alpha^n)}{\alpha^n} = \frac{\alpha^n}{\alpha^n} = 1$, то $\Image \theta \subset \mu_n(F)$.
-        \item Проверим, что это гомоморфизм групп.\[\theta(\tau\sigma) = \frac{\tau\sigma(\alpha)}{\alpha} = \frac{\sigma(\tau(\alpha))}{\tau(\alpha)} \cdot \frac{\tau(\alpha)}{\alpha} \circlesign{=}\]
-        Так как $\tau(\alpha)$ --- корень $f$, то $\tau(\alpha) = \eps^m \alpha$ для некоторого $m \in \N$.
-        Сокращая на $\eps^m \in F$, получаем
-        \[\circlesign{=}\frac{\sigma(\alpha)}{\alpha}\cdot\frac{\tau(\alpha)}{\alpha}= \theta(\sigma)\theta(\tau) = \theta(\tau)\theta(\sigma)\]
-    \item Проверим сюръективность. Любая собственная подгруппа $\mu_n$ имеет вид $\mu_k$, где $k \divs n$, и если $\exists k \in \N: \forall \sigma \in \Gal(E/F): \frac{\sigma(\alpha)^k}{\alpha^k} = 1$, то $\forall \sigma \in \Gal(E/F): \sigma(\alpha^k) = \alpha^k$, то есть $\alpha^k \in F$.
-    Получаем, что $k \ge n$.
-    \item С одной стороны, $|\Gal(E/F)| \ge n$ из сюръективности, с другой стороны, $[E : F] \le n$, откуда $|\Gal(E/F)| = [E : F] = n$, и из количественных соображений $\theta$ --- изоморфизм.
-    }
-    \item[$(2)\then(1)$] Пусть $\sigma$ --- образующая группы Галуа ($\Gal(E/F) = \{1, \sigma, \dots, \sigma^{n-1}\}$).
-    По теореме Дирихле~(\cref{dirichlet-character}), $\sum\limits_{k = 0}^{n - 1}\eps^k \sigma^k \ne 0$, тем самым, $\exists \beta \in E: \alpha \coloneqq \sum\limits_{k = 0}^{n - 1}\eps^k \sigma(\beta)^k \ne 0$.
-    \bullets{
-    \item Посчитаем
-    \[\sigma(\alpha) = \sum\limits_{k = 0}^{n - 1}\eps^k\sigma(\beta)^{k + 1} = \sum\limits_{i = 1}^{n}\eps^{i-1}\sigma(\beta)^i = \eps^{-1}\alpha\]
-    Тем самым, $\sigma(\alpha^k) = \sigma(\alpha)^k = (\eps^{-1}\alpha)^k = \eps^{-k}\alpha^k$. В частности, $\alpha^n$ неподвижен под действием $\Gal(E/F)$, и $\alpha^n \in F$.
-    \item Покажем линейную независимость $1, \alpha, \dots, \alpha^{n-1}$ над $F$, из количественных соображений будет следовать, что это базис $E$ над $F$.
-       Пусть $\sum\limits_{k = 0}^{n - 1}\alpha^k x_k = 0$ для неких $x_k \in F$.
-    Применяя $\sigma^j$ к данному равенству, получаем $\sum\limits_{k = 0}^{n - 1}\eps^{-kj}\alpha^k x_k = 0$.
-    При $j = 0, \dots, n - 1$ получаются $n$ линейных уравнений с переменными $\alpha^k x_k$.
-    Матрица коэффициентов системы $(\eps^{-kj})_{j = 0..n-1}^{k = 0..n-1}$ невырождена, так как её определитель --- определитель Вандермонда --- не нуль.\qedhere
-    }
+        \item[$(1) \then (2)$] Многочлен $f(t) = t^n - \alpha^n \in F[t]$ имеет $n$ различных корней $\defset{\alpha \eps^k}{0 \le k < n}$, откуда $E = F_f$ для сепарабельного $f$, то есть $E/F$ --- расширение Галуа.
+        \bullets{
+            \item Устроим отображение $\theta: \Gal(E/F) \map E^*, \sigma \mapsto \frac{\sigma(\alpha)}{\alpha}$. Так как $\left(\frac{\sigma(\alpha)}{\alpha}\right)^n = \frac{\sigma(\alpha)^n}{\alpha^n} = \frac{\sigma(\alpha^n)}{\alpha^n} = \frac{\alpha^n}{\alpha^n} = 1$, то $\Image \theta \subset \mu_n(F)$.
+            \item Проверим, что это гомоморфизм групп.\[\theta(\tau\sigma) = \frac{\tau\sigma(\alpha)}{\alpha} = \frac{\sigma(\tau(\alpha))}{\tau(\alpha)} \cdot \frac{\tau(\alpha)}{\alpha} \circlesign{=}\]
+            Так как $\tau(\alpha)$ --- корень $f$, то $\tau(\alpha) = \eps^m \alpha$ для некоторого $m \in \N$.
+            Сокращая на $\eps^m \in F$, получаем
+            \[\circlesign{=}\frac{\sigma(\alpha)}{\alpha}\cdot\frac{\tau(\alpha)}{\alpha}= \theta(\sigma)\theta(\tau) = \theta(\tau)\theta(\sigma)\]
+            \item Проверим сюръективность. Любая собственная подгруппа $\mu_n$ имеет вид $\mu_k$, где $k \divs n$, и если $\exists k \in \N: \forall \sigma \in \Gal(E/F): \frac{\sigma(\alpha)^k}{\alpha^k} = 1$, то $\forall \sigma \in \Gal(E/F): \sigma(\alpha^k) = \alpha^k$, то есть $\alpha^k \in F$.
+            Получаем, что $k \ge n$.
+            \item С одной стороны, $|\Gal(E/F)| \ge n$ из сюръективности, с другой стороны, $[E : F] \le n$, откуда $|\Gal(E/F)| = [E : F] = n$, и из количественных соображений $\theta$ --- изоморфизм.
+        }
+        \item[$(2)\then(1)$] Пусть $\sigma$ --- образующая группы Галуа ($\Gal(E/F) = \{1, \sigma, \dots, \sigma^{n-1}\}$).
+        По теореме Дирихле~(\cref{dirichlet-character}), $\sum\limits_{k = 0}^{n - 1}\eps^k \sigma^k \ne 0$, тем самым, $\exists \beta \in E: \alpha \coloneqq \sum\limits_{k = 0}^{n - 1}\eps^k \sigma(\beta)^k \ne 0$.
+        \bullets{
+            \item Посчитаем
+            \[\sigma(\alpha) = \sum\limits_{k = 0}^{n - 1}\eps^k\sigma(\beta)^{k + 1} = \sum\limits_{i = 1}^{n}\eps^{i-1}\sigma(\beta)^i = \eps^{-1}\alpha\]
+            Тем самым, $\sigma(\alpha^k) = \sigma(\alpha)^k = (\eps^{-1}\alpha)^k = \eps^{-k}\alpha^k$. В частности, $\alpha^n$ неподвижен под действием $\Gal(E/F)$, и $\alpha^n \in F$.
+            \item Покажем линейную независимость $1, \alpha, \dots, \alpha^{n-1}$ над $F$, из количественных соображений будет следовать, что это базис $E$ над $F$.
+            Пусть $\sum\limits_{k = 0}^{n - 1}\alpha^k x_k = 0$ для неких $x_k \in F$.
+            Применяя $\sigma^j$ к данному равенству, получаем $\sum\limits_{k = 0}^{n - 1}\eps^{-kj}\alpha^k x_k = 0$.
+            При $j = 0, \dots, n - 1$ получаются $n$ линейных уравнений с переменными $\alpha^k x_k$.
+            Матрица коэффициентов системы $(\eps^{-kj})_{j = 0..n-1}^{k = 0..n-1}$ невырождена, так как её определитель --- определитель Вандермонда --- не нуль.\qedhere
+        }
     }
     }
     \lemma{\label{generating-root-extension}
     Пусть $E \coloneqq F[\eps]$, где $\eps$ --- первообразный корень степени $n$.
-        Тогда $E/F$ --- расширение Галуа, и $\Gal(E/F) \hookrightarrow (\Z/n\Z)^*$ (в частности, расширение $E/F$ абелево).
+    Тогда $E/F$ --- расширение Галуа, и $\Gal(E/F) \hookrightarrow (\Z/n\Z)^*$ (в частности, расширение $E/F$ абелево).
     \provehere{
         Так как $\mu_n = \angles{\eps}$, то $t^n - 1$, раскладывается на линейные множители в $F[\eps]$, то есть $F[\eps] = F_{t^n - 1}$.
         Всякий элемент $\sigma \in \Gal(E/F)$ однозначно определён значением $\sigma(\eps)$ (так как $E = F[\eps]$), при этом так как преобразование $\sigma$ обратимо, то $\sigma(\eps)$ --- тоже первообразный корень степени $n$ из $1$.
@@ -2243,43 +2282,43 @@
     }
     Пусть $f \in F[t]$ --- ненулевой многочлен.
     \definition[Уравнение $f = 0$ разрешимо в радикалах]{
-    Все корни $f$ (лежащие в алгебраическом замыкании $F$) выражаются через элементы $F$ при помощи арифметических операций и извлечений корня.
-    Иными словами, существуют цепочка полей $F = F_0 \hookrightarrow F_1 \hookrightarrow \dots \hookrightarrow F_m$, где в $F_m$ многочлен $f$ раскладывается на линейные множители, и $F_i = F_{i-1}[\alpha_i]$, где $\beta \coloneqq \alpha_i^k \in F_{i-1}$.
-    В таком случае ещё пишут $F_i = F_{i-1}\left[\sqrt[m]{\beta_i}\right]$.
+        Все корни $f$ (лежащие в алгебраическом замыкании $F$) выражаются через элементы $F$ при помощи арифметических операций и извлечений корня.
+        Иными словами, существуют цепочка полей $F = F_0 \hookrightarrow F_1 \hookrightarrow \dots \hookrightarrow F_m$, где в $F_m$ многочлен $f$ раскладывается на линейные множители, и $F_i = F_{i-1}[\alpha_i]$, где $\beta \coloneqq \alpha_i^k \in F_{i-1}$.
+        В таком случае ещё пишут $F_i = F_{i-1}\left[\sqrt[m]{\beta_i}\right]$.
     }
     \theorem[Абель --- Руффини]{
-    Пусть $F$ поле, $\chr F = 0$;\ ненулевой $f \in F[t]$. Следующие условия эквивалентны:
-    \numbers{
-    \item Уравнение $f = 0$ разрешимо в радикалах.
-    \item $\Gal(F_f/F)$ разрешима.
-    }
-    \provewthen{
-        Сначала присоединим к $F$ первообразный корень из $1$ достаточно большой степени --- подойдёт первообразный корень $\eps$ степени $(\deg f)!$.
-        Положим $F_1 \coloneqq F[\eps]$.
-        Иными словами, $F_1 \coloneqq F_{t^{(\deg f)!} - 1}$.
-        Это расширение Галуа, так как $\chr F = 0$.
+        Пусть $F$ поле, $\chr F = 0$;\ ненулевой $f \in F[t]$. Следующие условия эквивалентны:
+        \numbers{
+            \item Уравнение $f = 0$ разрешимо в радикалах.
+            \item $\Gal(F_f/F)$ разрешима.
+        }
+        \provewthen{
+            Сначала присоединим к $F$ первообразный корень из $1$ достаточно большой степени --- подойдёт первообразный корень $\eps$ степени $(\deg f)!$.
+            Положим $F_1 \coloneqq F[\eps]$.
+            Иными словами, $F_1 \coloneqq F_{t^{(\deg f)!} - 1}$.
+            Это расширение Галуа, так как $\chr F = 0$.
 
-    $\Gal(f/F_1) \le \Gal(f/F)$, поэтому $G \coloneqq \Gal(f/F_1)$ тоже разрешима.
-    По определению у неё существует субнормальный ряд, и \comment{видимо так как $G$ конечна} его можно уплотнить до композиционного $\{1\} = G_m \normeq G_{m-1} \normeq \dots \normeq G_1 = G$. Факторгруппы $G_i / G_{i+1}$ --- простые абелевы группы, то есть циклические, простого порядка.
-    Положим $F_i \coloneqq ((F_1)_f)^{G_i}$.
+            $\Gal(f/F_1) \le \Gal(f/F)$, поэтому $G \coloneqq \Gal(f/F_1)$ тоже разрешима.
+            По определению у неё существует субнормальный ряд, и \comment{видимо так как $G$ конечна} его можно уплотнить до композиционного $\{1\} = G_m \normeq G_{m-1} \normeq \dots \normeq G_1 = G$. Факторгруппы $G_i / G_{i+1}$ --- простые абелевы группы, то есть циклические, простого порядка.
+            Положим $F_i \coloneqq ((F_1)_f)^{G_i}$.
 
-    Согласно~(\cref{cyclic-extension}), $F_i$ имеет вид $F_{i-1}[\alpha_i]$, что по определению означает разрешимость в радикалах.
-    }{
-        По условию существует башня полей $F \hookrightarrow F_1 \hookrightarrow \dots \hookrightarrow F_m$, где $f$ раскладывается на линейные множители в $F_m$, и $F_i = F_{i-1}[\alpha_i]$, где $\alpha_i^{k_i} \in F_{i-1}$.
-        Для применения~(\cref{cyclic-extension}) недостаёт первообразного корня.
+            Согласно~(\cref{cyclic-extension}), $F_i$ имеет вид $F_{i-1}[\alpha_i]$, что по определению означает разрешимость в радикалах.
+        }{
+            По условию существует башня полей $F \hookrightarrow F_1 \hookrightarrow \dots \hookrightarrow F_m$, где $f$ раскладывается на линейные множители в $F_m$, и $F_i = F_{i-1}[\alpha_i]$, где $\alpha_i^{k_i} \in F_{i-1}$.
+            Для применения~(\cref{cyclic-extension}) недостаёт первообразного корня.
 
-    Добавим его: $F_{m+1} \coloneqq (F_m)_{t^k-1}$, где $k \coloneqq k_1 \proddots k_m$.
-        Далее хотим получить, что $\Gal(f/F)$ разрешима.
-        Понятно, что $F_f \subset F_m$, поэтому достаточно доказать, что $\Aut(F_m/F)$ разрешима, или даже $\Aut(F_{m+1}/F)$ разрешима --- факторгруппа разрешимой группы разрешима.
-        В доказательстве будет использоваться соответствие Галуа, для этого дополним $F_{m+1}/F$ до нормального: пусть $E/F$ нормально, и $F_{m+1} \subset E$ (например, $E$ --- поле разложения минимального многочлена, аннулирующего все элементы $\eps, \alpha_1, \dots, \alpha_m$).
+            Добавим его: $F_{m+1} \coloneqq (F_m)_{t^k-1}$, где $k \coloneqq k_1 \proddots k_m$.
+            Далее хотим получить, что $\Gal(f/F)$ разрешима.
+            Понятно, что $F_f \subset F_m$, поэтому достаточно доказать, что $\Aut(F_m/F)$ разрешима, или даже $\Aut(F_{m+1}/F)$ разрешима --- факторгруппа разрешимой группы разрешима.
+            В доказательстве будет использоваться соответствие Галуа, для этого дополним $F_{m+1}/F$ до нормального: пусть $E/F$ нормально, и $F_{m+1} \subset E$ (например, $E$ --- поле разложения минимального многочлена, аннулирующего все элементы $\eps, \alpha_1, \dots, \alpha_m$).
 
-        Пусть $\Gal(E/F) = \{\sigma_1, \dots, \sigma_n\}$.
-        Поле $\tilde{E} = F[\eps, \sigma_i(\alpha_j)] \subset E$ тоже нормально над $F$, так как оно устойчиво под действием $\Gal(E/F)$.
-        А для этого поля есть хорошая цепочка (порождающие присоединяются по одному, все образы $\alpha_{j+1}$ добавляются после всех образов $\alpha_j$):
-        \[F \subset F[\eps] \subset F[\sigma_1(\alpha_1)] \subset F[\sigma_1(\alpha_1), \sigma_2(\alpha_1)] \subset \dots \subset \tilde{E}\]
-        Все промежуточные расширения абелевы (первое вкладывается в $(\Z/n\Z)^*$ согласно~(\cref{generating-root-extension}), остальные циклические согласно~(\cref{cyclic-extension})).
-        Соответствие Галуа говорит, что этой башне полей соответствует субнормальный ряд группы $\Gal(\tilde{E}/F)$ с абелевыми факторами, то есть $\Gal(\tilde{E}/F)$ разрешима.
-        Её факторгруппа $\Gal(F_f/F)$ тоже разрешима.
-    }
+            Пусть $\Gal(E/F) = \{\sigma_1, \dots, \sigma_n\}$.
+            Поле $\tilde{E} = F[\eps, \sigma_i(\alpha_j)] \subset E$ тоже нормально над $F$, так как оно устойчиво под действием $\Gal(E/F)$.
+            А для этого поля есть хорошая цепочка (порождающие присоединяются по одному, все образы $\alpha_{j+1}$ добавляются после всех образов $\alpha_j$):
+            \[F \subset F[\eps] \subset F[\sigma_1(\alpha_1)] \subset F[\sigma_1(\alpha_1), \sigma_2(\alpha_1)] \subset \dots \subset \tilde{E}\]
+            Все промежуточные расширения абелевы (первое вкладывается в $(\Z/n\Z)^*$ согласно~(\cref{generating-root-extension}), остальные циклические согласно~(\cref{cyclic-extension})).
+            Соответствие Галуа говорит, что этой башне полей соответствует субнормальный ряд группы $\Gal(\tilde{E}/F)$ с абелевыми факторами, то есть $\Gal(\tilde{E}/F)$ разрешима.
+            Её факторгруппа $\Gal(F_f/F)$ тоже разрешима.
+        }
     }
 \end{document}
