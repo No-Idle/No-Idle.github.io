@@ -393,7 +393,7 @@
                 \bullets{
                     \item Выберем $z \in \Ker(d_n'')$, пусть $y \in \pi_n^{-1}(z)$ --- произвольный прообраз.
                     $\bar{y} \coloneqq d(y)$ лежит в ядре $\pi_{n-1}$ из коммутативности $\II$.
-                    Из точности средней строки $\exists \bar{x} \in i_{n-1}^{-1}(\bar{y})$, положим $\delta([z]) \coloneqq \left[\bar{x}\right]$ (он единственен, так как $i_{n-1}$ --- моно).
+                    Из точности нижней строки $\exists \bar{x} \in i_{n-1}^{-1}(\bar{y})$, положим $\delta([z]) \coloneqq \left[\bar{x}\right]$ (он единственен, так как $i_{n-1}$ --- моно).
 
                     \item  Убедимся, что определение не зависит от выбора $y \in \pi_n^{-1}(z)$.
                     Для этого рассмотрим другой $y' \in \pi_n^{-1}(z)$.
@@ -408,10 +408,10 @@
                 \bullets{
                     \item $\forall z \in A_n'': \delta\left([z]\right) = 0 \iff \bar{y} = 0\iff y \in \Ker(d_n)$.
                     Отсюда $\delta\left([z]\right) = 0 \iff z \in \pi_n\left(\Ker(d_n)\right)$, что означает точность в члене $H_n''$.
-                    \item С одной стороны, $\forall \bar{x} \in \Ker(d_{n-1}'): i_{n-1}\left(\bar{x}\right) \in \Image(d_n) \then \exists y \in A_n: i_{n-1}(\bar{x}) = d_n(y) \then \bar{x} = \delta\left([\pi_n(y)]\right)$ ($\delta$ определена, так как $\pi_n(y) \in \Ker(d_n'')$ --- из коммутативности $\II$: $d_n''(\pi_n(y)) = \pi_{n-1}\left(\bar{y}\right)$, а из точности средней строки это нуль).
+                    \item С одной стороны, $\forall \bar{x} \in \Ker(d_{n-1}'): i_{n-1}\left(\bar{x}\right) \in \Image(d_n) \then \exists y \in A_n: i_{n-1}(\bar{x}) = d_n(y) \then \bar{x} = \delta\left([\pi_n(y)]\right)$ ($\delta$ определена, так как $\pi_n(y) \in \Ker(d_n'')$ --- из коммутативности $\II$: $d_n''(\pi_n(y)) = \pi_{n-1}\left(\bar{y}\right)$, а из точности нижней строки это нуль).
                     С другой стороны, $\forall z \in \Ker(d_n''):  i_{n-1}(\delta([z])) = d_n(y) \in \Image(d_n)$.
                     Это означает точность в члене $H_{n-1}'$.
-                \item С одной стороны, $\forall \bar{x} \in \Ker(\d_{n-1}'): \pi_{n-1}(i_{n-1}(\bar{x})) = 0$ из точности средней строки.
+                \item С одной стороны, $\forall \bar{x} \in \Ker(\d_{n-1}'): \pi_{n-1}(i_{n-1}(\bar{x})) = 0$ из точности нижней строки.
                 С другой стороны, $\forall \bar{y} \in \Ker\left(d_{n-1}\right)$: если $\pi_{n-1}(\bar{y}) \in \Image(d_n'')$, то из сюръективности $\pi$: $\exists y \in A_n: d_n''(\pi_n(z)) = \pi_{n-1}(\bar{y})$.
                 Обозначим $\Delta \coloneqq \bar{y} - d_n(y)$, так как $\pi_{n-1}(\Delta) = 0$, то $\Delta \in \Image(i_{n-1})$.
                 Тем самым, $[\bar{y}] = [\Delta]$ лежит в образе $H_{n-1}''$, и последовательность точна в члене $H_n$.
