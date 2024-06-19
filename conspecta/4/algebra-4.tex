@@ -989,15 +989,15 @@
               \arrow[from=1-3, to=1-4]
         \end{tikzcd}\]
         точна. $L_0\cat F(A) = H_0(\cat F(P)) = \CoKer(\cat F(P_1) \map \cat F(P_0))$.
-        Если функтор точен справа, то $\CoKer(\cat F(P_1) \map \cat F(P_0)) = \cat F(A)$.
-
-        Тем самым, $L_0 \cat F = \cat F$.
+        Получается $\CoKer(\cat F(P_1) \map \cat F(P_0)) = \cat F(A)$, то есть $L_0 \cat F = \cat F$.
         \item
         Обратно, если $L_0 \cat F = \cat F$, то $\cat F$ сохраняет коядра, значит, точен справа.
+        \comment{Вообще-то, сохраняются только коядра морфизмов проективных объектов, почему этого достаточно?}
         (По-хорошему, надо ещё проверить, что $L_0 \cat F$ действует на морфизмах так же, но это банально).
     }
     \corollary{
-        Если $P_A, P_B$ --- проективные резольвенты $A, B$ соответственно, и $f: A \map B$, то $\exists \tilde{f}: P_A \map P_B$, делающий диаграмму коммутативной. Он определён однозначно с точностью до гомотопии.
+        Если $P_A, P_B$ --- проективные резольвенты $A, B$ соответственно, и $f: A \map B$, то $\exists \tilde{f}: P_A \map P_B$, делающий диаграмму коммутативной.
+        Он определён однозначно с точностью до гомотопии.
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJQX0EiXSxbMSwwLCJBIl0sWzAsMSwiUF9CIl0sWzEsMSwiQiJdLFswLDIsIlxcdGlsZGV7Zn0iLDJdLFsxLDMsImYiLDJdLFsyLDNdLFswLDFdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
         {P_A}

@@ -18,6 +18,7 @@ jobs:
           
       - name: Install LaTeX
         run: |
+            sudo apt-get update
             sudo apt-get install texlive texlive-latex-extra texlive-lang-cyrillic texlive-science texlive-fonts-extra
             wget https://people.debian.org/~sgolovan/debian/pool/main/tex/tex-pscyr/tex-pscyr_0.4d~beta9-1_all.deb
             sudo dpkg -i tex-pscyr_0.4d~beta9-1_all.deb
