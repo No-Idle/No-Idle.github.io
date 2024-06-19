@@ -295,9 +295,11 @@
     В них, \emph{образ} --- это ядро коядра: $\Image \phi \bydef \Ker(\coker \phi)$.
     В абелевой категории канонически $\Image \phi \cong \CoIm \phi \bydef \CoKer(\ker \phi)$, так что образ можно определять и так.
 
-    На языке конкретных категорий, так как $d^2 = 0$, то $B \subset Z$, и можно определить фактормодуль $H \coloneqq Z/B$ --- \emph{гомологии}.
+    На языке конкретных категорий, так как $d^2 = 0$, то $B_n \subset Z_n$, и можно определить фактормодуль $H_n \coloneqq Z_n/B_n$ --- \emph{гомологии}.
 
     То же самое можно сказать на языке универсальных свойств, хотя в будущем мы, ссылаясь на теорему Митчелла, будем всё писать исключительно в терминах элементов.
+    \provehere[Построение $H$ в терминах универсальных свойств]{Пусть $C$ --- произвольный комплекс, $Z = Z(C)$, $B = B(C)$.
+    Изобразим следующую диаграмму в категории комплексов, где $z: Z(C) \map C$ вкладывает ядра, а $\coker z = b: C[1] \map B$ --- факторизация по этому вложению:
     % https://q.uiver.app/#q=WzAsOCxbMCwwLCJaWzFdIl0sWzEsMCwiQ1sxXSJdLFsxLDEsIkIiXSxbMiwwLCJDIl0sWzMsMCwiQ1stMV0iXSxbMiwxLCJaIl0sWzMsMSwiSCJdLFs0LDEsIjAiXSxbMyw0LCJkWy0xXSJdLFsxLDMsImQiXSxbMSwyLCJiIiwyXSxbMCwxLCJ6WzFdIl0sWzUsMywieiIsMl0sWzEsNSwiXFxhbHBoYSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDUsIlxcYmV0YSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFs1LDYsIlxcY29rZXJcXGJldGEiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbNiw3LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
     \[\begin{tikzcd}[ampersand replacement=\&]
     {Z[1]}
@@ -313,36 +315,54 @@
           \arrow["\coker\beta"', dotted, from=2-3, to=2-4]
           \arrow[dotted, from=2-4, to=2-5]
     \end{tikzcd}\]
-    \provehere[Построение $H$ в терминах универсальных свойств]{
+%    В частности, последовательность $0 \map Z[1] \map C[1] \map B \map 0$ точна~(\cref{short-exact}).
+%
         Так как $d[-1] \cdot d = 0$, то можно пропуститься через ядро: $\exists! \alpha: z \cdot \alpha = d$.
 
         Далее, $z \cdot \alpha \cdot z[1] = d \cdot z[1] = 0$, а так как $z$ --- моно, то $\alpha \cdot z[1] = 0$.
         Значит, можно пропуститься через коядро, то есть $\exists ! \beta: \beta b = \alpha$.
         Далее $H$ определяется, как коядро $\beta$.
     }
+    Взятие циклов, границ и гомологий функториально (то есть циклы, границы и даже гомологии являются функторами, бьющими из категории комплексов в неё же).
+    Например, для морфизма комплексов образуется соответствующий морфизм комплексов их гомологий.
+    Это сразу следует из функториальности взятия ядер и коядер.
     \corollary{
         В комплексах $Z, B, H$ нулевые дифференциалы.
         \provehere{
             Из диаграммы следует, что в комплексе $Z$ нулевые дифференциалы.
+            Это неудивительно --- $Z$, как комплекс ядер, имеет дифференциалы, получаемые ограничением $d_n$, на при ограничении $d_n$ на своё ядро получается нуль:
+        % https://q.uiver.app/#q=WzAsOCxbMSwwLCJcXEtlcihkX24pIl0sWzIsMCwiXFxLZXIoZF97bi0xfSkiXSxbMSwxLCJDX3tuKzF9Il0sWzIsMSwiQ19uIl0sWzAsMSwiXFxjZG90cyJdLFszLDEsIlxcY2RvdHMiXSxbMCwwLCJcXGNkb3RzIl0sWzMsMCwiXFxjZG90cyJdLFsyLDMsImRfbiJdLFs2LDBdLFswLDFdLFsxLDddLFszLDVdLFs0LDJdLFswLDJdLFsxLDNdXQ==
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  \cdots \& {\Ker(d_n)} \& {\Ker(d_{n-1})} \& \cdots \\
+                  \cdots \& {C_{n+1}} \& {C_n} \& \cdots
+                  \arrow[from=1-1, to=1-2]
+                  \arrow[from=1-2, to=1-3]
+                  \arrow[from=1-2, to=2-2]
+                  \arrow[from=1-3, to=1-4]
+                  \arrow[from=1-3, to=2-3]
+                  \arrow[from=2-1, to=2-2]
+                  \arrow["{d_n}", from=2-2, to=2-3]
+                  \arrow[from=2-3, to=2-4]
+            \end{tikzcd}\]
             $B$ состоит из подмодулей в $Z$, $H$ --- из фактормодулей, понятно, что там дифференциалы тоже нулевые.
         }
     }
     \examples[Гомологии окружности]{
-        \item Рассмотрим окружность, как симплициальное множество:
+        \item Рассмотрим окружность, как симплициальное множество, склеенное из двух нульмерных клеток-точек $\{a, b\}$, и двух одномерных клеток-отрезков $\{x, y\}$:
         \begin{tikzpicture}[baseline=-4]
             \draw(0,0) circle[radius=0.5];
-            \fill (-0.5,0) circle (1pt) node[left] {$a$};
-            \fill (0.5,0) circle (1pt) node[right] {$b$};
-            \node[above] at (0, 0.5) {$x$};
-            \node[below] at (0, -0.5) {$y$};
-            \draw[->] (-0.05, 0.5) -- (0.05, 0.5);
-            \draw[<-] (-0.05, -0.5) -- (0.05, -0.5);
+            \fill[blue] (-0.5,0) circle (1pt) node[left] {$a$};
+            \fill[blue] (0.5,0) circle (1pt) node[right] {$b$};
+            \node[darkgreen, above] at (0, 0.5) {$x$};
+            \node[darkgreen, below] at (0, -0.5) {$y$};
+            \draw[darkgreen,->] (-0.05, 0.5) -- (0.05, 0.5);
+            \draw[darkgreen,<-] (-0.05, -0.5) -- (0.05, -0.5);
         \end{tikzpicture}
 
         Построим $C_0 = \Z a + \Z b$ --- свободная абелева группа на $\{a, b\}$, $C_1 = \Z x + \Z y$ --- тоже свободная абелева группа, но на образующих $\{x, y\}$.
         Вместо $\Z$ можно было взять любое другое кольцо.
 
-        Все остальные элементы комплекса объявляются нулями.
+        Получили так называемый \emph{симплициальный комплекс} для данного разбиения окружности на клетки (все остальные элементы комплекса объявляются нулями):
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCIwIl0sWzEsMCwiQ18xIl0sWzIsMCwiQ18wIl0sWzMsMCwiMCJdLFsyLDNdLFsxLDIsImRfMSJdLFswLDFdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               0 \& {C_1} \& {C_0} \& 0
@@ -357,37 +377,39 @@
         \item Теперь триангулируем окружность по-другому:
         \begin{tikzpicture}[baseline=-4]
             \draw(0,0) circle[radius=0.5];
-            \fill (-0.25,0.433) circle (1pt) node[left] {$a$};
-            \fill (-0.25,-0.433) circle (1pt) node[left] {$c$};
-            \fill (0.5,0) circle (1pt) node[right] {$b$};
-            \node[above,right] at (0.3, 0.5) {$x$};
-            \node[below,right] at (0.3, -0.5) {$y$};
-            \node[left] at (-0.5, 0) {$z$};
-            \draw[->] (-0.5, -0.05) -- (-0.5, 0.05);
-            \draw[->] (0.3, 0.4) -- (0.4, 0.3);
-            \draw[->] (0.4, -0.3) -- (0.3, -0.4);
+            \fill[blue] (-0.25,0.433) circle (1pt) node[left] {$a$};
+            \fill[blue] (-0.25,-0.433) circle (1pt) node[left] {$c$};
+            \fill[blue] (0.5,0) circle (1pt) node[right] {$b$};
+            \node[darkgreen,above,right] at (0.3, 0.5) {$x$};
+            \node[darkgreen,below,right] at (0.3, -0.5) {$y$};
+            \node[darkgreen,left] at (-0.5, 0) {$z$};
+            \draw[darkgreen,->] (-0.5, -0.05) -- (-0.5, 0.05);
+            \draw[darkgreen,->] (0.3, 0.4) -- (0.4, 0.3);
+            \draw[darkgreen,->] (0.4, -0.3) -- (0.3, -0.4);
         \end{tikzpicture}
         $\all{d_1(x) = b - a,\\ d_1(y) = c - b,\\ d_1(z) =  a - c}$.
 
-        Теперь $\all{Z_0 = C_0 \\ Z_1 = \Z(x + y + z)}$, $\all{B_0 = \Z(b - a) + \Z(c - b) \\ B_1 = 0}$ и $\all{H_0  &\cong \Z \\ H_1 = \Z(x + y + z)/0 &\cong \Z}$.
+        Теперь $\all{Z_0 = C_0 \\ Z_1 = \Z(x + y + z)}$, $\all{B_0 = \Z(b - a) + \Z(c - b) \\ B_1 = 0}$ и $\all{H_0  &\cong \Z \\ H_1 = \Z(x + y + z)/0 &\cong \Z.}$
     }
     Ответ получился тот же самый, и это не случайно --- есть теорема, что сингулярные/симплициальные гомологии (они равны для клеточных пространств) не зависят от триангуляции.
     \exercise{
         Триангулировать сферу, и вычислить гомологии. Дифференциал от треугольника $ABC$ (ориентация --- порядок вершин --- важна) определяют, как его обход вдоль периметра: $AB + BC + CA$.
     }
-
+    Напомним, что комплекс называется \emph{точным}, если не просто $d_{n} \cdot d_{n+1} = 0$, но и сразу $\Image(d_{n+1}) = \Ker(d_n)$.
+    Часто встречаются \emph{короткие точные последовательности} --- последовательности вида $0 \map A \overset{i}\map B \overset{\pi}\map C \map 0$.
+    Точность в члене $A$ означает, что $i$ --- моно, точность в члене $C$ означает, что $\pi$ --- эпи, а в члене $B$ --- что $\Image(i) = \Ker(\pi)$, то есть (в элементах) $\forall x \in B: \pi(x) = 0 \iff x \in \Image(i)$.
     \theorem[Длинная точная последовательность гомологий]{\label{long-homology}
-        Пусть имеется точная последовательность комплексов $0 \map A' \map A \map A'' \map 0$.
+        Пусть имеется точная последовательность комплексов $0 \map A' \overset{i}\map A \overset{\pi}\map A'' \map 0$.
 
-        Существует длинная точная последовательность гомологических групп
-    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiSCciXSxbMiwwLCJIIl0sWzMsMCwiSCcnIl0sWzQsMCwiSCdbLTFdIl0sWzUsMCwiSFstMV0iXSxbNiwwLCJcXGNkb3RzIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzQsNV0sWzUsNl1d
+        Тогда существует длинная точная последовательность гомологических групп
+    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiSCciXSxbMiwwLCJIIl0sWzMsMCwiSCcnIl0sWzQsMCwiSCdbLTFdIl0sWzUsMCwiSFstMV0iXSxbNiwwLCJcXGNkb3RzIl0sWzAsMV0sWzEsMiwiaSJdLFsyLDMsIlxccGkiXSxbMyw0LCJcXGRlbHRhIl0sWzQsNSwiaVstMV0iXSxbNSw2XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \cdots \& {H'} \& H \& {H''} \& {H'[-1]} \& {H[-1]} \& \cdots
               \arrow[from=1-1, to=1-2]
-              \arrow[from=1-2, to=1-3]
-              \arrow[from=1-3, to=1-4]
-              \arrow[from=1-4, to=1-5]
-              \arrow[from=1-5, to=1-6]
+              \arrow["i", from=1-2, to=1-3]
+              \arrow["\pi", from=1-3, to=1-4]
+              \arrow["\delta", from=1-4, to=1-5]
+              \arrow["{i[-1]}", from=1-5, to=1-6]
               \arrow[from=1-6, to=1-7]
         \end{tikzcd}\]
         где связующий морфизм $\delta$ будет построен в доказательстве.
@@ -418,7 +440,7 @@
                 \item Для начала построим $\delta: H_n'' \map H_{n-1}'$.
                 \bullets{
                     \item Выберем $z \in \Ker(d_n'')$, пусть $y \in \pi_n^{-1}(z)$ --- произвольный прообраз.
-                    $\bar{y} \coloneqq d(y)$ лежит в ядре $\pi_{n-1}$ из коммутативности правого квадрата.
+                    $\bar{y} \coloneqq d_n(y)$ лежит в ядре $\pi_{n-1}$ из коммутативности правого квадрата.
                     Из точности нижней строки $\exists \bar{x} \in i_{n-1}^{-1}(\bar{y})$ (и он единственен, так как $i_{n-1}$ --- моно), положим $\delta([z]) \coloneqq \left[\bar{x}\right]$.
 
                     \item  Убедимся, что определение не зависит от выбора $y \in \pi_n^{-1}(z)$.
@@ -481,7 +503,7 @@
               \arrow[dashed, from=4-3, to=4-4]
         \end{tikzcd}\]
         \provehere{
-            Доказательство очень похоже на доказательство существования длинной точной последовательности гомологий, и их даже можно выводить одно из другого.
+            Доказательство очень похоже на доказательство существования длинной точной последовательности гомологий.
 
             Можно опять сказать, что это диаграммный поиск,  и повторить доказательство, но проще вывести из доказательства~(\cref{long-homology}).
             Для этого достаточно рассмотреть комплексы $C_\bullet \coloneqq \left[\dots \map 0 \map A \overset{\phi}\map B \map 0 \map \dots\right]$, и соответствующие $C'_\bullet$ и $C''_\bullet$ (где вместо $A$ и $B$ подставлены $A'$ и $B'$ либо $A''$ и $B''$ соответственно).
@@ -490,17 +512,17 @@
         }
     }
     \theorem[Длинная точная последовательность гомологий на бис]{\label{long-homology-bis}
-        Пусть имеется точная последовательность комплексов $0 \map A' \map A \map A'' \map 0$.
+        Пусть имеется точная последовательность комплексов $0 \map A' \overset{i}\map A \overset{\pi}\map A'' \map 0$.
 
         Существует длинная точная последовательность гомологических групп
-    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiSCciXSxbMiwwLCJIIl0sWzMsMCwiSCcnIl0sWzQsMCwiSCdbLTFdIl0sWzUsMCwiSFstMV0iXSxbNiwwLCJcXGNkb3RzIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzQsNV0sWzUsNl1d
+    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiSCciXSxbMiwwLCJIIl0sWzMsMCwiSCcnIl0sWzQsMCwiSCdbLTFdIl0sWzUsMCwiSFstMV0iXSxbNiwwLCJcXGNkb3RzIl0sWzAsMV0sWzEsMiwiaSJdLFsyLDMsIlxccGkiXSxbMyw0LCJcXGRlbHRhIl0sWzQsNSwiaVstMV0iXSxbNSw2XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \cdots \& {H'} \& H \& {H''} \& {H'[-1]} \& {H[-1]} \& \cdots
               \arrow[from=1-1, to=1-2]
-              \arrow[from=1-2, to=1-3]
-              \arrow[from=1-3, to=1-4]
-              \arrow[from=1-4, to=1-5]
-              \arrow[from=1-5, to=1-6]
+              \arrow["i", from=1-2, to=1-3]
+              \arrow["\pi", from=1-3, to=1-4]
+              \arrow["\delta", from=1-4, to=1-5]
+              \arrow["{i[-1]}", from=1-5, to=1-6]
               \arrow[from=1-6, to=1-7]
         \end{tikzcd}\]
         где связующий морфизм $\delta$ будет построен в доказательстве.
@@ -532,10 +554,10 @@
                   \arrow[from=3-3, to=4-3]
                   \arrow[from=3-4, to=4-4]
             \end{tikzcd}\]
-            Пусть циклы, границы и гомологии в комплексе $A$ обозначаются $Z_\bullet, B_\bullet, H_\bullet$ соответственно, в $A'$ --- $Z_\bullet', B_\bullet', H_\bullet'$, , в $A'$ --- $Z_\bullet'', B_\bullet'', H_\bullet''$.
+            Пусть циклы, границы и гомологии в комплексе $A$ обозначаются $Z_\bullet, B_\bullet, H_\bullet$ соответственно, в $A'$ --- $Z_\bullet', B_\bullet', H_\bullet'$, , в $A''$ --- $Z_\bullet'', B_\bullet'', H_\bullet''$.
             Из коммутативности диаграммы $B'_n$ вправо уходит в $B_n$, а $B_n$, в свою очередь --- в $B_n''$.
 
-            Чтобы воспользоваться леммой о змее, построим следующую диаграмму, взяв коядро верхней строки, ядро --- нижней, и дорисовав сверху --- ядра вертикальных стрелок, снизу --- коядра.
+            Чтобы воспользоваться леммой о змее, построим следующую диаграмму, взяв коядро верхней строки, ядро --- нижней, и дорисовав сверху --- ядра вертикальных стрелок, снизу --- коядра:
 % https://q.uiver.app/#q=WzAsMTQsWzEsMSwiQSdfbi9CJ19uIl0sWzIsMSwiQV9uL0JfbiJdLFszLDEsIkFfbicnL0JfbicnIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMSwyLCJaX3tuLTF9JyJdLFsyLDIsIlpfe24tMX0iXSxbMywyLCJaJydfe24tMX0iXSxbMSwwLCJIX24nIl0sWzIsMCwiSF9uIl0sWzMsMCwiSCcnX24iXSxbMSwzLCJIX3tuLTF9JyJdLFsyLDMsIkhfe24tMX0iXSxbMywzLCJIX3tuLTF9JyciXSxbMCwxXSxbMSwyXSxbMiwzXSxbNCw1XSxbNSw2XSxbNiw3XSxbMCw1LCJcXG92ZXJsaW5le2R9J19uIl0sWzEsNiwiXFxvdmVybGluZXtkfV9uIl0sWzIsNywiXFxvdmVybGluZXtkfScnX24iXSxbOCwwXSxbOSwxXSxbMTAsMl0sWzUsMTFdLFs2LDEyXSxbNywxM11d
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \& {H_n'} \& {H_n} \& {H''_n} \\
@@ -595,7 +617,8 @@
         }
         \provebullets{
             \item[$(3)\then(2)$] Коядро --- конечный копредел, поэтому очевидно.
-            \item[$(2)\then(3)$] В свою очередь, копроизведение в абелевой категории --- бипроизведение, а это <<внутренний объект>>, поэтому всякий аддитивный функтор сохраняет его.
+            \item[$(2)\then(3)$] В свою очередь, копроизведение в абелевой категории --- бипроизведение, а это <<внутренний объект>> (его определение не использует никакие универсальные свойства, только накладываются некоторые условия на стрелки, которые аддитивные функторы сохраняют), поэтому всякий аддитивный функтор сохраняет его.
+            Предложение из предыдущего семестра о том, что существование инициального объекта и всех копроизведений влечёт существование всех копределов завершает доказательство.
             \item[$(2)\then(1)$] Короткая точная последовательность $A' \overset{\phi}\map A \overset{\psi}\map A'' \map 0$ характеризуется свойствами $\psi = \coker \phi, 0 = \coker \psi$.
             \item[$(1) \then (2)$] Рассмотрим произвольный $\phi: A' \map A$.
             У него есть эпи-моно разложение $\phi = \mu\eps$ ($\mu$ --- моно, $\eps$ --- эпи), и $\coker(\mu\eps) = \coker(\mu)$, так как $\eps$ --- эпиморфизм.
@@ -607,10 +630,10 @@
         }
     }
     \corollary{
-        Левый сопряжённый функтор точен справа.
+        Левый сопряжённый функтор (к любому другому функтору) точен справа.
         \provehere{Он сохраняет копределы.}
     }
-    Копредел (который является левым сопряжённым к диагональному $\Delta$) сохраняет копределы, значит, точен справа.
+    Функтор копредела (который является левым сопряжённым к диагональному $\Delta$) сохраняет копределы, значит, точен справа.
     Другими словами, копределы коммутируют.
 
     К сожалению, в лемме о змее это не помогает в доказательстве того, что последовательность точна в члене $\Ker \phi$, так как нет точной последовательности $0 \map A' \map A \map A'' \map 0$.
@@ -657,24 +680,26 @@
         \end{tikzcd}\]
         Пишут $f \simeq g$.
     }
-    \comment{А почему это то же самое, что и гомотопность в топологии?}
+    \comment{А почему вот такие диагональные стрелки --- это то же самое, что и гомотопность в топологии?}
     \theorem{\label{homotopy-preserves-h}
-    Если два морфизма комплексов $f, g: X \map X'$ гомотопны, то $H(f) = H(g)$ (гомологии являются функтором, и действуют не только на комплексах, но и на морфизмах между ними).
+    Если два морфизма комплексов $f, g: X \map X'$ гомотопны, то $H(f) = H(g)$ (здесь функтор гомологий применён не к объектам-комплексам, а к морфизмам комплексов).
     \provehere{
-        Докажем, что $H(f - g) = 0$.
+        Гомологии --- аддитивный функтор, докажем, что $H(f - g) = 0$.
 
         Рассмотрим $\overline{x} \in H_n(X)$.
-        У него имеется прообраз $x \in Z_n$.
+        У него имеется прообраз $x \in Z_n(X)$.
 
         Заметим, что $H(f_n - g_n)(\overline{x}) = \overline{(f_n - g_n)(x)} = \overline{d'_n(s_{n+1}(x))} + \overline{s_n(d_{n-1}(x))}$.
         Первое слагаемое равно нулю, так как $d'_n(\cdots) \in B_n(X')$, а второе --- так как $x \in \Ker d_{n-1}$.
     }
     }
     \note{
-        Если $\cat F: \cat A \map \cat A$ --- аддитивный функтор, и $f \simeq g$ --- морфизмы комплексов с объектами из $\cat A$, то (допуская вольность речи можно писать $\cat F(f)$) $\cat F(f) \simeq \cat F(g)$.
+        Если $\cat F: \cat A \map \cat A$ --- аддитивный функтор, то ему соответствует функтор $\text{Comp}(\cat F)$, действующий на комплексах с элементами из $\cat A$ поэлементным применением к объектам и морфизмам функтора $\cat F$.
+        Допуская вольность речи, можно обозначать этот функтор тоже $\cat F$.
+        Используя эту вольность речи, можно отметить, что если $f \simeq g$ --- гомотопные морфизмы комплексов с объектами из $\cat A$, то $\cat F(f) \simeq \cat F(g)$.
     }
     \fact{
-        Быть гомотопными --- отношение эквивалентности.
+        Для морфизмов комплексов <<быть гомотопными>> --- отношение эквивалентности.
         \provehere{
             Рефлексивность: $\forall n: s_n = 0$.
             Симметричность: $s_n \coloneqq -s_n$.
