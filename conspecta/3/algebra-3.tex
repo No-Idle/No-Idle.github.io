@@ -4901,70 +4901,70 @@
         \end{tikzcd}\]
 
         \provehere[Доказательство]{
-            \indentlemma{\label{kerCoKerker}
-                Для всякой стрелки $\phi$: $\Ker\CoKer\Ker\phi = \Ker\phi$.
+            \indentlemma{\label{ker-coker-ker}
+                Для всякой стрелки $\phi$: $\ker\coker\ker\phi = \ker\phi$.
             }{
-            % https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxLZXJcXHBoaSIsMl0sWzAsMiwiXFxwaGkiLDJdLFswLDMsIlxcQ29rZXJcXEtlclxccGhpIl0sWzQsMCwiXFxLZXJcXENva2VyXFxLZXJcXHBoaSJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiXFxlcHNfMiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiXFxlcHNfMSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+            % https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXGJ1bGxldCJdLFswLDAsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwyLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMCwiXFxrZXJcXHBoaSIsMl0sWzAsMiwiXFxwaGkiLDJdLFswLDMsIlxcY29rZXJcXGtlclxccGhpIl0sWzQsMCwiXFxrZXJcXGNva2VyXFxrZXJcXHBoaSJdLFszLDIsIlxcZXRhIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiXFxlcHNfMiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMSwiXFxlcHNfMSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
                 \[\begin{tikzcd}[ampersand replacement=\&]
                       \bullet \& \bullet \\
                       \bullet \\
                       \bullet \& \bullet
-                      \arrow["\Ker\phi"', from=1-1, to=2-1]
-                      \arrow["\phi"', from=2-1, to=3-1]
-                      \arrow["\CoKer\Ker\phi", from=2-1, to=3-2]
-                      \arrow["\Ker\CoKer\Ker\phi", from=1-2, to=2-1]
-                      \arrow["\eta", dashed, from=3-2, to=3-1]
                       \arrow["{\eps_2}"', shift right, dashed, from=1-1, to=1-2]
+                      \arrow["\ker\phi"', from=1-1, to=2-1]
                       \arrow["{\eps_1}"', shift right, dashed, from=1-2, to=1-1]
+                      \arrow["\ker\coker\ker\phi", from=1-2, to=2-1]
+                      \arrow["\phi"', from=2-1, to=3-1]
+                      \arrow["\coker\ker\phi", from=2-1, to=3-2]
+                      \arrow["\eta", dashed, from=3-2, to=3-1]
                 \end{tikzcd}\]
                 \numbers{
-                    \item Разместим на диаграмме стрелки $\phi, \Ker\phi, \CoKer\Ker\phi$ и $\Ker\CoKer\Ker\phi$.
-                    \item $\phi \cdot \Ker\phi = 0$, значит, $\phi$ пропускается через $\CoKer\Ker\phi$: $\exists! \eta$.
-                    \item $\CoKer\Ker\phi\cdot\Ker\CoKer\Ker\phi = 0$, тогда и $\eta \cdot \CoKer\Ker \phi\cdot \Ker\CoKer\Ker \phi = 0$, то есть ${\phi \cdot \Ker\CoKer\Ker \phi = 0}$.
-                    А значит, $\Ker\CoKer\Ker\phi$ пропускается через $\Ker\phi$: $\exists! \eps_1$.
-                    \item $\CoKer\Ker\phi\cdot \Ker\phi = 0$, тогда и $\Ker\phi$ пропускается через $\Ker\CoKer\Ker\phi$: $\exists!\eps_2$.
-                    \item $\Ker\phi\cdot\eps_1 = \Ker\CoKer\Ker\phi \then \Ker \phi \cdot\eps_1 \cdot\eps_2 = \Ker\phi$, и так как ядра определены с точностью до единственного изоморфизма, то $\eps_1\cdot\eps_2 = \id$.
+                    \item Разместим на диаграмме стрелки $\phi, \ker\phi, \coker\ker\phi$ и $\ker\coker\ker\phi$.
+                    \item $\phi \cdot \ker\phi = 0$, значит, $\phi$ пропускается через $\coker\ker\phi$: $\exists! \eta$.
+                    \item $\coker\ker\phi\cdot\ker\coker\ker\phi = 0$, тогда и $\eta \cdot \coker\ker \phi\cdot \ker\coker\ker \phi = 0$, то есть ${\phi \cdot \ker\coker\ker \phi = 0}$.
+                    А значит, $\ker\coker\ker\phi$ пропускается через $\ker\phi$: $\exists! \eps_1$.
+                    \item $\coker\ker\phi\cdot \ker\phi = 0$, тогда и $\ker\phi$ пропускается через $\ker\coker\ker\phi$: $\exists!\eps_2$.
+                    \item $\ker\phi\cdot\eps_1 = \ker\coker\ker\phi \then \ker \phi \cdot\eps_1 \cdot\eps_2 = \ker\phi$, и так как ядра определены с точностью до единственного изоморфизма, то $\eps_1\cdot\eps_2 = \id$.
                     \item    Аналогично $\eps_2\cdot\eps_1 = \id$\qedhere
                 }
             }
-            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. Положим $\mu \coloneqq \Ker\CoKer\phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
+            Для каждой стрелки $\phi$ определим $\mu$ --- моно и $\varepsilon$ --- эпи, такие, что $\phi = \mu\varepsilon$. Положим $\mu \coloneqq \ker\coker\phi$, $\varepsilon$ --- то, каким образом пропускается $\phi$:
 
-        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJCIl0sWzIsMCwiXFxidWxsZXQiXSxbMCwwLCJBIl0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJcXENva2VyXFxwaGkiXSxbMiwwLCJcXHBoaSJdLFsyLDMsIlxcZXhpc3RzIVxcdmFyZXBzaWxvbiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcbXUiLDJdXQ==
+        % https://q.uiver.app/#q=WzAsNCxbMSwwLCJCIl0sWzIsMCwiXFxidWxsZXQiXSxbMCwwLCJBIl0sWzEsMSwiXFxidWxsZXQiXSxbMCwxLCJcXGNva2VyXFxwaGkiXSxbMiwwLCJcXHBoaSJdLFsyLDMsIlxcZXhpc3RzIVxcdmFyZXBzaWxvbiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcbXUiLDJdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
                   A \& B \& \bullet \\
                   \& \bullet
-                  \arrow["\CoKer\phi", from=1-2, to=1-3]
                   \arrow["\phi", from=1-1, to=1-2]
                   \arrow["{\exists!\varepsilon}"', dashed, from=1-1, to=2-2]
+                  \arrow["\coker\phi", from=1-2, to=1-3]
                   \arrow["\mu"', from=2-2, to=1-2]
             \end{tikzcd}\]
             $\mu$, как ядро стрелки --- моно. $\varepsilon$ --- эпи (упражнение).
 
             Теперь проверим функториальность.
             Пусть имеются два произвольных эпи-моно разложения двух произвольных стрелок, докажем, что $\exists!\psi$, делающая диаграмму коммутативной.
-% https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIkInIl0sWzAsMSwiQSciXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsyLDEsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFsyLDUsIlxcdmFyZXBzaWxvbiciLDJdLFs1LDEsIlxcbXUnIiwyXSxbMywwLCJcXHZhcmVwc2lsb24iXSxbMCw0LCJcXG11Il0sWzMsMiwiXFxhbHBoYSIsMl0sWzQsMSwiXFxiZXRhIl0sWzQsNiwiXFxDb2tlclxccGhpIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzEsNywiXFxDb2tlclxcbXUnIiwyLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzYsNywiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCJcXGV4aXN0cyFcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFszLDQsIlxccGhpIiwwLHsiY3VydmUiOi0zfV0sWzIsMSwiXFxwaGknIiwyLHsiY3VydmUiOjN9XV0=
+% https://q.uiver.app/#q=WzAsOCxbMiwwLCJcXGJ1bGxldCJdLFs0LDEsIkInIl0sWzAsMSwiQSciXSxbMCwwLCJBIl0sWzQsMCwiQiJdLFsyLDEsIlxcYnVsbGV0Il0sWzUsMCwiXFxidWxsZXQiXSxbNSwxLCJcXGJ1bGxldCJdLFsyLDUsIlxcdmFyZXBzaWxvbiciLDJdLFs1LDEsIlxcbXUnIiwyXSxbMywwLCJcXHZhcmVwc2lsb24iXSxbMCw0LCJcXG11Il0sWzMsMiwiXFxhbHBoYSIsMl0sWzQsMSwiXFxiZXRhIl0sWzQsNiwiXFxjb2tlclxccGhpIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzEsNywiXFxjb2tlclxcbXUnIiwyLHsibGFiZWxfcG9zaXRpb24iOjQwfV0sWzYsNywiXFxldGEiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCw1LCJcXGV4aXN0cyFcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dLFszLDQsIlxccGhpIiwwLHsiY3VydmUiOi0zfV0sWzIsMSwiXFxwaGknIiwyLHsiY3VydmUiOjN9XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
                   A \&\& \bullet \&\& B \& \bullet \\
                   {A'} \&\& \bullet \&\& {B'} \& \bullet
-                  \arrow["{\varepsilon'}"', from=2-1, to=2-3]
-                  \arrow["{\mu'}"', from=2-3, to=2-5]
                   \arrow["\varepsilon", from=1-1, to=1-3]
-                  \arrow["\mu", from=1-3, to=1-5]
-                  \arrow["\alpha"', from=1-1, to=2-1]
-                  \arrow["\beta", from=1-5, to=2-5]
-                  \arrow["\CoKer\phi"{pos=0.4}, from=1-5, to=1-6]
-                  \arrow["{\CoKer\mu'}"'{pos=0.4}, from=2-5, to=2-6]
-                  \arrow["\eta", dashed, from=1-6, to=2-6]
-                  \arrow["{\exists!\psi}", dotted, from=1-3, to=2-3]
                   \arrow["\phi", curve={height=-18pt}, from=1-1, to=1-5]
+                  \arrow["\alpha"', from=1-1, to=2-1]
+                  \arrow["\mu", from=1-3, to=1-5]
+                  \arrow["{\exists!\psi}", dotted, from=1-3, to=2-3]
+                  \arrow["\coker\phi"{pos=0.4}, from=1-5, to=1-6]
+                  \arrow["\beta", from=1-5, to=2-5]
+                  \arrow["\eta", dashed, from=1-6, to=2-6]
+                  \arrow["{\varepsilon'}"', from=2-1, to=2-3]
                   \arrow["{\phi'}"', curve={height=18pt}, from=2-1, to=2-5]
+                  \arrow["{\mu'}"', from=2-3, to=2-5]
+                  \arrow["{\coker\mu'}"'{pos=0.4}, from=2-5, to=2-6]
             \end{tikzcd}\]
         \numbers{
-            \item $\CoKer\mu'\cdot\mu'\cdot\eps'\cdot\alpha = 0$, так как уже $\CoKer\mu'\cdot\mu' = 0$.
-            Значит, $\CoKer\mu' \cdot\beta\cdot\phi = 0$, тогда $\CoKer\mu' \cdot \beta$ пропускается (единственным образом) через $\CoKer\phi$ --- получаем $\eta$.
-            \item Так как $\mu'$ --- моно, а категория абелева, то он --- чьё-то ядро. Cогласно~(\cref{kerCoKerker}) $\mu' = \Ker\CoKer \mu'$.
-            \item $\eps$ --- эпи, $0\cdot\eps = (\CoKer\phi \cdot \mu)\cdot \eps \then 0 = \CoKer\phi \cdot \mu$.
-            \item Тогда $\eta \cdot \CoKer\phi\cdot \mu = 0$, то есть $\CoKer\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\Ker\CoKer\mu' = \mu'$ --- получается $\psi$.
+            \item $\coker\mu'\cdot\mu'\cdot\eps'\cdot\alpha = 0$, так как уже $\coker\mu'\cdot\mu' = 0$.
+            Значит, $\coker\mu' \cdot\beta\cdot\phi = 0$, тогда $\coker\mu' \cdot \beta$ пропускается (единственным образом) через $\coker\phi$ --- получаем $\eta$.
+            \item Так как $\mu'$ --- моно, а категория абелева, то он --- чьё-то ядро. Cогласно~(\cref{ker-coker-ker}) $\mu' = \ker\coker \mu'$.
+            \item $\eps$ --- эпи, $0\cdot\eps = (\coker\phi \cdot \mu)\cdot \eps \then 0 = \coker\phi \cdot \mu$.
+            \item Тогда $\eta \cdot \coker\phi\cdot \mu = 0$, то есть $\coker\mu' \cdot \beta\mu = 0$, и $\beta\mu$ единственным образом пропускается через $\ker\coker\mu' = \mu'$ --- получается $\psi$.
         \item По построению $\psi$: $\beta\mu = \mu'\psi$, надо ещё проверить коммутативность левого квадрата.
             Действительно, так как $\mu'$ --- моно, то $\mu'(\psi\eps) = \mu'(\eps'\alpha) \then \psi\eps = \eps'\alpha$.
         }
@@ -4974,22 +4974,22 @@
         Функториальность, заявленная в~(\cref{epi-mono}), в частности говорит, что такое разложение стрелки единственно с точностью до единственного изоморфизма.
         \provehere{
             Пусть $\phi = \mu\eps = \mu'\eps'$ для разных мономорфизмов $\mu, \mu'$ и эпиморфизмов $\eps, \eps'$.
-        % https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiQyJdLFswLDEsIkEnIl0sWzEsMSwiQyciXSxbMiwwLCJCIl0sWzIsMSwiQiJdLFswLDEsIlxcZXBzIl0sWzIsMywiXFxlcHMnIiwyXSxbMCwyLCJcXGlkX0EiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbMyw1LCJcXG11JyIsMl0sWzEsNCwiXFxtdSJdLFs0LDUsIlxcaWRfQiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcZXhpc3RzIVxccHNpIiwwLHsib2Zmc2V0IjotMiwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzMsMSwiXFxleGlzdHMhXFxwaGkiLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        % https://q.uiver.app/#q=WzAsNixbMCwwLCJBIl0sWzEsMCwiQyJdLFswLDEsIkEnIl0sWzEsMSwiQyciXSxbMiwwLCJCIl0sWzIsMSwiQiJdLFswLDEsIlxcZXBzIl0sWzIsMywiXFxlcHMnIiwyXSxbMCwyLCJcXGlkX0EiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XSxbMyw1LCJcXG11JyIsMl0sWzEsNCwiXFxtdSJdLFs0LDUsIlxcaWRfQiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcZXhpc3RzIVxcemV0YSIsMCx7Im9mZnNldCI6LTIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDEsIlxcZXhpc3RzIVxceGkiLDAseyJvZmZzZXQiOi0yLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
                   A \& C \& B \\
                   {A'} \& {C'} \& B
                   \arrow["\eps", from=1-1, to=1-2]
-                  \arrow["{\eps'}"', from=2-1, to=2-2]
                   \arrow["{\id_A}"', tail reversed, from=1-1, to=2-1]
-                  \arrow["{\mu'}"', from=2-2, to=2-3]
                   \arrow["\mu", from=1-2, to=1-3]
+                  \arrow["{\exists!\zeta}", shift left=2, dashed, from=1-2, to=2-2]
                   \arrow["{\id_B}", tail reversed, from=1-3, to=2-3]
-                  \arrow["{\exists!\psi}", shift left=2, dashed, from=1-2, to=2-2]
-                  \arrow["{\exists!\phi}", shift left=2, dashed, from=2-2, to=1-2]
+                  \arrow["{\eps'}"', from=2-1, to=2-2]
+                  \arrow["{\exists!\xi}", shift left=2, dashed, from=2-2, to=1-2]
+                  \arrow["{\mu'}"', from=2-2, to=2-3]
             \end{tikzcd}\]
-            Согласно функториальности, найдутся $\phi$ и $\psi$, такие, что диаграмма выше коммутативна.
-            Но тогда $\phi\psi = \id_C$, так как они оба удовлетворяют универсальному свойству~(\cref{epi-mono}): по отношению к двум одинаковым разложениям $\phi = \eps\mu$.
-            Аналогично $\psi\phi = \id_{C'}$.
+            Согласно функториальности, найдутся $\xi$ и $\zeta$, такие, что диаграмма выше коммутативна.
+            Но тогда $\xi\zeta = \id_C$, так как они оба (и $\xi\zeta$, и $\id_C$) удовлетворяют универсальному свойству~(\cref{epi-mono}) по отношению к двум одинаковым разложениям $\phi = \eps\mu$.
+            Аналогично $\zeta\xi = \id_{C'}$.
         }
     }
 \end{document}

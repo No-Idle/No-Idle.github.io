@@ -94,9 +94,9 @@
     \intfact[Теорема Фрейда --- Митчелла (Freyd --- Mitchell)] {\label{mitchell}
     Для любой малой абелевой категории $\cat{A}$: $\exists R \in \cat{Ring}$ (необязательно коммутативное кольцо с единицей) и строгий, полный, точный функтор $\cat{A} \map \modR{R}$.
     }
-    Иными словами, всякую абелеву категорию можно себе мыслить, как полную подкатегорию в категории $\modR{R}$ для некоторого кольца $R$.
+    Иными словами, всякую абелеву категорию можно себе мыслить, как \emph{полную подкатегорию} в категории $\modR{R}$ (то есть категорию $\cat C$, в которой $\Obj \cat C \subset \Obj \modR{R}$, и $\forall A, B \in \Obj\cat C: \Mor_{\cat C}(A, B) = \Mor_{\modR{R}}(A, B)$) для некоторого кольца $R$.
     Неформально это означает, что все факты, которые можно доказать для категории модулей, будут верны и для данной абелевой категории.
-    Мы часто будем использовать теорему Фрейда --- Митчелла, чтобы доказать более общий факт про все абелевы категории, используя конкретность категории модулей.
+    Мы часто будем использовать теорему Фрейда --- Митчелла, чтобы доказать какой-то факт про все абелевы категории, используя конкретность категории модулей.
     \proposal{
         Для всякого морфизма $f: A \map B$ найдётся пунктирная стрелка, делающая диаграмму коммутативной.
 % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXEtlciBmIl0sWzEsMCwiQSJdLFsyLDAsIkIiXSxbMywwLCJcXENvS2VyIGYiXSxbMSwxLCJcXENvS2VyIFxca2VyIGYiXSxbMiwxLCJcXEtlciBcXGNva2VyIGYiXSxbMSwyLCJmIl0sWzAsMSwiXFxrZXIgZiJdLFsyLDMsIlxcY29rZXIgZiJdLFsxLDQsIlxcY29rZXJcXGtlciBmIiwyXSxbNSwyLCJcXGtlciBcXGNva2VyIGYiLDJdLFs0LDUsIlxcZXhpc3RzISIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
@@ -113,9 +113,29 @@
         \end{tikzcd}\]
         Более того, в абелевой категории эта стрелка --- изоморфизм.
         \provehere{
-            Следует из эпи-моно разложения, доказанного на прошлой лекции, или из теоремы Митчелла.
+            Само построение пунктирной стрелки легко получается из универсальных свойств ядра и коядра, а доказательство того, что это --- изо --- непростое.
 
-            Само построение пунктирной стрелки получается из универсальных свойств, а доказательство того, что это --- изо --- непростое.
+            Из теоремы Фрейда --- Митчелла это очевидно: для $f: A \map B$: с одной стороны, $\CoKer \ker f = A/\Image(\ker f) = A/\Ker f$, а с другой стороны $\Ker \coker f = \Ker(\coker f) = \Image(A)$, и, конечно, $\Image(A) \cong A/\Ker(f)$.
+
+            Также это можно обосновать, исходя из эпи-моно разложения, полученного на прошлой лекции.
+            Там было построено, что $f = \eps \cdot \ker \coker f$ (для какого-то эпиморфизма $\eps$) --- эпи-моно разложение.
+        Двойственно $f = \mu \cdot \coker\ker f$ (для какого-то мономорфизма $\mu$) --- тоже эпи-моно разложение, и дальше можно воспользоваться функториальностью эпи-моно разложения:
+        % https://q.uiver.app/#q=WzAsNixbMCwwLCJcXGJ1bGxldCJdLFsyLDAsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMiwxLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzEsMSwiXFxidWxsZXQiXSxbMCw0LCJcXHZhcmVwc2lsb24iXSxbNCwxLCJcXGtlclxcY29rZXIgZiJdLFsyLDUsIlxcY29rZXJcXGtlciBmIl0sWzUsMywiXFxtdSJdLFs0LDUsIlxceGkiLDIseyJvZmZzZXQiOjEsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDQsIlxcemV0YSIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiXFxpZCIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDMsIlxcaWQiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJhcnJvd2hlYWQifX19XV0=
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  \bullet \& \bullet \& \bullet \\
+                  \bullet \& \bullet \& \bullet
+                  \arrow["\varepsilon", from=1-1, to=1-2]
+                  \arrow["\id"', tail reversed, from=1-1, to=2-1]
+                  \arrow["{\ker\coker f}", from=1-2, to=1-3]
+                  \arrow["\xi"', shift right, dashed, tail reversed, no head, from=1-2, to=2-2]
+                  \arrow["\id", tail reversed, from=1-3, to=2-3]
+                  \arrow["{\coker\ker f}", from=2-1, to=2-2]
+                  \arrow["\zeta"', shift right, dashed, tail reversed, no head, from=2-2, to=1-2]
+                  \arrow["\mu", from=2-2, to=2-3]
+            \end{tikzcd}\]
+            В его силу найдутся такие стрелки $\xi$ и $\zeta$, что все квадраты коммутативны.
+            Значит, $\xi$ подходит в качестве пунктирной стрелки в утверждении предложения.
+            При этом $\xi$ --- изо, так как $\xi\zeta = \id$ (из коммутативности квадратов $\xi \cdot \coker\ker f = \eps$ и $\zeta \cdot \xi \cdot \coker \ker f = \zeta \cdot \eps = \coker\ker f$, но $\coker \ker f$ --- эпиморфизм, поэтому $\zeta \cdot \xi = \id$) и $\zeta\xi = \id$ (аналогично)
         }
     }
     \lemma{\label{when-ab} Пусть $\cat C$ --- полная подкатегория в абелевой категории $\cat A$. Следующие условия равносильны
@@ -128,13 +148,12 @@
         }
     }
     \provewthen{
-        Очевидно.
+        Достаточно проверить все свойства определения абелевой категории.
+        Они все сразу следуют, в частности, любой мономорфизм $\mu$ в $\cat C$ нормален, так как он является ядром $\coker \mu$ (что следует либо из леммы, доказанной при построении эпи-моно разложения, либо из теоремы Фрейда --- Митчелла).
     }{
         Чуть сложнее, доказывать не будем (и использовать тоже).
     }
     }
-
-
     \section{Компл$\acute{\text{е}}$ксы}
     Если противное не оговорено, то всё происходит в абелевой категории $\cat A$, большими буквами обозначены объекты данной категории, маленькими --- морфизмы.
     \definition[Компл$\acute{\text{е}}$кс]{
@@ -151,10 +170,11 @@
     Альтернативно, комплекс можно рассматривать, как функтор из категории $(\Z, \ge)$ (полученной из частично упорядоченного множества) в $\cat A$ (при котором образ композиции любых двух нетождественных морфизмов нулевой).
     Таким образом, комплексы --- полная подкатегория в категории этих функторов.
 
-    Ещё один, следующий, взгляд на комплексы работает только для конкретной категории, уже вложенной в $R$-модули.
+    Ещё один, следующий, взгляд на комплексы работает только для конкретной категории, уже вложенной в $R$-модули: в абстрактной категории объекты не сравнимы на $\subset$.
     \definition[Градуированный объект]{
         $C_{\bullet} = \bigoplus\limits_{n \in \Z}C_n$ с морфизмом $d: C_\bullet \map C_\bullet$, таким, что $d(C_n) \subset C_{n+p}$ для некоторой фиксированной \emph{степени объекта} $p$ (чаще всего она равна $\pm1$).
     }
+    Так же, как видно из определения, в данной категории должны быть счётные бипроизведения (прямые суммы), иначе градуированного объекта может не быть.
     \definition[Дифференциальный модуль]{
         Градуированный объект $(C_\bullet, d)$ со свойством $d^2 = 0$.
     }
@@ -188,7 +208,7 @@
               \arrow["f", from=1-1, to=2-1]
               \arrow["f", from=1-2, to=2-2]
         \end{tikzcd}\]
-        На языке абелевых категорий, надо рассматривать не одно отображение $f$, так как отношение $f(A_n) \subset B_n$ не выражается, а серию морфизмов $f_n: A_n \map B_n$.
+        На языке абелевых категорий, надо рассматривать не одно отображение $f$, так как отношение $f(A_n) \subset B_n$ не выражается, а серию морфизмов $\{f_n: A_n \map B_n\}_{n\in\Z}$.
     }
     Для всякого морфизма $f$ коммутативна диаграмма в категории комплексов:
     % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBWzFdIl0sWzEsMCwiQSJdLFswLDEsIkJbMV0iXSxbMSwxLCJCIl0sWzAsMSwiZF5BIl0sWzIsMywiZF5CIl0sWzAsMiwiZlsxXSJdLFsxLDMsImYiXV0=
@@ -212,7 +232,7 @@
 
                 Нулевой объект --- функтор $\0$, сопоставляющий каждому объекту $0_{\cat A}$, и каждой стрелке --- нуль-стрелку.
 
-                Для двух функторов $\cat F, \cat G$: $(\cat F \oplus \cat G)(C) = \cat F(C) \oplus \cat G(C)$.
+                Для двух функторов $\cat F, \cat G$ имеется их бипроизведение: $(\cat F \oplus \cat G)(C) = \cat F(C) \oplus \cat G(C)$.
 
                 Если $\eta \in \Mor_{\Func(\cat C, \cat A)}(\cat F, \cat G)$ (то есть $\eta$ --- естественное преобразование $\cat F \map \cat G$), то $(\Ker \eta)(C) = \Ker (\eta_C)$.
 
@@ -221,7 +241,9 @@
 
                 Далее по-хорошему надо проверить, что выполняются все универсальные свойства, и что любой мономорфизм нормален, но мы этого делать не будем.
             }
-            Ссылаемся на~(\cref{when-ab}).
+            Ссылаемся на~(\cref{when-ab}), рассматривая категорию комплексов, как полную подкатегорию в категории функторов.
+            Нулевой объект --- комплекс, состоящий из нулей --- в категории комплексов имеется.
+            Бипроизведением комплексов $A_\bullet$ и $B_\bullet$ является комплекс $(A \oplus B)_\bullet$, у которого $(A \oplus B)_n = A_n \oplus B_n$, и $d^{A \oplus B}_n = d^A_n \oplus d^B_n$:
         % https://q.uiver.app/#q=WzAsMTUsWzEsMCwiQV97bisxfSJdLFsyLDAsIkFfbiJdLFszLDAsIkFfe24tMX0iXSxbMCwwLCJcXGNkb3RzIl0sWzQsMCwiXFxjZG90cyJdLFswLDEsIlxcY2RvdHMiXSxbMSwxLCJCX3tuKzF9Il0sWzIsMSwiQl9uIl0sWzMsMSwiQl97bi0xfSJdLFs0LDEsIlxcY2RvdHMiXSxbMSwyLCJBX3tuKzF9XFxvcGx1cyBCX3tuKzF9Il0sWzIsMiwiQV9uIFxcb3BsdXMgQl9uIl0sWzMsMiwiQV97bi0xfSBcXG9wbHVzIEJfe24tMX0iXSxbMCwyLCJcXGNkb3RzIl0sWzQsMiwiXFxjZG90cyJdLFszLDBdLFswLDEsImReQV9uIl0sWzEsMiwiZF5BX3tuLTF9Il0sWzIsNF0sWzUsNl0sWzYsNywiZF5CX24iXSxbNyw4LCJkXkJfe24tMX0iXSxbOCw5XSxbMTAsMTEsImRee0EgXFxvcGx1cyBCfV9uIl0sWzExLDEyLCJkXntBIFxcb3BsdXMgQn1fe24tMX0iXSxbMTMsMTBdLFsxMiwxNF1d
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \cdots \& {A_{n+1}} \& {A_n} \& {A_{n-1}} \& \cdots \\
@@ -240,7 +262,7 @@
                   \arrow[from=3-1, to=3-2]
                   \arrow[from=3-4, to=3-5]
             \end{tikzcd}\]
-            Если $d^A \cdot d^A = 0$, и $d^B \cdot d^B = 0$, то (из теоремы Митчелла уж точно очевидно) $d^{A \oplus B} \cdot d^{A \oplus B} = 0$.
+            Если $d_{n-1}^A \cdot d_n^A = 0$, и $d_{n-1}^B \cdot d_n^B = 0$, то (из теоремы Митчелла уж точно очевидно) $d_{n-1}^{A \oplus B} \cdot d_n^{A \oplus B} = 0$.
 
             Ядра тоже являются комплексами, так как на языке конкретных категорий это просто подмодули.
             Двойственно с коядрами.
@@ -249,7 +271,7 @@
 
 
     \section{Гомологии}
-    Дифференциал $d$ является морфизмом комплексов $d: C[1] \map C$ (по-хорошему, $C[1]_\bullet \map C_\bullet$, но точку будем опускать):
+    Дифференциал $d$ по совместительству является морфизмом комплексов $d: C[1] \map C$ (по-хорошему, $C[1]_\bullet \map C_\bullet$, но точку будем опускать):
     % https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiQ197bisxfSJdLFsyLDAsIkNfbiJdLFszLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzEsMSwiQ19uIl0sWzIsMSwiQ197bi0xfSJdLFszLDEsIlxcY2RvdHMiXSxbMCwxXSxbMSwyLCJkX24iXSxbMiwzXSxbNiw3XSxbNSw2LCJkX3tuLTF9Il0sWzQsNV0sWzEsNSwiZF9uIl0sWzIsNiwiZF97bi0xfSJdXQ==
     \[\begin{tikzcd}[ampersand replacement=\&]
           \cdots \& {C_{n+1}} \& {C_n} \& \cdots \\
@@ -265,9 +287,13 @@
     \end{tikzcd}\]
     Ниже мы по произвольному комплексу $C$ строим новые комплексы.
     \definition[Циклы]{Комплекс $Z = Z(C) \bydef \Ker d[-1]$.}
+    В конкретной категории в $n$-й компоненте комплекса циклов лежит подмодуль $C_n$, при взятии дифференциала обращающийся в нуль: $Z(C)_n = \Ker d[-1]_n = \Ker d_{n-1} \subset C_{n}$.
     \definition[Границы]{Комплекс $B = B(C) \bydef \Image d$.}
-    По определению, образ --- это ядро коядра: $\Image \phi \bydef \Ker(\coker \phi)$.
-    В абелевой категории канонически $\Image \phi \cong \CoIm \phi \bydef \CoKer(\ker \phi)$.
+    В конкретной категории в $n$-й компоненте комплекса границ лежит подмодуль $C_n$, являющийся образом дифференциала: $B(C)_n = \Image d_n \subset C_{n}$.
+
+    Определения циклов и границ имеют смысл и для абстрактных абелевых категорий.
+    В них, \emph{образ} --- это ядро коядра: $\Image \phi \bydef \Ker(\coker \phi)$.
+    В абелевой категории канонически $\Image \phi \cong \CoIm \phi \bydef \CoKer(\ker \phi)$, так что образ можно определять и так.
 
     На языке конкретных категорий, так как $d^2 = 0$, то $B \subset Z$, и можно определить фактормодуль $H \coloneqq Z/B$ --- \emph{гомологии}.
 
