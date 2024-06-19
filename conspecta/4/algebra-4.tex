@@ -196,6 +196,7 @@
     }
     Иногда при сдвиге комплекса определяют $d[p]_n = (-1)^p d_{n+p}$, но мы так делать не будем.
     \newlection{19 февраля 2024 г.}
+    \subsection{Морфизмы комплексов}
     \definition[Морфизм дифференциальных модулей $\bigoplus A_n \map \bigoplus B_n$]{
         Такое $f: \bigoplus A_n \map \bigoplus B_n$, что $f(A_n) \subset B_n$, и диаграммы коммутативны:
         % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBX3tuKzF9Il0sWzEsMCwiQV9uIl0sWzAsMSwiQl97bisxfSJdLFsxLDEsIkJfbiJdLFswLDEsImRfbl5BIl0sWzIsMywiZF9uXkIiXSxbMCwyLCJmIl0sWzEsMywiZiJdXQ==
@@ -347,7 +348,8 @@
             $B$ состоит из подмодулей в $Z$, $H$ --- из фактормодулей, понятно, что там дифференциалы тоже нулевые.
         }
     }
-    \examples[Гомологии окружности]{
+    \subsection{Гомологии окружности}
+    \bullets{
         \item Рассмотрим окружность, как симплициальное множество, склеенное из двух нульмерных клеток-точек $\{a, b\}$, и двух одномерных клеток-отрезков $\{x, y\}$:
         \begin{tikzpicture}[baseline=-4]
             \draw(0,0) circle[radius=0.5];
@@ -395,6 +397,7 @@
     \exercise{
         Триангулировать сферу, и вычислить гомологии. Дифференциал от треугольника $ABC$ (ориентация --- порядок вершин --- важна) определяют, как его обход вдоль периметра: $AB + BC + CA$.
     }
+    \subsection{Длинная точная последовательность гомологий}
     Напомним, что комплекс называется \emph{точным}, если не просто $d_{n} \cdot d_{n+1} = 0$, но и сразу $\Image(d_{n+1}) = \Ker(d_n)$.
     Часто встречаются \emph{короткие точные последовательности} --- последовательности вида $0 \map A \overset{i}\map B \overset{\pi}\map C \map 0$.
     Точность в члене $A$ означает, что $i$ --- моно, точность в члене $C$ означает, что $\pi$ --- эпи, а в члене $B$ --- что $\Image(i) = \Ker(\pi)$, то есть (в элементах) $\forall x \in B: \pi(x) = 0 \iff x \in \Image(i)$.
@@ -599,6 +602,7 @@
     \definition[Аддитивный функтор $\cat F: \cat A \map \cat B$]{
         Такой функтор, что $\forall \alpha, \beta \in \Mor(\cat A): \cat F(\alpha + \beta) = \cat F(\alpha) + \cat F(\beta)$ всегда, когда определено.
     }
+    \subsection{Точные и полуточные фукнкторы}
     Рассмотрим произвольную короткую точную последовательность $0 \map A' \map A \map A'' \map 0$ в $\cat A$.
     Подействовав на неё функтором $\cat F$, мы получим последовательность $0 \map \cat F(A') \map \cat F(A) \map \cat F(A'') \map 0$.
     Точность, вообще говоря, пропадёт, но если $\cat F$ сохраняет точность в каком-то члене для всех таких коротких точных последовательностей, то функтор $\cat F$ имеет соответствующее название:
@@ -648,6 +652,7 @@
             Условия как раз означают, что короткая точная последовательность отображается в короткую точную последовательность.
         }
     }
+    \subsection{Гомотопность морфизмов комплексов}
     Пусть имеются комплексы $X_\bullet$ и $X'_\bullet$, и между ними морфизмы $f, g$.
     \definition[Морфизмы $f$ и $g$ гомотопны]{
         Существует семейство морфизмов $s_k: X_{k-1} \map X'_k$, таких, что $f_{n} - g_{n} = d'_{n}s_{n+1} + s_{n}d_{n-1}$.
@@ -694,7 +699,7 @@
     }
     }
     \note{
-        Если $\cat F: \cat A \map \cat A$ --- аддитивный функтор, то ему соответствует функтор $\text{Comp}(\cat F)$, действующий на комплексах с элементами из $\cat A$ поэлементным применением к объектам и морфизмам функтора $\cat F$.
+        Если $\cat F: \cat A \map \cat A$ --- аддитивный функтор, то ему соответствует функтор $\cat{Comp}(\cat F)$, действующий на комплексах с элементами из $\cat A$ поэлементным применением к объектам и морфизмам функтора $\cat F$.
         Допуская вольность речи, можно обозначать этот функтор тоже $\cat F$.
         Используя эту вольность речи, можно отметить, что если $f \simeq g$ --- гомотопные морфизмы комплексов с объектами из $\cat A$, то $\cat F(f) \simeq \cat F(g)$.
     }
@@ -732,7 +737,7 @@
     Стягиваемый комплекс сохраняется под действием функторов, а ацикличный --- может и не сохраниться.
 
 
-    \section{Резольвенты}
+    \section{Проективные резольвенты}
 %    \subsection{Идея}
 %    Пусть имеется точный комплекс $\cdots \map P_2 \map P_1 \map P_0 \map M \map 0$, где $P_i$ --- свободные модули.
 %
@@ -742,16 +747,16 @@
 %    \ok
     Пусть $\cat A$ --- абелева категория, $P \in \cat A$.
     \definition[Объект $P$ проективен]{
-        $\forall \phi: A \map B$: $\phi$ --- эпи $\then \forall \psi: P \map B$: $\exists {\theta: P \map A}$, причём диаграмма коммутирует.
-        При этом $\theta$ должно найтись какое-то, не факт, что оно единственно.
-        % https://q.uiver.app/#q=WzAsNCxbMCwxLCJBIl0sWzEsMSwiQiJdLFsyLDEsIjAiXSxbMSwwLCJQIl0sWzAsMSwiXFxmb3JhbGwgXFxwaGkiXSxbMSwyXSxbMywxLCJcXGZvcmFsbCBcXHBzaSJdLFszLDAsIlxcZXhpc3RzIFxcdGhldGEiLDJdXQ==
+        $\forall \phi: A \map B$: $\phi$ --- эпи $\then \forall \psi: P \map B$: $\exists {\theta: P \map A}$, такое, что диаграмма коммутирует.
+        При этом $\theta$ должно быть какое-то, не факт, что оно единственно.
+        % https://q.uiver.app/#q=WzAsNCxbMCwxLCJBIl0sWzEsMSwiQiJdLFsyLDEsIjAiXSxbMSwwLCJQIl0sWzAsMSwiXFxmb3JhbGwgXFxwaGkiXSxbMSwyXSxbMywxLCJcXGZvcmFsbCBcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDAsIlxcZXhpc3RzIFxcdGhldGEiLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& P \\
               A \& B \& 0
+              \arrow["{\exists \theta}"', dotted, from=1-2, to=2-1]
+              \arrow["{\forall \psi}", dashed, from=1-2, to=2-2]
               \arrow["{\forall \phi}", from=2-1, to=2-2]
               \arrow[from=2-2, to=2-3]
-              \arrow["{\forall \psi}", from=1-2, to=2-2]
-              \arrow["{\exists \theta}"', from=1-2, to=2-1]
         \end{tikzcd}\]
     }
     \fact{
@@ -791,22 +796,21 @@
         }
     }
     \examples{
-        \item Пусть $R = \Z/6\Z$. Тогда $\Z/6\Z$ является $R$-модулем, но $\Z/6\Z \cong \Z/2\Z \oplus \Z/3\Z$, значит, модули $\Z/2\Z$, $\Z/3\Z$, $\Z/6\Z$ все проективны.
+        \item Пусть $R = \Z/6\Z$. Тогда $\Z/6\Z$ является $R$-модулем, но $\Z/6\Z \cong \Z/2\Z \oplus \Z/3\Z$, значит, модули $\Z/2\Z$, $\Z/3\Z$, $\Z/6\Z$ все проективны над кольцом $\Z/6\Z$.
         \item Можно предъявить проективный модуль, исходя из топологического факта о том, что шар нельзя причесать.
+        \comment{А как?}
     }
     \definition[Проективная резольвента модуля $M$]{
-        Ацикличный комплекс вида\\ $\cdots \map P_n \map P_{n-1} \map \cdots \map P_0 \map M \map 0$, где $P_i$ --- проективные модули.
+        Ацикличный (точный) комплекс вида $\cdots \map P_n \map P_{n-1} \map \cdots \map P_0 \map M \map 0$, где $P_i$ --- проективные модули.
     }
-    В будущем докажем, что любые две проективные резольвенты гомотопически эквивалентны.
+    В будущем докажем, что любые две проективные резольвенты гомотопически эквивалентны~(\cref{resolvents-are-equivalent}).
 
     \definition[В категории $\cat A$ достаточно много проективных объектов]{
         $\forall A \in \cat A$ найдётся проективный объект $P \in \cat A$ вместе с эпиморфизмом $P \twoheadrightarrow A$.
     }
     Если в нашей категории $\cat A$ достаточно много проективных объектов, то у всякого модуля $M$ найдётся резольвента --- надо просто подряд накрывать возникающие ядра.
     \newlection{18 марта 2024 г.}
-
-
-    \section{Резольвенты. Левый производный функтор}
+    \section{Левый производный функтор}
     Зафиксируем некоторый аддитивный функтор $\cat F: \cat A \map \cat B$, который обычно будет точен справа.
     Пусть у объекта $A \in \cat A$ имеется проективная резольвента, которую я выделил стрелками $\rightsquigarrow$ .
     % https://q.uiver.app/#q=WzAsOCxbMCwwLCJcXGNkb3RzIl0sWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiMCJdLFsyLDEsIkEiXSxbMywxLCIwIl0sWzEsMSwiMCJdLFswLDEsIlxcY2RvdHMiXSxbMCwxLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFsxLDIsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In19fV0sWzIsM10sWzIsNCwiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoic3F1aWdnbHkifX19XSxbNCw1LCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJzcXVpZ2dseSJ9fX1dLFs2LDRdLFs3LDZdXQ==
@@ -834,9 +838,9 @@
           \arrow[from=1-2, to=1-3]
           \arrow[from=1-3, to=1-4]
     \end{tikzcd}\]
-    Чуть ниже мы определим $L_n \cat F(A) \coloneqq H_n \cat F(P)$ --- левый производный функтор, измеряющий неточность $\cat F$ --- но пока, например, неясна корректность (независимость от резольвенты) такого определения.
-    \theorem{
-        Пусть $P_i$ проективные, сверху комплекс (и ноль в верхней строчке вообще-то неважен), снизу --- точный комплекс.
+    Чуть ниже мы определим $L_n \cat F(A) \coloneqq H_n \cat F(P)$ --- \emph{левый производный функтор}, измеряющий неточность $\cat F$ --- но пока, например, неясна корректность (независимость от резольвенты) такого определения.
+    \theorem{\label{extension-to-projectives}
+        Пусть $P_i$ проективные, сверху комплекс (ноль в верхней строчке стоит для красоты, он там неважен), снизу --- точный комплекс, и дан морфизм $f$.
     % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiQSJdLFs0LDAsIjAiXSxbNCwxLCIwIl0sWzMsMSwiQiJdLFsyLDEsIlFfMCJdLFsxLDEsIlFfMSJdLFswLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzgsMF0sWzksN10sWzAsNywiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNiwiIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwiZiIsMV0sWzAsMV0sWzEsMl0sWzIsM10sWzUsNF0sWzYsNV0sWzcsNl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               \cdots \& {P_1} \& {P_0} \& A \& 0 \\
@@ -857,56 +861,49 @@
         \provebullets{
             \item\bullets{\item Сначала построим $f_i: P_i \map Q_i$.
 
-                $Q_0 \map B$ сюръективно, значит, найдётся $f_0$, такое, что квадрат коммутативен.
+                $Q_0 \map B$ сюръективно, значит, так как $P_0$ проективен, то найдётся $f_0: P_0 \map Q_0$, такое, что квадрат коммутативен.
 
                 \item Далее по индукции: пусть построены $f_0, \dots, f_{n}$.
-% https://q.uiver.app/#q=WzAsNixbMCwwLCJQX3tuKzF9Il0sWzEsMCwiUF9uIl0sWzIsMCwiUF97bi0xfSJdLFswLDEsIlFfe24rMX0iXSxbMSwxLCJRX24iXSxbMiwxLCJRX3tuLTF9Il0sWzIsNSwiZl97bi0xfSJdLFsxLDQsImZfbiJdLFswLDMsImZfe24rMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxXSxbMSwyXSxbMyw0XSxbNCw1LCJkXlFfe24tMX0iXV0=
+                % https://q.uiver.app/#q=WzAsNixbMCwwLCJQX3tuKzF9Il0sWzEsMCwiUF9uIl0sWzIsMCwiUF97bi0xfSJdLFswLDEsIlFfe24rMX0iXSxbMSwxLCJRX24iXSxbMiwxLCJRX3tuLTF9Il0sWzIsNSwiZl97bi0xfSJdLFsxLDQsImZfbiJdLFswLDMsImZfe24rMX0iLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwxLCJkXlBfbiJdLFsxLDIsImReUF97bi0xfSJdLFszLDQsImReUV9uIl0sWzQsNSwiZF5RX3tuLTF9Il1d
                 \[\begin{tikzcd}[ampersand replacement=\&]
-                {P_{n+1}}
-                      \& {P_n} \& {P_{n-1}} \\
-                      {Q_{n+1}} \& {Q_n} \& {Q_{n-1}}
-                      \arrow["{f_{n-1}}", from=1-3, to=2-3]
-                      \arrow["{f_n}", from=1-2, to=2-2]
-                      \arrow["{f_{n+1}}", dashed, from=1-1, to=2-1]
-                      \arrow[from=1-1, to=1-2]
-                      \arrow[from=1-2, to=1-3]
-                      \arrow[from=2-1, to=2-2]
-                      \arrow["{d^Q_{n-1}}", from=2-2, to=2-3]
+                {P_{n+1}} \& {P_n} \& {P_{n-1}} \\
+                {Q_{n+1}} \& {Q_n} \& {Q_{n-1}}
+                \arrow["{d^P_n}", from=1-1, to=1-2]
+                \arrow["{f_{n+1}}", dashed, from=1-1, to=2-1]
+                \arrow["{d^P_{n-1}}", from=1-2, to=1-3]
+                \arrow["{f_n}", from=1-2, to=2-2]
+                \arrow["{f_{n-1}}", from=1-3, to=2-3]
+                \arrow["{d^Q_n}", from=2-1, to=2-2]
+                \arrow["{d^Q_{n-1}}", from=2-2, to=2-3]
                 \end{tikzcd}\]
                 Хочется заполучить стрелку $P_{n+1} \map Q_{n+1}$, воспользовавшись проективностью $P_{n+1}$.
-                Для этого надо найти сюръективное $Q_{n+1} \map \:?$.
-                Так как внизу --- точная последовательность, то $Q_{n+1} \map \Ker (d^Q_{n-1})$ подойдёт: оно сюръективно, так как $P_{n+1} \map P_{n-1}$ нулевой, а квадрат
-                $\begin{tikzcd}[ampersand replacement=\&]
-                {P_n}
-                     \& {P_{n-1}} \\
-                     {Q_n} \& {Q_{n-1}}
-                     \arrow[from=1-1, to=1-2]
-                     \arrow[from=1-2, to=2-2]
-                     \arrow[from=2-1, to=2-2]
-                     \arrow[from=1-1, to=2-1]
-                \end{tikzcd}$ коммутативен.
-                Тем самым, по определению проективного модуля $\exists f_{n+1}$.
+                Для этого надо найти сюръективное отображение из $Q_{n+1}$.
+
+                Так как внизу --- точная последовательность, то $d_{n}^Q: Q_{n+1} \map \Ker (d^Q_{n-1})$ подойдёт: во-первых, $\Image(d_n^Q) = \Ker(d^Q_{n-1})$ из точности $Q_\bullet$, а во-вторых, $\Image(f_n \circ d_n^P) \subset \Ker(d_n^Q)$ --- чтобы это увидеть, надо применить $d_n^Q$ и воспользоваться коммутативностью правого квадрата, и тем, что $P$ --- комплекс.
+                Тем самым, по определению проективного модуля $\exists f_{n+1}: P_{n+1}\map Q_{n+1}$.
             }
             \item\bullets{
-                \item Теперь пусть имеются два морфизма комплексов, продолжающих $f$, $f_i$ и $g_i$.
-            % https://q.uiver.app/#q=WzAsOSxbMSwwLCJQXzEiXSxbMiwwLCJQXzAiXSxbMywwLCJBIl0sWzEsMSwiUV8xIl0sWzIsMSwiUV8wIl0sWzMsMSwiQiJdLFswLDAsIlxcY2RvdHMiXSxbMCwxLCJcXGNkb3RzIl0sWzQsMSwiMCJdLFswLDFdLFsxLDJdLFs2LDBdLFs3LDNdLFswLDMsImdfMSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo0MCwib2Zmc2V0IjotMX1dLFswLDMsImZfMSIsMix7Im9mZnNldCI6MX1dLFsxLDQsImdfMCIsMCx7Im9mZnNldCI6LTF9XSxbMSw0LCJmXzAiLDIseyJvZmZzZXQiOjF9XSxbMiw1LCJmIiwxXSxbMyw0XSxbNCw1XSxbNSw4XV0=
+                \item Теперь пусть имеются два морфизма комплексов, продолжающих $f$, это $f_i$ и $g_i$.
+            % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiQSJdLFsxLDEsIlFfMSJdLFsyLDEsIlFfMCJdLFszLDEsIkIiXSxbMCwwLCJcXGNkb3RzIl0sWzAsMSwiXFxjZG90cyJdLFs0LDEsIjAiXSxbNCwwLCIwIl0sWzAsMV0sWzEsMl0sWzYsMF0sWzcsM10sWzAsMywiZ18xIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwLCJvZmZzZXQiOi0xfV0sWzAsMywiZl8xIiwyLHsib2Zmc2V0IjoxfV0sWzEsNCwiZ18wIiwwLHsib2Zmc2V0IjotMX1dLFsxLDQsImZfMCIsMix7Im9mZnNldCI6MX1dLFsyLDUsImYiLDFdLFszLDRdLFs0LDVdLFs1LDhdLFsyLDldXQ==
                 \[\begin{tikzcd}[ampersand replacement=\&]
-                      \cdots \& {P_1} \& {P_0} \& A \\
+                      \cdots \& {P_1} \& {P_0} \& A \& 0 \\
                       \cdots \& {Q_1} \& {Q_0} \& B \& 0
-                      \arrow[from=1-2, to=1-3]
-                      \arrow[from=1-3, to=1-4]
                       \arrow[from=1-1, to=1-2]
-                      \arrow[from=2-1, to=2-2]
+                      \arrow[from=1-2, to=1-3]
                       \arrow["{g_1}"{pos=0.4}, shift left, from=1-2, to=2-2]
                       \arrow["{f_1}"', shift right, from=1-2, to=2-2]
+                      \arrow[from=1-3, to=1-4]
                       \arrow["{g_0}", shift left, from=1-3, to=2-3]
                       \arrow["{f_0}"', shift right, from=1-3, to=2-3]
+                      \arrow[from=1-4, to=1-5]
                       \arrow["f"{description}, from=1-4, to=2-4]
+                      \arrow[from=2-1, to=2-2]
                       \arrow[from=2-2, to=2-3]
                       \arrow[from=2-3, to=2-4]
                       \arrow[from=2-4, to=2-5]
                 \end{tikzcd}\]
                 Распишем разность: пусть $h_i \coloneqq f_i - g_i$.
+                Построим гомотопию $h \simeq 0$.
                 Понятно, что $A \map Q_0$ надо взять нулевым.
             % https://q.uiver.app/#q=WzAsMTAsWzEsMCwiUF8xIl0sWzIsMCwiUF8wIl0sWzMsMCwiQSJdLFsxLDEsIlFfMSJdLFsyLDEsIlFfMCJdLFszLDEsIkIiXSxbMCwwLCJcXGNkb3RzIl0sWzAsMSwiXFxjZG90cyJdLFs0LDEsIjAiXSxbNCwwLCIwIl0sWzAsMV0sWzEsMl0sWzYsMF0sWzcsM10sWzIsNSwiMCIsMV0sWzMsNF0sWzQsNSwiZF97LTF9XlEiXSxbNSw4XSxbMCwzLCJoXzEiLDFdLFsxLDQsImhfMCIsMV0sWzIsNCwiMCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDMsInNfMCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs5LDUsIjAiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw5XV0=
                 \[\begin{tikzcd}[ampersand replacement=\&]
@@ -948,29 +945,35 @@
                 Надо проверить, что образ правой части лежит в $\Image(d_n^Q)$, то есть $\Ker(d_{n-1}^Q)$.
                 Применим $d_{n-1}^Q$.
                 Получим \[d_{n-1}^Q h_n - d_{n-1}^Q s_{n-1} d_{n-1}^P = h_{n-1}d_{n-1}^P - (h_{n-1} - s_{n-2}d_{n-2}^P)d_{n-1}^P = 0\]
-                Тем самым, $s_n$ действительно найдётся согласно свойству проективного модуля.
+                Тем самым, $s_n$ действительно найдётся согласно свойству проективного модуля.\qedhere
             }}
     }
-    \corollary{
+    \corollary{\label{resolvents-are-equivalent}
         Любые две проективные резольвенты одного и того же объекта гомотопически эквивалентны.
-    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJQIl0sWzAsMSwiUSJdLFsxLDEsIkEiXSxbMSwwLCJBIl0sWzIsMCwiUCJdLFsyLDEsIlAiXSxbMywxLCJBIl0sWzMsMCwiQSJdLFswLDEsImYiLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiZyIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCJcXGlkIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzAsM10sWzEsMl0sWzcsNiwiXFxpZCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs1LDZdLFs0LDddLFs0LDUsImZnIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwLCJvZmZzZXQiOi0yfV0sWzQsNSwiXFxpZCIsMix7Im9mZnNldCI6Mn1dXQ==
+    \provehere{
+    Пусть $P, Q$ --- две резольвенты объекта $A$.
+        В силу~(\cref{extension-to-projectives}), можно построить морфизмы этих резольвент $f: P \map Q$ и $g: Q \map P$.
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCJQIl0sWzAsMSwiUSJdLFsxLDEsIkEiXSxbMSwwLCJBIl0sWzIsMCwiUCJdLFsyLDEsIlAiXSxbMywxLCJBIl0sWzMsMCwiQSJdLFswLDEsImYiLDAseyJvZmZzZXQiOi0yfV0sWzEsMCwiZyIsMCx7Im9mZnNldCI6LTJ9XSxbMywyLCJcXGlkIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzAsM10sWzEsMl0sWzcsNiwiXFxpZCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs1LDZdLFs0LDddLFs0LDUsImdmIiwwLHsibGFiZWxfcG9zaXRpb24iOjQwLCJvZmZzZXQiOi0yfV0sWzQsNSwiXFxpZCIsMix7Im9mZnNldCI6Mn1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
-              P \& A_\bullet \& P \& A_{\bullet} \\
-              Q \& A_\bullet \& P \& A_{\bullet}
-              \arrow["f", shift left=2, from=1-1, to=2-1]
-              \arrow["g", shift left=2, from=2-1, to=1-1]
-              \arrow["\id", tail reversed, from=1-2, to=2-2]
+              P \& A \& P \& A \\
+              Q \& A \& P \& A
               \arrow[from=1-1, to=1-2]
-              \arrow[from=2-1, to=2-2]
-              \arrow["\id", tail reversed, from=1-4, to=2-4]
-              \arrow[from=2-3, to=2-4]
+              \arrow["f", shift left=2, from=1-1, to=2-1]
+              \arrow["\id", tail reversed, from=1-2, to=2-2]
               \arrow[from=1-3, to=1-4]
-              \arrow["fg"{pos=0.4}, shift left=2, from=1-3, to=2-3]
+              \arrow["gf"{pos=0.4}, shift left=2, from=1-3, to=2-3]
               \arrow["\id"', shift right=2, from=1-3, to=2-3]
+              \arrow["\id", tail reversed, from=1-4, to=2-4]
+              \arrow["g", shift left=2, from=2-1, to=1-1]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-3, to=2-4]
         \end{tikzcd}\]
-        Строим по только что доказанной теореме $f, g$, по теореме $fg \simeq \id_Q$ и $gf \simeq \id_Q$.
+    Получается, что $gf: P \map P$ --- эндоморфизм $P$, как резольвенты $A$.
+        С другой стороны, $\id_P$ --- тоже эндоморфизм $P$, как резольвенты $A$, и опять применяя~(\cref{extension-to-projectives}), получаем, что $gf \simeq \id_P$.
+    Аналогично $fg \simeq \id_Q$.
     }
-    Таким образом, определение левого производного функтора $L_n$ корректно.
+    }
+    Таким образом, определение левого производного функтора $L_n\cat F(A) \bydef H_n \cat F(P)$ корректно.
 %    \comment{Возможно, надо требовать, чтобы $\cat F$ сохранял нуль, я не знаю.}
 
     С некоторой точки зрения <<правильно>> рассматривать категорию комплексов с точностью до гомотопической эквивалентности, назовём её $\cat{HoComp}(\cat A)$: там объекты --- $\Obj \cat A$, а группа морфизмов  $\Mor_{\cat{HoComp}(\cat A)}(P, Q) = \Mor(\cat{Comp}(\cat A))/\text{Ho}(P, Q)$, где $Ho(P, Q)$ --- группа морфизмов, гомотопных $0$.
@@ -1164,6 +1167,7 @@
         Если $\cat F$ точен справа, то длинная точная последовательность производных функторов обрывается эпиморфизмом: $L_0(B) \map L_0(C) \map 0$.
     }
     \newlection{25 марта 2024 г.}
+    \subsection{Связанные последовательности функторов}
 %    \example{В качестве $\cat F$ можно, например, рассмотреть функтор $\_ \otimes M$ для фиксированного модуля.}
     Рассмотрим формальное обобщение производных функторов.
 
@@ -1309,6 +1313,7 @@
     Конкретнее, имеются ковариантный $\Hom(M, \_)$, и контравариантный $\Hom(\_, N)$.
 
     Для изучения точных слева функторов будем строить последовательность правых сопряжённых функторов.
+    \subsection{Инъективные резольвенты}
     \definition[Инъективный модуль $Q$]{
         Такой модуль $Q$, что для любой инъекции $A \rightarrowtail B$, и для любого морфизма $A \map Q$, существует морфизм $B \map Q$ такой, что диаграмма коммутативна:
         % https://q.uiver.app/#q=WzAsMyxbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsIlEiXSxbMCwyXSxbMCwxLCIiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtb25vIn19fV0sWzEsMiwiXFxleGlzdHMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
@@ -1340,6 +1345,7 @@
 
     Для функторов $\Ext$ более высокой степени надо брать более длинные последовательности.
     \newlection{1 апреля 2024 г.}
+    \subsection{О расширениях модулей и $\Ext^1$}
     Пусть $M, N \in \modR{R}$.
     \definition[Расширение $N$ при помощи $M$]{
         Точная последовательность $0 \map M \map X \map N \map 0$.
