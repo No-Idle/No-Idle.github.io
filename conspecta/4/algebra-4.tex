@@ -602,7 +602,7 @@
     \definition[Аддитивный функтор $\cat F: \cat A \map \cat B$]{
         Такой функтор, что $\forall \alpha, \beta \in \Mor(\cat A): \cat F(\alpha + \beta) = \cat F(\alpha) + \cat F(\beta)$ всегда, когда определено.
     }
-    \subsection{Точные и полуточные фукнкторы}
+    \subsection{Точные и полуточные функторы}
     Рассмотрим произвольную короткую точную последовательность $0 \map A' \map A \map A'' \map 0$ в $\cat A$.
     Подействовав на неё функтором $\cat F$, мы получим последовательность $0 \map \cat F(A') \map \cat F(A) \map \cat F(A'') \map 0$.
     Точность, вообще говоря, пропадёт, но если $\cat F$ сохраняет точность в каком-то члене для всех таких коротких точных последовательностей, то функтор $\cat F$ имеет соответствующее название:
@@ -611,6 +611,56 @@
         \item Если всегда имеется точность в членах $\cat F(A')$ и $\cat F(A)$, то $\cat F$ --- \emph{точный слева функтор}.
         \item Если всегда имеется точность в членах $\cat F(A)$ и $\cat F(A'')$, то $\cat F$ --- \emph{точный справа функтор}.
         \item Если всякая короткая точная последовательность переходит в короткую точную последовательность, то $\cat F$ --- \emph{точный функтор}.
+    }
+    \comment{
+        Примеры ниже точно должны были быть на лекции, но я их как-то упустил.
+        Оставлю здесь, надеюсь, что всё ниже написанное --- правда.
+    }
+    \examples{
+    \item Функтор $\ker: \cat{Arr}\cat C \map \cat{Arr}\cat C$ является точным слева.
+
+        Вообще, категория $\cat{Arr}\cat C$ является абелевой: морфизмы в ней являются парами морфизмов в $\cat{Arr}\cat C$, и их можно складывать по правилу $(\alpha_1,\beta_1) + (\alpha_2, \beta_2) = (\alpha_1 + \alpha_2, \beta_1 + \beta_2)$.
+        Нулевым объектом является $\id_0$, а бипроизведением двух объектов $f: A \map B$ и $g: C \map D$ (где $A,B,C,D \in \Obj\cat C$) --- объект $f \oplus g: A \oplus C \map B \oplus D$.
+        Мономорфизмами в $\cat{Arr}\cat C$ являются пары мономорфизмов из $\cat C$, откуда очевидно, что всякий мономорфизм нормален (мономорфизм $(\alpha, \beta)$ является ядром $(\coker \alpha, \coker \beta)$).
+
+        Для проверки того, что $\ker$ точен слева, посмотрим, как $\ker$ действует на короткой точной последовательности $0 \map f \overset{(\alpha,\beta)}\map g \overset{(\gamma,\delta)}\map h \map 0$:
+% https://q.uiver.app/#q=WzAsMTUsWzEsMCwiXFxLZXIgZiJdLFsxLDEsIkEiXSxbMSwyLCJBJyJdLFsyLDEsIkIiXSxbMiwyLCJCJyJdLFszLDEsIkMiXSxbMywyLCJDJyJdLFswLDEsIjAiXSxbMCwyLCIwIl0sWzQsMSwiMCJdLFs0LDIsIjAiXSxbMCwwLCIwIl0sWzIsMCwiXFxLZXIgZyJdLFszLDAsIlxcS2VyIGgiXSxbNCwwLCIwIl0sWzAsMSwiXFxrZXIgZiJdLFsxLDIsImYiXSxbMyw0LCJnIl0sWzEsMywiXFxhbHBoYSJdLFsyLDQsIlxcYmV0YSJdLFs1LDYsImgiXSxbMyw1LCJcXGdhbW1hIl0sWzcsOCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzksMTAsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs3LDFdLFs4LDJdLFs1LDldLFs2LDEwXSxbNCw2LCJcXGRlbHRhIl0sWzExLDcsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxMiwzLCJcXGtlciBnIl0sWzEzLDUsIlxca2VyIGgiXSxbMTEsMF0sWzAsMTIsIlxcdGlsZGV7XFxhbHBoYX0iXSxbMTIsMTMsIlxcdGlsZGV7XFxnYW1tYX0iXSxbMTQsOSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzEzLDE0XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& {\Ker f} \& {\Ker g} \& {\Ker h} \& 0 \\
+              0 \& A \& B \& C \& 0 \\
+              0 \& {A'} \& {B'} \& {C'} \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow[tail reversed, from=1-1, to=2-1]
+              \arrow["{\tilde{\alpha}}", from=1-2, to=1-3]
+              \arrow["{\ker f}", from=1-2, to=2-2]
+              \arrow["{\tilde{\gamma}}", from=1-3, to=1-4]
+              \arrow["{\ker g}", from=1-3, to=2-3]
+              \arrow[from=1-4, to=1-5]
+              \arrow["{\ker h}", from=1-4, to=2-4]
+              \arrow[tail reversed, from=1-5, to=2-5]
+              \arrow[from=2-1, to=2-2]
+              \arrow[tail reversed, from=2-1, to=3-1]
+              \arrow["\alpha", from=2-2, to=2-3]
+              \arrow["f", from=2-2, to=3-2]
+              \arrow["\gamma", from=2-3, to=2-4]
+              \arrow["g", from=2-3, to=3-3]
+              \arrow[from=2-4, to=2-5]
+              \arrow["h", from=2-4, to=3-4]
+              \arrow[tail reversed, from=2-5, to=3-5]
+              \arrow[from=3-1, to=3-2]
+              \arrow["\beta", from=3-2, to=3-3]
+              \arrow["\delta", from=3-3, to=3-4]
+              \arrow[from=3-4, to=3-5]
+        \end{tikzcd}\]
+        Точность в левом члене сохраняется, так как $\tilde \alpha = \alpha\big|_{\Ker f}$, и ограничение мономорфизма --- мономорфизм.
+
+        Точность в среднем члене сохраняется: $\forall y \in \Ker g: \tilde{\gamma}(y) = 0 \iff \gamma(y) = 0 \iff \exists x \in A: y = \alpha(x)$.
+        В силу того, что $g(y) = 0$, а $\beta$ --- мономорфизм, то $f(x) = 0$ тоже, откуда $x \in \Ker f$, что означает точность в среднем члене.
+
+        Точность в правом члене, конечно, не обязана сохраниться: скажем, если $B = B' = C = \Z$, $C' = 0$, и $g = \gamma = \id_{\Z}$, то $(\gamma,\delta)$ --- эпиморфизм, но при взятии его ядра получится $\tilde{\gamma}: 0 \map \Z$.
+        Так как $\tilde{\gamma}$ не эпиморфизм, то и $(\tilde{\gamma}, \gamma)$ эпиморфизмом тоже не является.
+
+    \item Двойственно, функтор коядра точен справа.
     }
     \lemma{
         Пусть $\cat F$ --- аддитивный функтор. Следующие условия эквивалентны:
@@ -1028,7 +1078,7 @@
         \[\begin{tikzcd}[ampersand replacement=\&]
               \& Q \& {\textcolor{darkgreen}{Q \oplus P}} \& P \\
               0 \& A \& B \& C \& 0 \\
-              \& 0 \& 0 \& 0
+              \& 0 \& {\textcolor{darkgreen}{0}} \& 0
               \arrow[from=2-2, to=3-2]
               \arrow[from=1-2, to=2-2]
               \arrow[from=1-4, to=2-4]
@@ -1093,7 +1143,7 @@
               0 \& {\Ker(d_{n-1}^A)} \& {\Ker(d_{n-1}^B)} \& {\Ker(d_{n-1}^C)} \& {\textcolor{red}{0}} \\
               0 \& {(P_A)_n} \& {(P_B)_n} \& {(P_C)_n} \& 0 \\
               0 \& {\Ker(d_{n-2}^A)} \& {\Ker(d^B_{n-2})} \& {\Ker(d_{n-2}^C)} \& 0
-              \arrow[from=2-4, to=2-5]
+              \arrow[red,from=2-4, to=2-5]
               \arrow[from=3-4, to=3-5]
               \arrow[from=4-4, to=4-5]
               \arrow[from=4-1, to=4-2]
@@ -1112,7 +1162,7 @@
               \arrow[hook, from=2-4, to=3-4]
               \arrow["{d_{n-1}^C}", from=3-4, to=4-4]
               \arrow[hook, from=2-3, to=3-3]
-              \arrow["{d_{n-1}^B}", from=3-3, to=4-3]
+              \arrow[two heads,"{d_{n-1}^B}", from=3-3, to=4-3]
               \arrow["i", dashed, from=1-2, to=1-3,darkgreen]
               \arrow["\pi", dashed, from=1-3, to=1-4,darkgreen]
               \arrow["d_n^B", dashed, from=1-3, to=2-3,darkgreen]
@@ -1120,8 +1170,7 @@
         Вычленим некоторый кусочек диаграммы, и попробуем применить лемму о подкове для получения $d_n^B$.
         Для этого необходимо потребовать от стрелки $\Ker(d_{n-1}^B) \map \Ker(d_{n-1}^C)$, чтобы она была эпиморфизмом.
 
-        Докажем последнее по индукции: короткая последовательность ядер $0 \map \Ker(d_{n}^A) \map \Ker(d_{n}^B) \map \Ker(d_n^C) \map 0$ точна (так как ядро точно слева, то точность в остальных членах не вызывает сомнений, надо лишь проверить эпиморфность).
-        В качестве базы здесь удобно применить лемму о змее:
+        При $n = 1$ это верно в силу леммы о змее:
     % https://q.uiver.app/#q=WzAsMTgsWzEsMiwiQSJdLFswLDIsIjAiXSxbMiwyLCJCIl0sWzMsMiwiQyJdLFs0LDIsIjAiXSxbMCwxLCIwIl0sWzEsMSwiUF9BIl0sWzIsMSwiUF9CIl0sWzMsMSwiUF9DIl0sWzQsMSwiMCJdLFswLDAsIjAiXSxbMSwwLCJcXEtlcihkX3stMX1eQSkiXSxbMiwwLCJcXEtlcihkX3stMX1eQikiXSxbMywwLCJcXEtlcihkX3stMX1eQykiXSxbNCwwLCIwIl0sWzEsMywiMCJdLFsyLDMsIjAiXSxbMywzLCIwIl0sWzAsMTVdLFsyLDE2XSxbMywxN10sWzEsMF0sWzAsMl0sWzIsM10sWzMsNF0sWzUsNl0sWzYsN10sWzcsOF0sWzgsOV0sWzExLDYsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsMCwiZF97LTF9XkEiXSxbMTIsNywiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifX19XSxbNywyLCJkX3stMX1eQiJdLFsxMyw4LCIiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs4LDMsImRfey0xfV5DIl0sWzEwLDExXSxbMTEsMTJdLFsxMiwxM10sWzEzLDE0XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               0 \& {\Ker(d_{-1}^A)} \& {\Ker(d_{-1}^B)} \& {\Ker(d_{-1}^C)} \\
@@ -1150,9 +1199,11 @@
               \arrow[from=1-2, to=1-3]
               \arrow[from=1-3, to=1-4]
         \end{tikzcd}\]
-        \comment{А индукционный переход я не знаю, ну, можно просто убедиться, использовав определение $d_{n}^B$ из леммы о подковы.}
+        Если же $n > 1$, то воспользуемся тем, что $(P_B)_n = (P_A)_n \oplus (P_C)_n$.
+        Это, в частности, значит, что у ретракции $\pi_n: (P_B)_n \map (P_C)_n$ имеется односторонняя обратная --- сечение $s_n: (P_C)_n \map (P_B)_n$, такая, что $\pi_n \cdot s_n = \id_{(P_C)_n}$.
+        Ввиду функториальности ядра односторонняя обратная будет иметься и у отображения ядер $\Ker(d_{n-1}^B) \map \Ker(d_{n-1}^C)$, что значит, что это эпиморфизм.
 
-        Тем самым, так как прямая сумма проективных проективна, то $(P_A)_{n+1} \oplus (P_C)_{n+1} \twoheadrightarrow \Ker d_{n-1}^B$, и определение резольвенты $B$ по индукции корректно.
+        Так как прямая сумма проективных проективна, то $(P_A)_{n+1} \oplus (P_C)_{n+1} \twoheadrightarrow \Ker d_{n-1}^B$, и определение резольвенты $B$ по индукции корректно.
 
         Точность $0 \map P_A \map P_B \map P_C$ под действием всякого аддитивного функтора, конечно, сохраняется, так как $(P_B)_n = (P_A)_n \oplus (P_C)_n$, а аддитивные функторы сохраняют бипроизведение.
     }
@@ -1186,7 +1237,7 @@
     Заметим, что $\forall i > 0: L_i \cat F(P) = 0$, если $P$ проективен.
     Это очевидным образом следует из существования резольвенты $0 \map P \map P \map 0$.
     Если $\cat F$ точен справа (а мы это предполагаем), то он сохраняет ноль.
-    Тогда $L_n \cat F$ --- гомологии $\cdots \map 0 \map 0 \map \cat F(P) \map 0$, которые в нулевом члене --- $\cat F(P)$, а в остальных --- нулевые.
+    Тогда $L_n \cat F$ --- гомологии $\left[\cdots \map 0 \map 0 \map \cat F(P) \map 0\right]$, которые в нулевом члене --- $\cat F(P)$, а в остальных --- нулевые.
 
     Оказывается, этого условия достаточно, чтобы определить связанную последовательность по нулевому элементу:
     \theorem{
@@ -1198,7 +1249,7 @@
         \provehere{
             Пусть $A \in \cat A$. Накроем $A$ проективным, возьмём ядро, получим точную последовательность
             \[0 \map M \map P \map A \map 0\]
-            Так как последовательности функторов --- связаны --- то имеется длинная точная последовательность:
+            Так как последовательности функторов --- связаны --- то имеется длинная точная последовательность, нарисуем её кусок:
         % https://q.uiver.app/#q=WzAsOCxbMCwwLCIwID0gXFxjYXQgRl8xKFApIl0sWzEsMCwiXFxjYXQgRl8xKEEpIl0sWzIsMCwiXFxjYXQgRl8wKE0pIl0sWzMsMCwiXFxjYXQgRl8wKFApIl0sWzMsMSwiXFxjYXQgR18wKFApIl0sWzIsMSwiXFxjYXQgR18wKE0pIl0sWzEsMSwiXFxjYXQgR18xKEEpIl0sWzAsMSwiMCA9IFxcY2F0IEdfMShQKSJdLFswLDFdLFsxLDJdLFsyLDNdLFs3LDZdLFs2LDVdLFs1LDRdLFsyLDUsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFszLDQsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxLDYsIiIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
             {0 = \cat F_1(P)}
@@ -1247,9 +1298,9 @@
     \section{Производные функторы для $\otimes$}
     Пусть $R$ --- необязательно коммутативное кольцо с единицей, $M \in \modR{R}, N \in \Lmod{R}$, напомним, что тогда $M \otimes_R N \in \cat{Ab}$.
 
-    Изучим производные функторов тензорного произведения (функтор тензорного произведения точен справа, так как он --- левый сопряжённый к $\Hom$).
-    Обозначим $\LTor_i(M, \_) \bydef L_i(M \otimes \_)$, $\RTor_i(\_, N) \bydef L_i(\_ \otimes N)$.
+    Изучим производные функторов тензорного произведения (функтор тензорного произведения точен справа, так как он --- левый сопряжённый к $\Hom$ (что верно в силу естественного изоморфизма $\Hom(A \otimes B, C) \cong \Hom(A, \Hom(B, C))$)).
 
+    Обозначим $\LTor_i(M, \_) \bydef L_i(M \otimes \_)$, $\RTor_i(\_, N) \bydef L_i(\_ \otimes N)$.
     \examples{
         \item Изучим $\Tor_1(M, R/aR)$, где $R$ --- коммутативная область целостности.
         Для $R/aR$ несложно написать проективную резольвенту: $0 \map R \overset{a}{\Map} R \map R/aR \map 0$ ($a(m) = am$).
@@ -1258,11 +1309,14 @@
         Так как кольцо коммутативное, то тензорное произведение --- $\modR{R}$, поэтому $m \otimes r \mapsto m \otimes ar$ --- тоже просто отображение умножения на $a$.
 
         Так как естественно $M \otimes R/aR \cong M/aM \otimes R \cong M/aM$, то гомологии в среднем члене --- нуль, а в левом члене --- $a$-\emph{кручение} в $M$, то есть $\defset{x \in M}{ax = 0}$.
+    \item Если же хочется изучить всё кручение $M$, то оказывается, $\Tor_1(M, F/R) = \defset{x \in M}{\exists a \in R \sm \{0\}: ax = 0}$ (здесь $F/R$ --- фактор $R$-модулей).
+        Здесь используется, что $F/R = \varinjlim R/aR$, значит, $\Tor_1(F/R, M) = \varinjlim \Tor_1(R/aR, M)$.
     }
 
     \theorem{
         Имеет место естественный изоморфизм: $\forall i: \LTor_i \cong \RTor_i$.
         \provehere[Идея доказательства]{
+            Пусть имеются резольвенты $\left[\dots \map P_1 \map P_0 \map M\right]$ и $\left[\dots \map Q_1 \map Q_0 \map N\right]$, нарисуем следующую коммутативную диаграмму:
         % https://q.uiver.app/#q=WzAsMTksWzEsMSwiUF8xXFxvdGltZXMgUV8xIl0sWzIsMSwiUF8wXFxvdGltZXMgUV8xIl0sWzMsMSwiTSBcXG90aW1lcyBRXzEiXSxbMSwyLCJQXzFcXG90aW1lcyBRXzAiXSxbMiwyLCJQXzBcXG90aW1lcyBRXzAiXSxbMywyLCJNXFxvdGltZXMgUV8wIl0sWzEsMywiUF8xXFxvdGltZXMgTiJdLFsyLDMsIlBfMFxcb3RpbWVzIE4iXSxbMywzLCJNIFxcb3RpbWVzIE4iXSxbNCwxLCIwIl0sWzQsMiwiMCJdLFsxLDQsIjAiXSxbMiw0LCIwIl0sWzAsMywiXFxjZG90cyJdLFszLDAsIlxcdmRvdHMiXSxbMiwwLCJcXHZkb3RzIl0sWzEsMCwiXFx2ZG90cyJdLFswLDEsIlxcY2RvdHMiXSxbMCwyLCJcXGNkb3RzIl0sWzIsOV0sWzUsMTBdLFs2LDExXSxbNywxMl0sWzEzLDZdLFs2LDddLFs3LDhdLFsxNywwXSxbMCwxXSxbMSwyXSxbMTgsM10sWzMsNF0sWzQsNV0sWzE2LDBdLFswLDNdLFszLDZdLFsxNSwxXSxbMSw0LCIgICAgIl0sWzQsN10sWzIsNV0sWzUsOF0sWzE0LDJdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
                   \& \vdots \& \vdots \& \vdots \\
@@ -1293,19 +1347,19 @@
                   \arrow[from=3-4, to=4-4]
                   \arrow[from=1-4, to=2-4]
             \end{tikzcd}\]
-            Домножение на свободный объект --- точный справа функтор --- из дистрибутивности тензорного произведения.
-            Домножение на проективный объект --- точный справа функтор --- опять же из дистрибутивности.
+            Тензорное домножение на свободный объект --- точный справа функтор --- из дистрибутивности тензорного произведения.
+            Тензорное домножение на проективный объект (прямое слагаемое свободного) --- точный справа функтор --- опять же из дистрибутивности.
 
             Все строки точны, кроме нижней, и все столбцы точны, кроме правого, в которых мы и хотим посчитать гомологии, и доказать, что они равны.
 
             Заведём тотальный комплекс $\text{Tot}(M, N)_n \coloneqq \bigoplus_{i = 0}^{n}P_i \otimes Q_{n-i}$, и теперь надо определить дифференциал $D$.
             Необходимо, чтобы выполнялось требование $D^2 = 0$, поэтому абы какой не подойдёт.
 
-            Пусть $d_p: P \map P_{p-1}$, $d_q: Q_q \map Q_{q-1}$ --- дифференциалы резольвент, определим
+            Пусть $d_p: P_p \map P_{p-1}$, $d_q: Q_q \map Q_{q-1}$ --- дифференциалы резольвент, определим
             \begin{align*}
                 D_{p,q}: P_p \otimes Q_q &\map \text{Tot}(M, N)_{p+q-1}\\(x \otimes y) &\mapsto d_p(x) \otimes y + (-1)^p x \otimes d_q(y)
             \end{align*}
-            Теперь полный дифференциал $D_{n} = \bigoplus\limits_{p + q = n}D_{p,q}: \text{Tot}(M, N)_{p+q} \map \text{Tot}_{p+q-1}$.
+            Теперь определим полный дифференциал $D_{n} \coloneqq \bigoplus\limits_{p + q = n}D_{p,q}: \text{Tot}(M, N)_{n} \map \text{Tot}(M,N)_{n-1}$.
             \exercise{$D_{n-1} \cdot D_n = 0$.}
             Осталось показать, что гомологии нижней строки, как и гомологии правого столбца, совпадают с гомологиями тотального комплекса.
         }
@@ -1315,7 +1369,7 @@
     \section{Производные функторы для $\Hom$}
     Теперь разберёмся с функторами $\Hom$ --- эти функторы являются правыми сопряжёнными к $\otimes$, поэтому точны слева.
 
-    Конкретнее, имеются ковариантный $\Hom(M, \_)$, и контравариантный $\Hom(\_, N)$.
+    Таких функторов два: имеются ковариантный $\Hom(M, \_)$, и контравариантный $\Hom(\_, N)$.
 
     Для изучения точных слева функторов будем строить последовательность правых сопряжённых функторов.
     \subsection{Инъективные резольвенты}
@@ -1331,36 +1385,37 @@
         \end{tikzcd}\]
     }
     \intfact{
-        Инъективный модуль --- делимый модуль, то есть $\forall r \in R \sm \{0\}, q \in M: \exists x \in M: rx = q$.
+        Инъективный модуль --- то же самое, что и делимый модуль, то есть $\forall r \in R \sm \{0\}, q \in M: \exists x \in M: rx = q$.
+    \comment{Скорее всего, это верно только над PID.}
     }
-    В одну сторону доказательство очевидно --- в качестве $A$ надо взять кольцо $R$, а в качестве $B$ --- поле частных $R$.
+    В одну сторону доказательство очевидно --- чтобы убедиться, что инъективный модуль является делимым, надо в качестве $A$ взять кольцо $R$, а в качестве $B$ --- поле частных $R$.
 
-    В категории, где \emph{достаточно много инъективных объектов}, двойственно проективной, строится инъективная резольвента, в которой коядро предыдущего морфизма вкладывается \comment{?} в следующий инъективный модуль:
+    В категории $\cat C$, где \emph{достаточно много инъективных объектов} (то есть $\forall C \in \cat C: \exists$ проективный $Q$ вместе с вложением $Q \hookrightarrow C$), двойственно проективной, строится инъективная резольвента, в которой коядро предыдущего морфизма вкладывается в следующий инъективный модуль:
     \[0 \map N \map Q_0 \map Q_1 \map Q_2 \map \cdots\]
     Далее аналогично определяются правые производные функторы, в частности, имеется комплекс
     \[0 \map \Hom(M, Q_0) \map \Hom(M, Q_1) \map \cdots\]
     Гомологии такого комплекса обозначают $\Ext^i(M, N)$.
 
-    Построив проективную резольвенту для $M$: $\cdots \map P_2 \map P_1 \map P_0 \map M \map 0$.
+    Построим теперь проективную резольвенту для $M$: $\cdots \map P_2 \map P_1 \map P_0 \map M \map 0$.
     Применяя к этой последовательности контравариантный $\Hom$, получаем $0 \map \Hom(P_0, N) \map \Hom(P_1, N) \map \cdots$
     Гомологии этого комплекса обозначают $\Ext^i(M, N)$ (это уже другой $\Ext$, но они, как и $\Tor$, естественно изоморфны, доказательство абсолютно аналогично)
 
-    Название $\Ext$ происходит от extensions, элементы $\Ext^1$ находятся в биекции с классами коротких точных последовательностей $0 \map M \map\:\, ? \map N \map 0$.
-    В качестве среднего члена всегда подойдёт $M \oplus N$, но, может быть, и ещё что-то, и за это отвечает $\Ext$.
+    \subsection{О расширениях модулей и $\Ext^1$}
+    Название $\Ext$ происходит от extensions, элементы $\Ext^1$ находятся в биекции с классами коротких точных последовательностей $0 \map M \map\:\, ? \map N \map 0$~(\cref{ext1}).
+    В качестве среднего члена всегда подойдёт $M \oplus N$, но, может быть, и ещё что-то, и за это отвечает $\Ext^1$.
 
     Для функторов $\Ext$ более высокой степени надо брать более длинные последовательности.
     \newlection{1 апреля 2024 г.}
-    \subsection{О расширениях модулей и $\Ext^1$}
     Пусть $M, N \in \modR{R}$.
     \definition[Расширение $N$ при помощи $M$]{
         Точная последовательность $0 \map M \map X \map N \map 0$.
     }
     Морфизм расширений $0 \map M \map X \map N \map 0$ и $0 \map M \map X' \map N \map 0$ --- такая стрелка $X \map X'$, что два получившихся треугольника коммутативны.
-    \theorem{
-        $\Ext^1(M, N)$ естественно изоморфен множеству классов изоморфизмов расширений $N$ при помощи $M$.
+    \theorem{\label{ext1}
+        $\Ext^1(N,M)$ естественно изоморфен множеству классов изоморфизмов расширений $N$ при помощи $M$.
         \provehere{
             Рассмотрим расширение $0 \map M \map X \map N \map 0$.
-            Запишем длинную точную последовательность для $\Ext^1(\_, N)$ и данной короткой точной последовательности.
+            Запишем кусок длинной точной последовательности правых производных функторов для $\Hom(\_, M)$ и данной короткой точной последовательности, заменяя $\Ext^0$ на $\Hom$:
         % https://q.uiver.app/#q=WzAsNSxbMywwLCJcXEhvbShOLCBNKSJdLFsyLDAsIlxcSG9tKFgsIE0pIl0sWzEsMCwiXFxIb20oTSwgTSkiXSxbMCwwLCJcXEV4dF4xKE4sIE0pIl0sWzQsMCwiMCJdLFsyLDNdLFsxLDJdLFswLDFdLFs0LDBdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
             {\Ext^1(N, M)}
@@ -1370,21 +1425,25 @@
                   \arrow[from=1-4, to=1-3]
                   \arrow[from=1-5, to=1-4]
             \end{tikzcd}\]
-            Теперь построим $x \in \Ext^1(N, M) \cong \Ext^1(M, N)$, как образ $\id \in \Hom(M, M)$.
+            Построим $x \in \Ext^1(N, M)$, как образ $\id \in \Hom(M, M)$.
+            Данный элемент $x$ ставится в соответствии с короткой точной последовательностью $0 \map M \map X \map N \map 0$.
 
-            Теперь построим стрелку обратно: накроем $N$ проективным объектом: $0 \map A \map P \map N \map 0$.
+            Построим стрелку обратно, накрыв $N$ проективным объектом, и взяв ядро: $0 \map A \map P \map N \map 0$.
+            Для $\Hom(\_, M)$ и этой короткой точной последовательности можно тоже записать кусок длинной точной последовательности правых производных функторов:
         % https://q.uiver.app/#q=WzAsNSxbNCwwLCJcXEhvbShOLCBNKSJdLFszLDAsIlxcSG9tKFAsIE0pIl0sWzIsMCwiXFxIb20oQSwgTSkiXSxbMSwwLCJcXEV4dF4xKE4sIE0pIl0sWzAsMCwiMCA9IFxcRXh0XjEoUCwgTSkiXSxbMCwxXSxbMSwyXSxbMiwzXSxbMyw0XV0=
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {0 = \Ext^1(P, M)}
-                  \& {\Ext^1(N, M)} \& {\Hom(A, M)} \& {\Hom(P, M)} \& {\Hom(N, M)}
+            {0 = \Ext^1(P, M)} \& {\Ext^1(N, M)} \& {\Hom(A, M)} \& {\Hom(P, M)} \& {\Hom(N, M)}
                   \arrow[from=1-5, to=1-4]
                   \arrow[from=1-4, to=1-3]
                   \arrow[from=1-3, to=1-2]
                   \arrow[from=1-2, to=1-1]
             \end{tikzcd}\]
             Так как домножение на проективный модуль --- точный функтор, то $\Ext^1(P, M) = 0$.
+            Значит, $\Ext^1(N, M) \map \Hom(A, M)$ --- эпиморфизм.
+            Сопоставим элементу $x \in \Ext^1(N, M)$ его какой-то прообраз $\beta \in \Hom(A, M)$.
             Теперь пусть $X$ --- пушаут диаграммы $M \overset{\beta}\leftarrow A \rightarrow P$.
-            Следующая диаграмма будет коммутативна:
+
+            Построим следующую диаграмму, получая отображение $X \map N$ из универсального свойства пушаута, применённого к $P \map N$ и нулевому $M \map N$.
         % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkEiXSxbMiwwLCJQIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbNCwxLCIwIl0sWzMsMSwiTiJdLFsyLDEsIlgiXSxbMSwxLCJNIl0sWzAsMSwiMCJdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdLFszLDYsIiIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzIsN10sWzEsOCwiXFxiZXRhIl0sWzksOF0sWzgsN10sWzcsNl0sWzYsNV1d
             \[\begin{tikzcd}[ampersand replacement=\&]
                   0 \& A \& P \& N \& 0 \\
@@ -1401,32 +1460,30 @@
                   \arrow[from=2-3, to=2-4]
                   \arrow[from=2-4, to=2-5]
             \end{tikzcd}\]
-            Далее можно проверить, что в одну сторону эти отображения взаимно обратны:
-        % https://q.uiver.app/#q=WzAsOSxbNCwwLCJcXEhvbShOLCBNKSJdLFszLDAsIlxcSG9tKFAsIE0pIl0sWzIsMCwiXFxIb20oQSwgTSkiXSxbMSwwLCJcXEV4dF4xKE4sIE0pIl0sWzAsMCwiMCA9IFxcRXh0XjEoUCwgTSkiXSxbNCwxLCJcXEhvbShOLCBNKSJdLFszLDEsIlxcSG9tKFgsIE0pIl0sWzIsMSwiXFxIb20oTSwgTSkiXSxbMSwxLCJcXEV4dF4xKE4sIE0pIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzgsMywiPyIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNl0sWzYsN10sWzcsOF0sWzAsNSwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywyXSxbNiwxXV0=
+            Можно показать, что нижняя последовательность --- короткая точная, и мы определим её, как образ элемента $x \in \Ext^1(N, M)$.
+
+            Далее можно проверить, что в одну сторону эти отображения взаимно обратны --- построим по диаграмме выше, как по паре коротких точных последовательностей, последовательность правых производных функторов, и в силу функториальности между ними будут следующие морфизмы:
+        % https://q.uiver.app/#q=WzAsOSxbNCwwLCJcXEhvbShOLCBNKSJdLFszLDAsIlxcSG9tKFAsIE0pIl0sWzIsMCwiXFxIb20oQSwgTSkiXSxbMSwwLCJcXEV4dF4xKE4sIE0pIl0sWzAsMCwiMCA9IFxcRXh0XjEoUCwgTSkiXSxbNCwxLCJcXEhvbShOLCBNKSJdLFszLDEsIlxcSG9tKFgsIE0pIl0sWzIsMSwiXFxIb20oTSwgTSkiXSxbMSwxLCJcXEV4dF4xKE4sIE0pIl0sWzAsMV0sWzEsMl0sWzIsM10sWzMsNF0sWzgsMywiPyIsMCx7ImxldmVsIjoyLCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzUsNl0sWzYsN10sWzcsOF0sWzAsNSwiIiwxLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNywyLCJcXF8gXFxjZG90IFxcYmV0YSJdLFs2LDFdXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
-            {0 = \Ext^1(P, M)}
-                  \& {\Ext^1(N, M)} \& {\Hom(A, M)} \& {\Hom(P, M)} \& {\Hom(N, M)} \\
-                  \& {\Ext^1(N, M)} \& {\Hom(M, M)} \& {\Hom(X, M)} \& {\Hom(N, M)}
-                  \arrow[from=1-5, to=1-4]
-                  \arrow[from=1-4, to=1-3]
-                  \arrow[from=1-3, to=1-2]
-                  \arrow[from=1-2, to=1-1]
-                  \arrow["{?}", Rightarrow, no head, from=2-2, to=1-2]
-                  \arrow[from=2-5, to=2-4]
-                  \arrow[from=2-4, to=2-3]
-                  \arrow[from=2-3, to=2-2]
-                  \arrow[Rightarrow, no head, from=1-5, to=2-5]
-                  \arrow[from=2-3, to=1-3]
-                  \arrow[from=2-4, to=1-4]
+            {0 = \Ext^1(P, M)} \& {\Ext^1(N, M)} \& {\Hom(A, M)} \& {\Hom(P, M)} \& {\Hom(N, M)} \\
+            \& {\Ext^1(N, M)} \& {\Hom(M, M)} \& {\Hom(X, M)} \& {\Hom(N, M)}
+            \arrow[from=1-2, to=1-1]
+            \arrow[from=1-3, to=1-2]
+            \arrow[from=1-4, to=1-3]
+            \arrow[from=1-5, to=1-4]
+            \arrow[Rightarrow, no head, from=1-5, to=2-5]
+            \arrow["{?}", Rightarrow, no head, from=2-2, to=1-2]
+            \arrow["{\_ \cdot \beta}", from=2-3, to=1-3]
+            \arrow[from=2-3, to=2-2]
+            \arrow[from=2-4, to=1-4]
+            \arrow[from=2-4, to=2-3]
+            \arrow[from=2-5, to=2-4]
             \end{tikzcd}\]
-            $\id \in \Hom(M, M)$ уходит вверх при $\_ \cdot \beta$ в $\beta$, далее влево --- в $x$ по определению $x$.
-            Если же отправить $\id$ вправо, то он тоже уйдёт в $x$. \comment{Почему?} И надо ещё проверить, что $? = \id$.
+            $\id \in \Hom(M, M)$ уходит вверх в $\beta$, далее влево --- в $x$ по определению $x$.
+            Если же отправить $\id$ вправо, то он тоже уйдёт в $x$. \comment{Почему?} И надо ещё проверить, что $? = \id$, и то, что соответствие обратно и в другую сторону.
         }
     }
-    \comment{Далее идёт отступление про то, что быть определённым с точностью изоморфизма, и быть определённым --- разные вещи, и я не справился это записать.}
-
-    Если же хочется изучить всё кручение $M$, то оказывается, $\Tor_1(M, F/R) = \defset{x \in M}{\exists a \in R \sm \{0\}: ax = 0}$ (здесь $F/R$ --- фактор $R$-модулей).
-    Здесь используется, что $F/R = \varinjlim R/aR$, значит, $\Tor_1(F/R, M) = \varinjlim \Tor_1(R/aR, M)$.
+%    \comment{Далее идёт отступление про то, что быть определённым с точностью изоморфизма, и быть определённым --- разные вещи, и я не справился это записать.}
 
 
     \section{Гомологии и когомологии групп}
