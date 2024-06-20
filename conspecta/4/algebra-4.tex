@@ -474,7 +474,7 @@
     \newlection{4 марта 2024 г.}
     Теперь приведём другое доказательство существования длинной точной последовательности гомологий, опирающееся на лемму о змее.
     \lemma[О змее]{\label{snake}
-        Пусть даны два комплекса $A' \map A \map A'' \map 0$ и $0 \map B' \map B \map B''$, и морфизм между ними.
+        Пусть даны два точных комплекса $A' \map A \map A'' \map 0$ и $0 \map B' \map B \map B''$, и морфизм между ними.
         Тогда имеется длинная точная последовательность из пунктирных стрелок.
 
         Короткие стрелки получены из действия соответственных функторов (ядра и коядра), а связующий гомоморфизм определён $\delta$ определён в доказательстве, и естественен (функториален).
@@ -2078,10 +2078,11 @@
     }
     }
     \newlection{6 мая 2024 г.}
-    \corollary{
+    \corollary{\label{group-field-group}
         Для любой группы $G \le \Aut(E)$: $\Aut(E/E^G) = G$.
         \provehere{
-            Очевидно, $G \le \Aut(E/E^G)$. По лемме Артина $|G| = [E : E^G] \ge |\Aut(E/E^G)| \ge |G|$, и равенство достигается только при $G = \Aut(E/E^G)$
+            Очевидно, $G \le \Aut(E/E^G)$.
+            По лемме Артина $|G| = [E : E^G] \ge |\Aut(E/E^G)| \ge |G|$, и равенство достигается только при $G = \Aut(E/E^G)$
         }
     }
     \subsection{Теорема о характеризации расширений Галуа}
@@ -2151,7 +2152,7 @@
     }
 
     \section{Соответствие Галуа}
-    \corollary{
+    \corollary{\label{under-galois}
         Пусть имеется башня расширений $E/K/F$, и $E/F$ --- расширение Галуа.
         Тогда $E/K$ --- расширение Галуа.
         \provehere{
@@ -2177,12 +2178,12 @@
             В этом случае $\Gal(E^H / F) \cong G/H$.
         }
         \provebullets{
-            \item $\Gal(E/E^H) = H$ --- следствие из леммы Артина.
-            \item $E^{\Gal(E/K)} = K$ согласно~(\cref{galois-extension}).
-            Согласно ей же, $E/K$ --- расширение Галуа.
-            \item По теореме Лагранжа $|H' : H| = \frac{|G : H'|}{|G:H|} = \frac{\left[E:E^H\right]}{\left[E : E^{H'}\right]} = \left[E^{H'} : E^H\right]$.
-            \item $\forall h \in H: \sigma h \sigma^{-1}(\sigma(\alpha)) = \sigma h(\alpha) = \sigma(\alpha) \then \sigma(E^H) \le E^{\sigma H \sigma^{-1}}$.
-            Обратное включение получается заменой $\tilde{H} \coloneqq \sigma H \sigma^{-1}$ и $\tilde{\sigma} \coloneqq \sigma^{-1}$.
+            \item $\Gal(E/E^H) = H$ --- следствие из леммы Артина~(\cref{group-field-group}).
+            \item $E^{\Gal(E/K)} = K$ согласно теореме о характеризации расширений Галуа~(\cref{galois-extension}).
+            $E/K$ --- расширение Галуа согласно ей же (точнее,~(\cref{under-galois})).
+            \item Монотонность по включению очевидна.
+            \item По лемме Артина $\forall H' \le H \le G: |H : H'| = \frac{|H|}{|H'|} = \frac{\left[E:E^H\right]}{\left[E : E^{H'}\right]} = \left[E^{H'} : E^H\right]$.
+            \item Запишем цепочку равносильностей $\alpha \in E^H \iff \forall h \in H: h(\alpha) = \alpha \iff \forall h \in H: \sigma h \sigma^{-1}(\sigma \alpha) = \sigma \alpha \iff \sigma \alpha \in E^{\sigma H \sigma^{-1}}$.
             \item $H \normeq G \iff \forall \sigma \in G: \sigma H \sigma^{-1} = H \iff \forall \sigma \in G: \sigma(E^H) = E^H$.
             Рассмотрим гомоморфизм $\theta: G \map \Aut(E^H / F), \sigma \mapsto \sigma\big|_{E^H}$.
             Очевидно, $\Ker(\theta) = H$. Покажем, что $\theta$ сюръективно.
