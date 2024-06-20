@@ -1622,7 +1622,7 @@
         \underline{База: } $n = 0 \then K = F$.
 
         \underline{Переход: } $F[\alpha_1, \dots, \alpha_n] = F[\alpha_1, \dots, \alpha_{n-1}][\alpha_n]$.
-        Так как $\alpha_n$ алгебраично над $F$, то оно алгебраично и над $F[\alpha_1, \dots, \alpha_{n-1}]$ (впрочем, степень трансцендентности при увеличении поля может стать меньше).
+        Так как $\alpha_n$ алгебраично над $F$, то оно алгебраично и над $F[\alpha_1, \dots, \alpha_{n-1}]$ (впрочем, степень минимального многочлена при увеличении поля может стать меньше).
         \item[$(1) \then (2)$]\up\up\indentlemma{
             Любой элемент конечного расширения $K/F$ алгебраический.
         }{
@@ -1675,7 +1675,7 @@
     \subsection{Поле разложения}
     Пусть $F$ --- поле, $f \in F[t]$.
     \definition[Поле разложения $f$ над $F$]{
-        Поле $F_f/F$, в котором $f$ раскладывается на линейные множители, и вкладывающееся (\textbf{не факт}, что единственным образом) в любое другое поле, обладающее тем же свойством.
+        Расширение $F_f/F$, в котором $f$ раскладывается на линейные множители, и вкладывающееся (\textbf{не факт}, что единственным образом) в любое другое поле, обладающее тем же свойством.
     }
     \examples{
         \item $F = \R, f = t^2 + 1$.
@@ -1710,7 +1710,7 @@
     }
     Пусть $K/F$ и $L/F$ --- расширения полей. Тогда гомоморфизм $\phi: K \map L$ называется \emph{гомоморфизмом полей над $F$}, если он оставляет $F$ на месте.
     Все гомоморфизмы полей по определению сохраняют $1$, в частности, любой гомоморфизм полей инъективен ($\phi(x) = \phi(y) \iff \phi(xy^{-1}) = \phi(1) \iff xy^{-1} = 1$).
-    \theorem{
+    \theorem{\label{splitting-field-characterization}
         Пусть $K$ --- поле, в котором $f \in F[t]$ раскладывается на линейные множители.
         Тогда $K$ --- поле разложения $f \iff K \cong F[\alpha_1, \dots, \alpha_n]$, где $\alpha_i$ --- корни $f$.
         \provehere{
@@ -1849,7 +1849,7 @@
 
                 В образe~(\ref{in-ideal}) обращается в равенство $0 = 1$, но в $F_f$ это, конечно, неверно.
             }
-            Раз $J \normeq F[X]$ не совпадает со всем кольцом, то можно взять максимальный идеал $\mathfrak{m}$, содержащий $J$, и не совпадающий со всем кольцом (лемма Цорна).
+            Раз $J \normneq F[X]$ не совпадает со всем кольцом, то можно взять максимальный идеал $\mathfrak{m}$, содержащий $J$, и не совпадающий со всем кольцом (лемма Цорна).
             Факторкольцо $E_1 \coloneqq F[X]/\mathfrak{m}$ является полем, в котором образ переменной $x_f$ --- корень многочлена $f$.
 
             К сожалению, не факт, что $E_1$ алгебраически замкнуто:~(\cref{closeness-criterion}) неприменима, так как неизвестно, алгебраично ли расширение $E_1/F$.
@@ -1887,8 +1887,7 @@
             В $L$ многочлен $f$ раскладывается на линейные множители.
             Так как $g \divs f$, то $g \in L[t]$ тоже раскладывается на линейные множители, то есть $\exists \alpha \in L: g(\alpha) = 0$.
             Согласно универсальному свойству простого расширения: $\tilde{F}[\theta] \cong \tilde{F}[t]/(g)$, то есть $\exists!\psi: \tilde{F}[\theta] \map \tilde{F}[\alpha]$ --- гомоморфизм полей над $\tilde{F}$, такой, что $\psi(\theta) = \alpha$.
-            \item Предположим, что $\phi$ существует.
-            Корень $f \in F[t]$ переходит в корень, поэтому $\phi$ сохраняет множество алгебраических элементов, откуда $\phi(E \subset K$.
+            \item Корень $f \in F[t]$ переходит в корень, поэтому $\phi$ сохраняет множество алгебраических элементов, откуда $\phi(E) \subset K$.
             \item Рассмотрим $\beta \in K$, это корень некоторого унитального многочлена $f \in F[t]$.
             В $E$ многочлен $f$ раскладывается на линейные множители $f(t) = (t - \alpha_1) \proddots (t - \alpha_n)$, где $\alpha_i \in E$.
             Применяя индуцированный $\phi: E[t] \map L[t]$ к данному разложению, получаем $f(t) = (t - \phi(\alpha_1)) \proddots (t - \phi(\alpha_n))$.
@@ -1905,7 +1904,7 @@
         Алгебраическое замыкание единственно с точностью до \textbf{не единственного} изоморфизма.
     }
 
-    \subsection{Сепарабельность}
+    \section{Сепарабельность}
     Пусть $F$ --- поле, $f \in F[t]$.
     \definition[Сепарабельный многочлен $f$]{
         $f$ не имеет кратных корней в $\alg{F}$.
@@ -1923,11 +1922,12 @@
     }
     \examples[Сепарабельные и несепарабельные расширения]{
         \item Любое расширение поля характеристики нуль сепарабельно.
-        \item Пусть $F \coloneqq \Ff_p(t^p)$, $E \coloneqq \Ff_p(t)$.
+        \item Пусть $E \coloneqq \Ff_p(t)$, $F \coloneqq \Ff_p(t^p)$ (подполе в $E$, содержащее только степени $t$, кратные $p$).
         Рассмотрим многочлен $x^p - t^p \in F[x]$.
-        Он неприводим над $F$, так как даже свободный член неприводим, и видно, что все ассоциированные с $t^p$ --- не корни.
+        Над $E: x^p - t^p = (x - t)^p$, то есть он раскладывается на кратные линейные множители.
+        Но над $F$ многочлен неприводим, так как легко перечислить все его делители в $E[t]$, и убедиться, что в $F$ они не лежат.
 
-        Но над $E: x^p - t^p = (x - t)^p$, то есть $x^p - t^p \in F[x]$ неприводим и несепарабелен.
+        Получается, $x^p - t^p \in F[x]$ неприводим и несепарабелен.
         И действительно, $(x^p - t^p)' = px^{p-1} = 0$.
     }
     \definition[Совершенное поле $F$]{
@@ -1969,8 +1969,7 @@
         }
     }
     На самом деле, данное предложение говорит, что кратность любого корня неприводимого несепарабельного многочлена делится на $p$.
-    \exercise{Сепарабельное расширение сепарабельного расширения сепарабельно.}
-    Используя данное предложение, несложно доказать эквивалентность из~(\cref{frob-sep}):
+    Используя его, несложно доказать эквивалентность из~(\cref{frob-sep}):
     \provehere{
         Если $E/F$ несепарабельно, то найдётся неприводимый многочлен $f = (\alpha_n t^{pn} + \alpha_{n-1}t^{p(n-1)} + \dots + \alpha_0) \in F[t]$.
         Но так как автоморфизм Фробениуса сюръективен, то $\forall \alpha_j \in F: \exists \beta_j \in F: \beta_j^p = \alpha_j$.
@@ -1978,19 +1977,22 @@
         \[\alpha_n t^{pn} + \alpha_{n-1}t^{p(n-1)} + \dots + \alpha_0 = (\beta_n t^{pn} + \beta_{n-1}t^{p(n-1)} + \dots + \beta_0)^p\]
         что противоречит неприводимости $f$.
     }
+    \exercise{Сепарабельное расширение сепарабельного расширения сепарабельно.}
+    \section{Расширения Галуа}
     \definition[Расширение $E/F$ нормально]{
         Любой неприводимый многочлен из $F[t]$, имеющий корень в $E$, раскладывается на линейные множители в $E$
     }
     \example{
-        $\Q[\sqrt[3]{2}]/\Q$ не нормально, так как $t^3 - 2$ не раскладывается на линейные множители даже в $\R$.
+        $\Q\left[\sqrt[3]{2}\right]/\Q$ не нормально, так как $t^3 - 2$ не раскладывается на линейные множители даже в $\R$.
 
         Любое расширение несложно сделать нормальным, присоединив все корни всех неприводимых многочленов из $F[t]$, имеющих корни в $E$.
     }
     \definition[Расширение Галуа]{Конечное сепарабельное нормальное расширение.}
-    Условие конечности иногда отсутствует, но мы другими заниматься не будем.
+    Условие конечности в определении иногда отсутствует, но мы другими заниматься не будем.
 
     \definition[Группа Галуа расширения Галуа $E/F$]{Группа автоморфизмов $E$, тождественных на $F$: $\Gal(E/F) \bydef \Aut(E/F)$.}
     Группа автоморфизмов расширения $E/F$ имеет смысл и не для расширения Галуа, но там не используется запись $\Gal$.
+    \subsection{Теорема о количестве вложений}
     \theorem{\label{harvesting}
     Пусть имеются расширения $K/F$ и $E/F$, и $f \in F[t]$.
     При этом $K$ порождено некоторыми корнями многочлена $f$, а в $E$: $f$ раскладывается на линейные множители.
@@ -2003,14 +2005,15 @@
     \provehere{
         Индукция по степени расширения $[K:F]$.
 
-        \underline{База:} $[K:F] = 1 \iff K = F$.
+        \underline{База:} $[K:F] = 1 \iff K = F$. Все три пункта очевидны.
 
         \underline{Переход:} разложим $f = f_1 \proddots f_n$, где неприводимые $f_i \in F[t]$.
-        $K \ne F \then$ не все $f_i$ имеют степень $1$.
-        Без потери общности $f_1$ имеет корень в $K\sm F$. Если такой существует, то выберем $f_1$, как несепарабельный многочлен, имеющий корень в $K$.
+        $K \ne F \then$ не все $f_i$ не имеют корней в $K \sm F$.
+        Без потери общности $f_1$ имеет корень в $K\sm F$.
+        Дополнительно, если такой существует, то выберем $f_1$, как несепарабельный множитель, имеющий корень в $K \sm F$.
 
         Зафиксируем какое-то вложение $F[t]/(f_1) \hookrightarrow K$, отождествим $F[t]/(f_1)$ со своим образом $\tilde{F} \le K$.
-        Используя универсальное свойство простого расширения, получаем, что количество вложений $\tilde{F} \hookrightarrow E$ (назовём его $k$) равно количеству корней $f_1$ в $E$.
+        Используя универсальное свойство простого расширения, получаем, что количество вложений $\tilde{F} \hookrightarrow E$ (назовём это количество $k$) равно количеству корней $f_1$ в $E$.
 
         Если $f_1$ сепарабелен, то в $E$ он имеет $\deg f_1$ корней, иначе --- строго меньше.
 
@@ -2040,7 +2043,8 @@
         Положим $L \coloneqq E_f$.
         Теперь выполнена посылка~(\cref{harvesting}), откуда количество вложений $K \hookrightarrow L$ над $F$ не $0$, но и не более $[K : F]$.
 
-        Если существует вложение $K \hookrightarrow E$ над $F$, то все $f_i$ имеют корни в $E$ и $K/F$ сепарабельно.
+        Если существует вложение $K \hookrightarrow E$ над $F$, то все $f_i$ имеют корни в $E$.
+        Если дополнительно $E/F$ --- расширение Галуа, то и подрасширение $E/F$ --- сепарабельно.
         Тогда $\alpha_1, \dots, \alpha_n$ сепарабельны над $F$, то есть $f$ сепарабелен над $F$.
         А из нормальности расширения $E/F$ все $f_i$ раскладываются на линейные множители в $E$.
         Тем самым, $L = E$, и~(\cref{harvesting}) завершает доказательство.
@@ -2049,6 +2053,7 @@
     \corollary{
         Для расширения Галуа: $|\Gal(E/F)| = [E : F]$.
     }
+    \subsection{Лемма Артина}
     \theorem[Лемма Артина]{\label{lemma-artin}
     Пусть $E$ --- поле, и $G \le \Aut(E)$, $|G| < \infty$. Обозначим $F \coloneqq E^G \bydef \defset{\alpha \in E}{\forall g \in G: g\alpha = \alpha}$.
 
@@ -2057,15 +2062,19 @@
         Достаточно доказать, что $[E:F] \le |G|$, обратное неравенство следует из~(\cref{harvesting-corollary}).
 
         Пусть $G = \{\phi_1, \phi_2, \dots, \phi_n\}$, где $\phi_1 = 1_G = \id_E$.
-        Пусть $m > n, \alpha_1, \dots, \alpha_m \in E$, докажем, что $\alpha_1, \dots, \alpha_m$ линейно зависимы над $F$.
+        Пусть $m > n, \alpha_1, \dots, \alpha_m \in E$, докажем, что $\alpha_1, \dots, \alpha_m$ линейно зависимы над $F$, то есть что имеет место линейная зависимость $\sum\limits_{i = 1}^{m}\alpha_i x_i = 0$.
 
         Заведём систему линейных уравнений $\left\{\sum\limits_{i = 1}^{m}\phi_j(\alpha_i)x_i = 0\right\}_{j = 1}^{n}$ относительно переменных $x_1, \dots, x_m$.
         В ней уравнений меньше, чем неизвестных, поэтому по теореме о размерности пересечения имеется ненулевое решение $\beta_1, \dots, \beta_m \in E$.
-        Без потери общности $\beta_1 = 1$ (можно все $\beta_i$ поделить на $\beta_1$).
+        Дальше надо доказать, что найдётся решение, где все $\beta_i \in F$.
 
-        Пусть в наборе $\beta_1, \dots, \beta_m$ наименьшее количество ненулевых элементов.
-        Если $\exists k: \beta_k \notin F$, то $\exists l: \phi_l(\beta_k) \ne \beta_k$.
-        Вычитая решения, получаем противоречие.
+        Выберем набор $\beta_1, \dots, \beta_m$ с наименьшим количеством ненулевых элементов.
+        Пусть $\beta_i \ne 0$ для некоторого $i$, отнормируем решение, поделив на $\beta_i$.
+        Теперь $\beta_i = 1$. Утверждается, что все $\beta_i \in F$.
+
+        От противного: если $\exists k: \beta_k \notin F$, то $\exists l: \phi_l(\beta_k) \ne \beta_k$.
+        Тогда не только $\beta_1, \dots, \beta_m$ --- решение, но и $\phi_l(\beta_1), \dots, \phi_l(\beta_m)$ --- тоже решение, причём их поэлементная разность имеет меньшее количество ненулевых элементов.
+        Получаем противоречие.
     }
     }
     \newlection{6 мая 2024 г.}
@@ -2075,6 +2084,7 @@
             Очевидно, $G \le \Aut(E/E^G)$. По лемме Артина $|G| = [E : E^G] \ge |\Aut(E/E^G)| \ge |G|$, и равенство достигается только при $G = \Aut(E/E^G)$
         }
     }
+    \subsection{Теорема о характеризации расширений Галуа}
     \theorem[Характеризация расширений Галуа]{\label{galois-extension}
     Пусть $E/F$ --- расширение полей. Следующие условия эквивалентны:
     \numbers{
@@ -2086,10 +2096,10 @@
     \provebullets{
         \item[$(1) \then (2)$] Аналогично доказательству~(\cref{harvesting-corollary}).
         Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
-        Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
+        Пусть $f_i \in F[t]$ --- минимальные многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
 
         $f$ сепарабелен, как произведение взаимно простых сепарабельных многочленов, $E$ порождено корнями $f$, и так как $E/F$ нормально, то $f$ разложим на линейные множители в $E$.
-        Тем самым, $E = F_f$.
+        Согласно~(\cref{splitting-field-characterization}), $E = F_f$.
         \item[$(2)\then(3)$] Согласно~(\cref{harvesting-corollary}), $|\Aut(E/F)| = [E : F]$.
         Ясно, что $F \subset \tilde{F} \coloneqq E^{\Aut(E/F)}$.
         С другой стороны, по лемме Артина, $[E : \tilde{F}] = |\Aut(E/F)|$, откуда $[\tilde{F} : F] = 1$.
@@ -2098,20 +2108,23 @@
         Пусть $f \in F[t]$ --- неприводимый, имеющий корень $\alpha \in E$.
         Рассмотрим орбиту $\alpha$ под действием $G$: $G\alpha = \{\alpha_1, \dots, \alpha_m\}$.
         Пусть $h(t) \coloneqq (t - \alpha_1) \proddots (t - \alpha_m) \in E[t]$.
-        Раскрыв скобки (по теореме Виета) \[h(t) = t^m - s_1(\alpha_1,\dots,\alpha_m)+s_2(\alpha_1, \dots,\alpha_m)+\dots+(-1)^m s_m(\alpha_1, \dots, \alpha_m)\]где $s_k(\alpha_1, \dots, \alpha_m)$ --- $k$-й основной симметрический многочлен, то есть сумма всевозможных произведений вида $\alpha_{i_1} \proddots \alpha_{i_k}$ по всем кортежам $1 \le i_1 < \dots < i_k \le m$.
+        Раскрыв скобки (по теореме Виета) \[h(t) = t^m - s_1(\alpha_1,\dots,\alpha_m)t^{m-1}+s_2(\alpha_1, \dots,\alpha_m)t^{m-2}+\dots+(-1)^m s_m(\alpha_1, \dots, \alpha_m)\]
+        где $s_k(\alpha_1, \dots, \alpha_m)$ --- $k$-й основной симметрический многочлен, то есть сумма всевозможных произведений вида $\alpha_{i_1} \proddots \alpha_{i_k}$ по всем кортежам $1 \le i_1 < \dots < i_k \le m$.
+        Эти коэффициенты инвариантны под действием $G$, значит, они лежат в $F$.
+        Под действием $G$ коэффициенты $h$ остаются на месте, а корни $h$ переходят в корни.
 
-        Таким образом, $\forall g \in G: \exists \sigma \in S_m: g(\alpha_i) = \alpha_{\sigma(i)}$. $g$ переставляет $\alpha_i$, тем самым, коэффициенты $h$ лежат в $E^G = F$, иными словами, $h \in F[t]$.
+        Таким образом, $\forall g \in G: \exists \sigma \in S_m: g(\alpha_i) = \alpha_{\sigma(i)}$.
         Но раз $h$ раскладывается на различные линейные множители в $E[t]$, то минимальный многочлен $\alpha$ (который делит $h$) тоже раскладывается на различные линейные множители в $E[t]$.
         Так как $\alpha \in E$ был произвольным, то $E/F$ по определению сепарабельно и нормально.
     }
     }
 
-    \subsection{О сепарабельных расширениях}
+    \subsection{Характеризация сепарабельных расширений}
     \corollary{\label{sepa}
-    Расширение, порождённое конечным числом сепарабельных элементов, вкладывается в расширение Галуа (и, следовательно, сепарабельно).
+    Расширение $E/F$, порождённое конечным числом сепарабельных элементов, вкладывается в расширение Галуа (и, следовательно, сепарабельно).
     \provehere{
         Аналогично доказательству~(\cref{harvesting-corollary}).
-        Так как $E/F$ --- расширение Галуа, то оно порождено конечным множеством элементов: $E = F[\alpha_1, \dots, \alpha_n]$.
+        Пусть $E = F[\alpha_1, \dots, \alpha_n]$, где $\alpha_i$ сепарабельны.
         Пусть $f_i \in F[t]$ --- минимальный многочлены $\alpha_i$, и пусть $f \coloneqq f_{i_1} \proddots f_{i_k}$, где перемножаются уникальные среди $f_i$.
 
         $f$ сепарабелен, можно устроить вложение $E \hookrightarrow F_f$ (оно есть, например, согласно~(\cref{harvesting-corollary})), а $F_f$ --- расширение Галуа согласно~(\cref{galois-extension}).
@@ -2133,10 +2146,11 @@
         Любое алгебраическое расширение $K/F$ раскладывается в башню сепарабельного расширения $E/F$ и чисто несепарабельного $K/E$.
         \provehere{
             Выберем за $E$ сепарабельное замыкание $F$ в $K$.
-            Дальше упражнение.
+            Дальше надо проверить, что элементы в $K$, несепарабельные над $F$, остались несепарабельными над $E$, упражнение читателю.
         }
     }
 
+    \section{Соответствие Галуа}
     \corollary{
         Пусть имеется башня расширений $E/K/F$, и $E/F$ --- расширение Галуа.
         Тогда $E/K$ --- расширение Галуа.
@@ -2147,7 +2161,6 @@
     }
 
 
-    \section{Соответствие Галуа}
     Теперь у нас всё готово, чтобы установить соответствие Галуа.
 
     $E/F$ --- расширение Галуа, $G \coloneqq \Gal(E/F) = \Aut(E/F)$.
@@ -2189,32 +2202,35 @@
     Теперь можно нарисовать некоторые картинки:
     \begin{figure}[!ht]
         \begin{minipage}{0.5\textwidth}
-            % https://q.uiver.app/#q=WzAsNCxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ezJ9XSJdLFsyLDEsIlxcUVtcXHNxcnR7M31dIl0sWzEsMCwiXFxRW1xcc3FydHsyfSxcXHNxcnR7M31dIl0sWzMsMSwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIkNfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwwLCJDXzIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIkNfMlxcb3BsdXMgQ18yIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+            % https://q.uiver.app/#q=WzAsNCxbMSwyLCJcXFEiXSxbMCwxLCJcXFFcXGxlZnRbXFxzcXJ0ezJ9XFxyaWdodF0iXSxbMiwxLCJcXFFcXGxlZnRbXFxzcXJ0ezN9XFxyaWdodF0iXSxbMSwwLCJcXFFcXGxlZnRbXFxzcXJ0ezJ9LFxcc3FydHszfVxccmlnaHRdIl0sWzMsMSwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIkNfMiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMSwwLCJDXzIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDAsIkNfMlxcb3BsdXMgQ18yIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
-                  \& {\Q[\sqrt{2},\sqrt{3}]} \\
-                  {\Q[\sqrt{2}]} \&\& {\Q[\sqrt{3}]} \\
+                  \& {\Q\left[\sqrt{2},\sqrt{3}\right]} \\
+                  {\Q\left[\sqrt{2}\right]} \&\& {\Q\left[\sqrt{3}\right]} \\
                   \& \Q
                   \arrow["{C_2}"', no head, from=1-2, to=2-1]
                   \arrow["{C_2}", no head, from=1-2, to=2-3]
+                  \arrow["{C_2\oplus C_2}"{description}, no head, from=1-2, to=3-2]
                   \arrow["{C_2}"', no head, from=2-1, to=3-2]
                   \arrow["{C_2}"', no head, from=3-2, to=2-3]
-                  \arrow["{C_2\oplus C_2}"{description}, no head, from=1-2, to=3-2]
             \end{tikzcd}\]
         \end{minipage}
         \begin{minipage}{0.5\textwidth}
-            % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXFFbeF0vKHheMyAtIDIpIl0sWzIsMSwiXFxRW1xcc3FydFszXXsyfV0iXSxbMSwyLCJcXFEiXSxbMCwxLCJcXFFbXFxzcXJ0ey0zfV0iXSxbMCwxLCJDXzIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsMiwiXFx0ZXh0e9C90LUg0JPQsNC70YPQsH0iLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiQ18yIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFswLDMsIkNfMyIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwyLCJTXzMiLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+            % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXFFfeyh4XjMgLSAyKX0iXSxbMiwxLCJcXFFcXGxlZnRbXFxzcXJ0WzNdezJ9XFxyaWdodF0iXSxbMSwyLCJcXFEiXSxbMCwxLCJcXFFcXGxlZnRbXFxzcXJ0ey0zfVxccmlnaHRdIl0sWzAsMSwiQ18yIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsxLDIsIlxcdGV4dHvQvdC1INCT0LDQu9GD0LB9IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDIsIkNfMiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwzLCJDXzMiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiU18zIiwxLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
             \[\begin{tikzcd}[ampersand replacement=\&]
-                  \& {\Q[x]/(x^3 - 2)} \\
-                  {\Q[\sqrt{-3}]} \&\& {\Q[\sqrt[3]{2}]} \\
+                  \& {\Q_{(x^3 - 2)}} \\
+                  {\Q\left[\sqrt{-3}\right]} \&\& {\Q\left[\sqrt[3]{2}\right]} \\
                   \& \Q
-                  \arrow["{C_2}", no head, from=1-2, to=2-3]
-                  \arrow["{\text{не Галуа}}", no head, from=2-3, to=3-2]
-                  \arrow["{C_2}"', no head, from=2-1, to=3-2]
                   \arrow["{C_3}"', no head, from=1-2, to=2-1]
+                  \arrow["{C_2}", no head, from=1-2, to=2-3]
                   \arrow["{S_3}"{description}, no head, from=1-2, to=3-2]
+                  \arrow["{C_2}"', no head, from=2-1, to=3-2]
+                  \arrow["{\text{не Галуа}}", no head, from=2-3, to=3-2]
             \end{tikzcd}\]
         \end{minipage}
     \end{figure}
+
+    Здесь одно поле находится над другим, если верхнее --- расширение нижнего.
+    Их обычно соединяют просто чертой, а не стрелкой, и на черте написана группа Галуа расширения.
     \newlection{20 мая 2024 г.}
     \definition[Решётка]{
         Частично упорядоченное множество, в котором есть все конечные инфимумы (наибольший элемент, меньший данных) и супремумы (наименьший элемент, больший данных).
@@ -2254,7 +2270,7 @@
         В характеристике нуль $F = \Q(\text{коэффициенты многочлена $f$})$.
     }
     Пусть имеется расширение $E/F$, и $f \in F[t] \subset E[t]$.
-    Из определения видно, что $E_f = E \cdot F_f$ --- $F_f$ содержит все корни $f$, а $E_f$ порождено ими над $E$.
+    Из определения видно, что $E_f = E \cdot F_f$, так как $F_f$ содержит все корни $f$, а $E_f$ порождено ими над $E$.
 
     Таким образом, имеет место башня полей
     % https://q.uiver.app/#q=WzAsNSxbMSwwLCJFX2YiXSxbMCwxLCJGX2YiXSxbMiwxLCJFIl0sWzEsMiwiRSBcXGNhcCBGX2YiXSxbMSwzLCJGIl0sWzEsMywiIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDQsIiIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCwxLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMiwiIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFsyLDMsIiIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XV0=
