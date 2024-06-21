@@ -612,57 +612,7 @@
         \item Если всегда имеется точность в членах $\cat F(A)$ и $\cat F(A'')$, то $\cat F$ --- \emph{точный справа функтор}.
         \item Если всякая короткая точная последовательность переходит в короткую точную последовательность, то $\cat F$ --- \emph{точный функтор}.
     }
-    \comment{
-        Примеры ниже точно должны были быть на лекции, но я их как-то упустил.
-        Оставлю здесь, надеюсь, что всё ниже написанное --- правда.
-    }
-    \examples{
-    \item Функтор $\ker: \cat{Arr}\cat C \map \cat{Arr}\cat C$ является точным слева.
-
-        Вообще, категория $\cat{Arr}\cat C$ является абелевой: морфизмы в ней являются парами морфизмов в $\cat{Arr}\cat C$, и их можно складывать по правилу $(\alpha_1,\beta_1) + (\alpha_2, \beta_2) = (\alpha_1 + \alpha_2, \beta_1 + \beta_2)$.
-        Нулевым объектом является $\id_0$, а бипроизведением двух объектов $f: A \map B$ и $g: C \map D$ (где $A,B,C,D \in \Obj\cat C$) --- объект $f \oplus g: A \oplus C \map B \oplus D$.
-        Мономорфизмами в $\cat{Arr}\cat C$ являются пары мономорфизмов из $\cat C$, откуда очевидно, что всякий мономорфизм нормален (мономорфизм $(\alpha, \beta)$ является ядром $(\coker \alpha, \coker \beta)$).
-
-        Для проверки того, что $\ker$ точен слева, посмотрим, как $\ker$ действует на короткой точной последовательности $0 \map f \overset{(\alpha,\beta)}\map g \overset{(\gamma,\delta)}\map h \map 0$:
-% https://q.uiver.app/#q=WzAsMTUsWzEsMCwiXFxLZXIgZiJdLFsxLDEsIkEiXSxbMSwyLCJBJyJdLFsyLDEsIkIiXSxbMiwyLCJCJyJdLFszLDEsIkMiXSxbMywyLCJDJyJdLFswLDEsIjAiXSxbMCwyLCIwIl0sWzQsMSwiMCJdLFs0LDIsIjAiXSxbMCwwLCIwIl0sWzIsMCwiXFxLZXIgZyJdLFszLDAsIlxcS2VyIGgiXSxbNCwwLCIwIl0sWzAsMSwiXFxrZXIgZiJdLFsxLDIsImYiXSxbMyw0LCJnIl0sWzEsMywiXFxhbHBoYSJdLFsyLDQsIlxcYmV0YSJdLFs1LDYsImgiXSxbMyw1LCJcXGdhbW1hIl0sWzcsOCwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzksMTAsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFs3LDFdLFs4LDJdLFs1LDldLFs2LDEwXSxbNCw2LCJcXGRlbHRhIl0sWzExLDcsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsxMiwzLCJcXGtlciBnIl0sWzEzLDUsIlxca2VyIGgiXSxbMTEsMF0sWzAsMTIsIlxcdGlsZGV7XFxhbHBoYX0iXSxbMTIsMTMsIlxcdGlsZGV7XFxnYW1tYX0iXSxbMTQsOSwiIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn19fV0sWzEzLDE0XV0=
-        \[\begin{tikzcd}[ampersand replacement=\&]
-              0 \& {\Ker f} \& {\Ker g} \& {\Ker h} \& 0 \\
-              0 \& A \& B \& C \& 0 \\
-              0 \& {A'} \& {B'} \& {C'} \& 0
-              \arrow[from=1-1, to=1-2]
-              \arrow[tail reversed, from=1-1, to=2-1]
-              \arrow["{\tilde{\alpha}}", from=1-2, to=1-3]
-              \arrow["{\ker f}", from=1-2, to=2-2]
-              \arrow["{\tilde{\gamma}}", from=1-3, to=1-4]
-              \arrow["{\ker g}", from=1-3, to=2-3]
-              \arrow[from=1-4, to=1-5]
-              \arrow["{\ker h}", from=1-4, to=2-4]
-              \arrow[tail reversed, from=1-5, to=2-5]
-              \arrow[from=2-1, to=2-2]
-              \arrow[tail reversed, from=2-1, to=3-1]
-              \arrow["\alpha", from=2-2, to=2-3]
-              \arrow["f", from=2-2, to=3-2]
-              \arrow["\gamma", from=2-3, to=2-4]
-              \arrow["g", from=2-3, to=3-3]
-              \arrow[from=2-4, to=2-5]
-              \arrow["h", from=2-4, to=3-4]
-              \arrow[tail reversed, from=2-5, to=3-5]
-              \arrow[from=3-1, to=3-2]
-              \arrow["\beta", from=3-2, to=3-3]
-              \arrow["\delta", from=3-3, to=3-4]
-              \arrow[from=3-4, to=3-5]
-        \end{tikzcd}\]
-        Точность в левом члене сохраняется, так как $\tilde \alpha = \alpha\big|_{\Ker f}$, и ограничение мономорфизма --- мономорфизм.
-
-        Точность в среднем члене сохраняется: $\forall y \in \Ker g: \tilde{\gamma}(y) = 0 \iff \gamma(y) = 0 \iff \exists x \in A: y = \alpha(x)$.
-        В силу того, что $g(y) = 0$, а $\beta$ --- мономорфизм, то $f(x) = 0$ тоже, откуда $x \in \Ker f$, что означает точность в среднем члене.
-
-        Точность в правом члене, конечно, не обязана сохраниться: скажем, если $B = B' = C = \Z$, $C' = 0$, и $g = \gamma = \id_{\Z}$, то $(\gamma,\delta)$ --- эпиморфизм, но при взятии его ядра получится $\tilde{\gamma}: 0 \map \Z$.
-        Так как $\tilde{\gamma}$ не эпиморфизм, то и $(\tilde{\gamma}, \gamma)$ эпиморфизмом тоже не является.
-
-    \item Двойственно, функтор коядра точен справа.
-    }
-    \lemma{
+    \lemma{\label{check-faithfulness}
         Пусть $\cat F$ --- аддитивный функтор. Следующие условия эквивалентны:
         \numbers{
             \item $\cat F$ точен справа.
@@ -689,6 +639,52 @@
     }
     Функтор копредела (который является левым сопряжённым к диагональному $\Delta$) сохраняет копределы, значит, точен справа.
     Другими словами, копределы коммутируют.
+
+    Коядро, как конечный копредел, сохраняет коядра, значит, коядро --- точный справа функтор.
+    Двойственно, ядро --- точный слева функтор --- сохраняет ядра, значит, точный слева функтор.
+
+    \comment{
+    Это можно понять и без высокой науки, но проверять точность в категории стрелок непросто, так как она не является конкретной категорией, и не вложена в $\modR{R}$.
+    Видимо, удобнее всего проверять второй пункт из~(\cref{check-faithfulness}), и он вырождается в следующую диаграмму:
+    }
+% https://q.uiver.app/#q=WzAsOSxbMSwxLCJFIl0sWzEsMiwiSCJdLFsyLDEsIkYiXSxbMiwyLCJJIl0sWzEsMCwiQiJdLFsyLDAsIkMiXSxbMCwxLCJEIl0sWzAsMiwiRyJdLFswLDAsIkEiXSxbMCwxLCJnIiwxXSxbMiwzLCJoIl0sWzAsMiwiXFxhbHBoYSJdLFsxLDMsIlxcYmV0YSJdLFs0LDAsIlxca2VyIGciLDFdLFs1LDIsIlxca2VyIGgiXSxbNCw1LCJcXHBzaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDAsIlxca2VyIFxcYWxwaGEiXSxbNywxLCJcXGtlciBcXGJldGEiXSxbNiw3LCJmIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzgsNiwiXFxrZXIgZiIsMl0sWzgsNCwiXFxwaGkiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbOCwwLCJJIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzYsMSwiXFxJSSIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs0LDIsIlxcSUlJIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMywiXFxJViIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6Im5vbmUifSwiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          A \& B \& C \\
+          D \& E \& F \\
+          G \& H \& I
+          \arrow["\phi", dashed, from=1-1, to=1-2]
+          \arrow["{\ker f}"', from=1-1, to=2-1]
+          \arrow["I"{description}, draw=none, from=1-1, to=2-2]
+          \arrow["\psi", dashed, from=1-2, to=1-3]
+          \arrow["{\ker g}"{description}, from=1-2, to=2-2]
+          \arrow["\III"{description}, draw=none, from=1-2, to=2-3]
+          \arrow["{\ker h}", from=1-3, to=2-3]
+          \arrow["{\ker \alpha}", from=2-1, to=2-2]
+          \arrow["f"', dashed, from=2-1, to=3-1]
+          \arrow["\II"{description}, draw=none, from=2-1, to=3-2]
+          \arrow["\alpha", from=2-2, to=2-3]
+          \arrow["g"{description}, from=2-2, to=3-2]
+          \arrow["\IV"{description}, draw=none, from=2-2, to=3-3]
+          \arrow["h", from=2-3, to=3-3]
+          \arrow["{\ker \beta}", from=3-1, to=3-2]
+          \arrow["\beta", from=3-2, to=3-3]
+    \end{tikzcd}\]
+    \comment{
+        Применяя к морфизму $(\alpha, \beta)$ функтор $\ker$, свойственный категории стрелок, мы получим морфизм $(\psi, \alpha)$.
+        Если же рассмотреть морфизм $(\alpha, \beta)$, как морфизм в произвольной абелевой категории, то его ядром будет $(\ker \alpha, \ker \beta)$.
+        К ядру также можно применить функтор $\ker$, свойственный категории стрелок, получая морфизм $(\phi, \ker \alpha)$.
+    }
+
+    \comment{
+        Чтобы проверить, что функтор ядра сохраняет ядра, надо убедиться, что $\phi = \ker \psi$.
+        Используя коммутативность $I$, и то, что $\ker \alpha \cdot \ker f$ --- мономорфизм, получаем, что $\phi$ --- тоже мономорфизм.
+        Проверим точность в члене $B$, рассмотрев $x \in B$, такой, что $\psi(x) = 0$.
+    }
+    \bullets{
+        \item \comment{Во-первых, $\ker h(\psi(x)) = 0 \overset{\text{$\III$ коммутативен}}\then \alpha(\ker g(x)) = 0 \overset{\text{точность в $E$}}\then \exists y \in D: \ker\alpha(y) = \ker g(x)$.}
+        \item \comment{Во-вторых, из коммутативности $\II$: $\ker \beta(f(y)) = 0, \overset{\text{$\ker \beta$ --- моно}}\then f(y) = 0  \overset{\text{точность в $D$}}\then \exists z \in A: \ker f(z) = y$.}
+        \item \comment{И наконец, $\ker g(\phi(z)) = \ker g(x) \overset{\text{$\ker g$ --- моно}}\then \phi(z) = x$.}
+    }
 
     К сожалению, в лемме о змее это не помогает в доказательстве того, что последовательность точна в члене $\Ker \phi$, так как нет точной последовательности $0 \map A' \map A \map A'' \map 0$.
 
@@ -1230,10 +1226,10 @@
     Пусть имеется семейство $\{\cat F_i\}_{i\in \N}$ функторов $\cat F_i: \cat A \map \cat A'$.
 
     \definition[(Левая) связанная последовательность функторов]{
-        Такая последовательность функторов $\{\cat F_i\}_{i \in \N}$, что для любой точной последовательности $0 \map A \map B \map C \map 0$ существует функториальная длинная точная последовательность
+        Такая последовательность функторов $\{\cat F_i\}_{i \in \N_0}$, что для любой точной последовательности $0 \map A \map B \map C \map 0$ существует функториальная длинная точная последовательность
         \[\cdots \map \cat F_1(A) \map \cat F_1(B) \map \cat F_1(C) \map \cat F_0(A) \map \cat F_0(B) \map \cat F_0(C)\]
     }
-    \example{Последовательность $\{L_i \cat F\}_{i \in \N}$ --- связанная последовательность функторов.}
+    \example{Последовательность $\{L_i \cat F\}_{i \in \N_0}$ --- связанная последовательность функторов.}
     Заметим, что $\forall i > 0: L_i \cat F(P) = 0$, если $P$ проективен.
     Это очевидным образом следует из существования резольвенты $0 \map P \map P \map 0$.
     Если $\cat F$ точен справа (а мы это предполагаем), то он сохраняет ноль.
@@ -1728,7 +1724,7 @@
     \newlection{16 апреля 2024 г.}
     \lemma{\label{leftrightarrow-is-iso}
     Пусть $K/F$ и $L/F$ --- конечные расширения, и $K \map L, L \map K$ --- гомоморфизмы над $F$.
-    Тогда $K \cong L$ (оба отображения --- изоморфизмы).
+    Тогда $K \cong L$ (и оба отображения --- изоморфизмы).
     \provehere{
         Достаточно убедиться, что оба гомоморфизма биективны, а это удобно проверять, рассматривая $K$ и $L$, как векторные пространства над $F$.
         Так как гомоморфизмы полей --- мономорфизмы, то $\dim_F K = \dim_F L$.
@@ -1892,6 +1888,7 @@
             В $L$ многочлен $f$ раскладывается на линейные множители.
             Так как $g \divs f$, то $g \in L[t]$ тоже раскладывается на линейные множители, то есть $\exists \alpha \in L: g(\alpha) = 0$.
             Согласно универсальному свойству простого расширения: $\tilde{F}[\theta] \cong \tilde{F}[t]/(g)$, то есть $\exists!\psi: \tilde{F}[\theta] \map \tilde{F}[\alpha]$ --- гомоморфизм полей над $\tilde{F}$, такой, что $\psi(\theta) = \alpha$.
+            Пара $(\tilde{F}[\theta], \psi)$ строго больше пары $(\tilde F, \tilde \phi)$, противоречие. Тем самым, $\tilde{F} = E$, и имеется полностью определённое $E \map L$.
             \item Корень $f \in F[t]$ переходит в корень, поэтому $\phi$ сохраняет множество алгебраических элементов, откуда $\phi(E) \subset K$.
             \item Рассмотрим $\beta \in K$, это корень некоторого унитального многочлена $f \in F[t]$.
             В $E$ многочлен $f$ раскладывается на линейные множители $f(t) = (t - \alpha_1) \proddots (t - \alpha_n)$, где $\alpha_i \in E$.
@@ -2492,4 +2489,9 @@
             Её факторгруппа $\Gal(F_f/F)$ тоже разрешима.
         }
     }
+
+%    Есть $\tilde{F} \subset E$ и $\phi(\tilde{F}) \subset L$, выбрали $\theta \notin \tilde{F}$, его минимальный многочлен над $\tilde{F}$ --- $g \in \tilde{F}[t]$, он имеет корень $\alpha \in L$.
+%    Далее устроим $\eta: \tilde{F}[x] \map L$, где $\tilde{F}$ отправляется при помощи $\phi$, и $x \mapsto \alpha$.
+%    Можно пропуститься через фактор: $\tilde{F}[x]/(g) \map L$, так как образ $\eta(g(x)) = g(\alpha) = 0$.
+%    Но имеется изоморфизм $iso: \tilde{F}[x]/(g) \cong \tilde{F}[\theta]$, возьём композицию $\eta \circ iso^{-1}: \tilde{F}[\theta] \map L$
 \end{document}
