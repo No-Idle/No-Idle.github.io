@@ -1,7 +1,6 @@
 \documentclass[a4paper]{report}
 
 \usepackage{../mathstemplate}
-\usepackage{wasysym}
 
 \date{III семестр, осень 2023 г.}
 \title{Матанализ. Неофициальный конспект}
@@ -2470,10 +2469,10 @@
                     \provebullets{
                         \item Пусть $|e| < \infty$.
                         Так как оно измеримо, то $\exists$ параллелепипеды $\{P_j\}_j$, такие, что $\bigcup\limits_{j}P_j \supset e, \biggl|\bigcup\limits_{j}P_j\biggr| < |e| + \eps$.
-                        Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\bigl|\tilde{P}_j\bigr| < \frac{\eps}{2^j}$.
+                        Можно считать, что они открыты: параллелепипед с номером $j$ можно раздуть так, что $\tilde{P}_j \supset P_j$ открыт, и $\bigl|\tilde{P}_j\bigr| < \frac{\eps}{2^j} + |P_j|$.
                         Положим $U \coloneqq \bigcup\limits_{j = 1}^{\infty}\tilde{P}_j$, тогда $U$ открыто, и $|U| < |e| + 2\eps$.
 
-                        Теперь если $|e| = \infty$, то воспользуемся $\sigma$-конечностью: пусть $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$, тогда подберём открытые $U_s \supset (e \cap B_s): |U_s \sm (e \cap B_s)| < \frac{\eps}{2^s}$. Объединение $U \coloneqq \bigcup\limits_{s}U_s$ подходит: $U \supset e$, и $|U \sm a| < \eps$.
+                        Теперь если $|e| = \infty$, то воспользуемся $\sigma$-конечностью: пусть $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$, тогда подберём открытые $U_s \supset (e \cap B_s): |U_s \sm (e \cap B_s)| < \frac{\eps}{2^s}$. Объединение $U \coloneqq \bigcup\limits_{s}U_s$ подходит: $U \supset e$, и $|U \sm e| < \eps$.
                         \item Из предыдущего пункта можно найти подходящее замкнутое множество: пусть $a \coloneqq \R^k \sm e$, найдётся открытое $U \supset a, |U \sm a| < \eps$, тогда для замкнутого $F \coloneqq \R^k \sm U: |e \sm F| = |U \sm a| < \eps$.
 
                         Чтобы сделать $F$ компактным, возьмём пересечения $F_s \coloneqq F \cap \overline{B_s}$, где $\R^k = \bigcup\limits_{s = 1}^{\infty}B_s$.
