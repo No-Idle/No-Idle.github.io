@@ -1465,7 +1465,7 @@
         \end{tikzpicture}\]
         \provehere{
             Рассмотрим $I(\tau_0, \xi_0)$, и выберем $[a, b] \subset I(\tau_0, \xi_0)$ ($[a, b] \ni \tau_0$).
-            Пусть $\eps > 0$, обозначим $R \coloneqq \defset{(t, x) \in [a, b] \times \R^n}{|x - x(t, \tau_0, \xi_0) \le \eps} \subset G$.
+            Пусть $\eps > 0$, обозначим $R \coloneqq \defset{(t, x) \in [a, b] \times \R^n}{|x - x(t, \tau_0, \xi_0)| \le \eps} \subset G$.
 
             По теореме об интегральной непрерывности $\exists \delta > 0: \forall \xi: |\xi - \xi_0| \le \delta \then (t, x(t, \tau_0, \xi)) \in R$ при $t \in [a, b]$.
 
@@ -1478,7 +1478,7 @@
             Также несложно проверить, что $g(\tau_0, \xi_0) = (\tau_0, \xi_0)$.
 
             Теперь построим обратное отображение $h$. Пусть $\overline{W} = g\left(\overline{V}\right)$, $U \coloneqq \Int\left(\overline{W}\right)$.
-            Инъективное отображение компакта --- гомеоморфизм на образ, поэтому $\exists h: U \map V$ --- искомый гомеоморфизм.
+            Инъективное отображение компакта --- гомеоморфизм на образ, поэтому $\exists h: \overline{U} \map \overline{V}$ --- искомый гомеоморфизм.
         }
     }
     Пусть мы всё ещё рассматриваем систему $\dot{x} = f(t, x), x \in \R^n, f \in C, \Lip_{x,loc}(G)$.
