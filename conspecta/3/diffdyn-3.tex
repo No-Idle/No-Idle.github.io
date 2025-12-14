@@ -1370,7 +1370,7 @@
             \gather{\psi(t) = e_i + \int\limits_{\tau}^{t}\mathcal{F}(s)\psi(s)\d s\\\phi(t) = e_i + \int\limits_{\tau}^{t}(\mathcal{F}(s)\phi(s) + \gamma)\d s}
             Пусть $N = \max\|\mathcal{F}(\tau)\|$ по $t \in [a, b]$. Оценим $|\phi(t) - \psi(t)|$.
             \[\abs{\phi(t) - \psi(t)} = \abs{\int\limits_{\tau}^{t}\mathcal{F}(s)(\phi - \psi)\d s} + \abs{\int\limits_{\tau}^{t}\gamma(s)\d s} \le N\abs{\int\limits_{\tau}^{t}\abs{\phi(s) - \psi(s)}\d s} + \max\limits_{t \in [a, b]}|\gamma(t)|(b - a)\]
-            Это условия леммы Гронуолла, откуда $\abs{\phi(t) - \psi(t)} \le \max\limits_{t \in [a, b]}|\gamma(t)| \cdot e^{N(b - a)}$.
+            Это условия леммы Гронуолла, откуда $\abs{\phi(t) - \psi(t)} \le \max\limits_{t \in [a, b]}|\gamma(t)|(b-a) \cdot e^{N(b - a)}$.
 
             Действительно, мы доказали, что $i$-й столбец $v(t)$ стремится к решению системы в вариациях с начальными данными $e_i$ в точке $\tau$ (да?).
         }
