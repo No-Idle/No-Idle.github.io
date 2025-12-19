@@ -1040,10 +1040,10 @@
                         Тогда видно, что $\sigma_{m + 1} - \sigma_m = z^{m+1} \cdot (\text{какая-то аналитическая функция})$.
                         Написав $\sigma_m(z) = a_0^{(m)} + a_1^{(m)}z + \dots + a_m^{(m)}z^m + \dots$, получаем, что в частной сумме $\sigma_{m + 1}(z)$ коэффициенты перед $z^0, \dots, z^m$ такие же.
 
-                        Тогда при $k \ge m: \sigma_k(z) = 1 + z + z^m(\text{что-то})$.
+                        Тогда при $k \ge m: \sigma_k(z) = 1 + z + z^m\cdot(\text{что-то})$.
 
                         Если же рассмотреть вместо $z$ матрицу $\frac{I_r}{\lambda}$, то результат вычислений будет такой же, но большие степени обнуляются.
-                        Тогда \[\sigma_m(e^Z) = E_r + \frac{I_r}{\lambda} + \0\qquad e^Z = E_r - \frac{I_r}{\lambda}\]
+                        Тогда \[\sigma_m(e^Z) = E_r + \frac{I_r}{\lambda} + \0\qquad e^Z = E_r + \frac{I_r}{\lambda}\]
                     }
 
                     Таким образом, при $\lambda \ne 0$: если $J_s = \lambda E_r + I_r$, то $\log(J_s) = \log(\lambda) E_r + Z$ (можно для проверки взять экспоненту, она раскроется в правильную вещь, так как $E_r$ коммутирует с $Z$).
@@ -1406,7 +1406,8 @@
 
             Если $x(t, \tau, \xi, \mu)$ --- решение изначальной системы, то пара $\vect{x\\ \mu}$ --- решение системы $\dot{y} = \tilde{f}(t, y)$.
 
-            Теперь можно пользоваться теоремой о дифференцируемости по начальным данным. Введём $\eta = \vect{\xi\\\mu}$, пусть $\zeta = \dfrac{\partial\eta}{\partial(\xi,\mu)}$.
+            Теперь можно пользоваться теоремой о дифференцируемости по начальным данным.
+            Введём $\eta = \vect{\xi\\\mu}$, пусть $\zeta = \dfrac{\partial y}{\partial\eta}$.
             \[\dot{\zeta} = \der{\tilde{f}}{y}\zeta,\text{ где }\der{\tilde{f}}{y} = \vect{\der{f}{x} & \der{f}{\mu} \\ 0 & 0}\]
             С другой стороны, $\zeta = \vect{\der{x}{\xi} & \der{x}{\mu} \\ 0 & E}, \dot{\zeta} = \vect{\der{f}{x} & \der{f}{\mu} \\ 0 & 0}\vect{\der{x}{\xi} & \der{x}{\mu} \\ 0 & E}$.
             Отсюда можно извлечь \[\frac{\d}{\d t}\der{x}{\mu} = \der{f}{x} \cdot \der{x}{\mu} + \der{f}{\mu}\]
@@ -1616,7 +1617,7 @@
         \provehere{
             Пусть решение представимо в виде $x = (x_1, \dots, x_n)$, $x_i = \sum\limits_{k = 1}^{\infty}a_k^{(i)}t^k$.
 
-            Эти коэффициенты получены так: формально дифференцируя, получаем $\dot{x}_i = \sum\limits_{l = 1}^{\infty}la_l^{(i)}t^{l - 1}$, значит \[x_i = \sum\limits_{k = 1}^{\infty}a_k^{(i)}t^k = \sum\limits_{j = 1}^{n}\sum\limits_{k = 0}^{\infty}p_{i,j}^{(k)}t^k\underbrace{\left(\sum\limits_{l = 1}^{\infty}a_l^{(j)}t^l\right)}_{x_j} + \sum\limits_{k = 0}^{\infty}q_k^{(i)}t^k\]
+            Эти коэффициенты получены так: формально дифференцируя, получаем $\dot{x}_i = \sum\limits_{l = 1}^{\infty}la_l^{(i)}t^{l - 1}$, значит \[\dot{x}_i = \sum\limits_{k = 1}^{\infty}k a_k^{(i)}t^{k-1} = \sum\limits_{j = 1}^{n}\sum\limits_{k = 0}^{\infty}p_{i,j}^{(k)}t^k\underbrace{\left(\sum\limits_{l = 1}^{\infty}a_l^{(j)}t^l\right)}_{x_j} + \sum\limits_{k = 0}^{\infty}q_k^{(i)}t^k\]
             Приравнивая коэффициенты при равных степенях $t$, получаем \[\all{t^0:& a_1^{(i)} = q_0^{(i)} \\ t^1:&2a_2^{(i)} = \sum\limits_{j = 1}^{n}p_{i,j}^{(0)}a_1^{(i)} + q_{1}^{(i)} \\ &\ddots}\]
             В общем виде, это записывается так: $t^{m-1}: ma_m^{(i)} = P_m\left(p_{i,j}^{(k)}, a_l^{(j)}, q_i^{(m - 1)}\right)_{k \le m - 1, l \le m - 1}$, здесь $P_m$ --- некий многочлен с неотрицательными коэффициентами (они получены произведением и суммой членов).
 
