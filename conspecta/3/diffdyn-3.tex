@@ -1714,7 +1714,7 @@
     \[\frac{\d\theta}{\d t}(t) = \frac{\d \theta}{\d t}(h(\tau)) = 1 + \|f(y(\tau))\|^2_{\text{euclid}} = 1 + \|f(y(\theta(t)))\|^2_{\text{euclid}}\]
     Утверждается, что $z(t) = y(\theta(t))$ --- решение первой системы $\dot{z} = f(z)$.
     В самом деле,
-    \[\frac{\d z}{\d t} = \frac{\d y}{\d \theta}(\theta(t)) \cdot \frac{\d \theta}{\d t} = \frac{f(\theta(t))}{1 + \|f(y(\theta(t)))\|^2_{\text{euclid}}}(1 + \|f(y(\theta(t)))\|^2_{\text{euclid}}) = f(z(t))\]
+    \[\frac{\d z}{\d t} = \frac{\d y}{\d \theta}(\theta(t)) \cdot \frac{\d \theta}{\d t} = \frac{f(y(\theta(t)))}{1 + \|f(y(\theta(t)))\|^2_{\text{euclid}}}(1 + \|f(y(\theta(t)))\|^2_{\text{euclid}}) = f(z(t))\]
 
     Таким образом получается, что решению $y: \R \map \R^n$ системы $\dot{y} = f(y)$ с начальным данным $y(0) = x_0$ соответствует некоторое решение $z: I \map \R^n$ системы $\dot{z} = f(z)$ с тем же начальным данным $z(0) = x_0$, причём их траектории одинаковы.
 
