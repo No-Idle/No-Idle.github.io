@@ -157,7 +157,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\switch}{\all}
 \newcommand{\any}[1]{\left[\begin{aligned}#1\end{aligned}\right.}
 \renewcommand{\indent}[1]{\begin{adjustwidth}{1.5cm}{}#1\end{adjustwidth}}
-\newcommand{\prove}[2][Доказательство]{\begin{proof}[#1]~\par#2\end{proof}}
+\newcommand{\prove}[2][Доказательство]{\begin{proof}[#1]#2\end{proof}}
 \newcommand{\provehere}[2][Доказательство]{\begin{proof}[#1]#2\end{proof}}
 \newcommand{\provebullets}[2][Доказательство]{\prove[#1]{\bullets{#2\qedhere}}}
 \newcommand{\provenumbers}[2][Доказательство]{\prove[#1]{\numbers{#2\qedhere}}}
@@ -371,6 +371,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \DeclareMathOperator{\Ab}{Ab}
 \DeclareMathOperator{\Gr}{Gr}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\PGL}{PGL}
 \DeclareMathOperator{\PSL}{PSL}
 \newcommand{\p}{\mathfrak{p}}
