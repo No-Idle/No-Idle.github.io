@@ -159,8 +159,8 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \renewcommand{\indent}[1]{\begin{adjustwidth}{1.5cm}{}#1\end{adjustwidth}}
 \newcommand{\prove}[2][Доказательство]{\begin{proof}[#1]#2\end{proof}}
 \newcommand{\provehere}[2][Доказательство]{\begin{proof}[#1]#2\end{proof}}
-\newcommand{\provebullets}[2][Доказательство]{\prove[#1]{\bullets{#2\qedhere}}}
-\newcommand{\provenumbers}[2][Доказательство]{\prove[#1]{\numbers{#2\qedhere}}}
+\newcommand{\provebullets}[2][Доказательство]{\prove[#1]{~\par\bullets{#2\qedhere}}}
+\newcommand{\provenumbers}[2][Доказательство]{\prove[#1]{~\par\numbers{#2\qedhere}}}
 \newcommand{\provetwhen}[3][Доказательство]{\provebullets[#1]{\item[$\then$.]#2\item[$\when$.]#3\qedhere}}
 \newcommand{\provewthen}[3][Доказательство]{\provebullets[#1]{\item[$\when$.]#2\item[$\then$.]#3\qedhere}}
 \newcommand{\singlepage}[1]{\begin{samepage}#1\end{samepage}}
@@ -260,6 +260,8 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 \newcommand{\fmin}{\land}
 \newcommand{\Lmod}[1]{#1\text{-}\cat{mod}}
 \newcommand{\modR}[1]{\cat{mod}\text{-}#1}
+\newcommand{\LMod}[1]{#1\text{-}\cat{Mod}}
+\newcommand{\ModR}[1]{\cat{Mod}\text{-}#1}
 %\newcommand{\cat}[1]{\mathscr{#1}}
 \newcommand{\catA}{\mathscr{A}}
 \newcommand{\catB}{\mathscr{B}}
