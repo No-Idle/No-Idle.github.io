@@ -803,7 +803,70 @@
     Для колчана $Q$ определим неориентированный граф $Q_f$, получающийся из ориентированного графа колчана забыванием ориентации рёбер.
     \theorem[Габриэль]{
     Пусть $Q_f$ связен, $K = \alg{K}$.
-    $KQ$ имеет конечный тип представления, если и только если $Q_f$ --- одна из диаграмм Дынкина без кратных рёбер, то есть $\mathsf{A}_n$ ($n \ge 1$), или $\mathsf{D}_n$ ($n \ge 4$), или $\mathsf{E}_6$, или $\mathsf{E}_7$, или $\mathsf{E}_8$.
+    $KQ$ имеет конечный тип представления, если и только если $Q_f$ --- одна из диаграмм Дынкина без кратных рёбер, то есть $\mathsf{A}_n$ ($n \ge 1$), или $\mathsf{D}_n$ ($n \ge 4$), или $\mathsf{E}_6$, или $\mathsf{E}_7$, или $\mathsf{E}_8$ (нижний индекс отвечает количеству вершин):
+        \[\arr{ccc}{
+            \begin{tikzpicture}
+                \fill (0, 0) circle (1.2pt);
+                \fill (1, 0) circle (1.2pt);
+                \fill (4, 0) circle (1.2pt);
+                \fill (5, 0) circle (1.2pt);
+                \draw (0, 0) -- (1, 0);
+                \draw (4, 0) -- (5, 0);
+                \draw[dashed] (1, 0) -- (4, 0);
+                \fill[white] (0, -0.5) circle(0pt);
+            \end{tikzpicture} &
+            \begin{tikzpicture}[scale=0.8]
+                \fill (0, 0) circle (1.5pt);
+                \fill (6, -1) circle (1.5pt);
+                \fill (6, 1) circle (1.5pt);
+                \fill (5, 0) circle (1.5pt);
+                \fill (3.6, 0) circle (1.5pt);
+                \fill (1.4, 0) circle (1.5pt);
+                \draw (6, -1) -- (5, 0) -- (6, 1);
+                \draw (0, 0) -- (1.4, 0);
+                \draw (3.6, 0) -- (5, 0);
+                \draw[dashed] (1.4, 0) -- (3.6, 0);
+            \end{tikzpicture} & \begin{tikzpicture}
+                                    \fill (0, 0) circle (1.2pt);
+                                    \fill (1, 0) circle (1.2pt);
+                                    \fill (2, 0) circle (1.2pt);
+                                    \fill (3, 0) circle (1.2pt);
+                                    \fill (4, 0) circle (1.2pt);
+                                    \fill (2, -1) circle (1.2pt);
+                                    \draw (0, 0) -- (4, 0);
+                                    \draw (2, 0) -- (2, -1);
+            \end{tikzpicture}\\
+            \text{$\mathsf{A}_n$ --- путь} &
+            \text{$\mathsf{D}_n$ --- путь с развилкой} &
+            \text{$\mathsf{E}_6$}}
+        \]\[
+              \arr{cc}{
+                  \begin{tikzpicture}
+                      \fill (0, 0) circle (1.2pt);
+                      \fill (1, 0) circle (1.2pt);
+                      \fill (2, 0) circle (1.2pt);
+                      \fill (3, 0) circle (1.2pt);
+                      \fill (4, 0) circle (1.2pt);
+                      \fill (5, 0) circle (1.2pt);
+                      \fill (2, -1) circle (1.2pt);
+                      \draw (0, 0) -- (5, 0);
+                      \draw (2, 0) -- (2, -1);
+                  \end{tikzpicture} &
+                  \begin{tikzpicture}
+                      \fill (0, 0) circle (1.2pt);
+                      \fill (1, 0) circle (1.2pt);
+                      \fill (2, 0) circle (1.2pt);
+                      \fill (3, 0) circle (1.2pt);
+                      \fill (4, 0) circle (1.2pt);
+                      \fill (5, 0) circle (1.2pt);
+                      \fill (6, 0) circle (1.2pt);
+                      \fill (2, -1) circle (1.2pt);
+                      \draw (0, 0) -- (6, 0);
+                      \draw (2, 0) -- (2, -1);
+                  \end{tikzpicture} \\
+                  \text{$\mathsf{E}_7$} & \text{$\mathsf{E}_8$}}
+        \]
+
     \prove{
     Ясно, что если $Q$ содержит цикл, то сразу можно придумать бесконечно много неприводимых представлений, как минимум по одному на каждое $\lambda \in K$: поставим на вершинах цикла одномерные векторные пространства, все морфизмы на цикле сделаем тождественными, кроме одного, который сделаем умножением на $\lambda$.
         Всё вне цикла сделаем нулём:
@@ -863,7 +926,7 @@
     }
     }
     Рассмотрим расширенные диаграммы Дынкина, получающиеся из стандартных добавлением одного ребра (и, может быть, одной вершины):
-        \[\arr{c|c|c}{
+        \[\arr{ccc}{
                 \begin{tikzpicture}[scale=0.8]
                       \draw plot [smooth cycle, tension=0] coordinates { (A) (BC) (D) (EF) (G) (HI) };
                       \fill (A) circle (1.5pt) ;
@@ -896,7 +959,7 @@
                                                     \draw (0, 0) -- (4, 0);
                                                     \draw (2, 0) -- (2, -2);
             \end{tikzpicture}\\
-            \text{$\tilde{\mathsf{A}}_n$ --- цикл с $n$ вершинами} &
+            \text{$\tilde{\mathsf{A}}_n$ --- цикл} &
             \text{$\tilde{\mathsf{D}}_n$ --- путь с двумя развилками} &
             \text{$\tilde{\mathsf{E}}_6$}}
     \]\[
