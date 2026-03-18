@@ -278,6 +278,7 @@ and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$
 
 \newcommand{\circlesign}[1]{\mathrel{\tikz[baseline=-0.5ex]{\node[draw, circle, inner sep=1pt] (char) {\vphantom{$-$}$#1$};}}}
 \newcommand{\cat}[1]{\StrChar{#1}{1}[\firstchar]\StrGobbleLeft{#1}{1}[\remainingchars]\mathscr{\firstchar}\IfStrEq{\remainingchars}{}{}{\!\cat{\remainingchars}}}
+\newcommand{\rad}{\cat{rad}}
 
 \DeclareMathOperator{\const}{const}
 \DeclareMathOperator{\Fr}{Fr}
