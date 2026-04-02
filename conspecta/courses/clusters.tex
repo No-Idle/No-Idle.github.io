@@ -806,7 +806,7 @@
     В нашем случае колчана $(\bullet \rightrightarrows \bullet)$ подходят все чётные размерности (потому что размерность $KQ$-модуля $K^n \to K^n$ --- это $2n$).
     }
     Для колчана $Q$ определим неориентированный граф $Q_f$, получающийся из ориентированного графа колчана забыванием ориентации рёбер.
-    \theorem[Габриэль]{
+    \theorem[Габриэль]{\label{gabriel}
     Пусть $Q_f$ связен, $K = \alg{K}$.
     $KQ$ имеет конечный тип представления, если и только если $Q_f$ --- одна из диаграмм Дынкина без кратных рёбер, то есть $\mathsf{A}_n$ ($n \ge 1$), или $\mathsf{D}_n$ ($n \ge 4$), или $\mathsf{E}_6$, или $\mathsf{E}_7$, или $\mathsf{E}_8$ (нижний индекс отвечает количеству вершин):
         \[\arr{ccc}{
@@ -1265,7 +1265,7 @@
         В общем, аналогия с нётеровым кольцом --- необратимый элемент раскладывается в произведение неприводимых.
     }
     \provebullets{
-    \item Это утверждение носит название леммы Харада --- Саенса \comment{что ли}, но последнее время её чаще упоминают, как общеизвестный факт без названия.
+    \item Это утверждение носит название леммы Харада --- Саи, но последнее время её чаще упоминают, как общеизвестный факт без названия.
 
     Сразу воспользуемся конечным типом прпедставления. Пусть $N_1, \ldots, N_s$ --- все неразлоожимые $A$-модули.
     Определим $S \coloneqq \bigoplus N_i$, это конечнопорождённый $A$-модуль.
@@ -1293,9 +1293,9 @@
             \arrow[from=3-2, to=2-3]
         \end{tikzcd}\]
         Далее покажем, что композиция нулевая, просто переписывая композицию:
-    % https://q.uiver.app/#q=WzAsMTAsWzEsMSwiUyJdLFszLDEsIlMiXSxbNCwxLCJTIl0sWzYsMSwiUyJdLFs3LDEsIlMiXSxbNywwLCJNID0gTl97aV97MH19Il0sWzIsMCwiTSA9IE5fe2lfe2stMX19Il0sWzIsMSwiUyJdLFs0LDAsIk0gPSBOX3tpX3trLTJ9fSJdLFswLDAsIk0gPSBOX3tpX2t9Il0sWzEsMiwiaV97aV97ay0yfX1mX3trLTF9XFxwaV97aV97ay0xfX0iLDJdLFszLDQsImlfe2lfezB9fWZfMVxccGlfe2lfezB9fSIsMl0sWzQsNSwiXFxwaV97aV8wfSIsMl0sWzAsNywiaV97aV97ay0xfX1mX2tcXHBpX3tpX3trfX0iLDJdLFs3LDYsIlxccGlfe2lfe2stMX19IiwyXSxbNiwxLCJpX3tpX3trLTF9fSJdLFs5LDAsImlfe2lfa30iLDJdLFs5LDYsImZfe2t9Il0sWzIsOCwiXFxwaV97aV97ay0yfX0iLDJdLFs2LDgsImZfe2stMX0iXSxbOCw1LCJmXzEgXFxwcm9kZG90cyBmX3trLTJ9IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d
+    % https://q.uiver.app/#q=WzAsMTAsWzEsMSwiUyJdLFszLDEsIlMiXSxbNCwxLCJTIl0sWzYsMSwiUyJdLFs3LDEsIlMiXSxbNywwLCJOID0gTl97aV97MH19Il0sWzIsMCwiTl97aV97ay0xfX0iXSxbMiwxLCJTIl0sWzQsMCwiTl97aV97ay0yfX0iXSxbMCwwLCJNID0gTl97aV9rfSJdLFsxLDIsImlfe2lfe2stMn19Zl97ay0xfVxccGlfe2lfe2stMX19IiwyXSxbMyw0LCJpX3tpX3swfX1mXzFcXHBpX3tpX3swfX0iLDJdLFs0LDUsIlxccGlfe2lfMH0iLDJdLFswLDcsImlfe2lfe2stMX19Zl9rXFxwaV97aV97a319IiwyXSxbNyw2LCJcXHBpX3tpX3trLTF9fSIsMl0sWzYsMSwiaV97aV97ay0xfX0iXSxbOSwwLCJpX3tpX2t9IiwyXSxbOSw2LCJmX3trfSJdLFsyLDgsIlxccGlfe2lfe2stMn19IiwyXSxbNiw4LCJmX3trLTF9Il0sWzgsNSwiZl8xIFxccHJvZGRvdHMgZl97ay0yfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
-        {M = N_{i_k}} \&\& {M = N_{i_{k-1}}} \&\& {M = N_{i_{k-2}}} \&\&\& {M = N_{i_{0}}} \\
+        {M = N_{i_k}} \&\& {N_{i_{k-1}}} \&\& {N_{i_{k-2}}} \&\&\& {N = N_{i_{0}}} \\
         \& S \& S \& S \& S \&\& S \& S
         \arrow["{f_{k}}", from=1-1, to=1-3]
         \arrow["{i_{i_k}}"', from=1-1, to=2-2]
@@ -1338,7 +1338,7 @@
     Как мы видели в~(\cref{irreducibles}), имеется полное описание неприводимых морфизмов между неразложимыми модулями.
     Далее естественно задаться следующим вопросом: когда морфизм из неразложимого модуля в прямую сумму неразложимых неприводим?
     Ответ на этот вопрос описывается следующими тремя леммами.
-    \lemma{\label{first}
+    \lemma{\label{components}
     Пусть $f: U \overset{\smallvect{f_1 \\ f_2}}\Map V_1 \oplus V_2$ неприводим, и $U$ неразложим.
         Тогда $f_1$ и $f_2$ оба неразложимы.
     \prove{
@@ -1352,7 +1352,8 @@
     }
     }
     \note{
-    Двойственное, разумеется, тоже верно --- для проверки применим функтор антиэквивалентности $D: \Lmod{A} \to \modR{A}$.
+    Двойственное --- о неприводимых морфизмах из прямой суммы --- разумеется, тоже верно.
+        Для проверки применим функтор антиэквивалентности $D: \Lmod{A} \to \modR{A}$.
     }
     <<В обратную сторону чуть более тонко, и вообще неверно.
     Но давайте попробуем>>
@@ -1412,4 +1413,381 @@
     }
     }
     }
+    \newlection{1 апреля 2026 г. \textcolor{white}{Да, это не шутка}}
+    \lemma{
+    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- нерасщепляющаяся короткая точная последовательность.
+
+    Тогда $f$ неприводим $\iff$ для любого морфизма $u: U \to N$, не являющегося ретракцией: \[\left[\arr{cc}{\exists v: U \to M,& gv = u \\ \exists w: M \to U,& g = uw}\right.:\qquad
+        % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMCwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbNSwyLCJ2IiwxLHsib2Zmc2V0IjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJ3IiwxLHsib2Zmc2V0IjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwzLCJ1Il0sWzEsMiwiZiIsMV1d
+        \begin{tikzcd}[ampersand replacement=\&]
+              \&\&\& U \& \\
+              0 \& L \& M \& N \& 0
+              \arrow["v"{description}, shift right=2, dashed, from=1-4, to=2-3]
+              \arrow["u", from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f"{description}, from=2-2, to=2-3]
+              \arrow["w"{description}, shift right, dashed, from=2-3, to=1-4]
+              \arrow["g"{description}, from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    \provetwhen{
+    Построим пулбэк $V$, и воспользуемся тем, что ядра горизонтальных стрелок в пулбеке изоморфны:
+    % https://q.uiver.app/#q=WzAsOCxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMiwwLCJWIl0sWzEsMCwiTCJdLFswLDFdLFsxLDIsImYiLDFdLFsyLDMsImciLDFdLFszLDRdLFs1LDMsInUiXSxbNywxLCJcXGlkIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsNiwiXFxlbGwiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwyLCJzIiwwLHsib2Zmc2V0IjotMSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNSwidCIsMCx7Im9mZnNldCI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNiwzLCIiLDMseyJzdHlsZSI6eyJuYW1lIjoiY29ybmVyIn19XSxbNSw2LCJoIiwwLHsib2Zmc2V0IjotMSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzIsNiwiXFx0aWxkZXtofSIsMCx7Im9mZnNldCI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& L \& V \& U \& \\
+              0 \& L \& M \& N \& 0
+              \arrow["\ell", dashed, hook, from=1-2, to=1-3]
+              \arrow["\id", dashed, from=1-2, to=2-2]
+              \arrow["t", shift left, dashed, two heads, from=1-3, to=1-4]
+              \arrow["s", shift left, dashed, from=1-3, to=2-3]
+              \arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-3, to=2-4]
+              \arrow["h", shift left, dotted, from=1-4, to=1-3]
+              \arrow["u", from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f"{description}, from=2-2, to=2-3]
+              \arrow["{\tilde{h}}", shift left, dotted, from=2-3, to=1-3]
+              \arrow["g"{description}, from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    Получилось, что $f$ разложился в композицию.
+    Если $f$ неприводим, то $\ell$ сечение или $s$ ретракция, разберём два случая (они абсолютно аналогичны, хотя картинка и не очень симметрична).
+    \bullets{
+    \item Если $\ell$ сечение, то $L \to V \to U$ расщепляется, то есть $t$ ретракция, значит, $\exists h: U \to V$, $th = \id$. Получается, $ut = utht = gsht$, и на эпи $t$ можно сократить, получая $u = g(sh)$.
+    \item Если $s$ ретракция, то $\exists \tilde{h}$: $s\tilde{h} = \id$, тогда $gs = gs\tilde{h}s = ut\tilde{h}s \then g = u(t\tilde{h})$, так как $s$ --- эпи.
+    }
+    }{Обратно, пусть в данной короткой точной последовательности $f$ представилось в виде композиции $f = s \ell$.
+    Можно построить следующую диаграмму, взяв коядро $\ell$:
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMSwiMCJdLFsxLDEsIkwiXSxbMiwxLCJNIl0sWzMsMSwiTiJdLFs0LDEsIjAiXSxbMywwLCJVIl0sWzIsMCwiViJdLFsxLDAsIkwiXSxbMCwwLCIwIl0sWzQsMCwiMCJdLFswLDFdLFsxLDIsImYiLDFdLFsyLDMsImciLDFdLFszLDRdLFs1LDMsInUiXSxbNywxLCJcXGlkIl0sWzcsNiwiXFxlbGwiXSxbNiwyLCJzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNSwidCJdLFs4LDddLFs1LDldLFs2LDMsIiIsMCx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dLFsyLDUsInciLDEseyJvZmZzZXQiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDIsInYiLDEseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& V \& U \& 0 \\
+              0 \& L \& M \& N \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow["\ell", from=1-2, to=1-3]
+              \arrow["\id", from=1-2, to=2-2]
+              \arrow["t", from=1-3, to=1-4]
+              \arrow["s", dashed, from=1-3, to=2-3]
+              \arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-3, to=2-4]
+              \arrow[from=1-4, to=1-5]
+              \arrow["v"{description}, shift right, dashed, from=1-4, to=2-3]
+              \arrow["u", from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f"{description}, from=2-2, to=2-3]
+              \arrow["w"{description}, shift right=2, dashed, from=2-3, to=1-4]
+              \arrow["g"{description}, from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+        По критерию пулбэка\footnote{Коммутативный квадрат --- пулбэк $\iff$ ядра горизонтальных стрелок изоморфны, а на их коядрах есть вложение.} правый квадрат --- пулбэк.
+        В самом деле, здесь даже просто есть изоморфизм как на ядрах, так и на коядрах.
+
+    По условию нашлись $v$ или $w$, рассмотрим оба варианта.
+    \bullets{
+    \item Если $\exists v: U \to M$, то квадрат % https://q.uiver.app/#q=WzAsNCxbMCwwLCJVIl0sWzEsMCwiVSJdLFswLDEsIk0iXSxbMSwxLCJOIl0sWzAsMSwiXFxpZCJdLFswLDIsInYiLDJdLFsyLDMsImciLDFdLFsxLDMsInUiXV0=
+        $\begin{tikzcd}[ampersand replacement=\&]
+              U \& U \\
+              M \& N
+              \arrow["\id", from=1-1, to=1-2]
+              \arrow["v"', from=1-1, to=2-1]
+              \arrow["u", from=1-2, to=2-2]
+              \arrow["g"{description}, from=2-1, to=2-2]
+        \end{tikzcd}$ коммутативен, значит, можно применить универсальное свойство пулбэка, получая $i: U \to V$, такое что $ti = \id$.
+        Значит, $t$ ретракция, а $\ell$ сечение.
+        \item Если $\exists w: M \to U$, то квадрат % https://q.uiver.app/#q=WzAsNCxbMCwwLCJNIl0sWzEsMCwiVSJdLFswLDEsIk0iXSxbMSwxLCJOIl0sWzAsMSwidyJdLFswLDIsIlxcaWQiLDJdLFsyLDMsImciLDFdLFsxLDMsInUiXV0=
+        $\begin{tikzcd}[ampersand replacement=\&]
+              M \& U \\
+              M \& N
+              \arrow["w", from=1-1, to=1-2]
+              \arrow["\id"', from=1-1, to=2-1]
+              \arrow["u", from=1-2, to=2-2]
+              \arrow["g"{description}, from=2-1, to=2-2]
+        \end{tikzcd}$ коммутативен, значит, можно применить универсальное свойство пулбэка, получая $j: M \to V$, такое что $sj = \id$. Значит, $s$ --- ретракция.
+    }
+    }
+    }
+    Дуализуя, получаем следующее утверждение.
+    \lemma{
+    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- нерасщепляющаяся короткая точная последовательность.
+
+    Тогда $g$ неприводим $\iff$ любой морфизм $L \to U$ индуцирует коммутативный треугольник:
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCIwIl0sWzEsMCwiTCJdLFsyLDAsIk0iXSxbMywwLCJOIl0sWzQsMCwiMCJdLFsxLDEsIlUiXSxbMCwxXSxbMSwyLCJmIiwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbMiw1LCJcXGV4aXN0cyIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMiwiXFxleGlzdHMiLDEseyJvZmZzZXQiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDVdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& M \& N \& 0 \\
+              \& U
+              \arrow[from=1-1, to=1-2]
+              \arrow["f"{description}, from=1-2, to=1-3]
+              \arrow[from=1-2, to=2-2]
+              \arrow["g"{description}, from=1-3, to=1-4]
+              \arrow["\exists"{description}, shift right, dashed, from=1-3, to=2-2]
+              \arrow[from=1-4, to=1-5]
+              \arrow["\exists"{description}, shift right=2, dashed, from=2-2, to=1-3]
+        \end{tikzcd}\]
+    }
+    Ранее мы видели, что неразложимый морфизм --- либо моно, либо эпи.
+    Применим лемму, усиливая это описание.
+    \lemma{
+    Мономорфизм $f$ неприводим $\then$ коядро $N$ неразложимо.
+
+    Двойственно, эпиморфизм $g$ неприводим $\then$ ядро $L$ неразложимо.
+    \prove{
+    Пойдём от противного: пусть коядро разложилось в прямую сумму.
+    Применим лемму к вложению слагаемого в прямую сумму.
+    Так как $f$ неприводим, то найдутся $v_1$ или $w_1$, индуцирующие коммутативный треугольник:
+    % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOXzEgXFxvcGx1cyBOXzIiXSxbNCwxLCIwIl0sWzMsMCwiTl8xIl0sWzAsMV0sWzEsMiwiZiIsMV0sWzIsMywiZyIsMV0sWzMsNF0sWzUsMywiaV8xIl0sWzUsMiwidl8xIiwxLHsib2Zmc2V0IjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJ3XzEiLDEseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \&\&\& {N_1} \& \\
+              0 \& L \& M \& {N_1 \oplus N_2} \& 0
+              \arrow["{v_1}"{description}, shift right=2, dashed, from=1-4, to=2-3]
+              \arrow["{i_1}", from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f"{description}, from=2-2, to=2-3]
+              \arrow["{w_1}"{description}, shift right, dashed, from=2-3, to=1-4]
+              \arrow["g"{description}, from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    \bullets{
+    \item Если $\exists w_1: M \to U$, то $g = i_1 w \then \Image g \subset N_1$, протичоречие.
+        Значит, $\exists v_1: N_1 \to M$, $i_1 = g v_1$.
+    \item Аналогично получаем $i_2 = g v_2$ для некоторого $v_2: N_2 \to M$.
+    \item Складывая, получаем $(i_1 \oplus i_2) = g(v_1 \oplus v_2)$, это равенство морфизмов $N_1 \oplus N_2 \to N_1 \oplus N_2$.
+    Левая часть равенства --- $\id$, значит, $g$ ретракция, противоречие.\qedhere
+    }
+    }
+    }
+    Неприводимый морфизм --- <<почти изоморфизм>>, у него среди ядра и коядра одно тривиально, а другое --- почти тривиально.
+    Однако для, скажем, мономорфизма из простоты коядра неприводимость, вообще говоря, \textbf{не} следует.
+    \example[Неприводимый морфизм]{
+    Пусть $A = K[x, y]/(x^2, y^2)$ --- коммутативная четырёхмерная алгебра.
+    Её базис можно изобразить следующей самоочевидной диаграммой:% https://q.uiver.app/#q=WzAsNCxbMSwwLCIxIl0sWzAsMSwieCJdLFsyLDEsInkiXSxbMSwyLCJ4eSJdLFsxLDMsInkiLDJdLFsyLDMsIngiXSxbMCwxLCJ4IiwyXSxbMCwyLCJ5Il1d
+        \[\begin{tikzcd}[ampersand replacement=\&   , row sep=tiny, column sep=tiny]
+              \& 1 \& \\
+              x \&\& y \\
+              \& xy
+              \arrow["x"', from=1-2, to=2-1]
+              \arrow["y", from=1-2, to=2-3]
+              \arrow["y"', from=2-1, to=3-2]
+              \arrow["x", from=2-3, to=3-2]
+        \end{tikzcd}\]
+    Из $x$ нет стрелки, подписанной $x$, так как $x^2 = 0$.
+
+    Пусть $M = A/\angles{y}$, изображаемый следующей диаграммой:
+        $\begin{tikzcd}[ampersand replacement=\&, row sep=tiny]
+        {\overline{1}} \\
+        {\overline{x}}
+        \arrow[no head, from=1-1, to=2-1]
+        \end{tikzcd}$.
+    Вложение $\overline{x} \hookrightarrow$
+        $\begin{tikzcd}[ampersand replacement=\&, row sep=tiny,column sep=small,baseline=-10]
+              {\overline{1}} \\
+              {\overline{x}}
+              \arrow[no head, from=1-1, to=2-1]
+        \end{tikzcd}$
+    не является неприводимым: оно разваливается в композицию вложения в трёхмерный фактор по цоколю, и факторизацию:
+        \[\begin{tikzcd}[ampersand replacement=\&, row sep=tiny,column sep=small]
+            {\overline{x}}
+            \end{tikzcd} \quad\hookrightarrow\quad \begin{tikzcd}[ampersand replacement=\&, row sep=tiny,column sep=tiny]
+              \& {\overline{1}} \& \\
+              {\overline{x}} \&\& {\overline{y}}
+              \arrow[no head, from=1-2, to=2-1]
+              \arrow[no head, from=1-2, to=2-3]
+        \end{tikzcd} \quad\twoheadrightarrow\quad
+        \begin{tikzcd}[ampersand replacement=\&, row sep=tiny,column sep=small]
+        {\overline{1}} \\
+        {\overline{x}}
+        \arrow[no head, from=1-1, to=2-1]
+        \end{tikzcd}\]
+    Вложение в фактор по цоколю уже неприводимо (оставим это как упражнение; оно, видимо, не очень простое, так как $A$ не конечного типа представления, значит, общая теория про разложение морфизмов в произведение неприводимых здесь не применима).
+    }
+    \definition[AR-колчан алгебры $A$]{Колчан, вершины которого --- классы изоморфизма неразложимых модулей; если $[M], [N]$ --- вершины, то количество стрелок $[M] \to [N]$ --- это $\dim_K (\rad/\rad^2)(M, N)$.
+    }
+    \example{
+    Пусть $A = K \mathsf{A}_3$ --- алгебра путей диаграммы Дынкина $\mathsf{A}_3$, с рёбрами, ориентированными в одну строну:
+        \[1 \Map 2 \Map 3.\]
+        $A$-модули --- представления $\mathsf{A}_3$, а именно, конфигурации $V_1 \to V_2 \to V_3$ в $K\text{-}\cat{Vect}$.
+    \exercise{
+        Все неразложимые представления имеют один из следующих шести тривиальных видов: % https://q.uiver.app/#q=WzAsMTgsWzIsMSwiMCJdLFsyLDAsIksiXSxbMCwwLCIwIl0sWzEsMCwiMCJdLFswLDEsIjAiXSxbMSwxLCJLIl0sWzAsMiwiSyJdLFsxLDIsIjAiXSxbMiwyLCIwIl0sWzQsMCwiMCJdLFs1LDAsIksiXSxbNiwwLCJLIl0sWzQsMSwiSyJdLFs1LDEsIksiXSxbNiwxLCIwIl0sWzQsMiwiSyJdLFs1LDIsIksiXSxbNiwyLCJLIl0sWzIsM10sWzMsMV0sWzQsNV0sWzUsMF0sWzYsN10sWzcsOF0sWzksMTBdLFsxMCwxMV0sWzEyLDEzXSxbMTMsMTRdLFsxNSwxNl0sWzE2LDE3XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& 0 \& K \&\& 0 \& K \& K \\
+              0 \& K \& 0 \&\& K \& K \& 0 \\
+              K \& 0 \& 0 \&\& K \& K \& K
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow[from=1-5, to=1-6]
+              \arrow[from=1-6, to=1-7]
+              \arrow[from=2-1, to=2-2]
+              \arrow[from=2-2, to=2-3]
+              \arrow[from=2-5, to=2-6]
+              \arrow[from=2-6, to=2-7]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow[from=3-5, to=3-6]
+              \arrow[from=3-6, to=3-7]
+        \end{tikzcd}\]
+    Назовём их соответственно $001, 010, 100, 011, 110, 111$.
+    Иными словами, любая конфигурация векторных пространств имеет вид $U \oplus V \oplus W \to U \oplus V \oplus T \oplus S \to U \oplus S \oplus R$.
+        При некотором занудстве это можно и руками просто доказать.
+    }
+    $K\mathsf{A}_3$ --- алгебра конечного типа представления~(\cref{gabriel}), значит, все морфизмы раскладываются в композицию неприводимых, и вся категория описывается AR-колчаном, который на самом деле имеет следующий вид:
+    % https://q.uiver.app/#q=WzAsNixbMiwwLCIxMTEiXSxbMSwxLCIwMTEiXSxbMywxLCIxMTAiXSxbMCwyLCIwMDEiXSxbMiwyLCIwMTAiXSxbNCwyLCIxMDAiXSxbMywxXSxbMSwwXSxbMCwyXSxbMiw1XSxbMSw0XSxbNCwyXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&,row sep=small, column sep=small]
+              \&\& 111 \&\& \\
+              \& 011 \&\& 110 \\
+              001 \&\& 010 \&\& 100
+              \arrow[from=1-3, to=2-4]
+              \arrow[from=2-2, to=1-3]
+              \arrow[from=2-2, to=3-3]
+              \arrow[from=2-4, to=3-5]
+              \arrow[from=3-1, to=2-2]
+              \arrow[from=3-3, to=2-4]
+        \end{tikzcd}\]
+    Вроде это не очень сложно понять?..
+    \note{
+    Левая диагональ ($001, 011, 111$) --- проективные модули, а правая ($111, 110, 100$) --- инъективные.
+
+    В первом совсем несложно убедиться: пусть $e_1, e_2, e_3$ --- идепмотенты, отвечающие соответствующим вершинам колчана.
+        Тогда имеет место изоморфизм (левых) $A$-модулей $001 = A e_3$, $011 = A e_2$, $111 = A e_1$, где $e_1, e_2, e_3$ --- идемпотенты, отвечающие вершинам колчана. \comment{Правда что ли?}
+    }
+    \note{
+    Пока не формализуя, заметим, что ромбик по центру AR-диаграммы --- кусок кластерной картинки (помните, у нас были такие \emph{фризы}...).
+    Чтобы дополнить эту картинку до периодической по горизонтали, надо <<применить сдвиг>> в триангулированной категории --- взять производную категорию, и профакторизовать, чтобы получилось периодично.
+    }
+    \note{
+    Ещё из AR-колчана легко видеть точные последовательности: две простые $001 \to 011 \to 010$ и $010 \to 110 \to 100$, и одна приходящая из ромбика $011 \to \vect{111 \\ \oplus \\ 010} \to 110$.
+    Все не инъективные модули --- начала таких коротких точных последовательностей, а все не проективные --- их концы.
+    Ясно, что у инъективных модулей нет шансов быть началами коротких точных последовательностей, так как инъективные модули в начале расщепляют последовательность.
+    }
+    }
+    \subsection{AR-последовательности}
+    Последовательности будут не очень длинные, а вовсе наоборот, короткие точные.
+    \definition[Почти расщепляющийся слева морфизм $f: L \to M$]{
+    Не сечение (то есть он не расщепляется слева), но любое другое не сечение $g: L \to \tilde{M}$ пропускается: $\exists \tilde{f}: M \to \tilde{M}$, $g = \tilde{f} \circ f$.
+    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJMIl0sWzEsMSwiTSJdLFsxLDAsIlxcdGlsZGV7TX0iXSxbMCwxLCJmIl0sWzAsMiwiZyJdLFsxLDIsIlxcdGlsZGV7Zn0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {\tilde{M}} \\
+              L \& M
+              \arrow["g", from=2-1, to=1-2]
+              \arrow["f", from=2-1, to=2-2]
+              \arrow["{\tilde{f}}"', dashed, from=2-2, to=1-2]
+        \end{tikzcd}\]
+    }
+    \note{
+    Если бы $f$ был расщепляющимся, то через него бы пропускалось что угодно, а вот тут через него пропускаются все остальные неращепляющиеся.
+    }
+    Двойственно,
+    \definition[Почти расщепляющийся справа морфизм $g: M \to N$]{
+        Не ретракция, но любая другая не ретракция $f: \tilde{M} \to N$ пропускается: $\exists \tilde{g}: \tilde{M} \to M$, $f = g\circ\tilde{g}$.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIlxcdGlsZGV7TX0iXSxbMCwxLCJnIl0sWzIsMSwiZiIsMl0sWzIsMCwiXFx0aWxkZXtnfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              M \& N \\
+              {\tilde{M}}
+              \arrow["g", from=1-1, to=1-2]
+              \arrow["{\tilde{g}}", dashed, from=2-1, to=1-1]
+              \arrow["f"', from=2-1, to=1-2]
+        \end{tikzcd}\]
+    }
+
+    \definition[Минимальный слева морфизм $f: L \to M$]{
+        $\forall h \in \End(M)$: $h \circ f = f \then h$ --- изо.
+    }
+    \definition[Минимальный справа морфизм $g: L \to M$]{
+        $\forall h \in \End(L)$: $g \circ h = g \then h$ --- изо.
+    }
+    \statement{
+    Пусть объект $L$ фиксирован.
+        Минимальный слева морфизм $f$, почти расщепляющийся слева, с началом в $L$ --- единственный (с точностью до изоморфизма).
+    \prove{
+    Пусть $f: L \to M$ и $f': L \to M'$ --- два таких.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJMIl0sWzEsMCwiTSJdLFsxLDEsIk0nIl0sWzAsMSwiZiJdLFswLDIsImYnIiwyXSxbMSwyLCJoIiwxLHsib2Zmc2V0IjoxfV0sWzIsMSwiaCciLDEseyJvZmZzZXQiOjJ9XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              L \& M \\
+              \& {M'}
+              \arrow["f", from=1-1, to=1-2]
+              \arrow["{f'}"', from=1-1, to=2-2]
+              \arrow["h"{description}, shift right, from=1-2, to=2-2]
+              \arrow["{h'}"{description}, shift right=2, from=2-2, to=1-2]
+        \end{tikzcd}\]
+    В силу почти расщепляемости $\exists h: M \to M'$ и $h': M' \to M$, такие что $h' h f = h' f' = f$.
+        По минимальности $h'h = \id_{M'}$, аналогично $hh' = \id_{M}$.
+    }
+    }
+    \statement{Двойственно: почти расщепляющийся справа морфизм, минимальный справа и с данным концом --- единственный с точностью до изоморфизма.}
+    \note{Существует ли такой морфизм --- проблема современной науки, которой мы и будем вскоре заниматься.}
+    \statement{
+        Если $f: L \to M$ --- почти расщепляющийся слева морфизм, то $L$ неразложим.
+        Если $g: M \to N$ --- почти расщепляющийся справа морфизм, то $N$ неразложим.
+    \prove{
+    Пусть $L = L_1 \oplus L_2$; рассмотрим проекции $\pi_j: L_1 \oplus L_2 \to L_j$.
+        Из почти расщепляемости существуют $\exists g_j: M \to L_j$ такие, что $\pi_j = g_j f$.
+    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJMXzEgXFxvcGx1cyBMXzIiXSxbMSwxLCJNIl0sWzEsMCwiTF9qIl0sWzAsMiwiXFxwaV9qIl0sWzAsMSwiZiIsMV0sWzIsMSwiZ19qIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiYXJyb3doZWFkIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& {L_j} \\
+              {L_1 \oplus L_2} \& M
+              \arrow["{g_j}", dashed, tail reversed, no head, from=1-2, to=2-2]
+              \arrow["{\pi_j}", from=2-1, to=1-2]
+              \arrow["f"{description}, from=2-1, to=2-2]
+        \end{tikzcd}\]
+    Суммируя, получаем равенство морфизмов $L_1 \oplus L_2 \to L_1 \oplus L_2$: $\pi_1 \oplus \pi_2 = (g_1 \oplus g_2)f$, откуда $f$ --- сечение, что влечёт противоречие.
+    }
+    }
+    \examples{
+    \item Пример вообще не из мира алгебр: $\Z$-модули.
+    Модуль $\Z/p^n \Z$ можно вложить в прямую сумму $(\Z/p^{n-1}\Z) \oplus (\Z/p^{n+1}\Z)$ (это проекция $\oplus$ вложение), и, упражнение, это почти расщепляющийся слева морфизм.
+
+    Дополним до короткой точной последовательности, взяв коядро.
+        Оно окажется тоже изоморфным $\Z/p^n\Z$.
+        Проекция почти расщепляется справа, а мы получаем приятную короткую точную:
+    \[0 \to \Z/p^n \Z \to (\Z/p^{n-1}\Z) \oplus (\Z/p^{n+1}\Z) \to \Z/p^n \Z \to 0.\]
+    \item Пусть $A$ --- алгебра, $e_1 \in A$ --- примитивный идемпотент, значит, $P = A e_1$ --- неразложимый проективный.
+        $\mathrm{rad}P \coloneqq \JRad(A)P \le P$ --- подмодуль коразмерности $1$, единственный максимальный подмодуль.
+    Вложение $\mathrm{rad} P \hookrightarrow P$ почти расщепляется справа, это легко видеть, исследовав образ произвольной стрелки $u: U \to P$:
+    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJcXG1hdGhybXtyYWR9UCJdLFsxLDEsIlAiXSxbMSwwLCJVIl0sWzIsMSwidSJdLFswLDEsIiIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \& U \\
+              {\mathrm{rad}P} \& P
+              \arrow["u", from=1-2, to=2-2]
+              \arrow[hook, from=2-1, to=2-2]
+        \end{tikzcd}\]
+    Если $u: U \to P$ --- сюръекция, то из проективности $P$ это сразу ретракция; значит, образ содержится в максимальном подмодуле.
+
+    Далее несложно понять, что это единственный случай не сюръективного почти расщепляющегося справа морфизма.
+    }
+    Смысл почти расщепляющегося морфизма в том, что он содержит в себе все неприводимые морфизмы:
+    \statement{
+    Если $f: L \to M$ --- левый минимальный почти расщепляющийся, то \bullets{
+        \item $f$ неприводим;
+        \item $\tilde{f}: L \to M_1$ неприводим $\iff \tilde{f}$ --- компонента $f$:
+        % https://q.uiver.app/#q=WzAsMyxbMCwwLCJMIl0sWzEsMCwiTSA9IE1fMSBcXG9wbHVzIE1fMiJdLFsxLDEsIk1fMSJdLFswLDIsIlxcdGlsZGV7Zn0iLDJdLFsyLDFdLFswLDEsImYiXV0=
+            \[\begin{tikzcd}[ampersand replacement=\&]
+                  L \& {M = M_1 \oplus M_2} \\
+                  \& {M_1}
+                  \arrow["f", from=1-1, to=1-2]
+                  \arrow["{\tilde{f}}"', from=1-1, to=2-2]
+                  \arrow[from=2-2, to=1-2]
+            \end{tikzcd}\]
+        }
+    \provebullets{
+    \item Пусть $f$ разложился в композицию, предположим, что $u$ не сечение. % https://q.uiver.app/#q=WzAsMyxbMCwwLCJMIl0sWzEsMCwiTSJdLFsxLDEsIlgiXSxbMCwxLCJmIl0sWzAsMiwidSIsMl0sWzIsMSwidiIsMix7Im9mZnNldCI6Mn1dLFsxLDIsImgiLDIseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              L \& M \\
+              \& X
+              \arrow["f", from=1-1, to=1-2]
+              \arrow["u"', from=1-1, to=2-2]
+              \arrow["h"', shift right, dashed, from=1-2, to=2-2]
+              \arrow["v"', shift right=2, from=2-2, to=1-2]
+        \end{tikzcd}\]
+     Из почти расщепляемости нашлась $h: M \to X$, такая что $f = vu = vhf$.
+        Из минимальности $f$: $vh$ --- изоморфизм, значит, $v$ ретракция.
+    \item В одну сторону это следует из~(\cref{components})
+    В другую --- пусть $\tilde{f}: L \to \tilde{M}$ неприводим, тогда $\exists h: M \to \tilde{M}$, $\tilde{f} = h \circ f$.
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJMIl0sWzEsMCwiTSJdLFsxLDEsIlxcdGlsZGV7TX0iXSxbMCwxLCJmIl0sWzAsMiwiXFx0aWxkZXtmfSIsMl0sWzEsMiwiaCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              L \& M \\
+              \& {\tilde{M}}
+              \arrow["f", from=1-1, to=1-2]
+              \arrow["{\tilde{f}}"', from=1-1, to=2-2]
+              \arrow["h", dashed, from=1-2, to=2-2]
+        \end{tikzcd}\]
+    Так как $f$ --- не сечение, то $h$ --- ретракция, что и хотели.
+    }
+    }
+    Если опустить требование минимальности в этом утверждении, то второй пункт всё ещё верен.
+    На самом деле, требование минимальности --- защита от добавления паразитных слагаемых в область прибытия $M$.
 \end{document}
