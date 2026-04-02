@@ -1554,7 +1554,7 @@
     }
     Неприводимый морфизм --- <<почти изоморфизм>>, у него среди ядра и коядра одно тривиально, а другое --- почти тривиально.
     Однако для, скажем, мономорфизма из простоты коядра неприводимость, вообще говоря, \textbf{не} следует.
-    \example[Неприводимый морфизм]{
+    \example[Не неприводимый морфизм]{
     Пусть $A = K[x, y]/(x^2, y^2)$ --- коммутативная четырёхмерная алгебра.
     Её базис можно изобразить следующей самоочевидной диаграммой:% https://q.uiver.app/#q=WzAsNCxbMSwwLCIxIl0sWzAsMSwieCJdLFsyLDEsInkiXSxbMSwyLCJ4eSJdLFsxLDMsInkiLDJdLFsyLDMsIngiXSxbMCwxLCJ4IiwyXSxbMCwyLCJ5Il1d
         \[\begin{tikzcd}[ampersand replacement=\&   , row sep=tiny, column sep=tiny]
@@ -1569,7 +1569,7 @@
     Из $x$ нет стрелки, подписанной $x$, так как $x^2 = 0$.
 
     Пусть $M = A/\angles{y}$, изображаемый следующей диаграммой:
-        $\begin{tikzcd}[ampersand replacement=\&, row sep=tiny]
+        $\begin{tikzcd}[ampersand replacement=\&, row sep=tiny,baseline=-10]
         {\overline{1}} \\
         {\overline{x}}
         \arrow[no head, from=1-1, to=2-1]
@@ -1580,7 +1580,7 @@
               {\overline{x}}
               \arrow[no head, from=1-1, to=2-1]
         \end{tikzcd}$
-    не является неприводимым: оно разваливается в композицию вложения в трёхмерный фактор по цоколю, и факторизацию:
+    не является неприводимым: оно разваливается в композицию вложения в трёхмерный фактор по цоколю\footnote{Напомним, что цоколь --- минимальный ненулевой подмодуль.}, и факторизацию:
         \[\begin{tikzcd}[ampersand replacement=\&, row sep=tiny,column sep=small]
             {\overline{x}}
             \end{tikzcd} \quad\hookrightarrow\quad \begin{tikzcd}[ampersand replacement=\&, row sep=tiny,column sep=tiny]
@@ -1789,5 +1789,5 @@
     }
     }
     Если опустить требование минимальности в этом утверждении, то второй пункт всё ещё верен.
-    На самом деле, требование минимальности --- защита от добавления паразитных слагаемых в область прибытия $M$.
+    На самом деле, требование минимальности --- защита от добавления паразитных слагаемых в область прибытия $f$.
 \end{document}
