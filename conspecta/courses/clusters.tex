@@ -1192,7 +1192,7 @@
 
     Докажем $(1)$.
     Пусть $i$ --- сечение $V \to V \oplus W$.
-    Тогда $\id - p_{W}i = 0$ не обратим.
+    Тогда $\id - p_{W}i = 0$ не обратим, значит, $i \notin \rad$.
 
     Обратно, пусть $f \notin \rad_{A}(V, W)$. Тогда $\exists g \in \Mor(W, V)$: $\id_V - gf$ не изоморфизм.
     Значит, $\exists x \in V$: $x = (gf)(x)$.
@@ -1214,11 +1214,11 @@
           V \&\& W \& V \&\& W \\
           \& {V \oplus L} \&\&\& {W\oplus L}
           \arrow["f", from=1-1, to=1-3]
-          \arrow["f_2", from=1-1, to=2-2]
+          \arrow[from=1-1, to=2-2]
           \arrow["f", from=1-4, to=1-6]
-          \arrow["\smallvect{f \\ 0}"', "f_2", from=1-4, to=2-5]
-          \arrow["{\smallvect{f & 0}}"', "f_1", from=2-2, to=1-3]
-          \arrow["f_1", from=2-5, to=1-6]
+          \arrow["\smallvect{f \\ 0}"', from=1-4, to=2-5]
+          \arrow["{\smallvect{f & 0}}"', from=2-2, to=1-3]
+          \arrow[from=2-5, to=1-6]
     \end{tikzcd}\]
     но если их запретить, то других способов не останется.
     \lemma{
@@ -1256,7 +1256,7 @@
     Сейчас мы ограничимся алгебрами конечного типа представления --- для таких алгебр роль неприводимых морфизмов в описании категорий будет весьма значительна.
 
     Следующую теорему можно рассматривать, как характеризацию алгебр конечного типа представления --- для прочих она оказывается неверной.
-    \theorem{
+    \theorem{\label{decomposability}
     Пусть $A$ --- алгебра конечного типа представления, конечная над полем $K$, модули $M, N \in \Lmod{A}$ неразложимы.
     Тогда
     \bullets{
@@ -1357,7 +1357,7 @@
     }
     <<В обратную сторону чуть более тонко, и вообще неверно.
     Но давайте попробуем>>
-    \lemma{
+    \lemma{\label{irreducible-from-components}
     Рассмотрим $f: U \overset{\smallvect{f_1 \\ f_2}}\Map V_1 \oplus V_2$, пусть $f_1$ и $f_2$ неприводимы, а $V_1$ и $V_2$ не имеют общих слагаемых (то есть всевозможные их нетривиальные прямые слагаемые неизоморфмны).
         Ещё на всякий случай предположим неразложимость $U$.
         Тогда $f$ неприводим.
@@ -1378,7 +1378,7 @@
     }
     В общем случае $V_1$ и $V_2$ могут иметь общие слагаемые.
     Рассмотрим ситуацию, противоположную условию предыдущей леммы.
-    \lemma{
+    \lemma{\label{linearly-independent}
     Пусть $U, W$ неразложимы, $f: U \overset{\smallvect{f_1 \\ \vdots \\ f_k}}\Map W^{\oplus k}$. Предположим, что $f_1, \ldots, f_k$ неприводимы (в частности радикальны).
     Утверждается, что $f$ неприводим $\iff$ образы $\overline{f_1}, \ldots, \overline{f_k} \in \rad(U, W) / \rad^2(U, W)$ линейно независимы над $K$\footnote{Вообще говоря, в произвольной абелевой категории морфизмы можно только складывать и вычитать; однако понятно, что в категории $A$-модулей морфизмы также можно умножать на элементы базового поля $K$.}.
 
@@ -1390,7 +1390,7 @@
     \[U \overset{\smallvect{f_1 \\ \vdots \\ f_k}}\Map W^{\oplus k} \overset{\smallvect{\lambda_1 & \cdots & \lambda_k \\ * & \ddots & * \\ & & }}\Map W^{\oplus k}.\]
     Здесь мы пользовались тем, что любую ненулевую строчку можно дополнить до обратимой матрицы --- весьма интересное утверждение, над полем, впрочем, очевидное.
 
-    Неприводимость $f$ сохранилась после компонирования $f$ и изоморфизма, задаваемого обратимой матрицей, значит~(\cref{first}), все компоненты $\smallvect{\lambda_1 & \cdots & \lambda_k \\ * & \ddots & * \\ & & }\smallvect{f_1 \\ \vdots \\ f_k}$ неприводимы.
+    Неприводимость $f$ сохранилась после компонирования $f$ и изоморфизма, задаваемого обратимой матрицей, значит~(\cref{components}), все компоненты $\smallvect{\lambda_1 & \cdots & \lambda_k \\ * & \ddots & * \\ & & }\smallvect{f_1 \\ \vdots \\ f_k}$ неприводимы.
         Однако первая лежит в квадрате радикала, что влечёт протичоречие.
     }{
         Пусть $f_1, \ldots, f_k$ линейно независимы, предположим, что $f$ разложилось в композицию типа $U \overset{\smallvect{h_1 \\ h_2}}\Map W^{\oplus s} \oplus L \overset{\smallvect{g_1 & g_2}}\Map W^{\oplus k}$, где $L$ не содержит $W$ в качестве прямого слагаемого.
@@ -1523,7 +1523,7 @@
     }
     Ранее мы видели, что неразложимый морфизм --- либо моно, либо эпи.
     Применим лемму, усиливая это описание.
-    \lemma{
+    \lemma{\label{mono-coker}
     Мономорфизм $f$ неприводим $\then$ коядро $N$ неразложимо.
 
     Двойственно, эпиморфизм $g$ неприводим $\then$ ядро $L$ неразложимо.
@@ -1603,7 +1603,7 @@
         \[1 \Map 2 \Map 3.\]
         $A$-модули --- представления $\mathsf{A}_3$, а именно, конфигурации $V_1 \to V_2 \to V_3$ в $K\text{-}\cat{Vect}$.
     \exercise{
-        Все неразложимые представления имеют один из следующих шести тривиальных видов: % https://q.uiver.app/#q=WzAsMTgsWzIsMSwiMCJdLFsyLDAsIksiXSxbMCwwLCIwIl0sWzEsMCwiMCJdLFswLDEsIjAiXSxbMSwxLCJLIl0sWzAsMiwiSyJdLFsxLDIsIjAiXSxbMiwyLCIwIl0sWzQsMCwiMCJdLFs1LDAsIksiXSxbNiwwLCJLIl0sWzQsMSwiSyJdLFs1LDEsIksiXSxbNiwxLCIwIl0sWzQsMiwiSyJdLFs1LDIsIksiXSxbNiwyLCJLIl0sWzIsM10sWzMsMV0sWzQsNV0sWzUsMF0sWzYsN10sWzcsOF0sWzksMTBdLFsxMCwxMV0sWzEyLDEzXSxbMTMsMTRdLFsxNSwxNl0sWzE2LDE3XV0=
+        Все неразложимые представления имеют один из следующих шести тривиальных видов: % https://q.uiver.app/#q=WzAsMTgsWzIsMSwiMCJdLFsyLDAsIksiXSxbMCwwLCIwIl0sWzEsMCwiMCJdLFswLDEsIjAiXSxbMSwxLCJLIl0sWzAsMiwiSyJdLFsxLDIsIjAiXSxbMiwyLCIwIl0sWzQsMCwiMCJdLFs1LDAsIksiXSxbNiwwLCJLIl0sWzQsMSwiSyJdLFs1LDEsIksiXSxbNiwxLCIwIl0sWzQsMiwiSyJdLFs1LDIsIksiXSxbNiwyLCJLIl0sWzIsM10sWzMsMV0sWzQsNV0sWzUsMF0sWzYsN10sWzcsOF0sWzksMTBdLFsxMCwxMSwiXFxpZCJdLFsxMiwxMywiXFxpZCJdLFsxMywxNF0sWzE1LDE2LCJcXGlkIl0sWzE2LDE3LCJcXGlkIl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               0 \& 0 \& K \&\& 0 \& K \& K \\
               0 \& K \& 0 \&\& K \& K \& 0 \\
@@ -1611,19 +1611,19 @@
               \arrow[from=1-1, to=1-2]
               \arrow[from=1-2, to=1-3]
               \arrow[from=1-5, to=1-6]
-              \arrow[from=1-6, to=1-7]
+              \arrow["\id", from=1-6, to=1-7]
               \arrow[from=2-1, to=2-2]
               \arrow[from=2-2, to=2-3]
-              \arrow[from=2-5, to=2-6]
+              \arrow["\id", from=2-5, to=2-6]
               \arrow[from=2-6, to=2-7]
               \arrow[from=3-1, to=3-2]
               \arrow[from=3-2, to=3-3]
-              \arrow[from=3-5, to=3-6]
-              \arrow[from=3-6, to=3-7]
+              \arrow["\id", from=3-5, to=3-6]
+              \arrow["\id", from=3-6, to=3-7]
         \end{tikzcd}\]
     Назовём их соответственно $001, 010, 100, 011, 110, 111$.
     Иными словами, любая конфигурация векторных пространств имеет вид $U \oplus V \oplus W \to U \oplus V \oplus T \oplus S \to U \oplus S \oplus R$.
-        При некотором занудстве это можно и руками просто доказать.
+        При некотором занудстве это можно и просто руками доказать.
     }
     $K\mathsf{A}_3$ --- алгебра конечного типа представления~(\cref{gabriel}), значит, все морфизмы раскладываются в композицию неприводимых, и вся категория описывается AR-колчаном, который на самом деле имеет следующий вид:
     % https://q.uiver.app/#q=WzAsNixbMiwwLCIxMTEiXSxbMSwxLCIwMTEiXSxbMywxLCIxMTAiXSxbMCwyLCIwMDEiXSxbMiwyLCIwMTAiXSxbNCwyLCIxMDAiXSxbMywxXSxbMSwwXSxbMCwyXSxbMiw1XSxbMSw0XSxbNCwyXV0=
@@ -1674,23 +1674,23 @@
     Двойственно,
     \definition[Почти расщепляющийся справа морфизм $g: M \to N$]{
         Не ретракция, но любая другая не ретракция $f: \tilde{M} \to N$ пропускается: $\exists \tilde{g}: \tilde{M} \to M$, $f = g\circ\tilde{g}$.
-    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJNIl0sWzEsMCwiTiJdLFswLDEsIlxcdGlsZGV7TX0iXSxbMCwxLCJnIl0sWzIsMSwiZiIsMl0sWzIsMCwiXFx0aWxkZXtnfSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+    % https://q.uiver.app/#q=WzAsMyxbMCwxLCJNIl0sWzEsMSwiTiJdLFswLDAsIlxcdGlsZGV7TX0iXSxbMCwxLCJnIl0sWzIsMCwiXFx0aWxkZXtnfSIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDEsImYiXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
-              M \& N \\
-              {\tilde{M}}
-              \arrow["g", from=1-1, to=1-2]
-              \arrow["{\tilde{g}}", dashed, from=2-1, to=1-1]
-              \arrow["f"', from=2-1, to=1-2]
+        {\tilde{M}} \& \\
+        M \& N
+        \arrow["{\tilde{g}}"', dashed, from=1-1, to=2-1]
+        \arrow["f", from=1-1, to=2-2]
+        \arrow["g", from=2-1, to=2-2]
         \end{tikzcd}\]
     }
 
     \definition[Минимальный слева морфизм $f: L \to M$]{
         $\forall h \in \End(M)$: $h \circ f = f \then h$ --- изо.
     }
-    \definition[Минимальный справа морфизм $g: L \to M$]{
-        $\forall h \in \End(L)$: $g \circ h = g \then h$ --- изо.
+    \definition[Минимальный справа морфизм $g: M \to N$]{
+        $\forall h \in \End(M)$: $g \circ h = g \then h$ --- изо.
     }
-    \statement{
+    \statement{\label{unicity}
     Пусть объект $L$ фиксирован.
         Минимальный слева морфизм $f$, почти расщепляющийся слева, с началом в $L$ --- единственный (с точностью до изоморфизма).
     \prove{
@@ -1710,7 +1710,7 @@
     }
     \statement{Двойственно: почти расщепляющийся справа морфизм, минимальный справа и с данным концом --- единственный с точностью до изоморфизма.}
     \note{Существует ли такой морфизм --- проблема современной науки, которой мы и будем вскоре заниматься.}
-    \statement{
+    \statement{\label{indecomposable-end}
         Если $f: L \to M$ --- почти расщепляющийся слева морфизм, то $L$ неразложим.
         Если $g: M \to N$ --- почти расщепляющийся справа морфизм, то $N$ неразложим.
     \prove{
@@ -1745,12 +1745,12 @@
               \arrow["u", from=1-2, to=2-2]
               \arrow[hook, from=2-1, to=2-2]
         \end{tikzcd}\]
-    Если $u: U \to P$ --- сюръекция, то из проективности $P$ это сразу ретракция; значит, образ содержится в максимальном подмодуле.
+        А именно, если $u: U \to P$ --- сюръекция, то из проективности $P$ это сразу ретракция; значит, образ содержится в максимальном подмодуле.
 
     Далее несложно понять, что это единственный случай не сюръективного почти расщепляющегося справа морфизма.
     }
     Смысл почти расщепляющегося морфизма в том, что он содержит в себе все неприводимые морфизмы:
-    \statement{
+    \statement{\label{all-irreducibles}
     Если $f: L \to M$ --- левый минимальный почти расщепляющийся, то \bullets{
         \item $f$ неприводим;
         \item $\tilde{f}: L \to M_1$ неприводим $\iff \tilde{f}$ --- компонента $f$:
@@ -1790,4 +1790,253 @@
     }
     Если опустить требование минимальности в этом утверждении, то второй пункт всё ещё верен.
     На самом деле, требование минимальности --- защита от добавления паразитных слагаемых в область прибытия $f$.
+    \newlection{8 апреля 2026 г.}
+    \lemma{\label{preserving-iso}
+        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- нерасщепляющаяся короткая точная последовательность, $L$ неразложим.
+    Рассмотрим её эндоморфизм
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsNl0sWzYsNywiZiJdLFs3LDgsImciXSxbOCw5XSxbMyw4LCJ3IiwxXSxbMiw3LCJ2IiwxXSxbMSw2LCJ1IiwxXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& M \& N \& 0 \\
+              0 \& L \& M \& N \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow["f", from=1-2, to=1-3]
+              \arrow["u"{description}, from=1-2, to=2-2]
+              \arrow["g", from=1-3, to=1-4]
+              \arrow["v"{description}, from=1-3, to=2-3]
+              \arrow[from=1-4, to=1-5]
+              \arrow["w"{description}, from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f", from=2-2, to=2-3]
+              \arrow["g", from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    Тогда если $w$ --- изоморфизм, то $u$ и $v$ --- тоже изоморфизмы.
+    \prove{
+    В силу $5$-леммы достаточно доказать, что $u$ --- изоморфизм.
+    Если $u$ --- не изоморифзм, то раз $L$ неразложим, $u \in \rad(L, L)$, то есть $u^k = 0$ для некоторого $k > 0$.
+    Возводя эндоморфизм последовательности в $k$-ю степень, получаем
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsNl0sWzYsNywiZiJdLFs3LDgsImciXSxbOCw5XSxbMyw4LCJ3XmsiLDFdLFsyLDcsInZeayIsMV0sWzEsNiwiMCIsMV0sWzMsNywiaCIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& M \& N \& 0 \\
+              0 \& L \& M \& N \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow["f", from=1-2, to=1-3]
+              \arrow["0"{description}, from=1-2, to=2-2]
+              \arrow["g", from=1-3, to=1-4]
+              \arrow["{v^k}"{description}, from=1-3, to=2-3]
+              \arrow[from=1-4, to=1-5]
+              \arrow["h"', dashed, from=1-4, to=2-3]
+              \arrow["{w^k}"{description}, from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f", from=2-2, to=2-3]
+              \arrow["g", from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+        Раз $v^k f = 0$, то $\exists h: N \to M$: $hg = v$.
+    Из коммутативности $w^k g = g v^k = ghg$, и (раз $g$ эпи) $w^k = gh$ --- изо, то есть, $g$ ретракция.
+        Противоречие.
+    }
+    }
+    Ясно, что нерасщепляемость здесь играет самое прямое отношение к делу: если бы последовательность расщеплялось, то слагаемые $L$ и $N$ независимы, и ничего сказать про $u$, глядя на $w$, не получится.
+    \definition[AR-последовательность]{Короткая точная последовательность вида $0 \to L \overset{f}\to M \overset{g}\to N \to 0$, такая что $f$ --- минимальный почти расщепляющийся слева морфизм, а $g$ --- минимальный почти расщепляющийся справа.
+    Буквы AR --- в честь основателей теории Auslander и Reiten.}
+
+    Ясно~(\cref{unicity}), что для любого $L$ существует не более одной AR-последовательности (не более одного $f$, но $g = \coker(f)$).
+    Двойственно, AR-последовательность однозначно определяется концом $N$.
+
+    \theorem{\label{ar-criterion}
+        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- короткая точная последовательность.
+    Следующие условия расновильны:
+    \numbers{
+    \item Это AR-последовательность.
+    \item $f$ --- минимальный почти расщепляющийся слева.
+        \item $g$ --- минимальный почти расщепляющийся справа.
+        \item $f$ --- почти расщепляющийся слева, $N$ неразложим.
+        \item $g$ --- почти расщепляющийся справа, $L$ неразложим.
+\item $L, N$ неразложимы, а $f, g$ --- неприводимы.
+    }
+    \prove{
+        $(1) \then (2), (3)$ тавтологично; $(1) \then (4), (5), (6)$ тоже верны~(\cref{indecomposable-end}) и~(\cref{all-irreducibles}).
+        А ещё $(2) \then (4)$ и двойственно $(3) \then (5)$ следует из~(\cref{mono-coker}).
+
+    Докажем $(4) \iff (5)$. Пусть $u: L \to U$ --- не сечение.
+        Построим пушаут $V$.
+        Нас интересует существование $h: M \to U$: $hf = u$.
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMSwxLCJVIl0sWzIsMSwiViJdLFszLDEsIk4iXSxbMCwxLCIwIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzEsNSwidSJdLFs1LDYsImYnIiwxXSxbNiw3LCJnJyIsMV0sWzEsNiwiIiwwLHsic3R5bGUiOnsibmFtZSI6ImNvcm5lci1pbnZlcnNlIn19XSxbOCw1XSxbNyw5XSxbMiw2LCJ2Il0sWzMsNywiXFxpZCIsMV0sWzIsNSwiXFxleGlzdHM/aCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& M \& N \& 0 \\
+              0 \& U \& V \& N \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow["f", from=1-2, to=1-3]
+              \arrow["u", from=1-2, to=2-2]
+              \arrow["\ulcorner"{anchor=center, pos=0.125}, draw=none, from=1-2, to=2-3]
+              \arrow["g", from=1-3, to=1-4]
+              \arrow["{\exists?h}"{description}, dotted, from=1-3, to=2-2]
+              \arrow["v", from=1-3, to=2-3]
+              \arrow[from=1-4, to=1-5]
+              \arrow["\id"{description}, from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["{f'}"{description}, from=2-2, to=2-3]
+              \arrow["{g'}"{description}, from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    \bullets{
+    \item Если нижняя строка расщепляется, то есть $\exists p: V \to U$, $pf' = \id_{U}$, значит, $h = pv$ подходит (сокращаем на монморфизм $f'$).
+    \item Если нижняя строка не расщепляется, то $g'$ --- не ретракция. Так как $g$ почти расщепляется справа, то $\exists w: V \to M$: $g' = gw$.
+    Достроим диаграмму до эндоморфизма исходной короткой точной последовательности
+    % https://q.uiver.app/#q=WzAsMTQsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMSwxLCJVIl0sWzIsMSwiViJdLFszLDEsIk4iXSxbMCwxLCIwIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMywyLCJOIl0sWzIsMiwiTSJdLFsxLDIsIkwiXSxbMCwxXSxbMSwyLCJmIl0sWzIsMywiZyJdLFszLDRdLFsxLDUsInUiXSxbNSw2LCJmJyIsMV0sWzYsNywiZyciLDFdLFsxLDYsIiIsMCx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXItaW52ZXJzZSJ9fV0sWzgsNV0sWzcsOV0sWzIsNiwidiJdLFszLDcsIlxcaWQiLDFdLFsyLDUsIlxcZXhpc3RzP2giLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMTIsMTEsImciXSxbNSwxMywiXFx0aWxkZXt1fSJdLFsxMCwxM10sWzEzLDEyXSxbNywxMSwiXFxpZCJdLFs2LDEyLCJ3Il1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& M \& N \& 0 \\
+              0 \& U \& V \& N \& 0 \\
+              0 \& L \& M \& N
+              \arrow[from=1-1, to=1-2]
+              \arrow["f", from=1-2, to=1-3]
+              \arrow["u", from=1-2, to=2-2]
+              \arrow["\ulcorner"{anchor=center, pos=0.125}, draw=none, from=1-2, to=2-3]
+              \arrow["g", from=1-3, to=1-4]
+              \arrow["{\exists?h}"{description}, dotted, from=1-3, to=2-2]
+              \arrow["v", from=1-3, to=2-3]
+              \arrow[from=1-4, to=1-5]
+              \arrow["\id"{description}, from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["{f'}"{description}, from=2-2, to=2-3]
+              \arrow["{\tilde{u}}", from=2-2, to=3-2]
+              \arrow["{g'}"{description}, from=2-3, to=2-4]
+              \arrow["w", from=2-3, to=3-3]
+              \arrow[from=2-4, to=2-5]
+              \arrow["\id", from=2-4, to=3-4]
+              \arrow[from=3-1, to=3-2]
+              \arrow[from=3-2, to=3-3]
+              \arrow["g", from=3-3, to=3-4]
+        \end{tikzcd}\]
+    Используя~(\cref{preserving-iso}), получаем что $\tilde{u}u = \id_{L}$, то есть $u$ --- сечение.
+        Противоречие.
+    }
+
+    Докажем $(4) + (5) \then (2)$. Пусть $h: M \to M$ таков, что $hf = f$, то диаграмма ниже коммутативна:
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFs1LDZdLFs2LDcsImYiXSxbNyw4LCJnIl0sWzgsOV0sWzAsMV0sWzEsMiwiZiJdLFsyLDMsImciXSxbMyw0XSxbMSw2LCJcXGlkIiwxXSxbMiw3LCJoIiwxXSxbMyw4LCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& L \& M \& N \& 0 \\
+              0 \& L \& M \& N \& 0
+              \arrow[from=1-1, to=1-2]
+              \arrow["f", from=1-2, to=1-3]
+              \arrow["\id"{description}, from=1-2, to=2-2]
+              \arrow["g", from=1-3, to=1-4]
+              \arrow["h"{description}, from=1-3, to=2-3]
+              \arrow[from=1-4, to=1-5]
+              \arrow[dashed, from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f", from=2-2, to=2-3]
+              \arrow["g", from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    Значит, есть отображение на коядрах, и~(\cref{preserving-iso}) $h$ --- изоморфизм.
+
+    Так как $(2) + (3) \then (1)$ тавтологично, то мы уже доказали равносильность первых пяти.
+
+        Докажем $(6) \then (5)$.
+        Пусть $u: U \to N$ --- не ретракция. Нас интересует наличие $v: U \to M$: $u = gv$.
+    По лемме~\cref{??}, найдутся $v$ или $w$ с картинки.
+    % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMCwxXSxbMSwyLCJmIiwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbNSwzLCJ1Il0sWzUsMiwidiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwidyIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \&\&\& U \& \\
+              0 \& L \& M \& N \& 0
+              \arrow["v"', shift right, dashed, from=1-4, to=2-3]
+              \arrow["u", from=1-4, to=2-4]
+              \arrow[from=2-1, to=2-2]
+              \arrow["f"{description}, from=2-2, to=2-3]
+              \arrow["w"', shift right, dashed, from=2-3, to=1-4]
+              \arrow["g"{description}, from=2-3, to=2-4]
+              \arrow[from=2-4, to=2-5]
+        \end{tikzcd}\]
+    Если нашлось $v: U \to M$, $u = gv$, то это именно то, что надо.
+
+    Если нашлось $w: M \to U$, $g = uw$ то надо воспользоваться вторым условием.
+    $g$ неприводим, значит $w$ --- сечение или $u$ --- ретракция.
+    Без потери общности можно считать, что $U$ неразложим $\then w$ изо.
+        Значит, $v = w^{-1}$ подходит.
+    }
+    }
+    \statement{
+    $A$ --- алгебра конечного типа представления, $X$ --- неразложим.
+    Тогда существуют AR-последовательности с данным концом: есть $0 \to X \to Y \to Z \to 0$, и есть $0 \to U \to V \to X \to 0$.
+    \prove[Набросок доказательства]{
+    Построим минимальный почти расщепляющийся слева $f: X \to Y$.
+    В силу~(\cref{all-irreducibles}) можно понять, что в качестве такого $f$ подойдёт сумма всех неприводимых морфизмов из $X$.
+
+    А именно, пусть $Y_1, \ldots, Y_k$ --- все неразложимые $A$-модули.
+        Положим $Y \coloneqq \bigoplus\limits_{i =1}^{k}Y_i^{k_i}$, где $k_i = \dim_{K}\rad/\rad^2(X, Y_i)$.
+    Морфизм $X \to Y_i^{k_i}$ определён выбором базиса $\rad/\rad^2(X, Y_i)$.
+        Ясно~(\cref{linearly-independent} и~\cref{irreducible-from-components}), что $X \to Y$ неприводим, и содержит все неприводимые в качвестве компонент.
+
+        Почти расщепляемость $f: X \to Y$ следует из того, что любой другой морфизм $X \to U$ раскладывается по неприводимым морфизмам~(\cref{decomposability}).
+
+    Из неприводимости $f$~(\cref{??}) коядро неразложимо, значит~(\cref{ar-criterion}) это AR-последовательность.
+
+    \exercise{Тут всё ок?}
+    }
+    }
+    Пусть мы не в $\Lmod{A}$ для алгебры $A$ конечного типа представления, а в более общей ситуации.
+
+    Переформулируем свойство морфизма быть почти расщепляющимся.
+    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- короткая точная последовательность, $u: U \to N$ --- какой-то морфизм.
+    Построим пулбэк $V$:
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMSwiMCJdLFsxLDEsIkwiXSxbMiwxLCJNIl0sWzMsMSwiTiJdLFs0LDEsIjAiXSxbNCwwLCIwIl0sWzMsMCwiVSJdLFsyLDAsIlYiXSxbMSwwLCJMIl0sWzAsMCwiMCJdLFs5LDhdLFs4LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDVdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdLFs4LDEsIlxcaWQiLDFdLFs3LDIsInYiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwzLCJ1IiwxXV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          0 \& L \& V \& U \& 0 \\
+          0 \& L \& M \& N \& 0
+          \arrow[from=1-1, to=1-2]
+          \arrow[dashed, from=1-2, to=1-3]
+          \arrow["\id"{description}, from=1-2, to=2-2]
+          \arrow[dashed, from=1-3, to=1-4]
+          \arrow["v"{description}, dashed, from=1-3, to=2-3]
+          \arrow[from=1-4, to=1-5]
+          \arrow["u"{description}, from=1-4, to=2-4]
+          \arrow[from=2-1, to=2-2]
+          \arrow[from=2-2, to=2-3]
+          \arrow[from=2-3, to=2-4]
+          \arrow[from=2-4, to=2-5]
+    \end{tikzcd}\]
+    Как мы обсудили при доказательстве~\cref{ar-criterion}, что пропускание есть, если и только если верхняя строка расщепляется.
+
+    Пусть нижняя строка --- расширение $\eta \in \Ext^1(N, L)$, такое что $\eta \ne 0$, но для любого $u \in \rad$ (то есть не ретракции): $u^*\eta \in \Ext^1(U, L)$ тривиально.
+
+    \statement{\label{aim}
+        Нашей целью будет для каждого неразложимого объекта $L$ найти неразложимый объект $N$ и элемент $\eta \in \Ext^1(N, L)$, такой что $\eta \ne 0$, но $\eta$ аннулируется радикалом.
+        Эта $\eta$ будет соответствовать AR-последовательности с началом в $L$.
+    }
+    \statement{
+    Построим для каждого неразложимого $L$ некоторый неразложимый $\tau(L)$ и короткую точную последовательность $\eta \in \Ext^1(L, \tau(L))$.
+    \[0 \to \tau(L) \to M \to L \to 0\]
+    Потребуем чуть меньше: $\forall f \in \rad(L, L)$ (то есть $f: L \to L$ --- не изоморфизм): $f^*\eta = 0$.
+
+    Иными словами, $\Ext^1(L, \tau(L))$ --- некий $\End(L)$-модуль, и мы хотим найти элемент, анннулирующийся $\JRad(\End(L))$.
+    Эти элементы образуют $\End(L)/\JRad(\End(L))$-подмодуль, то есть полупростой подмодуль $\Ext^1(L, \tau(L))$.
+    Будем искать функториальный простой подмодуль.
+    }
+    Двойственная ситуация --- $\Hom(L, L) = \End(L)$ локально, значит, там есть (единственный) простой фактормодуль $\End(L)/\JRad(\End(L))$.
+    Применяя функтор двойственности $D$, получаем $DS \hookrightarrow D\Hom(L, L)$ --- единственный простой подмодуль в $D\Hom(L, L)$.
+
+    Данный подход приведёт к цели, если есть изоморфизм бифункторов $D\Hom(L, M) \cong \Ext^1(M, \tau(L))$.
+    Здесь всё хорошо: бифунктор ковариантен по $L$ и контравариантен по $M$.
+
+    Такое бывает: равенство $D \Hom(L, M) = \Hom(M, \tau(L))$ имеет название двойственнности Серра, где $\tau$ --- функтор Серра.
+    А $\Hom(M, \tau L) = \Ext^1(M, \tau L [\pm 1])$.
+
+    \ok
+    $D = \Hom_K(\_, K): \Lmod{A} \to \modR{A}$ --- антиэквивалентность.
+
+    Другой функтор $(\_)^t = \Hom_{\Lmod{A}}(\_, \ind{_A}{A}{_A}): \Lmod{A} \to \modR{A}$ контравариантен и точен слева, но ведёт себя более непонятно.
+    Тем не менее, на проективных модулях он ведёт себя понятным образом: если $P = Ae$ --- неразложимый проективный, то $\Hom_{\Lmod{A}}(Ae, A) \cong eA \in \modR{A}$, так как всё определяется образом $e$.
+
+    Можно взять дважды двойственный $M \mapsto M^{tt}$.
+    Гомоморфизм эвалюации $m \mapsto (f \mapsto f(m))$ будет изоморфизмом для проективных модулей (например, это изоморфизм для свободных модулей, и легко понять, что происходит при взятии прямых сумм и слагаемых).
+
+    Значит, функторт $(\_)^t: A\text{-}\cat{proj} \to \cat{proj}\text{-}A$ --- антиэквивалентность.
+    С другой стороны, $D$ переводит проективные в инъективные.
+
+    Значит, композиция $D(\_)^t: A\text{-}\cat{proj} \to \cat{inj}\text{-}A$ --- эквивалентность категорий.
+    Композицию полезно рассматривать и на всей категории: $\nu = D(\_)^t: \Lmod{A} \to \Lmod{A}$ называется \emph{функтором Накаямы}.
+
+
 \end{document}
