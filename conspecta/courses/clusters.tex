@@ -1124,28 +1124,31 @@
     \note{
     $(V, W) \mapsto \cat J(V, W)$ --- аддитивный подфунктор $\Hom(\_, \_)$.
     }
-    \examples{
+    \examples[Стабильные категории]{
     \item $\cat P = \defset{f \in \Mor}{\text{$f$ пропускается через какой-то проективный объект}}$.
-        Это идеал: для необязательно коммутативной дигараммы
-    % https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXGJ1bGxldCJdLFsyLDEsIlxcYnVsbGV0Il0sWzEsMCwiUF8xIl0sWzEsMiwiUF8yIl0sWzAsMywiaF8yIl0sWzMsMSwiZ18yIl0sWzAsMiwiaF8xIiwyXSxbMiwxLCJnXzEiLDJdXQ==
+        Это идеал: очевидна устойчивость относительно композиции, а замкнутость относительно суммы ясна из следующего аргумента:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGJ1bGxldCJdLFsxLDEsIlxcYnVsbGV0Il0sWzEsMCwiUF8xIl0sWzAsMSwiUF8yIl0sWzAsMywiaF8xIiwyXSxbMywxLCJnXzEiLDJdLFswLDIsImhfMiJdLFsyLDEsImdfMiJdLFswLDEsImZfMiIsMCx7Im9mZnNldCI6LTF9XSxbMCwxLCJmXzEiLDIseyJvZmZzZXQiOjF9XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
-              \& {P_1} \& \\
-              \bullet \&\& \bullet \\
-              \& {P_2}
-              \arrow["{g_1}"', from=1-2, to=2-3]
-              \arrow["{h_1}"', from=2-1, to=1-2]
-              \arrow["{h_2}", from=2-1, to=3-2]
-              \arrow["{g_2}", from=3-2, to=2-3]
+              \bullet \& {P_1} \\
+              {P_2} \& \bullet
+              \arrow["{h_2}", from=1-1, to=1-2]
+              \arrow["{h_1}"', from=1-1, to=2-1]
+              \arrow["{f_2}", shift left, from=1-1, to=2-2]
+              \arrow["{f_1}"', shift right, from=1-1, to=2-2]
+              \arrow["{g_2}", from=1-2, to=2-2]
+              \arrow["{g_1}"', from=2-1, to=2-2]
         \end{tikzcd}\]
-    сумма $g_1 h_1 + g_2 h_2$ пропускается через $P_1 \oplus P_2$.
+    если $f_1$ пропустилась через $P_1$, а $f_2$ пропустилась через $P_2$, то сумма $g_1 h_1 + g_2 h_2$ пропускается через $P_1 \oplus P_2$.
     \item $\cat I = \defset{f \in \Mor}{\text{$f$ пропускается через какой-то инъективный объект}}$.
-%    Доказательство аналогично.
+Это тоже идеал, например, потому что можно дуализовать аргумент.
     }
     Как обычно, по идеалу можно факторизовать, получая факторкатегорию $\cat C / \cat J$: $\Obj(\cat C/\cat J) = \Obj \cat C$, и $\Mor_{\cat C/\cat J}(V, W) = \Mor_{\cat C}(V, W)/\cat J(V, W)$.
     Условия на то, что $\cat J$ --- идеал, говорят, что композиция в факторкатегории определена корректно.
 
-    В случаях категории  $\cat C = \Lmod{A}$, и идеала $\cat J = \cat P$ или $\cat J = \cat I$, получаются \emph{стабильные} аддитивные категории $A\text{-}\underline{\cat{mod}}$ и $A\text{-}\overline{\cat{mod}}$.
-    Они уже не абелевы, но часто (например, если $\cat P = \cat I$, что случается, например, в случае $A = K[G]$ для конечной группы $G$) они триангулируемы.
+    В случаях категории $\cat C = \Lmod{A}$, и идеала $\cat J = \cat P$ или $\cat J = \cat I$ получаются довольно важные факторкатегории, носящие название \emph{стабильных}.
+    \definition[Стабильные категории]{\label{stable-category}$A\text{-}\underline{\cat{mod}} \bydef \Lmod{A}/\cat I$ и $A\text{-}\overline{\cat{mod}} \bydef \Lmod{A}/\cat P$.
+    }
+    Они уже не абелевы, но часто (например, если $\cat P = \cat I$, что случается, скажем, в случае $A = K[G]$ для конечной группы $G$) они триангулируемы.
     Они довольно сильно отличаются от привычных гомотопических категорий комплексов: например, часто функтор сдвига периодичен.
     Тем не менее, оказывается, что это факторкатегория гомотопической, \comment{что ли}.
 
@@ -1380,7 +1383,7 @@
     Рассмотрим ситуацию, противоположную условию предыдущей леммы.
     \lemma{\label{linearly-independent}
     Пусть $U, W$ неразложимы, $f: U \overset{\smallvect{f_1 \\ \vdots \\ f_k}}\Map W^{\oplus k}$. Предположим, что $f_1, \ldots, f_k$ неприводимы (в частности радикальны).
-    Утверждается, что $f$ неприводим $\iff$ образы $\overline{f_1}, \ldots, \overline{f_k} \in \rad(U, W) / \rad^2(U, W)$ линейно независимы над $K$\footnote{Вообще говоря, в произвольной абелевой категории морфизмы можно только складывать и вычитать; однако понятно, что в категории $A$-модулей морфизмы также можно умножать на элементы базового поля $K$.}.
+    Утверждается, что $f$ неприводим $\iff$ образы $\overline{f_1}, \ldots, \overline{f_k} \in (\rad/\rad^2)(U, W)$ линейно независимы над $K$\footnote{Вообще говоря, в произвольной абелевой категории морфизмы можно только складывать и вычитать; однако понятно, что в категории $A$-модулей морфизмы также можно умножать на элементы базового поля $K$. Иными словами, $\Lmod{A}$ --- $K$-линейная категория.}.
 
     Здесь наконец-то существенно, что $K = \alg{K}$, и по-прежнему двойственное верно.
     \provetwhen{
@@ -1414,19 +1417,19 @@
     }
     }
     \newlection{1 апреля 2026 г. \textcolor{white}{Да, это не шутка}}
-    \lemma{
-    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- нерасщепляющаяся короткая точная последовательность.
+    \lemma{\label{alternatives}
+    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ точна.
 
     Тогда $f$ неприводим $\iff$ для любого морфизма $u: U \to N$, не являющегося ретракцией: \[\left[\arr{cc}{\exists v: U \to M,& gv = u \\ \exists w: M \to U,& g = uw}\right.:\qquad
-        % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMCwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbNSwyLCJ2IiwxLHsib2Zmc2V0IjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJ3IiwxLHsib2Zmc2V0IjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSwzLCJ1Il0sWzEsMiwiZiIsMV1d
+        % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMCwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbNSwyLCJ2IiwxLHsib2Zmc2V0IjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMiw1LCJ3IiwxLHsib2Zmc2V0IjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbNSwzLCJ1IiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMiwiZiIsMV1d
         \begin{tikzcd}[ampersand replacement=\&]
               \&\&\& U \& \\
               0 \& L \& M \& N \& 0
-              \arrow["v"{description}, shift right=2, dashed, from=1-4, to=2-3]
-              \arrow["u", from=1-4, to=2-4]
+              \arrow["v"{description}, shift right=2, dotted, from=1-4, to=2-3]
+              \arrow["u", dashed, from=1-4, to=2-4]
               \arrow[from=2-1, to=2-2]
               \arrow["f"{description}, from=2-2, to=2-3]
-              \arrow["w"{description}, shift right, dashed, from=2-3, to=1-4]
+              \arrow["w"{description}, shift right, dotted, from=2-3, to=1-4]
               \arrow["g"{description}, from=2-3, to=2-4]
               \arrow[from=2-4, to=2-5]
         \end{tikzcd}\]
@@ -1449,7 +1452,7 @@
               \arrow["g"{description}, from=2-3, to=2-4]
               \arrow[from=2-4, to=2-5]
         \end{tikzcd}\]
-    Получилось, что $f$ разложился в композицию.
+    Получилось, что $f = s\ell$ разложился в композицию.
     Если $f$ неприводим, то $\ell$ сечение или $s$ ретракция, разберём два случая (они абсолютно аналогичны, хотя картинка и не очень симметрична).
     \bullets{
     \item Если $\ell$ сечение, то $L \to V \to U$ расщепляется, то есть $t$ ретракция, значит, $\exists h: U \to V$, $th = \id$. Получается, $ut = utht = gsht$, и на эпи $t$ можно сократить, получая $u = g(sh)$.
@@ -1457,17 +1460,15 @@
     }
     }{Обратно, пусть в данной короткой точной последовательности $f$ представилось в виде композиции $f = s \ell$.
     Можно построить следующую диаграмму, взяв коядро $\ell$:
-    % https://q.uiver.app/#q=WzAsMTAsWzAsMSwiMCJdLFsxLDEsIkwiXSxbMiwxLCJNIl0sWzMsMSwiTiJdLFs0LDEsIjAiXSxbMywwLCJVIl0sWzIsMCwiViJdLFsxLDAsIkwiXSxbMCwwLCIwIl0sWzQsMCwiMCJdLFswLDFdLFsxLDIsImYiLDFdLFsyLDMsImciLDFdLFszLDRdLFs1LDMsInUiXSxbNywxLCJcXGlkIl0sWzcsNiwiXFxlbGwiXSxbNiwyLCJzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNSwidCJdLFs4LDddLFs1LDldLFs2LDMsIiIsMCx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXIifX1dLFsyLDUsInciLDEseyJvZmZzZXQiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs1LDIsInYiLDEseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+    % https://q.uiver.app/#q=WzAsOCxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMiwwLCJWIl0sWzEsMCwiTCJdLFswLDFdLFsxLDIsImYiLDFdLFsyLDMsImciLDFdLFszLDRdLFs1LDMsInUiXSxbNywxLCJcXGlkIl0sWzcsNiwiXFxlbGwiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFs2LDIsInMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw1LCJ0IiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzYsMywiIiwwLHsic3R5bGUiOnsibmFtZSI6ImNvcm5lciJ9fV0sWzIsNSwidyIsMSx7Im9mZnNldCI6Miwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMiwidiIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
-              0 \& L \& V \& U \& 0 \\
+              \& L \& V \& U \& \\
               0 \& L \& M \& N \& 0
-              \arrow[from=1-1, to=1-2]
-              \arrow["\ell", from=1-2, to=1-3]
+              \arrow["\ell", hook, from=1-2, to=1-3]
               \arrow["\id", from=1-2, to=2-2]
-              \arrow["t", from=1-3, to=1-4]
+              \arrow["t", two heads, from=1-3, to=1-4]
               \arrow["s", dashed, from=1-3, to=2-3]
               \arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-3, to=2-4]
-              \arrow[from=1-4, to=1-5]
               \arrow["v"{description}, shift right, dashed, from=1-4, to=2-3]
               \arrow["u", from=1-4, to=2-4]
               \arrow[from=2-1, to=2-2]
@@ -1505,7 +1506,7 @@
     }
     Дуализуя, получаем следующее утверждение.
     \lemma{
-    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- нерасщепляющаяся короткая точная последовательность.
+    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ точна и не расщепляется.
 
     Тогда $g$ неприводим $\iff$ любой морфизм $L \to U$ индуцирует коммутативный треугольник:
     % https://q.uiver.app/#q=WzAsNixbMCwwLCIwIl0sWzEsMCwiTCJdLFsyLDAsIk0iXSxbMywwLCJOIl0sWzQsMCwiMCJdLFsxLDEsIlUiXSxbMCwxXSxbMSwyLCJmIiwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbMiw1LCJcXGV4aXN0cyIsMSx7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMiwiXFxleGlzdHMiLDEseyJvZmZzZXQiOjIsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDVdXQ==
@@ -1530,7 +1531,7 @@
     \prove{
     Пойдём от противного: пусть коядро разложилось в прямую сумму.
     Применим лемму к вложению слагаемого в прямую сумму.
-    Так как $f$ неприводим, то найдутся $v_1$ или $w_1$, индуцирующие коммутативный треугольник:
+    Так как $f$ неприводим, то~(\cref{alternatives}) найдутся $v_1$ или $w_1$, индуцирующие коммутативный треугольник:
     % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOXzEgXFxvcGx1cyBOXzIiXSxbNCwxLCIwIl0sWzMsMCwiTl8xIl0sWzAsMV0sWzEsMiwiZiIsMV0sWzIsMywiZyIsMV0sWzMsNF0sWzUsMywiaV8xIl0sWzUsMiwidl8xIiwxLHsib2Zmc2V0IjoyLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJ3XzEiLDEseyJvZmZzZXQiOjEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
               \&\&\& {N_1} \& \\
@@ -1751,7 +1752,7 @@
     }
     Смысл почти расщепляющегося морфизма в том, что он содержит в себе все неприводимые морфизмы:
     \statement{\label{all-irreducibles}
-    Если $f: L \to M$ --- левый минимальный почти расщепляющийся, то \bullets{
+    Если $f: L \to M$ --- минимальный почти расщепляющийся слева, то \bullets{
         \item $f$ неприводим;
         \item $\tilde{f}: L \to M_1$ неприводим $\iff \tilde{f}$ --- компонента $f$:
         % https://q.uiver.app/#q=WzAsMyxbMCwwLCJMIl0sWzEsMCwiTSA9IE1fMSBcXG9wbHVzIE1fMiJdLFsxLDEsIk1fMSJdLFswLDIsIlxcdGlsZGV7Zn0iLDJdLFsyLDFdLFswLDEsImYiXV0=
@@ -1792,7 +1793,7 @@
     На самом деле, требование минимальности --- защита от добавления паразитных слагаемых в область прибытия $f$.
     \newlection{8 апреля 2026 г.}
     \lemma{\label{preserving-iso}
-        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- нерасщепляющаяся короткая точная последовательность, $L$ неразложим.
+        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- точна и не расщепляется.
     Рассмотрим её эндоморфизм
     % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsNl0sWzYsNywiZiJdLFs3LDgsImciXSxbOCw5XSxbMyw4LCJ3IiwxXSxbMiw3LCJ2IiwxXSxbMSw2LCJ1IiwxXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1813,7 +1814,7 @@
     Тогда если $w$ --- изоморфизм, то $u$ и $v$ --- тоже изоморфизмы.
     \prove{
     В силу $5$-леммы достаточно доказать, что $u$ --- изоморфизм.
-    Если $u$ --- не изоморифзм, то раз $L$ неразложим, $u \in \rad(L, L)$, то есть $u^k = 0$ для некоторого $k > 0$.
+    Если $u$ --- не изоморифзм, то раз $L$ неразложим~(\cref{radical-morphisms}), $u \in \rad(L, L)$, то есть~(\cref{fitting}) $u^k = 0$ для некоторого $k > 0$.
     Возводя эндоморфизм последовательности в $k$-ю степень, получаем
     % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsNl0sWzYsNywiZiJdLFs3LDgsImciXSxbOCw5XSxbMyw4LCJ3XmsiLDFdLFsyLDcsInZeayIsMV0sWzEsNiwiMCIsMV0sWzMsNywiaCIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1832,20 +1833,20 @@
               \arrow["g", from=2-3, to=2-4]
               \arrow[from=2-4, to=2-5]
         \end{tikzcd}\]
-        Раз $v^k f = 0$, то $\exists h: N \to M$: $hg = v$.
+        Раз $v^k f = 0$, то по универсальному свойству коядра $\exists h: N \to M$: $hg = v$.
     Из коммутативности $w^k g = g v^k = ghg$, и (раз $g$ эпи) $w^k = gh$ --- изо, то есть, $g$ ретракция.
         Противоречие.
     }
     }
-    Ясно, что нерасщепляемость здесь играет самое прямое отношение к делу: если бы последовательность расщеплялось, то слагаемые $L$ и $N$ независимы, и ничего сказать про $u$, глядя на $w$, не получится.
-    \definition[AR-последовательность]{Короткая точная последовательность вида $0 \to L \overset{f}\to M \overset{g}\to N \to 0$, такая что $f$ --- минимальный почти расщепляющийся слева морфизм, а $g$ --- минимальный почти расщепляющийся справа.
+    Ясно, что нерасщепляемость здесь играет самое прямое отношение к делу: если бы последовательность расщеплялось, то слагаемые $L$ и $N$ были бы независимы, и ничего сказать про $u$, глядя на $w$, не получилось бы.
+    \definition[AR-последовательность]{Короткая точная вида $0 \to L \overset{f}\to M \overset{g}\to N \to 0$, такая что $f$ --- минимальный почти расщепляющийся слева морфизм, а $g$ --- минимальный почти расщепляющийся справа.
     Буквы AR --- в честь основателей теории Auslander и Reiten.}
 
     Ясно~(\cref{unicity}), что для любого $L$ существует не более одной AR-последовательности (не более одного $f$, но $g = \coker(f)$).
     Двойственно, AR-последовательность однозначно определяется концом $N$.
 
     \theorem{\label{ar-criterion}
-        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- короткая точная последовательность.
+        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ точна.
     Следующие условия расновильны:
     \numbers{
     \item Это AR-последовательность.
@@ -1859,36 +1860,35 @@
         $(1) \then (2), (3)$ тавтологично; $(1) \then (4), (5), (6)$ тоже верны~(\cref{indecomposable-end}) и~(\cref{all-irreducibles}).
         А ещё $(2) \then (4)$ и двойственно $(3) \then (5)$ следует из~(\cref{mono-coker}).
 
-    Докажем $(4) \iff (5)$. Пусть $u: L \to U$ --- не сечение.
-        Построим пушаут $V$.
+    Докажем $(5) \then (4)$ (по двойственности это всё равно что $(4) \then (5)$).
+        Пусть $u: L \to U$ --- не сечение.
+        Построим пушаут $V$, и достроим до морфизма коротких точных: коядра изоморфны.
         Нас интересует существование $h: M \to U$: $hf = u$.
-    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMSwxLCJVIl0sWzIsMSwiViJdLFszLDEsIk4iXSxbMCwxLCIwIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzEsNSwidSJdLFs1LDYsImYnIiwxXSxbNiw3LCJnJyIsMV0sWzEsNiwiIiwwLHsic3R5bGUiOnsibmFtZSI6ImNvcm5lci1pbnZlcnNlIn19XSxbOCw1XSxbNyw5XSxbMiw2LCJ2Il0sWzMsNywiXFxpZCIsMV0sWzIsNSwiXFxleGlzdHM/aCIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRvdHRlZCJ9fX1dXQ==
+    % https://q.uiver.app/#q=WzAsOCxbMCwwLCIwIl0sWzEsMCwiTCJdLFsyLDAsIk0iXSxbMywwLCJOIl0sWzQsMCwiMCJdLFsxLDEsIlUiXSxbMiwxLCJWIl0sWzMsMSwiTiJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzEsNSwidSJdLFs1LDYsImYnIiwxLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzYsNywiZyciLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzIsNiwidiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFszLDcsIlxcaWQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMiw1LCJcXGV4aXN0cz9oIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzYsMSwiIiwwLHsic3R5bGUiOnsibmFtZSI6ImNvcm5lci1pbnZlcnNlIn19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               0 \& L \& M \& N \& 0 \\
-              0 \& U \& V \& N \& 0
+              \& U \& V \& N
               \arrow[from=1-1, to=1-2]
               \arrow["f", from=1-2, to=1-3]
               \arrow["u", from=1-2, to=2-2]
-              \arrow["\ulcorner"{anchor=center, pos=0.125}, draw=none, from=1-2, to=2-3]
               \arrow["g", from=1-3, to=1-4]
               \arrow["{\exists?h}"{description}, dotted, from=1-3, to=2-2]
-              \arrow["v", from=1-3, to=2-3]
+              \arrow["v", dashed, from=1-3, to=2-3]
               \arrow[from=1-4, to=1-5]
-              \arrow["\id"{description}, from=1-4, to=2-4]
-              \arrow[from=2-1, to=2-2]
-              \arrow["{f'}"{description}, from=2-2, to=2-3]
-              \arrow["{g'}"{description}, from=2-3, to=2-4]
-              \arrow[from=2-4, to=2-5]
+              \arrow["\id"{description}, dashed, from=1-4, to=2-4]
+              \arrow["{f'}"{description}, dashed, hook, from=2-2, to=2-3]
+              \arrow["\ulcorner"{anchor=center, pos=0.125, rotate=180}, draw=none, from=2-3, to=1-2]
+              \arrow["{g'}"{description}, dashed, two heads, from=2-3, to=2-4]
         \end{tikzcd}\]
     \bullets{
     \item Если нижняя строка расщепляется, то есть $\exists p: V \to U$, $pf' = \id_{U}$, значит, $h = pv$ подходит (сокращаем на монморфизм $f'$).
     \item Если нижняя строка не расщепляется, то $g'$ --- не ретракция. Так как $g$ почти расщепляется справа, то $\exists w: V \to M$: $g' = gw$.
-    Достроим диаграмму до эндоморфизма исходной короткой точной последовательности
-    % https://q.uiver.app/#q=WzAsMTQsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMSwxLCJVIl0sWzIsMSwiViJdLFszLDEsIk4iXSxbMCwxLCIwIl0sWzQsMSwiMCJdLFswLDIsIjAiXSxbMywyLCJOIl0sWzIsMiwiTSJdLFsxLDIsIkwiXSxbMCwxXSxbMSwyLCJmIl0sWzIsMywiZyJdLFszLDRdLFsxLDUsInUiXSxbNSw2LCJmJyIsMV0sWzYsNywiZyciLDFdLFsxLDYsIiIsMCx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXItaW52ZXJzZSJ9fV0sWzgsNV0sWzcsOV0sWzIsNiwidiJdLFszLDcsIlxcaWQiLDFdLFsyLDUsIlxcZXhpc3RzP2giLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMTIsMTEsImciXSxbNSwxMywiXFx0aWxkZXt1fSJdLFsxMCwxM10sWzEzLDEyXSxbNywxMSwiXFxpZCJdLFs2LDEyLCJ3Il1d
+    Достроим диаграмму до эндоморфизма исходной короткой точной --- добавим снизу $w$, и проведём $\tilde{u}$ по функториальности ядра.
+    % https://q.uiver.app/#q=WzAsMTEsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMSwxLCJVIl0sWzIsMSwiViJdLFszLDEsIk4iXSxbMywyLCJOIl0sWzIsMiwiTSJdLFsxLDIsIkwiXSxbMCwxXSxbMSwyLCJmIl0sWzIsMywiZyJdLFszLDRdLFsxLDUsInUiXSxbNSw2LCJmJyIsMSx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn19fV0sWzYsNywiZyciLDEseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSw2LCIiLDAseyJzdHlsZSI6eyJuYW1lIjoiY29ybmVyLWludmVyc2UifX1dLFsyLDYsInYiXSxbMyw3LCJcXGlkIiwxXSxbMiw1LCJcXGV4aXN0cz9oIiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV0sWzksOCwiZyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbNSwxMCwiXFx0aWxkZXt1fSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxMCw5LCJmIiwwLHsic3R5bGUiOnsidGFpbCI6eyJuYW1lIjoiaG9vayIsInNpZGUiOiJ0b3AifSwiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzcsOCwiXFxpZCIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDksInciLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
               0 \& L \& M \& N \& 0 \\
-              0 \& U \& V \& N \& 0 \\
-              0 \& L \& M \& N
+              \& U \& V \& N \\
+              \& L \& M \& N
               \arrow[from=1-1, to=1-2]
               \arrow["f", from=1-2, to=1-3]
               \arrow["u", from=1-2, to=2-2]
@@ -1898,16 +1898,13 @@
               \arrow["v", from=1-3, to=2-3]
               \arrow[from=1-4, to=1-5]
               \arrow["\id"{description}, from=1-4, to=2-4]
-              \arrow[from=2-1, to=2-2]
-              \arrow["{f'}"{description}, from=2-2, to=2-3]
-              \arrow["{\tilde{u}}", from=2-2, to=3-2]
-              \arrow["{g'}"{description}, from=2-3, to=2-4]
-              \arrow["w", from=2-3, to=3-3]
-              \arrow[from=2-4, to=2-5]
-              \arrow["\id", from=2-4, to=3-4]
-              \arrow[from=3-1, to=3-2]
-              \arrow[from=3-2, to=3-3]
-              \arrow["g", from=3-3, to=3-4]
+              \arrow["{f'}"{description}, hook, from=2-2, to=2-3]
+              \arrow["{\tilde{u}}", dashed, from=2-2, to=3-2]
+              \arrow["{g'}"{description}, two heads, from=2-3, to=2-4]
+              \arrow["w", dashed, from=2-3, to=3-3]
+              \arrow["\id", dashed, from=2-4, to=3-4]
+              \arrow["f", dashed, hook, from=3-2, to=3-3]
+              \arrow["g", dashed, two heads, from=3-3, to=3-4]
         \end{tikzcd}\]
     Используя~(\cref{preserving-iso}), получаем что $\tilde{u}u = \id_{L}$, то есть $u$ --- сечение.
         Противоречие.
@@ -1936,7 +1933,8 @@
 
         Докажем $(6) \then (5)$.
         Пусть $u: U \to N$ --- не ретракция. Нас интересует наличие $v: U \to M$: $u = gv$.
-    По лемме~\cref{??}, найдутся $v$ или $w$ с картинки.
+        Без потери общности можно считать, что $U$ неразложим (разложим на неразложимые слагаемые $U_i$, найдём набор $v_i: U_i \to M$).
+    В силу~(\cref{alternatives}), найдутся $v$ или $w$, индуцирующие коммутативный треугольник.
     % https://q.uiver.app/#q=WzAsNixbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMCwxXSxbMSwyLCJmIiwxXSxbMiwzLCJnIiwxXSxbMyw0XSxbNSwzLCJ1Il0sWzUsMiwidiIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNSwidyIsMix7Im9mZnNldCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               \&\&\& U \& \\
@@ -1952,79 +1950,83 @@
     Если нашлось $v: U \to M$, $u = gv$, то это именно то, что надо.
 
     Если нашлось $w: M \to U$, $g = uw$ то надо воспользоваться вторым условием.
-    $g$ неприводим, значит $w$ --- сечение или $u$ --- ретракция.
-    Без потери общности можно считать, что $U$ неразложим $\then w$ изо.
+    Морфизм $g$ неприводим, значит $w$ --- сечение или $u$ --- ретракция.
+        По посылке $u$ не ретракция, и раз $U$ неразложим, то $w$ изо.
         Значит, $v = w^{-1}$ подходит.
     }
     }
-    \statement{
-    $A$ --- алгебра конечного типа представления, $X$ --- неразложим.
-    Тогда существуют AR-последовательности с данным концом: есть $0 \to X \to Y \to Z \to 0$, и есть $0 \to U \to V \to X \to 0$.
-    \prove[Набросок доказательства]{
+    \statement{\label{ar-existance}
+    Пусть $A$ --- алгебра конечного типа представления, $X$ --- неразложим.
+    Если он не инъективен, то существует AR-последовательности с данным началом: $0 \to X \to Y \to Z \to 0$.
+        Двойственно, если он не проективен, то существует AR-последовательность с данным концом: $0 \to Z \to Y \to X \to 0$.
+
+    \emph{Доказательство данной теоремы будет следовать из более общей теории~(\cref{ar-existance-bis}), а пока дадим набросок элементарного доказательства.}
+    \prove[Набросок доказательства]{ Единственность следует из~(\cref{unicity}).
     Построим минимальный почти расщепляющийся слева $f: X \to Y$.
     В силу~(\cref{all-irreducibles}) можно понять, что в качестве такого $f$ подойдёт сумма всех неприводимых морфизмов из $X$.
 
     А именно, пусть $Y_1, \ldots, Y_k$ --- все неразложимые $A$-модули.
-        Положим $Y \coloneqq \bigoplus\limits_{i =1}^{k}Y_i^{k_i}$, где $k_i = \dim_{K}\rad/\rad^2(X, Y_i)$.
-    Морфизм $X \to Y_i^{k_i}$ определён выбором базиса $\rad/\rad^2(X, Y_i)$.
+        Положим $Y \coloneqq \bigoplus\limits_{i =1}^{k}Y_i^{k_i}$, где $k_i = \dim_{K}(\rad/\rad^2)(X, Y_i)$.
+    Морфизм $X \to Y_i^{k_i}$ определён выбором базиса $(\rad/\rad^2)(X, Y_i)$.
         Ясно~(\cref{linearly-independent} и~\cref{irreducible-from-components}), что $X \to Y$ неприводим, и содержит все неприводимые в качвестве компонент.
 
         Почти расщепляемость $f: X \to Y$ следует из того, что любой другой морфизм $X \to U$ раскладывается по неприводимым морфизмам~(\cref{decomposability}).
 
-    Из неприводимости $f$~(\cref{??}) коядро неразложимо, значит~(\cref{ar-criterion}) это AR-последовательность.
+    Из неприводимости $f$~(\cref{mono-coker}) коядро неразложимо, значит~(\cref{ar-criterion}) это AR-последовательность.
 
-    \exercise{Тут всё ок?}
+    \exercise{Тут всё ок? Где использовалось условие, что $X$ не инъективен?\qedhere}
     }
     }
-    Пусть мы не в $\Lmod{A}$ для алгебры $A$ конечного типа представления, а в более общей ситуации.
+    Пусть теперь мы не в $\Lmod{A}$ для алгебры $A$ конечного типа представления, а в произвольной абелевой категории.
 
     Переформулируем свойство морфизма быть почти расщепляющимся.
-    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- короткая точная последовательность, $u: U \to N$ --- какой-то морфизм.
+    Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ точна, $u: U \to N$ --- какой-то морфизм.
     Построим пулбэк $V$:
-    % https://q.uiver.app/#q=WzAsMTAsWzAsMSwiMCJdLFsxLDEsIkwiXSxbMiwxLCJNIl0sWzMsMSwiTiJdLFs0LDEsIjAiXSxbNCwwLCIwIl0sWzMsMCwiVSJdLFsyLDAsIlYiXSxbMSwwLCJMIl0sWzAsMCwiMCJdLFs5LDhdLFs4LDcsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDYsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDVdLFswLDFdLFsxLDJdLFsyLDNdLFszLDRdLFs4LDEsIlxcaWQiLDFdLFs3LDIsInYiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwzLCJ1IiwxXV0=
+    % https://q.uiver.app/#q=WzAsOCxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFszLDAsIlUiXSxbMiwwLCJWIl0sWzEsMCwiTCJdLFs3LDYsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs2LDUsIiIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwxXSxbMSwyLCJmIl0sWzIsMywiZyJdLFszLDRdLFs3LDEsIlxcaWQiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiwyLCJ2IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMywidSIsMV0sWzYsMywiIiwxLHsic3R5bGUiOnsibmFtZSI6ImNvcm5lciJ9fV0sWzIsNSwiXFxleGlzdHM/IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZG90dGVkIn19fV1d
     \[\begin{tikzcd}[ampersand replacement=\&]
-          0 \& L \& V \& U \& 0 \\
+          \& L \& V \& U \& \\
           0 \& L \& M \& N \& 0
-          \arrow[from=1-1, to=1-2]
-          \arrow[dashed, from=1-2, to=1-3]
-          \arrow["\id"{description}, from=1-2, to=2-2]
-          \arrow[dashed, from=1-3, to=1-4]
+          \arrow[dashed, hook, from=1-2, to=1-3]
+          \arrow["\id"{description}, dashed, from=1-2, to=2-2]
+          \arrow[dashed, two heads, from=1-3, to=1-4]
           \arrow["v"{description}, dashed, from=1-3, to=2-3]
-          \arrow[from=1-4, to=1-5]
+          \arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-3, to=2-4]
           \arrow["u"{description}, from=1-4, to=2-4]
           \arrow[from=2-1, to=2-2]
-          \arrow[from=2-2, to=2-3]
-          \arrow[from=2-3, to=2-4]
+          \arrow["f", from=2-2, to=2-3]
+          \arrow["{\exists?}"{description}, dotted, from=2-3, to=1-4]
+          \arrow["g", from=2-3, to=2-4]
           \arrow[from=2-4, to=2-5]
     \end{tikzcd}\]
-    Как мы обсудили при доказательстве~\cref{ar-criterion}, что пропускание есть, если и только если верхняя строка расщепляется.
+    Как мы обсудили при доказательстве~(\cref{ar-criterion}), пропускание есть, если и только если верхняя строка расщепляется.
 
-    Пусть нижняя строка --- расширение $\eta \in \Ext^1(N, L)$, такое что $\eta \ne 0$, но для любого $u \in \rad$ (то есть не ретракции): $u^*\eta \in \Ext^1(U, L)$ тривиально.
+    Нижняя строка --- расширение $L$ при помощи $N$, то есть некий элемент $\eta \in \Ext^1(N, L)$.
+    Предположим, что $N$ неразложим.
+    Тогда условие на почти расщепляемость $g$ переформулировывается так: $\eta \ne 0$, но для любого $u \in \rad(U, N)$ ($U$ произволен --- для любой не ретракции в $N$): $u^*\eta \in \Ext^1(U, L)$ тривиально.
 
-    \statement{\label{aim}
-        Нашей целью будет для каждого неразложимого объекта $L$ найти неразложимый объект $N$ и элемент $\eta \in \Ext^1(N, L)$, такой что $\eta \ne 0$, но $\eta$ аннулируется радикалом.
-        Эта $\eta$ будет соответствовать AR-последовательности с началом в $L$.
-    }
-    \statement{
-    Построим для каждого неразложимого $L$ некоторый неразложимый $\tau(L)$ и короткую точную последовательность $\eta \in \Ext^1(L, \tau(L))$.
-    \[0 \to \tau(L) \to M \to L \to 0\]
-    Потребуем чуть меньше: $\forall f \in \rad(L, L)$ (то есть $f: L \to L$ --- не изоморфизм): $f^*\eta = 0$.
+    \textbf{Цель}: Для каждого неразложимого объекта $L$ найдём неразложимый объект $N$ и элемент $\eta \in \Ext^1(N, L)$, такой что $\eta \ne 0$, но $\eta$ аннулируется радикалом.
+    Эта $\eta$ будет соответствовать AR-последовательности с началом в $L$.
 
-    Иными словами, $\Ext^1(L, \tau(L))$ --- некий $\End(L)$-модуль, и мы хотим найти элемент, анннулирующийся $\JRad(\End(L))$.
-    Эти элементы образуют $\End(L)/\JRad(\End(L))$-подмодуль, то есть полупростой подмодуль $\Ext^1(L, \tau(L))$.
-    Будем искать функториальный простой подмодуль.
-    }
-    Двойственная ситуация --- $\Hom(L, L) = \End(L)$ локально, значит, там есть (единственный) простой фактормодуль $\End(L)/\JRad(\End(L))$.
-    Применяя функтор двойственности $D$, получаем $DS \hookrightarrow D\Hom(L, L)$ --- единственный простой подмодуль в $D\Hom(L, L)$.
+    На самом деле, мы потребуем чуть меньше: пусть $\forall u \in \rad(N, N) = \JRad(\End(N))$: $u^*\eta = 0 \in \Ext^1(N, L)$.
 
-    Данный подход приведёт к цели, если есть изоморфизм бифункторов $D\Hom(L, M) \cong \Ext^1(M, \tau(L))$.
-    Здесь всё хорошо: бифунктор ковариантен по $L$ и контравариантен по $M$.
+    Иными словами, на $\Ext^1(L, N)$ естественным образом имеется структура $\End(L)$-модуля, а мы хотим найти элемент, аннулирующийся $\JRad(\End(L))$.
+    Такие элементы образуют $\End(L)/\JRad(\End(L))$-подмодуль (то есть полупростой подмодуль $\Ext^1(L, \tau(L))$) в $\Ext^1(L, N)$.
+
+    Предположим, что $N$ и $L$ функториально зависят друг от друга ($N = \tau L$ и $L = u N$ для некоторых взаимно обратных функторов $\tau: \cat{ind}\setminus\cat{proj} \leftrightarrow \cat{ind}\setminus\cat{inj}:u$)
+    Также мы будем искать не полупростой модуль, а функториальный простой подмодуль.
+
+    Для этого будет проще перейти к двойственной ситуации.
+    Например, если $L$ неразложим, то $\Hom(L, L) = \End(L)$ локальное кольцо.
+    Там есть (единственный) простой фактормодуль $\End(L)/\JRad(\End(L))$.
+    Применяя контравариантный функтор двойственности $D: K\text{-}\cat{Vect} \to K\text{-}\cat{Vect}$, мы получим $DS \hookrightarrow D\Hom(L, L)$ --- единственный простой подмодуль в $D\Hom(L, L)$.
+
+    Данный подход приведёт к цели, если есть изоморфизм бифункторов (ковариантных по $L$ и контравариантных по $M$) $D\Hom(L, M) \cong \Ext^1(M, \tau(L))$.
 
     Такое бывает: равенство $D \Hom(L, M) = \Hom(M, \tau(L))$ имеет название двойственности Серра, где $\tau$ --- функтор Серра.
-    А $\Hom(M, \tau L) = \Ext^1(M, \tau L [\pm 1])$.
+    А $\Hom(M, \tau L) = \Ext^1(M, \tau L [\pm 1])$, сдвиг в смысле производной категории.
 
-    \ok
-    $D = \Hom_K(\_, K): \Lmod{A} \to \modR{A}$ --- антиэквивалентность.
+    \subsubsection{Двойственности}
+    Мы уже обсуждалии двойственность на левых и правых $A$-модулях $D = \Hom_K(\_, K): \Lmod{A} \to \modR{A}$ --- это антиэквивалентность категорий.
 
     Другой функтор $(\_)^t = \Hom_{\Lmod{A}}(\_, \ind{_A}{A}{_A}): \Lmod{A} \to \modR{A}$ контравариантен и точен слева, но ведёт себя более непонятно.
     Тем не менее на проективных модулях он ведёт себя понятным образом: если $P = Ae$ --- неразложимый проективный, то $\Hom_{\Lmod{A}}(Ae, A) \cong eA \in \modR{A}$, так как всё определяется образом $e$.
@@ -2036,5 +2038,227 @@
     С другой стороны, $D$ переводит проективные в инъективные.
 
     Значит, композиция $D(\_)^t: A\text{-}\cat{proj} \to A\text{-}\cat{inj}$ --- эквивалентность категорий.
-    Композицию полезно рассматривать и на всей категории: $\nu = D(\_)^t: \Lmod{A} \to \Lmod{A}$ называется \emph{функтором Накаямы}.
+    Композицию полезно рассматривать и на всей категории: $\nu = D(\_)^t: \Lmod{A} \to \Lmod{A}$ называется \emph{функтором Накаямы} $\nu$.
+    \newlection{22 апреля 2026 г.}
+    \subsection{Стабильные категории}
+    \label{stable-categories-intro}
+    В доказательстве~(\cref{ar-existance}) был набросок построения пары взаимно обратных функторов\footnote{Вообще говоря, пока непонятно, почему соответствие функториально.} $u: \cat{ind} \setminus \cat{inj} \leftrightarrow \cat{ind} \setminus \cat{proj}: \tau$.
+    Сформулируем~\cref{ar-existance} несколько по-другому и докажем в следующем виде.
+
+    \textbf{Цель:}{
+        \bullets{
+        \item Пусть объект $N$ фиксирован.
+        Найдём неразложимый $L$ и элемент $\eta \in \Ext^1(N, L)$, такие что $\forall u \in \Hom(U, N)$: если $U$ неразложим, $u$ --- не изоморфизм, то $u^*\eta = 0$.
+
+        \item Также построим изоморфизмы $\Ext^1(M, N) \cong D \Hom(uN, M) \cong D \Hom(N, \tau M)$, где $\Hom$'ы берутся в разных (других) категориях.
+    }
+    }
+    Пусть $M$ проективен.
+    Тогда $\Ext^1(M, \_) = 0$.
+    Значит, хотим выполнение условия $D\Hom(u\_, M) = 0$. Если функтор $u$ не очень невырожден, то получается $M = 0$.
+    Тем самым, в этой категории проективные объекты зануляются.
+
+    Определим наконец эти таинственные категории.
+    На самом деле, они уже возникали у нас в качестве примера:~\cref{stable-category}.
+
+    Напомним, что проективная стабильная категория $A\text{-}\underline{\cat{mod}}$ --- факторкатегория $\Lmod{A}$ по идеалу $\cat P = \defset{f}{f \text{ пропускается через проективный объект}}$.
+    Двойственно определяется $A\text{-}\overline{\cat{mod}}$.
+
+    Стабильные категории аддитивны, $K$-линейны, но не абелевы.
+    Образ любого проективного в $A\text{-}\underline{\cat{mod}}$ равен нулю, так как $\id_P$ пропускается через $P$, значит равен нулю.
+
+    В случае $\cat I = \cat P$ мы получаем равенство $A\text{-}\overline{\cat{mod}} = A\text{-}\underline{\cat{mod}}$.
+    В таком случае эта категория триангулирована, и является локализацией производной категории.
+
+    В нашем случае алгебры путей $A$ будет $\cat I \ne \cat P$, однако имеет место эквивалентность $A\text{-}\overline{\cat{mod}} \cong A\text{-}\underline{\cat{mod}}$.
+
+    \subsubsection{Другое описание}
+    Рассмотрим категорию $\overrightarrow{\cat{proj}}$.
+    Её объекты --- стрелки между конечнопорождёнными проективными $A$-модулями $\{P_1 \to P_0\}$, а морфизмы --- коммутативные квадраты:
+    \[\Mor(P_1 \overset{f}\Map P_0, P_1' \overset{f'}\Map P_0')=\left\{\begin{tikzcd}[ampersand replacement=\&,row sep=tiny,column sep=tiny]
+    {P_1} \&\& {P_0} \\
+    \\
+    {P_1'} \&\& {P_0'}
+    \arrow["f", from=1-1, to=1-3]
+    \arrow["{u_1}", from=1-1, to=3-1]
+    \arrow["{u_0}", from=1-3, to=3-3]
+    \arrow["{f'}", from=3-1, to=3-3]
+    \end{tikzcd}\right\}\]
+    Пусть $C_K: \overrightarrow{\cat{proj}} \to \Lmod{A}$ --- функтор взятия коядра (нулевой когомологии).
+    Пусть $\overline{C_K}: \overrightarrow{\cat{proj}} \to A\text{-}\underline{\cat{mod}}$ --- композиция с канонической проекцией $\Lmod{A} \to A\text{-}\underline{\cat{mod}}$.
+    Функтор $\overline{C_K}$ сюръективен на объектах и морфизмах (можно построить проективные резуольвенты).
+
+    Получился существенно сюръективный полный функтор, посчитаем его ядро.
+    \lemma{\label{kernel-of-proj}
+    Морфизм $(u_1, u_0) \in \Mor(P_1 \overset{f}\Map P_0, P_1' \overset{f'}\Map P_0')$ лежит в ядре $\overline{C_K}$ ровно в том случае, когда $\exists w: P_0 \to P_1'$, такой что $f' w f = u_0 f = f' u_1$:
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJQXzEiXSxbMSwwLCJQXzAiXSxbMCwxLCJQXzEnIl0sWzEsMSwiUF8wJyJdLFsyLDAsIk0iXSxbMiwxLCJNJyJdLFsxLDIsInciLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbMCwyLCJ1XzEiLDJdLFsxLDMsInVfMCJdLFswLDEsImYiXSxbMiwzLCJmJyIsMl0sWzEsNCwiZyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFszLDUsImcnIiwyLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzQsNSwidSJdLFs0LDMsInYiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {P_1} \& {P_0} \& M \\
+        {P_1'} \& {P_0'} \& {M'}
+        \arrow["f", from=1-1, to=1-2]
+        \arrow["{u_1}"', from=1-1, to=2-1]
+        \arrow["g", two heads, from=1-2, to=1-3]
+        \arrow["w"', dashed, from=1-2, to=2-1]
+        \arrow["{u_0}", from=1-2, to=2-2]
+        \arrow["v", dotted, from=1-3, to=2-2]
+        \arrow["u", from=1-3, to=2-3]
+        \arrow["{f'}"', from=2-1, to=2-2]
+        \arrow["{g'}"', two heads, from=2-2, to=2-3]
+        \end{tikzcd}\]
+    Очень похоже на гомотопность комплексов, но чуть слабее.
+    \provewthen{
+        Так как $(u_0 - f'w)f = 0$, то $u_0 - f'w$ пропускается через $g = \coker(f)$: $\exists v: M \to P_0'$: $u_0 - f'w = vg$.
+    Значит, $g'vg = g' u_0 - \underbrace{g' f'}_{0} w = ug$, и раз $g$ --- эпи, то $g'v = u$ --- и правда $u$ пропустился через проективный.
+    }{
+        Упражнение (там в общем всё так же, \comment{видимо ещё стоит воспользоваться~(\cref{selected-projective})}).
+    }
+    }
+    Определим $\tilde{\cat{proj}}$ как класс морфизмов в $\overrightarrow{\cat{proj}}$ вида, указанного в~(\cref{kernel-of-proj}).
+    \corollary{
+        Так как $\tilde{\cat{proj}}$ --- ядро отображения категорий, то это идеал, и $\overrightarrow{\cat{proj}}/\tilde{\cat{proj}} \cong A\text{-}\underline{\cat{mod}}$.
+    }
+    \corollary{
+    Двойственно, $\overrightarrow{\cat{inj}}/\tilde{\cat{inj}} \cong A\text{-}\overline{\cat{mod}}$
+    }
+    Функтор $(\_)^t = \Hom_A(\_, A)$ точен слева и контравариантен; при сужении на проективные модули получается антиэквивалентность $A\text{-}\cat{proj} \to \cat{proj}\text{-}A$.
+
+    Из линейной алгебры известно, что если $A$ --- поле, то имеет место изоморфизм $U^{\lor} \otimes_A V \cong \Hom_A(U, V)$.
+    В общем случае получается естественное преобразование функторов $\varphi^X_Y: X^t \otimes_A Y \to \Hom_A(X, Y), f \otimes y \mapsto (x \mapsto f(x)y)$, конечно, не являющееся изоморфизмом.
+
+    Это изоморфизм над полем, так как категория векторных пространств полупроста, и все её объекты проективны.
+    \fact{
+        Если $X$ проективен или $Y$ проективен, то $\varphi^X_Y$ --- изоморфизм.
+    \prove{
+        Все конструкции коммутируют с прямыми суммами, значит, достаточно проверить в случае $X = A$ и $Y = A$.
+
+        Если $Y = A$, то $X^t \otimes_A Y = \Hom_A(X, A)$.
+
+        Если $X = A$, то $X^t \otimes_A Y = Y \cong \Hom(A, Y)$.
+    }}
+    Навесим $D: K\text{-}\cat{Vect} \to K\text{-}\cat{Vect}$ к морфизму $\varphi^X_Y$, и преобразуем область прибытия:
+    \multline{w^X_Y: D \Hom_A(X, Y) \overset{D \varphi^X_Y}\Map D(X^t \otimes_A Y) = \Hom_K(X^t \otimes_A Y, K) \overset{\eta}\cong\\\overset{\eta}\cong \Hom_A(Y, \Hom_K(X^t, K)) = \Hom_A(Y, D X^t) = \Hom_A(Y, \nu X),}
+    где $\nu = D(\_)^t$ --- функтор Накаямы.
+    Только что определённое $w$ --- естественное преобразование функторов $w: D \Hom_A(\_, \_) \to \Hom_A(\_, \nu\_)$.
+    Если $X$ или $Y$ проективны, то $w^X_Y$ --- изоморфизм (а функтор Накаямы --- двойственность Серра).
+
+    В общем случае $w$ характеризует ядро проекции $p: \Lmod{A} \to A\text{-}\underline{\cat{mod}}$.
+
+    \lemma{\label{ext-prep-1}
+    Для $X, Y \in \Lmod{A}$: существует точная последовательность \[X^t \otimes Y \overset{\varphi^X_Y}\Map \Hom_A(X, Y) \to \underline{\Hom}_A(X, Y) \to 0.\]
+    \prove{
+    Накроем $Y$ проективным $P \overset{f}\twoheadrightarrow Y$.
+    Построим следующую диаграмму:
+    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJYXnQgXFxvdGltZXNfQSBQIl0sWzEsMCwiWF50IFxcb3RpbWVzX0EgWSJdLFswLDEsIlxcSG9tX0EoWCwgUCkiXSxbMSwxLCJcXEhvbV9BKFgsIFkpIl0sWzIsMSwiXFxDb2tlcihmXyopIl0sWzIsMCwiMCJdLFszLDEsIjAiXSxbMCwxLCJcXGlkIFxcb3RpbWVzIGYiXSxbMCwyLCJcXHZhcnBoaV5YX1AiLDJdLFsxLDMsIlxcdmFycGhpXlhfWSJdLFsyLDMsImZfKiIsMl0sWzMsNF0sWzEsNV0sWzQsNl1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {X^t \otimes_A P} \& {X^t \otimes_A Y} \& 0 \& \\
+        {\Hom_A(X, P)} \& {\Hom_A(X, Y)} \& {\Coker(f_*)} \& 0
+        \arrow["{\id \otimes f}", from=1-1, to=1-2]
+        \arrow["{\varphi^X_P}"', "\text{изо}", from=1-1, to=2-1]
+        \arrow[from=1-2, to=1-3]
+        \arrow["{\varphi^X_Y}", from=1-2, to=2-2]
+        \arrow["{f_*}"', from=2-1, to=2-2]
+        \arrow[from=2-2, to=2-3]
+        \arrow[from=2-3, to=2-4]
+        \end{tikzcd}\]
+    Из точности тензорного произведения верхняя строчка точна, значит $\Coker(f_*) = \Coker(\varphi^X_Y)$.
+
+    С другой стороны, $\Hom_A(X, P) \overset{f_*}\Map \Hom_A(X, Y) \overset{p}\Map \underline{\Hom}_A(X, Y) \to 0$ точна по следующему утверждению:
+    \fact{\label{selected-projective}
+        $\cat P(X, Y)$ состоит из тех морфизмов, которые пропускаеются через какой-то фиксированный проективный $P$, эпиморфным образом которого является $Y$.
+    \prove{
+        Если стрелка $X \to Y$ пропускается через какой-то проективный $P'$, то по проективности она пропускается и через $P$:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiUCciXSxbMiwwLCJZIl0sWzEsMSwiUCJdLFswLDFdLFsxLDJdLFszLDIsImYiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwzLCJcXGV4aXN0cyIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              X \& {P'} \& Y \\
+              \& P
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow["\exists"', dashed, from=1-2, to=2-2]
+              \arrow["f"', two heads, from=2-2, to=1-3]
+        \end{tikzcd}\qedhere\]
+    }
+    }
+    }
+    }
+
+    Пусть $L, M \in \Lmod{A}$, напишем концовку проективной резольвенты $L$: точна $P_1 \overset{p_1}\Map P_0 \overset{p_0}\twoheadrightarrow L$.
+    Нарисуем диаграмму
+    % https://q.uiver.app/#q=WzAsNyxbMCwwLCJEXFxIb20oUF8xLCBNKSJdLFsxLDAsIkRcXEhvbShQXzAsIE0pIl0sWzIsMCwiRFxcSG9tKEwsIE0pIl0sWzMsMCwiMCJdLFswLDEsIlxcSG9tKE0sIFxcbnUgUF8xKSJdLFsxLDEsIlxcSG9tKE0sIFxcbnUgUF8wKSAiXSxbMiwxLCJcXEhvbShNLCBcXG51IEwpIl0sWzAsNCwid19NXntQXzF9Il0sWzEsNSwid19NXntQXzB9Il0sWzEsMiwiXFx0aWxkZXtwXzB9Il0sWzAsMSwiXFx0aWxkZXtwXzF9Il0sWzIsNiwid19NXkwiXSxbNCw1LCJcXG92ZXJsaW5le3BfMX0iXSxbNSw2LCJcXG92ZXJsaW5le3BfMH0iXSxbMiwzXSxbNSwyLCIiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XV0=
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {D\Hom(P_1, M)} \& {D\Hom(P_0, M)} \& {D\Hom(L, M)} \& 0 \\
+    {\Hom(M, \nu P_1)} \& {\Hom(M, \nu P_0) } \& {\Hom(M, \nu L)}
+    \arrow["{\tilde{p_1}}", from=1-1, to=1-2]
+    \arrow["{w_M^{P_1}}", from=1-1, to=2-1]
+    \arrow["{\tilde{p_0}}", from=1-2, to=1-3]
+    \arrow["{w_M^{P_0}}", from=1-2, to=2-2]
+    \arrow[from=1-3, to=1-4]
+    \arrow["{w_M^L}", from=1-3, to=2-3]
+    \arrow["{\overline{p_1}}", from=2-1, to=2-2]
+    \arrow[dotted, from=2-2, to=1-3]
+    \arrow["{\overline{p_0}}", from=2-2, to=2-3]
+    \end{tikzcd}\]
+    Верхняя строка точна, так как $\Hom$ точен слева, а $D$ --- антиэквивалентность.
+    Среди трёх вертикальных стрелок две левые --- изоморфизмы, так как $P_0$ и $P_1$ проективны.
+    Нижняя строка точной не будет, и её гомологии как раз нам интересны:
+    \lemma{\label{ext-prep-2}
+    $D\underline{\Hom}(L, M) \cong \Ker(\overline{p_0})/\Image(\overline{p_1})$.
+    \prove{
+    В силу~(\cref{ext-prep-1}) $D \underline{\Hom}(L, M) = D\Coker(\varphi_M^L)$.
+    Ясно, что последнее равно $\Ker(D\varphi_M^L) = \Ker(w_M^L)$ ($D\varphi_M^L$ и $w_M^L$ отличаются на изоморфизм области прибытия).
+
+    Определим $\psi = \left(\tilde{p_0}\circ (w_M^{P_0})^{-1}\right)\Big\vert_{\Ker(\overline{p_0})}$.
+        Из коммутативности правого квадрата, а также из того, что $\tilde{p_0}$ --- эпи получаем $\psi: \Ker(\overline{p_0}) \to \Ker(w_M^L)$ --- эпи.
+
+    По теореме о гомоморфизме и правда получаем, что $\Ker(w_M^L) = \Image(\psi) \cong \Ker(\overline{p_0})/\Ker(\psi)$.
+    При этом $\Ker(\psi) = w_M^{P_0}\left(\Ker(\tilde{p_0})\right) = w_M^{P_0}(\Image(\tilde{p_0}) = \Image(\overline{p_1})$, что и требовалось.
+    }
+    }
+    Осталось посчитать эту гомологию другим образом.
+    \lemma{
+        $\Ker(\overline{p_0})/\Image(\overline{p_1}) \cong \Ext^1(M, D C)$, где $C = \Coker(p_1^t)$.
+        Иными словами, $C$ однозначно определяется условием на точность
+    \[0 \Map L^t \overset{p_0^t}\Map P_0^t \overset{p_1^t}\Map P_1^t \Map C \Map 0.\]
+    \prove{
+    Вложим $DL^t$ в инъективный $I_2$, применим $D$ к последовательности выше, и получим точную последовательность:
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCIwIl0sWzEsMCwiREMiXSxbMiwwLCJEUF8xXnQiXSxbMywwLCJEUF8wXnQiXSxbNCwwLCJJXzIiXSxbMywxLCJETF50Il0sWzMsNSwiXFxudVxcb3ZlcmxpbmV7cF8wfSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFs1LDQsImkiLDIseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9fX1dLFswLDFdLFsxLDJdLFsyLDMsIlxcbnVcXG92ZXJsaW5le3BfMX0iXSxbMyw0XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              0 \& DC \& {DP_1^t} \& {DP_0^t} \& {I_2} \\
+              \&\&\& {DL^t}
+              \arrow[from=1-1, to=1-2]
+              \arrow[from=1-2, to=1-3]
+              \arrow["{\nu\overline{p_1}}", from=1-3, to=1-4]
+              \arrow[from=1-4, to=1-5]
+              \arrow["{\nu\overline{p_0}}"', two heads, from=1-4, to=2-4]
+              \arrow["i"', hook, from=2-4, to=1-5]
+        \end{tikzcd}\]
+        Функтор Накаямы $\nu$ преобразует проективные в инъективные, значит, верхняя строчка --- начало инъективной резольвенты для $DC$.
+    Посчитаем $\Ext^1(M, DC)$ через эту резольвенту $DC$, применив к ней $\Hom(M, \_)$ и взяв гомологии.
+        Так как $i$ инъективно, то $\Ker(\Hom(M, i \circ \nu \overline{p_0})) = \Ker(\Hom(M, \nu \overline{p_0}))$, что и даёт искомое равенствою
+    }
+    }
+    Равенство $\Ext^1(M, \tau L) = D\underline{\Hom}(L, M)$ и анонсировалось в начале~(\cref{stable-categories-intro})
+    Осталось понять, почему выше определённое соответствие $L \rightsquigarrow C$ функториально.
+
+    Построим контравариантный функтор транспозиции $\mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to \underline{\cat{mod}}\text{-}A$.
+    Для этого воспользуемся представлением стабильной категории как факторкатегории $\overrightarrow{\cat{proj}}$.
+    На объектах функтор определяется просто как транспозиция: $\mathrm{Tr}(P_1 \overset{f}\Map P_0) = P_0^t \overset{f^t}\Map P_1^t$, на морфизмах в общем тоже:
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiUF8xIl0sWzEsMCwiUF8wIl0sWzAsMSwiUF8xJyJdLFsxLDEsIlBfMCciXSxbMywwLCJQXzBedCJdLFs0LDAsIlBfMV50Il0sWzMsMSwiUF8wJ150Il0sWzQsMSwiUF8xJ150Il0sWzIsMCwiXFxyaWdodHNxdWlnYXJyb3ciXSxbMiwxLCJcXHJpZ2h0c3F1aWdhcnJvdyJdLFswLDFdLFswLDIsInVfMSIsMl0sWzIsM10sWzEsMywidV8wIl0sWzYsNCwidV8wXnQiXSxbNyw1LCJ1XzFedCJdLFs0LDVdLFs2LDddLFsxLDIsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFs3LDQsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
+    \[\begin{tikzcd}[ampersand replacement=\&]
+    {P_1} \& {P_0} \& \rightsquigarrow \& {P_0^t} \& {P_1^t} \\
+    {P_1'} \& {P_0'} \& \rightsquigarrow \& {P_0'^t} \& {P_1'^t}
+    \arrow[from=1-1, to=1-2]
+    \arrow["{u_1}"', from=1-1, to=2-1]
+    \arrow[dashed, from=1-2, to=2-1]
+    \arrow["{u_0}", from=1-2, to=2-2]
+    \arrow[from=1-4, to=1-5]
+    \arrow[from=2-1, to=2-2]
+    \arrow["{u_0^t}", from=2-4, to=1-4]
+    \arrow[from=2-4, to=2-5]
+    \arrow[dashed, from=2-5, to=1-4]
+    \arrow["{u_1^t}", from=2-5, to=1-5]
+    \end{tikzcd}\]
+    Пунктирные стрелки с условиями из~(\cref{kernel-of-proj}) существуют одновременно, значит, транспозиция и правда спускается из функтора, определённого на $\overrightarrow{\cat{proj}}$, до заявленного.
+
+    Определим $\tau = D \circ \mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to A\text{-}\underline{\cat{mod}}$.
+    Это антиэквивалентсность, как композиция двух инволюций (есть обратный функтор $u = \mathrm{Tr}\circ D$).
 \end{document}
