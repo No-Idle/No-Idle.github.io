@@ -19,7 +19,7 @@
     Рассмотрим рекурренту $(x_n)_{n \in \N}$ с начальными данными $x_1 = x$, $x_2 = y$, заданную соотношениями $x_{i-1}x_{i+1} = x_i + 1$ (где сами $x_i \in K(x, y)$ для некоторого поля $K$).
 
     Посчитаем первые несколько членов:
-    \begin{align*}x_1 &= x \\ x_2 &= y \\ x_3 &= \frac{y + 1}{x} \\ x_4 &= \frac{x + y + 1}{xy} \\ x_5 &= \frac{x + 1}{y} \\ x_6 &= x \\ x_7 &= y \\ \vdots\end{align*}
+    \begin{align*}x_1 &= x, \\ x_2 &= y, \\ x_3 &= \frac{y + 1}{x}, \\ x_4 &= \frac{x + y + 1}{xy}, \\ x_5 &= \frac{x + 1}{y}, \\ x_6 &= x, \\ x_7 &= y, \\ \vdots\end{align*}
     Рекуррента зациклилась за $5$ шагов.
 
     Можно пытаться рассматривать вариации этого рекуррентного соотношения.
@@ -2115,7 +2115,7 @@
     }
     Определим $\tilde{\cat{proj}}$ как класс морфизмов в $\overrightarrow{\cat{proj}}$ вида, указанного в~(\cref{kernel-of-proj}).
     \corollary{
-        Так как $\tilde{\cat{proj}}$ --- ядро отображения категорий, то это идеал, и $\overrightarrow{\cat{proj}}/\tilde{\cat{proj}} \cong A\text{-}\underline{\cat{mod}}$.
+        Ядро отображения категорий $\tilde{\cat{proj}}$ --- идеал; $\overrightarrow{\cat{proj}}/\tilde{\cat{proj}} \cong A\text{-}\underline{\cat{mod}}$.
     }
     \corollary{
     Двойственно, $\overrightarrow{\cat{inj}}/\tilde{\cat{inj}} \cong A\text{-}\overline{\cat{mod}}$
@@ -2233,10 +2233,10 @@
         \end{tikzcd}\]
         Функтор Накаямы $\nu$ преобразует проективные в инъективные, значит, верхняя строчка --- начало инъективной резольвенты для $DC$.
     Посчитаем $\Ext^1(M, DC)$ через эту резольвенту $DC$, применив к ней $\Hom(M, \_)$ и взяв гомологии.
-        Так как $i$ инъективно, то $\Ker(\Hom(M, i \circ \nu \overline{p_0})) = \Ker(\Hom(M, \nu \overline{p_0}))$, что и даёт искомое равенствою
+        Так как $i$ инъективно, то $\Ker(\Hom(M, i \circ \nu \overline{p_0})) = \Ker(\Hom(M, \nu \overline{p_0}))$, что и даёт искомое равенство.
     }
     }
-    Равенство $\Ext^1(M, \tau L) = D\underline{\Hom}(L, M)$ и анонсировалось в начале~(\cref{stable-categories-intro})
+    Равенство $\Ext^1(M, \tau L) = D\underline{\Hom}(L, M)$ и анонсировалось в начале~(\cref{stable-categories-intro}), и называется \emph{изоморфизмом Ауслендера --- Райтен}.
     Осталось понять, почему выше определённое соответствие $L \rightsquigarrow C$ функториально.
 
     Построим контравариантный функтор транспозиции $\mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to \underline{\cat{mod}}\text{-}A$.
@@ -2259,6 +2259,180 @@
     \end{tikzcd}\]
     Пунктирные стрелки с условиями из~(\cref{kernel-of-proj}) существуют одновременно, значит, транспозиция и правда спускается из функтора, определённого на $\overrightarrow{\cat{proj}}$, до заявленного.
 
-    Определим $\tau = D \circ \mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to A\text{-}\underline{\cat{mod}}$.
-    Это антиэквивалентсность, как композиция двух инволюций (есть обратный функтор $u = \mathrm{Tr}\circ D$).
+    Определим $\tau = D \circ \mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to A\text{-}\overline{\cat{mod}}$.
+    Это антиэквивалентность, как композиция двух инволюций (есть обратный функтор $u = \mathrm{Tr}\circ D: A\text{-}\overline{\cat{mod}} \to A\text{-}\underline{\cat{mod}}$).
+    \newlection{29 апреля 2026 г.}
+    \note{
+        $A$-модули $M$ и $N$ изоморфны в стабильной категории $A\text{-}\cat{mod}$, если и только если $\exists P, Q$ --- проективные $A$-модули, такие что $M \oplus P \cong N \oplus Q$ --- изоморфизм $A$-модулей (без доказательтсва, хотя и не очень сложно).
+    }
+    Определение функтора транспозиции $\mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to \underline{\cat{mod}}\text{-}A$ зависит от того, какую проективную резольвенту объекта выбирать.
+    Как мы доказали, на стабильную категорию это спускается единственным образом, но хочется определить транспозицию канонически и просто для модулей.
+    \definition[Проективное накрытие $p: P \twoheadrightarrow M$] {
+        Эпиморфизм $p$ из проективного модуля, такой что $\Ker(p) \le P$ мало (то есть $\forall N \le P$: $\Ker(p) + N = P \then N = P$).
+    }
+    \statement{
+        Проективное накрытие данного $A$-модуля $M$ существует, и универсально:
+    для любого другого накрытия существует эпиморфизм $f$, замыкающий коммутативный треугольник:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJQJyJdLFswLDEsIlAiXSxbMSwxLCJNIl0sWzAsMSwiZiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwyLCJwIiwyXSxbMCwyLCJwJyJdXQ==
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {P'} \& \\
+        P \& M
+        \arrow["f"', dashed, two heads, from=1-1, to=2-1]
+        \arrow["{p'}", from=1-1, to=2-2]
+        \arrow["p"', from=2-1, to=2-2]
+        \end{tikzcd}\]
+    \provebullets{
+    \item Перейдём к алгебре, отфакторим по радикалу...
+    \item Стрелка есть из проективности, из определения накрытия она сюръекция. \comment{todo: расписать подробнее}
+    }
+    }
+    Кольцо называется \emph{совершенным}, если проективные накрытия существуют; это вроде бы эквивалентно артиновости по главным идеалам.
+
+    Ясно, что проективное накрытие единственно, значит, можно построить \emph{минимальную резольвенту}:
+    Будем последовательно сюръективно отображаться в $M$ и ядра соответствующих эпиморфизмов не абы как, а проективным накрытием.
+    \comment{Ясно?}
+
+    Теперь можно определить транспозицию и просто на категории $A$-модулей.
+    \statement{
+        Если $M$ неразложим, то $\mathrm{Tr}(M) = 0 \iff M$ проективен;
+    если $M$ не проективен, что $\mathrm{Tr}\mathrm{Tr}(M) = M$;
+    если $\mathrm{Tr}(M) \ne 0$ неразложим, и $\mathrm{Tr}(M) \cong \mathrm{Tr}(N)$, то $M \cong N$.
+    \prove{
+    Если $M$ проективен, то $M \overset{\id}\Map M \Map 0$ --- проективное накрытие, значит, $\mathrm{Tr}(M) = 0$.
+    Обратно если $\mathrm{Tr}(M) = 0$, то $0 \to M^t \to P_0^t \to P_1^t \to 0$ точна; из проективности расщепляется, значит, $M^t$ проективен.
+
+    Теперь докажем, что $P_0^t \to P_1^t \to \mathrm{Tr}(M) \to 0$ --- минимальная резольвента.
+    Пусть не так, тогда $Q_1 \to Q_0 \to \mathrm{Tr}(M)$ --- минимальная, а наша получается добавлением проективного слагаемого $R$, его можно отщепить и получить противоречие с минимальностью. ...
+
+    Значит, $M \cong \mathrm{Tr}\mathrm{Tr}M$. \comment{Что мы доказали?..}
+    }
+    }
+    \note{
+    В изоморфизмах Ауслендера --- Райтен $\Ext^1(M, \tau L) \cong D \underline{\Hom}(L, M)$ и $\Ext^1(u M, L) \cong D \overline{\Hom}(L, M)$ имеет место функториальность, как бифункторов из стабильной категории, но здесь нужны дополнительные слова о том, почему $\Ext^1$ можно рассматривать, как функтор из стабильной категории, а не из обычной.
+    }
+    Функтор Хеллера $\Omega: \underline{\Lmod{A}} \to \underline{\Lmod{A}}$ --- ядро накрытия проективным объектом (определён корректно в стабильной категории).
+    \exercise{
+    $\Ext^1(X, Y) \cong \underline{\Hom}(\Omega X, Y)$.
+    }
+    \theorem{
+    Если $M$ неразложимый не проективный модуль, то существует $0 \to \tau M \to E \to M \to 0$ --- AR-последовательность для некоторого $M$.
+    Двойственно если $N$ неразложимый не инъективный, то $0 \to N \to E \to u N \to 0$.
+    \prove{
+    Пусть $L, M$ --- какие-то модули, свободные от проективных (без таких слагаемых).
+        Тогда $D\underline{\Hom}(L, M) \cong \Ext^1(M, \tau L)$.
+    Назовём $S(L, M) = \Hom(L, M)/\rad(L, M)$. Заметим, что факторпроекция $p: \Hom(L, M) \to S(L, M)$ пропускается через стабильный $\Hom$:
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXEhvbShMLCBNKSJdLFsyLDAsIlMoTCwgTSkiXSxbMSwxLCJcXHVuZGVybGluZXtcXEhvbX0oTCwgTSkiXSxbMCwxLCJwIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMiwiXFxwaSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDEsIlxcZXhpc3RzIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Hom(L, M)} \&\& {S(L, M)} \\
+        \& {\underline{\Hom}(L, M)}
+        \arrow["p", two heads, from=1-1, to=1-3]
+        \arrow["\pi"', two heads, from=1-1, to=2-2]
+        \arrow["\exists"', dashed, from=2-2, to=1-3]
+        \end{tikzcd}\]
+    В самом деле, морфизмы из $\Ker \pi$ явно лежат в $\rad(L, M)$, так как в тех нет проективных слагаемых.
+
+    Пусть теперь $L = M$ --- неразложимый модуль.
+        Возникает композиция $\End(M) \twoheadrightarrow \underline{\End}(M) \to S(M, M) = \End(M)/\JRad(\End(M))$.
+    Так как кольцо $\End(M)$ локально, то $\underline{\End}(M)$ тоже локально.
+        Значит, $S(M, M)$ --- единственный простой $\End(M)$-фактормодуль $\underline{\End}(M)$.
+
+    Применим двойственность $D$, получая вложение $D S(M, M) \hookrightarrow D\underline{\End}(M)$ единственного простого $D\End(M)$-подмодуля.
+
+    Изоморфизм Ауслендера --- Райтен заключается в $D\underline{\End}(M) \cong \Ext^1(M, \tau M)$.
+        Пусть $s \in D S(M, M)$ --- ненулевой элемент в $D S(M, M)$.
+    Пусть её образ под действием изоморфизма --- некий $\xi \in \Ext^1(M, \tau M)$.
+    Пусть $\xi$ имеет вид $0 \to \tau M \overset{f}\to E \overset{g}\to M \to 0$.
+    \numbers{
+    \item Ясно, что $\tau M$ неразложим (транспозиция, потом двойственость).
+    \item $g$ правый почти расщепляющийся морфизм?
+    Знаем, что эквивалентно $\forall u \in \Hom(U, M)$: $u^*(\xi) = 0$, где $U$ неразложим.
+        Построим диаграмму $\End(M)$-модулей\footnote{Изоморфизм Ауслендера --- Райтен является изоморфизмом $\End(M)$-модулей из функториальности.}:
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJEUyhNLE0pIl0sWzEsMCwiRFxcdW5kZXJsaW5le1xcSG9tfShNLE0pIl0sWzIsMCwiXFxFeHReMShNLCBcXHRhdSBNKSJdLFswLDEsIkRTKE0sIFUpIl0sWzEsMSwiRFxcdW5kZXJsaW5le1xcSG9tfShNLCBVKSJdLFsyLDEsIlxcRXh0XjEoVSwgXFx0YXUgTSkiXSxbMSwyLCJcXHNpbSJdLFswLDEsIkRcXG92ZXJsaW5le3B9Il0sWzAsMywiKHVeKilfMSIsMl0sWzEsNCwiKHVeKilfMiIsMl0sWzMsNF0sWzQsNSwiXFxzaW0iXSxbMiw1LCIodV4qKV8zIiwyXV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {DS(M,M)} \& {D\underline{\Hom}(M,M)} \& {\Ext^1(M, \tau M)} \\
+        {DS(M, U)} \& {D\underline{\Hom}(M, U)} \& {\Ext^1(U, \tau M)}
+        \arrow["{D\overline{p}}", from=1-1, to=1-2]
+        \arrow["{(u^*)_1}"', from=1-1, to=2-1]
+        \arrow["\sim", from=1-2, to=1-3]
+        \arrow["{(u^*)_2}"', from=1-2, to=2-2]
+        \arrow["{(u^*)_3}"', from=1-3, to=2-3]
+        \arrow[from=2-1, to=2-2]
+        \arrow["\sim", from=2-2, to=2-3]
+        \end{tikzcd}\]
+    Хотим $(u^*)_3(\xi) = 0$, эквивалентно $(u_2)^*(s) = 0$.
+    Так как $u$ --- не изоморфизм, $(u^*)_1 \in \rad$, значит, $(u^*)_1 = 0$.
+    Значит, $(u^*)_2 \circ D\overline{p} = 0$, и так как $\xi = D\overline{p}(s)$, то всё получилось.\qedhere
+    }
+    }
+    }
+    \example{
+    Пусть $A$ --- алгебра $\mathsf{A}_n$, то есть алгебра путей колчана
+        \[Q = \begin{tikzpicture}[baseline=-0.5]
+            \fill (0, 0) circle (1.2pt) node[above] {$1$};
+            \fill (1, 0) circle (1.2pt) node[above] {$2$};
+            \fill (4, 0) circle (1.2pt) node[above]{$n-1$};
+            \fill (5, 0) circle (1.2pt) node[above]{$n$};
+            \draw (0, 0) -- (1, 0);
+            \draw (4, 0) -- (5, 0);
+            \draw[dashed] (1, 0) -- (4, 0);
+            \fill[white] (0, -0.5) circle(0pt);
+        \end{tikzpicture}\]
+    Опишем неразложимые $A$-модули $\Ind(A)$, веря что $A$ --- конечного типа представления.}
+
+    Неразложимые проективные $A$-модули имеют вид $P_i = A e_i$ (где $e_i$ --- стандартный идемпотент, путь длины $0$ в вершине $i$).
+    Легко проверить, что $\Hom(P_i, P_j) = e_i A e_j$.
+    Так как в нашем графе из любой вершины в любую другую не больше одного пути, то $\dim \Hom(P_i, P_j)$ как и $\dim \underline{\Hom}(P_i, P_j)$ --- либо $1$, либо $0$.
+
+    Пусть путь имеется, $\Hom(P_\ell, P_k) \cong K$, то есть $k \le \ell$. Между вершинами $k$ и $\ell$ имеется путь $\alpha_{k,\ell} = \alpha_{\ell - 1}\proddots \alpha_k$.
+    Умножение на $\alpha_{k,\ell}$ задаёт мономорфизм $P_\ell \hookrightarrow P_k$.
+    Кстати, верно более общее: для любого колчана $Q$: алгебра путей $KQ$ --- наследственная алгебра, то есть подмодуль проективного модуля проективен\footnote{Эквивалентно, глобальная размерность кольца один.}.
+
+    Ясно, что $M_{k\ell} \coloneqq \Coker(\alpha_{k\ell}) = \angles{\overline{\alpha_{ks}}\mid k \le s < \ell}$.
+        Он неразложим, например, потому что в нём есть единственный простой подмодуль: любой подмодуль содержит $\overline{\alpha_{k,s-1}}$.
+
+    Случай $k = \ell$ не интересен, $M_{k,\ell} = 0$.
+        С другой стороны, обозначим $M_{k,\ell+1} \coloneqq P_k$.
+    \statement{
+    $\defset{M_{k,\ell}}{1 \le k < \ell \le n + 1}$ --- все неразложимые $A$-модули.
+    \prove{
+        Посчитаем $\tau(M_{k\ell})$.
+        Проективная резольвента $Ae_{\ell} \to Ae_k \to M_{k\ell} \to 0$ есть просто по определнию; транспонирование превращает её в $0 \to M_{k\ell}^t \to e_k A \to e_\ell A \to \mathrm{Tr}(M_{k\ell}) \to 0$.
+    Применяя двойственность, получаем $\tau M_{k,\ell} \cong D(\mathrm{Tr}(M_{k,\ell})) \cong M_{k+1,\ell+1}$ (оба модуля циклические, легко проверяется).
+
+    Так как все стабильные $\Hom$'ы не более, чем одномерны, значит, $\Ext$'ы тоже такие, значит, для построения AR-последовательности достаточно найти любой ненулевой $\xi \in \Ext^1(M, \tau M)$.
+    Подойдёт
+    \[0 \to M_{k+1,\ell+1} \overset{\vect{\alpha_{...} \\ \alpha_{...}}}\Map M_{k+1,\ell} \oplus M_{k,\ell+1} \overset{\vect{\alpha_{...} & -\alpha_{...}}}\Map M_{k,\ell} \to 0.\]
+    Ясно, что слева вложение, справа проекция, композиция ноль, значит так как сумма размерностей краёв равна размерности центра, она точна.
+    Она не расщепляется из теоремы Крулля --- Шмидта (по центру сумма не тех двух неразложимых модулей, что с краю).
+
+    Это работает если $\ell \le n$, то есть если $M_{k,\ell}$ не проективен.
+
+    Мы обсуждали, что в этой короткой точной есть все неприводимые морфизмы из $M_{k+1,\ell+1}$ и в $M_{k,\ell}$.
+    % https://q.uiver.app/#q=WzAsMTAsWzAsMywiTV97bixuKzF9Il0sWzEsMiwiTV97bi0xLG4rMX0iXSxbMiwxLCJNX3syLG4rMX0iXSxbMywwLCJNX3sxLG4rMX0iXSxbNCwxLCJNX3sxLG59Il0sWzMsMiwiTV97MixufSJdLFs1LDIsIk1fezEsM30iXSxbNiwzLCJNX3sxLDJ9Il0sWzIsMywiTV97bi0xLG59Il0sWzQsMywiTV97MiwzfSJdLFswLDFdLFsxLDIsIlxcY29udHJhZG90cyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDNdLFszLDRdLFsyLDVdLFs1LDRdLFs0LDYsIlxcZGRvdHMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3XSxbMSw4XSxbOCw1LCJcXGNvbnRyYWRvdHMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw5LCJcXGRkb3RzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksNl1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+              \&\&\& {M_{1,n+1}} \&\&\& \\
+              \&\& {M_{2,n+1}} \&\& {M_{1,n}} \\
+              \& {M_{n-1,n+1}} \&\& {M_{2,n}} \&\& {M_{1,3}} \\
+              {M_{n,n+1}} \&\& {M_{n-1,n}} \&\& {M_{2,3}} \&\& {M_{1,2}}
+              \arrow[from=1-4, to=2-5]
+              \arrow[from=2-3, to=1-4]
+              \arrow[from=2-3, to=3-4]
+              \arrow["\ddots", dashed, from=2-5, to=3-6]
+              \arrow["\contradots", dashed, from=3-2, to=2-3]
+              \arrow[from=3-2, to=4-3]
+              \arrow[from=3-4, to=2-5]
+              \arrow["\ddots", dashed, from=3-4, to=4-5]
+              \arrow[from=3-6, to=4-7]
+              \arrow[from=4-1, to=3-2]
+              \arrow["\contradots", dashed, from=4-3, to=3-4]
+              \arrow[from=4-5, to=3-6]
+        \end{tikzcd}\]
+    Так как $A$ --- конечного типа представления, то любой морфизм --- линейная комбинация композиций неприводимых.
+    Любой неразложимый модуль содержит какой-то простой подмодуль, а все простые подмодули имеют вид $M_{i,i+1}$.
+
+    Граф из ромбиков выше --- компонента связности колчана $\mathsf{A}_n$, но раз в ней лежат все простые модули, то это весь колчан.
+
+    Также мы описали все неприводимые морфизмы ($I \to P$ тоже описали --- либо моно, либо эпи).
+    }
+    }
 \end{document}
