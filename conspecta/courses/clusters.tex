@@ -620,7 +620,7 @@
 %    Ну и где-то здесь начинаем считать $K = K^{alg}$.
     \corollary{ Если $B$ коммутативна, то $B \cong K_1 \times \ldots \times K_n$, где $K_i$ --- конечные расширения $K$.
     В случае $K = \alg{K}$ все $K_i \cong K$.}
-    \theorem{
+    \theorem{\label{using-idempotents-lifting}
     Пусть $B = A/\JRad A$, и $B$ разложилось в прямую сумму простых модулей $\ind{_B}B{} = \ind{_B}{B}{_1} \oplus \ldots \oplus \ind{_B}{B}{_k}$.
         Тогда имеет место разложение $A =\ind{_A}{A}{_1} \oplus \ldots \oplus \ind{_A}{A}{_k}$, где $A_i/ (\JRad A)A_i \cong B_i$.
     \prove{
@@ -916,18 +916,18 @@
     \[\dim (\GL_{\mathscr{L}}(K))_M + \dim \GL_{\mathscr{L}}(K)M = \dim \GL_{\mathscr{L}}(K)\tag{$*$}\label{loc-triv}\]
 
     Заведём квадратичную форму $B$ на $\R^{n}$ следующим образом:
-    \[B(\mathscr{L}, \mathscr{L}) = \sum\limits_{i=1}^{n} \mathscr{L}_i^2 - \sum\limits_{\alpha \in E(Q)} \mathscr{L}_{t(\alpha)}\mathscr{L}_{h(\alpha)}\]
-    Если $\mathscr{L}$ --- вектор размерностей, то $B(\mathscr{L}, \mathscr{L}) = \dim \GL_{\mathscr{L}} - \dim \mathrm{Rep}_{\mathscr{L}}(Q, K)$.
+    \[B(\mathscr{L}) = \sum\limits_{i=1}^{n} \mathscr{L}_i^2 - \sum\limits_{\alpha \in E(Q)} \mathscr{L}_{t(\alpha)}\mathscr{L}_{h(\alpha)}\]
+    Если $\mathscr{L}$ --- вектор размерностей, то $B(\mathscr{L}) = \dim \GL_{\mathscr{L}} - \dim \mathrm{Rep}_{\mathscr{L}}(Q, K)$.
 
     \lemma{
-    Если $KQ$ конечного типа, то $\forall \mathscr{L} \in \Z^{n}_{\ge 0}: B(\mathscr{L}, \mathscr{L}) \ge 1$.
+    Если $KQ$ конечного типа, то $\forall \mathscr{L} \in \Z^{n}_{\ge 0}: B(\mathscr{L}) \ge 1$.
     \prove{
     Пусть $\mathscr{L} \in \Z^n$.
         Из конечности типа существует лишь конечное число неизоморфных представлений $M$: $\mathscr{L}_M = \mathscr{L}$ (так как любое представление разваливается в прямую сумму неразложимых).
         Значит, $\mathrm{Rep}_{\mathscr{L}}(Q, K)$ --- объединение конечного числа орбит, откуда хотя бы у одной орбиты размерность тоже равна $\dim \mathrm{Rep}_{\mathscr{L}}(Q, K)$.
     Иными словами, $\exists M$: $\dim \GL_{\mathscr{L}}(K)M = \dim\mathrm{Rep}_{\mathscr{L}}(Q, K)$.
         Согласно~\eqref{loc-triv}
-    \multline{0 = \dim \GL_{\mathscr{L}}(K)M - \dim\mathrm{Rep}_{\mathscr{L}}(Q, K) = \\= \dim \GL_{\mathscr{L}}(K) -\dim (\GL_{\mathscr{L}}(K))_M - \dim\mathrm{Rep}_{\mathscr{L}}(Q, K) =\\= B(\mathscr{L}, \mathscr{L}) - \underbrace{\dim (\GL_{\mathscr{L}}(K))_M}_{{\ge 1}}.\qedhere}
+    \multline{0 = \dim \GL_{\mathscr{L}}(K)M - \dim\mathrm{Rep}_{\mathscr{L}}(Q, K) = \\= \dim \GL_{\mathscr{L}}(K) -\dim (\GL_{\mathscr{L}}(K))_M - \dim\mathrm{Rep}_{\mathscr{L}}(Q, K) =\\= B(\mathscr{L}) - \underbrace{\dim (\GL_{\mathscr{L}}(K))_M}_{{\ge 1}}.\qedhere}
     }
     }
     Рассмотрим расширенные диаграммы Дынкина, получающиеся из стандартных добавлением одного ребра (и, может быть, одной вершины):
@@ -1069,14 +1069,16 @@
     }
     }
     \newlection{18 марта 2026 г.}
-    Ниже не настоящее определение системы корней, а нужное нам координатное упрощение для случая корней одной длины  (для системы типа $\mathsf{ADE}$).
+    \subsection{Системы корней}
+    \label{root-systems:subsec}
+    Ниже не настоящее определение системы корней, а нужное нам координатное упрощение для случая корней одной длины (для системы типа $\mathsf{ADE}$).
 
     Пусть $V \cong \R^n$ --- вещественное евклидово пространство.
-    Скалярное произведение на $V$ позволяет каждому ненулевому $v \in V$ сопоставить оператор отражения $s_v$ относительно гиперплоскости $\angles{v}^\perp$.
+    Скалярное произведение на $V$ позволяет каждому ненулевому $v \in V$ сопоставить оператор отражения $\sigma_v$ относительно гиперплоскости $\angles{v}^\perp$.
 
     Пусть $\Pi = \{e_1, \ldots, e_n\}$ --- базис $V$, причём скалярное произведение определено на базисе так, что $\angles{e_i, e_i} = 1$, а при $i \ne j$: $\angles{e_i, e_j} = \any{0\\-\nicefrac{1}{2}}$.
 
-    Группа Вейля $W \le \Aut(V)$ порождена отражениями $W = \angles{s_{e_1}, \ldots, s_{e_n}}$.
+    Группа Вейля $W \le \Aut(V)$ порождена отражениями $W = \angles{\sigma_{e_1}, \ldots, \sigma_{e_n}}$.
     Аксиомы систем корней требуют, чтобы группа Вейля $W$ была конечна.
 
     Диаграмма Дынкина имеет $n$ вершин, соответствующих простым корням.
@@ -1224,7 +1226,7 @@
           \arrow[from=2-5, to=1-6]
     \end{tikzcd}\]
     но если их запретить, то других способов не останется.
-    \lemma{
+    \lemma{\label{mono-or-epi}
         Если $f$ неприводим, то $f$ --- либо мономорфизм, либо эпиморфизм.
     \prove{
     Разложим $f: V \to W$ в композицию эпи и моно (воспользуемся эпи-моно разложением): $f: V \overset{p}\twoheadrightarrow\Image V \overset{i}{\hookrightarrow} W$.
@@ -1343,7 +1345,7 @@
     Ответ на этот вопрос описывается следующими тремя леммами.
     \lemma{\label{components}
     Пусть $f: U \overset{\smallvect{f_1 \\ f_2}}\Map V_1 \oplus V_2$ неприводим, и $U$ неразложим.
-        Тогда $f_1$ и $f_2$ оба неразложимы.
+        Тогда $f_1$ и $f_2$ оба неприводимы.
     \prove{
     Проверим неприводимость $f_1$.
     Предположим, что он разложлся в композицию $U \overset{h}\to X \overset{g}\to V_1$, причём $h$ --- не сечение.
@@ -2263,15 +2265,15 @@
     Это антиэквивалентность, как композиция двух инволюций (есть обратный функтор $u = \mathrm{Tr}\circ D: A\text{-}\overline{\cat{mod}} \to A\text{-}\underline{\cat{mod}}$).
     \newlection{29 апреля 2026 г.}
     \note{
-        $A$-модули $M$ и $N$ изоморфны в стабильной категории $A\text{-}\cat{mod}$, если и только если $\exists P, Q$ --- проективные $A$-модули, такие что $M \oplus P \cong N \oplus Q$ --- изоморфизм $A$-модулей (без доказательтсва, хотя и не очень сложно).
+        $A$-модули $M$ и $N$ изоморфны в стабильной категории $A\text{-}\cat{mod}$, если и только если $\exists P, Q$ --- проективные $A$-модули, такие что $M \oplus P \cong N \oplus Q$ --- изоморфизм $A$-модулей (без доказательства, хотя и не очень сложно).
     }
     Определение функтора транспозиции $\mathrm{Tr}: A\text{-}\underline{\cat{mod}} \to \underline{\cat{mod}}\text{-}A$ зависит от того, какую проективную резольвенту объекта выбирать.
-    Как мы доказали, на стабильную категорию это спускается единственным образом, но хочется определить транспозицию канонически и просто для модулей.
+    Как мы доказали, на стабильную категорию это спускается единственным образом, но нам потребуется определить транспозицию канонически и для обычных модулей.
     \definition[Проективное накрытие $p: P \twoheadrightarrow M$] {
         Эпиморфизм $p$ из проективного модуля, такой что $\Ker(p) \le P$ мало (то есть $\forall N \le P$: $\Ker(p) + N = P \then N = P$).
     }
     \statement{
-        Проективное накрытие данного $A$-модуля $M$ существует, и универсально:
+        Проективное накрытие $P \overset{p}\twoheadrightarrow M$ данного $A$-модуля $M$ существует, и универсально:
     для любого другого накрытия существует эпиморфизм $f$, замыкающий коммутативный треугольник:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJQJyJdLFswLDEsIlAiXSxbMSwxLCJNIl0sWzAsMSwiZiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMSwyLCJwIiwyXSxbMCwyLCJwJyJdXQ==
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -2282,44 +2284,67 @@
         \arrow["p"', from=2-1, to=2-2]
         \end{tikzcd}\]
     \provebullets{
-    \item Перейдём к алгебре, отфакторим по радикалу...
-    \item Стрелка есть из проективности, из определения накрытия она сюръекция. \comment{todo: расписать подробнее}
+    \item Покажем, что проективное накрытие есть у неразложимого модуля $M$ (далее возьмём прямую сумму).
+        Пусть $J \coloneqq \JRad(A)$, тогда модуль $M/JM$ --- неразложимый проективный $A/J$-модуль.
+        Согласно~(\cref{using-idempotents-lifting}) существует проективный $A$-модуль $P$, такой что ядро $P \to M$ содержится в $JP$.
+        Любой подмодуль $P$, содержащийся в $JP$ мал по лемме Накаямы.
+    \item Стрелка $f$ всегда есть из проективности, проверим, что она сюръективна.
+    Так как $\Image(p \circ f) = M$, то $\Ker(p) + \Image(f) = P$, и так как ядро мало, то $\Image(f) = P$.
     }
     }
     Кольцо называется \emph{совершенным}, если проективные накрытия существуют; это вроде бы эквивалентно артиновости по главным идеалам.
 
     Ясно, что проективное накрытие единственно, значит, можно построить \emph{минимальную резольвенту}:
-    Будем последовательно сюръективно отображаться в $M$ и ядра соответствующих эпиморфизмов не абы как, а проективным накрытием.
-    \comment{Ясно?}
+    $P_0 \twoheadrightarrow M$ получается, как проективное накрытие, а последующие $P_i$ накрывают ядра предыдущих стрелок.
 
-    Теперь можно определить транспозицию и просто на категории $A$-модулей.
-    \statement{
-        Если $M$ неразложим, то $\mathrm{Tr}(M) = 0 \iff M$ проективен;
-    если $M$ не проективен, что $\mathrm{Tr}\mathrm{Tr}(M) = M$;
-    если $\mathrm{Tr}(M) \ne 0$ неразложим, и $\mathrm{Tr}(M) \cong \mathrm{Tr}(N)$, то $M \cong N$.
+    Теперь можно определить транспозицию и просто на категории $A$-модулей аналогичным образом: пусть $P_1 \to P_0 \twoheadrightarrow M$ --- минимальная резольвента, положим $\mathrm{Tr}(M) = \Coker(P_0^t \to P_1^t)$.
+    \statement{Пусть $M$ и $N$ неразложимы.
+    \comment{На лекции, кажется, это условие было не везде, но тогда какие-то пункты ломаются, если добавить проективные слагаемые к непроективным модулям. Я не справился проследить за доказательством, поэтому ниже может быть лажа.}
+    \bullets{
+        \item $M$ проективен $\iff \mathrm{Tr}(M) = 0$;
+        \item Если $M$ не проективен, то $\mathrm{Tr}(\mathrm{Tr}(M)) = M$;
+        \item Если $\mathrm{Tr}(M) \ne 0$ неразложим, и $\mathrm{Tr}(M) \cong \mathrm{Tr}(N)$, то $M \cong N$.
+    }
     \prove{
-    Если $M$ проективен, то $M \overset{\id}\Map M \Map 0$ --- проективное накрытие, значит, $\mathrm{Tr}(M) = 0$.
-    Обратно если $\mathrm{Tr}(M) = 0$, то $0 \to M^t \to P_0^t \to P_1^t \to 0$ точна; из проективности расщепляется, значит, $M^t$ проективен.
+    Если $M$ проективен, то $M \overset{\id}\twoheadrightarrow M$ --- проективное накрытие, значит, $\mathrm{Tr}(M) = 0$.
+    Обратно, если $\mathrm{Tr}(M) = 0$, то $0 \to M^t \to P_0^t \to P_1^t \to 0$ точна; из проективности расщепляется, значит, $M^t$ проективен.
 
     Теперь докажем, что $P_0^t \to P_1^t \to \mathrm{Tr}(M) \to 0$ --- минимальная резольвента.
-    Пусть не так, тогда $Q_1 \to Q_0 \to \mathrm{Tr}(M)$ --- минимальная, а наша получается добавлением проективного слагаемого $R$, его можно отщепить и получить противоречие с минимальностью. ...
+    Пусть не так, и минимальная резольвента называется $Q_1 \to Q_0 \twoheadrightarrow \mathrm{Tr}(M)$.
+        Тогда по определению минимальной резольвенты имеются стрелки $q_0$ и $q_1$:
+    % https://q.uiver.app/#q=WzAsNixbMCwwLCJQXzBedCJdLFsxLDAsIlBfMV50Il0sWzIsMCwiXFxtYXRocm17VHJ9KE0pIl0sWzAsMSwiUV8xIl0sWzEsMSwiUV8wIl0sWzIsMSwiXFxtYXRocm17VHJ9KE0pIl0sWzIsNSwiIiwwLHsibGV2ZWwiOjIsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNCw1LCIiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMyw0XSxbMSwyLCIiLDAseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwxXSxbMSw0LCJxXzAiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XSxbMCwzLCJxXzEiLDIseyJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {P_0^t} \& {P_1^t} \& {\mathrm{Tr}(M)} \\
+        {Q_1} \& {Q_0} \& {\mathrm{Tr}(M)}
+        \arrow[from=1-1, to=1-2]
+        \arrow["{q_1}"', two heads, from=1-1, to=2-1]
+        \arrow[two heads, from=1-2, to=1-3]
+        \arrow["{q_0}"', two heads, from=1-2, to=2-2]
+        \arrow[equals, from=1-3, to=2-3]
+        \arrow[from=2-1, to=2-2]
+        \arrow[two heads, from=2-2, to=2-3]
+        \end{tikzcd}\]
+        Из проективности мы получаем $P_1^t = Q_0 \oplus S$ для некоторого модуля $S$, и $P_0^t = Q_1 \oplus S \oplus (\text{может что-то ещё})$, где $S \to S$ --- тождественная стрелка, паразитное прямое слагаемое.
+        Такого не бывает (применим ещё раз $t$ и получим противоречие). Значит, $P_1^t = Q_0$, и $P_0^t = Q_1 \oplus S'$, для некоторого прямого слагаемого $S'$. Но $P_0^t$ --- неразложимый проективный, значит, $S' = 0$.
+        Итак, для вычисления $\mathrm{Tr}(\mathrm{Tr}(M))$ можно использовать ту же резольвенту, что и для $\mathrm{Tr}(M)$.
 
-    Значит, $M \cong \mathrm{Tr}\mathrm{Tr}M$. \comment{Что мы доказали?..}
+        Значит, для не проективного $M$ мы получаем $M \cong \mathrm{Tr}(\mathrm{Tr}(M))$, что завершает доказательство сразу всех пунктов.
     }
     }
     \note{
     В изоморфизмах Ауслендера --- Райтен $\Ext^1(M, \tau L) \cong D \underline{\Hom}(L, M)$ и $\Ext^1(u M, L) \cong D \overline{\Hom}(L, M)$ имеет место функториальность, как бифункторов из стабильной категории, но здесь нужны дополнительные слова о том, почему $\Ext^1$ можно рассматривать, как функтор из стабильной категории, а не из обычной.
+        Это следует из следующего упражнения:
     }
-    Функтор Хеллера $\Omega: \underline{\Lmod{A}} \to \underline{\Lmod{A}}$ --- ядро накрытия проективным объектом (определён корректно в стабильной категории).
+    Функтор Хеллера $\Omega: A\text{-}\underline{\cat{mod}} \to A\text{-}\underline{\cat{mod}}$ --- ядро накрытия проективным объектом (определён корректно в стабильной категории).
     \exercise{
     $\Ext^1(X, Y) \cong \underline{\Hom}(\Omega X, Y)$.
     }
     \theorem{
-    Если $M$ неразложимый не проективный модуль, то существует $0 \to \tau M \to E \to M \to 0$ --- AR-последовательность для некоторого $M$.
-    Двойственно если $N$ неразложимый не инъективный, то $0 \to N \to E \to u N \to 0$.
+    Если $M$ неразложимый не проективный модуль, то существует AR-последовательность вида $0 \to \tau M \to E \to M \to 0$ для некоторого $E$.
+    Двойственно, если $N$ неразложимый не инъективный, то имеется $0 \to N \to E \to u N \to 0$.
     \prove{
     Пусть $L, M$ --- какие-то модули, свободные от проективных (без таких слагаемых).
-        Тогда $D\underline{\Hom}(L, M) \cong \Ext^1(M, \tau L)$.
+%        Изоморфизм Ауслендера --- Райтен говорит $D\underline{\Hom}(L, M) \cong \Ext^1(M, \tau L)$.
     Назовём $S(L, M) = \Hom(L, M)/\rad(L, M)$. Заметим, что факторпроекция $p: \Hom(L, M) \to S(L, M)$ пропускается через стабильный $\Hom$:
     % https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXEhvbShMLCBNKSJdLFsyLDAsIlMoTCwgTSkiXSxbMSwxLCJcXHVuZGVybGluZXtcXEhvbX0oTCwgTSkiXSxbMCwxLCJwIiwwLHsic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV0sWzAsMiwiXFxwaSIsMix7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6ImVwaSJ9fX1dLFsyLDEsIlxcZXhpc3RzIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -2329,7 +2354,7 @@
         \arrow["\pi"', two heads, from=1-1, to=2-2]
         \arrow["\exists"', dashed, from=2-2, to=1-3]
         \end{tikzcd}\]
-    В самом деле, морфизмы из $\Ker \pi$ явно лежат в $\rad(L, M)$, так как в тех нет проективных слагаемых.
+    В самом деле, морфизмы из $\Ker \pi$ явно лежат в $\rad(L, M)$, так как в $L$ и $M$ нет проективных слагаемых.
 
     Пусть теперь $L = M$ --- неразложимый модуль.
         Возникает композиция $\End(M) \twoheadrightarrow \underline{\End}(M) \to S(M, M) = \End(M)/\JRad(\End(M))$.
@@ -2340,12 +2365,11 @@
 
     Изоморфизм Ауслендера --- Райтен заключается в $D\underline{\End}(M) \cong \Ext^1(M, \tau M)$.
         Пусть $s \in D S(M, M)$ --- ненулевой элемент в $D S(M, M)$.
-    Пусть её образ под действием изоморфизма --- некий $\xi \in \Ext^1(M, \tau M)$.
-    Пусть $\xi$ имеет вид $0 \to \tau M \overset{f}\to E \overset{g}\to M \to 0$.
+    Пусть её образ --- некий $\xi \in \Ext^1(M, \tau M)$, отвечающий короткой точной $0 \to \tau M \overset{f}\to E \overset{g}\to M \to 0$.
     \numbers{
-    \item Ясно, что $\tau M$ неразложим (транспозиция, потом двойственость).
-    \item $g$ правый почти расщепляющийся морфизм?
-    Знаем, что эквивалентно $\forall u \in \Hom(U, M)$: $u^*(\xi) = 0$, где $U$ неразложим.
+    \item Ясно, что $\tau M$ неразложим (используем явную конструкцию определения функтора $\tau$ --- транспозиция, потом двойственость).
+    \item Проверим, что $g$ правый почти расщепляющийся морфизм.
+    Как мы обсудили при доказательстве~(\cref{ar-criterion}), это эквивалентно $\forall u \in \Hom(U, M)$: $u^*(\xi) = 0$, где $U$ неразложим.
         Построим диаграмму $\End(M)$-модулей\footnote{Изоморфизм Ауслендера --- Райтен является изоморфизмом $\End(M)$-модулей из функториальности.}:
     % https://q.uiver.app/#q=WzAsNixbMCwwLCJEUyhNLE0pIl0sWzEsMCwiRFxcdW5kZXJsaW5le1xcSG9tfShNLE0pIl0sWzIsMCwiXFxFeHReMShNLCBcXHRhdSBNKSJdLFswLDEsIkRTKE0sIFUpIl0sWzEsMSwiRFxcdW5kZXJsaW5le1xcSG9tfShNLCBVKSJdLFsyLDEsIlxcRXh0XjEoVSwgXFx0YXUgTSkiXSxbMSwyLCJcXHNpbSJdLFswLDEsIkRcXG92ZXJsaW5le3B9Il0sWzAsMywiKHVeKilfMSIsMl0sWzEsNCwiKHVeKilfMiIsMl0sWzMsNF0sWzQsNSwiXFxzaW0iXSxbMiw1LCIodV4qKV8zIiwyXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -2383,17 +2407,18 @@
     Легко проверить, что $\Hom(P_i, P_j) = e_i A e_j$.
     Так как в нашем графе из любой вершины в любую другую не больше одного пути, то $\dim \Hom(P_i, P_j)$ как и $\dim \underline{\Hom}(P_i, P_j)$ --- либо $1$, либо $0$.
 
-    Пусть путь имеется, $\Hom(P_\ell, P_k) \cong K$, то есть $k \le \ell$. Между вершинами $k$ и $\ell$ имеется путь $\alpha_{k,\ell} = \alpha_{\ell - 1}\proddots \alpha_k$.
+    Пусть путь между $k$-й и $\ell$-й вершинами имеется: $\Hom(P_\ell, P_k) \cong K$, то есть $k \le \ell$.
+    Это произведение $\alpha_{k,\ell} = \alpha_{\ell - 1}\proddots \alpha_k$.
     Умножение на $\alpha_{k,\ell}$ задаёт мономорфизм $P_\ell \hookrightarrow P_k$.
     Кстати, верно более общее: для любого колчана $Q$: алгебра путей $KQ$ --- наследственная алгебра, то есть подмодуль проективного модуля проективен\footnote{Эквивалентно, глобальная размерность кольца один.}.
 
-    Ясно, что $M_{k\ell} \coloneqq \Coker(\alpha_{k\ell}) = \angles{\overline{\alpha_{ks}}\mid k \le s < \ell}$.
-        Он неразложим, например, потому что в нём есть единственный простой подмодуль: любой подмодуль содержит $\overline{\alpha_{k,s-1}}$.
+    Рассмотрим модули $M_{k\ell} \coloneqq \Coker(\alpha_{k\ell}) = \angles{\overline{\alpha_{ks}}\mid k \le s < \ell}$ для $1 \le k \le \ell \le n + 1$.
+        Они неразложимы, например, потому что в каждом таком есть единственный простой подмодуль: любой подмодуль содержит $\overline{\alpha_{k,s-1}}$.
 
-    Случай $k = \ell$ не интересен, $M_{k,\ell} = 0$.
+    Случай $k = \ell$ не интересен, $M_{k\ell} = 0$.
         С другой стороны, обозначим $M_{k,\ell+1} \coloneqq P_k$.
     \statement{
-    $\defset{M_{k,\ell}}{1 \le k < \ell \le n + 1}$ --- все неразложимые $A$-модули.
+    $\defset{M_{k\ell}}{1 \le k < \ell \le n + 1}$ --- все неразложимые $A$-модули.
     \prove{
         Посчитаем $\tau(M_{k\ell})$.
         Проективная резольвента $Ae_{\ell} \to Ae_k \to M_{k\ell} \to 0$ есть просто по определнию; транспонирование превращает её в $0 \to M_{k\ell}^t \to e_k A \to e_\ell A \to \mathrm{Tr}(M_{k\ell}) \to 0$.
@@ -2403,11 +2428,11 @@
     Подойдёт
     \[0 \to M_{k+1,\ell+1} \overset{\vect{\alpha_{...} \\ \alpha_{...}}}\Map M_{k+1,\ell} \oplus M_{k,\ell+1} \overset{\vect{\alpha_{...} & -\alpha_{...}}}\Map M_{k,\ell} \to 0.\]
     Ясно, что слева вложение, справа проекция, композиция ноль, значит так как сумма размерностей краёв равна размерности центра, она точна.
-    Она не расщепляется из теоремы Крулля --- Шмидта (по центру сумма не тех двух неразложимых модулей, что с краю).
+    Она не расщепляется из теоремы Крулля --- Шмидта (в центре сумма не тех двух неразложимых модулей, что по краю).
 
-    Это работает если $\ell \le n$, то есть если $M_{k,\ell}$ не проективен.
+    Это работает если $\ell \le n$, то есть если $M_{k\ell}$ не проективен.
 
-    Мы обсуждали, что в этой короткой точной есть все неприводимые морфизмы из $M_{k+1,\ell+1}$ и в $M_{k,\ell}$.
+    Мы обсуждали, что в этой короткой точной есть все неприводимые морфизмы из $M_{k+1,\ell+1}$ и в $M_{k,\ell}$, изобразим их на следующей диаграмме.
     % https://q.uiver.app/#q=WzAsMTAsWzAsMywiTV97bixuKzF9Il0sWzEsMiwiTV97bi0xLG4rMX0iXSxbMiwxLCJNX3syLG4rMX0iXSxbMywwLCJNX3sxLG4rMX0iXSxbNCwxLCJNX3sxLG59Il0sWzMsMiwiTV97MixufSJdLFs1LDIsIk1fezEsM30iXSxbNiwzLCJNX3sxLDJ9Il0sWzIsMywiTV97bi0xLG59Il0sWzQsMywiTV97MiwzfSJdLFswLDFdLFsxLDIsIlxcY29udHJhZG90cyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsyLDNdLFszLDRdLFsyLDVdLFs1LDRdLFs0LDYsIlxcZGRvdHMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNiw3XSxbMSw4XSxbOCw1LCJcXGNvbnRyYWRvdHMiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XSxbNSw5LCJcXGRkb3RzIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzksNl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               \&\&\& {M_{1,n+1}} \&\&\& \\
@@ -2427,12 +2452,198 @@
               \arrow["\contradots", dashed, from=4-3, to=3-4]
               \arrow[from=4-5, to=3-6]
         \end{tikzcd}\]
+    Других неприводимых морфизмов между этими неразложимыми модулями нет: теоретически ещё могли бы быть морфизмы из $M_{1,\ell}$ в $M_{k,n+1}$, но это --- неприводимые морфизмы из инъективного в проективный модуль.
+        Согласно~(\cref{mono-or-epi}), любой неприводимый морфизм --- либо моно, либо эпи, значит, неприводимых морфизмов $M_{1,\ell} \to M_{k,n+1}$ нет.
+
     Так как $A$ --- конечного типа представления, то любой морфизм --- линейная комбинация композиций неприводимых.
     Любой неразложимый модуль содержит какой-то простой подмодуль, а все простые подмодули имеют вид $M_{i,i+1}$.
 
-    Граф из ромбиков выше --- компонента связности колчана $\mathsf{A}_n$, но раз в ней лежат все простые модули, то это весь колчан.
+    Вообще говоря, граф из ромбиков выше --- компонента связности колчана $\mathsf{A}_n$.
+        Но раз в этой компоненте лежат все простые модули, то это весь колчан.
+    }
+    }
+    \newlection{14 мая 2026 г.}
+    \section{Представления алгебры путей колчана и системы корней}
+    Пусть $Q$ --- колчан, $x \in Q$ --- вершина-сток (есть только входящие рёбра), $Q' = \sigma_x(Q)$ --- колчан, получающийся мутацией в вершине $x$ (развернули все рёбра, инцидентные $x$):
+    \[\begin{tikzpicture}[baseline=(current bounding box.center)]
+          \fill[black] (0, 0) circle (1pt) node[below]{$x$};
+          \fill[black] (B) circle (1pt);
+          \fill[black] (C) circle (1pt);
+          \fill[black] (D) circle (1pt);
+          \draw[->] (B) -- (0.1, 0.1);
+          \draw[->] (C) -- (0, 0.1);
+          \draw[->] (D) -- (-0.1, 0.1);
+    \end{tikzpicture}\qquad\rightsquigarrow\qquad \begin{tikzpicture}[baseline=(current bounding box.center)]
+         \fill[black] (0, 0) circle (1pt) node[below]{$x$};
+         \fill[black] (B) circle (1pt);
+         \fill[black] (C) circle (1pt);
+         \fill[black] (D) circle (1pt);
+         \draw[->] (0, 0) -- (B);
+         \draw[->] (0, 0) -- (C);
+         \draw[->] (0, 0) -- (D);
+    \end{tikzpicture}\]
+    В таком случае определён функтор отражения $C_x^+: \Lmod{KQ} \to \Lmod{KQ'}$ следующим образом.
+    Пусть $V \in \Lmod{KQ}$ --- представление колчана $Q$, то есть как $V = \bigoplus\limits_{y \in Q}V_y$ как векторные пространства, и стрелке $y \overset{a}\Map y'$ соответствует морфизм $V_a: V_y \to V_{y'}$.
+    Определим $W \coloneqq C_x^+(V)$ так: положим $W_y = V_y$ при $y \ne x$, а при $y = x$ нам придётся построить какое-то новое векторное пространство; ещё придётся построить морфизмы $W_x \to W_y = V_y$ для всех стрелок старого колчана $Q$ вида $y \to x$.
+    Это всё равно что задать морфизм $W_x \to \bigoplus\limits_{(y \to x) \in Q'}V_y$.
+    Определим его как ядро морфизма $\bigoplus\limits_{(y \to x) \in Q'}V_y \to V_x$.
 
-    Также мы описали все неприводимые морфизмы ($I \to P$ тоже описали --- либо моно, либо эпи).
+    Иными словами, пусть $a_1, \ldots, a_k \in Q$ --- стрелки, входящие в $x$.
+    Тогда точна следующая последовательность:
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCIwIl0sWzIsMCwiXFxiaWdvcGx1c1xcbGltaXRzX3tpID0gMX1ee2t9Vl97dChhX2kpfSJdLFsxLDAsIldfeCJdLFs0LDAsIlZfeCJdLFsyLDEsIlxcc21hbGx2ZWN0e1dfe2FfMX0gXFxcXCBcXHZkb3RzIFxcXFwgV197YV9rfX0iXSxbMCwyXSxbMSwzLCJcXHNtYWxsdmVjdHtWX3thXzF9ICYgXFxjZG90cyAmIFZfe2Ffa319Il1d
+    \[\begin{tikzcd}[ampersand replacement=\&]
+          0 \& {W_x} \& {\bigoplus\limits_{i = 1}^{k}V_{t(a_i)}} \&\& {V_x}
+          \arrow[from=1-1, to=1-2]
+          \arrow["\begin{array}{c} \smallvect{W_{a_1} \\ \vdots \\ W_{a_k}} \end{array}", from=1-2, to=1-3]
+          \arrow["{\smallvect{V_{a_1} & \cdots & V_{a_k}}}", from=1-3, to=1-5]
+    \end{tikzcd}\label{dualization-ses}\tag{$\boxminus$}\]
+    \lemma{\label{delta-x-or-epi}
+    Пусть в сделанных предположениях $V \in \Lmod{KQ}$ --- неразложимый модуль.
+        Обозначим через $g_x$ морфизм $\bigoplus\limits_{i = 1}^{k}V_{t(a_i)} \to V_x$.
+    Тогда либо $g_x$ --- эпи, либо $V = S_x$ --- простой модуль, отвечающий одномерному пространству в $x$.
+    \prove{
+    Предположим, что $g_x$ --- не эпи; тогда $V_x$ раскладывается в прямую сумму векторных пространств $V_x = \Image(g_x) \oplus V'$, где $V' \ne 0$.
+
+    Так как $x$ --- сток, то $V = \left(\bigoplus\limits_{y \ne x}V_y \oplus \Image(g_x)\right) \oplus V'$ --- разложение $V$ в прямую сумму $KQ$-модулей.
+    По предположению $V' \ne 0$, из неразложимости $V = V'$.
+    }
+    }
+    Строится двойственная конструкция: если $x \in Q'$ --- исток, и $Q$ получен мутацией $Q'$ в $x$, то функтор отражения $C^-_x: \Lmod{KQ'} \to \Lmod{KQ}$ определён аналогично: пусть $W \in \Lmod{KQ'}$, положим $V \coloneqq C^-_x(W)$ таким: $V_y = W_y$ при $y \ne x$, и $V_x = \Coker\left(W_x \to \bigoplus\limits_{(x \to y) \in Q'}W_{y}\right)$.
+    Как и в~(\cref{delta-x-or-epi}), если $W \ne S_x$, то стрелка, коядро которой берётся --- мономорфизм.
+    \theorem{\label{first-inverse}
+        Пусть $V \in \Lmod{KQ}$ --- неразложимый модуль.
+        Обозначим вектор размерностей $V$ через $\underline{\dim}V \in \mathbb{R}^{V(Q)}$ (координата под индексом, соответствующим вершине $y$ --- размерность $V_y$).
+        Пусть $x$ --- сток, $Q' = \sigma_x(Q)$.
+    Тогда
+    \numbers{
+    \item Либо $V \cong S_x$, и в таком случае $C^+_x(V) = 0$, либо $V \ncong S_x$, и в таком случае $C^-_x(C^+_x(V)) \cong V$, и $C^+_x(V)$ неразложим.
+    \item Если $V \ncong S_x$, то $\underline{\dim}(C^+_x(V)) = \sigma_x(\underline{\dim}(V))$, где $\sigma_x: \R^{V(Q)} \to \R^{V(Q)}$ --- отражение относительно зеркала, ортогонального корню $x$~(см. \cref{root-systems:subsec}).
+    }
+    \prove{
+        Если $V \ncong S_x$, то согласно~(\cref{delta-x-or-epi}), последовательность~\eqref{dualization-ses} --- короткая точная (справа можно поставить нуль), значит, она описывает и $C^+_x$, и $C^-_x$.
+
+        Теперь предположим, что $C^+_x(V)$ разложим в прямую сумму $C^+_x(V) = V' \oplus V''$.
+        Тогда $V \cong C^-_x(C^+_x(V)) = C^-_x(V') \oplus C^-_x(V'')$, значит, один из $V'$ и $V''$ лежит в ядре $C^-_x$.
+        Без потери общности это $V'$, значит, $V'$ --- прямая сумма простых модулей $S_x$, и мы получаем противоречие с двойственной к~(\cref{delta-x-or-epi}): соответствующая стрелка $V_x \to \bigoplus\limits_{(y \to x) \in Q}V_y$ мономорфизм, как ядро.
+
+    В случае $V \cong S_x$ мы получаем $W_y = V_y = 0$ для $y \ne x$, и $W_x = \Ker\left(\bigoplus\limits_{(y \to x) \in Q}V_y \to V_x\right) = 0$.
+
+    Посчитаем вектор размерностей: $\underline{\dim}(W)_{x'} = \all{\underline{\dim}(V)_{x'},&x' \ne x \\ \sum\limits_{(y \to x) \in Q}\underline{\dim}(V)_y - \underline{\dim}(V)_x,&x' = x}$.
+    Легко проверить, что результат совпадает с $\sigma_x(\underline{\dim}(V))$.
+    }
+    }
+    \note{
+        Верно двойственное: если $x \in Q'$ --- исток, и $W \in \Lmod{KQ'}$ --- неразложим, то либо $W \cong S_x$, и в таком случае $C^-_x(W) = 0$, либо $W \ncong S_x$, и в таком случае $C^+_x(C^-_x(W)) \cong W$, где $C^-_x(W)$ неразложим.
+    }
+    \proposition{
+        Функторы $C^-_x: \Lmod{KQ'} \rightleftarrows \Lmod{KQ}: C^+_x$ сопряжены: имеет место естественный изоморфизм $\Hom_{KQ'}(W, C^+_x(V)) \cong \Hom_{KQ}(C^-_x(W), V)$.
+        Единица $C^+_x C^-_x \to \cat{id}$ и коединица $\cat{id} \to C^-_x C^+_x$ тождественны на неразложимом $V \ncong S_x$, и нулевые на $V \cong S_x$.
+    \prove{
+        \comment{Пока нет.}
+    }
+    }
+    При доказательстве теоремы Габриэля~(\cref{gabriel}) у нас возникала квадратичная форма, связанная с колчаном $Q$:
+    вектору $\alpha \in \R^{(V(Q))}$ сопоставлялось $B_{Q}(\alpha) = \sum\limits_{x \in V(Q)}\alpha_x^2 - \sum\limits_{a \in E(Q)}\alpha_{h(a)}\alpha_{t(a)}$.
+
+    Определим также билинейную форму \[(\alpha, \beta) = 2 \sum\limits_{x \in V(Q)}\alpha_x \beta_{x} - \sum\limits_{a \in E(Q)}\alpha_{h(a)}\beta_{t(a)} - \sum\limits_{a \in E(Q)}\alpha_{t(a)}\beta_{h(a)}.\]
+    Имеет место равенство $(\alpha, \alpha) = 2B_Q(\alpha)$.
+    Эта билинейная форма $(\_, \_)$ пропорциональна скалярному произведению, определённому в~(\cref{root-systems:subsec}) с коэффициентом $2$.
+    Поэтому для вершины $x$ колчана отражение $\sigma_x: \R^{V(Q)} \to \R^{V(Q)}$ соответствует формуле $\beta \mapsto \beta - (e_x, \beta)e_x$.
+    \lemma{\label{positive-definite}
+    Квадратичная форма $B_Q$ положительно определена $\iff$ неориентированный граф $Q_f$ --- несвязное объединение диаграмм Дынкина типа $\mathsf{ADE}$.
+    \prove{
+    Если какая-то компонента связности $Q_f$ не является диаграммой Дынкина, то в конце доказательства~(\cref{gabriel}) приведён изотропный вектор для формы $B_Q$.
+
+    Обратно, покажем, что форма, соответствующая расширенной диаграмме Дынкина неотрицательно определена, и все изотропные векторы для расширенных диаграмм Дынкина не имеют нулевых компонент.
+    Этот факт также считывается с расстановки чисел в вершинах. Например, пусть $Q_f = \tilde{\mathsf{D}}_{n}$:
+        \[\begin{tikzpicture}[scale=0.8]
+            \fill (-1, -1) circle (1.5pt) node[below right] {$1$} node[above left] {$\scriptstyle x_1$};
+            \fill (-1, 1) circle (1.5pt) node[above right] {$1$} node[below left] {$\scriptstyle x_2$};
+            \fill (0, 0) circle (1.5pt) node[above right] {$2$} node[below] {$\scriptstyle x_3$};
+            \fill (5, -1) circle (1.5pt) node[below left] {$1$} node[above right] {$\scriptstyle x_{n+1}$};
+            \fill (5, 1) circle (1.5pt) node[above left] {$1$} node[below right] {$\scriptstyle x_{n}$};
+            \fill (4, 0) circle (1.5pt) node[above left] {$2$} node[below left] {$\scriptstyle x_{n-1}$};
+            \fill (1.4, 0) circle (1.5pt) node[above] {$2$} node[below] {$\scriptstyle x_4$};
+            \draw (-1, -1) -- (0, 0) -- (-1, 1);
+            \draw (5, -1) -- (4, 0) -- (5, 1);
+            \draw (0, 0) -- (1.4, 0);
+            \draw[dashed] (1.4, 0) -- (4, 0);
+        \end{tikzpicture}\]
+    Заметим, что \[B_Q(x_1, \ldots, x_n) = (2x_1 - x_3)^2 + (2x_2 - x_3)^2 + (x_{n-1} - 2x_n)^2 + (x_{n-1} - 2x_{n+1})^2 + \sum\limits_{i = 3}^{n - 2}(x_{i} - x_{i+1})^2.\]
+    Так как $B_{\mathsf{D}_n}(x_1, \ldots, x_n) = B_{\tilde{\mathsf{D}}_n}(x_1, \ldots, x_n, 0)$, то действительно $B_{\mathsf{D}_n}(x_1, \ldots, x_n)$ положительно определена.
+    }
+    }
+    \corollary{
+    Если $Q$ --- диаграмма Дынкина типа $\mathsf{ADE}$, то $(\R^{V(Q)}, (\_, \_))$ --- евклидово пространство.
+    }
+    Пусть теперь $Q$ --- произвольный колчан.
+    \definition[Допустимая последовательность $x_1, \ldots, x_{\ell} \in V(Q)$]{
+    Последовательность вершин, такая что $\forall i$: $x_i$ --- сток в $\sigma_{i-1}(\cdots(\sigma_1(Q)))$.
+    Эквивалентно, определена композиция функторов $C^{+}_{x_{\ell}} \circ \ldots \circ C^+_{x_1}$.
+    }
+    \statement{\label{misc-inverse}
+    Пусть $x_1, \ldots, x_{\ell}$ --- допустимая последовательность вершин колчана $Q$; $C^+ \coloneqq C^+_{x_\ell} \circ\ldots\circ C^+_{x_1}$ и $C^- \coloneqq C^-_{x_1} \circ \ldots \circ C^-_{x_\ell}$:
+    % https://q.uiver.app/#q=WzAsNCxbMSwwLCJcXExtb2R7SyhcXHNpZ21hX3t4XzF9KFEpKX0iXSxbMCwwLCJcXExtb2R7S1F9Il0sWzIsMCwiXFxjZG90cyJdLFszLDAsIlxcTG1vZHtLKFxcc2lnbWFfe3hfXFxlbGx9XFxjZG90c1xcc2lnbWFfe3hfMX0oUSkpfSJdLFsxLDAsIkNeK197eF8xfSIsMCx7Im9mZnNldCI6LTF9XSxbMCwxLCJDXi1fe3hfMX0iLDAseyJvZmZzZXQiOi0xfV0sWzAsMiwiQ14rX3t4XzJ9IiwwLHsib2Zmc2V0IjotMX1dLFsyLDAsIkNeLV97eF8yfSIsMCx7Im9mZnNldCI6LTF9XSxbMiwzLCJDXitfe3hfXFxlbGx9IiwwLHsib2Zmc2V0IjotMX1dLFszLDIsIkNeLV97eF9cXGVsbH0iLDAseyJvZmZzZXQiOi0xfV1d
+        \[\begin{tikzcd}[ampersand replacement=\&]
+        {\Lmod{KQ}} \& {\Lmod{K(\sigma_{x_1}(Q))}} \& \cdots \& {\Lmod{K(\sigma_{x_\ell}\cdots\sigma_{x_1}(Q))}}
+        \arrow["{C^+_{x_1}}", shift left, from=1-1, to=1-2]
+        \arrow["{C^-_{x_1}}", shift left, from=1-2, to=1-1]
+        \arrow["{C^+_{x_2}}", shift left, from=1-2, to=1-3]
+        \arrow["{C^-_{x_2}}", shift left, from=1-3, to=1-2]
+        \arrow["{C^+_{x_\ell}}", shift left, from=1-3, to=1-4]
+        \arrow["{C^-_{x_\ell}}", shift left, from=1-4, to=1-3]
+        \end{tikzcd}\]
+    Пусть $V \in \Lmod{KQ}$ неразложим.
+    Тогда \numbers{\item Либо $C^+(V) = 0$;\item  Либо $C^-(C^+(V)) \cong V$.}
+    При этом $C^+(V) = 0$ возникает для $V = C^-_{x_1}(C^-_{x_2}(\cdots(C^-_{x_{k-1}}(S_{x_{k}}))))$ при некотором $1 \le k \le \ell$.
+
+    Двойственно, пусть $W \in \Lmod{K(\sigma_{x_\ell}\cdots\sigma_{x_1}(Q))}$ неразложим.
+        Тогда \numbers{\item Либо $C^-(W) = 0$;\item  Либо $C^+(C^-(W)) \cong W$.}
+        При этом $C^-(W) = 0$ возникает для $W = C^+_{x_\ell}(C^+_{x_{\ell-1}}(\cdots(C^+_{x_{k+1}}(S_{x_{k}}))))$ при некотором $1 \le k \le \ell$.
+
+    Тем самым, $C^+$ и $C^-$ --- взаимно обратные биекции между незануляющимися при данном соответствии неразложимыми $KQ$-модулями и $K(\sigma_{x_\ell}\cdots\sigma_{x_1}(Q))$-модулями.
+    \prove{
+        Практически всё следует из~(\cref{first-inverse}). Пусть $C^+(V) = 0$, и $k$ --- наименьшее, такое что $S \coloneqq C^+_{x_{k-1}}(\cdots(C^+_{x_1}(V))) \ne 0$.
+    Так как $C^+_{x_k}(S) = 0$, то $S = S_{x_k}$, и применяя теорему $k - 1$ раз получаем $V = C^-_{x_1}(C^-_{x_2}(\cdots(C^-_{x_{k-1}}(S_{x_{k}}))))$.
+    }
+    }
+    \lemma{
+    Пусть $Q$ --- колчан на $n$ вершинах, и неориентированный граф $Q_f$ --- дерево (ацикличный связный граф).
+    Тогда существует перестановка вершин $x_1, \ldots, x_n \in Q$, являющаяся допустимой последовательностью.
+    \prove{
+    Занумеруем вершины так, что стрелки $i \to j$ имеются только для $i > j$.
+    Это можно делать по индукции: в дереве обязательно есть сток, поставим ему номер $n$, а остальное пронумеруем по индукционному предположению.
+
+    Теперь проверим, что $x_n, \ldots, x_1$ допустима. При мутации в вершине $x_{k}$ все рёбра $k \to j$ при $k > j$ уже развёрнуты, а при $j < k$ --- ещё нет, так что как раз $x_k$ является стоком.
+    }
+    }
+    Полученная последовательность мутаций сохраняет колчан: $\sigma_{x_n} \proddots \sigma_{x_1}(Q) = Q$.
+    В самом деле, мы сделали по мутации в каждой вершине, значит, развернули каждое ребро дважды.
+    Соответствующий функтор $C^+: \Lmod{KQ} \to \Lmod{KQ}$ носит название \emph{функтор Кокстера}.
+    \lemma{
+    Функтор Кокстера $C^+$ не зависит от выбора допустимой последовательности.
+    \prove{
+        Если между $x$ и $y$ нет стрелок, то $C^+_x$ и $C^+_y$ коммутируют.
+
+    Пусть перестановки вершин $x_1, \ldots, x_n$ и $y_1, \ldots, y_n$ обе допустимые.
+        Покажем, что можно одну превратить в другую, меняя местами соседние несоединённые рёбрами вершины.
+
+    Так как последовательности допустимы, то $x_1$ --- сток, и пусть $x_1 = y_k$.
+        Так как $y_k$ --- сток в $\sigma_{y_{k-1}}(\cdots(\sigma_1(Q)))$, то никакие из $y_1, \ldots, y_{k-1}$ не соединены рёбрами с $y_k$, значит, можно переставить $y_k$ в начало и свестись по индукции.
+    }
+    }
+    Пусть $Q$ --- колчан, и неориентированный граф $Q_f$ --- диаграмма Дынкина типа $\mathsf{ADE}$.
+    Согласно~(\cref{positive-definite}) квадратичная форма $B_Q$ положительно определена; пусть $\sigma_{x_1}, \ldots, \sigma_{x_n}$ --- отражения в пространстве $\R^{V(Q)}$ относительно зеркал, ортогональных базисным корням $e_{x_1}, \ldots, e_{x_n}$.
+    Породим отражениями \emph{группу Вейля} $W \coloneqq \angles{\sigma_{x_1}, \ldots, \sigma_{x_n}} \le \Isom^+(\R^{V(Q)})$.
+
+    Будем говорить, что вектор $\alpha \in \R^{V(Q)}$ --- \emph{корень}, если $\alpha$ в одной $W$-орбите с каким-то из базисных корней $e_{x_1}, \ldots, e_{x_n}$.
+    Будем говорить, что корень \emph{положительный}, если все компоненты его разложения по стандартному базису неотрицательны.
+    \theorem{ В сделанных предположениях
+    \numbers{
+        \item Корни $\alpha$ имеют единичную длину: $B_Q(\alpha) = 1$;
+    \item Количество корней конечно;
+    \item Группа Вейля $W$ конечна;
+    \item Для любого корня $\alpha$ либо $\alpha$ положителен, либо $-\alpha$ положителен ($\alpha$ \emph{отрицателен}).
     }
     }
 \end{document}
