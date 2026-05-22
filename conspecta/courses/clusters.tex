@@ -652,7 +652,7 @@
 %    Морита-теория размышляет о том, когда такое вообще возможно.
 %    Любой точный функтор между $\Lmod{A}$ и $\Lmod{B}$, сохраняющий прямые суммы, имеет вид $\mathscr{F}_S(M) = \ind{_B}{S}{_A} \otimes_A \ind{_A}{M}{}$ для некоторого бимодуля $\ind{_B}{S}{_A}$ (это следует из рассмотрения того, чему равно значение функтора на самом кольце).
 
-    Морита-эквивалентность задаётся двумя бимодулями $\ind{_B}{S}{_A}$ и $\ind{_A}{R}{_B}$, такими, что они проективны, как односторонние (что левые, что правые) модули; как односторонние модули порождают соответствующие категории, и $\ind{_B}{S}{_A} \otimes_A \ind{_A}{R}{_B} \cong \ind{_B}{B}{_B}$ вместе с $\ind{_A}{R}{_B} \otimes_B \ind{_B}{S}{_A} \cong \ind{_A}{A}{_A}$.
+    Морита-эквивалентность колец $A$ и $B$ задаётся двумя бимодулями $\ind{_B}{S}{_A}$ и $\ind{_A}{R}{_B}$, такими, что они проективны, как односторонние (что левые, что правые) модули; как односторонние модули порождают соответствующие категории, и $\ind{_B}{S}{_A} \otimes_A \ind{_A}{R}{_B} \cong \ind{_B}{B}{_B}$ вместе с $\ind{_A}{R}{_B} \otimes_B \ind{_B}{S}{_A} \cong \ind{_A}{A}{_A}$.
 
     При этом достаточно найти один такой генератор, он задаст эквиваленетность категорий, и для него найдётся парный.
 
@@ -1061,7 +1061,7 @@
                   \end{tikzpicture}
         \]
 
-    Отсюда следует, что колчану $Q$ при графе $Q_f$, имеющем вид расширенной диаграмма Дынкина, сопоставляется алггебра путей $KQ$ точно бесконечного типа представления.
+    Отсюда следует, что колчану $Q$ при графе $Q_f$, имеющем вид расширенной диаграмма Дынкина, сопоставляется алгебра путей $KQ$ точно бесконечного типа представления.
         Очевидно, что это верно и для всех колчанов, содержащих расширенную диаграмму Дынкина (например, можно поставить нули в новые вершины, и положительной определённости не появится; а можно сказать, что представления алгебры путей подколчана содержатся в представлениях алгебры путей колчана).
 
         Осталось заметить, что любой неориентированный граф, не являющейся заявленной диграммой Дынкина ($\mathsf{A}_n, \mathsf{D}_n, \mathsf{E}_6, \mathsf{E}_7$, или $\mathsf{E}_8$) содержит в качестве подграфа расширенную диаграмму Дынкина.
@@ -1796,7 +1796,7 @@
     На самом деле, требование минимальности --- защита от добавления паразитных слагаемых в область прибытия $f$.
     \newlection{8 апреля 2026 г.}
     \lemma{\label{preserving-iso}
-        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- точна и не расщепляется.
+        Пусть $0 \to L \overset{f}\to M \overset{g}\to N \to 0$ --- точна и не расщепляется, а $L$ неразложим.
     Рассмотрим её эндоморфизм
     % https://q.uiver.app/#q=WzAsMTAsWzAsMCwiMCJdLFsxLDAsIkwiXSxbMiwwLCJNIl0sWzMsMCwiTiJdLFs0LDAsIjAiXSxbMCwxLCIwIl0sWzEsMSwiTCJdLFsyLDEsIk0iXSxbMywxLCJOIl0sWzQsMSwiMCJdLFswLDFdLFsxLDIsImYiXSxbMiwzLCJnIl0sWzMsNF0sWzUsNl0sWzYsNywiZiJdLFs3LDgsImciXSxbOCw5XSxbMyw4LCJ3IiwxXSxbMiw3LCJ2IiwxXSxbMSw2LCJ1IiwxXV0=
         \[\begin{tikzcd}[ampersand replacement=\&]
@@ -1971,7 +1971,7 @@
     А именно, пусть $Y_1, \ldots, Y_k$ --- все неразложимые $A$-модули.
         Положим $Y \coloneqq \bigoplus\limits_{i =1}^{k}Y_i^{k_i}$, где $k_i = \dim_{K}(\rad/\rad^2)(X, Y_i)$.
     Морфизм $X \to Y_i^{k_i}$ определён выбором базиса $(\rad/\rad^2)(X, Y_i)$.
-        Ясно~(\cref{linearly-independent} и~\cref{irreducible-from-components}), что $X \to Y$ неприводим, и содержит все неприводимые в качвестве компонент.
+        Ясно~(\cref{linearly-independent} и~\cref{irreducible-from-components}), что $X \to Y$ неприводим, и содержит все неприводимые в качестве компонент.
 
         Почти расщепляемость $f: X \to Y$ следует из того, что любой другой морфизм $X \to U$ раскладывается по неприводимым морфизмам~(\cref{decomposability}).
 
@@ -2287,10 +2287,9 @@
         \arrow["p"', from=2-1, to=2-2]
         \end{tikzcd}\]
     \provebullets{
-    \item Покажем, что проективное накрытие есть у неразложимого модуля $M$ (далее возьмём прямую сумму).
-        Пусть $J \coloneqq \JRad(A)$, тогда модуль $M/JM$ --- неразложимый проективный $A/J$-модуль.
+    \item Пусть $J \coloneqq \JRad(A)$, тогда модуль $M/JM$ --- проективный $A/J$-модуль (над этим кольцом других нет).
         Согласно~(\cref{using-idempotents-lifting}) существует проективный $A$-модуль $P$, такой что ядро $P \to M$ содержится в $JP$.
-        Любой подмодуль $P$, содержащийся в $JP$ мал по лемме Накаямы.
+        Любой подмодуль $P$, содержащийся в $JP$, мал по лемме Накаямы.
     \item Стрелка $f$ всегда есть из проективности, проверим, что она сюръективна.
     Так как $\Image(p \circ f) = M$, то $\Ker(p) + \Image(f) = P$, и так как ядро мало, то $\Image(f) = P$.
     }
@@ -2335,7 +2334,8 @@
     }
     }
     \note{
-    В изоморфизмах Ауслендера --- Райтен $\Ext^1(M, \tau L) \cong D \underline{\Hom}(L, M)$ и $\Ext^1(u M, L) \cong D \overline{\Hom}(L, M)$ имеет место функториальность --- изоморфизм бифункторов из стабильной категории.
+    Тем самым, транспозиция $\mathrm{Tr}: \Lmod{A} \to \modR{A}$ определяется функториально, значит, и изоморфизм Ауслендера --- Райтен ($\Ext^1(M, \tau L) \cong D \underline{\Hom}(L, M)$ и $\Ext^1(u M, L) \cong D \overline{\Hom}(L, M)$) функториален.
+        Вообще говоря, это даже изоморфизм бифункторов из стабильной категории.
         Но здесь нужны дополнительные слова о том, почему $\Ext^1$ можно рассматривать, как функтор из стабильной категории, а не из обычной.
         Это следует из следующего упражнения:
     }
@@ -2560,7 +2560,7 @@
     Определим также билинейную форму \[(\alpha, \beta) = 2 \sum\limits_{x \in V(Q)}\alpha_x \beta_{x} - \sum\limits_{a \in E(Q)}\alpha_{h(a)}\beta_{t(a)} - \sum\limits_{a \in E(Q)}\alpha_{t(a)}\beta_{h(a)}.\]
     Имеет место равенство $(\alpha, \alpha) = 2B_Q(\alpha)$.
     Эта билинейная форма $(\_, \_)$ пропорциональна скалярному произведению, определённому в~(\cref{root-systems:subsec}) с коэффициентом $2$.
-    Поэтому для вершины $x$ колчана отражение $\sigma_x: \R^{V(Q)} \to \R^{V(Q)}$ соответствует формуле $\beta \mapsto \beta - (e_x, \beta)e_x$.
+    Поэтому для вершины $x$ колчана отражение $\sigma_x: \R^{V(Q)} \to \R^{V(Q)}$ действует по формуле $\beta \mapsto \beta - (e_x, \beta)e_x$.
     \lemma{\label{positive-definite}
     Квадратичная форма $B_Q$ положительно определена $\iff$ неориентированный граф $Q_f$ --- несвязное объединение диаграмм Дынкина типа $\mathsf{ADE}$.
     \prove{
@@ -2686,7 +2686,7 @@
 
     \lemma{\label{viete-descend}Верны следующие утверждения:
        \bullets{
-            \item У $\sigma$ нет неподвижных ненулвых векторов.
+            \item У $\sigma$ нет неподвижных ненулевых векторов.
             \item Для любого $v \in \R^{V(Q)}$: $\exists k \ge 0$: $\sigma^k(v)$ не положителен (имеет отрицательные координаты).
         }
         \prove{
@@ -2758,7 +2758,7 @@
         Такой модуль, что $\Ext^1_{KQ}(T, T) = 0$, и для некоторых $T_1, T_2 \in \cat{add}\text{-}T$: существует короткая точная $0 \to A \to T_1 \to T_2 \to 0$.
     }
     \example{
-    Сама алгебра $A$ --- очевидно, наклоняющий модуль. На неё стоит смотреть как на некоторый <<стартовый наклоняющий модуль>>: остальные получаются из $A$ некоторыми \emph{мутациями}.
+    Сама алгебра $A$ --- очевидно, наклоняющий модуль. На неё стоит смотреть как на некий <<стартовый наклоняющий модуль>>: остальные получаются из $A$ некоторыми \emph{мутациями}.
     }
     \lemma{
     Если $T \in \Lmod{KQ}$ наклоняющий, то короткая точная вида $0 \to P \to T_1 \to T_2 \to 0$ для $T_1, T_2 \in \cat{add}\text{-}T$ существует для любого проективного $P \in \Lmod{KQ}$.
@@ -2794,11 +2794,11 @@
         Так как $A$ --- проективный, то $\Ext^1(A, T) = 0$.
         С другой стороны, $\Ext^1(T, A)$ вообще говоря ненулевой, пусть $\{e_1, \ldots, e_m\}$ --- $K$-базис этого $\Ext$-а.
     Пусть $e_k$ соответствует короткой точной последовательности $0 \to A \to E_k \to T \to 0$.
-        Складывая их, получаем $0 \to A^n \to \bigoplus E_k \to T^n \to 0$. Возьмём пушаут:
-    % https://q.uiver.app/#q=WzAsMTAsWzQsMCwiMCJdLFszLDAsIlRebiJdLFsxLDAsIkFebiJdLFsyLDAsIlxcYmlnb3BsdXMgRV9rIl0sWzEsMSwiQSJdLFsyLDEsIkUiXSxbMCwwLCIwIl0sWzAsMSwiMCJdLFs0LDEsIjAiXSxbMywxLCJUXm4iXSxbNiwyXSxbMiwzXSxbMywxXSxbMSwwXSxbNyw0XSxbNCw1XSxbNSw5XSxbOSw4XSxbMiw0LCJcXHNtYWxsdmVjdHsxICYgXFxjZG90cyAmIDF9IiwyXSxbMyw1XSxbMSw5LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDIsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXItaW52ZXJzZSJ9fV1d
+        Складывая их, получаем $0 \to A^m \to \bigoplus E_k \to T^m \to 0$. Возьмём пушаут:
+    % https://q.uiver.app/#q=WzAsMTAsWzQsMCwiMCJdLFszLDAsIlRebSJdLFsxLDAsIkFebSJdLFsyLDAsIlxcYmlnb3BsdXMgRV9rIl0sWzEsMSwiQSJdLFsyLDEsIkUiXSxbMCwwLCIwIl0sWzAsMSwiMCJdLFs0LDEsIjAiXSxbMywxLCJUXm0iXSxbNiwyXSxbMiwzXSxbMywxXSxbMSwwXSxbNyw0XSxbNCw1XSxbNSw5XSxbOSw4XSxbMiw0LCJcXHNtYWxsdmVjdHsxICYgXFxjZG90cyAmIDF9IiwyXSxbMyw1XSxbMSw5LCIiLDEseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDIsIiIsMSx7InN0eWxlIjp7Im5hbWUiOiJjb3JuZXItaW52ZXJzZSJ9fV1d
         \[\begin{tikzcd}[ampersand replacement=\&]
-              0 \& {A^n} \& {\bigoplus E_k} \& {T^n} \& 0 \\
-              0 \& A \& E \& {T^n} \& 0
+              0 \& {A^m} \& {\bigoplus E_k} \& {T^m} \& 0 \\
+              0 \& A \& E \& {T^m} \& 0
               \arrow[from=1-1, to=1-2]
               \arrow[from=1-2, to=1-3]
               \arrow["{\smallvect{1 & \cdots & 1}}"', from=1-2, to=2-2]
@@ -2814,14 +2814,14 @@
         \end{tikzcd}\]
     Утверждается, что $X \coloneqq E$ подойдёт. По построению $T \oplus E$ удовлетворяет условию (2), осталось проверить что $\Ext^1(T \oplus E, T \oplus E) = 0$.
     Запишем кусок длинной точной последовательности $\Ext$-ов, соответствующей нижней строчке:
-    \[\Hom(T, T^n) \overset{\delta}\to \Ext^1(T, A) \to \Ext^1(T, E) \to \Ext^1(T, T^n)\]
-    По условию $\Ext^1(T, T^n) = 0$, и значит для проверки $\Ext^1(T, E) = 0$ достаточно убедиться, что $\delta$ --- эпи.
+    \[\Hom(T, T^m) \overset{\delta}\to \Ext^1(T, A) \to \Ext^1(T, E) \to \Ext^1(T, T^m)\]
+    По условию $\Ext^1(T, T^m) = 0$, и значит для проверки $\Ext^1(T, E) = 0$ достаточно убедиться, что $\delta$ --- эпи.
     Проверим, что в образе $\delta$ лежат все $e_k \in \Ext^1(T, A)$.
-    Следующая диаграмма получается вложением $0 \to A \to E_k \to T \to 0$ на $k$-ю координату диаграммы выше:
-    % https://q.uiver.app/#q=WzAsMTAsWzQsMCwiMCJdLFszLDAsIlQiXSxbMSwwLCJBIl0sWzIsMCwiRV9rIl0sWzEsMSwiQSJdLFsyLDEsIkUiXSxbMCwwLCIwIl0sWzAsMSwiMCJdLFs0LDEsIjAiXSxbMywxLCJUXm4iXSxbNiwyXSxbMiwzXSxbMywxXSxbMSwwXSxbNyw0XSxbNCw1XSxbNSw5XSxbOSw4XSxbMiw0LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDVdLFsxLDksImlfayIsMl1d
+    Следующая диаграмма получается вложением $0 \to A \to E_k \to T \to 0$ на $k$-ю координату строчки диаграммы выше:
+    % https://q.uiver.app/#q=WzAsMTAsWzQsMCwiMCJdLFszLDAsIlQiXSxbMSwwLCJBIl0sWzIsMCwiRV9rIl0sWzEsMSwiQSJdLFsyLDEsIkUiXSxbMCwwLCIwIl0sWzAsMSwiMCJdLFs0LDEsIjAiXSxbMywxLCJUXm0iXSxbNiwyXSxbMiwzXSxbMywxXSxbMSwwXSxbNyw0XSxbNCw1XSxbNSw5XSxbOSw4XSxbMiw0LCIiLDIseyJsZXZlbCI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDVdLFsxLDksImlfayIsMl1d
         \[\begin{tikzcd}[ampersand replacement=\&]
               0 \& A \& {E_k} \& T \& 0 \\
-              0 \& A \& E \& {T^n} \& 0
+              0 \& A \& E \& {T^m} \& 0
               \arrow[from=1-1, to=1-2]
               \arrow[from=1-2, to=1-3]
               \arrow[equals, from=1-2, to=2-2]
@@ -2834,11 +2834,11 @@
               \arrow[from=2-3, to=2-4]
               \arrow[from=2-4, to=2-5]
         \end{tikzcd}\]
-    Значит, $e_k = (i_k)^*(e)$, и по определению связывающего гомоморфизма $\delta(i_k) = e_k$.
+        Значит, $e_k = (i_k)^*(e)$ (где $e$ --- класс нижней строчки), и по определению связывающего гомоморфизма $\delta(i_k) = e_k$.
 
-    Чтобы убедиться, что также $\Ext^1(E, T) = \Ext^1(E, E) = 0$, напишем ещё куски длинных точных последовательностей, отвечающие нижней строчке:
-    \gather{\Ext^1(T^n, T) \to \Ext^1(E, T) \to \Ext^1(A, T);\\
-    \Ext^1(T^n, E) \to \Ext^1(E, E) \to \Ext^1(A, E).\qedhere}
+    Чтобы убедиться, что также $\Ext^1(E, T) = \Ext^1(E, E) = 0$, напишем ещё куски длинных точных последовательностей, отвечающих нижней строчке:
+    \gather{\Ext^1(T^m, T) \to \Ext^1(E, T) \to \Ext^1(A, T);\\
+    \Ext^1(T^m, E) \to \Ext^1(E, E) \to \Ext^1(A, E).\qedhere}
     }
     }
     В применении высокой науки к более обыденным вещам получаем, в частности, такое следствие леммы Бонгарца: если в выпуклом $n$-угольнике проведено несколько диагоналей, то можно провести ещё несколько, чтобы получилась триангуляция.
